@@ -1,11 +1,72 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import SearchBar from '../components/SearchBar';
+import CategoryGrid from '../components/CategoryGrid';
+import RecentUpdates from '../components/RecentUpdates';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// Sample data for categories
+const categories = [
+  { id: 'bash', name: 'bash', color: '#8860D0' },
+  { id: 'enzyme', name: 'enzyme', color: '#5C7080' },
+  { id: 'es6', name: 'es6', color: '#1ABC9C' },
+  { id: 'go', name: 'go', color: '#8860D0' },
+  { id: 'react', name: 'react', color: '#5C7080' },
+  { id: 'sass', name: 'sass', color: '#1ABC9C' },
+  { id: 'vim', name: 'vim', color: '#8860D0' },
+  { id: 'xpath', name: 'xpath', color: '#5C7080' },
+];
+
+// Sample data for recent updates
+const recentItems = [
+  { id: 'jsdoc', title: 'jsdoc' },
+  { id: 'packs', title: 'packs' },
+  { id: 'polyfill.io', title: 'polyfill.io' },
+  { id: 'tmux', title: 'tmux' },
+  { id: 'docker-compose', title: 'docker-compose' },
+  { id: 'cron', title: 'cron' },
+  { id: 'yum', title: 'yum' },
+  { id: 'screen', title: 'screen' },
+  { id: 'clip', title: 'clip' },
+  { id: 'tig', title: 'tig' },
+  { id: 'tar', title: 'tar' },
+  { id: 'atom', title: 'atom' },
+  { id: 'grep', title: 'grep' },
+  { id: 'stimulus-reflex', title: 'stimulus-reflex' },
+];
+
+// Analytics section
+const analyticsItems = [
+  { id: 'analytics.js', title: 'analytics.js' },
+  { id: 'analytics', title: 'analytics' },
+  { id: 'mixpanel', title: 'mixpanel' },
+];
 ---
 
 <Layout>
-	<Welcome />
+  <main>
+    <div class="py-12 text-center">
+      <h1 class="text-4xl font-bold mb-4">Rico's cheatsheets</h1>
+      <p class="text-lg">Hey! I'm <a href="https://twitter.com/rstacruz" class="text-blue-600 hover:underline">@rstacruz</a> and this is a modest collection of cheatsheets I've written.</p>
+    </div>
+
+    <SearchBar client:load />
+
+    <CategoryGrid categories={categories} client:load />
+
+    <RecentUpdates items={recentItems} client:load />
+
+    <div class="my-8">
+      <h2 class="text-xl font-medium mb-4">Analytics</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-2">
+        {analyticsItems.map((item) => (
+          <a 
+            href={`/${item.id}`}
+            class="block py-1 hover:underline"
+          >
+            {item.title}
+          </a>
+        ))}
+      </div>
+    </div>
+  </main>
 </Layout>
