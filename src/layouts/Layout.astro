@@ -29,8 +29,12 @@ const { title = "Rico's cheatsheets" } = Astro.props;
         background-color: #f8f9fa;
       }
       
-      .max-w-slim {
+      .container {
+        width: 100%;
         max-width: 1100px;
+        margin: 0 auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
       }
       
       .card:hover {
@@ -76,7 +80,9 @@ const { title = "Rico's cheatsheets" } = Astro.props;
   <body>
     <Header client:load />
     
-    <slot />
+    <main class="container">
+      <slot />
+    </main>
     
     <footer class="py-8 mt-12 border-t border-gray-100">
       <div class="container mx-auto px-4 text-center text-gray-500 text-sm">

@@ -16,19 +16,19 @@ const element = React.createElement(
   null,
   'Hello, world!'
 );`,
-    description: "JSX is a syntax extension for JavaScript"
+    note: "JSX is a syntax extension for JavaScript"
   },
   {
     title: "Expressions in JSX",
     code: `const name = 'Josh';
 const element = <h1>Hello, {name}</h1>;`,
-    description: "Use curly braces to embed expressions"
+    note: "Use curly braces to embed expressions"
   },
   {
     title: "JSX Attributes",
     code: `const element = <img src={user.avatarUrl} />;
 const element = <button className="btn">Click me</button>;`,
-    description: "Use camelCase for attribute names"
+    note: "Use camelCase for attribute names"
   }
 ];
 
@@ -39,7 +39,7 @@ const propsItems = [
     code: `function Welcome(props) {
   return <h1>Hello, {props.name}</h1>;
 }`,
-    description: "Simple component defined as a function"
+    note: "Simple component defined as a function"
   },
   {
     title: "Class Component",
@@ -48,7 +48,7 @@ const propsItems = [
     return <h1>Hello, {this.props.name}</h1>;
   }
 }`,
-    description: "Component defined as a class"
+    note: "Component defined as a class"
   },
   {
     title: "Props",
@@ -59,7 +59,7 @@ const propsItems = [
 function Welcome(props) {
   return <h1>Hello, {props.name}</h1>;
 }`,
-    description: "Pass data from parent to child with props"
+    note: "Pass data from parent to child with props"
   }
 ];
 
@@ -81,7 +81,7 @@ function Counter() {
     </div>
   );
 }`,
-    description: "Manage state in functional components"
+    note: "Manage state in functional components"
   },
   {
     title: "Class Component State",
@@ -104,7 +104,7 @@ function Counter() {
     );
   }
 }`,
-    description: "Manage state in class components"
+    note: "Manage state in class components"
   }
 ];
 
@@ -115,7 +115,7 @@ const eventsItems = [
     code: `<button onClick={handleClick}>
   Click me
 </button>`,
-    description: "React events use camelCase"
+    note: "React events use camelCase"
   },
   {
     title: "Passing Arguments",
@@ -126,7 +126,7 @@ const eventsItems = [
 <button onClick={handleClick.bind(this, id)}>
   Delete
 </button>`,
-    description: "Pass parameters to event handlers"
+    note: "Pass parameters to event handlers"
   }
 ];
 
@@ -160,7 +160,7 @@ function Form() {
     </form>
   );
 }`,
-    description: "Create reusable stateful logic"
+    note: "Create reusable stateful logic"
   },
   {
     title: "useEffect Hook",
@@ -172,12 +172,12 @@ function Form() {
     document.title = 'React App';
   };
 }, [count]); // Only re-run if count changes`,
-    description: "Perform side effects in function components"
+    note: "Perform side effects in function components"
   }
 ];
 ---
 
-<Layout>
+<Layout title="React Cheatsheet">
   <CheatsheetHeader 
     title="React Cheatsheet" 
     description="Essential React concepts, hooks, and patterns" 
@@ -185,7 +185,7 @@ function Form() {
     client:load
   />
   
-  <div class="container mx-auto px-4 py-8">
+  <div class="py-8">
     <CheatsheetSection title="JSX Basics" items={jsxItems} client:load />
     <CheatsheetSection title="Components & Props" items={propsItems} client:load />
     <CheatsheetSection title="State & Lifecycle" items={stateItems} client:load />

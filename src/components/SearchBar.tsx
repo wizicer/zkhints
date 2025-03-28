@@ -10,29 +10,29 @@ const SearchBar: React.FC = () => {
   };
 
   return (
-    <div className="search-form">
+    <div className="search-box relative mb-8">
       <form onSubmit={handleSearch} className="relative">
-        <div className="search-box bg-gray-100 rounded-md flex items-center p-1 focus-within:ring-2 focus-within:ring-blue-400 focus-within:ring-opacity-50">
+        <div className="relative">
           <input
             type="text"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full bg-transparent py-2 px-3 text-gray-700 focus:outline-none"
-            placeholder="Search 350+ cheatsheets"
+            placeholder="Search 286 cheatsheets..."
+            className="w-full py-3 pl-10 pr-4 text-gray-700 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
-          <button
-            type="submit"
-            className="bg-white text-gray-600 hover:text-gray-900 py-2 px-4 rounded-md shadow-sm transition-colors"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+            <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
             </svg>
-          </button>
+          </div>
         </div>
-        <p className="text-xs text-gray-500 mt-2">
-          <span className="text-gray-700">Examples:</span> <a href="/react" className="text-blue-600 hover:underline">react</a>, <a href="/bash" className="text-blue-600 hover:underline">bash</a>, <a href="/es6" className="text-blue-600 hover:underline">es6</a>, <a href="/rails" className="text-blue-600 hover:underline">rails</a>
-        </p>
       </form>
+      <div className="mt-2 text-xs text-gray-500">
+        <span className="mr-2">Examples:</span>
+        <a href="#" className="text-blue-600 hover:underline mr-2">JavaScript</a>
+        <a href="#" className="text-blue-600 hover:underline mr-2">React</a>
+        <a href="#" className="text-blue-600 hover:underline">CSS</a>
+      </div>
     </div>
   );
 };
