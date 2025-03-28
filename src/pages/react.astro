@@ -1,0 +1,180 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CheatsheetHeader from '../components/CheatsheetHeader';
+import CheatsheetSection from '../components/CheatsheetSection';
+---
+
+<Layout>
+  <div class="max-w-4xl mx-auto">
+    <CheatsheetHeader 
+      title="React Cheatsheet" 
+      description="A JavaScript library for building user interfaces with a component-based architecture."
+      client:load
+    />
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div>
+        <CheatsheetSection 
+          title="Components" 
+          items={[
+            {
+              title: 'Functional Component',
+              code: `function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}`
+            },
+            {
+              title: 'Class Component',
+              code: `class Welcome extends React.Component {
+  render() {
+    return <h1>Hello, {this.props.name}</h1>;
+  }
+}`
+            },
+            {
+              title: 'With TypeScript',
+              code: `interface WelcomeProps {
+  name: string;
+}
+
+const Welcome: React.FC<WelcomeProps> = ({ name }) => {
+  return <h1>Hello, {name}</h1>;
+};`
+            }
+          ]}
+          client:load
+        />
+        <CheatsheetSection 
+          title="Events" 
+          items={[
+            {
+              title: 'Click Handler',
+              code: `function handleClick(e) {
+  e.preventDefault();
+  console.log('The link was clicked.');
+}
+
+return (
+  <button onClick={handleClick}>
+    Click me
+  </button>
+);`
+            },
+            {
+              title: 'Form Submission',
+              code: `function handleSubmit(e) {
+  e.preventDefault();
+  console.log('Form submitted');
+}
+
+return (
+  <form onSubmit={handleSubmit}>
+    <button type="submit">Submit</button>
+  </form>
+);`
+            }
+          ]}
+          client:load
+        />
+      </div>
+      <div>
+        <CheatsheetSection 
+          title="Hooks" 
+          items={[
+            {
+              title: 'useState',
+              code: `import { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+  
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}`
+            },
+            {
+              title: 'useEffect',
+              code: `import { useState, useEffect } from 'react';
+
+function Example() {
+  const [count, setCount] = useState(0);
+
+  // Similar to componentDidMount and componentDidUpdate:
+  useEffect(() => {
+    document.title = \`You clicked \${count} times\`;
+    
+    // Optional cleanup function (componentWillUnmount):
+    return () => {
+      document.title = 'React App';
+    };
+  }, [count]); // Only re-run if count changes
+  
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}`
+            },
+            {
+              title: 'useContext',
+              code: `import { createContext, useContext } from 'react';
+
+const ThemeContext = createContext('light');
+
+function ThemedButton() {
+  const theme = useContext(ThemeContext);
+  return <button className={theme}>Themed Button</button>;
+}`
+            }
+          ]}
+          client:load
+        />
+        <CheatsheetSection 
+          title="Styling" 
+          items={[
+            {
+              title: 'Inline Styles',
+              code: `const divStyle = {
+  color: 'blue',
+  backgroundColor: 'lightgray',
+  padding: '10px',
+  fontFamily: 'Arial'
+};
+
+return <div style={divStyle}>Hello World!</div>;`
+            },
+            {
+              title: 'CSS Classes',
+              code: `import './Button.css';
+
+function Button() {
+  return <button className="primary-button">Click Me</button>;
+}`
+            },
+            {
+              title: 'Conditional Classes',
+              code: `function Button({ isActive }) {
+  return (
+    <button className={isActive ? 'active' : ''}>
+      Click Me
+    </button>
+  );
+}`
+            }
+          ]}
+          client:load
+        />
+      </div>
+    </div>
+  </div>
+</Layout>

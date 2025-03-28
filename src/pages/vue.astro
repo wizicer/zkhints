@@ -1,0 +1,163 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CheatsheetHeader from '../components/CheatsheetHeader';
+import CheatsheetSection from '../components/CheatsheetSection';
+---
+
+<Layout>
+  <div class="max-w-4xl mx-auto">
+    <CheatsheetHeader 
+      title="Vue.js cheatsheet" 
+      description="Vue.js is an open-source Model–view–viewmodel JavaScript framework for building user interfaces and single-page applications."
+      client:load
+    />
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <CheatsheetSection 
+          title="Expressions" 
+          items={[
+            {
+              code: `<div id="app">
+  <p>I have a {{ product }}</p>
+  <p>{{ product + 's' }}</p>
+  <p>{{ isWorking ? 'YES' : 'NO' }}</p>
+  <p>{{ calculatePrice() }}</p>
+</div>`,
+              note: 'See: Delimiters'
+            }
+          ]}
+          client:load
+        />
+        <CheatsheetSection 
+          title="Binding" 
+          items={[
+            {
+              code: `<a v-bind:href="url">...</a>`,
+            },
+            {
+              title: 'Shorthand syntax',
+              code: `<a :href="url">...</a>`,
+            },
+            {
+              title: 'True or false will add or remove attribute',
+              code: `<button :disabled="isButtonDisabled">...</button>`,
+            },
+            {
+              title: 'If isActive is truthy, the class \'active\' will appear',
+              code: `<div :class="{ active: isActive }">...</div>`,
+            },
+            {
+              title: 'Style color set to value of activeColor',
+              code: `<div :style="{ color: activeColor }">`,
+            },
+            {
+              note: 'See: v-bind'
+            }
+          ]}
+          client:load
+        />
+      </div>
+      <div>
+        <CheatsheetSection 
+          title="Directives" 
+          items={[
+            {
+              title: 'Element inserted/removed based on truthiness',
+              code: `<p v-if="inStock">{{ product }}</p>`,
+            },
+            {
+              code: `<p v-else-if="onSale">...</p>`,
+            },
+            {
+              code: `<p v-else>...</p>`,
+            },
+            {
+              title: 'Toggles the display: none CSS property',
+              code: `<p v-show="showProductDetails">...</p>`,
+            },
+            {
+              title: 'Two-way data binding',
+              code: `<input v-model="firstName" >`,
+            },
+            {
+              code: `v-model.lazy="..."`,
+              note: 'Syncs input after change event'
+            },
+            {
+              code: `v-model.number="..."`,
+              note: 'Always returns a number'
+            },
+            {
+              code: `v-model.trim="..."`,
+              note: 'Strips whitespace'
+            },
+            {
+              note: 'See: Directives'
+            }
+          ]}
+          client:load
+        />
+      </div>
+      <div>
+        <CheatsheetSection 
+          title="Actions/Events" 
+          items={[
+            {
+              title: 'Calls addToCart method on component',
+              code: `<button v-on:click="addToCart">...</button>`,
+            },
+            {
+              title: 'Shorthand syntax',
+              code: `<button @click="addToCart">...</button>`,
+            },
+            {
+              title: 'Arguments can be passed',
+              code: `<button @click="addToCart(product)">...</button>`,
+            },
+            {
+              title: 'To prevent default behavior (e.g. page reload)',
+              code: `<form @submit.prevent="addProduct">...</form>`,
+            },
+            {
+              title: 'Only trigger once',
+              code: `<img @mouseover.once="showImage">...</img>`,
+            },
+            {
+              title: 'Stop all event propagation',
+              code: `.stop`,
+              note: 'Stop all event propagation'
+            },
+            {
+              title: 'Only trigger if event.target is element itself',
+              code: `.self`,
+              note: 'Only trigger if event.target is element itself'
+            },
+            {
+              title: 'Keyboard entry example',
+              code: `<input @keyup.enter="submit">`,
+            },
+            {
+              title: 'Call onCopy when control+c is pressed',
+              code: `<input @keyup.ctrl.c="onCopy">`,
+            },
+            {
+              note: 'See: Events'
+            }
+          ]}
+          client:load
+        />
+        <CheatsheetSection 
+          title="List rendering" 
+          items={[
+            {
+              title: 'The :key is always recommended',
+              code: `<li v-for="item in items" :key="item.id">{{ item }}</li>`,
+            }
+          ]}
+          client:load
+        />
+      </div>
+    </div>
+  </div>
+</Layout>
