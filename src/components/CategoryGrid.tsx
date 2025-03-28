@@ -22,10 +22,11 @@ const CategoryGrid: React.FC<CategoryGridProps> = ({ categories }) => {
             className="group"
           >
             <div 
-              className="category-box rounded-md p-3 transition-all hover:shadow-md"
+              className="category-box rounded-md p-3 transition-all hover:shadow-md border border-gray-100"
               style={{ 
                 backgroundColor: `${category.color}10`,
-                borderLeft: `3px solid ${category.color}` 
+                borderLeft: `3px solid ${category.color}`,
+                boxShadow: '0 1px 3px rgba(0,0,0,0.05)'
               }}
             >
               <div className="text-sm font-medium group-hover:text-blue-600 transition-colors">
