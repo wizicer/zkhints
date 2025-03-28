@@ -2,25 +2,26 @@ import React from 'react';
 
 interface CheatsheetHeaderProps {
   title: string;
-  description: string;
+  description?: string;
+  category?: string;
 }
 
-const CheatsheetHeader: React.FC<CheatsheetHeaderProps> = ({ title, description }) => {
+const CheatsheetHeader: React.FC<CheatsheetHeaderProps> = ({ title, description, category }) => {
   return (
-    <div className="py-8">
-      <div className="flex items-center mb-4">
-        <a href="/" className="flex items-center text-gray-600 hover:text-gray-900">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="19" y1="12" x2="5" y2="12"></line>
-            <polyline points="12 19 5 12 12 5"></polyline>
-          </svg>
-        </a>
-        <div className="ml-4">
-          <div className="text-sm uppercase tracking-wider text-gray-600">DEVHINTS.IO</div>
-        </div>
+    <div className="page-header text-center my-12">
+      <div className="container mx-auto px-4">
+        <h1 className="font-extrabold tracking-tight text-5xl text-zinc-950 mb-4">{title}</h1>
+        {description && (
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">{description}</p>
+        )}
+        {category && (
+          <div className="mt-4">
+            <span className="inline-block bg-gray-100 text-gray-700 text-sm px-3 py-1 rounded-full">
+              {category}
+            </span>
+          </div>
+        )}
       </div>
-      <h1 className="text-4xl font-bold mb-4">{title}</h1>
-      <p className="text-lg text-gray-700">{description}</p>
     </div>
   );
 };

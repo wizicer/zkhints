@@ -6,64 +6,119 @@ import RecentUpdates from '../components/RecentUpdates';
 
 // Sample data for categories
 const categories = [
-  { id: 'bash', name: 'bash', color: '#8860D0' },
-  { id: 'enzyme', name: 'enzyme', color: '#5C7080' },
-  { id: 'es6', name: 'es6', color: '#1ABC9C' },
-  { id: 'go', name: 'go', color: '#8860D0' },
-  { id: 'react', name: 'react', color: '#5C7080' },
-  { id: 'sass', name: 'sass', color: '#1ABC9C' },
-  { id: 'vim', name: 'vim', color: '#8860D0' },
-  { id: 'xpath', name: 'xpath', color: '#5C7080' },
+  { id: 'bash', name: 'Bash scripting', color: '#8860D0' },
+  { id: 'enzyme', name: 'Enzyme', color: '#5C7080' },
+  { id: 'es6', name: 'ES2015+', color: '#1ABC9C' },
+  { id: 'go', name: 'Go', color: '#8860D0' },
+  { id: 'react', name: 'React.js', color: '#5C7080' },
+  { id: 'sass', name: 'Sass', color: '#1ABC9C' },
+  { id: 'vim', name: 'Vim', color: '#8860D0' },
+  { id: 'xpath', name: 'Xpath', color: '#5C7080' },
+  { id: 'vue', name: 'Vue.js', color: '#42b883' },
+  { id: 'typescript', name: 'TypeScript', color: '#3178c6' },
+  { id: 'javascript', name: 'JavaScript', color: '#f7df1e' },
+  { id: 'css', name: 'CSS', color: '#264de4' },
 ];
 
 // Sample data for recent updates
 const recentItems = [
-  { id: 'jsdoc', title: 'jsdoc' },
-  { id: 'packs', title: 'packs' },
-  { id: 'polyfill.io', title: 'polyfill.io' },
+  { id: 'jsdoc', title: 'Jsdoc' },
+  { id: 'packs', title: 'Packs (ruby)' },
+  { id: 'polyfill.io', title: 'Polyfill.io' },
   { id: 'tmux', title: 'tmux' },
   { id: 'docker-compose', title: 'docker-compose' },
-  { id: 'cron', title: 'cron' },
-  { id: 'yum', title: 'yum' },
-  { id: 'screen', title: 'screen' },
-  { id: 'clip', title: 'clip' },
-  { id: 'tig', title: 'tig' },
+  { id: 'cron', title: 'Cron' },
+  { id: 'yum', title: 'YUM' },
+  { id: 'screen', title: 'Screen' },
+  { id: 'clip', title: 'Command Line Interface Pages' },
+  { id: 'tig', title: 'Tig' },
   { id: 'tar', title: 'tar' },
-  { id: 'atom', title: 'atom' },
-  { id: 'grep', title: 'grep' },
-  { id: 'stimulus-reflex', title: 'stimulus-reflex' },
+  { id: 'atom', title: 'Atom' },
+  { id: 'grep', title: 'GNU grep' },
+  { id: 'stimulus-reflex', title: 'StimulusReflex' },
+  { id: 'bash', title: 'Bash scripting' },
+  { id: 'httpie', title: 'httpie' },
+  { id: 'factory_bot', title: 'Factory Bot' },
+  { id: 'flow', title: 'Flow' },
 ];
 
 // Analytics section
 const analyticsItems = [
-  { id: 'analytics.js', title: 'analytics.js' },
-  { id: 'analytics', title: 'analytics' },
-  { id: 'mixpanel', title: 'mixpanel' },
+  { id: 'analytics.js', title: 'Google Analytics\'s analytics.js' },
+  { id: 'analytics', title: 'Analytics libraries' },
+  { id: 'mixpanel', title: 'Mixpanel' },
+  { id: 'google-analytics', title: 'Google Analytics' },
+  { id: 'segment', title: 'Segment' },
+  { id: 'matomo', title: 'Matomo' },
+];
+
+// Development section
+const devItems = [
+  { id: 'git', title: 'Git' },
+  { id: 'npm', title: 'npm' },
+  { id: 'yarn', title: 'Yarn' },
+  { id: 'docker', title: 'Docker CLI' },
+  { id: 'webpack', title: 'Webpack' },
+  { id: 'vite', title: 'Vite' },
 ];
 ---
 
 <Layout>
-  <main>
-    <div class="py-12 text-center">
-      <h1 class="text-4xl font-bold mb-4">Rico's cheatsheets</h1>
-      <p class="text-lg">Hey! I'm <a href="https://twitter.com/rstacruz" class="text-blue-600 hover:underline">@rstacruz</a> and this is a modest collection of cheatsheets I've written.</p>
+  <main class="max-w-slim p-6 md:px-8 mx-auto">
+    <div class="my-12 text-center">
+      <h1 class="font-extrabold tracking-tight text-5xl text-zinc-950">Rico's cheatsheets</h1>
+      <p class="text-xl mt-4">Hey! I'm <a href="https://twitter.com/rstacruz" class="text-blue-600 hover:underline">@rstacruz</a> and this is a modest collection of cheatsheets I've written.</p>
     </div>
 
-    <SearchBar client:load />
+    <div role="banner">
+      <SearchBar client:load />
+      <div class="mt-8"></div>
+    </div>
 
-    <CategoryGrid categories={categories} client:load />
+    <div class="pages-list" role="main">
+      <CategoryGrid categories={categories} client:load />
 
-    <RecentUpdates items={recentItems} client:load />
+      <h2 class="category item mt-8 font-medium text-lg border-b pb-1">Recently updated</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-1 mt-4">
+        {recentItems.map((item) => (
+          <a 
+            href={`/${item.id}`}
+            class="block py-1 hover:text-blue-600 transition-colors text-gray-700"
+          >
+            <span class="info">
+              <code class="text-xs bg-gray-100 px-1 py-0.5 rounded">{item.id}</code>
+              <span class="ml-2">{item.title}</span>
+            </span>
+          </a>
+        ))}
+      </div>
 
-    <div class="my-8">
-      <h2 class="text-xl font-medium mb-4">Analytics</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-2">
+      <h2 class="category item mt-8 font-medium text-lg border-b pb-1">Analytics</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-1 mt-4">
         {analyticsItems.map((item) => (
           <a 
             href={`/${item.id}`}
-            class="block py-1 hover:underline"
+            class="block py-1 hover:text-blue-600 transition-colors text-gray-700"
           >
-            {item.title}
+            <span class="info">
+              <code class="text-xs bg-gray-100 px-1 py-0.5 rounded">{item.id}</code>
+              <span class="ml-2">{item.title}</span>
+            </span>
+          </a>
+        ))}
+      </div>
+
+      <h2 class="category item mt-8 font-medium text-lg border-b pb-1">Development Tools</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-1 mt-4">
+        {devItems.map((item) => (
+          <a 
+            href={`/${item.id}`}
+            class="block py-1 hover:text-blue-600 transition-colors text-gray-700"
+          >
+            <span class="info">
+              <code class="text-xs bg-gray-100 px-1 py-0.5 rounded">{item.id}</code>
+              <span class="ml-2">{item.title}</span>
+            </span>
           </a>
         ))}
       </div>

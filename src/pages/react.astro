@@ -2,88 +2,72 @@
 import Layout from '../layouts/Layout.astro';
 import CheatsheetHeader from '../components/CheatsheetHeader';
 import CheatsheetSection from '../components/CheatsheetSection';
----
 
-<Layout>
-  <div class="max-w-4xl mx-auto">
-    <CheatsheetHeader 
-      title="React Cheatsheet" 
-      description="A JavaScript library for building user interfaces with a component-based architecture."
-      client:load
-    />
+// JSX Basics
+const jsxItems = [
+  {
+    title: "JSX Syntax",
+    code: `// JSX
+const element = <h1>Hello, world!</h1>;
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div>
-        <CheatsheetSection 
-          title="Components" 
-          items={[
-            {
-              title: 'Functional Component',
-              code: `function Welcome(props) {
+// Compiled to
+const element = React.createElement(
+  'h1',
+  null,
+  'Hello, world!'
+);`,
+    description: "JSX is a syntax extension for JavaScript"
+  },
+  {
+    title: "Expressions in JSX",
+    code: `const name = 'Josh';
+const element = <h1>Hello, {name}</h1>;`,
+    description: "Use curly braces to embed expressions"
+  },
+  {
+    title: "JSX Attributes",
+    code: `const element = <img src={user.avatarUrl} />;
+const element = <button className="btn">Click me</button>;`,
+    description: "Use camelCase for attribute names"
+  }
+];
+
+// Components & Props
+const propsItems = [
+  {
+    title: "Functional Component",
+    code: `function Welcome(props) {
   return <h1>Hello, {props.name}</h1>;
-}`
-            },
-            {
-              title: 'Class Component',
-              code: `class Welcome extends React.Component {
+}`,
+    description: "Simple component defined as a function"
+  },
+  {
+    title: "Class Component",
+    code: `class Welcome extends React.Component {
   render() {
     return <h1>Hello, {this.props.name}</h1>;
   }
-}`
-            },
-            {
-              title: 'With TypeScript',
-              code: `interface WelcomeProps {
-  name: string;
-}
+}`,
+    description: "Component defined as a class"
+  },
+  {
+    title: "Props",
+    code: `// Parent component
+<Welcome name="Sara" />
 
-const Welcome: React.FC<WelcomeProps> = ({ name }) => {
-  return <h1>Hello, {name}</h1>;
-};`
-            }
-          ]}
-          client:load
-        />
-        <CheatsheetSection 
-          title="Events" 
-          items={[
-            {
-              title: 'Click Handler',
-              code: `function handleClick(e) {
-  e.preventDefault();
-  console.log('The link was clicked.');
-}
+// Child component
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}`,
+    description: "Pass data from parent to child with props"
+  }
+];
 
-return (
-  <button onClick={handleClick}>
-    Click me
-  </button>
-);`
-            },
-            {
-              title: 'Form Submission',
-              code: `function handleSubmit(e) {
-  e.preventDefault();
-  console.log('Form submitted');
-}
-
-return (
-  <form onSubmit={handleSubmit}>
-    <button type="submit">Submit</button>
-  </form>
-);`
-            }
-          ]}
-          client:load
-        />
-      </div>
-      <div>
-        <CheatsheetSection 
-          title="Hooks" 
-          items={[
-            {
-              title: 'useState',
-              code: `import { useState } from 'react';
+// State & Lifecycle
+const stateItems = [
+  {
+    title: "useState Hook",
+    code: `import React, { useState } from 'react';
 
 function Counter() {
   const [count, setCount] = useState(0);
@@ -96,85 +80,116 @@ function Counter() {
       </button>
     </div>
   );
-}`
-            },
-            {
-              title: 'useEffect',
-              code: `import { useState, useEffect } from 'react';
+}`,
+    description: "Manage state in functional components"
+  },
+  {
+    title: "Class Component State",
+    code: `class Counter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { count: 0 };
+  }
+  
+  render() {
+    return (
+      <div>
+        <p>You clicked {this.state.count} times</p>
+        <button onClick={() => this.setState({
+          count: this.state.count + 1
+        })}>
+          Click me
+        </button>
+      </div>
+    );
+  }
+}`,
+    description: "Manage state in class components"
+  }
+];
 
-function Example() {
-  const [count, setCount] = useState(0);
+// Events
+const eventsItems = [
+  {
+    title: "Event Handling",
+    code: `<button onClick={handleClick}>
+  Click me
+</button>`,
+    description: "React events use camelCase"
+  },
+  {
+    title: "Passing Arguments",
+    code: `<button onClick={(e) => handleClick(id, e)}>
+  Delete
+</button>
 
-  // Similar to componentDidMount and componentDidUpdate:
-  useEffect(() => {
-    document.title = \`You clicked \${count} times\`;
-    
-    // Optional cleanup function (componentWillUnmount):
-    return () => {
-      document.title = 'React App';
-    };
-  }, [count]); // Only re-run if count changes
+<button onClick={handleClick.bind(this, id)}>
+  Delete
+</button>`,
+    description: "Pass parameters to event handlers"
+  }
+];
+
+// Custom Hooks
+const hooksItems = [
+  {
+    title: "Custom Hook",
+    code: `// Creating a custom hook
+function useFormInput(initialValue) {
+  const [value, setValue] = useState(initialValue);
+  
+  function handleChange(e) {
+    setValue(e.target.value);
+  }
+  
+  return {
+    value,
+    onChange: handleChange
+  };
+}
+
+// Using the custom hook
+function Form() {
+  const name = useFormInput('');
+  const email = useFormInput('');
   
   return (
-    <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>
-        Click me
-      </button>
-    </div>
+    <form>
+      <input {...name} />
+      <input {...email} />
+    </form>
   );
-}`
-            },
-            {
-              title: 'useContext',
-              code: `import { createContext, useContext } from 'react';
+}`,
+    description: "Create reusable stateful logic"
+  },
+  {
+    title: "useEffect Hook",
+    code: `useEffect(() => {
+  document.title = \`You clicked \${count} times\`;
+  
+  // Cleanup function (optional)
+  return () => {
+    document.title = 'React App';
+  };
+}, [count]); // Only re-run if count changes`,
+    description: "Perform side effects in function components"
+  }
+];
+---
 
-const ThemeContext = createContext('light');
-
-function ThemedButton() {
-  const theme = useContext(ThemeContext);
-  return <button className={theme}>Themed Button</button>;
-}`
-            }
-          ]}
-          client:load
-        />
-        <CheatsheetSection 
-          title="Styling" 
-          items={[
-            {
-              title: 'Inline Styles',
-              code: `const divStyle = {
-  color: 'blue',
-  backgroundColor: 'lightgray',
-  padding: '10px',
-  fontFamily: 'Arial'
-};
-
-return <div style={divStyle}>Hello World!</div>;`
-            },
-            {
-              title: 'CSS Classes',
-              code: `import './Button.css';
-
-function Button() {
-  return <button className="primary-button">Click Me</button>;
-}`
-            },
-            {
-              title: 'Conditional Classes',
-              code: `function Button({ isActive }) {
-  return (
-    <button className={isActive ? 'active' : ''}>
-      Click Me
-    </button>
-  );
-}`
-            }
-          ]}
-          client:load
-        />
-      </div>
-    </div>
+<Layout>
+  <CheatsheetHeader 
+    title="React Cheatsheet" 
+    description="Essential React concepts, hooks, and patterns" 
+    category="JavaScript Framework"
+    client:load
+  />
+  
+  <div class="container mx-auto px-4 py-8">
+    <CheatsheetSection title="JSX Basics" items={jsxItems} client:load />
+    <CheatsheetSection title="Components & Props" items={propsItems} client:load />
+    <CheatsheetSection title="State & Lifecycle" items={stateItems} client:load />
+    <CheatsheetSection title="Events" items={eventsItems} client:load />
+    <CheatsheetSection title="Custom Hooks" items={hooksItems} client:load />
   </div>
 </Layout>
