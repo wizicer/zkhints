@@ -6,24 +6,21 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center space-x-4">
           <a href="/" className="text-lg font-bold text-gray-900 hover:text-blue-600 transition-colors">
-            devhints.io
+            ZK Hints
           </a>
           <nav className="hidden md:flex space-x-1">
-            <a href="/" className="px-3 py-2 text-sm text-gray-600 hover:text-blue-600 transition-colors">
+            <a href="/" className="hidden px-3 py-2 text-sm text-gray-600 hover:text-blue-600 transition-colors">
               Home
             </a>
-            <a href="/about" className="px-3 py-2 text-sm text-gray-600 hover:text-blue-600 transition-colors">
+            <a href="/about" className="hidden px-3 py-2 text-sm text-gray-600 hover:text-blue-600 transition-colors">
               About
-            </a>
-            <a href="/cheatsheets" className="px-3 py-2 text-sm text-gray-600 hover:text-blue-600 transition-colors">
-              All Cheatsheets
             </a>
           </nav>
         </div>
         
         <div className="flex items-center space-x-4">
           <a 
-            href="https://github.com/rstacruz/cheatsheets" 
+            href="https://github.com/wizicer" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-gray-500 hover:text-gray-900 transition-colors"
@@ -34,7 +31,7 @@ const Header: React.FC = () => {
             </svg>
           </a>
           <a 
-            href="https://twitter.com/rstacruz" 
+            href="https://twitter.com/icerdesign" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-gray-500 hover:text-gray-900 transition-colors"

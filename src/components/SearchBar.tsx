@@ -17,7 +17,7 @@ const SearchBar: React.FC = () => {
             type="text"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            placeholder="Search 286 cheatsheets..."
+            placeholder="Search..."
             className="w-full py-3 pl-10 pr-4 text-gray-700 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -27,12 +27,6 @@ const SearchBar: React.FC = () => {
           </div>
         </div>
       </form>
-      <div className="mt-2 text-xs text-gray-500">
-        <span className="mr-2">Examples:</span>
-        <a href="#" className="text-blue-600 hover:underline mr-2">JavaScript</a>
-        <a href="#" className="text-blue-600 hover:underline mr-2">React</a>
-        <a href="#" className="text-blue-600 hover:underline">CSS</a>
-      </div>
     </div>
   );
 };
