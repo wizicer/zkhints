@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import SearchBar from "../components/SearchBar";
 import CategoryGrid from "../components/CategoryGrid";
 import ItemSection from "../components/ItemSection";
+import { Image } from 'astro:assets';
+import hintaIcon from '../assets/hinta.png';
 
 // Sample data for categories
 const categories = [
@@ -25,62 +27,26 @@ const sections = [
   {
     title: "Recently updated",
     items: [
-      { id: "jsdoc", title: "Jsdoc" },
-      { id: "packs", title: "Packs (ruby)" },
-      { id: "polyfill.io", title: "Polyfill.io" },
-      { id: "tmux", title: "tmux" },
-      { id: "docker-compose", title: "docker-compose" },
-      { id: "cron", title: "Cron" },
-      { id: "yum", title: "YUM" },
-      { id: "screen", title: "Screen" },
-      { id: "clip", title: "Command Line Interface Pages" },
-      { id: "tig", title: "Tig" },
-      { id: "tar", title: "tar" },
-      { id: "atom", title: "Atom" },
-      { id: "grep", title: "GNU grep" },
-      { id: "stimulus-reflex", title: "StimulusReflex" },
-      { id: "bash", title: "Bash scripting" },
-      { id: "httpie", title: "httpie" },
-      { id: "factory_bot", title: "Factory Bot" },
-      { id: "flow", title: "Flow" },
-    ]
+      { id: "vue", title: "Vue.js" },
+      { id: "react", title: "React.js" },
+    ],
   },
-  {
-    title: "Analytics",
-    items: [
-      { id: "analytics.js", title: "Google Analytics's analytics.js" },
-      { id: "analytics", title: "Analytics libraries" },
-      { id: "mixpanel", title: "Mixpanel" },
-      { id: "google-analytics", title: "Google Analytics" },
-      { id: "segment", title: "Segment" },
-      { id: "matomo", title: "Matomo" },
-    ]
-  },
-  {
-    title: "Development Tools",
-    items: [
-      { id: "git", title: "Git" },
-      { id: "npm", title: "npm" },
-      { id: "yarn", title: "Yarn" },
-      { id: "docker", title: "Docker CLI" },
-      { id: "webpack", title: "Webpack" },
-      { id: "vite", title: "Vite" },
-    ]
-  }
 ];
+
 ---
 
 <Layout>
   <main class="p-6 md:px-8 mx-auto">
     <div class="my-12 text-center">
-      <h1 class="font-extrabold tracking-tight text-5xl text-zinc-950">
+      <h1 class="font-extrabold tracking-tight text-5xl text-zinc-950 flex items-center justify-center gap-3">
+        <Image src={hintaIcon} alt="ZK Hints Icon" width={120} height={120} />
         ZK Hints
       </h1>
       <p class="text-xl mt-4">
         Hey! I'm <a
           href="https://twitter.com/icerdesign"
           class="text-blue-600 hover:underline">@icerdesign</a
-        > and this is a modest collection of cheatsheets I've written.
+        > and this is a modest collection of ZK Hints I've written.
       </p>
     </div>
 
@@ -90,11 +56,17 @@ const sections = [
     </div>
 
     <div class="pages-list" role="main">
-      <CategoryGrid categories={categories} client:load />
+      {false && <CategoryGrid categories={categories} client:load />}
 
-      {sections.map(section => (
-        <ItemSection title={section.title} items={section.items} client:load />
-      ))}
+      {
+        sections.map((section) => (
+          <ItemSection
+            title={section.title}
+            items={section.items}
+            client:load
+          />
+        ))
+      }
     </div>
   </main>
 </Layout>

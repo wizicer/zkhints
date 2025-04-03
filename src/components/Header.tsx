@@ -5,7 +5,8 @@ const Header: React.FC = () => {
     <header className="py-4 border-b border-gray-100">
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center space-x-4">
-          <a href="/" className="text-lg font-bold text-gray-900 hover:text-blue-600 transition-colors">
+          <a href="/" className="text-lg font-bold text-gray-900 hover:text-blue-600 transition-colors flex items-center gap-2">
+            <img src="/src/assets/hinta_icon.png" alt="ZK Hints Icon" width={24} height={24} />
             ZK Hints
           </a>
           <nav className="hidden md:flex space-x-1">
