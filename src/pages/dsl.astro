@@ -1,24 +1,26 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import CheatsheetHeader from '../components/CheatsheetHeader';
-import CodeBlock from '../components/CodeBlock.astro';
-import 'highlight.js/styles/atom-one-dark.css';
-import {dslDefinitions as dsl, dslExamples as examples} from '../data/dsl';
+import Layout from "../layouts/Layout.astro";
+import CheatsheetHeader from "../components/CheatsheetHeader";
+import CodeBlock from "../components/CodeBlock.astro";
+import "highlight.js/styles/atom-one-dark.css";
+import { dslDefinitions as dsl, dslExamples as examples } from "../data/dsl";
 ---
 
 <Layout title="ZK DSL Comparison">
-  <CheatsheetHeader 
-    title="ZK DSL Comparison" 
-    description="Comparison of Domain Specific Languages for Zero Knowledge Proofs" 
+  <CheatsheetHeader
+    title="ZK DSL Comparison"
+    description="Comparison of Domain Specific Languages for Zero Knowledge Proofs"
     category="ZK Technology"
     client:load
   />
-  
+
   <div class="container mx-auto px-4 py-8">
     <div class="overflow-x-auto shadow-md rounded-lg">
       <table class="min-w-full bg-white">
         <thead>
-          <tr class="bg-gray-100 text-gray-700 uppercase text-sm leading-normal">
+          <tr
+            class="bg-gray-100 text-gray-700 uppercase text-sm leading-normal"
+          >
             <th class="py-3 px-4 text-left">Name</th>
             <th class="py-3 px-4 text-left">Company/Brand</th>
             <th class="py-3 px-4 text-left">Arithmetization</th>
@@ -29,62 +31,96 @@ import {dslDefinitions as dsl, dslExamples as examples} from '../data/dsl';
           </tr>
         </thead>
         <tbody class="text-gray-600 text-sm">
-          {dsl.map((item) => {
-            const hasExample = examples.some(ex => ex.name === item.name);
-            return (
-              <>
-                <tr 
-                  class={`border-b border-gray-200 hover:bg-gray-50 ${hasExample ? 'cursor-pointer' : ''}`}
-                  data-name={item.name}
-                  onclick={hasExample ? `toggleExample('${item.name}')` : undefined}
-                >
-                  <td class="py-3 px-4">
-                    {item.link ? (
-                      <a href={item.link} class="text-blue-600 hover:underline font-medium" target="_blank">
-                        {item.name}
-                      </a>
-                    ) : (
-                      <span class="font-medium">{item.name}</span>
-                    )}
-                    {hasExample && (
-                      <span class="ml-2 text-xs text-blue-500">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                        </svg>
-                      </span>
-                    )}
-                  </td>
-                  <td class="py-3 px-4">{item.company_or_brand || "-"}</td>
-                  <td class="py-3 px-4">{item.arithmetization || "-"}</td>
-                  <td class="py-3 px-4">{item.syntax || "-"}</td>
-                  <td class="py-3 px-4">{item.programming_capability || "-"}</td>
-                  <td class="py-3 px-4">{item.backend_supported || "-"}</td>
-                  <td class="py-3 px-4">{item.note || "-"}</td>
-                </tr>
-                {hasExample && (
-                  <tr id={`example-${item.name}`} class="hidden bg-gray-50">
-                    <td colspan="7" class="p-4">
-                      {(() => {
-                        const example = examples.find(ex => ex.name === item.name);
-                        return example ? (
-                          <div>
-                            <div class="flex justify-between items-center mb-2">
-                              <h3 class="text-lg font-semibold">{example.name} Example</h3>
-                              <a href={example.exampleLink} target="_blank" class="text-blue-600 hover:underline text-sm">
-                                View Source
-                              </a>
-                            </div>
-                            <CodeBlock code={example.exampleCode} language={example.exampleCodeHighlightType} />
-                            <p class="mt-2 text-gray-700">{example.comment}</p>
-                          </div>
-                        ) : null;
-                      })()}
+          {
+            dsl.map((item) => {
+              const hasExample = examples.some((ex) => ex.name === item.name);
+              return (
+                <>
+                  <tr
+                    class={`border-b border-gray-200 hover:bg-gray-50 ${hasExample ? "cursor-pointer" : ""}`}
+                    data-name={item.name}
+                    onclick={
+                      hasExample ? `toggleExample('${item.name}')` : undefined
+                    }
+                  >
+                    <td class="py-3 px-4">
+                      {item.link ? (
+                        <a
+                          href={item.link}
+                          class="text-blue-600 hover:underline font-medium"
+                          target="_blank"
+                        >
+                          {item.name}
+                        </a>
+                      ) : (
+                        <span class="font-medium">{item.name}</span>
+                      )}
+                      {hasExample && (
+                        <span class="ml-2 text-xs text-blue-500">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-4 w-4 inline"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M19 9l-7 7-7-7"
+                            />
+                          </svg>
+                        </span>
+                      )}
                     </td>
+                    <td class="py-3 px-4">{item.company_or_brand || "-"}</td>
+                    <td class="py-3 px-4">{item.arithmetization || "-"}</td>
+                    <td class="py-3 px-4">{item.syntax || "-"}</td>
+                    <td class="py-3 px-4">
+                      {item.programming_capability || "-"}
+                    </td>
+                    <td class="py-3 px-4">{item.backend_supported || "-"}</td>
+                    <td class="py-3 px-4">{item.note || "-"}</td>
                   </tr>
-                )}
-              </>
-            );
-          })}
+                  {hasExample && (
+                    <tr id={`example-${item.name}`} class="hidden bg-gray-50">
+                      <td colspan="7" class="p-4">
+                        {(() => {
+                          const example = examples.find(
+                            (ex) => ex.name === item.name
+                          );
+                          return example ? (
+                            <div>
+                              <div class="flex justify-between items-center mb-2">
+                                <h3 class="text-lg font-semibold">
+                                  {example.name} Example
+                                </h3>
+                                <a
+                                  href={example.exampleLink}
+                                  target="_blank"
+                                  class="text-blue-600 hover:underline text-sm"
+                                >
+                                  View Source
+                                </a>
+                              </div>
+                              <CodeBlock
+                                code={example.exampleCode}
+                                language={example.exampleCodeHighlightType}
+                              />
+                              <p class="mt-2 text-gray-700">
+                                {example.comment}
+                              </p>
+                            </div>
+                          ) : null;
+                        })()}
+                      </td>
+                    </tr>
+                  )}
+                </>
+              );
+            })
+          }
         </tbody>
       </table>
     </div>
@@ -92,24 +128,24 @@ import {dslDefinitions as dsl, dslExamples as examples} from '../data/dsl';
 </Layout>
 
 <script>
-  function toggleExample(name) {
+  function toggleExample(name: string) {
     const exampleRow = document.getElementById(`example-${name}`);
     if (exampleRow) {
-      if (exampleRow.classList.contains('hidden')) {
+      if (exampleRow.classList.contains("hidden")) {
         // Close any open examples first
-        document.querySelectorAll('[id^="example-"]').forEach(row => {
-          if (!row.classList.contains('hidden')) {
-            row.classList.add('hidden');
+        document.querySelectorAll('[id^="example-"]').forEach((row) => {
+          if (!row.classList.contains("hidden")) {
+            row.classList.add("hidden");
           }
         });
         // Open this example
-        exampleRow.classList.remove('hidden');
+        exampleRow.classList.remove("hidden");
       } else {
-        exampleRow.classList.add('hidden');
+        exampleRow.classList.add("hidden");
       }
     }
   }
 
   // Add the toggle function to the window object so it can be called from onclick
-  window.toggleExample = toggleExample;
+  (window as any).toggleExample = toggleExample;
 </script>
