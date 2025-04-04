@@ -25,7 +25,7 @@ const categories = [
 // All sections with items
 const sections = [
   {
-    title: "Cheatsheets",
+    title: "Writing Circuits",
     items: [
       { 
         id: "dsl", 
@@ -34,9 +34,55 @@ const sections = [
         image: "/src/assets/hinta/dsl.png"
       },
       { 
+        id: "r1cs", 
+        title: "R1CS Gadgets", 
+        description: "Essential gadgets for building R1CS constraint circuits",
+        image: "/src/assets/hinta/r1cs.png"
+      },
+      { 
+        id: "plonkish", 
+        title: "Plonkish Gadgets", 
+        description: "Essential gadgets for building Plonkish constraint circuits",
+        image: "/src/assets/hinta/plonkish.png"
+      },
+      { 
+        id: "primitive", 
+        title: "SNARK Primitives", 
+        description: "Hash functions, Merkle trees, and other ZK building blocks",
+        image: "/src/assets/hinta/primitive.png"
+      },
+      { 
+        id: "application", 
+        title: "Applications", 
+        description: "Real-world applications of zero-knowledge proofs",
+        image: "/src/assets/hinta/application.png"
+      },
+    ]
+  },
+  {
+    title: "Learning Resources",
+    items: [
+      { 
+        id: "beginner", 
+        title: "Beginner Learning", 
+        description: "Getting started with zero-knowledge proofs",
+        image: "/src/assets/hinta/beginner.png"
+      },
+      { 
+        id: "intermediate", 
+        title: "Intermediate Learning", 
+        description: "Intermediate topics for ZK practitioners",
+        image: "/src/assets/hinta/intermediate.png"
+      },
+    ]
+  },
+  {
+    title: "SNARK Systems",
+    items: [
+      { 
         id: "curve", 
         title: "Elliptic Curve", 
-        description: "Comparison of common elliptic curves used in cryptography",
+        description: "Comparison of common elliptic curves used in zero knowledge proofs",
         image: "/src/assets/hinta/curve.png"
       },
       { 
@@ -57,47 +103,16 @@ const sections = [
         description: "Technical overview of ZK argument structures, like lookup",
         image: "/src/assets/hinta/argument.png"
       },
-      { 
-        id: "primitive", 
-        title: "SNARK Primitives", 
-        description: "Hash functions, Merkle trees, and other ZK building blocks",
-        image: "/src/assets/hinta/primitive.png"
-      },
-      { 
-        id: "application", 
-        title: "Applications", 
-        description: "Real-world applications of zero-knowledge proofs",
-        image: "/src/assets/hinta/application.png"
-      },
-      { 
-        id: "beginner", 
-        title: "Beginner Learning", 
-        description: "Getting started with zero-knowledge proofs",
-        image: "/src/assets/hinta/beginner.png"
-      },
-      { 
-        id: "intermediate", 
-        title: "Intermediate Learning", 
-        description: "Intermediate topics for ZK practitioners",
-        image: "/src/assets/hinta/intermediate.png"
-      },
+    ],
+  },
+  {
+    title: "History",
+    items: [
       { 
         id: "glossary", 
         title: "Terminology Glossary", 
         description: "Common terms and definitions in zero-knowledge proofs",
         image: "/src/assets/hinta/glossary.png"
-      },
-      { 
-        id: "r1cs", 
-        title: "R1CS Gadgets", 
-        description: "Essential gadgets for building R1CS constraint circuits",
-        image: "/src/assets/hinta/r1cs.png"
-      },
-      { 
-        id: "plonkish", 
-        title: "Plonkish Gadgets", 
-        description: "Essential gadgets for building Plonkish constraint circuits",
-        image: "/src/assets/hinta/plonkish.png"
       },
       { 
         id: "paper", 
