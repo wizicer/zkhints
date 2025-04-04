@@ -3,6 +3,8 @@ import React from 'react';
 export interface Item {
   id: string;
   title: string;
+  description?: string;
+  image?: string;
 }
 
 interface ItemSectionProps {
@@ -21,14 +23,28 @@ const ItemSection: React.FC<ItemSectionProps> = ({ title, items }) => {
           <a
             key={index}
             href={`/${item.id}`}
-            className="block p-3 hover:text-blue-600 transition-colors text-gray-700 bg-white rounded-md shadow-sm border border-gray-100 hover:shadow-md hover:border-gray-200 transition-all"
+            className="block p-4 hover:text-blue-600 transition-colors text-gray-700 bg-white rounded-md shadow-sm border border-gray-100 hover:shadow-md hover:border-gray-200 transition-all"
           >
-            <span className="info">
-              <code className="text-xs bg-gray-100 px-1 py-0.5 rounded">
-                {item.id}
-              </code>
-              <span className="ml-2 font-medium">{item.title}</span>
-            </span>
+            <div className="flex items-start gap-4">
+              {item.image && (
+                <img 
+                  src={item.image} 
+                  alt={item.title} 
+                  className="w-24 h-24 object-contain"
+                />
+              )}
+              <div className="flex-1">
+                <div className="mb-2">
+                  <span className="font-medium block">{item.title}</span>
+                  <code className="text-xs bg-gray-100 px-1 py-0.5 rounded">{item.id}</code>
+                </div>
+                {item.description && (
+                  <p className="text-sm text-gray-600">
+                    {item.description}
+                  </p>
+                )}
+              </div>
+            </div>
           </a>
         ))}
       </div>
