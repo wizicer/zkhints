@@ -19,6 +19,16 @@ export interface DslExample {
 
 export const dslDefinitions: DslDefinition[] = [
   {
+    "name": "Plonk Script",
+    "link": "https://plonk.pro",
+    "company_or_brand": "-",
+    "arithmetization": "Plonkish",
+    "syntax": "Rust-like",
+    "programming_capability": "有",
+    "backend_supported": "Halo2/Plonky3",
+    "note": null
+  },
+  {
     "name": "CIRCOM",
     "link": null,
     "company_or_brand": "IDEN3",
