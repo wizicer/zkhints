@@ -12,6 +12,7 @@
     "@astrojs/react": "^4.2.2",
     "@types/react": "^19.0.12",
     "astro": "^5.5.5",
+    "highlight.js": "^11.11.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "typescript": "^5.8.2"

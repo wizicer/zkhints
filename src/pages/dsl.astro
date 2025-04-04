@@ -1,7 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import CheatsheetHeader from '../components/CheatsheetHeader';
-
+import CodeBlock from '../components/CodeBlock.astro';
+import 'highlight.js/styles/atom-one-dark.css';
 import {dslDefinitions as dsl, dslExamples as examples} from '../data/dsl';
 ---
 
@@ -73,7 +74,7 @@ import {dslDefinitions as dsl, dslExamples as examples} from '../data/dsl';
                                 View Source
                               </a>
                             </div>
-                            <pre class="bg-gray-800 text-white p-4 rounded-md overflow-x-auto"><code class={example.exampleCodeHighlightType}>{example.exampleCode}</code></pre>
+                            <CodeBlock code={example.exampleCode} language={example.exampleCodeHighlightType} />
                             <p class="mt-2 text-gray-700">{example.comment}</p>
                           </div>
                         ) : null;
