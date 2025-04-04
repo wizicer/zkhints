@@ -46,7 +46,11 @@ import {dslDefinitions as dsl, dslExamples as examples} from '../data/dsl';
                       <span class="font-medium">{item.name}</span>
                     )}
                     {hasExample && (
-                      <span class="ml-2 text-xs text-blue-500">(click for example)</span>
+                      <span class="ml-2 text-xs text-blue-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </span>
                     )}
                   </td>
                   <td class="py-3 px-4">{item.company_or_brand || "-"}</td>
