@@ -34,18 +34,6 @@ const sections = [
         image: "/src/assets/hinta/dsl.png"
       },
       { 
-        id: "r1cs", 
-        title: "R1CS Gadgets", 
-        description: "Essential gadgets for building R1CS constraint circuits",
-        image: "/src/assets/hinta/r1cs.png"
-      },
-      { 
-        id: "plonkish", 
-        title: "Plonkish Gadgets", 
-        description: "Essential gadgets for building Plonkish constraint circuits",
-        image: "/src/assets/hinta/plonkish.png"
-      },
-      { 
         id: "primitive", 
         title: "SNARK Primitives", 
         description: "Hash functions, Merkle trees, and other ZK building blocks",
@@ -56,6 +44,20 @@ const sections = [
         title: "Applications", 
         description: "Real-world applications of zero-knowledge proofs",
         image: "/src/assets/hinta/application.png"
+      },
+      { 
+        id: "r1cs", 
+        title: "R1CS Gadgets", 
+        construction: true,
+        description: "Essential gadgets for building R1CS constraint circuits",
+        image: "/src/assets/hinta/r1cs.png"
+      },
+      { 
+        id: "plonkish", 
+        title: "Plonkish Gadgets", 
+        construction: true,
+        description: "Essential gadgets for building Plonkish constraint circuits",
+        image: "/src/assets/hinta/plonkish.png"
       },
     ]
   },
@@ -100,6 +102,7 @@ const sections = [
       { 
         id: "argument", 
         title: "SNARK Argument", 
+        construction: true,
         description: "Technical overview of ZK argument structures, like lookup",
         image: "/src/assets/hinta/argument.png"
       },
@@ -109,17 +112,18 @@ const sections = [
     title: "History",
     items: [
       { 
-        id: "glossary", 
-        title: "Terminology Glossary", 
-        description: "Common terms and definitions in zero-knowledge proofs",
-        image: "/src/assets/hinta/glossary.png"
-      },
-      { 
         id: "paper", 
         title: "Landmark Papers", 
         description: "Essential academic papers in zero-knowledge research",
         image: "/src/assets/hinta/paper.png"
-      }
+      },
+      { 
+        id: "glossary", 
+        title: "Terminology Glossary", 
+        construction: true,
+        description: "Common terms and definitions in zero-knowledge proofs",
+        image: "/src/assets/hinta/glossary.png"
+      },
     ],
   },
 ];
