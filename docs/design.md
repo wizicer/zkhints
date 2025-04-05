@@ -150,3 +150,121 @@
 英文名：ZK News Sources Cheatsheet
 💡 吉祥物设计：戴着新闻记者帽，肩背采访包，手拿话筒和笔记本，身边飘着 Twitter、Arxiv、Blog icon 的小泡泡
 
+---
+
+# curve
+
+附件是我的吉祥物，我需要为他设计以下六个场景的动作、布景，最终生成正方形的icon，我希望有个app图标的感觉，即一个rounded正方形块，主体可以超出这个方块。注意背景应该是透明色。
+请先进行设计，给出文本。
+
+export const cases =[
+    {
+      "id": "ethereum_compat",
+      "title": "I want to use the curve on Ethereum",
+      "description": "Only curves supported by Ethereum precompiles are allowed (e.g., alt_bn128)."
+    },
+    {
+      "id": "use_groth16",
+      "title": "I want to use Groth16",
+      "description": "You need pairing-friendly curves with good Groth16 support and tooling."
+    },
+    {
+      "id": "long_term_security",
+      "title": "I care about long-term cryptographic security",
+      "description": "Prefer curves with at least 128-bit or higher security margin."
+    },
+    {
+      "id": "non_pairing",
+      "title": "I want a non-pairing curve",
+      "description": "Pairing-free curves are used in systems like Halo2, STARK-like designs, or recursive circuits."
+    },
+    {
+      "id": "in_circuit_curve",
+      "title": "I want to use a curve inside the circuit (e.g., for recursive proof)",
+      "description": "You need a curve with efficient in-circuit arithmetic, often non-pairing and cycle-friendly."
+    },
+    {
+      "id": "recursion_outer_curve",
+      "title": "I want to use a curve as the outer wrapper for recursion",
+      "description": "You need a pairing-friendly curve capable of verifying inner SNARK proofs."
+    }
+  ];
+
+
+太棒了，这个吉祥物非常有辨识度和亲和力！下面是为这六个场景设计的 **动作 + 布景**，整体风格统一卡通奇幻感，同时每个icon都呈现为一个透明背景、主体略超出圆角方块边界的App风格图标。
+
+---
+
+### 1. **Ethereum Compatibility**
+- **动作**：吉祥物戴着一顶印有以太坊Logo的蓝色法师帽，右手举着一个闪亮的 alt_bn128 魔法球。
+- **布景**：背景是一枚紫色的以太坊菱形符文浮现在空中，周围有轻微的链条装饰。
+- **情绪**：自信、专业，带一点神秘的“合规”感。
+
+---
+
+### 2. **Use Groth16**
+- **动作**：吉祥物双手各持一个发光的椭圆对（pairing icon），脚下踩着一个 Groth16 法阵图案。
+- **布景**：背景是一圈旋转的椭圆曲线轨道，半透明。
+- **情绪**：精准、严谨，体现数学美感。
+
+---
+
+### 3. **Long-Term Security**
+- **动作**：吉祥物左手握着一个巨大的“128-bit”盾牌，右手比出“OK”的手势。
+- **布景**：背景是一片钢铁般的蓝色防护壁垒，上有“128+”浮雕。
+- **情绪**：安心、可靠、有长期规划感。
+
+---
+
+### 4. **Non-Pairing Curve**
+- **动作**：吉祥物手持一根闪电符文魔杖，打出“Halo”光圈特效。
+- **布景**：背景是一张ZK电路板，浮现出 Halo2 / STARK 图腾图样，科技感十足。
+- **情绪**：轻盈、先锋，带点酷酷的“反主流”气质。
+
+---
+
+### 5. **In-Circuit Curve**
+- **动作**：吉祥物正专注地在一张魔法阵纸上画“嵌套”图形（递归小图圈套大图圈），嘴角微笑。
+- **布景**：背景是一个魔法图纸卷轴，标注着“in-circuit”箭头和公式符号。
+- **情绪**：专注、聪明，有点宅宅的技术宅感。
+
+---
+
+### 6. **Recursion Outer Curve**
+- **动作**：吉祥物变身为一个“守门人”形象，右手托着一个小的递归proof宝石，左手撑着一个“外层”结界。
+- **布景**：背景是双重门框结构，内外套层发光，隐约浮现“Verifier”字样。
+- **情绪**：沉稳、可靠，有“最后一道防线”守护者气质。
+
+---
+
+如果你觉得方向OK，我可以马上根据这些设计生成带透明背景和圆角icon框的图像！你也可以挑几张先生成。需要我先做哪几张？或者你希望先看一个预览？
+
+总体还不错，以下四个重新生成一下：
+
+2. Use Groth16
+动作：吉祥物双手各持一个发光的椭圆对（pairing icon），脚下踩着一个 Groth16 法阵图案。
+
+布景：背景是一圈旋转的椭圆曲线轨道，半透明。
+
+情绪：精准、严谨，体现数学美感。
+
+4. Non-Pairing Curve
+动作：吉祥物手持一根闪电符文魔杖，打出“Halo”光圈特效。
+
+布景：背景是一张ZK电路板，浮现出 Halo2 / STARK 图腾图样，科技感十足。
+
+情绪：轻盈、先锋，带点酷酷的“反主流”气质。
+
+5. In-Circuit Curve
+动作：吉祥物正专注地在一张魔法阵纸上画“嵌套”图形（递归小图圈套大图圈），嘴角微笑。
+
+布景：背景是一个魔法图纸卷轴，标注着“in-circuit”箭头和公式符号。
+
+情绪：专注、聪明，有点宅宅的技术宅感。
+
+6. Recursion Outer Curve
+动作：吉祥物变身为一个“守门人”形象，右手托着一个小的递归proof宝石，左手撑着一个“外层”结界。
+
+布景：背景是双重门框结构，内外套层发光，浮现“Verifier”字样。
+
+情绪：沉稳、可靠，有“最后一道防线”守护者气质。
