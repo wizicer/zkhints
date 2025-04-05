@@ -1,0 +1,47 @@
+---
+interface Column {
+  key: string;
+  header: string;
+}
+
+interface TableSectionProps {
+  title: string;
+  emoji: string;
+  columns: Column[];
+  data: Record<string, any>[];
+  footnote?: string;
+}
+
+const { title, emoji, columns, data, footnote } = Astro.props as TableSectionProps;
+---
+
+<div class="mb-10">
+  <h2 class="text-xl font-bold mb-4">{emoji} {title}</h2>
+  <div class="overflow-x-auto shadow-md rounded-lg">
+    <table class="min-w-full bg-white">
+      <thead>
+        <tr class="bg-gray-100 text-gray-700 uppercase text-sm leading-normal">
+          {columns.map(column => (
+            <th class="py-3 px-4 text-left">{column.header}</th>
+          ))}
+        </tr>
+      </thead>
+      <tbody class="text-gray-600 text-sm">
+        {data.map((item) => (
+          <tr class="border-b border-gray-200 hover:bg-gray-50">
+            {columns.map((column, index) => (
+              <td class={`py-3 px-4 ${index === 0 ? 'font-medium' : ''}`}>
+                {item[column.key]}
+              </td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  {footnote && (
+    <div class="mt-3 text-sm text-gray-600">
+      {footnote}
+    </div>
+  )}
+</div>
