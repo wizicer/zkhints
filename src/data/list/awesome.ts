@@ -10,13 +10,19 @@ export const awesome: Resource = {
       emoji: "📦",
       links: [
         {
-          title: "Awesome ZK",
+          title: "ventali's Awesome ZK",
           description:
             "A curated list of awesome ZK resources, libraries, tools and more.",
           link: "https://github.com/ventali/awesome-zk",
         },
         {
-          title: "Awesome Zero Knowledge Proofs",
+          title: "sCrypt-Inc's Awesome ZKPs",
+          description:
+            "A curated list of awesome ZKP resources, libraries, tools and more.",
+          link: "https://github.com/sCrypt-Inc/awesome-zero-knowledge-proofs",
+        },
+        {
+          title: "matter-labs' Awesome Zero Knowledge Proofs",
           description:
             "A curated list of awesome things related to learning zero knowledge proofs.",
           link: "https://github.com/matter-labs/awesome-zero-knowledge-proofs",
