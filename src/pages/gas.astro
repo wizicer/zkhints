@@ -1,0 +1,92 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CheatsheetHeader from "../components/CheatsheetHeader";
+import "highlight.js/styles/atom-one-dark.css";
+import { gasData, formatGas, getGasLevel, getGasColorClass } from "../data/gas";
+---
+
+<Layout title="ZK Gas Consumption Comparison">
+  <CheatsheetHeader
+    title="ZK Gas Consumption Comparison"
+    description="Gas consumption by different ZK frameworks and schemas"
+    category="ZK Technology"
+    client:load
+  />
+
+  <div class="container mx-auto px-4 py-8">
+    <div class="mb-8">
+      <h2 class="text-xl font-bold mb-4">⛽ Gas Consumption by Framework and Schema</h2>
+      
+      <div class="mb-4 text-sm text-gray-600">
+        <p>This table compares gas consumption across different ZK frameworks and schemas. 
+        Lower gas consumption is highlighted with greener colors.</p>
+      </div>
+      
+      <div class="overflow-x-auto shadow-md rounded-lg">
+        <table class="min-w-full bg-white">
+          <thead>
+            <tr class="bg-gray-100 text-gray-700 uppercase text-sm leading-normal">
+              <th class="py-3 px-4 text-left">Framework</th>
+              <th class="py-3 px-4 text-left">Schema</th>
+              <th class="py-3 px-4 text-left">Public Inputs</th>
+              <th class="py-3 px-4 text-left">Sepolia Deployment Gas</th>
+              <th class="py-3 px-4 text-left">Sepolia Function Gas</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-600 text-sm">
+            {
+              gasData.map((item) => (
+                <tr class="border-b border-gray-200 hover:bg-gray-50">
+                  <td class="py-3 px-4 font-medium">{item.framework}</td>
+                  <td class="py-3 px-4">{item.schema}</td>
+                  <td class="py-3 px-4">{item.publicInputs}</td>
+                  
+                  {/* Sepolia Deployment Gas with color coding */}
+                  <td class={`py-3 px-4 ${
+                    getGasColorClass(getGasLevel(item.sepoliaDeploymentGas, 'deployment'))
+                  }`}>
+                    {formatGas(item.sepoliaDeploymentGas)}
+                  </td>
+                  
+                  {/* Sepolia Function Gas with color coding */}
+                  <td class={`py-3 px-4 ${
+                    getGasColorClass(getGasLevel(item.sepoliaFunctionGas, 'function'))
+                  }`}>
+                    {formatGas(item.sepoliaFunctionGas)}
+                  </td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-5 gap-2">
+        <div class="flex items-center">
+          <span class="inline-block w-4 h-4 bg-green-100 mr-2 rounded"></span>
+          <span class="text-sm">Excellent</span>
+        </div>
+        <div class="flex items-center">
+          <span class="inline-block w-4 h-4 bg-emerald-100 mr-2 rounded"></span>
+          <span class="text-sm">Very Good</span>
+        </div>
+        <div class="flex items-center">
+          <span class="inline-block w-4 h-4 bg-blue-100 mr-2 rounded"></span>
+          <span class="text-sm">Good</span>
+        </div>
+        <div class="flex items-center">
+          <span class="inline-block w-4 h-4 bg-amber-100 mr-2 rounded"></span>
+          <span class="text-sm">Moderate</span>
+        </div>
+        <div class="flex items-center">
+          <span class="inline-block w-4 h-4 bg-red-100 mr-2 rounded"></span>
+          <span class="text-sm">High</span>
+        </div>
+      </div>
+      
+      <div class="mt-4 text-sm text-gray-600">
+        <p><strong>Data source:</strong> <a href="https://github.com/wizicer/zkp-solidity-gas" target="_blank" class="text-blue-600 hover:underline">https://github.com/wizicer/zkp-solidity-gas</a></p>
+      </div>
+    </div>
+  </div>
+</Layout>
