@@ -1,0 +1,98 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CheatsheetHeader from "../components/CheatsheetHeader";
+import { resourceList } from "../data/list";
+import type { Resource, ResourceSection } from "../data/list";
+import { sections } from "../data/index";
+
+interface PathItem {
+  params: { list: string };
+  props: { 
+    resource: Resource;
+    title: string;
+    description: string;
+    category: string;
+  };
+}
+
+export function getStaticPaths() {
+  const paths: PathItem[] = [];
+  
+  resourceList.forEach(resource => {
+    const info = sections.flatMap(section => section.items.map(item => ({
+      category: section.title,
+      ...item
+    }))).find(item => item.id === resource.id) || {
+      title: resource.id,
+      description: resource.id,
+      category: resource.id,
+    };
+    
+    paths.push({
+      params: { list: resource.id },
+      props: { 
+        resource,
+        title: info.title,
+        description: info.description,
+        category: info.category
+      }
+    });
+  });
+  
+  return paths;
+}
+
+const { resource, title, description, category } = Astro.props;
+---
+
+<Layout title={title}>
+  <CheatsheetHeader
+    title={title}
+    description={description}
+    category={category}
+    client:load
+  />
+
+  <div class="container mx-auto px-4 py-8">
+    {resource.sections.map((section: ResourceSection) => (
+      <div class="mb-12" id={section.id}>
+        <div class="flex items-center mb-4">
+          <span class="text-2xl mr-2">{section.emoji}</span>
+          <h2 class="text-xl font-bold">{section.title}</h2>
+        </div>
+        
+        {section.description && (
+          <p class="text-gray-600 mb-4">{section.description}</p>
+        )}
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {section.links.map(link => (
+            <a 
+              href={link.link} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class={`block p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 ${link.recommended ? 'border-blue-500' : 'border-gray-200'}`}
+            >
+              <div class="flex justify-between items-start">
+                <h3 class="font-bold text-gray-800 mb-2">{link.title}</h3>
+                {link.recommended && (
+                  <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Recommended</span>
+                )}
+              </div>
+              <p class="text-sm text-gray-600">{link.description}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    ))}
+    
+    <div class="mt-8">
+      <a href="/" class="inline-flex items-center text-blue-600 hover:underline">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        Back to Cheatsheets
+      </a>
+    </div>
+  </div>
+</Layout>
