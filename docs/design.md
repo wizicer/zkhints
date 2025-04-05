@@ -32,6 +32,14 @@
 
 3.  吉祥物设计：坐在数学黑板前，摆出手势，手上面有“R1CS”和“PLONK”的标志，两边有不同形状的框架构造图
 
+14. 吉祥物设计：身穿工程服、手拿扳手和电路板，一脸困惑盯着一团冒烟的电路；背景贴着“Constraint not satisfied!” 的报错条
+
+15. 吉祥物设计：戴着飞行员眼镜，操作着一个“Gas 表仪盘”，一边调整旋钮一边盯着一条电路路径，背后飘着 “💨 gas saved!” 云朵
+
+16. 吉祥物设计：开心地拿着一张“藏宝图”，上面标着不同图标（教程、项目、工具），背后竖着“Awesome” 的锦旗或奖杯
+
+17. 吉祥物设计：戴着新闻记者帽，肩背采访包，手拿话筒和笔记本，身边飘着 RSS、Blog icon 的小泡泡
+
 ---
 
 我准备推出这些：（名字可以再优化一下，并分别给我中文和英文名字）
@@ -121,4 +129,24 @@
 中文名：ZK 经典论文阅读清单
 英文名：ZK Landmark Papers Cheatsheet
 💡 吉祥物设计：坐在图书馆里，手拿放大镜研读一张标有 GGPR、Plonk、Nova 的老旧手稿
+
+14. ZK 常见 Bug 列表
+中文名：ZK 常见 Bug 与调试清单
+英文名：Common ZK Bugs Cheatsheet
+💡 吉祥物设计：身穿工程服、手拿扳手和电路板，一脸困惑盯着一团冒烟的电路；背景贴着“Constraint not satisfied!” 的报错条
+
+15. Gas 成本估算速查表
+中文名：ZK Gas 成本估算表
+英文名：ZK Gas Estimation Cheatsheet
+💡 吉祥物设计：戴着飞行员眼镜，操作着一个“Gas 表仪盘”，一边调整旋钮一边盯着一条电路路径，背后飘着 “💨 gas saved!” 云朵
+
+16. ZK 资源精选列表（Awesome List）
+中文名：ZK 精选资源导航
+英文名：ZK Awesome List Cheatsheet
+💡 吉祥物设计：开心地拿着一张“藏宝图”，上面标着不同图标（教程、项目、工具），背后竖着“Awesome” 的锦旗或奖杯
+
+17. ZK 新闻来源导航
+中文名：ZK 新闻与资讯入口
+英文名：ZK News Sources Cheatsheet
+💡 吉祥物设计：戴着新闻记者帽，肩背采访包，手拿话筒和笔记本，身边飘着 Twitter、Arxiv、Blog icon 的小泡泡
 
