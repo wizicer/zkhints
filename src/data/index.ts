@@ -1,5 +1,17 @@
-// All sections with items
-export const sections = [
+export interface Item {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  construction?: boolean;
+}
+
+export interface Section {
+  title: string;
+  items: Item[];
+}
+
+export const sections: Section[] = [
   {
     title: "Writing Circuits",
     items: [
