@@ -1,0 +1,174 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CheatsheetHeader from "../components/CheatsheetHeader";
+import "highlight.js/styles/atom-one-dark.css";
+import { curves, cases, recommendations } from "../data/curve";
+---
+
+<Layout title="Elliptic Curve Comparison">
+  <CheatsheetHeader
+    title="Elliptic Curve Comparison"
+    description="Comparison of Elliptic Curves used in Zero Knowledge Proofs"
+    category="ZK Technology"
+    client:load
+  />
+
+  <div class="container mx-auto px-4 py-8">
+    <!-- Curves Table -->
+    <div class="mb-8">
+      <h2 class="text-xl font-bold mb-4">⭕ Elliptic Curves for ZK</h2>
+      <div class="overflow-x-auto shadow-md rounded-lg">
+        <table class="min-w-full bg-white">
+          <thead>
+            <tr class="bg-gray-100 text-gray-700 uppercase text-sm leading-normal">
+              <th class="py-3 px-4 text-left">Name</th>
+              <th class="py-3 px-4 text-left">Family</th>
+              <th class="py-3 px-4 text-left">Security (bits)</th>
+              <th class="py-3 px-4 text-left">Field Size</th>
+              <th class="py-3 px-4 text-left">Pairing</th>
+              <th class="py-3 px-4 text-left">In-Circuit</th>
+              <th class="py-3 px-4 text-left">Used In</th>
+              <th class="py-3 px-4 text-left">Common Pairings</th>
+              <th class="py-3 px-4 text-left recommendation-column hidden">Recommendation</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-600 text-sm">
+            {
+              curves.map((curve) => (
+                <tr class="border-b border-gray-200 hover:bg-gray-50" data-curve-id={curve.id}>
+                  <td class="py-3 px-4 font-medium">{curve.name}</td>
+                  <td class="py-3 px-4">{curve.family}</td>
+                  <td class="py-3 px-4">{curve.security_bits}</td>
+                  <td class="py-3 px-4">{curve.field_size}</td>
+                  <td class="py-3 px-4">{curve.pairing_friendly ? "✅" : "❌"}</td>
+                  <td class="py-3 px-4">{curve.in_circuit_friendly ? "✅" : "❌"}</td>
+                  <td class="py-3 px-4">{curve.used_in.join(", ")}</td>
+                  <td class="py-3 px-4">
+                    {curve.partners && curve.partners.length > 0 ? (
+                      <div>
+                        {curve.partners.map((partnerId) => {
+                          const partner = curves.find(c => c.id === partnerId);
+                          return partner && (
+                            <span class="inline-block bg-gray-100 rounded px-2 py-1 text-xs mr-1 mb-1">{partner.name}</span>
+                          );
+                        })}
+                      </div>
+                    ) : (
+                      <span class="text-gray-400">-</span>
+                    )}
+                  </td>
+                  <td class="py-3 px-4 recommendation-column hidden recommendation-text"></td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Use Case Selection Cards -->
+    <div class="mb-8">
+      <h2 class="text-xl font-bold mb-4">🔍 Select Your Use Case</h2>
+      <div class="my-4 text-sm text-gray-600">
+        <p><strong>Note:</strong> Click on a use case below to see recommendations.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {cases.map((useCase) => (
+          <div 
+            class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer border-2 border-transparent hover:border-blue-400"
+            data-use-case={useCase.id}
+            onclick={`toggleUseCase('${useCase.id}')`}
+          >
+            <h3 class="font-bold text-gray-800 mb-2">{useCase.title}</h3>
+            <div class="flex items-center mt-3">
+              <img 
+                src={`/src/assets/curve/${useCase.id}.png`} 
+                alt={useCase.title}
+                class="w-16 h-16 object-contain mr-4"
+                onerror="this.src='/src/assets/curve/default.png'; this.onerror=null;"
+              />
+              <p class="text-sm text-gray-600">{useCase.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  import { recommendations } from "../data/curve";
+
+  let currentUseCase: string | null = null;
+
+  function toggleUseCase(useCaseId: string) {
+    // If already selected, deselect it
+    if (currentUseCase === useCaseId) {
+      resetAll();
+      currentUseCase = null;
+      return;
+    }
+    
+    currentUseCase = useCaseId;
+    
+    // Reset all cards and rows
+    resetAll();
+    
+    // Highlight selected card
+    const selectedCard = document.querySelector(`[data-use-case="${useCaseId}"]`);
+    if (selectedCard) {
+      selectedCard.classList.remove('border-transparent');
+      selectedCard.classList.add('border-blue-500', 'bg-blue-50');
+    }
+    
+    // Find recommendations for this use case
+    const useCaseRecs = recommendations.find(rec => rec.use_case === useCaseId);
+    
+    if (useCaseRecs) {
+      // Show recommendation column
+      const recommendationColumns = document.querySelectorAll('.recommendation-column');
+      recommendationColumns.forEach(col => col.classList.remove('hidden'));
+      
+      // Highlight recommended curves and add recommendation text
+      useCaseRecs.recommended.forEach(rec => {
+        const curveRow = document.querySelector(`tr[data-curve-id="${rec.curve}"]`);
+        if (curveRow) {
+          curveRow.classList.remove('bg-white');
+          curveRow.classList.add('bg-green-50');
+          
+          // Add recommendation text
+          const recommendationCell = curveRow.querySelector('.recommendation-text');
+          if (recommendationCell) {
+            recommendationCell.textContent = rec.comment;
+          }
+        }
+      });
+    }
+  }
+  
+  function resetAll() {
+    // Reset all cards
+    document.querySelectorAll('[data-use-case]').forEach(card => {
+      card.classList.remove('border-blue-500', 'bg-blue-50');
+      card.classList.add('border-transparent');
+    });
+    
+    // Reset all rows
+    document.querySelectorAll('tr[data-curve-id]').forEach(row => {
+      row.classList.remove('bg-green-50');
+      row.classList.add('bg-white');
+    });
+    
+    // Hide recommendation column
+    const recommendationColumns = document.querySelectorAll('.recommendation-column');
+    recommendationColumns.forEach(col => col.classList.add('hidden'));
+    
+    // Clear all recommendation texts
+    document.querySelectorAll('.recommendation-text').forEach(cell => {
+      cell.textContent = '';
+    });
+  }
+
+  // Add the function to the window object
+  (window as any).toggleUseCase = toggleUseCase;
+</script>
