@@ -40,6 +40,12 @@ export const sections: Section[] = [
         image: "/src/assets/hinta/gas.png"
       },
       { 
+        id: "gnark", 
+        title: "Gnark Cheatsheet", 
+        description: "Circuit cheatsheet for gnark",
+        image: "/src/assets/hinta/gnark.png"
+      },
+      { 
         id: "r1cs", 
         title: "R1CS Gadgets", 
         construction: true,
@@ -115,6 +121,12 @@ export const sections: Section[] = [
         image: "/src/assets/hinta/popular-snark.png"
       },
       { 
+        id: "transpiler", 
+        title: "Transpiler", 
+        description: "Transpiler used to transpile between different DSL or constraint system",
+        image: "/src/assets/hinta/transpiler.png"
+      },
+      { 
         id: "argument", 
         title: "SNARK Argument", 
         construction: true,
@@ -124,13 +136,19 @@ export const sections: Section[] = [
     ],
   },
   {
-    title: "History",
+    title: "Foundations & Future",
     items: [
       { 
         id: "paper", 
         title: "Landmark Papers", 
         description: "Essential academic papers in zero-knowledge research",
         image: "/src/assets/hinta/paper.png"
+      },
+      { 
+        id: "research", 
+        title: "Research Directions", 
+        description: "Current research directions in zero-knowledge proofs",
+        image: "/src/assets/hinta/research.png"
       },
       { 
         id: "glossary", 
