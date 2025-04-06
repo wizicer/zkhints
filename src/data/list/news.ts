@@ -11,9 +11,9 @@ export const news: Resource = {
       emoji: "📰",
       links: [
         {
-          title: "zkNews",
-          description: "Daily summaries of ZK papers, blogs, and events.",
-          link: "https://zknews.ai/",
+          title: "ZK Security News",
+          description: "Hacker news-style news about ZK.",
+          link: "https://news.zksecurity.xyz/"
         },
         {
           title: "ZKMesh",
@@ -30,12 +30,6 @@ export const news: Resource = {
         "Dynamic sources like blog posts, Twitter accounts, and GitHub feeds.",
       emoji: "📡",
       links: [
-        {
-          title: "ZK Collective",
-          description:
-            "News, updates and podcasts from leading ZK researchers and teams.",
-          link: "https://www.zkcollective.org/",
-        },
         {
           title: "Zero Knowledge Podcast",
           description: "Weekly podcast exploring ZK research and applications.",

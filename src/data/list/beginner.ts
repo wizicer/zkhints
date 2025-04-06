@@ -11,16 +11,16 @@ export const beginner: Resource = {
       emoji: "🧠",
       links: [
         {
-          title: "Zero-Knowledge Proofs",
-          description: "A online MOOC from Stanford University.",
-          link: "https://zkp.science/",
-          recommended: true,
-        },
-        {
           title: "A beginner's intro to coding zero-knowledge proofs",
           description:
             "This article will cover what a zero-knowledge proof is, how it is used from a developer's perspective, and go through a few languages for writing them.",
           link: "https://dev.to/spalladino/a-beginners-intro-to-coding-zero-knowledge-proofs-c56",
+        },
+        {
+          title: "Zero Knowledge Proofs MOOC, Spring 2023",
+          description: "A online MOOC from University of California, Berkeley.",
+          recommended: true,
+          link: "https://rdi.berkeley.edu/zk-learning/",
         },
       ],
     },

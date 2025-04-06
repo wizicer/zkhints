@@ -36,6 +36,12 @@ export const awesome: Resource = {
       emoji: "📚",
       links: [
         {
+          title: "Zero-Knowledge Proofs (Science Resources)",
+          description: "A collective of resources for learning ZK on the academic aspect.",
+          link: "https://zkp.science/",
+          recommended: true,
+        },
+        {
           title: "ZK Knowledge Base",
           description: "A knowledge base for ZK.",
           link: "https://zkknowledgebase.com/",
