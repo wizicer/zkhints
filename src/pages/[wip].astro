@@ -45,15 +45,15 @@ const { item, sectionTitle } = Astro.props;
   />
 
   <div class="container mx-auto px-4 py-8">
-    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-8">
-      <div class="flex items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32" class="text-yellow-500 mr-3">
-          <path fill="currentColor" d="M4 4a1 1 0 0 1 1-1h22a1 1 0 1 1 0 2h-3c0 .556-.404 1-.91 1h-.59v3.09c.85.23 1.48 1.02 1.48 1.94c0 .696-.36 1.312-.903 1.67l.92 1.3h4.489a.51.51 0 0 1 .514.5a.5.5 0 0 1-.504.5H28v3h.486a.51.51 0 0 1 .514.5a.51.51 0 0 1-.514.5h-1.018a.49.49 0 0 1-.208.48c-.09.06-.19.09-.29.09c-.16 0-.31-.07-.41-.21l-.255-.36h-8.65l-.255.36c-.1.14-.25.21-.41.21c-.1 0-.2-.03-.29-.09a.49.49 0 0 1-.208-.48h-.978a.51.51 0 0 1-.514-.5c0-.274.232-.5.514-.5H16v-3h-.486a.51.51 0 0 1-.514-.5c0-.274.232-.5.514-.5h4.45l.92-1.3a2 2 0 0 1-.904-1.67c0-.28.23-.5.5-.5c.28 0 .5.22.5.5c0 .36.193.678.481.854l.085-.12a.5.5 0 0 1 .079-.1a.5.5 0 0 1 .355-.147c.13-.001.26.05.355.147a.5.5 0 0 1 .08.1l.084.12c.288-.176.481-.494.481-.854c0-.55-.43-.99-.98-1c-.17 0-.33-.09-.42-.23a.44.44 0 0 1-.09-.27c0-.04 0-.07.01-.11V6h-.59c-.506 0-.91-.444-.91-1h-6v21h.75c.69 0 1.25.56 1.25 1.25V28h12.01c1.1 0 1.99.895 1.99 2H2c0-1.105.89-2 1.99-2H5v-.75c0-.69.56-1.25 1.25-1.25H7V5H5a1 1 0 0 1-1-1"/>
-        </svg>
-        <div>
-          <p class="text-yellow-700 font-bold">This page is under construction</p>
-          <p class="text-yellow-600">Content for this section is being developed and will be available soon.</p>
-        </div>
+    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-8 flex items-start relative flex-col md:flex-row">
+      <img 
+        src="/src/assets/construction/construction_cat_1.png" 
+        alt="Under Construction" 
+        class="h-32 mr-4 object-contain md:absolute md:-top-12"
+      />
+      <div class="ml-0 md:ml-40">
+        <p class="text-yellow-700 font-bold">This page is under construction</p>
+        <p class="text-yellow-600">Content for this section is being developed and will be available soon.</p>
       </div>
     </div>
 
