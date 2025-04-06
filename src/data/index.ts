@@ -95,6 +95,12 @@ export const sections: Section[] = [
         description: "Where to find the latest ZK news and research",
         image: "/src/assets/hinta/news.png"
       },
+      { 
+        id: "events", 
+        title: "Events", 
+        description: "Where to find the latest ZK events and research",
+        image: "/src/assets/hinta/events.png"
+      },
     ]
   },
   {
