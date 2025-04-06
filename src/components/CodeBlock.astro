@@ -1,9 +1,0 @@
----
-// CodeBlock.astro
-import hljs from 'highlight.js';
-
-const { code, language = 'javascript' } = Astro.props;
-const highlighted = hljs.highlight(code, { language }).value;
----
-
-<pre class="bg-gray-800 rounded-md overflow-x-auto"><code class={`hljs language-${language}`} set:html={highlighted}></code></pre>
