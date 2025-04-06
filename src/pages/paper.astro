@@ -23,12 +23,16 @@ const sortedPapers = [...papers].sort(
         sortedPapers.map((paper, index) => {
           const contribution = contributions.find((c) => c.id === paper.id);
           const paperImage = "/src/assets/paper/" + paper.id + ".png";
+          const isEven = index % 2 === 0;
+          const gradientClass = isEven 
+            ? "bg-gradient-to-r from-amber-100 to-orange-100 border-l-4 border-rose-500" 
+            : "bg-gradient-to-r from-indigo-100 to-purple-100 border-l-4 border-cyan-500";
 
           return (
             <div class="paper-item mb-12 relative">
               {/* Collapsed View */}
               <div
-                class="collapsed-view bg-white rounded-lg shadow-md overflow-hidden flex items-center p-4 cursor-pointer relative"
+                class={`collapsed-view rounded-lg shadow-md overflow-hidden flex items-center p-4 cursor-pointer relative ${gradientClass}`}
                 data-toggle="expand"
               >
                 <div class="flex-shrink-0 w-16 h-16 mr-4">
@@ -46,7 +50,7 @@ const sortedPapers = [...papers].sort(
                     {contribution?.contribution || "Key contribution"}
                   </p>
                 </div>
-                <div class="px-3 py-1 bg-blue-200 text-blue-600 rounded-full text-sm font-bold">
+                <div class="absolute top-4 right-4 px-3 py-1 bg-blue-200 text-blue-600 rounded-full text-sm font-bold">
                   {paper.year}
                 </div>
               </div>
