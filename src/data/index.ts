@@ -86,14 +86,12 @@ export const sections: Section[] = [
       { 
         id: "awesome", 
         title: "Awesome List", 
-        construction: true,
         description: "The list of curated collection of ZK resources, tools and projects",
         image: "/src/assets/hinta/awesome.png"
       },
       { 
         id: "news", 
         title: "News Sources", 
-        construction: true,
         description: "Where to find the latest ZK news and research",
         image: "/src/assets/hinta/news.png"
       },
@@ -123,7 +121,8 @@ export const sections: Section[] = [
       { 
         id: "transpiler", 
         title: "Transpiler", 
-        description: "Transpiler used to transpile between different DSL or constraint system",
+        construction: true,
+        description: "Transpiling between different DSL or constraint system",
         image: "/src/assets/hinta/transpiler.png"
       },
       { 
@@ -147,6 +146,7 @@ export const sections: Section[] = [
       { 
         id: "research", 
         title: "Research Directions", 
+        construction: true,
         description: "Current research directions in zero-knowledge proofs",
         image: "/src/assets/hinta/research.png"
       },
