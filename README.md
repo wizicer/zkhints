@@ -1,4 +1,4 @@
-# ZK Wiki
+# ZK Hints
 
 A comprehensive resource hub for Zero-Knowledge Proofs (ZKP) technology, providing curated lists of educational materials, tools, events, and references.
 
