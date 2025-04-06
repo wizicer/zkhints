@@ -49,6 +49,7 @@ const ItemSection: React.FC<ItemSectionProps> = ({ title, items }) => {
               <div className="flex-1">
                 <div className="mb-2">
                   <span className="font-medium block">{item.title}</span>
+                  <code className="text-xs bg-gray-100 px-1 py-0.5 rounded">{item.id}</code>
                 </div>
                 {item.description && (
                   <p className="text-sm text-gray-600">
