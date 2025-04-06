@@ -1,0 +1,165 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CheatsheetHeader from "../components/CheatsheetHeader";
+import { papers, contributions } from "../data/paper";
+
+// Sort papers by year
+const sortedPapers = [...papers].sort(
+  (a, b) => parseInt(a.year) - parseInt(b.year)
+);
+---
+
+<Layout title="ZK Papers Showcase">
+  <CheatsheetHeader
+    title="Zero-Knowledge Proof Papers"
+    description="A showcase of significant papers in Zero-Knowledge Proofs"
+    category="Research"
+    client:load
+  />
+
+  <div class="container mx-auto px-4 py-8 max-w-6xl">
+    <div class="space-y-8">
+      {
+        sortedPapers.map((paper, index) => {
+          const contribution = contributions.find((c) => c.id === paper.id);
+          const paperImage = "/src/assets/paper/" + paper.id + ".png";
+
+          return (
+            <div class="paper-item mb-12 relative">
+              {/* Collapsed View */}
+              <div
+                class="collapsed-view bg-white rounded-lg shadow-md overflow-hidden flex items-center p-4 cursor-pointer relative"
+                data-toggle="expand"
+              >
+                <div class="flex-shrink-0 w-16 h-16 mr-4">
+                  <img
+                    src={paperImage}
+                    alt={`${paper.title}`}
+                    class="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
+                <div class="flex-grow pr-12">
+                  <h3 class="font-bold text-blue-700 text-md mb-1  truncate">
+                    {paper.title}
+                  </h3>
+                  <p class="text-lg font-bold truncate text-gray-800">
+                    {contribution?.contribution || "Key contribution"}
+                  </p>
+                </div>
+                <div class="px-3 py-1 bg-blue-200 text-blue-600 rounded-full text-sm font-bold">
+                  {paper.year}
+                </div>
+              </div>
+
+              {/* Expanded View - Hidden by default */}
+              <div class="expanded-view hidden mt-4 bg-white rounded-lg shadow-lg p-6 relative">
+                <button class="collapse-btn absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 text-gray-600"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+
+                <div class="flex flex-col md:flex-row items-center pt-4">
+                  <div class="md:w-2/3 mb-6 md:mb-0 md:pr-6">
+                    <div class="zigzag-image">
+                      <img
+                        src={paperImage}
+                        alt={`${paper.title}`}
+                        class="w-full h-auto object-cover"
+                      />
+                    </div>
+                  </div>
+                  <div class="md:w-1/3">
+                    <div class="flex items-center mb-2">
+                      <h2 class="text-xl font-bold text-gray-800">
+                        {paper.title}
+                      </h2>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                      <span class="px-3 py-1 bg-blue-200 text-blue-600 rounded-full text-sm font-bold">
+                        {paper.year}
+                      </span>
+                      {paper.authors}
+                    </p>
+
+                    {contribution && (
+                      <div class="mb-4">
+                        <p class="font-semibold text-blue-700 mb-1">
+                          {contribution.contribution}
+                        </p>
+                        <p class="text-gray-700">{contribution.summary}</p>
+                      </div>
+                    )}
+
+                    <a
+                      href={paper.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+                    >
+                      Read Paper
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</Layout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // For each paper item, set up expand/collapse functionality
+    document.querySelectorAll(".paper-item").forEach((paperItem) => {
+      const collapsedView = paperItem.querySelector(".collapsed-view");
+      const expandedView = paperItem.querySelector(".expanded-view");
+      const collapseBtn = paperItem.querySelector(".collapse-btn");
+
+      if (!collapsedView || !expandedView || !collapseBtn) return;
+
+      // Toggle expand when clicking on the collapsed view
+      collapsedView.addEventListener("click", () => {
+        collapsedView.classList.add("hidden");
+        expandedView.classList.remove("hidden");
+      });
+
+      // Toggle collapse when clicking the close button
+      collapseBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        expandedView.classList.add("hidden");
+        collapsedView.classList.remove("hidden");
+      });
+    });
+  });
+</script>
+
+<style>
+  /* Paper item transitions */
+  .paper-item {
+    transition: all 0.3s ease;
+  }
+
+  .collapsed-view,
+  .expanded-view {
+    transition: all 0.3s ease;
+  }
+
+  .collapsed-view:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+</style>
