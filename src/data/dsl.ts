@@ -267,6 +267,16 @@ export const dslDefinitions: DslDefinition[] = [
     "programming_capability": null,
     "backend_supported": null,
     "note": null
+  },
+  {
+    name: "Zinnia",
+    link: "https://eprint.iacr.org/2025/572",
+    company_or_brand: "HKUST",
+    arithmetization: null,
+    syntax: "Python-like",
+    programming_capability: null,
+    backend_supported: null,
+    note: null
   }
 ]
 
@@ -557,5 +567,28 @@ out.map(makePublic);`,
     exampleCodeHighlightType: "javascript",
     exampleLink: "https://www.halo2repl.dev/",
     comment: "语法API感强，但REPL体验良好，适合交互式调试。"
+  },
+  {
+    name: "Zinnia",
+    exampleCode: `@zk_circuit
+def is_prime(number: int, prime: bool):
+    assert 0 <= number <= 10000
+
+    if number < 2:
+        assert not prime
+    else:
+        result = True
+
+        for i in range(2, 101):
+            if i * i > number:
+                break
+            if number % i == 0:
+                result = False
+
+        assert prime == result
+`,
+    exampleCodeHighlightType: "python",
+    exampleLink: "https://eprint.iacr.org/2025/572",
+    comment: ""
   }
 ];
