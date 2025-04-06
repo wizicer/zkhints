@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import SearchBar from "../components/SearchBar";
 import CategoryGrid from "../components/CategoryGrid";
-import ItemSection from "../components/ItemSection";
+import ItemSection from "../components/ItemSection.astro";
 import { Image } from 'astro:assets';
 import hintaIcon from '../assets/hinta.png';
 import { sections } from '../data/index';
@@ -53,7 +53,6 @@ const categories = [
           <ItemSection
             title={section.title}
             items={section.items}
-            client:load
           />
         ))
       }
