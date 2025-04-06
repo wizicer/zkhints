@@ -1,0 +1,255 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-sckkx6r4> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v5.5.5"><title>ZK DSL Comparison</title><!-- Custom styles --><link rel="stylesheet" href="/_astro/_list_.DItMlbYp.css">
+<style>pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}.hljs{color:#abb2bf;background:#282c34}.hljs-comment,.hljs-quote{color:#5c6370;font-style:italic}.hljs-doctag,.hljs-keyword,.hljs-formula{color:#c678dd}.hljs-section,.hljs-name,.hljs-selector-tag,.hljs-deletion,.hljs-subst{color:#e06c75}.hljs-literal{color:#56b6c2}.hljs-string,.hljs-regexp,.hljs-addition,.hljs-attribute,.hljs-meta .hljs-string{color:#98c379}.hljs-attr,.hljs-variable,.hljs-template-variable,.hljs-type,.hljs-selector-class,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-number{color:#d19a66}.hljs-symbol,.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-title{color:#61aeee}.hljs-built_in,.hljs-title.class_,.hljs-class .hljs-title{color:#e6c07b}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}.hljs-link{text-decoration:underline}
+</style></head> <body data-astro-cid-sckkx6r4> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();;(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="Z1ExWyO" prefix="r10" component-url="/_astro/Header.Crw2hfAw.js" component-export="default" renderer-url="/_astro/client.BO3Rm8ny.js" props="{&quot;data-astro-cid-sckkx6r4&quot;:[0,true]}" ssr client="load" opts="{&quot;name&quot;:&quot;Header&quot;,&quot;value&quot;:true}" await-children><link rel="preload" as="image" href="/src/assets/hinta_icon.png"/><header class="py-4 border-b border-gray-100"><div class="container mx-auto px-4 flex justify-between items-center"><div class="flex items-center space-x-4"><a href="/" class="text-lg font-bold text-gray-900 hover:text-blue-600 transition-colors flex items-center gap-2"><img src="/src/assets/hinta_icon.png" alt="ZK Hints Icon" width="24" height="24"/>ZK Hints</a><nav class="hidden md:flex space-x-1"><a href="/" class="hidden px-3 py-2 text-sm text-gray-600 hover:text-blue-600 transition-colors">Home</a><a href="/about" class="hidden px-3 py-2 text-sm text-gray-600 hover:text-blue-600 transition-colors">About</a></nav></div><div class="flex items-center space-x-4"><a href="https://github.com/wizicer" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gray-900 transition-colors" title="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg></a><a href="https://twitter.com/icerdesign" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gray-900 transition-colors" title="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg></a></div></div></header><!--astro:end--></astro-island> <main class="container" data-astro-cid-sckkx6r4>  <astro-island uid="1Dzsbg" prefix="r0" component-url="/_astro/CheatsheetHeader.DFkS5Foj.js" component-export="default" renderer-url="/_astro/client.BO3Rm8ny.js" props="{&quot;title&quot;:[0,&quot;ZK DSL Comparison&quot;],&quot;description&quot;:[0,&quot;Comparison of Domain Specific Languages for Zero Knowledge Proofs&quot;],&quot;category&quot;:[0,&quot;ZK Technology&quot;]}" ssr client="load" opts="{&quot;name&quot;:&quot;CheatsheetHeader&quot;,&quot;value&quot;:true}" await-children><div class="page-header text-center my-12"><div class="container mx-auto px-4"><h1 class="font-extrabold tracking-tight text-5xl text-zinc-950 mb-4">ZK DSL Comparison</h1><p class="text-xl text-gray-600 max-w-2xl mx-auto">Comparison of Domain Specific Languages for Zero Knowledge Proofs</p><div class="mt-4"><span class="inline-block bg-gray-100 text-gray-700 text-sm px-3 py-1 rounded-full">ZK Technology</span></div></div></div><!--astro:end--></astro-island> <div class="container mx-auto px-4 py-8"> <div class="overflow-x-auto shadow-md rounded-lg"> <table class="min-w-full bg-white"> <thead> <tr class="bg-gray-100 text-gray-700 uppercase text-sm leading-normal"> <th class="py-3 px-4 text-left">Name</th> <th class="py-3 px-4 text-left">Company/Brand</th> <th class="py-3 px-4 text-left">Arithmetization</th> <th class="py-3 px-4 text-left">Syntax</th> <th class="py-3 px-4 text-left">Programming Capability</th> <th class="py-3 px-4 text-left">Backend Supported</th> <th class="py-3 px-4 text-left">Note</th> </tr> </thead> <tbody class="text-gray-600 text-sm">  <tr class="border-b border-gray-200 hover:bg-gray-50 " data-name="Plonk Script"> <td class="py-3 px-4"> <a href="https://plonk.pro" class="text-blue-600 hover:underline font-medium" target="_blank"> Plonk Script </a>  </td> <td class="py-3 px-4">-</td> <td class="py-3 px-4">Plonkish</td> <td class="py-3 px-4">Rust-like</td> <td class="py-3 px-4"> 有 </td> <td class="py-3 px-4">Halo2/Plonky3</td> <td class="py-3 px-4">-</td> </tr>  <tr class="border-b border-gray-200 hover:bg-gray-50 " data-name="CIRCOM"> <td class="py-3 px-4"> <span class="font-medium">CIRCOM</span>  </td> <td class="py-3 px-4">IDEN3</td> <td class="py-3 px-4">R1CS</td> <td class="py-3 px-4">C-like</td> <td class="py-3 px-4"> 有 </td> <td class="py-3 px-4">-</td> <td class="py-3 px-4">-</td> </tr>  <tr class="border-b border-gray-200 hover:bg-gray-50 " data-name="ZoKrates"> <td class="py-3 px-4"> <a href="https://zokrates.github.io/" class="text-blue-600 hover:underline font-medium" target="_blank"> ZoKrates </a>  </td> <td class="py-3 px-4">-</td> <td class="py-3 px-4">R1CS</td> <td class="py-3 px-4">Python-like</td> <td class="py-3 px-4"> 有 </td> <td class="py-3 px-4">-</td> <td class="py-3 px-4">-</td> </tr>  <tr class="border-b border-gray-200 hover:bg-gray-50 " data-name="CirC"> <td class="py-3 px-4"> <a href="https://github.com/circify/circ" class="text-blue-600 hover:underline font-medium" target="_blank"> CirC </a>  </td> <td class="py-3 px-4">-</td> <td class="py-3 px-4">R1CS</td> <td class="py-3 px-4">C/ZoKrates</td> <td class="py-3 px-4"> 有 </td> <td class="py-3 px-4">-</td> <td class="py-3 px-4">-</td> </tr>  <tr class="border-b border-gray-200 hover:bg-gray-50 " data-name="SnarkyJs"> <td class="py-3 px-4"> <span class="font-medium">SnarkyJs</span>  </td> <td class="py-3 px-4">Mina</td> <td class="py-3 px-4">R1CS</td> <td class="py-3 px-4">Typescript</td> <td class="py-3 px-4"> 有 </td> <td class="py-3 px-4">-</td> <td class="py-3 px-4">-</td> </tr>  <tr class="border-b border-gray-200 hover:bg-gray-50 " data-name="Leo"> <td class="py-3 px-4"> <span class="font-medium">Leo</span>  </td> <td class="py-3 px-4">Aleo</td> <td class="py-3 px-4">R1CS</td> <td class="py-3 px-4">Rust-like</td> <td class="py-3 px-4"> 有 </td> <td class="py-3 px-4">-</td> <td class="py-3 px-4">-</td> </tr>  <tr class="border-b border-gray-200 hover:bg-gray-50 cursor-pointer" data-name="Noir" onclick="toggleExample('Noir')"> <td class="py-3 px-4"> <a href="https://noir-lang.org/" class="text-blue-600 hover:underline font-medium" target="_blank"> Noir </a> <span class="ml-2 text-xs text-blue-500"> <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path> </svg> </span> </td> <td class="py-3 px-4">Aztec</td> <td class="py-3 px-4">R1CS</td> <td class="py-3 px-4">Rust-like</td> <td class="py-3 px-4"> 有 </td> <td class="py-3 px-4">抽象出ACIR的中间表达(trace)，后续后端自选</td> <td class="py-3 px-4">-</td> </tr> <tr id="example-Noir" class="hidden bg-gray-50"> <td colspan="7" class="p-4"> <div> <div class="flex justify-between items-center mb-2"> <h3 class="text-lg font-semibold"> Noir Example
+</h3> <a href="https://github.com/noir-lang/noir-examples/blob/master/foundry-voting/circuits/src/main.nr" target="_blank" class="text-blue-600 hover:underline text-sm">
+View Source
+</a> </div> <pre class="bg-gray-800 rounded-md overflow-x-auto"><code class="hljs language-rust"><span class="hljs-keyword">use</span> dep::std;
+
+<span class="hljs-keyword">fn</span> <span class="hljs-title function_">main</span>(
+root: <span class="hljs-keyword">pub</span> Field,
+index: Field,
+hash_path: [Field; <span class="hljs-number">2</span>],
+secret: Field,
+proposalId: <span class="hljs-keyword">pub</span> Field,
+vote: <span class="hljs-keyword">pub</span> Field
+) <span class="hljs-punctuation">-&gt;</span> <span class="hljs-keyword">pub</span> Field {
+<span class="hljs-keyword">let</span> <span class="hljs-variable">note_commitment</span> = std::hash::<span class="hljs-title function_ invoke__">pedersen_hash</span>([secret]);
+<span class="hljs-keyword">let</span> <span class="hljs-variable">nullifier</span> = std::hash::<span class="hljs-title function_ invoke__">pedersen_hash</span>([root, secret, proposalId]);
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">check_root</span> = std::merkle::<span class="hljs-title function_ invoke__">compute_merkle_root</span>(note_commitment, index, hash_path);
+<span class="hljs-title function_ invoke__">assert</span>(root == check_root);
+
+<span class="hljs-comment">// Originally contrained the vote to avoid front-running,</span>
+<span class="hljs-comment">// but including the vote as a public input is sufficient</span>
+
+<span class="hljs-comment">// assert(vote &lt;= 1);</span>
+
+nullifier
+}</code></pre> <p class="mt-2 text-gray-700"> 编译为ACIR，类似R1CS，支持原始循环。已有halo2后端并获得资助，适合ZK开发者使用。 </p> </div> </td> </tr> <tr class="border-b border-gray-200 hover:bg-gray-50 " data-name="lurk"> <td class="py-3 px-4"> <a href="https://github.com/lurk-lab/lurk-rs" class="text-blue-600 hover:underline font-medium" target="_blank"> lurk </a>  </td> <td class="py-3 px-4">-</td> <td class="py-3 px-4">R1CS</td> <td class="py-3 px-4">Lisp</td> <td class="py-3 px-4"> 有 </td> <td class="py-3 px-4">-</td> <td class="py-3 px-4">-</td> </tr>  <tr class="border-b border-gray-200 hover:bg-gray-50 " data-name="PIL"> <td class="py-3 px-4"> <a href="https://wiki.polygon.technology/docs/zkevm/PIL/pil-plonk/" class="text-blue-600 hover:underline font-medium" target="_blank"> PIL </a>  </td> <td class="py-3 px-4">Polygon zkEVM</td> <td class="py-3 px-4">约束定义</td> <td class="py-3 px-4">特殊</td> <td class="py-3 px-4"> 无 </td> <td class="py-3 px-4">-</td> <td class="py-3 px-4">-</td> </tr>  <tr class="border-b border-gray-200 hover:bg-gray-50 " data-name="Cairo"> <td class="py-3 px-4"> <span class="font-medium">Cairo</span>  </td> <td class="py-3 px-4">StarkWare</td> <td class="py-3 px-4">VM</td> <td class="py-3 px-4">Rust</td> <td class="py-3 px-4"> 有 </td> <td class="py-3 px-4">-</td> <td class="py-3 px-4">-</td> </tr>  <tr class="border-b border-gray-200 hover:bg-gray-50 " data-name="Zinc"> <td class="py-3 px-4"> <a href="https://github.com/matter-labs/zinc" class="text-blue-600 hover:underline font-medium" target="_blank"> Zinc </a>  </td> <td class="py-3 px-4">zkSync</td> <td class="py-3 px-4">VM</td> <td class="py-3 px-4">Rust</td> <td class="py-3 px-4"> 有 </td> <td class="py-3 px-4">-</td> <td class="py-3 px-4">官方于2021年已经放弃维护</td> </tr>  <tr class="border-b border-gray-200 hover:bg-gray-50 cursor-pointer" data-name="AirScript" onclick="toggleExample('AirScript')"> <td class="py-3 px-4"> <a href="https://0xpolygonmiden.github.io/air-script/" class="text-blue-600 hover:underline font-medium" target="_blank"> AirScript </a> <span class="ml-2 text-xs text-blue-500"> <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path> </svg> </span> </td> <td class="py-3 px-4">Polygon Miden</td> <td class="py-3 px-4">Plonkish</td> <td class="py-3 px-4">Yaml-like</td> <td class="py-3 px-4"> 无 </td> <td class="py-3 px-4">-</td> <td class="py-3 px-4">-</td> </tr> <tr id="example-AirScript" class="hidden bg-gray-50"> <td colspan="7" class="p-4"> <div> <div class="flex justify-between items-center mb-2"> <h3 class="text-lg font-semibold"> AirScript Example
+</h3> <a href="https://0xpolygonmiden.github.io/air-script/description/example.html" target="_blank" class="text-blue-600 hover:underline text-sm">
+View Source
+</a> </div> <pre class="bg-gray-800 rounded-md overflow-x-auto"><code class="hljs language-yaml"><span class="hljs-string">def</span> <span class="hljs-string">ExampleAir</span>
+
+<span class="hljs-attr">trace_columns:</span>
+  <span class="hljs-attr">main:</span> [<span class="hljs-string">s</span>, <span class="hljs-string">a</span>, <span class="hljs-string">b</span>, <span class="hljs-string">c</span>]
+  <span class="hljs-attr">aux:</span> [<span class="hljs-string">p</span>]
+
+<span class="hljs-attr">public_inputs:</span>
+  <span class="hljs-attr">stack_inputs:</span> [<span class="hljs-number">16</span>]
+  <span class="hljs-attr">stack_outputs:</span> [<span class="hljs-number">16</span>]
+
+<span class="hljs-attr">periodic_columns:</span>
+  <span class="hljs-attr">k0:</span> [<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>]
+
+<span class="hljs-attr">boundary_constraints:</span>
+  <span class="hljs-string">enf</span> <span class="hljs-string">a.first</span> <span class="hljs-string">=</span> <span class="hljs-string">stack_inputs[0]</span>
+  <span class="hljs-string">enf</span> <span class="hljs-string">b.first</span> <span class="hljs-string">=</span> <span class="hljs-string">stack_inputs[1]</span>
+  <span class="hljs-string">enf</span> <span class="hljs-string">c.first</span> <span class="hljs-string">=</span> <span class="hljs-string">stack_inputs[2]</span>
+
+  <span class="hljs-string">enf</span> <span class="hljs-string">a.last</span> <span class="hljs-string">=</span> <span class="hljs-string">stack_outputs[0]</span>
+  <span class="hljs-string">enf</span> <span class="hljs-string">b.last</span> <span class="hljs-string">=</span> <span class="hljs-string">stack_outputs[1]</span>
+  <span class="hljs-string">enf</span> <span class="hljs-string">c.last</span> <span class="hljs-string">=</span> <span class="hljs-string">stack_outputs[2]</span>
+
+  <span class="hljs-string">enf</span> <span class="hljs-string">p.first</span> <span class="hljs-string">=</span> <span class="hljs-number">1</span>
+
+<span class="hljs-attr">integrity_constraints:</span>
+  <span class="hljs-string">enf</span> <span class="hljs-string">s^2</span> <span class="hljs-string">=</span> <span class="hljs-string">s</span>
+  <span class="hljs-string">enf</span> <span class="hljs-string">k0</span> <span class="hljs-string">*</span> <span class="hljs-string">(s&#x27;</span> <span class="hljs-bullet">-</span> <span class="hljs-string">s)</span> <span class="hljs-string">=</span> <span class="hljs-number">0</span>
+  <span class="hljs-string">enf</span> <span class="hljs-string">(1</span> <span class="hljs-bullet">-</span> <span class="hljs-string">s)</span> <span class="hljs-string">*</span> <span class="hljs-string">(c</span> <span class="hljs-bullet">-</span> <span class="hljs-string">a</span> <span class="hljs-bullet">-</span> <span class="hljs-string">b)</span> <span class="hljs-string">=</span> <span class="hljs-number">0</span>
+  <span class="hljs-string">enf</span> <span class="hljs-string">s</span> <span class="hljs-string">*</span> <span class="hljs-string">(c</span> <span class="hljs-bullet">-</span> <span class="hljs-string">a</span> <span class="hljs-string">*</span> <span class="hljs-string">b)</span> <span class="hljs-string">=</span> <span class="hljs-number">0</span>
+  <span class="hljs-string">enf</span> <span class="hljs-string">p&#x27;</span> <span class="hljs-string">=</span> <span class="hljs-string">p</span> <span class="hljs-string">*</span> <span class="hljs-string">(c</span> <span class="hljs-string">+</span> <span class="hljs-string">$rand[0])</span></code></pre> <p class="mt-2 text-gray-700"> 只能做简单约束，缺乏对witness的可编程操作。 </p> </div> </td> </tr> <tr class="border-b border-gray-200 hover:bg-gray-50 cursor-pointer" data-name="Vamp-IR" onclick="toggleExample('Vamp-IR')"> <td class="py-3 px-4"> <a href="https://github.com/anoma/vamp-ir" class="text-blue-600 hover:underline font-medium" target="_blank"> Vamp-IR </a> <span class="ml-2 text-xs text-blue-500"> <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path> </svg> </span> </td> <td class="py-3 px-4">anoma</td> <td class="py-3 px-4">Plonkish</td> <td class="py-3 px-4">Haskell-like</td> <td class="py-3 px-4"> 有 </td> <td class="py-3 px-4">-</td> <td class="py-3 px-4">底层汇编级别的语言</td> </tr> <tr id="example-Vamp-IR" class="hidden bg-gray-50"> <td colspan="7" class="p-4"> <div> <div class="flex justify-between items-center mb-2"> <h3 class="text-lg font-semibold"> Vamp-IR Example
+</h3> <a href="https://github.com/anoma/vamp-ir" target="_blank" class="text-blue-600 hover:underline text-sm">
+View Source
+</a> </div> <pre class="bg-gray-800 rounded-md overflow-x-auto"><code class="hljs language-haskell">// declare <span class="hljs-type">R</span> to be public
+<span class="hljs-title">pub</span> <span class="hljs-type">R</span>;
+
+// define the <span class="hljs-type">Pythagorean</span> relation we are checking
+<span class="hljs-title">def</span> pyth a b c = {
+  a^<span class="hljs-number">2</span> + b^<span class="hljs-number">2</span> = c^<span class="hljs-number">2</span>
+};
+
+// appends constraint x^<span class="hljs-number">2</span> + y^<span class="hljs-number">2</span> = <span class="hljs-type">R</span>^<span class="hljs-number">2</span> to the circuit
+<span class="hljs-title">pyth</span> x y <span class="hljs-type">R</span>;</code></pre> <p class="mt-2 text-gray-700"> 作为中间表示IR，不支持witness编程，语法较原始。 </p> </div> </td> </tr> <tr class="border-b border-gray-200 hover:bg-gray-50 " data-name="ALucard"> <td class="py-3 px-4"> <a href="https://github.com/anoma/alucard" class="text-blue-600 hover:underline font-medium" target="_blank"> ALucard </a>  </td> <td class="py-3 px-4">anoma</td> <td class="py-3 px-4">Plonkish</td> <td class="py-3 px-4">Lisp</td> <td class="py-3 px-4"> 有 </td> <td class="py-3 px-4">-</td> <td class="py-3 px-4">是Vamp-IR的上层高级语言</td> </tr>  <tr class="border-b border-gray-200 hover:bg-gray-50 cursor-pointer" data-name="powdr" onclick="toggleExample('powdr')"> <td class="py-3 px-4"> <a href="https://docs.powdr.org/" class="text-blue-600 hover:underline font-medium" target="_blank"> powdr </a> <span class="ml-2 text-xs text-blue-500"> <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path> </svg> </span> </td> <td class="py-3 px-4">Powdr lab</td> <td class="py-3 px-4">Plonkish+VM</td> <td class="py-3 px-4">JS-like</td> <td class="py-3 px-4"> 有 </td> <td class="py-3 px-4">-</td> <td class="py-3 px-4">底层汇编级别的语言</td> </tr> <tr id="example-powdr" class="hidden bg-gray-50"> <td colspan="7" class="p-4"> <div> <div class="flex justify-between items-center mb-2"> <h3 class="text-lg font-semibold"> powdr Example
+</h3> <a href="https://docs.powdr.org/hello_world.html" target="_blank" class="text-blue-600 hover:underline text-sm">
+View Source
+</a> </div> <pre class="bg-gray-800 rounded-md overflow-x-auto"><code class="hljs language-typescript">machine <span class="hljs-title class_">HelloWorld</span> {
+
+degree <span class="hljs-number">8</span>;
+
+reg pc[<span class="hljs-meta">@pc</span>];
+reg X[&lt;=];
+reg Y[&lt;=];
+reg A;
+
+instr incr X -&gt; Y {
+  Y = X + <span class="hljs-number">1</span>
+}
+
+instr decr X -&gt; Y {
+  Y = X - <span class="hljs-number">1</span>
+}
+
+instr assert_zero X {
+  X = <span class="hljs-number">0</span>
+}
+
+<span class="hljs-keyword">function</span> main {
+  A &lt;=X= ${ (<span class="hljs-string">&quot;input&quot;</span>, <span class="hljs-number">0</span>) };
+  A &lt;== <span class="hljs-title function_">incr</span>(A);
+  A &lt;== <span class="hljs-title function_">decr</span>(A);
+  assert_zero A;
+  <span class="hljs-keyword">return</span>;
+}}</code></pre> <p class="mt-2 text-gray-700"> 用于描述虚拟机汇编程序，较底层，支持RISCV前端接入。 </p> </div> </td> </tr> <tr class="border-b border-gray-200 hover:bg-gray-50 cursor-pointer" data-name="Chiquito" onclick="toggleExample('Chiquito')"> <td class="py-3 px-4"> <a href="https://github.com/privacy-scaling-explorations/chiquito" class="text-blue-600 hover:underline font-medium" target="_blank"> Chiquito </a> <span class="ml-2 text-xs text-blue-500"> <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path> </svg> </span> </td> <td class="py-3 px-4">PSE</td> <td class="py-3 px-4">Plonkish</td> <td class="py-3 px-4">Rust/Python</td> <td class="py-3 px-4"> 有 </td> <td class="py-3 px-4">-</td> <td class="py-3 px-4">更像是简化包装了Halo2的API</td> </tr> <tr id="example-Chiquito" class="hidden bg-gray-50"> <td colspan="7" class="p-4"> <div> <div class="flex justify-between items-center mb-2"> <h3 class="text-lg font-semibold"> Chiquito Example
+</h3> <a href="https://github.com/privacy-scaling-explorations/chiquito" target="_blank" class="text-blue-600 hover:underline text-sm">
+View Source
+</a> </div> <pre class="bg-gray-800 rounded-md overflow-x-auto"><code class="hljs language-python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">FiboStep</span>(<span class="hljs-title class_ inherited__">StepType</span>):
+  <span class="hljs-keyword">def</span> <span class="hljs-title function_">setup</span>(<span class="hljs-params">self: FiboStep</span>):
+    <span class="hljs-variable language_">self</span>.c = <span class="hljs-variable language_">self</span>.internal(<span class="hljs-string">&quot;c&quot;</span>)
+    <span class="hljs-variable language_">self</span>.constr(eq(<span class="hljs-variable language_">self</span>.circuit.a + <span class="hljs-variable language_">self</span>.circuit.b, <span class="hljs-variable language_">self</span>.c))
+    <span class="hljs-variable language_">self</span>.transition(eq(<span class="hljs-variable language_">self</span>.circuit.b, <span class="hljs-variable language_">self</span>.circuit.a.<span class="hljs-built_in">next</span>()))
+    <span class="hljs-variable language_">self</span>.transition(eq(<span class="hljs-variable language_">self</span>.c, <span class="hljs-variable language_">self</span>.circuit.b.<span class="hljs-built_in">next</span>()))
+
+  <span class="hljs-keyword">def</span> <span class="hljs-title function_">wg</span>(<span class="hljs-params">self: FiboStep, args: <span class="hljs-type">Tuple</span>[<span class="hljs-built_in">int</span>, <span class="hljs-built_in">int</span>]</span>):
+    a_value, b_value = args
+    <span class="hljs-variable language_">self</span>.assign(<span class="hljs-variable language_">self</span>.circuit.a, F(a_value))
+    <span class="hljs-variable language_">self</span>.assign(<span class="hljs-variable language_">self</span>.circuit.b, F(b_value))
+    <span class="hljs-variable language_">self</span>.assign(<span class="hljs-variable language_">self</span>.c, F(a_value + b_value))
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Fibonacci</span>(<span class="hljs-title class_ inherited__">Circuit</span>):
+  <span class="hljs-keyword">def</span> <span class="hljs-title function_">setup</span>(<span class="hljs-params">self: Fibonacci</span>):
+    <span class="hljs-variable language_">self</span>.a: Queriable = <span class="hljs-variable language_">self</span>.forward(<span class="hljs-string">&quot;a&quot;</span>)
+    <span class="hljs-variable language_">self</span>.b: Queriable = <span class="hljs-variable language_">self</span>.forward(<span class="hljs-string">&quot;b&quot;</span>)
+
+    <span class="hljs-variable language_">self</span>.fibo_step = <span class="hljs-variable language_">self</span>.step_type(FiboStep(<span class="hljs-variable language_">self</span>, <span class="hljs-string">&quot;fibo_step&quot;</span>))
+    <span class="hljs-variable language_">self</span>.pragma_num_steps(<span class="hljs-number">11</span>)
+
+  <span class="hljs-keyword">def</span> <span class="hljs-title function_">trace</span>(<span class="hljs-params">self: Fibonacci, args: <span class="hljs-type">Any</span></span>):
+    <span class="hljs-variable language_">self</span>.add(<span class="hljs-variable language_">self</span>.fibo_step, (<span class="hljs-number">1</span>, <span class="hljs-number">1</span>))
+    a = <span class="hljs-number">1</span>
+    b = <span class="hljs-number">2</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>, <span class="hljs-number">11</span>):
+      <span class="hljs-variable language_">self</span>.add(<span class="hljs-variable language_">self</span>.fibo_step, (a, b))
+      prev_a = a
+      a = b
+      b += prev_a
+
+fibo = Fibonacci()
+fibo_witness = fibo.gen_witness(<span class="hljs-literal">None</span>)
+fibo.halo2_mock_prover(fibo_witness)</code></pre> <p class="mt-2 text-gray-700"> 结构清晰，适合表达step-based系统，语法接近Python。 </p> </div> </td> </tr> <tr class="border-b border-gray-200 hover:bg-gray-50 cursor-pointer" data-name="zkas" onclick="toggleExample('zkas')"> <td class="py-3 px-4"> <a href="https://darkrenaissance.github.io/darkfi/zkas/index.html" class="text-blue-600 hover:underline font-medium" target="_blank"> zkas </a> <span class="ml-2 text-xs text-blue-500"> <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path> </svg> </span> </td> <td class="py-3 px-4">Darkfi</td> <td class="py-3 px-4">VM</td> <td class="py-3 px-4">C-like</td> <td class="py-3 px-4"> 有 </td> <td class="py-3 px-4">-</td> <td class="py-3 px-4">-</td> </tr> <tr id="example-zkas" class="hidden bg-gray-50"> <td colspan="7" class="p-4"> <div> <div class="flex justify-between items-center mb-2"> <h3 class="text-lg font-semibold"> zkas Example
+</h3> <a href="https://darkrenaissance.github.io/darkfi/zkas/examples/voting.html" target="_blank" class="text-blue-600 hover:underline text-sm">
+View Source
+</a> </div> <pre class="bg-gray-800 rounded-md overflow-x-auto"><code class="hljs language-typescript">k = <span class="hljs-number">13</span>;
+field = <span class="hljs-string">&quot;pallas&quot;</span>;
+
+constant <span class="hljs-string">&quot;Vote&quot;</span> {
+  <span class="hljs-title class_">EcFixedPointShort</span> <span class="hljs-variable constant_">VALUE_COMMIT_VALUE</span>,
+  <span class="hljs-title class_">EcFixedPoint</span> <span class="hljs-variable constant_">VALUE_COMMIT_RANDOM</span>,
+  <span class="hljs-title class_">EcFixedPointBase</span> <span class="hljs-variable constant_">NULLIFIER_K</span>,
+}
+
+witness <span class="hljs-string">&quot;Vote&quot;</span> {
+  <span class="hljs-title class_">Base</span> process_id_0,
+  <span class="hljs-title class_">Base</span> process_id_1,
+  <span class="hljs-title class_">Base</span> secret_key,
+  <span class="hljs-title class_">Base</span> vote,
+  <span class="hljs-title class_">Scalar</span> vote_blind,
+  <span class="hljs-title class_">Uint32</span> leaf_pos,
+  <span class="hljs-title class_">MerklePath</span> path,
+}
+
+circuit <span class="hljs-string">&quot;Vote&quot;</span> {
+  process_id = <span class="hljs-title function_">poseidon_hash</span>(process_id_0, process_id_1);
+  nullifier = <span class="hljs-title function_">poseidon_hash</span>(secret_key, process_id);
+  <span class="hljs-title function_">constrain_instance</span>(nullifier);
+
+  public_key = <span class="hljs-title function_">ec_mul_base</span>(secret_key, <span class="hljs-variable constant_">NULLIFIER_K</span>);
+  public_x = <span class="hljs-title function_">ec_get_x</span>(public_key);
+  public_y = <span class="hljs-title function_">ec_get_y</span>(public_key);
+  pk_hash = <span class="hljs-title function_">poseidon_hash</span>(public_x, public_y);
+
+  root = <span class="hljs-title function_">merkle_root</span>(leaf_pos, path, pk_hash);
+  <span class="hljs-title function_">constrain_instance</span>(root);
+
+  vcv = <span class="hljs-title function_">ec_mul_short</span>(vote, <span class="hljs-variable constant_">VALUE_COMMIT_VALUE</span>);
+  vcr = <span class="hljs-title function_">ec_mul</span>(vote_blind, <span class="hljs-variable constant_">VALUE_COMMIT_RANDOM</span>);
+  vote_commit = <span class="hljs-title function_">ec_add</span>(vcv, vcr);
+  vote_commit_x = <span class="hljs-title function_">ec_get_x</span>(vote_commit);
+  vote_commit_y = <span class="hljs-title function_">ec_get_y</span>(vote_commit);
+  <span class="hljs-title function_">constrain_instance</span>(vote_commit_x);
+  <span class="hljs-title function_">constrain_instance</span>(vote_commit_y);
+}</code></pre> <p class="mt-2 text-gray-700"> 偏向链上zkVM操作，资料较少，语法接近zk汇编。 </p> </div> </td> </tr> <tr class="border-b border-gray-200 hover:bg-gray-50 " data-name="Polylang"> <td class="py-3 px-4"> <a href="https://polylang.dev/docs" class="text-blue-600 hover:underline font-medium" target="_blank"> Polylang </a>  </td> <td class="py-3 px-4">Polybase</td> <td class="py-3 px-4">VM</td> <td class="py-3 px-4">JS-like</td> <td class="py-3 px-4"> 有 </td> <td class="py-3 px-4">-</td> <td class="py-3 px-4">底层接MidenVM</td> </tr>  <tr class="border-b border-gray-200 hover:bg-gray-50 cursor-pointer" data-name="plaf" onclick="toggleExample('plaf')"> <td class="py-3 px-4"> <a href="https://github.com/Dhole/polyexen" class="text-blue-600 hover:underline font-medium" target="_blank"> plaf </a> <span class="ml-2 text-xs text-blue-500"> <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path> </svg> </span> </td> <td class="py-3 px-4">-</td> <td class="py-3 px-4">Plonkish</td> <td class="py-3 px-4">toml-like</td> <td class="py-3 px-4"> - </td> <td class="py-3 px-4">-</td> <td class="py-3 px-4">-</td> </tr> <tr id="example-plaf" class="hidden bg-gray-50"> <td colspan="7" class="p-4"> <div> <div class="flex justify-between items-center mb-2"> <h3 class="text-lg font-semibold"> plaf Example
+</h3> <a href="https://github.com/Dhole/polyexen/blob/master/format.md" target="_blank" class="text-blue-600 hover:underline text-sm">
+View Source
+</a> </div> <pre class="bg-gray-800 rounded-md overflow-x-auto"><code class="hljs language-toml"><span class="hljs-section">[info]</span>
+<span class="hljs-attr">name</span> = <span class="hljs-string">&quot;Circuit Foo&quot;</span>
+<span class="hljs-attr">size</span> = <span class="hljs-number">4096</span> <span class="hljs-comment"># k = 12</span>
+
+<span class="hljs-section">[columns.witness]</span>
+<span class="hljs-attr">w0</span> = {}
+<span class="hljs-attr">w1</span> = {}
+<span class="hljs-attr">w2</span> = { phase = <span class="hljs-number">2</span> }
+
+<span class="hljs-section">[columns.fixed]</span>
+<span class="hljs-attr">q0</span> = {}
+<span class="hljs-attr">q1</span> = {}
+<span class="hljs-attr">q2</span> = {}
+<span class="hljs-attr">q3</span> = {}
+
+<span class="hljs-section">[constraints.poly]</span>
+<span class="hljs-attr">&quot;gate 1&quot;</span> = <span class="hljs-string">&quot;q0 * ((w0 - 0) * (w0 - 1))&quot;</span>
+<span class="hljs-attr">&quot;gate 2&quot;</span> = <span class="hljs-string">&quot;q1 * (w0 - w1)&quot;</span>
+<span class="hljs-attr">&quot;gate 3&quot;</span> = <span class="hljs-string">&quot;q2 * w0 * w1 * w2&quot;</span>
+<span class="hljs-attr">&quot;gate 4&quot;</span> = <span class="hljs-string">&quot;q3 * (w1[1] = w0[0])&quot;</span>
+
+<span class="hljs-section">[constraints.lookup]</span>
+<span class="hljs-attr">&quot;lookup 1&quot;</span> = [[<span class="hljs-string">&quot;w0&quot;</span>, <span class="hljs-string">&quot;w1&quot;</span>], [<span class="hljs-string">&quot;w2[0]&quot;</span>, <span class="hljs-string">&quot;w2[1]&quot;</span>]]
+<span class="hljs-attr">&quot;lookup 2&quot;</span> = [[<span class="hljs-string">&quot;w0&quot;</span>, <span class="hljs-string">&quot;w0 + w1&quot;</span>], [<span class="hljs-string">&quot;w2 + w2&quot;</span>, <span class="hljs-string">&quot;q0 * w2&quot;</span>]]
+
+<span class="hljs-section">[[constraints.copy]]</span>
+<span class="hljs-attr">columns</span> = [<span class="hljs-string">&quot;w0&quot;</span>, <span class="hljs-string">&quot;w1&quot;</span>]
+<span class="hljs-attr">offsets</span> = [[<span class="hljs-number">0</span>, <span class="hljs-number">10</span>], [<span class="hljs-number">1</span>, <span class="hljs-number">11</span>], [<span class="hljs-number">2</span>, <span class="hljs-number">12</span>]]
+
+<span class="hljs-section">[[constraints.copy]]</span>
+<span class="hljs-attr">columns</span> = [<span class="hljs-string">&quot;w0&quot;</span>, <span class="hljs-string">&quot;w2&quot;</span>]
+<span class="hljs-attr">offsets</span> = [[<span class="hljs-number">0</span>, <span class="hljs-number">1</span>], [<span class="hljs-number">2</span>, <span class="hljs-number">3</span>], [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>]]</code></pre> <p class="mt-2 text-gray-700"> 无编程能力，仅为静态约束描述格式。 </p> </div> </td> </tr> <tr class="border-b border-gray-200 hover:bg-gray-50 cursor-pointer" data-name="halo2-repl" onclick="toggleExample('halo2-repl')"> <td class="py-3 px-4"> <a href="https://github.com/axiom-crypto/halo2-repl" class="text-blue-600 hover:underline font-medium" target="_blank"> halo2-repl </a> <span class="ml-2 text-xs text-blue-500"> <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path> </svg> </span> </td> <td class="py-3 px-4">Axiom</td> <td class="py-3 px-4">Plonkish</td> <td class="py-3 px-4">JS</td> <td class="py-3 px-4"> 有 </td> <td class="py-3 px-4">-</td> <td class="py-3 px-4">-</td> </tr> <tr id="example-halo2-repl" class="hidden bg-gray-50"> <td colspan="7" class="p-4"> <div> <div class="flex justify-between items-center mb-2"> <h3 class="text-lg font-semibold"> halo2-repl Example
+</h3> <a href="https://www.halo2repl.dev/" target="_blank" class="text-blue-600 hover:underline text-sm">
+View Source
+</a> </div> <pre class="bg-gray-800 rounded-md overflow-x-auto"><code class="hljs language-javascript"><span class="hljs-keyword">const</span> input = arr.<span class="hljs-title function_">map</span>(witness);
+<span class="hljs-keyword">const</span> start = <span class="hljs-title function_">witness</span>(startIdx);
+<span class="hljs-keyword">const</span> end = <span class="hljs-title function_">witness</span>(endIdx);
+
+input.<span class="hljs-title function_">map</span>(makePublic);
+<span class="hljs-title function_">makePublic</span>(start);
+<span class="hljs-title function_">makePublic</span>(end);
+
+<span class="hljs-keyword">const</span> numInRange = <span class="hljs-title function_">sub</span>(end, start);
+
+<span class="hljs-keyword">let</span> out = [];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++) {
+  <span class="hljs-keyword">const</span> idx = <span class="hljs-title function_">mod</span>(<span class="hljs-title function_">add</span>(start, <span class="hljs-title function_">constant</span>(i)), <span class="hljs-title function_">constant</span>(<span class="hljs-number">10</span>));
+  <span class="hljs-keyword">const</span> isIdxInRange = <span class="hljs-title function_">isLessThan</span>(<span class="hljs-title function_">constant</span>(i), numInRange);
+  <span class="hljs-keyword">const</span> el = <span class="hljs-title function_">selectFromIdx</span>(input, idx);
+  <span class="hljs-keyword">const</span> res = <span class="hljs-title function_">mul</span>(isIdxInRange, el);
+  out.<span class="hljs-title function_">push</span>(res);
+}
+
+out.<span class="hljs-title function_">map</span>(makePublic);</code></pre> <p class="mt-2 text-gray-700"> 语法API感强，但REPL体验良好，适合交互式调试。 </p> </div> </td> </tr> <tr class="border-b border-gray-200 hover:bg-gray-50 " data-name="lir"> <td class="py-3 px-4"> <a href="https://github.com/jeong0982/lir" class="text-blue-600 hover:underline font-medium" target="_blank"> lir </a>  </td> <td class="py-3 px-4">-</td> <td class="py-3 px-4">Lookup</td> <td class="py-3 px-4">IR</td> <td class="py-3 px-4"> 无 </td> <td class="py-3 px-4">-</td> <td class="py-3 px-4">试图做纯lookup的IR，较粗糙，除了readme中的一句话，其他没找到example</td> </tr>  <tr class="border-b border-gray-200 hover:bg-gray-50 " data-name="Keelung"> <td class="py-3 px-4"> <a href="https://btq.gitbook.io/keelung/" class="text-blue-600 hover:underline font-medium" target="_blank"> Keelung </a>  </td> <td class="py-3 px-4">BTQ</td> <td class="py-3 px-4">-</td> <td class="py-3 px-4">-</td> <td class="py-3 px-4"> - </td> <td class="py-3 px-4">后端是Aurora</td> <td class="py-3 px-4">-</td> </tr>  <tr class="border-b border-gray-200 hover:bg-gray-50 " data-name="noname"> <td class="py-3 px-4"> <a href="https://github.com/zksecurity/noname" class="text-blue-600 hover:underline font-medium" target="_blank"> noname </a>  </td> <td class="py-3 px-4">zksecurity</td> <td class="py-3 px-4">-</td> <td class="py-3 px-4">-</td> <td class="py-3 px-4"> - </td> <td class="py-3 px-4">-</td> <td class="py-3 px-4">-</td> </tr>  <tr class="border-b border-gray-200 hover:bg-gray-50 " data-name="sunscreen"> <td class="py-3 px-4"> <a href="https://docs.sunscreen.tech/zkp/zkp_programs/zkp_programs.html" class="text-blue-600 hover:underline font-medium" target="_blank"> sunscreen </a>  </td> <td class="py-3 px-4">-</td> <td class="py-3 px-4">-</td> <td class="py-3 px-4">-</td> <td class="py-3 px-4"> - </td> <td class="py-3 px-4">支持FHE和ZKP两种</td> <td class="py-3 px-4">-</td> </tr>  <tr class="border-b border-gray-200 hover:bg-gray-50 " data-name="zirgen"> <td class="py-3 px-4"> <a href="https://github.com/risc0/zirgen" class="text-blue-600 hover:underline font-medium" target="_blank"> zirgen </a>  </td> <td class="py-3 px-4">RISC0</td> <td class="py-3 px-4">-</td> <td class="py-3 px-4">-</td> <td class="py-3 px-4"> - </td> <td class="py-3 px-4">-</td> <td class="py-3 px-4">-</td> </tr>  <tr class="border-b border-gray-200 hover:bg-gray-50 cursor-pointer" data-name="Zinnia" onclick="toggleExample('Zinnia')"> <td class="py-3 px-4"> <a href="https://eprint.iacr.org/2025/572" class="text-blue-600 hover:underline font-medium" target="_blank"> Zinnia </a> <span class="ml-2 text-xs text-blue-500"> <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path> </svg> </span> </td> <td class="py-3 px-4">HKUST</td> <td class="py-3 px-4">-</td> <td class="py-3 px-4">Python-like</td> <td class="py-3 px-4"> - </td> <td class="py-3 px-4">-</td> <td class="py-3 px-4">-</td> </tr> <tr id="example-Zinnia" class="hidden bg-gray-50"> <td colspan="7" class="p-4"> <div> <div class="flex justify-between items-center mb-2"> <h3 class="text-lg font-semibold"> Zinnia Example
+</h3> <a href="https://eprint.iacr.org/2025/572" target="_blank" class="text-blue-600 hover:underline text-sm">
+View Source
+</a> </div> <pre class="bg-gray-800 rounded-md overflow-x-auto"><code class="hljs language-python"><span class="hljs-meta">@zk_circuit</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">is_prime</span>(<span class="hljs-params">number: <span class="hljs-built_in">int</span>, prime: <span class="hljs-built_in">bool</span></span>):
+    <span class="hljs-keyword">assert</span> <span class="hljs-number">0</span> &lt;= number &lt;= <span class="hljs-number">10000</span>
+
+    <span class="hljs-keyword">if</span> number &lt; <span class="hljs-number">2</span>:
+        <span class="hljs-keyword">assert</span> <span class="hljs-keyword">not</span> prime
+    <span class="hljs-keyword">else</span>:
+        result = <span class="hljs-literal">True</span>
+
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">2</span>, <span class="hljs-number">101</span>):
+            <span class="hljs-keyword">if</span> i * i &gt; number:
+                <span class="hljs-keyword">break</span>
+            <span class="hljs-keyword">if</span> number % i == <span class="hljs-number">0</span>:
+                result = <span class="hljs-literal">False</span>
+
+        <span class="hljs-keyword">assert</span> prime == result
+</code></pre> <p class="mt-2 text-gray-700">  </p> </div> </td> </tr> </tbody> </table> </div> </div>  </main> <footer class="py-8 mt-12 border-t border-gray-100" data-astro-cid-sckkx6r4> <div class="container mx-auto px-4 text-center text-gray-500 text-sm" data-astro-cid-sckkx6r4> <p data-astro-cid-sckkx6r4>Built with <span class="beating-heart" data-astro-cid-sckkx6r4>❤</span> by @icerdesign</p> <p class="mt-2" data-astro-cid-sckkx6r4> <a href="https://github.com/wizicer" class="text-blue-600 hover:underline" data-astro-cid-sckkx6r4>View on GitHub</a> </p> </div> </footer> </body></html> <script type="module">function i(s){const e=document.getElementById(`example-${s}`);e&&(e.classList.contains("hidden")?(document.querySelectorAll('[id^="example-"]').forEach(d=>{d.classList.contains("hidden")||d.classList.add("hidden")}),e.classList.remove("hidden")):e.classList.add("hidden"))}window.toggleExample=i;</script>
