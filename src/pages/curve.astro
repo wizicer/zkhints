@@ -2,7 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import CheatsheetHeader from "../components/CheatsheetHeader";
 import "highlight.js/styles/atom-one-dark.css";
-import { curves, cases, recommendations } from "../data/curve";
+import { curves, cases } from "../data/curve";
+import { Image } from 'astro:assets';
 ---
 
 <Layout title="Elliptic Curve Comparison">
@@ -81,11 +82,10 @@ import { curves, cases, recommendations } from "../data/curve";
           >
             <h3 class="font-bold text-gray-800 mb-2">{useCase.title}</h3>
             <div class="flex items-center mt-3">
-              <img 
-                src={`/src/assets/curve/${useCase.id}.png`} 
+              <Image 
+                src={useCase.image} 
                 alt={useCase.title}
                 class="w-16 h-16 object-contain mr-4"
-                onerror="this.src='/src/assets/curve/default.png'; this.onerror=null;"
               />
               <p class="text-sm text-gray-600">{useCase.description}</p>
             </div>

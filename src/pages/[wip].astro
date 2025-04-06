@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import CheatsheetHeader from "../components/CheatsheetHeader";
 import { sections } from "../data/index";
 import type { Item } from "../data/index";
+import { Image } from 'astro:assets';
+import constructionCat1 from '../assets/construction/construction_cat_1.png';
 
 interface PathItem {
   params: { wip: string };
@@ -46,8 +48,8 @@ const { item, sectionTitle } = Astro.props;
 
   <div class="container mx-auto px-4 py-8">
     <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-8 flex items-start relative flex-col md:flex-row">
-      <img 
-        src="/src/assets/construction/construction_cat_1.png" 
+      <Image 
+        src={constructionCat1} 
         alt="Under Construction" 
         class="h-32 mr-4 object-contain md:absolute md:-top-12"
       />
@@ -60,7 +62,7 @@ const { item, sectionTitle } = Astro.props;
     <div class="bg-white p-6 rounded-lg shadow-md">
       <div class="flex items-start mb-6">
         {item.image && (
-          <img 
+          <Image 
             src={item.image} 
             alt={item.title} 
             class="w-32 h-32 object-contain mr-6"

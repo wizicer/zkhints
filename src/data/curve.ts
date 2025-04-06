@@ -1,3 +1,10 @@
+import ethereum_compat from "../assets/curve/ethereum_compat.png";
+import use_groth16 from "../assets/curve/use_groth16.png";
+import long_term_security from "../assets/curve/long_term_security.png";
+import non_pairing from "../assets/curve/non_pairing.png";
+import in_circuit_curve from "../assets/curve/in_circuit_curve.png";
+import recursion_outer_curve from "../assets/curve/recursion_outer_curve.png";
+
 export const curves =[
     {
       "id": "bn254",
@@ -110,32 +117,38 @@ export const cases =[
     {
       "id": "ethereum_compat",
       "title": "I want to use the curve on Ethereum",
-      "description": "Only curves supported by Ethereum precompiles are allowed (e.g., alt_bn128)."
+      "description": "Only curves supported by Ethereum precompiles are allowed (e.g., alt_bn128).",
+      "image": ethereum_compat
     },
     {
       "id": "use_groth16",
       "title": "I want to use Groth16",
-      "description": "You need pairing-friendly curves with good Groth16 support and tooling."
+      "description": "You need pairing-friendly curves with good Groth16 support and tooling.",
+      "image": use_groth16
     },
     {
       "id": "long_term_security",
       "title": "I care about long-term cryptographic security",
-      "description": "Prefer curves with at least 128-bit or higher security margin."
+      "description": "Prefer curves with at least 128-bit or higher security margin.",
+      "image": long_term_security
     },
     {
       "id": "non_pairing",
       "title": "I want a non-pairing curve",
-      "description": "Pairing-free curves are used in systems like Halo2, STARK-like designs, or recursive circuits."
+      "description": "Pairing-free curves are used in systems like Halo2, STARK-like designs, or recursive circuits.",
+      "image": non_pairing
     },
     {
       "id": "in_circuit_curve",
       "title": "I want to use a curve inside the circuit (e.g., for recursive proof)",
-      "description": "You need a curve with efficient in-circuit arithmetic, often non-pairing and cycle-friendly."
+      "description": "You need a curve with efficient in-circuit arithmetic, often non-pairing and cycle-friendly.",
+      "image": in_circuit_curve
     },
     {
       "id": "recursion_outer_curve",
       "title": "I want to use a curve as the outer wrapper for recursion",
-      "description": "You need a pairing-friendly curve capable of verifying inner SNARK proofs."
+      "description": "You need a pairing-friendly curve capable of verifying inner SNARK proofs.",
+      "image": recursion_outer_curve
     }
   ];
 

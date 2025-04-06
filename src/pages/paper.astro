@@ -2,6 +2,59 @@
 import Layout from "../layouts/Layout.astro";
 import CheatsheetHeader from "../components/CheatsheetHeader";
 import { papers, contributions } from "../data/paper";
+import { Image } from 'astro:assets';
+
+import ALMSS92 from "../assets/paper/ALMSS92.png";
+import BCTV14 from "../assets/paper/BCTV14.png";
+import BBHR18 from "../assets/paper/BBHR18.png";
+import BBHR18b from "../assets/paper/BBHR18.png";
+import BCGGMTV14 from "../assets/paper/BCGGMTV14.png";
+import BGGHKMR90 from "../assets/paper/BGGHKMR90.png";
+import FS86 from "../assets/paper/FS86.png";
+import GGPR13 from "../assets/paper/GGPR13.png";
+import GKR08 from "../assets/paper/GKR08.png";
+import GMR85 from "../assets/paper/GMR85.png";
+import GMW87 from "../assets/paper/GMW87.png";
+import GPR21 from "../assets/paper/GPR21.png";
+import Groth10 from "../assets/paper/Groth10.png";
+import Groth16 from "../assets/paper/Groth16.png";
+import GWC19 from "../assets/paper/GWC19.png";
+import Kilian92 from "../assets/paper/Kilian92.png";
+import KST22 from "../assets/paper/KST22.png";
+import KZG10 from "../assets/paper/KZG10.png";
+import LFK92 from "../assets/paper/LFK92.png";
+import Micali00 from "../assets/paper/Micali00.png";
+import PHGR16 from "../assets/paper/PHGR16.png";
+import Shamir92 from "../assets/paper/Shamir92.png";
+import Thaler15 from "../assets/paper/Thaler15.png";
+import Valiant08 from "../assets/paper/Valiant08.png";
+
+const imageMap = {
+  ALMSS92,
+  BCTV14,
+  BBHR18,
+  BBHR18b,
+  BCGGMTV14,
+  BGGHKMR90,
+  FS86,
+  GGPR13,
+  GKR08,
+  GMR85,
+  GMW87,
+  GPR21,
+  Groth10,
+  Groth16,
+  GWC19,
+  Kilian92,
+  KST22,
+  KZG10,
+  LFK92,
+  Micali00,
+  PHGR16,
+  Shamir92,
+  Thaler15,
+  Valiant08,
+};
 
 // Sort papers by year
 const sortedPapers = [...papers].sort(
@@ -22,7 +75,7 @@ const sortedPapers = [...papers].sort(
       {
         sortedPapers.map((paper, index) => {
           const contribution = contributions.find((c) => c.id === paper.id);
-          const paperImage = "/src/assets/paper/" + paper.id + ".png";
+          const paperImage = imageMap[paper.id as keyof typeof imageMap];
           const isEven = index % 2 === 0;
           const gradientClass = isEven 
             ? "bg-gradient-to-r from-rose-100 to-pink-100 border-l-4 border-rose-500" 
@@ -36,7 +89,7 @@ const sortedPapers = [...papers].sort(
                 data-toggle="expand"
               >
                 <div class="flex-shrink-0 w-16 h-16 mr-4">
-                  <img
+                  <Image
                     src={paperImage}
                     alt={`${paper.title}`}
                     class="w-full h-full object-cover rounded-lg"
@@ -77,7 +130,7 @@ const sortedPapers = [...papers].sort(
                 <div class="flex flex-col md:flex-row items-center pt-4">
                   <div class="md:w-2/3 mb-6 md:mb-0 md:pr-6">
                     <div class="zigzag-image">
-                      <img
+                      <Image
                         src={paperImage}
                         alt={`${paper.title}`}
                         class="w-full h-auto object-cover"
