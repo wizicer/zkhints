@@ -2,12 +2,14 @@ import { awesome } from "./list/awesome";
 import { beginner } from "./list/beginner";
 import { intermediate } from "./list/intermediate";
 import { news } from "./list/news";
+import { events } from "./list/events";
 
 export interface ResourceLink {
   title: string;
   description: string;
   link: string;
   recommended?: boolean;
+  outdated?: string;
 }
 
 export interface ResourceSection {
@@ -28,4 +30,5 @@ export const resourceList: Resource[] = [
   intermediate,
   awesome,
   news,
+  events,
 ];
