@@ -3,6 +3,7 @@ import bob from "../assets/role/bob.png";
 import GMR85 from "../assets/paper_abs/GMR85.png";
 import GMW87 from "../assets/paper_abs/GMW87.png";
 import Kilian92 from "../assets/paper_abs/Kilian92.png";
+import FS86 from "../assets/paper_abs/FS86.png";
 
 export interface Paper {
   id: string;
@@ -36,7 +37,7 @@ export const papers: Paper[] = [
       left: alice,
       right: bob,
       center: GMR85,
-      centerWidth: 192,
+      centerWidth: 190,
       centerPosition: [0, -10],
     }
   },
@@ -47,6 +48,13 @@ export const papers: Paper[] = [
     authors: "Fiat, A., & Shamir, A.",
     year: "1986",
     link: "https://link.springer.com/content/pdf/10.1007/3-540-47721-7_12",
+    drawing: {
+      left: alice,
+      right: bob,
+      center: FS86,
+      centerWidth: 116,
+      centerPosition: [0, -10],
+    }
   },
   {
     id: "GMW87",
@@ -59,7 +67,7 @@ export const papers: Paper[] = [
       left: alice,
       right: bob,
       center: GMW87,
-      centerWidth: 96,
+      centerWidth: 76,
       centerPosition: [0, -10],
     }
   },
@@ -73,7 +81,7 @@ export const papers: Paper[] = [
       left: alice,
       right: bob,
       center: Kilian92,
-      centerWidth: 48,
+      centerWidth: 36,
       centerPosition: [0, 10],
     }
   },
