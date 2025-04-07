@@ -338,3 +338,18 @@ export const contributions: Contribution[] = [
       "The Cairo CPU architecture, optimized for STARK-based proof systems, provided a Turing-complete architecture that could be efficiently proven with zero-knowledge proofs.",
   },
 ];
+
+export const references = [
+  {
+    title: "Bilinear Pairings-based Zero-Knowledge Proofs",
+    authors: "Jens Groth, DFINITY",
+    year: "2019",
+    link: "https://www.youtube.com/watch?v=X-z3JYlFdzs",
+  },
+  {
+    title: "10 Must-Read Papers That Shaped Modern Zero-Knowledge Proofs",
+    authors: "zksecurity",
+    year: "2024",
+    link: "https://blog.zksecurity.xyz/posts/ten-zk-papers/",
+  }
+];

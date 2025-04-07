@@ -1,8 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import CheatsheetHeader from "../components/CheatsheetHeader";
-import { papers, contributions } from "../data/paper";
+import { papers, contributions, references } from "../data/paper";
 import { Image } from 'astro:assets';
+import References from "../components/References.astro";
 
 import ALMSS92 from "../assets/paper/ALMSS92.png";
 import BCTV14 from "../assets/paper/BCTV14.png";
@@ -175,6 +176,10 @@ const sortedPapers = [...papers].sort(
         })
       }
     </div>
+  </div>
+
+  <div class="container mx-auto px-4 py-8 max-w-6xl">
+    <References references={references} />
   </div>
 </Layout>
 
