@@ -86,7 +86,7 @@ const sortedPapers = [...papers].sort(
             <div class="paper-item mb-12 relative">
               {/* Collapsed View */}
               <div
-                class={`collapsed-view rounded-lg shadow-md overflow-hidden flex items-center p-4 cursor-pointer relative ${gradientClass}`}
+                class={`collapsed-view rounded-lg shadow-md overflow-hidden md:overflow-visible flex items-center p-4 cursor-pointer relative ${gradientClass}`}
                 data-toggle="expand"
               >
                 <div class="flex-shrink-0 w-16 h-16 mr-4">
@@ -97,7 +97,7 @@ const sortedPapers = [...papers].sort(
                   />
                 </div>
                 <div class="flex-grow pr-12">
-                  <h3 class="font-bold text-blue-700 text-md mb-1  truncate">
+                  <h3 class="font-bold text-blue-700 text-md mb-1  truncate max-w-[540px] overflow-hidden">
                     {paper.title}
                   </h3>
                   <p class="text-lg font-bold truncate text-gray-800">
@@ -107,6 +107,26 @@ const sortedPapers = [...papers].sort(
                 <div class="absolute top-4 right-4 px-3 py-1 bg-blue-200 text-blue-600 rounded-full text-sm font-bold">
                   {paper.year}
                 </div>
+                {paper.drawing && (
+                  <div class="hidden md:block absolute top-0 right-24 w-72 h-16">
+                    <Image
+                      src={paper.drawing.left}
+                      alt="Left character"
+                      class="absolute left-0 bottom-0 h-24 w-auto"
+                        />
+                    <Image
+                      src={paper.drawing.right}
+                      alt="Right character"
+                      class="absolute right-0 bottom-0 h-24 w-auto"
+                    />
+                    <Image
+                      src={paper.drawing.center}
+                      alt="Center diagram"
+                      class="absolute w-48 h-auto"
+                      style={`left: 50%; top: 50%; transform: translate(-50%, -50%) translate(${paper.drawing.centerPosition[0]}px, ${paper.drawing.centerPosition[1]}px); z-index: 5;`}
+                    />
+                  </div>
+                )}
               </div>
 
               {/* Expanded View - Hidden by default */}

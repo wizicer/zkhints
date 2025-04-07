@@ -1,9 +1,19 @@
+import alice from "../assets/role/alice.png";
+import bob from "../assets/role/bob.png";
+import GMR85 from "../assets/paper_abs/GMR85.png";
+
 export interface Paper {
   id: string;
   title: string;
   authors: string;
   year: string;
   link: string;
+  drawing?: {
+    left: ImageMetadata,
+    right: ImageMetadata,
+    center: ImageMetadata,
+    centerPosition: [number, number],
+  }
 }
 
 export interface Contribution {
@@ -19,6 +29,12 @@ export const papers: Paper[] = [
     authors: "Goldwasser, S., Micali, S., & Rackoff, C.",
     year: "1985",
     link: "https://dl.acm.org/doi/10.1145/22145.22178",
+    drawing: {
+      left: alice,
+      right: bob,
+      center: GMR85,
+      centerPosition: [0, -10],
+    }
   },
   {
     id: "FS86",
