@@ -1,6 +1,8 @@
 import alice from "../assets/role/alice.png";
 import bob from "../assets/role/bob.png";
 import GMR85 from "../assets/paper_abs/GMR85.png";
+import GMW87 from "../assets/paper_abs/GMW87.png";
+import Kilian92 from "../assets/paper_abs/Kilian92.png";
 
 export interface Paper {
   id: string;
@@ -12,6 +14,7 @@ export interface Paper {
     left: ImageMetadata,
     right: ImageMetadata,
     center: ImageMetadata,
+    centerWidth: number,
     centerPosition: [number, number],
   }
 }
@@ -33,6 +36,7 @@ export const papers: Paper[] = [
       left: alice,
       right: bob,
       center: GMR85,
+      centerWidth: 192,
       centerPosition: [0, -10],
     }
   },
@@ -51,6 +55,27 @@ export const papers: Paper[] = [
     authors: "Goldreich, O., Micali, S., & Wigderson, A.",
     year: "1987",
     link: "https://link.springer.com/content/pdf/10.1007/3-540-47721-7_11.pdf",
+    drawing: {
+      left: alice,
+      right: bob,
+      center: GMW87,
+      centerWidth: 96,
+      centerPosition: [0, -10],
+    }
+  },
+  {
+    id: "Kilian92",
+    title: "A note on efficient zero-knowledge proofs and arguments",
+    authors: "Kilian, J.",
+    year: "1992",
+    link: "https://people.csail.mit.edu/vinodv/6892-Fall2013/efficientargs.pdf",
+    drawing: {
+      left: alice,
+      right: bob,
+      center: Kilian92,
+      centerWidth: 48,
+      centerPosition: [0, 10],
+    }
   },
   {
     id: "BGGHKMR90",

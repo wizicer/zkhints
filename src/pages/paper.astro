@@ -122,8 +122,8 @@ const sortedPapers = [...papers].sort(
                     <Image
                       src={paper.drawing.center}
                       alt="Center diagram"
-                      class="absolute w-48 h-auto"
-                      style={`left: 50%; top: 50%; transform: translate(-50%, -50%) translate(${paper.drawing.centerPosition[0]}px, ${paper.drawing.centerPosition[1]}px); z-index: 5;`}
+                      class="absolute"
+                      style={`left: 50%; top: 50%; transform: translate(-50%, -50%) translate(${paper.drawing.centerPosition[0]}px, ${paper.drawing.centerPosition[1]}px); z-index: 5; width: ${paper.drawing.centerWidth}px`}
                     />
                   </div>
                 )}
