@@ -1,0 +1,37 @@
+---
+import { Image } from 'astro:assets';
+
+export interface DrawingProps {
+  left: ImageMetadata;
+  right: ImageMetadata;
+  center: ImageMetadata;
+  centerWidth: number;
+  centerPosition: [number, number];
+}
+
+interface Props {
+  drawing: DrawingProps;
+  className?: string;
+}
+
+const { drawing, className = "hidden md:block absolute top-0 right-24 w-72 h-16" } = Astro.props;
+---
+
+<div class={className}>
+  <Image
+    src={drawing.left}
+    alt="Left character"
+    class="absolute left-0 bottom-0 h-24 w-auto"
+  />
+  <Image
+    src={drawing.right}
+    alt="Right character"
+    class="absolute right-0 bottom-0 h-24 w-auto"
+  />
+  <Image
+    src={drawing.center}
+    alt="Center diagram"
+    class="absolute"
+    style={`left: 50%; top: 50%; transform: translate(-50%, -50%) translate(${drawing.centerPosition[0]}px, ${drawing.centerPosition[1]}px); z-index: 5; width: ${drawing.centerWidth}px`}
+  />
+</div>
