@@ -4,6 +4,7 @@ import GMR85 from "../assets/paper_abs/GMR85.png";
 import GMW87 from "../assets/paper_abs/GMW87.png";
 import Kilian92 from "../assets/paper_abs/Kilian92.png";
 import FS86 from "../assets/paper_abs/FS86.png";
+import BGGHKMR90 from "../assets/paper_abs/BGGHKMR90.png";
 
 export interface Paper {
   id: string;
@@ -92,6 +93,13 @@ export const papers: Paper[] = [
       "Ben-Or, M., Goldreich, O., Goldwasser, S., Håstad, J., Kilian, J., Micali, S., & Rogaway, P.",
     year: "1990",
     link: "https://dl.acm.org/doi/pdf/10.5555/88314.88333",
+    drawing: {
+      left: alice,
+      right: bob,
+      center: BGGHKMR90,
+      centerWidth: 210,
+      centerPosition: [0, -30],
+    }
   },
   {
     id: "Shamir92",
