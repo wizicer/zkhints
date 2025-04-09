@@ -137,12 +137,14 @@ export const sections: Section[] = [
       { 
         id: "constraint", 
         title: "Constraint System", 
+        construction: true,
         description: "Comparing different ZK constraint systems",
         image: constraint
       },
       { 
         id: "snark", 
         title: "Popular zkSNARK", 
+        construction: true,
         description: "Overview of mainstream zkSNARK systems",
         image: popularSnark
       },
