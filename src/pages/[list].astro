@@ -83,12 +83,31 @@ const currentDate = new Date();
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {section.links.map(link => {
-            const outdated = isOutdated(link.outdated);
-            return (
+            const isEvent = "outdated" in link;
+            const outdated = isEvent && isOutdated(link.outdated);
+            return !isEvent ? (
               <a 
                 href={link.link} 
                 target="_blank" 
                 rel="noopener noreferrer"
+                class={`block p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 ${
+                  link.recommended ? 'border-blue-500' : 'border-gray-200'
+                }`}
+              >
+                <div class="flex justify-between items-start">
+                  <h3 class="font-bold mb-2 text-gray-500">
+                    {link.title}
+                  </h3>
+                  {link.recommended && (
+                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Recommended</span>
+                  )}
+                </div>
+                <p class="text-sm text-gray-600">
+                  {link.description}
+                </p>
+              </a>
+            ) : (
+              <div 
                 class={`block p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 ${
                   outdated 
                     ? 'border-gray-300 opacity-60' 
@@ -100,6 +119,7 @@ const currentDate = new Date();
                 <div class="flex justify-between items-start">
                   <h3 class={`font-bold mb-2 ${outdated ? 'text-gray-500' : 'text-gray-800'}`}>
                     {link.title}
+                    <a href={link.link} target="_blank" rel="noopener noreferrer" class="ml-1"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
                   </h3>
                   <div>
                     {link.recommended && !outdated && (
@@ -111,9 +131,16 @@ const currentDate = new Date();
                   </div>
                 </div>
                 <p class={`text-sm ${outdated ? 'text-gray-400' : 'text-gray-600'}`}>
-                  {link.description}
+                  <a href={`https://www.google.com/maps/place/${link.location}`} target="_blank" rel="noopener noreferrer" class="flex items-center inline">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline" viewBox="0 0 24 24"><path fill="currentColor" d="M12 19.35q3.05-2.8 4.525-5.087T18 10.2q0-2.725-1.737-4.462T12 4T7.738 5.738T6 10.2q0 1.775 1.475 4.063T12 19.35m0 1.975q-.35 0-.7-.125t-.625-.375Q9.05 19.325 7.8 17.9t-2.087-2.762t-1.275-2.575T4 10.2q0-3.75 2.413-5.975T12 2t5.588 2.225T20 10.2q0 1.125-.437 2.363t-1.275 2.575T16.2 17.9t-2.875 2.925q-.275.25-.625.375t-.7.125M12 12q.825 0 1.413-.587T14 10t-.587-1.412T12 8t-1.412.588T10 10t.588 1.413T12 12"/></svg>
+                    {link.location}
+                  </a>
+
+                  <br/>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline" viewBox="0 0 24 24"><path fill="currentColor" d="M5 22q-.825 0-1.412-.587T3 20V6q0-.825.588-1.412T5 4h1V2h2v2h8V2h2v2h1q.825 0 1.413.588T21 6v14q0 .825-.587 1.413T19 22zm0-2h14V10H5zM5 8h14V6H5zm0 0V6zm7 6q-.425 0-.712-.288T11 13t.288-.712T12 12t.713.288T13 13t-.288.713T12 14m-4 0q-.425 0-.712-.288T7 13t.288-.712T8 12t.713.288T9 13t-.288.713T8 14m8 0q-.425 0-.712-.288T15 13t.288-.712T16 12t.713.288T17 13t-.288.713T16 14m-4 4q-.425 0-.712-.288T11 17t.288-.712T12 16t.713.288T13 17t-.288.713T12 18m-4 0q-.425 0-.712-.288T7 17t.288-.712T8 16t.713.288T9 17t-.288.713T8 18m8 0q-.425 0-.712-.288T15 17t.288-.712T16 16t.713.288T17 17t-.288.713T16 18"/></svg>
+                  {link.dateDescription}
                 </p>
-              </a>
+              </div>
             );
           })}
         </div>
