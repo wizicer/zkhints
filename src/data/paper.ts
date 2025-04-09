@@ -13,12 +13,12 @@ export interface Paper {
   year: string;
   link: string;
   drawing?: {
-    left: ImageMetadata,
-    right: ImageMetadata,
-    center: ImageMetadata,
-    centerWidth: number,
-    centerPosition: [number, number],
-  }
+    left: ImageMetadata;
+    right: ImageMetadata;
+    center: ImageMetadata;
+    centerWidth: number;
+    centerPosition: [number, number];
+  };
 }
 
 export interface Contribution {
@@ -40,12 +40,11 @@ export const papers: Paper[] = [
       center: GMR85,
       centerWidth: 190,
       centerPosition: [0, -10],
-    }
+    },
   },
   {
     id: "FS86",
-    title:
-      "How to prove yourself: Practical solutions to identification and signature problems",
+    title: "How to prove yourself: Practical solutions to identification and signature problems",
     authors: "Fiat, A., & Shamir, A.",
     year: "1986",
     link: "https://link.springer.com/content/pdf/10.1007/3-540-47721-7_12",
@@ -55,7 +54,7 @@ export const papers: Paper[] = [
       center: FS86,
       centerWidth: 116,
       centerPosition: [0, -10],
-    }
+    },
   },
   {
     id: "GMW87",
@@ -70,7 +69,7 @@ export const papers: Paper[] = [
       center: GMW87,
       centerWidth: 76,
       centerPosition: [0, -10],
-    }
+    },
   },
   {
     id: "Kilian92",
@@ -84,7 +83,7 @@ export const papers: Paper[] = [
       center: Kilian92,
       centerWidth: 36,
       centerPosition: [0, 10],
-    }
+    },
   },
   {
     id: "BGGHKMR90",
@@ -99,7 +98,7 @@ export const papers: Paper[] = [
       center: BGGHKMR90,
       centerWidth: 210,
       centerPosition: [0, -30],
-    }
+    },
   },
   {
     id: "Shamir92",
@@ -118,8 +117,7 @@ export const papers: Paper[] = [
   {
     id: "ALMSS92",
     title: "Proof Verification and Hardness of Approximation Problems",
-    authors:
-      "Sanjeev Arora, Carsten Lund, Rajeev Motwani, Madhu Sudan, Mario Szegedy",
+    authors: "Sanjeev Arora, Carsten Lund, Rajeev Motwani, Madhu Sudan, Mario Szegedy",
     year: "1992",
     link: "https://madhu.seas.harvard.edu/papers/1992/almss-conf.pdf",
   },
@@ -182,8 +180,7 @@ export const papers: Paper[] = [
   {
     id: "BCGGMTV14",
     title: "Zerocash: Decentralized anonymous payments from bitcoin",
-    authors:
-      "Sasson, E. B., Chiesa, A., Garman, C., Green, M., Miers, I., Tromer, E., & Virza, M.",
+    authors: "Sasson, E. B., Chiesa, A., Garman, C., Green, M., Miers, I., Tromer, E., & Virza, M.",
     year: "2014",
     link: "http://zerocash-project.org/media/pdf/zerocash-oakland2014.pdf",
   },
@@ -204,8 +201,7 @@ export const papers: Paper[] = [
   },
   {
     id: "BBHR18",
-    title:
-      "Scalable, transparent, and post-quantum secure computational integrity",
+    title: "Scalable, transparent, and post-quantum secure computational integrity",
     authors: "Ben-Sasson, E., Bentov, I., Horesh, Y., & Riabzev, M.",
     year: "2018",
     link: "https://eprint.iacr.org/2018/046.pdf",
@@ -234,8 +230,7 @@ export const papers: Paper[] = [
   },
   {
     id: "BCTV14",
-    title:
-      "Succinct Non-Interactive zero knowledge for a von neumann architecture",
+    title: "Succinct Non-Interactive zero knowledge for a von neumann architecture",
     authors: "Ben-Sasson, E., Chiesa, A., Tromer, E., & Virza, M.",
     year: "2014",
     link: "https://eprint.iacr.org/2013/879.pdf",
@@ -408,5 +403,5 @@ export const references = [
     authors: "zksecurity",
     year: "2024",
     link: "https://blog.zksecurity.xyz/posts/ten-zk-papers/",
-  }
+  },
 ];

@@ -3,9 +3,9 @@ import Layout from "../layouts/Layout.astro";
 import SearchBar from "../components/SearchBar";
 import CategoryGrid from "../components/CategoryGrid";
 import ItemSection from "../components/ItemSection.astro";
-import { Image } from 'astro:assets';
-import hintaIcon from '../assets/hinta.png';
-import { sections } from '../data/index';
+import { Image } from "astro:assets";
+import hintaIcon from "../assets/hinta.png";
+import { sections } from "../data/index";
 
 // Sample data for categories
 const categories = [
@@ -22,20 +22,20 @@ const categories = [
   { id: "javascript", name: "JavaScript", color: "#f7df1e" },
   { id: "css", name: "CSS", color: "#264de4" },
 ];
-
 ---
 
 <Layout>
   <main class="p-6 md:px-8 mx-auto">
     <div class="my-12 text-center">
-      <h1 class="font-extrabold tracking-tight text-5xl text-zinc-950 flex items-center justify-center gap-3">
+      <h1
+        class="font-extrabold tracking-tight text-5xl text-zinc-950 flex items-center justify-center gap-3"
+      >
         <Image src={hintaIcon} alt="ZK Hints Icon" width={120} height={120} />
         ZK Hints
       </h1>
       <p class="text-xl mt-4">
-        Hey! I'm <a
-          href="https://twitter.com/icerdesign"
-          class="text-blue-600 hover:underline">@icerdesign</a
+        Hey! I'm <a href="https://twitter.com/icerdesign" class="text-blue-600 hover:underline"
+          >@icerdesign</a
         > and this is a modest collection of ZK Hints I've written.
       </p>
     </div>
@@ -48,14 +48,7 @@ const categories = [
     <div class="pages-list" role="main">
       {false && <CategoryGrid categories={categories} client:load />}
 
-      {
-        sections.map((section) => (
-          <ItemSection
-            title={section.title}
-            items={section.items}
-          />
-        ))
-      }
+      {sections.map((section) => <ItemSection title={section.title} items={section.items} />)}
     </div>
   </main>
 </Layout>

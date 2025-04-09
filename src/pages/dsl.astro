@@ -18,9 +18,7 @@ import { dslDefinitions as dsl, dslExamples as examples } from "../data/dsl";
     <div class="overflow-x-auto shadow-md rounded-lg">
       <table class="min-w-full bg-white">
         <thead>
-          <tr
-            class="bg-gray-100 text-gray-700 uppercase text-sm leading-normal"
-          >
+          <tr class="bg-gray-100 text-gray-700 uppercase text-sm leading-normal">
             <th class="py-3 px-4 text-left">Name</th>
             <th class="py-3 px-4 text-left">Company/Brand</th>
             <th class="py-3 px-4 text-left">Arithmetization</th>
@@ -39,9 +37,7 @@ import { dslDefinitions as dsl, dslExamples as examples } from "../data/dsl";
                   <tr
                     class={`border-b border-gray-200 hover:bg-gray-50 ${hasExample ? "cursor-pointer" : ""}`}
                     data-name={item.name}
-                    onclick={
-                      hasExample ? `toggleExample('${item.name}')` : undefined
-                    }
+                    onclick={hasExample ? `toggleExample('${item.name}')` : undefined}
                   >
                     <td class="py-3 px-4">
                       {item.link ? (
@@ -77,9 +73,7 @@ import { dslDefinitions as dsl, dslExamples as examples } from "../data/dsl";
                     <td class="py-3 px-4">{item.company_or_brand || "-"}</td>
                     <td class="py-3 px-4">{item.arithmetization || "-"}</td>
                     <td class="py-3 px-4">{item.syntax || "-"}</td>
-                    <td class="py-3 px-4">
-                      {item.programming_capability || "-"}
-                    </td>
+                    <td class="py-3 px-4">{item.programming_capability || "-"}</td>
                     <td class="py-3 px-4">{item.backend_supported || "-"}</td>
                     <td class="py-3 px-4">{item.note || "-"}</td>
                   </tr>
@@ -87,15 +81,11 @@ import { dslDefinitions as dsl, dslExamples as examples } from "../data/dsl";
                     <tr id={`example-${item.name}`} class="hidden bg-gray-50">
                       <td colspan="7" class="p-4">
                         {(() => {
-                          const example = examples.find(
-                            (ex) => ex.name === item.name
-                          );
+                          const example = examples.find((ex) => ex.name === item.name);
                           return example ? (
                             <div>
                               <div class="flex justify-between items-center mb-2">
-                                <h3 class="text-lg font-semibold">
-                                  {example.name} Example
-                                </h3>
+                                <h3 class="text-lg font-semibold">{example.name} Example</h3>
                                 <a
                                   href={example.exampleLink}
                                   target="_blank"
@@ -108,9 +98,7 @@ import { dslDefinitions as dsl, dslExamples as examples } from "../data/dsl";
                                 code={example.exampleCode}
                                 language={example.exampleCodeHighlightType}
                               />
-                              <p class="mt-2 text-gray-700">
-                                {example.comment}
-                              </p>
+                              <p class="mt-2 text-gray-700">{example.comment}</p>
                             </div>
                           ) : null;
                         })()}

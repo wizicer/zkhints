@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 
 export interface DrawingProps {
   left: ImageMetadata;
@@ -18,16 +18,8 @@ const { drawing, className = "hidden md:block absolute top-0 right-24 w-72 h-16"
 ---
 
 <div class={className}>
-  <Image
-    src={drawing.left}
-    alt="Left character"
-    class="absolute left-0 bottom-0 h-24 w-auto"
-  />
-  <Image
-    src={drawing.right}
-    alt="Right character"
-    class="absolute right-0 bottom-0 h-24 w-auto"
-  />
+  <Image src={drawing.left} alt="Left character" class="absolute left-0 bottom-0 h-24 w-auto" />
+  <Image src={drawing.right} alt="Right character" class="absolute right-0 bottom-0 h-24 w-auto" />
   <Image
     src={drawing.center}
     alt="Center diagram"

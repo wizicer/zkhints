@@ -6,8 +6,7 @@ export const events: Resource = {
     {
       id: "meetings",
       title: "ZK Meetings & Conferences",
-      description:
-        "Upcoming zero-knowledge proof conferences, summits and community meetups.",
+      description: "Upcoming zero-knowledge proof conferences, summits and community meetups.",
       emoji: "🗓️",
       links: [
         {
@@ -53,8 +52,7 @@ export const events: Resource = {
     {
       id: "hackathons",
       title: "Hackathons & Developer Events",
-      description:
-        "Upcoming hackathons and developer-focused events with ZK components.",
+      description: "Upcoming hackathons and developer-focused events with ZK components.",
       emoji: "💻",
       links: [
         {

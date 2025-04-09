@@ -37,155 +37,155 @@ export const sections: Section[] = [
   {
     title: "Writing Circuits",
     items: [
-      { 
-        id: "dsl", 
-        title: "Circuit DSL", 
+      {
+        id: "dsl",
+        title: "Circuit DSL",
         description: "Domain Specific Language for writing zero-knowledge circuits",
-        image: dsl
+        image: dsl,
       },
-      { 
-        id: "primitive", 
-        title: "SNARK Primitives", 
+      {
+        id: "primitive",
+        title: "SNARK Primitives",
         description: "Hash functions, Merkle trees, and other ZK building blocks",
-        image: primitive
+        image: primitive,
       },
-      { 
-        id: "application", 
-        title: "Applications", 
+      {
+        id: "application",
+        title: "Applications",
         description: "Real-world applications of zero-knowledge proofs",
-        image: application
+        image: application,
       },
-      { 
-        id: "gas", 
-        title: "Gas Estimation", 
+      {
+        id: "gas",
+        title: "Gas Estimation",
         description: "Cost estimation for ZK circuits and optimizations",
-        image: gas
+        image: gas,
       },
-      { 
-        id: "gnark", 
-        title: "Gnark Cheatsheet", 
+      {
+        id: "gnark",
+        title: "Gnark Cheatsheet",
         description: "Circuit cheatsheet for gnark",
-        image: gnark
+        image: gnark,
       },
-      { 
-        id: "r1cs", 
-        title: "R1CS Gadgets", 
+      {
+        id: "r1cs",
+        title: "R1CS Gadgets",
         construction: true,
         description: "Essential gadgets for building R1CS constraint circuits",
-        image: r1cs
+        image: r1cs,
       },
-      { 
-        id: "plonkish", 
-        title: "Plonkish Gadgets", 
+      {
+        id: "plonkish",
+        title: "Plonkish Gadgets",
         construction: true,
         description: "Essential gadgets for building Plonkish constraint circuits",
-        image: plonkish
+        image: plonkish,
       },
-      { 
-        id: "bugs", 
-        title: "Common Bugs", 
+      {
+        id: "bugs",
+        title: "Common Bugs",
         construction: true,
         description: "Common ZK bugs and debugging techniques",
-        image: bugs
+        image: bugs,
       },
-    ]
+    ],
   },
   {
     title: "Learning Resources",
     items: [
-      { 
-        id: "beginner", 
-        title: "Beginner Learning", 
+      {
+        id: "beginner",
+        title: "Beginner Learning",
         description: "Getting started with zero-knowledge proofs",
-        image: beginner
+        image: beginner,
       },
-      { 
-        id: "intermediate", 
-        title: "Intermediate Learning", 
+      {
+        id: "intermediate",
+        title: "Intermediate Learning",
         description: "Intermediate topics for ZK practitioners",
-        image: intermediate
+        image: intermediate,
       },
-      { 
-        id: "awesome", 
-        title: "Awesome List", 
+      {
+        id: "awesome",
+        title: "Awesome List",
         description: "The list of curated collection of ZK resources, tools and projects",
-        image: awesome
+        image: awesome,
       },
-      { 
-        id: "news", 
-        title: "News Sources", 
+      {
+        id: "news",
+        title: "News Sources",
         description: "Where to find the latest ZK news and research",
-        image: news
+        image: news,
       },
-      { 
-        id: "events", 
-        title: "Events", 
+      {
+        id: "events",
+        title: "Events",
         description: "Where to find the latest ZK events and research",
-        image: events
+        image: events,
       },
-    ]
+    ],
   },
   {
     title: "SNARK Systems",
     items: [
-      { 
-        id: "curve", 
-        title: "Elliptic Curve", 
+      {
+        id: "curve",
+        title: "Elliptic Curve",
         description: "Comparison of common elliptic curves used in zero knowledge proofs",
-        image: curve
+        image: curve,
       },
-      { 
-        id: "constraint", 
-        title: "Constraint System", 
+      {
+        id: "constraint",
+        title: "Constraint System",
         construction: true,
         description: "Comparing different ZK constraint systems",
-        image: constraint
+        image: constraint,
       },
-      { 
-        id: "snark", 
-        title: "Popular zkSNARK", 
+      {
+        id: "snark",
+        title: "Popular zkSNARK",
         construction: true,
         description: "Overview of mainstream zkSNARK systems",
-        image: popularSnark
+        image: popularSnark,
       },
-      { 
-        id: "transpiler", 
-        title: "Transpiler", 
+      {
+        id: "transpiler",
+        title: "Transpiler",
         construction: true,
         description: "Transpiling between different DSL or constraint system",
-        image: transpiler
+        image: transpiler,
       },
-      { 
-        id: "argument", 
-        title: "SNARK Argument", 
+      {
+        id: "argument",
+        title: "SNARK Argument",
         construction: true,
         description: "Technical overview of ZK argument structures, like lookup",
-        image: argument
+        image: argument,
       },
     ],
   },
   {
     title: "Foundations & Future",
     items: [
-      { 
-        id: "paper", 
-        title: "Landmark Papers", 
+      {
+        id: "paper",
+        title: "Landmark Papers",
         description: "Essential academic papers in zero-knowledge research",
-        image: paper
+        image: paper,
       },
-      { 
-        id: "research", 
-        title: "Research Directions", 
+      {
+        id: "research",
+        title: "Research Directions",
         construction: true,
         description: "Current research directions in zero-knowledge proofs",
-        image: research
+        image: research,
       },
-      { 
-        id: "glossary", 
-        title: "Terminology Glossary", 
+      {
+        id: "glossary",
+        title: "Terminology Glossary",
         construction: true,
         description: "Common terms and definitions in zero-knowledge proofs",
-        image: glossary
+        image: glossary,
       },
     ],
   },

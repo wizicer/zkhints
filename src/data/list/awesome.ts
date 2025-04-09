@@ -11,14 +11,12 @@ export const awesome: Resource = {
       links: [
         {
           title: "ventali's Awesome ZK",
-          description:
-            "A curated list of awesome ZK resources, libraries, tools and more.",
+          description: "A curated list of awesome ZK resources, libraries, tools and more.",
           link: "https://github.com/ventali/awesome-zk",
         },
         {
           title: "sCrypt-Inc's Awesome ZKPs",
-          description:
-            "A curated list of awesome ZKP resources, libraries, tools and more.",
+          description: "A curated list of awesome ZKP resources, libraries, tools and more.",
           link: "https://github.com/sCrypt-Inc/awesome-zero-knowledge-proofs",
         },
         {

@@ -23,23 +23,29 @@ import { primitiveData, legendItems } from "../data/primitive";
       </div>
     </div>
 
-    {primitiveData.map(section => (
-      <TableSection 
-        title={section.title}
-        emoji={section.emoji}
-        columns={section.columns}
-        data={section.data}
-        footnote={section.footnote}
-      />
-    ))}
+    {
+      primitiveData.map((section) => (
+        <TableSection
+          title={section.title}
+          emoji={section.emoji}
+          columns={section.columns}
+          data={section.data}
+          footnote={section.footnote}
+        />
+      ))
+    }
 
     <!-- Legend Section -->
     <div class="mb-10">
       <h2 class="text-xl font-bold mb-4">📎 Legend</h2>
       <ul class="list-disc pl-5 text-sm text-gray-700">
-        {legendItems.map(item => (
-          <li class="mb-1"><strong>{item.term}</strong>：{item.description}</li>
-        ))}
+        {
+          legendItems.map((item) => (
+            <li class="mb-1">
+              <strong>{item.term}</strong>：{item.description}
+            </li>
+          ))
+        }
       </ul>
     </div>
   </div>

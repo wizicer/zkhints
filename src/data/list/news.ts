@@ -6,19 +6,17 @@ export const news: Resource = {
     {
       id: "newsletters",
       title: "Newsletters & Weekly Updates",
-      description:
-        "Trusted sources for staying up to date on ZK-related developments.",
+      description: "Trusted sources for staying up to date on ZK-related developments.",
       emoji: "📰",
       links: [
         {
           title: "ZK Security News",
           description: "Hacker news-style news about ZK.",
-          link: "https://news.zksecurity.xyz/"
+          link: "https://news.zksecurity.xyz/",
         },
         {
           title: "ZKMesh",
-          description:
-            "Weekly zk-focused newsletter curated by Geometry and friends.",
+          description: "Weekly zk-focused newsletter curated by Geometry and friends.",
           link: "https://zkmesh.substack.com/",
         },
       ],
@@ -26,8 +24,7 @@ export const news: Resource = {
     {
       id: "feeds",
       title: "Realtime Updates & Blogs",
-      description:
-        "Dynamic sources like blog posts, Twitter accounts, and GitHub feeds.",
+      description: "Dynamic sources like blog posts, Twitter accounts, and GitHub feeds.",
       emoji: "📡",
       links: [
         {

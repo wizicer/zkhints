@@ -8,7 +8,7 @@ export const sections = [
       {
         title: "Installing Gnark",
         code: `go get github.com/consensys/gnark@latest`,
-        note: "- frontend.Variable is abbreviated as Var\n- In-circuit code vs out-circuit code distinction is important"
+        note: "- frontend.Variable is abbreviated as Var\n- In-circuit code vs out-circuit code distinction is important",
       },
       {
         title: "Define Circuit",
@@ -23,7 +23,7 @@ func (c *Circuit) Define(
     m.Write(c.PreImage)
     api.AssertIsEqual(c.Hash, m.Sum())
 }`,
-        note: "Basic circuit definition with secret and public inputs"
+        note: "Basic circuit definition with secret and public inputs",
       },
       {
         title: "Compile",
@@ -34,14 +34,14 @@ r1cs, err := frontend.Compile(
 vals := &Circuit { Hash: "161...469", PreImage: 35 }
 w, _ := frontend.NewWitness(vals, cur)
 pubw, _ := w.Public()`,
-        note: "Compiling the circuit and creating witnesses"
+        note: "Compiling the circuit and creating witnesses",
       },
       {
         title: "Prove: Groth16",
         code: `pk, vk, _ := groth16.Setup(cs)
 proof, _ := groth16.Prove(cs, pk, w)
 err := groth16.Verify(proof, vk, pubw)`,
-        note: "Generate and verify a Groth16 proof"
+        note: "Generate and verify a Groth16 proof",
       },
       {
         title: "Prove: PlonK",
@@ -49,9 +49,9 @@ err := groth16.Verify(proof, vk, pubw)`,
 pk, vk, _ := plonk.Setup(cs, srs, lag)
 proof, _ := plonk.Prove(cs, pk, w)
 err := plonk.Verify(proof, vk, pubw)`,
-        note: "Generate and verify a PlonK proof"
-      }
-    ]
+        note: "Generate and verify a PlonK proof",
+      },
+    ],
   },
   {
     title: "API",
@@ -69,7 +69,7 @@ AssertIsBoolean(i1 Var)
 AssertIsCrumb(i1 Var)
 // fails if v > bound.
 AssertIsLessOrEqual(v Var, bound Var)`,
-        note: "Common assertion functions in gnark"
+        note: "Common assertion functions in gnark",
       },
       {
         title: "Arithmetics",
@@ -86,7 +86,7 @@ Mul(i1, i2 Var, in ...Var) Var
 DivUnchecked(i1, i2 Var) Var
 Div(i1, i2 Var) Var // = i1 / i2
 Inverse(i1 Var) Var // = 1 / i1`,
-        note: "Arithmetic operations in gnark"
+        note: "Arithmetic operations in gnark",
       },
       {
         title: "Binary Operations",
@@ -98,7 +98,7 @@ FromBinary(b ...Var) Var
 Xor(a, b Var) Var // a ^ b
 Or(a, b Var) Var // a | b
 And(a, b Var) Var // a & b`,
-        note: "Binary operations in gnark"
+        note: "Binary operations in gnark",
       },
       {
         title: "Flow Control",
@@ -110,14 +110,14 @@ Select(b Var, i1, i2 Var) Var
 IsZero(i1 Var) Var
 // 1 if i1>i2, 0 if i1=i2, -1 if i1<i2
 Cmp(i1, i2 Var) Var`,
-        note: "Flow control operations in gnark"
+        note: "Flow control operations in gnark",
       },
       {
         title: "Debug",
         code: `Println(a ...Var) //like fmt.Println`,
-        note: "Run the program with -tags=debug to display a more verbose stack trace"
-      }
-    ]
+        note: "Run the program with -tags=debug to display a more verbose stack trace",
+      },
+    ],
   },
   {
     title: "Standard Library",
@@ -129,7 +129,7 @@ Cmp(i1, i2 Var) Var`,
 fMimc, _ := mimc.NewMiMC()
 fMimc.Write(circuit.Data)
 h := fMimc.Sum()`,
-        note: "MiMC hash implementation in gnark"
+        note: "MiMC hash implementation in gnark",
       },
       {
         title: "EdDSA Signature",
@@ -142,7 +142,7 @@ type Circuit struct {
 }
 cur, _ := te.NewEdCurve(api, t.BN254)
 eddsa.Verify(cur, c.sig, c.msg, c.pub, &fMimc)`,
-        note: "EdDSA signature verification in gnark"
+        note: "EdDSA signature verification in gnark",
       },
       {
         title: "Merkle Proof",
@@ -152,9 +152,9 @@ type Circuit struct {
 	Leaf frontend.Variable
 }
 c.M.VerifyProof(api, &hFunc, c.Leaf)`,
-        note: "Merkle tree proof verification in gnark"
-      }
-    ]
+        note: "Merkle tree proof verification in gnark",
+      },
+    ],
   },
   {
     title: "Selector Package",
@@ -169,7 +169,7 @@ Slice(s, e Var, in []Var) []Var
 Partition(p Var, rs bool, in []Var) []Var
 // out[i] = i < sp ? sv : ev
 stepMask(outlen int, sp, sv, ev Var) []Var`,
-        note: "Slice operations in the selector package"
+        note: "Slice operations in the selector package",
       },
       {
         title: "Multiplexer Operations",
@@ -185,9 +185,9 @@ KeyDecoder(k Var, ks []Var) []Var
 Decoder(n int, sel Var) []Var
 // out = a1*b1 + a2*b2 + ...
 dotProduct(a, b []Var) Var`,
-        note: "Multiplexer operations in the selector package"
-      }
-    ]
+        note: "Multiplexer operations in the selector package",
+      },
+    ],
   },
   {
     title: "Serialization",
@@ -202,7 +202,7 @@ cs.WriteTo(&buf)
 // Deserialize
 cs := groth16.NewCS(ecc.BN254)
 cs.ReadFrom(&buf)`,
-        note: "Serialize and deserialize a constraint system"
+        note: "Serialize and deserialize a constraint system",
       },
       {
         title: "Witness",
@@ -217,9 +217,9 @@ err := w.UnmarshalBinary(data)
 w, _ := witness.New(ecc.BN254, ccs.GetSchema())
 err := w.UnmarshalJSON(json)
 pubw, _ := witness.Public()`,
-        note: "Serialize and deserialize a witness"
-      }
-    ]
+        note: "Serialize and deserialize a witness",
+      },
+    ],
   },
   {
     title: "Smart Contract Integration",
@@ -229,14 +229,14 @@ pubw, _ := witness.Public()`,
         title: "Export to Solidity",
         code: `f, _ := os.Create("verifier.sol")
 err = vk.ExportSolidity(f)`,
-        note: "Export a verifier key to Solidity"
+        note: "Export a verifier key to Solidity",
       },
       {
         title: "Export Plonk Proof",
         code: `_p, _ := proof.(interface{MarshalSolidity() []byte})
 str := "0x" + hex.EncodeToString(
   _p.MarshalSolidity())`,
-        note: "Export a PlonK proof for use in Solidity"
+        note: "Export a PlonK proof for use in Solidity",
       },
       {
         title: "Export Groth16 Proof",
@@ -249,9 +249,9 @@ for i := 0; i < 8; i++ {
     b[32*i : 32*(i+1)]).String()
 }
 str := "["+strings.Join(p[:],",")+"]"`,
-        note: "Export a Groth16 proof for use in Solidity"
-      }
-    ]
+        note: "Export a Groth16 proof for use in Solidity",
+      },
+    ],
   },
   {
     title: "External Library Usage",
@@ -263,7 +263,7 @@ str := "["+strings.Join(p[:],",")+"]"`,
 fMimc := mimc.NewMiMC()
 fMimc.Write(buf)
 h := fMimc.Sum(nil)`,
-        note: "Using MiMC hash outside of circuits"
+        note: "Using MiMC hash outside of circuits",
       },
       {
         title: "EdDSA Signature",
@@ -280,7 +280,7 @@ pk := s.Public()
 v, _ := s.Verify(sig, msg, ht.New())
 c.PublicKey.Assign(curve, pk.Bytes())
 c.Signature.Assign(curve, sig)`,
-        note: "Creating and verifying EdDSA signatures outside of circuits"
+        note: "Creating and verifying EdDSA signatures outside of circuits",
       },
       {
         title: "Merkle Proof",
@@ -309,9 +309,9 @@ c.M.Path = make([]Var, depth+1)
 for i := 0; i < depth+1; i++ {
   c.M.Path[i] = path[i]
 }`,
-        note: "Creating and verifying Merkle proofs outside of circuits"
-      }
-    ]
+        note: "Creating and verifying Merkle proofs outside of circuits",
+      },
+    ],
   },
   {
     title: "Concepts",
@@ -326,7 +326,7 @@ pk: proving key
 vk: verifying key
 r1cs: rank-1 constraint system
 srs: structured reference string`,
-        note: "Common terminology in zero-knowledge proofs"
+        note: "Common terminology in zero-knowledge proofs",
       },
       {
         title: "Schemas",
@@ -335,15 +335,15 @@ srs: structured reference string`,
 PlonK: qₗᵢaᵢ + qᵣᵢbᵢ + qₒᵢcᵢ + qₘᵢaᵢbᵢ + qcᵢ = 0
 
 SAP(Polymath): x·y = (x/2 + y/2)² - (x/2 - y/2)²`,
-        note: "Mathematical representations of different proof systems"
+        note: "Mathematical representations of different proof systems",
       },
       {
         title: "Resources",
         code: `- https://docs.gnark.consensys.io/
 - https://play.gnark.io/
 - https://zkshanghai.xyz/`,
-        note: "Useful resources for learning more about gnark"
-      }
-    ]
-  }
+        note: "Useful resources for learning more about gnark",
+      },
+    ],
+  },
 ];

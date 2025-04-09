@@ -17,12 +17,22 @@ const { references, title = "References" } = Astro.props;
 <div class="bg-gray-50 rounded-lg shadow-md p-6 mb-8">
   <h2 class="text-2xl font-bold text-gray-800 mb-4">{title}</h2>
   <ol class="list-decimal pl-5 space-y-2">
-    {references.map((ref) => (
-      <li class="text-gray-800">
-        <span class="font-medium">{ref.authors}</span>. 
-        "<a href={ref.link} target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">{ref.title}</a>". 
-        <span class="italic">{ref.year}</span>.
-      </li>
-    ))}
+    {
+      references.map((ref) => (
+        <li class="text-gray-800">
+          <span class="font-medium">{ref.authors}</span>. "
+          <a
+            href={ref.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-blue-600 hover:underline"
+          >
+            {ref.title}
+          </a>
+          ".
+          <span class="italic">{ref.year}</span>.
+        </li>
+      ))
+    }
   </ol>
 </div>

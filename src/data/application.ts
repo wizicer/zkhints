@@ -1,5 +1,5 @@
-import privacy from "/src/assets/hinta/privacy.png"
-import scaling from "/src/assets/hinta/scaling.png"
+import privacy from "/src/assets/hinta/privacy.png";
+import scaling from "/src/assets/hinta/scaling.png";
 
 export interface Application {
   id: string;

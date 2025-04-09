@@ -95,18 +95,12 @@ export const gasData: GasData[] = [
 
 // Helper function to format gas numbers
 export function formatGas(gases: number[]): string {
-  const gas = gases.reduce(
-    (a, b) => a + (a === "" ? "" : " + ") + b.toLocaleString(),
-    ""
-  );
+  const gas = gases.reduce((a, b) => a + (a === "" ? "" : " + ") + b.toLocaleString(), "");
   return gas;
 }
 
 // Function to calculate gas consumption level (1-5)
-export function getGasLevel(
-  gases: number[],
-  type: "function" | "deployment"
-): number {
+export function getGasLevel(gases: number[], type: "function" | "deployment"): number {
   const gas = gases.reduce((a, b) => a + b, 0);
 
   // Different thresholds for different gas types

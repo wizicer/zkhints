@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import CheatsheetHeader from "../components/CheatsheetHeader";
 import { papers, contributions, references } from "../data/paper";
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 import References from "../components/References.astro";
 import PaperDrawing from "../components/PaperDrawing.astro";
 
@@ -59,9 +59,7 @@ const imageMap = {
 };
 
 // Sort papers by year
-const sortedPapers = [...papers].sort(
-  (a, b) => parseInt(a.year) - parseInt(b.year)
-);
+const sortedPapers = [...papers].sort((a, b) => parseInt(a.year) - parseInt(b.year));
 ---
 
 <Layout title="ZK Papers Showcase">
@@ -79,8 +77,8 @@ const sortedPapers = [...papers].sort(
           const contribution = contributions.find((c) => c.id === paper.id);
           const paperImage = imageMap[paper.id as keyof typeof imageMap];
           const isEven = index % 2 === 0;
-          const gradientClass = isEven 
-            ? "bg-gradient-to-r from-rose-100 to-pink-100 border-l-4 border-rose-500" 
+          const gradientClass = isEven
+            ? "bg-gradient-to-r from-rose-100 to-pink-100 border-l-4 border-rose-500"
             : "bg-gradient-to-r from-indigo-100 to-purple-100 border-l-4 border-cyan-500";
 
           return (
@@ -108,9 +106,7 @@ const sortedPapers = [...papers].sort(
                 <div class="absolute top-4 right-4 px-3 py-1 bg-blue-200 text-blue-600 rounded-full text-sm font-bold">
                   {paper.year}
                 </div>
-                {paper.drawing && (
-                  <PaperDrawing drawing={paper.drawing} />
-                )}
+                {paper.drawing && <PaperDrawing drawing={paper.drawing} />}
               </div>
 
               {/* Expanded View - Hidden by default */}
@@ -144,9 +140,7 @@ const sortedPapers = [...papers].sort(
                   </div>
                   <div class="md:w-1/3">
                     <div class="flex items-center mb-2">
-                      <h2 class="text-xl font-bold text-gray-800">
-                        {paper.title}
-                      </h2>
+                      <h2 class="text-xl font-bold text-gray-800">{paper.title}</h2>
                     </div>
                     <p class="text-gray-600 mb-4">
                       <span class="px-3 py-1 bg-blue-200 text-blue-600 rounded-full text-sm font-bold">
@@ -157,9 +151,7 @@ const sortedPapers = [...papers].sort(
 
                     {contribution && (
                       <div class="mb-4">
-                        <p class="font-semibold text-blue-700 mb-1">
-                          {contribution.contribution}
-                        </p>
+                        <p class="font-semibold text-blue-700 mb-1">{contribution.contribution}</p>
                         <p class="text-gray-700">{contribution.summary}</p>
                       </div>
                     )}

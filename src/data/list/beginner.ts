@@ -6,8 +6,7 @@ export const beginner: Resource = {
     {
       id: "intro",
       title: "What is Zero-Knowledge?",
-      description:
-        "Basic explanations and intuitive overviews of Zero-Knowledge Proofs.",
+      description: "Basic explanations and intuitive overviews of Zero-Knowledge Proofs.",
       emoji: "🧠",
       links: [
         {
@@ -27,20 +26,17 @@ export const beginner: Resource = {
     {
       id: "tools",
       title: "Beginner-Friendly Tools",
-      description:
-        "Tools and playgrounds to help beginners start experimenting with ZK.",
+      description: "Tools and playgrounds to help beginners start experimenting with ZK.",
       emoji: "🛠️",
       links: [
         {
           title: "ZK Playground",
-          description:
-            "An interactive environment to build and run ZK circuits.",
+          description: "An interactive environment to build and run ZK circuits.",
           link: "https://zkplayground.com/",
         },
         {
           title: "Circom Starter",
-          description:
-            "A minimal boilerplate to write your first Circom circuit.",
+          description: "A minimal boilerplate to write your first Circom circuit.",
           link: "https://github.com/iden3/circom-starter",
         },
       ],

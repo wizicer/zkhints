@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import CheatsheetHeader from "../components/CheatsheetHeader";
 import { sections, applications } from "../data/application";
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 ---
 
 <Layout title="ZK Applications">
@@ -14,69 +14,76 @@ import { Image } from 'astro:assets';
   />
 
   <div class="container mx-auto px-4 py-8 max-w-6xl">
-    {sections.map((section) => (
-      <div class="mb-16" id={section.id}>
-        <div class="flex items-start mb-6 border-b-2 border-purple-500 pb-1">
-          <div class="w-24 h-24 mr-3 flex-shrink-0 bg-gradient-to-br from-blue-500 to-purple-600 p-2 rounded-md">
-            <Image src={section.image} alt={section.title} class="w-full h-full object-contain" />
-          </div>
-          <div class="flex flex-col justify-between">
-            <h2 class="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">{section.title}</h2>
-            <p class="text-gray-600 mt-1">{section.description}</p>
-          </div>
-        </div>
-        
-        {section.applications.map(appType => (
-          <div class="mb-12">
-            <h3 class="text-xl font-bold text-gray-800 mb-4">{appType.type}</h3>
-            <p class="text-gray-600 text-sm mb-6">{appType.notes}</p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {appType.examples.map(example => {
-                const appDetail = applications.find(a => a.id === example);
-                return appDetail ? (
-                  <div class="bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border border-gray-100 p-6 flex flex-col h-full">
-                    <div class="mb-3">
-                      <div class="flex items-center">
-                        <div class="w-1.5 h-8 bg-gradient-to-b from-blue-400 to-indigo-600 rounded-full mr-3"></div>
-                        <h4 class="font-bold text-lg text-gray-800">{appDetail.application}</h4>
-                      </div>
-                      <p class="text-gray-600 text-sm mt-3">{appDetail.description}</p>
-                    </div>
-                    
-                    <div class="mt-auto pt-4">
-                      <div class="grid grid-cols-1 gap-2 text-sm">
-                        <div>
-                          <span class="font-semibold text-gray-700">Constructs:</span> 
-                          <span class="text-gray-600">{appDetail.constructs}</span>
-                        </div>
-                        <div>
-                          <span class="font-semibold text-gray-700">Primitives:</span> 
-                          <span class="text-gray-600">{appDetail.primitives}</span>
-                        </div>
-                      </div>
-                      
-                      <a href="#" class="inline-block mt-4 text-blue-600 hover:text-blue-800 text-sm font-medium">
-                        Read more
-                      </a>
-                    </div>
-                  </div>
-                ) : (
-                  <div class="bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border border-gray-100 p-6 flex flex-col h-full">
-                    <div class="flex items-center">
-                      <div class="w-1.5 h-8 bg-gradient-to-b from-gray-300 to-gray-400 rounded-full mr-3"></div>
-                      <h4 class="font-bold text-lg text-gray-800">{example}</h4>
-                    </div>
-                    <p class="text-gray-500 text-sm mt-3 italic">No detailed information available</p>
-                  </div>
-                );
-              })}
+    {
+      sections.map((section) => (
+        <div class="mb-16" id={section.id}>
+          <div class="flex items-start mb-6 border-b-2 border-purple-500 pb-1">
+            <div class="w-24 h-24 mr-3 flex-shrink-0 bg-gradient-to-br from-blue-500 to-purple-600 p-2 rounded-md">
+              <Image src={section.image} alt={section.title} class="w-full h-full object-contain" />
+            </div>
+            <div class="flex flex-col justify-between">
+              <h2 class="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                {section.title}
+              </h2>
+              <p class="text-gray-600 mt-1">{section.description}</p>
             </div>
           </div>
-        ))}
-      </div>
-    ))}
-    
-    
+
+          {section.applications.map((appType) => (
+            <div class="mb-12">
+              <h3 class="text-xl font-bold text-gray-800 mb-4">{appType.type}</h3>
+              <p class="text-gray-600 text-sm mb-6">{appType.notes}</p>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {appType.examples.map((example) => {
+                  const appDetail = applications.find((a) => a.id === example);
+                  return appDetail ? (
+                    <div class="bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border border-gray-100 p-6 flex flex-col h-full">
+                      <div class="mb-3">
+                        <div class="flex items-center">
+                          <div class="w-1.5 h-8 bg-gradient-to-b from-blue-400 to-indigo-600 rounded-full mr-3" />
+                          <h4 class="font-bold text-lg text-gray-800">{appDetail.application}</h4>
+                        </div>
+                        <p class="text-gray-600 text-sm mt-3">{appDetail.description}</p>
+                      </div>
+
+                      <div class="mt-auto pt-4">
+                        <div class="grid grid-cols-1 gap-2 text-sm">
+                          <div>
+                            <span class="font-semibold text-gray-700">Constructs:</span>
+                            <span class="text-gray-600">{appDetail.constructs}</span>
+                          </div>
+                          <div>
+                            <span class="font-semibold text-gray-700">Primitives:</span>
+                            <span class="text-gray-600">{appDetail.primitives}</span>
+                          </div>
+                        </div>
+
+                        <a
+                          href="#"
+                          class="inline-block mt-4 text-blue-600 hover:text-blue-800 text-sm font-medium"
+                        >
+                          Read more
+                        </a>
+                      </div>
+                    </div>
+                  ) : (
+                    <div class="bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border border-gray-100 p-6 flex flex-col h-full">
+                      <div class="flex items-center">
+                        <div class="w-1.5 h-8 bg-gradient-to-b from-gray-300 to-gray-400 rounded-full mr-3" />
+                        <h4 class="font-bold text-lg text-gray-800">{example}</h4>
+                      </div>
+                      <p class="text-gray-500 text-sm mt-3 italic">
+                        No detailed information available
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
+        </div>
+      ))
+    }
   </div>
 </Layout>

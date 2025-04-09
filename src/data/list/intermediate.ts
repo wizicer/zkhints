@@ -6,14 +6,12 @@ export const intermediate: Resource = {
     {
       id: "proof-systems",
       title: "Understanding Proof Systems",
-      description:
-        "Dive deeper into SNARKs, STARKs, and other proving systems.",
+      description: "Dive deeper into SNARKs, STARKs, and other proving systems.",
       emoji: "📚",
       links: [
         {
           title: "Vitalik's ZK-SNARKs Explained",
-          description:
-            "In-depth but accessible explanation of zkSNARKs by Vitalik.",
+          description: "In-depth but accessible explanation of zkSNARKs by Vitalik.",
           link: "https://vitalik.eth.limo/general/2022/12/18/zksnarks.html",
         },
         {

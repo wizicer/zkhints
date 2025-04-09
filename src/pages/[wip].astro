@@ -3,12 +3,12 @@ import Layout from "../layouts/Layout.astro";
 import CheatsheetHeader from "../components/CheatsheetHeader";
 import { sections } from "../data/index";
 import type { Item } from "../data/index";
-import { Image } from 'astro:assets';
-import constructionCat1 from '../assets/construction/construction_cat_1.png';
+import { Image } from "astro:assets";
+import constructionCat1 from "../assets/construction/construction_cat_1.png";
 
 interface PathItem {
   params: { wip: string };
-  props: { 
+  props: {
     item: Item;
     sectionTitle: string;
   };
@@ -17,21 +17,21 @@ interface PathItem {
 export function getStaticPaths() {
   // Get all items marked as construction: true
   const paths: PathItem[] = [];
-  
-  sections.forEach(section => {
-    section.items.forEach(item => {
+
+  sections.forEach((section) => {
+    section.items.forEach((item) => {
       if (item.construction) {
         paths.push({
           params: { wip: item.id },
-          props: { 
+          props: {
             item,
-            sectionTitle: section.title
-          }
+            sectionTitle: section.title,
+          },
         });
       }
     });
   });
-  
+
   return paths;
 }
 
@@ -47,33 +47,35 @@ const { item, sectionTitle } = Astro.props;
   />
 
   <div class="container mx-auto px-4 py-8">
-    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-8 flex items-start relative flex-col md:flex-row">
-      <Image 
-        src={constructionCat1} 
-        alt="Under Construction" 
+    <div
+      class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-8 flex items-start relative flex-col md:flex-row"
+    >
+      <Image
+        src={constructionCat1}
+        alt="Under Construction"
         class="h-32 w-32 mr-4 object-contain md:absolute md:-top-12"
       />
       <div class="ml-0 md:ml-40">
         <p class="text-yellow-700 font-bold">This page is under construction</p>
-        <p class="text-yellow-600">Content for this section is being developed and will be available soon.</p>
+        <p class="text-yellow-600">
+          Content for this section is being developed and will be available soon.
+        </p>
       </div>
     </div>
 
     <div class="bg-white p-6 rounded-lg shadow-md">
       <div class="flex items-start mb-6">
-        {item.image && (
-          <Image 
-            src={item.image} 
-            alt={item.title} 
-            class="w-32 h-32 object-contain mr-6"
-          />
-        )}
+        {
+          item.image && (
+            <Image src={item.image} alt={item.title} class="w-32 h-32 object-contain mr-6" />
+          )
+        }
         <div>
           <h1 class="text-2xl font-bold text-gray-800 mb-2">{item.title}</h1>
           <p class="text-gray-600">{item.description}</p>
         </div>
       </div>
-      
+
       <div class="prose max-w-none">
         <p>This content is currently being developed. Check back soon for:</p>
         <ul class="list-disc pl-5 mt-2">
@@ -84,11 +86,21 @@ const { item, sectionTitle } = Astro.props;
         </ul>
       </div>
     </div>
-    
+
     <div class="mt-8">
       <a href="/" class="inline-flex items-center text-blue-600 hover:underline">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5 mr-1"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
         </svg>
         Back to Cheatsheets
       </a>

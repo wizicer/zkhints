@@ -16,12 +16,14 @@ import { gasData, formatGas, getGasLevel, getGasColorClass } from "../data/gas";
   <div class="container mx-auto px-4 py-8">
     <div class="mb-8">
       <h2 class="text-xl font-bold mb-4">⛽ Gas Consumption by Framework and Schema</h2>
-      
+
       <div class="mb-4 text-sm text-gray-600">
-        <p>This table compares gas consumption across different ZK frameworks and schemas. 
-        Lower gas consumption is highlighted with greener colors.</p>
+        <p>
+          This table compares gas consumption across different ZK frameworks and schemas. Lower gas
+          consumption is highlighted with greener colors.
+        </p>
       </div>
-      
+
       <div class="overflow-x-auto shadow-md rounded-lg">
         <table class="min-w-full bg-white">
           <thead>
@@ -40,18 +42,22 @@ import { gasData, formatGas, getGasLevel, getGasColorClass } from "../data/gas";
                   <td class="py-3 px-4 font-medium">{item.framework}</td>
                   <td class="py-3 px-4">{item.schema}</td>
                   <td class="py-3 px-4">{item.publicInputs}</td>
-                  
+
                   {/* Sepolia Deployment Gas with color coding */}
-                  <td class={`py-3 px-4 ${
-                    getGasColorClass(getGasLevel(item.sepoliaDeploymentGas, 'deployment'))
-                  }`}>
+                  <td
+                    class={`py-3 px-4 ${getGasColorClass(
+                      getGasLevel(item.sepoliaDeploymentGas, "deployment")
+                    )}`}
+                  >
                     {formatGas(item.sepoliaDeploymentGas)}
                   </td>
-                  
+
                   {/* Sepolia Function Gas with color coding */}
-                  <td class={`py-3 px-4 ${
-                    getGasColorClass(getGasLevel(item.sepoliaFunctionGas, 'function'))
-                  }`}>
+                  <td
+                    class={`py-3 px-4 ${getGasColorClass(
+                      getGasLevel(item.sepoliaFunctionGas, "function")
+                    )}`}
+                  >
                     {formatGas(item.sepoliaFunctionGas)}
                   </td>
                 </tr>
@@ -60,7 +66,7 @@ import { gasData, formatGas, getGasLevel, getGasColorClass } from "../data/gas";
           </tbody>
         </table>
       </div>
-      
+
       <div class="mt-6 grid grid-cols-1 md:grid-cols-5 gap-2">
         <div class="flex items-center">
           <span class="inline-block w-4 h-4 bg-green-100 mr-2 rounded"></span>
@@ -83,9 +89,16 @@ import { gasData, formatGas, getGasLevel, getGasColorClass } from "../data/gas";
           <span class="text-sm">High</span>
         </div>
       </div>
-      
+
       <div class="mt-4 text-sm text-gray-600">
-        <p><strong>Data source:</strong> <a href="https://github.com/wizicer/zkp-solidity-gas" target="_blank" class="text-blue-600 hover:underline">https://github.com/wizicer/zkp-solidity-gas</a></p>
+        <p>
+          <strong>Data source:</strong>
+          <a
+            href="https://github.com/wizicer/zkp-solidity-gas"
+            target="_blank"
+            class="text-blue-600 hover:underline">https://github.com/wizicer/zkp-solidity-gas</a
+          >
+        </p>
       </div>
     </div>
   </div>

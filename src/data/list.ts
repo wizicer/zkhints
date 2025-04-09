@@ -34,10 +34,4 @@ export interface Resource {
   sections: ResourceSection[];
 }
 
-export const resourceList: Resource[] = [
-  beginner,
-  intermediate,
-  awesome,
-  news,
-  events,
-];
+export const resourceList: Resource[] = [beginner, intermediate, awesome, news, events];
