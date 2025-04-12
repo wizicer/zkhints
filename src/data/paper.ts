@@ -5,6 +5,7 @@ import GMW87 from "../assets/paper_abs/GMW87.png";
 import Kilian92 from "../assets/paper_abs/Kilian92.png";
 import FS86 from "../assets/paper_abs/FS86.png";
 import BGGHKMR90 from "../assets/paper_abs/BGGHKMR90.png";
+import Shamir92 from "../assets/paper_abs/Shamir92.png";
 
 export interface Paper {
   id: string;
@@ -106,6 +107,13 @@ export const papers: Paper[] = [
     authors: "Shamir, A.",
     year: "1992",
     link: "https://dl.acm.org/doi/pdf/10.1145/146585.146609",
+    drawing: {
+      left: alice,
+      right: bob,
+      center: Shamir92,
+      centerWidth: 151,
+      centerPosition: [-2, -20],
+    },
   },
   {
     id: "Micali00",
