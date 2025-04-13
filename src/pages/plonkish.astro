@@ -12,7 +12,7 @@ import plonkishConstraintsPermutation from "../assets/circuit/plonkish-constrain
 import plonkishConstraintsLookup from "../assets/circuit/plonkish-constraints-lookup.png";
 import plonkishTricksLimitingValue from "../assets/circuit/plonkish-tricks-limiting-value.png";
 import plonkishTricksIfElse from "../assets/circuit/plonkish-tricks-if-else.png";
-import plonkishTricksIfMinus from "../assets/circuit/plonkish-tricks-if-minus.png";
+import plonkishTricksIfEqual from "../assets/circuit/plonkish-tricks-if-equal.png";
 ---
 
 <Layout id="plonkish">
@@ -373,11 +373,11 @@ import plonkishTricksIfMinus from "../assets/circuit/plonkish-tricks-if-minus.pn
     </section>
 
     <section class="mb-10">
-      <SubsectionHeading title="If-Minus Condition" />
+      <SubsectionHeading title="If-Equal Condition" />
       <div class="flex flex-col md:flex-row gap-6 items-center">
         <div class="prose max-w-none md:w-1/2">
           <p class="mb-4">
-            The if-minus condition implements: <code>out = a == b ? c : (a - b)</code>
+            The if-equal condition implements: <code>out = a == b ? c : (a - b)</code>
             . This technique combined the tricks from <code>is-zero</code> and <code>if-else</code>.
           </p>
           <div class="mt-4">
@@ -443,8 +443,8 @@ import plonkishTricksIfMinus from "../assets/circuit/plonkish-tricks-if-minus.pn
         </div>
         <div class="md:w-1/2 flex justify-center">
           <Image
-            src={plonkishTricksIfMinus}
-            alt="If-Minus Condition"
+            src={plonkishTricksIfEqual}
+            alt="If-Equal Condition"
             class="max-w-full md:max-w-md md:w-128"
           />
         </div>
