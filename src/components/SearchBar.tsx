@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { sections } from "../data/index";
+import searchIcon from "../assets/icons/search.svg";
+import closeIcon from "../assets/icons/close.svg";
 
 interface SearchResult {
   id: string;
@@ -76,11 +78,7 @@ const SearchBar: React.FC = () => {
             className="w-full py-3 pl-10 pr-12 text-gray-700 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-            <img 
-              src="/src/assets/icons/search.svg" 
-              alt="Search" 
-              className="w-5 h-5 text-gray-400"
-            />
+            <img src={searchIcon.src} alt="Search" className="w-5 h-5 text-gray-400" />
           </div>
           {searchTerm && (
             <button
@@ -88,9 +86,9 @@ const SearchBar: React.FC = () => {
               onClick={clearSearch}
               className="absolute inset-y-0 right-0 flex items-center pr-3"
             >
-              <img 
-                src="/src/assets/icons/close.svg" 
-                alt="Clear" 
+              <img
+                src={closeIcon.src}
+                alt="Clear"
                 className="w-5 h-5 text-gray-400 hover:text-gray-600"
               />
             </button>
