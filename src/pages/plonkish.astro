@@ -1,0 +1,226 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CheatsheetHeader from "../components/CheatsheetHeader";
+import { sections } from "../data/index";
+
+const plonkishItem = sections
+  .flatMap((section) => section.items.filter((item) => item.id === "plonkish"))
+  .find(Boolean);
+
+const sectionTitle =
+  sections.find((section) => section.items.some((item) => item.id === "plonkish"))?.title ||
+  "Circuits";
+---
+
+<Layout title={plonkishItem?.title || ""}>
+  <CheatsheetHeader
+    title={plonkishItem?.title || ""}
+    description={plonkishItem?.description || ""}
+    category={sectionTitle}
+    client:load
+  />
+
+  <main class="container mx-auto px-4 py-8">
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold mb-4">Writing Arithmetic Circuits</h2>
+      <div class="flex flex-col md:flex-row gap-6 items-center">
+        <div class="prose max-w-none md:w-3/8">
+          <div class="mt-4">
+            <p>
+              <strong>💡 Circuit Structure:</strong> Original circuit code consists of two key parts:
+            </p>
+            <ul class="space-y-1 list-disc pl-5 mt-2">
+              <li>
+                💻 <strong>Computation</strong>: Determines how values are calculated during proof
+                generation
+              </li>
+              <li>
+                🔒 <strong>Constraints</strong>: Verifies the correctness of those calculations
+              </li>
+            </ul>
+            <p class="mt-2">
+              While we typically write these together in our code, the compiler separates them. The
+              constraints are fixed during the setup phase and become the core verification logic,
+              while the computation part runs with private and public inputs during each proof
+              generation.
+            </p>
+          </div>
+        </div>
+        <div class="md:w-5/8 flex justify-center">
+          <img
+            src="/src/assets/circuit/cicuit-compile-plonk-script.png"
+            alt="Circuit Compilation Plonk Script"
+            class="max-w-full md:max-w-md"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold mb-4">Plonkish Arithmetic Circuits</h2>
+      <p class="mb-4">
+        Plonkish arithmetic circuits are different from R1CS-like circuits in that they are designed
+        to resemble a table, rather than a simple list of computations. This design makes the
+        circuit more complex to reason about, but also provides some advantages in terms of
+        computational efficiency.
+      </p>
+      <div class="flex flex-col md:flex-row gap-6 items-center">
+        <div class="prose max-w-none md:w-1/2">
+          <ul class="space-y-4 list-disc pl-5">
+            <li>
+              <strong>📊 Table Design</strong>
+              <ul class="space-y-1 list-disc pl-5 mt-2">
+                <li>A column is a polynomial</li>
+                <li>A row is a root of unity</li>
+                <li>A cell is the evaluation of a polynomial at a root of unity</li>
+              </ul>
+            </li>
+            <li>
+              <strong>📋 Column Types</strong>
+              <ul class="space-y-1 list-disc pl-5 mt-2">
+                <li>
+                  <strong>🔒 Advice</strong>: Advice columns, private inputs and intermediate data,
+                  all private data
+                </li>
+                <li>
+                  <strong>📌 Fixed</strong>: Constant columns, fixed values when creating the
+                  circuit, public data
+                </li>
+                <li>
+                  <strong>🔘 Selector</strong>: Selector columns, virtual columns, essentially
+                  constant columns, binary used to switch custom gate circuits
+                </li>
+                <li>
+                  <strong>📢 Instance</strong>: Instance columns, store public inputs (and public
+                  outputs)
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="space-y-2 list-disc pl-5">
+            <li>
+              <strong>🔄 Arithmetic Circuit</strong>
+              <ul class="space-y-1 list-disc pl-5 mt-2">
+                <li>✨ Custom gates</li>
+                <li>🔍 Lookup table</li>
+                <li>🔗 Copy constraints</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="md:w-1/2 flex justify-center">
+          <img
+            src="/src/assets/circuit/plonkish-constraints-overview.png"
+            alt="Plonkish Constraints Overview"
+            class="max-w-full md:max-w-md"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold mb-4">Custom Gates</h2>
+      <div class="flex flex-col md:flex-row gap-6 items-center">
+        <div class="prose max-w-none md:w-1/2">
+          <ul class="space-y-2 list-disc pl-5">
+            <li>✨ Custom gates are expressions that constrain multiple cells</li>
+            <li>
+              🔘 Selectors are essentially fixed constant columns. They are boolean, used to enable
+              or disable gates
+            </li>
+            <li>
+              🔄 We can reference cells from the previous row, next row, but max to 7 in halo2.
+            </li>
+            <li>📝 In our examples, we use <code>b[1]</code> to represent the next row</li>
+          </ul>
+        </div>
+        <div class="md:w-1/2 flex justify-center">
+          <img
+            src="/src/assets/circuit/plonkish-constraints-gate.png"
+            alt="Custom Gate Constraints"
+            class="max-w-full md:max-w-md md:w-76"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold mb-4">Copy Constraints</h2>
+      <div class="flex flex-col md:flex-row gap-6 items-center">
+        <div class="prose max-w-none md:w-1/2">
+          <ul class="space-y-2 list-disc pl-5">
+            <li>
+              🔗 Copy constraints bind two cells together, ensuring their values must be the same
+            </li>
+            <li>⚡ These are the most efficient constraints. We can use them as much as we want</li>
+          </ul>
+        </div>
+        <div class="md:w-1/2 flex justify-center">
+          <img
+            src="/src/assets/circuit/plonkish-constraints-permutation.png"
+            alt="Copy Constraints"
+            class="max-w-full md:max-w-md md:w-76"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold mb-4">Lookup Tables</h2>
+      <div class="flex flex-col md:flex-row gap-6 items-center">
+        <div class="prose max-w-none md:w-1/2">
+          <p>Lookup tables are very efficient for range checks and bit operations</p>
+          <div class="mt-4">
+            <p><strong>⚡ XOR Example:</strong></p>
+            <p>Instead of using complex constraints to implement XOR, we can use a lookup table:</p>
+            <div class="overflow-x-auto mt-2">
+              <table class="min-w-64 border border-gray-300">
+                <thead>
+                  <tr class="bg-gray-100">
+                    <th class="px-4 py-2 border">a</th>
+                    <th class="px-4 py-2 border">b</th>
+                    <th class="px-4 py-2 border">a ⊕ b</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="px-4 py-2 border text-center">0</td>
+                    <td class="px-4 py-2 border text-center">0</td>
+                    <td class="px-4 py-2 border text-center">0</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2 border text-center">0</td>
+                    <td class="px-4 py-2 border text-center">1</td>
+                    <td class="px-4 py-2 border text-center">1</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2 border text-center">1</td>
+                    <td class="px-4 py-2 border text-center">0</td>
+                    <td class="px-4 py-2 border text-center">1</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2 border text-center">1</td>
+                    <td class="px-4 py-2 border text-center">1</td>
+                    <td class="px-4 py-2 border text-center">0</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="mt-2">
+              Using a lookup gate, we can verify that for any inputs (a, b) and output c, the
+              triplet (a, b, c) appears in our XOR truth table, making bit operations much more
+              efficient than implementing them with arithmetic constraints.
+            </p>
+          </div>
+        </div>
+        <div class="md:w-1/2 flex justify-center">
+          <img
+            src="/src/assets/circuit/plonkish-constraints-lookup.png"
+            alt="Lookup Tables"
+            class="max-w-full md:max-w-md md:w-76"
+          />
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
