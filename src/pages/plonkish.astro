@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import CheatsheetHeader from "../components/CheatsheetHeader";
+import SectionHeading from "../components/SectionHeading.astro";
+import SubsectionHeading from "../components/SubsectionHeading.astro";
 import { sections } from "../data/index";
 
 const plonkishItem = sections
@@ -22,14 +24,7 @@ const sectionTitle =
 
   <main class="container mx-auto px-4 py-8">
     <section class="mb-10">
-      <h2
-        class="text-2xl font-bold mb-4 text-gray-900 text-center leading-tight mb-2 border-t-4 border-b-4 border-purple-600 py-4"
-      >
-        Writing <span
-          class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400"
-          >Arithmetic Circuits</span
-        >
-      </h2>
+      <SectionHeading title="Writing Arithmetic Circuits" gradientPart="Arithmetic Circuits" />
       <div class="flex flex-col md:flex-row gap-6 items-center">
         <div class="prose max-w-none md:w-3/8">
           <div class="mt-4">
@@ -64,11 +59,7 @@ const sectionTitle =
     </section>
 
     <section class="mb-10">
-      <h2
-        class="text-2xl font-bold mb-4 text-gray-900 text-center leading-tight mb-2 border-t-4 border-b-4 border-purple-600 py-4"
-      >
-        Plonkish Arithmetic Circuits
-      </h2>
+      <SectionHeading title="Plonkish Arithmetic Circuits" gradientPart="Arithmetic Circuits" />
       <p class="mb-4">
         Plonkish arithmetic circuits are different from R1CS-like circuits in that they are designed
         to resemble a table, rather than a simple list of computations. This design makes the
@@ -130,15 +121,7 @@ const sectionTitle =
     </section>
 
     <section class="mb-10">
-      <h2 class="flex flex-row flex-nowrap items-center my-10">
-        <span class="flex-grow block border-t border-black"></span>
-        <span
-          class="flex-none block mx-4 px-4 py-2.5 text-xl rounded leading-none font-medium bg-amber-900 text-white"
-        >
-          Custom Gates
-        </span>
-        <span class="flex-grow block border-t border-black"></span>
-      </h2>
+      <SubsectionHeading title="Custom Gates" />
       <div class="flex flex-col md:flex-row gap-6 items-center">
         <div class="prose max-w-none md:w-1/2">
           <ul class="space-y-2 list-disc pl-5">
@@ -164,15 +147,7 @@ const sectionTitle =
     </section>
 
     <section class="mb-10">
-      <h2 class="flex flex-row flex-nowrap items-center my-10">
-        <span class="flex-grow block border-t border-black"></span>
-        <span
-          class="flex-none block mx-4 px-4 py-2.5 text-xl rounded leading-none font-medium bg-amber-900 text-white"
-        >
-          Copy Constraints
-        </span>
-        <span class="flex-grow block border-t border-black"></span>
-      </h2>
+      <SubsectionHeading title="Copy Constraints" />
       <div class="flex flex-col md:flex-row gap-6 items-center">
         <div class="prose max-w-none md:w-1/2">
           <ul class="space-y-2 list-disc pl-5">
@@ -193,15 +168,7 @@ const sectionTitle =
     </section>
 
     <section class="mb-10">
-      <h2 class="flex flex-row flex-nowrap items-center my-10">
-        <span class="flex-grow block border-t border-black"></span>
-        <span
-          class="flex-none block mx-4 px-4 py-2.5 text-xl rounded leading-none font-medium bg-amber-900 text-white"
-        >
-          Lookup Tables
-        </span>
-        <span class="flex-grow block border-t border-black"></span>
-      </h2>
+      <SubsectionHeading title="Lookup Tables" />
       <div class="flex flex-col md:flex-row gap-6 items-center">
         <div class="prose max-w-none md:w-1/2">
           <p>Lookup tables are very efficient for range checks and bit operations</p>
