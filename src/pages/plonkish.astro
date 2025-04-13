@@ -5,6 +5,8 @@ import SectionHeading from "../components/SectionHeading.astro";
 import SubsectionHeading from "../components/SubsectionHeading.astro";
 import XorTable from "../components/XorTable.astro";
 import { sections } from "../data/index";
+import { Image } from "astro:assets";
+import constructionCat1 from "../assets/construction/construction_cat_1.png";
 
 const plonkishItem = sections
   .flatMap((section) => section.items.filter((item) => item.id === "plonkish"))
@@ -195,5 +197,281 @@ const sectionTitle =
         </div>
       </div>
     </section>
+
+    <section class="mb-10">
+      <SectionHeading title="Gate Tricks" gradientPart="Gate" />
+      <div class="flex flex-col md:flex-row gap-6 items-center">
+        <div class="mt-4">
+          <p class="mt-2">
+            🎨 Writing circuits in Plonkish is totally different from writing circuits in R1CS
+            (Circom) or zkVM program.
+          </p>
+          <p class="mt-2">Here are some tricks that might help you write circuits in Plonkish.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <SubsectionHeading title="Limiting Values" />
+      <div class="flex flex-col md:flex-row gap-6 items-center">
+        <div class="prose max-w-none md:w-1/2">
+          <p class="mb-4">
+            Sometimes we need to limit a value to a specific set of values. For example, we might
+            want to ensure that a value is either 1, 2, or 3.
+          </p>
+          <div class="mt-4">
+            <p><strong>🔢 Limiting Value Gate:</strong></p>
+            <p class="mt-2 font-mono bg-gray-100 p-2 rounded">s × (a - 1)(a - 2)(a - 3) = 0</p>
+            <ul class="space-y-2 list-disc pl-5 mt-2">
+              <li>
+                This gate enforces that <code>a</code> can only take one of the values 1, 2, or 3 when
+                <code>s = 1</code>
+              </li>
+              <li>
+                If <code>a = 1</code>, the first term <code>(a - 1)</code> becomes 0, making the entire
+                expression 0
+              </li>
+              <li>
+                If <code>a = 2</code>, the second term <code>(a - 2)</code> becomes 0, making the entire
+                expression 0
+              </li>
+              <li>
+                If <code>a = 4</code> or <code>a = 99</code>, none of the terms become 0, so the
+                expression will not be 0
+              </li>
+              <li>
+                Similarly, if <code>a</code> is any other value, the gate will not satisfy the equation
+                unless <code>s = 0</code>, which means the selector is disabled
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="md:w-1/2 flex justify-center">
+          <img
+            src="/src/assets/circuit/plonkish-tricks-limiting-value.png"
+            alt="Limiting Value Gate"
+            class="max-w-full md:max-w-md md:w-116"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <SubsectionHeading title="If-Else Condition" />
+      <div class="flex flex-col md:flex-row gap-6 items-center">
+        <div class="prose max-w-none md:w-1/2">
+          <p class="mb-4">
+            Implementing conditional logic in ZK circuits requires special techniques. Here's how to
+            implement an if-else condition:
+          </p>
+          <div class="mt-4">
+            <p><strong>🔀 Conditional Output Gate:</strong></p>
+            <p class="mt-2 font-mono bg-gray-100 p-2 rounded">
+              s × (c × a + (1 - c) × b - out) = 0
+            </p>
+            <ul class="space-y-2 list-disc pl-5 mt-2">
+              <li>
+                This gate enforces that the output <code>out</code> is either <code>a</code> or <code
+                  >b</code
+                > depending on the value of <code>c</code>
+              </li>
+              <li>
+                If <code>c = 1</code>, the output will be <code>a</code>
+              </li>
+              <li>
+                If <code>c = 0</code>, the output will be <code>b</code>
+              </li>
+            </ul>
+
+            <p class="mt-4"><strong>🔍 Selector Validity Gate (Boolean Gate):</strong></p>
+            <p class="mt-2 font-mono bg-gray-100 p-2 rounded">s × c × (1 - c) = 0</p>
+            <ul class="space-y-2 list-disc pl-5 mt-2">
+              <li>
+                This gate ensures that <code>c</code> is a valid boolean value (either 0 or 1)
+              </li>
+            </ul>
+            <p class="mt-2">
+              Together, these gates implement the conditional logic <code>if c then a else b</code>.
+            </p>
+          </div>
+        </div>
+        <div class="md:w-1/2 flex justify-center">
+          <img
+            src="/src/assets/circuit/plonkish-tricks-if-else.png"
+            alt="If-Else Condition"
+            class="max-w-full md:max-w-md md:w-76"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <SubsectionHeading title="Is-Zero Check" />
+      <div class="flex flex-col md:flex-row gap-6 items-center">
+        <div class="prose max-w-none md:w-1/2">
+          <p class="mb-4">
+            Checking if a value is zero is a common operation in ZK circuits, but it requires
+            special handling:
+          </p>
+          <div class="mt-4">
+            <p><strong>🔍 Is-Zero Definition:</strong></p>
+            <p class="mt-2">
+              The <code>inv</code> value is defined as:
+            </p>
+            <p class="mt-2 font-mono bg-gray-100 p-2 rounded">inv = input == 0 ? 0 : 1/input</p>
+            <p class="mt-2">The output is calculated as:</p>
+            <p class="mt-2 font-mono bg-gray-100 p-2 rounded">output = -input × inv + 1</p>
+            <p class="mt-2">With the constraint:</p>
+            <p class="mt-2 font-mono bg-gray-100 p-2 rounded">input × output = 0</p>
+
+            <div class="overflow-x-auto mt-4"></div>
+            <p class="mt-2">
+              This technique allows us to check if a value is zero and produce a boolean result (1
+              for zero, 0 for non-zero).
+            </p>
+          </div>
+        </div>
+        <div class="md:w-1/2 flex justify-center">
+          <table class="min-w-full border border-gray-300">
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="px-4 py-2 border">Case</th>
+                <th class="px-4 py-2 border">input</th>
+                <th class="px-4 py-2 border">inv</th>
+                <th class="px-4 py-2 border">output</th>
+                <th class="px-4 py-2 border">input × output</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="px-4 py-2 border">Non-zero input</td>
+                <td class="px-4 py-2 border text-center">4</td>
+                <td class="px-4 py-2 border text-center">1/4</td>
+                <td class="px-4 py-2 border text-center">0</td>
+                <td class="px-4 py-2 border text-center">0</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border">Zero input</td>
+                <td class="px-4 py-2 border text-center">0</td>
+                <td class="px-4 py-2 border text-center">0</td>
+                <td class="px-4 py-2 border text-center">1</td>
+                <td class="px-4 py-2 border text-center">0</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border"
+                  >Non-zero input <span class="text-red-600">(malicious inv)</span></td
+                >
+                <td class="px-4 py-2 border text-center">4</td>
+                <td class="px-4 py-2 border text-center"><span class="text-red-600">1/5</span></td>
+                <td class="px-4 py-2 border text-center">1/5</td>
+                <td class="px-4 py-2 border text-center"><span class="text-red-600">4/5</span></td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border"
+                  >Zero input <span class="text-red-600">(malicious inv)</span></td
+                >
+                <td class="px-4 py-2 border text-center">0</td>
+                <td class="px-4 py-2 border text-center"><span class="text-red-600">1/5</span></td>
+                <td class="px-4 py-2 border text-center">1</td>
+                <td class="px-4 py-2 border text-center"><span class="text-green-600">0</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <SubsectionHeading title="If-Minus Condition" />
+      <div class="flex flex-col md:flex-row gap-6 items-center">
+        <div class="prose max-w-none md:w-1/2">
+          <p class="mb-4">
+            The if-minus condition implements: <code>out = a == b ? c : (a - b)</code>
+            . This technique combined the tricks from <code>is-zero</code> and <code>if-else</code>.
+          </p>
+          <div class="mt-4">
+            <p><strong>🔀 Gate 1: Equality Check (via is-zero)</strong></p>
+            <p class="mt-2 font-mono bg-gray-100 p-2 rounded">
+              s × (a - b) × (1 - ((a - b) × inv)) = 0
+            </p>
+            <ul class="space-y-2 list-disc pl-5 mt-2">
+              <li>
+                This gate ensures that if <code>a = b</code>, the expression becomes 0
+              </li>
+              <li>
+                From <code>is-zero</code>, we know that <code>input = a - b</code> and <code
+                  >inv</code
+                > is the inverse of <code>a - b</code>
+              </li>
+              <li>
+                When <code>a ≠ b</code>, the gate enforces the calculation based on <code
+                  >a - b</code
+                > and its inverse
+              </li>
+            </ul>
+
+            <p class="mt-4"><strong>🔀 Gate 2: Output Assignment</strong></p>
+            <p class="mt-2 font-mono bg-gray-100 p-2 rounded">
+              s × (1 - (a - b) × inv) × (out - c) = 0
+            </p>
+            <ul class="space-y-2 list-disc pl-5 mt-2">
+              <li>
+                This gate enforces that when <code>a = b</code>, the output <code>out</code> must equal
+                <code>c</code>
+              </li>
+              <li>
+                If <code>a ≠ b</code>, this constraint is automatically satisfied
+              </li>
+            </ul>
+
+            <p class="mt-4"><strong>🔀 Gate 3: Alternative Output</strong></p>
+            <p class="mt-2 font-mono bg-gray-100 p-2 rounded">
+              s × (1 - (1 - (a - b) × inv)) × (out - (a - b)) = 0
+            </p>
+            <ul class="space-y-2 list-disc pl-5 mt-2">
+              <li>
+                This gate enforces that when <code>a ≠ b</code>, the output <code>out</code> is set to
+                <code>a - b</code>
+              </li>
+              <li>
+                If <code>a = b</code>, this constraint is automatically satisfied
+              </li>
+            </ul>
+            <p class="mt-4">
+              💡 Together, these three gates implement the conditional structure:
+              <ul class="space-y-2 list-disc pl-5 mt-2">
+                <li>
+                  When <code>a = b</code>: The output <code>out</code> is set to <code>c</code>
+                </li>
+                <li>
+                  When <code>a ≠ b</code>: The output <code>out</code> is set to <code>a - b</code>
+                </li>
+              </ul>
+            </p>
+          </div>
+        </div>
+        <div class="md:w-1/2 flex justify-center">
+          <img
+            src="/src/assets/circuit/plonkish-tricks-if-minus.png"
+            alt="If-Minus Condition"
+            class="max-w-full md:max-w-md md:w-128"
+          />
+        </div>
+      </div>
+    </section>
+
+    <div
+      class="mt-40 bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-8 flex items-start relative flex-col md:flex-row"
+    >
+      <Image
+        src={constructionCat1}
+        alt="Under Construction"
+        class="h-32 w-32 mr-4 object-contain md:absolute md:-top-12"
+      />
+      <div class="ml-0 md:ml-40">
+        <p class="text-yellow-700 font-bold">More tricks to come</p>
+        <p class="text-yellow-600">More circuit tricks and techniques will be added soon.</p>
+      </div>
+    </div>
   </main>
 </Layout>
