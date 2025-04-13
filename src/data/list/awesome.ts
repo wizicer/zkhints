@@ -25,6 +25,11 @@ export const awesome: Resource = {
             "A curated list of awesome things related to learning zero knowledge proofs.",
           link: "https://github.com/matter-labs/awesome-zero-knowledge-proofs",
         },
+        {
+          title: "Fluidex's Awesome PLONK",
+          description: "A curated list of awesome PLONK resources, libraries, tools and more.",
+          link: "https://github.com/Fluidex/awesome-plonk",
+        },
       ],
     },
     {

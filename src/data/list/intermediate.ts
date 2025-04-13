@@ -83,6 +83,88 @@ export const intermediate: Resource = {
       ],
     },
     {
+      id: "plonk-resources",
+      title: "PLONK Resources",
+      description: "Tutorials and explanations of the PLONK proving system.",
+      emoji: "🧩",
+      links: [
+        {
+          title: "How PLONK Works by sCrypt",
+          description: "A two-part explanation of the PLONK proving system.",
+          link: "https://xiaohuiliu.medium.com/how-plonk-works-part-1-bc8050f4805e",
+          seriesLinks: [
+            {
+              title: "Part 1: Basic Structure",
+              link: "https://xiaohuiliu.medium.com/how-plonk-works-part-1-bc8050f4805e",
+            },
+            {
+              title: "Part 2: Implementation Details",
+              link: "https://xiaohuiliu.medium.com/how-plonk-works-part-2-1072dcd7634a",
+            },
+          ],
+        },
+        {
+          title: "PLONK on Bitcoin",
+          description: "Explanation of how PLONK can be implemented on Bitcoin.",
+          link: "https://xiaohuiliu.medium.com/plonk-on-bitcoin-bb5405820e82",
+        },
+        {
+          title: "PLONK by Hand",
+          description: "A detailed walkthrough of PLONK calculations by hand from MetaState.",
+          link: "https://research.metastate.dev/plonk-by-hand-part-1/",
+          seriesLinks: [
+            {
+              title: "Part 1: Setup and Arithmetization",
+              link: "https://research.metastate.dev/plonk-by-hand-part-1/",
+            },
+            {
+              title: "Part 2: The Proving System",
+              link: "https://research.metastate.dev/plonk-by-hand-part-2-1/",
+            },
+            {
+              title: "Part 3: Verification",
+              link: "https://research.metastate.dev/plonk-by-hand-part-3/",
+            },
+          ],
+        },
+        {
+          title: "Understanding PLONK by Vitalik",
+          description: "Vitalik Buterin's explanation of the PLONK proving system.",
+          link: "https://www.vitalik.ca/general/2019/09/22/plonk.html",
+        },
+        {
+          title: "Understanding PLONK by David Wong",
+          description: "A clear explanation of PLONK from cryptography expert David Wong.",
+          link: "https://www.cryptologie.net/article/527/understanding-plonk/",
+        },
+        {
+          title: "A Python tutorial of the paper PLONK",
+          description: "A Python implementation tutorial based on the original PLONK paper.",
+          link: "https://github.com/barryWhiteHat/plonk_tutorial",
+        },
+        {
+          title: "ZK Study Club - Plonk with Zac Williamson",
+          description: "Zac Williamson explains the PLONK proving system in detail.",
+          link: "https://youtu.be/NqrVcDuQ8hM",
+        },
+        {
+          title: "How PLONK works by David Wong",
+          description: "Comprehensive 12-part video series explaining PLONK.",
+          link: "https://www.youtube.com/playlist?list=PLBJMt6zV1c7Gh9Utg-Vng2V6EYVidTFCC",
+        },
+        {
+          title: "PLONK: Privacy in a World of Universal SNARKs",
+          description: "Conference talk by Zac Williamson on PLONK applications.",
+          link: "https://youtu.be/V7Hmtan98r8",
+        },
+        {
+          title: "PLONK Explained by Ariel Gabizon",
+          description: "Technical overview of PLONK by Protocol Labs researcher.",
+          link: "https://youtu.be/dHo56MhQlHk",
+        },
+      ],
+    },
+    {
       id: "dsl-guides",
       title: "ZK DSL Guides",
       description: "Intermediate tutorials on languages like Circom and Noir.",

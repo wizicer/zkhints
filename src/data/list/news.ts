@@ -19,6 +19,11 @@ export const news: Resource = {
           description: "Weekly zk-focused newsletter curated by Geometry and friends.",
           link: "https://zkmesh.substack.com/",
         },
+        {
+          title: "ZK Punk Insights",
+          description: "Weekly zkNews about ZK.",
+          link: "https://insights.zkpunk.pro/",
+        },
       ],
     },
     {
