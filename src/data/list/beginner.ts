@@ -28,16 +28,40 @@ export const beginner: Resource = {
       title: "Beginner-Friendly Tools",
       description: "Tools and playgrounds to help beginners start experimenting with ZK.",
       emoji: "🛠️",
+      links: [],
+    },
+    {
+      id: "playgrounds",
+      title: "Online Playgrounds",
+      description:
+        "Interactive online environments to experiment with ZK circuits without installation.",
+      emoji: "🎮",
       links: [
         {
-          title: "ZK Playground",
-          description: "An interactive environment to build and run ZK circuits.",
-          link: "https://zkplayground.com/",
+          title: "ZKrepl",
+          description: "An online REPL for Circom circuits.",
+          link: "https://zkrepl.dev/",
         },
         {
-          title: "Circom Starter",
-          description: "A minimal boilerplate to write your first Circom circuit.",
-          link: "https://github.com/iden3/circom-starter",
+          title: "Halo2 REPL",
+          description: "Interactive environment for Halo2 circuit development.",
+          link: "https://www.halo2repl.dev/",
+        },
+        {
+          title: "Plonk Pro",
+          description: "Online playground for PLONKish ZK circuits (halo2/plonky3).",
+          link: "https://plonk.pro/",
+        },
+        {
+          title: "Gnark Playground",
+          description: "Interactive environment for Gnark circuit development.",
+          link: "https://play.gnark.io/",
+        },
+        {
+          title: "ZK Accel Playground",
+          description: "Interactive playground for ZK circuit development.",
+          link: "https://play.zkaccel.io/",
+          rip: true,
         },
       ],
     },

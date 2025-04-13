@@ -9,6 +9,7 @@ export interface ResourceLink {
   description: string;
   link: string;
   recommended?: boolean;
+  rip?: boolean;
 }
 
 export interface EventLink {
