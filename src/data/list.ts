@@ -10,6 +10,7 @@ export interface ResourceLink {
   link: string;
   recommended?: boolean;
   rip?: boolean;
+  seriesLinks?: { title: string; link: string }[];
 }
 
 export interface EventLink {
