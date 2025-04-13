@@ -1,0 +1,28 @@
+---
+// Generate XOR truth table programmatically
+const xorTable = [
+  { a: 0, b: 0, result: 0 },
+  { a: 0, b: 1, result: 1 },
+  { a: 1, b: 0, result: 1 },
+  { a: 1, b: 1, result: 0 }
+];
+---
+
+<table class="min-w-64 border border-gray-300">
+  <thead>
+    <tr class="bg-gray-100">
+      <th class="px-4 py-2 border">a</th>
+      <th class="px-4 py-2 border">b</th>
+      <th class="px-4 py-2 border">a ⊕ b</th>
+    </tr>
+  </thead>
+  <tbody>
+    {xorTable.map(row => (
+      <tr>
+        <td class="px-4 py-2 border text-center">{row.a}</td>
+        <td class="px-4 py-2 border text-center">{row.b}</td>
+        <td class="px-4 py-2 border text-center">{row.result}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>

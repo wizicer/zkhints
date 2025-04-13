@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import CheatsheetHeader from "../components/CheatsheetHeader";
 import SectionHeading from "../components/SectionHeading.astro";
 import SubsectionHeading from "../components/SubsectionHeading.astro";
+import XorTable from "../components/XorTable.astro";
 import { sections } from "../data/index";
 
 const plonkishItem = sections
@@ -176,37 +177,7 @@ const sectionTitle =
             <p><strong>⚡ XOR Example:</strong></p>
             <p>Instead of using complex constraints to implement XOR, we can use a lookup table:</p>
             <div class="overflow-x-auto mt-2">
-              <table class="min-w-64 border border-gray-300">
-                <thead>
-                  <tr class="bg-gray-100">
-                    <th class="px-4 py-2 border">a</th>
-                    <th class="px-4 py-2 border">b</th>
-                    <th class="px-4 py-2 border">a ⊕ b</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="px-4 py-2 border text-center">0</td>
-                    <td class="px-4 py-2 border text-center">0</td>
-                    <td class="px-4 py-2 border text-center">0</td>
-                  </tr>
-                  <tr>
-                    <td class="px-4 py-2 border text-center">0</td>
-                    <td class="px-4 py-2 border text-center">1</td>
-                    <td class="px-4 py-2 border text-center">1</td>
-                  </tr>
-                  <tr>
-                    <td class="px-4 py-2 border text-center">1</td>
-                    <td class="px-4 py-2 border text-center">0</td>
-                    <td class="px-4 py-2 border text-center">1</td>
-                  </tr>
-                  <tr>
-                    <td class="px-4 py-2 border text-center">1</td>
-                    <td class="px-4 py-2 border text-center">1</td>
-                    <td class="px-4 py-2 border text-center">0</td>
-                  </tr>
-                </tbody>
-              </table>
+              <XorTable />
             </div>
             <p class="mt-2">
               Using a lookup gate, we can verify that for any inputs (a, b) and output c, the
