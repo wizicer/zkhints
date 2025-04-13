@@ -68,18 +68,17 @@ export const sections: Section[] = [
         image: gnark,
       },
       {
+        id: "plonkish",
+        title: "Plonkish Gadgets",
+        description: "Essential gadgets for building Plonkish constraint circuits",
+        image: plonkish,
+      },
+      {
         id: "r1cs",
         title: "R1CS Gadgets",
         construction: true,
         description: "Essential gadgets for building R1CS constraint circuits",
         image: r1cs,
-      },
-      {
-        id: "plonkish",
-        title: "Plonkish Gadgets",
-        construction: true,
-        description: "Essential gadgets for building Plonkish constraint circuits",
-        image: plonkish,
       },
       {
         id: "bugs",
