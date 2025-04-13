@@ -7,6 +7,14 @@ import XorTable from "../components/XorTable.astro";
 import { sections } from "../data/index";
 import { Image } from "astro:assets";
 import constructionCat1 from "../assets/construction/construction_cat_1.png";
+import circuitCompilePlonkScript from "../assets/circuit/cicuit-compile-plonk-script.png";
+import plonkishConstraintsOverview from "../assets/circuit/plonkish-constraints-overview.png";
+import plonkishConstraintsGate from "../assets/circuit/plonkish-constraints-gate.png";
+import plonkishConstraintsPermutation from "../assets/circuit/plonkish-constraints-permutation.png";
+import plonkishConstraintsLookup from "../assets/circuit/plonkish-constraints-lookup.png";
+import plonkishTricksLimitingValue from "../assets/circuit/plonkish-tricks-limiting-value.png";
+import plonkishTricksIfElse from "../assets/circuit/plonkish-tricks-if-else.png";
+import plonkishTricksIfMinus from "../assets/circuit/plonkish-tricks-if-minus.png";
 
 const plonkishItem = sections
   .flatMap((section) => section.items.filter((item) => item.id === "plonkish"))
@@ -52,8 +60,8 @@ const sectionTitle =
           </div>
         </div>
         <div class="md:w-5/8 flex justify-center">
-          <img
-            src="/src/assets/circuit/cicuit-compile-plonk-script.png"
+          <Image
+            src={circuitCompilePlonkScript}
             alt="Circuit Compilation Plonk Script"
             class="max-w-full md:max-w-md"
           />
@@ -114,8 +122,8 @@ const sectionTitle =
           </ul>
         </div>
         <div class="md:w-1/2 flex justify-center">
-          <img
-            src="/src/assets/circuit/plonkish-constraints-overview.png"
+          <Image
+            src={plonkishConstraintsOverview}
             alt="Plonkish Constraints Overview"
             class="max-w-full md:max-w-md"
           />
@@ -140,8 +148,8 @@ const sectionTitle =
           </ul>
         </div>
         <div class="md:w-1/2 flex justify-center">
-          <img
-            src="/src/assets/circuit/plonkish-constraints-gate.png"
+          <Image
+            src={plonkishConstraintsGate}
             alt="Custom Gate Constraints"
             class="max-w-full md:max-w-md md:w-76"
           />
@@ -161,8 +169,8 @@ const sectionTitle =
           </ul>
         </div>
         <div class="md:w-1/2 flex justify-center">
-          <img
-            src="/src/assets/circuit/plonkish-constraints-permutation.png"
+          <Image
+            src={plonkishConstraintsPermutation}
             alt="Copy Constraints"
             class="max-w-full md:max-w-md md:w-76"
           />
@@ -189,8 +197,8 @@ const sectionTitle =
           </div>
         </div>
         <div class="md:w-1/2 flex justify-center">
-          <img
-            src="/src/assets/circuit/plonkish-constraints-lookup.png"
+          <Image
+            src={plonkishConstraintsLookup}
             alt="Lookup Tables"
             class="max-w-full md:max-w-md md:w-76"
           />
@@ -247,8 +255,8 @@ const sectionTitle =
           </div>
         </div>
         <div class="md:w-1/2 flex justify-center">
-          <img
-            src="/src/assets/circuit/plonkish-tricks-limiting-value.png"
+          <Image
+            src={plonkishTricksLimitingValue}
             alt="Limiting Value Gate"
             class="max-w-full md:max-w-md md:w-116"
           />
@@ -296,8 +304,8 @@ const sectionTitle =
           </div>
         </div>
         <div class="md:w-1/2 flex justify-center">
-          <img
-            src="/src/assets/circuit/plonkish-tricks-if-else.png"
+          <Image
+            src={plonkishTricksIfElse}
             alt="If-Else Condition"
             class="max-w-full md:max-w-md md:w-76"
           />
@@ -451,8 +459,8 @@ const sectionTitle =
           </div>
         </div>
         <div class="md:w-1/2 flex justify-center">
-          <img
-            src="/src/assets/circuit/plonkish-tricks-if-minus.png"
+          <Image
+            src={plonkishTricksIfMinus}
             alt="If-Minus Condition"
             class="max-w-full md:max-w-md md:w-128"
           />

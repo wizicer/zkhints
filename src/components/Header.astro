@@ -1,6 +1,8 @@
 ---
 import { Image } from "astro:assets";
 import hintaIcon from "../assets/hinta_icon.png";
+import githubIcon from "../assets/icons/github.svg";
+import twitterIcon from "../assets/icons/twitter.svg";
 ---
 
 <header class="py-4 border-b border-gray-100">
@@ -37,7 +39,7 @@ import hintaIcon from "../assets/hinta_icon.png";
         class="text-gray-500 hover:text-gray-900 transition-colors"
         title="GitHub"
       >
-        <img src="/src/assets/icons/github.svg" alt="GitHub" width="20" height="20" />
+        <Image src={githubIcon} alt="GitHub" width="20" height="20" />
       </a>
       <a
         href="https://twitter.com/icerdesign"
@@ -46,7 +48,7 @@ import hintaIcon from "../assets/hinta_icon.png";
         class="text-gray-500 hover:text-gray-900 transition-colors"
         title="Twitter"
       >
-        <img src="/src/assets/icons/twitter.svg" alt="Twitter" width="20" height="20" />
+        <Image src={twitterIcon} alt="Twitter" width="20" height="20" />
       </a>
     </div>
   </div>

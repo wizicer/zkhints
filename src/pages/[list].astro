@@ -4,6 +4,10 @@ import CheatsheetHeader from "../components/CheatsheetHeader";
 import { resourceList } from "../data/list";
 import type { Resource, ResourceSection } from "../data/list";
 import { sections } from "../data/index";
+import { Image } from "astro:assets";
+import externalLinkIcon from "../assets/icons/external-link.svg";
+import locationIcon from "../assets/icons/location.svg";
+import calendarIcon from "../assets/icons/calendar.svg";
 
 interface PathItem {
   params: { list: string };
@@ -116,9 +120,9 @@ const currentDate = new Date();
                     <h3 class={`font-bold mb-2 ${outdated ? "text-gray-500" : "text-gray-800"}`}>
                       {link.title}
                       <a href={link.link} target="_blank" rel="noopener noreferrer" class="ml-1">
-                        <img 
-                          src="/src/assets/icons/external-link.svg" 
-                          alt="External Link" 
+                        <Image
+                          src={externalLinkIcon}
+                          alt="External Link"
                           class="h-4 w-4 inline mb-1"
                         />
                       </a>
@@ -143,20 +147,12 @@ const currentDate = new Date();
                       rel="noopener noreferrer"
                       class="flex items-center inline"
                     >
-                      <img 
-                        src="/src/assets/icons/location.svg" 
-                        alt="Location" 
-                        class="h-4 w-4 inline"
-                      />
+                      <Image src={locationIcon} alt="Location" class="h-4 w-4 inline" />
                       {link.location}
                     </a>
 
                     <br />
-                    <img 
-                      src="/src/assets/icons/calendar.svg" 
-                      alt="Calendar" 
-                      class="h-4 w-4 inline"
-                    />
+                    <Image src={calendarIcon} alt="Calendar" class="h-4 w-4 inline" />
                     {link.dateDescription}
                   </p>
                 </div>
