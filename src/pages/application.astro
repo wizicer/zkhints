@@ -1,18 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import CheatsheetHeader from "../components/CheatsheetHeader";
 import { sections, applications } from "../data/application";
 import { Image } from "astro:assets";
 ---
 
-<Layout title="ZK Applications">
-  <CheatsheetHeader
-    title="Zero-Knowledge Applications"
-    description="Real-world applications of Zero-Knowledge Proofs"
-    category="Applications"
-    client:load
-  />
-
+<Layout id="application">
   <div class="container mx-auto px-4 py-8 max-w-6xl">
     {
       sections.map((section) => (

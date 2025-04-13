@@ -1,10 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import CheatsheetHeader from "../components/CheatsheetHeader";
 import SectionHeading from "../components/SectionHeading.astro";
 import SubsectionHeading from "../components/SubsectionHeading.astro";
 import XorTable from "../components/XorTable.astro";
-import { sections } from "../data/index";
 import { Image } from "astro:assets";
 import constructionCat1 from "../assets/construction/construction_cat_1.png";
 import circuitCompilePlonkScript from "../assets/circuit/cicuit-compile-plonk-script.png";
@@ -15,24 +13,9 @@ import plonkishConstraintsLookup from "../assets/circuit/plonkish-constraints-lo
 import plonkishTricksLimitingValue from "../assets/circuit/plonkish-tricks-limiting-value.png";
 import plonkishTricksIfElse from "../assets/circuit/plonkish-tricks-if-else.png";
 import plonkishTricksIfMinus from "../assets/circuit/plonkish-tricks-if-minus.png";
-
-const plonkishItem = sections
-  .flatMap((section) => section.items.filter((item) => item.id === "plonkish"))
-  .find(Boolean);
-
-const sectionTitle =
-  sections.find((section) => section.items.some((item) => item.id === "plonkish"))?.title ||
-  "Circuits";
 ---
 
-<Layout title={plonkishItem?.title || ""}>
-  <CheatsheetHeader
-    title={plonkishItem?.title || ""}
-    description={plonkishItem?.description || ""}
-    category={sectionTitle}
-    client:load
-  />
-
+<Layout id="plonkish">
   <main class="container mx-auto px-4 py-8">
     <section class="mb-10">
       <SectionHeading title="Writing Arithmetic Circuits" gradientPart="Arithmetic Circuits" />

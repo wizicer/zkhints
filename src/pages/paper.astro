@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import CheatsheetHeader from "../components/CheatsheetHeader";
 import { papers, contributions, references } from "../data/paper";
 import { Image } from "astro:assets";
 import References from "../components/References.astro";
@@ -62,14 +61,7 @@ const imageMap = {
 const sortedPapers = [...papers].sort((a, b) => parseInt(a.year) - parseInt(b.year));
 ---
 
-<Layout title="ZK Papers Showcase">
-  <CheatsheetHeader
-    title="Zero-Knowledge Proof Papers"
-    description="A showcase of significant papers in Zero-Knowledge Proofs"
-    category="Research"
-    client:load
-  />
-
+<Layout id="paper">
   <div class="container mx-auto px-4 py-8 max-w-6xl">
     <div class="space-y-8">
       {

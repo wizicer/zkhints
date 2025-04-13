@@ -1,15 +1,26 @@
 ---
-import Header from '../components/Header.astro';
+import Header from "../components/Header.astro";
 import "../styles/global.css";
+import { sections } from "../data/index";
+import CheatsheetHeader from "../components/CheatsheetHeader";
 
 interface Props {
   title?: string;
+  id?: string;
 }
 
-const { title = "ZK Hints" } = Astro.props;
+const { title: propTitle, id } = Astro.props;
+
+const { title: itemTitle, description } =
+  sections.flatMap((section) => section.items.filter((item) => item.id === id)).find(Boolean) || {};
+
+const title = propTitle || itemTitle || "ZK Hints";
+
+const sectionTitle =
+  sections.find((section) => section.items.some((item) => item.id === id))?.title || "Hints";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -17,16 +28,17 @@ const { title = "ZK Hints" } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    
+
     <!-- Custom styles -->
     <style>
       body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+          sans-serif;
         color: #2d3748;
         line-height: 1.6;
         background-color: #f8f9fa;
       }
-      
+
       .container {
         width: 100%;
         max-width: 1100px;
@@ -34,32 +46,34 @@ const { title = "ZK Hints" } = Astro.props;
         padding-left: 1rem;
         padding-right: 1rem;
       }
-      
+
       .card:hover {
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        box-shadow:
+          0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
       }
-      
+
       pre {
         font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
         font-size: 0.9em;
         white-space: pre-wrap;
       }
-      
+
       .category-box {
         transition: all 0.2s ease;
       }
-      
+
       .search-box {
         transition: all 0.2s ease;
       }
-      
+
       .h3-section-title {
         position: relative;
         display: inline-block;
       }
-      
+
       .h3-section-title::after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: -4px;
         left: 0;
@@ -67,23 +81,35 @@ const { title = "ZK Hints" } = Astro.props;
         height: 2px;
         background-color: #e2e8f0;
       }
-      
+
       @keyframes heartbeat {
-        0% { transform: scale(1); }
-        5% { transform: scale(1.2); }
-        10% { transform: scale(1); }
-        15% { transform: scale(1.3); }
-        20% { transform: scale(1); }
-        100% { transform: scale(1); }
+        0% {
+          transform: scale(1);
+        }
+        5% {
+          transform: scale(1.2);
+        }
+        10% {
+          transform: scale(1);
+        }
+        15% {
+          transform: scale(1.3);
+        }
+        20% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(1);
+        }
       }
-      
+
       .beating-heart {
         display: inline-block;
         color: #1e63e9;
         animation: heartbeat 4s infinite cubic-bezier(0.25, 0.1, 0.25, 1);
         font-size: 1.1em;
       }
-      
+
       @media (max-width: 640px) {
         .grid {
           grid-template-columns: 1fr;
@@ -93,16 +119,28 @@ const { title = "ZK Hints" } = Astro.props;
   </head>
   <body>
     <Header />
-    
+
     <main class="container">
+      {
+        id && (
+          <CheatsheetHeader
+            title={title}
+            description={description}
+            category={sectionTitle}
+            client:load
+          />
+        )
+      }
       <slot />
     </main>
-    
+
     <footer class="py-8 mt-12 border-t border-gray-100">
       <div class="container mx-auto px-4 text-center text-gray-500 text-sm">
         <p>Built with <span class="beating-heart">❤</span> by @icerdesign</p>
         <p class="mt-2">
-          <a href="https://github.com/wizicer" class="text-blue-600 hover:underline">View on GitHub</a>
+          <a href="https://github.com/wizicer" class="text-blue-600 hover:underline"
+            >View on GitHub</a
+          >
         </p>
       </div>
     </footer>

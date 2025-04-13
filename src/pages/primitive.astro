@@ -1,19 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import CheatsheetHeader from "../components/CheatsheetHeader";
 import TableSection from "../components/TableSection.astro";
 import "highlight.js/styles/atom-one-dark.css";
 import { primitiveData, legendItems } from "../data/primitive";
 ---
 
-<Layout title="ZK-SNARK Primitives Cheatsheet">
-  <CheatsheetHeader
-    title="ZK-SNARK Primitives Cheatsheet"
-    description="Developer Edition of Zero Knowledge Primitives"
-    category="ZK Technology"
-    client:load
-  />
-
+<Layout id="primitive">
   <div class="container mx-auto px-4 py-8">
     <div class="mb-8">
       <div class="flex items-center gap-2 mb-4">
