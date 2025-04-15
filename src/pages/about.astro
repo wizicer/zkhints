@@ -1,0 +1,328 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import hintaIcon from "../assets/hinta.png";
+import aliceBulb from "../assets/role/alice.png";
+import bobBulb from "../assets/role/bob.png";
+import eveBulb from "../assets/role/eve.png";
+import malloryBulb from "../assets/role/mallory.png";
+---
+
+<Layout title="About zkHints">
+  <main class="container mx-auto px-4 py-8 max-w-4xl">
+    <!-- Hero Section with Animation -->
+    <div
+      class="relative overflow-hidden bg-gradient-to-br from-purple-50 to-blue-50 rounded-xl p-10 mb-16 shadow-lg"
+    >
+      <div class="absolute top-0 left-0 w-full h-full">
+        <div
+          class="absolute top-10 left-10 w-20 h-20 bg-purple-200 rounded-full opacity-20 animate-pulse"
+        >
+        </div>
+        <div
+          class="absolute bottom-10 right-10 w-32 h-32 bg-blue-200 rounded-full opacity-20 animate-pulse"
+          style="animation-delay: 1s;"
+        >
+        </div>
+        <div
+          class="absolute top-1/2 right-1/4 w-16 h-16 bg-indigo-200 rounded-full opacity-20 animate-pulse"
+          style="animation-delay: 2s;"
+        >
+        </div>
+      </div>
+
+      <div class="text-center relative z-10">
+        <div class="inline-block p-4 mb-6 animate-bounce" style="animation-duration: 3s;">
+          <Image src={hintaIcon} alt="zkHints Logo" class="w-24 h-24" />
+        </div>
+        <h1
+          class="text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-500"
+        >
+          About ZK Hints
+        </h1>
+        <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-6"></div>
+        <p class="text-xl text-gray-700 max-w-2xl mx-auto">
+          A curated knowledge base for developers, researchers, and enthusiasts exploring the world
+          of Zero-Knowledge Proofs.
+        </p>
+      </div>
+    </div>
+
+    <div class="prose max-w-none">
+      <p class="leading-relaxed">
+        Welcome to <strong class="text-purple-600">zkHints</strong>, a curated knowledge base for
+        developers, researchers, and enthusiasts exploring the world of <strong
+          class="text-blue-600">Zero-Knowledge Proofs (ZKPs)</strong
+        >.
+      </p>
+
+      <p class="mt-3 leading-relaxed">
+        Whether you're just beginning your ZK journey or looking for deep technical comparisons,
+        zkHints offers a growing collection of cheatsheets, reference materials, and learning paths
+        — all designed to make working with ZK more accessible, practical, and fun.
+      </p>
+
+      <!-- Why zkHints Section -->
+      <section
+        class="my-16 bg-white rounded-xl p-8 shadow-lg transform hover:scale-[1.01] transition-transform duration-300"
+      >
+        <div class="flex items-center mb-6">
+          <div
+            class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mr-4 shadow-sm"
+          >
+            <span class="text-2xl">✨</span>
+          </div>
+          <h2
+            class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-orange-500"
+          >
+            Why zkHints?
+          </h2>
+        </div>
+
+        <p class="leading-relaxed">
+          Zero-Knowledge technologies are evolving rapidly, but learning resources are scattered,
+          overly theoretical, or hard to keep up with. We created zkHints to:
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+          <div
+            class="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-400 hover:shadow-md transition-shadow"
+          >
+            <div class="flex items-center mb-2">
+              <span class="text-xl mr-2">📚</span>
+              <h3 class="font-bold text-yellow-700">Developer Cheatsheets</h3>
+            </div>
+            <p class="text-sm text-gray-700">
+              Provide developer-friendly <strong>cheatsheets</strong> for ZK systems, languages, gadgets,
+              primitives, and applications
+            </p>
+          </div>
+
+          <div
+            class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-400 hover:shadow-md transition-shadow"
+          >
+            <div class="flex items-center mb-2">
+              <span class="text-xl mr-2">🧭</span>
+              <h3 class="font-bold text-blue-700">Guided Roadmaps</h3>
+            </div>
+            <p class="text-sm text-gray-700">
+              Offer <strong>guided roadmaps</strong> for ZK learners from beginner to advanced levels
+            </p>
+          </div>
+
+          <div
+            class="bg-green-50 p-4 rounded-lg border-l-4 border-green-400 hover:shadow-md transition-shadow"
+          >
+            <div class="flex items-center mb-2">
+              <span class="text-xl mr-2">🧰</span>
+              <h3 class="font-bold text-green-700">Practical Focus</h3>
+            </div>
+            <p class="text-sm text-gray-700">
+              Maintain a practical focus on tools, real-world use cases, and implementation details
+            </p>
+          </div>
+
+          <div
+            class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-400 hover:shadow-md transition-shadow"
+          >
+            <div class="flex items-center mb-2">
+              <span class="text-xl mr-2">🎓</span>
+              <h3 class="font-bold text-purple-700">Research Highlights</h3>
+            </div>
+            <p class="text-sm text-gray-700">
+              Highlight foundational <strong>papers</strong>, terminology, and active research areas
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Meet the Bulb Wizard Section -->
+      <section class="my-16 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-xl p-8 shadow-lg">
+        <div class="flex items-center mb-6">
+          <div
+            class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4 shadow-sm"
+          >
+            <span class="text-2xl">🧙‍♂️</span>
+          </div>
+          <h2
+            class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-500"
+          >
+            Meet the Bulb Wizard
+          </h2>
+        </div>
+
+        <div class="flex flex-col md:flex-row items-center gap-8">
+          <div class="md:w-1/2">
+            <p class="leading-relaxed">
+              Our adorable mascot — the <strong class="text-indigo-600">Crystal Bulb Wizard</strong>
+              — symbolizes the light of knowledge and the crystal clarity we aim to bring to Zero-Knowledge
+              concepts.
+            </p>
+            <p class="leading-relaxed mt-4">
+              You'll also meet their friends: <strong class="text-pink-600">Alice</strong>, <strong
+                class="text-indigo-600">Bob</strong
+              >, <strong class="text-green-600">Eve</strong>, and <strong class="text-orange-600"
+                >Mallory</strong
+              >, reimagined in bulb form to help explain classic cryptographic roles in a more
+              visual and playful way.
+            </p>
+          </div>
+          <div class="md:w-1/2 flex justify-center">
+            <div class="relative w-48 h-48 flex items-center justify-center overflow-hidden">
+              <Image src={hintaIcon} alt="Bulb Wizard" class="w-40 h-40" />
+            </div>
+            <div class="relative w-48 h-48 grid grid-cols-2 grid-rows-2 gap-1">
+              <Image
+                src={aliceBulb}
+                alt="Alice Bulb"
+                class="w-full h-full object-cover scale-x-[-1]"
+              />
+              <Image src={bobBulb} alt="Bob Bulb" class="w-full h-full object-cover" />
+              <Image src={eveBulb} alt="Eve Bulb" class="w-full h-full object-cover" />
+              <Image src={malloryBulb} alt="Mallory Bulb" class="w-full h-full object-cover" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Partners & Contributions Section -->
+      <section
+        class="my-16 bg-white rounded-xl p-8 shadow-lg transform hover:scale-[1.01] transition-transform duration-300"
+      >
+        <div class="flex items-center mb-6">
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4 shadow-sm"
+          >
+            <span class="text-2xl">🤝</span>
+          </div>
+          <h2
+            class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-cyan-500"
+          >
+            Partners & Contributions
+          </h2>
+        </div>
+
+        <div class="bg-blue-50 p-6 rounded-lg border border-blue-100">
+          <p class="text-lg font-medium text-blue-800 mb-2">
+            zkHints is community-driven and open to collaboration!
+          </p>
+          <p class="text-gray-700">
+            We welcome content suggestions, open-source contributions, and partner integrations.
+            Interested in becoming a launch or strategic partner? Reach out via the
+            <a
+              href="https://github.com/wizicer/zkhints"
+              class="text-blue-600 hover:underline font-medium inline-flex items-center"
+            >
+              GitHub repository
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 ml-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                ></path>
+              </svg>
+            </a>.
+          </p>
+        </div>
+      </section>
+
+      <!-- Built with Love Section -->
+      <section class="my-16 bg-gradient-to-br from-pink-50 to-red-50 rounded-xl p-8 shadow-lg">
+        <div class="flex items-center mb-6">
+          <div
+            class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mr-4 shadow-sm"
+          >
+            <span class="text-2xl">🛠️</span>
+          </div>
+          <h2
+            class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-red-500"
+          >
+            Built with Love (and Code)
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="bg-white p-4 rounded-lg shadow hover:shadow-md transition-shadow text-center">
+            <div
+              class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-3"
+            >
+              <span class="text-xl">🔍</span>
+            </div>
+            <h3 class="font-bold text-pink-700 mb-2">Powered by curiosity</h3>
+            <p class="text-sm text-gray-600">
+              Driven by a desire to understand and explain complex concepts
+            </p>
+          </div>
+
+          <div class="bg-white p-4 rounded-lg shadow hover:shadow-md transition-shadow text-center">
+            <div
+              class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3"
+            >
+              <span class="text-xl">🎨</span>
+            </div>
+            <h3 class="font-bold text-red-700 mb-2">Designed for clarity</h3>
+            <p class="text-sm text-gray-600">
+              Focused on making complex topics accessible and understandable
+            </p>
+          </div>
+
+          <div class="bg-white p-4 rounded-lg shadow hover:shadow-md transition-shadow text-center">
+            <div
+              class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3"
+            >
+              <span class="text-xl">🌐</span>
+            </div>
+            <h3 class="font-bold text-orange-700 mb-2">Inspired by community</h3>
+            <p class="text-sm text-gray-600">
+              Built with and for the global ZK research and development community
+            </p>
+          </div>
+        </div>
+
+        <p class="mt-6 text-center text-gray-700 bg-white p-4 rounded-lg shadow-inner">
+          If zkHints helps you, we'd love to hear from you — and even more, we'd love your feedback,
+          issues, or pull requests.
+        </p>
+      </section>
+
+      <!-- Final Quote -->
+      <div class="relative my-16 py-10">
+        <div class="absolute inset-0 flex items-center">
+          <div class="w-full border-t border-gray-300"></div>
+        </div>
+        <div class="relative flex justify-center">
+          <div
+            class="px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full shadow-lg"
+          >
+            <p class="text-xl font-medium text-white italic">Keep proving, keep learning.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+</style>

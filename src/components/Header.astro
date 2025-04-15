@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import hintaIcon from "../assets/hinta_icon.png";
 import githubIcon from "../assets/icons/github.svg";
 import twitterIcon from "../assets/icons/twitter.svg";
+import hatIcon from "../assets/icons/hat.svg";
 ---
 
 <header class="py-4 border-b border-gray-100">
@@ -49,6 +50,9 @@ import twitterIcon from "../assets/icons/twitter.svg";
         title="Twitter"
       >
         <Image src={twitterIcon} alt="Twitter" width="20" height="20" />
+      </a>
+      <a href="/about" class="text-gray-500 hover:text-gray-900 transition-colors" title="About">
+        <Image src={hatIcon} alt="ZKHints" width="20" height="20" />
       </a>
     </div>
   </div>
