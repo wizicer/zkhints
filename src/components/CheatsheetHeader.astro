@@ -1,0 +1,39 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+interface Props {
+  title: string;
+  description?: string;
+  category?: string;
+  image?: ImageMetadata;
+  imageAlt?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+}
+
+const { title, description, category, image, imageAlt = "Header image" } = Astro.props;
+---
+
+<div class="page-header text-center my-12">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col items-center">
+      <h1
+        class="font-extrabold tracking-tight text-5xl text-zinc-950 flex items-center justify-center gap-3"
+      >
+        {image && <Image src={image} alt={imageAlt} class="w-24 h-24 object-contain" />}
+        {title}
+      </h1>
+      {description && <p class="text-xl text-gray-600 max-w-2xl mx-auto">{description}</p>}
+      {
+        category && (
+          <div class="mt-4">
+            <span class="inline-block bg-gray-100 text-gray-700 text-sm px-3 py-1 rounded-full">
+              {category}
+            </span>
+          </div>
+        )
+      }
+    </div>
+  </div>
+</div>

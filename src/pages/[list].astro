@@ -1,9 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import CheatsheetHeader from "../components/CheatsheetHeader";
 import { resourceList } from "../data/list";
 import type { Resource, ResourceSection } from "../data/list";
-import { sections } from "../data/index";
 import { Image } from "astro:assets";
 import externalLinkIcon from "../assets/icons/external-link.svg";
 import locationIcon from "../assets/icons/location.svg";
@@ -13,9 +11,6 @@ interface PathItem {
   params: { list: string };
   props: {
     resource: Resource;
-    title: string;
-    description: string;
-    category: string;
   };
 }
 
@@ -23,26 +18,10 @@ export function getStaticPaths() {
   const paths: PathItem[] = [];
 
   resourceList.forEach((resource) => {
-    const info = sections
-      .flatMap((section) =>
-        section.items.map((item) => ({
-          category: section.title,
-          ...item,
-        }))
-      )
-      .find((item) => item.id === resource.id) || {
-      title: resource.id,
-      description: resource.id,
-      category: resource.id,
-    };
-
     paths.push({
       params: { list: resource.id },
       props: {
         resource,
-        title: info.title,
-        description: info.description,
-        category: info.category,
       },
     });
   });
@@ -50,7 +29,7 @@ export function getStaticPaths() {
   return paths;
 }
 
-const { resource, title, description, category } = Astro.props;
+const { resource } = Astro.props;
 
 // Function to check if an event is outdated
 function isOutdated(outdatedDate: string | undefined): boolean {
@@ -69,9 +48,7 @@ function isOutdated(outdatedDate: string | undefined): boolean {
 const currentDate = new Date();
 ---
 
-<Layout title={title}>
-  <CheatsheetHeader title={title} description={description} category={category} client:load />
-
+<Layout id={resource.id}>
   <div class="container mx-auto px-4 py-8">
     {
       resource.sections.map((section: ResourceSection) => (

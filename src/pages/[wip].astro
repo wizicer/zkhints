@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import CheatsheetHeader from "../components/CheatsheetHeader";
+import CheatsheetHeader from "../components/CheatsheetHeader.astro";
 import { sections } from "../data/index";
 import type { Item } from "../data/index";
 import { Image } from "astro:assets";
@@ -43,7 +43,6 @@ const { item, sectionTitle } = Astro.props;
     title={`${item.title} (Work in Progress)`}
     description={item.description}
     category={sectionTitle}
-    client:load
   />
 
   <div class="container mx-auto px-4 py-8">

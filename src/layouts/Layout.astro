@@ -2,7 +2,7 @@
 import Header from "../components/Header.astro";
 import "../styles/global.css";
 import { sections } from "../data/index";
-import CheatsheetHeader from "../components/CheatsheetHeader";
+import CheatsheetHeader from "../components/CheatsheetHeader.astro";
 
 interface Props {
   title?: string;
@@ -11,8 +11,12 @@ interface Props {
 
 const { title: propTitle, id } = Astro.props;
 
-const { title: itemTitle, description } =
-  sections.flatMap((section) => section.items.filter((item) => item.id === id)).find(Boolean) || {};
+const {
+  title: itemTitle,
+  description,
+  image,
+} = sections.flatMap((section) => section.items.filter((item) => item.id === id)).find(Boolean) ||
+{};
 
 const title = propTitle || itemTitle || "ZK Hints";
 
@@ -127,7 +131,7 @@ const sectionTitle =
             title={title}
             description={description}
             category={sectionTitle}
-            client:load
+            image={image}
           />
         )
       }
