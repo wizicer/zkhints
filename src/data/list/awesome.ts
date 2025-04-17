@@ -30,6 +30,11 @@ export const awesome: Resource = {
           description: "A curated list of awesome PLONK resources, libraries, tools and more.",
           link: "https://github.com/Fluidex/awesome-plonk",
         },
+        {
+          title: "noir-lang's Awesome Noir",
+          description: "A curated list of resources for learning and programming in Noir.",
+          link: "https://github.com/noir-lang/awesome-noir",
+        },
       ],
     },
     {
