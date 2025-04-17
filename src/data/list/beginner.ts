@@ -256,5 +256,46 @@ export const beginner: Resource = {
         },
       ],
     },
+    {
+      id: "video",
+      title: "Video",
+      description: "Video resources for learning ZK.",
+      emoji: "🎬",
+      links: [
+        {
+          title: "zkMarek Session 1: Elliptic Curves to Verkle Trees",
+          description:
+            "Season 1 of zkMarek aimed at intuitively explaining topics like elliptic curves, ECDSA, trusted setup, KZG and Vector commitments, Blobs, Merkle and Verkle Trees.",
+          link: "https://www.youtube.com/playlist?list=PLj0C1OnlNNly58s-JI_bDAdCY7JLgcy5I",
+          seriesLinks: [
+            {
+              title: "Episode 1: Build Ethereum Wallet with Elliptic Curves",
+              link: "https://www.youtube.com/watch?v=_JiPcvtr8sY",
+            },
+            {
+              title: "Episode 2: How Ethereum transactions are secured by ECDSA algorithm",
+              link: "https://www.youtube.com/watch?v=P-wVEDnnB10",
+            },
+            {
+              title:
+                "Episode 3: What is a trusted setup and how is it secured? Pairings operations",
+              link: "https://www.youtube.com/watch?v=IDKn2Y9Kkc4",
+            },
+            {
+              title: "Episode 4: How KZG Commitment Works: Polynomial Commitments Simplified",
+              link: "https://www.youtube.com/watch?v=H7AeoqzAfD0",
+            },
+            {
+              title: "Episode 5: How do Ethereum blobs really work? Vector commitments simplified",
+              link: "https://www.youtube.com/watch?v=CaRNm6g2nVc",
+            },
+            {
+              title: "Episode 6: Ethereum's Storage Secret: Why Merkle Patricia Tries Matter",
+              link: "https://www.youtube.com/watch?v=DGvRY9BjLRs",
+            },
+          ],
+        },
+      ],
+    },
   ],
 };
