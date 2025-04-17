@@ -3,6 +3,9 @@ import Header from "../components/Header.astro";
 import "../styles/global.css";
 import { sections } from "../data/index";
 import CheatsheetHeader from "../components/CheatsheetHeader.astro";
+import { Image } from "astro:assets";
+import reportErrorIcon from "../assets/icons/report-error.svg";
+import editPageIcon from "../assets/icons/edit-page.svg";
 
 interface Props {
   title?: string;
@@ -15,13 +18,25 @@ const {
   title: itemTitle,
   description,
   image,
+  sourceFile,
 } = sections.flatMap((section) => section.items.filter((item) => item.id === id)).find(Boolean) ||
 {};
 
 const title = propTitle || itemTitle || "ZK Hints";
 
-const sectionTitle =
-  sections.find((section) => section.items.some((item) => item.id === id))?.title || "Hints";
+const getSourceFilePath = () => {
+  if (sourceFile) return sourceFile;
+  if (id) return `src/pages/${id}.astro`;
+
+  const path = Astro.url.pathname.replace(/^\/|\/$/g, "") || "index";
+  return `src/pages/${path}.astro`;
+};
+
+const sourceFilePath = getSourceFilePath();
+
+const sectionTitle = sections
+  .filter((section) => section.items.some((item) => item.id === id))
+  .map((section) => section.title)[0];
 ---
 
 <!doctype html>
@@ -138,14 +153,29 @@ const sectionTitle =
       <slot />
     </main>
 
-    <footer class="py-8 mt-12 border-t border-gray-100">
+    <footer class="py-8 bg-gray-50 mt-12">
       <div class="container mx-auto px-4 text-center text-gray-500 text-sm">
         <p>Built with <span class="beating-heart">❤</span> by @icerdesign</p>
-        <p class="mt-2">
-          <a href="https://github.com/wizicer/zkhints" class="text-blue-600 hover:underline"
-            >View on GitHub</a
+        <div class="mt-4 flex justify-center space-x-6">
+          <a
+            href={`https://github.com/wizicer/zkhints/issues/new?title=Error on ${title}${id ? ` [${id}]` : ""} page&body=I found an error on the ${title} page.&labels=content`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-600 hover:text-blue-600 transition-colors flex items-center"
           >
-        </p>
+            <Image src={reportErrorIcon} alt="Report error" width={16} height={16} class="mr-1" />
+            Report an error
+          </a>
+          <a
+            href={`https://github.com/wizicer/zkhints/edit/main/${sourceFilePath}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-600 hover:text-blue-600 transition-colors flex items-center"
+          >
+            <Image src={editPageIcon} alt="Edit page" width={16} height={16} class="mr-1" />
+            Edit this page
+          </a>
+        </div>
       </div>
     </footer>
   </body>

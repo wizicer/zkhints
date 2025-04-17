@@ -26,6 +26,7 @@ export interface Item {
   description: string;
   image: ImageMetadata;
   construction?: boolean;
+  sourceFile?: string;
 }
 
 export interface Section {
@@ -42,36 +43,42 @@ export const sections: Section[] = [
         title: "Circuit DSL",
         description: "Domain Specific Language for writing zero-knowledge circuits",
         image: dsl,
+        sourceFile: "src/data/dsl.ts",
       },
       {
         id: "primitive",
         title: "SNARK Primitives",
         description: "Hash functions, Merkle trees, and other ZK building blocks",
         image: primitive,
+        sourceFile: "src/data/primitive.ts",
       },
       {
         id: "application",
         title: "Applications",
         description: "Real-world applications of zero-knowledge proofs",
         image: application,
+        sourceFile: "src/data/application.ts",
       },
       {
         id: "gas",
         title: "Gas Estimation",
         description: "Cost estimation for ZK circuits and optimizations",
         image: gas,
+        sourceFile: "src/data/gas.ts",
       },
       {
         id: "gnark",
         title: "Gnark Cheatsheet",
         description: "Circuit cheatsheet for gnark",
         image: gnark,
+        sourceFile: "src/data/gnark.ts",
       },
       {
         id: "plonkish",
         title: "Plonkish Gadgets",
         description: "Essential gadgets for building Plonkish constraint circuits",
         image: plonkish,
+        sourceFile: "src/pages/plonkish.astro",
       },
       {
         id: "r1cs",
@@ -79,6 +86,7 @@ export const sections: Section[] = [
         construction: true,
         description: "Essential gadgets for building R1CS constraint circuits",
         image: r1cs,
+        sourceFile: "src/data/r1cs.ts",
       },
       {
         id: "bugs",
@@ -86,6 +94,7 @@ export const sections: Section[] = [
         construction: true,
         description: "Common ZK bugs and debugging techniques",
         image: bugs,
+        sourceFile: "src/data/bugs.ts",
       },
     ],
   },
@@ -97,30 +106,35 @@ export const sections: Section[] = [
         title: "Beginner Learning",
         description: "Getting started with zero-knowledge proofs",
         image: beginner,
+        sourceFile: "src/data/list/beginner.ts",
       },
       {
         id: "intermediate",
         title: "Intermediate Learning",
         description: "Intermediate topics for ZK practitioners",
         image: intermediate,
+        sourceFile: "src/data/list/intermediate.ts",
       },
       {
         id: "awesome",
         title: "Awesome List",
         description: "The list of curated collection of ZK resources, tools and projects",
         image: awesome,
+        sourceFile: "src/data/list/awesome.ts",
       },
       {
         id: "news",
         title: "News Sources",
         description: "Where to find the latest ZK news and research",
         image: news,
+        sourceFile: "src/data/list/news.ts",
       },
       {
         id: "events",
         title: "Events",
         description: "Where to find the latest ZK events and research",
         image: events,
+        sourceFile: "src/data/list/events.ts",
       },
     ],
   },
@@ -132,6 +146,7 @@ export const sections: Section[] = [
         title: "Elliptic Curve",
         description: "Comparison of common elliptic curves used in zero knowledge proofs",
         image: curve,
+        sourceFile: "src/data/curve.ts",
       },
       {
         id: "constraint",
@@ -171,6 +186,7 @@ export const sections: Section[] = [
         title: "Landmark Papers",
         description: "Essential academic papers in zero-knowledge research",
         image: paper,
+        sourceFile: "src/data/paper.ts",
       },
       {
         id: "research",
