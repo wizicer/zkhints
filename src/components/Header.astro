@@ -4,6 +4,30 @@ import hintaIcon from "../assets/hinta_icon.png";
 import githubIcon from "../assets/icons/github.svg";
 import twitterIcon from "../assets/icons/twitter.svg";
 import hatIcon from "../assets/icons/hat.svg";
+
+const socialLinks = [
+  {
+    href: "https://github.com/wizicer/zkhints",
+    icon: githubIcon,
+    alt: "GitHub",
+    title: "GitHub",
+    external: true,
+  },
+  {
+    href: "https://twitter.com/icerdesign",
+    icon: twitterIcon,
+    alt: "Twitter",
+    title: "Twitter",
+    external: true,
+  },
+  {
+    href: "/about",
+    icon: hatIcon,
+    alt: "ZKHints",
+    title: "About",
+    external: false,
+  },
+];
 ---
 
 <header class="py-4 border-b border-gray-100">
@@ -33,43 +57,25 @@ import hatIcon from "../assets/icons/hat.svg";
     </div>
 
     <div class="flex items-center space-x-4">
-      <a
-        href="https://github.com/wizicer/zkhints"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="group text-gray-500 hover:text-gray-900 transition-colors"
-        title="GitHub"
-      >
-        <Image
-          src={githubIcon}
-          alt="GitHub"
-          width="20"
-          height="20"
-          class="group-hover:opacity-50"
-        />
-      </a>
-      <a
-        href="https://twitter.com/icerdesign"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="group text-gray-500 hover:text-gray-900 transition-colors"
-        title="Twitter"
-      >
-        <Image
-          src={twitterIcon}
-          alt="Twitter"
-          width="20"
-          height="20"
-          class="group-hover:opacity-50"
-        />
-      </a>
-      <a
-        href="/about"
-        class="group text-gray-500 hover:text-gray-900 transition-colors"
-        title="About"
-      >
-        <Image src={hatIcon} alt="ZKHints" width="20" height="20" class="group-hover:opacity-50" />
-      </a>
+      {
+        socialLinks.map((link) => (
+          <a
+            href={link.href}
+            target={link.external ? "_blank" : undefined}
+            rel={link.external ? "noopener noreferrer" : undefined}
+            class="group text-gray-500 hover:text-gray-900 transition-colors"
+            title={link.title}
+          >
+            <Image
+              src={link.icon}
+              alt={link.alt}
+              width="20"
+              height="20"
+              class="group-hover:opacity-50"
+            />
+          </a>
+        ))
+      }
     </div>
   </div>
 </header>
