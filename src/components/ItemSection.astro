@@ -102,7 +102,6 @@ const { title, items } = Astro.props;
       if (storedFavorites) {
         favorites = new Set(JSON.parse(storedFavorites));
       }
-      console.log("Favorites loaded:", favorites);
     } catch (error) {
       console.error("Error loading favorites:", error);
     }
@@ -120,7 +119,6 @@ const { title, items } = Astro.props;
   // Update UI to reflect favorite status
   function updateFavoriteUI(itemId: string, isFavorite: boolean) {
     document.querySelectorAll(`[data-item-id="${itemId}"]`).forEach((button) => {
-      // console.log("Updating favorite UI for item:", itemId, "isFavorite:", isFavorite);
       const container = button.closest(".favorite-item-container");
       if (!container) return;
 
@@ -145,7 +143,6 @@ const { title, items } = Astro.props;
     if (loaded) return;
     loaded = true;
     loadFavorites();
-    console.log("Favorites initialized:", favorites);
 
     // Set initial state for all items
     document.querySelectorAll(".favorite-toggle").forEach((button) => {
