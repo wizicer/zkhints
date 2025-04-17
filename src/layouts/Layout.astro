@@ -29,6 +29,7 @@ const getSourceFilePath = () => {
   if (id) return `src/pages/${id}.astro`;
 
   const path = Astro.url.pathname.replace(/^\/|\/$/g, "") || "index";
+  if (path === "index") return "src/data/index.ts";
   return `src/pages/${path}.astro`;
 };
 

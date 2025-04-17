@@ -1,27 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import SearchBar from "../components/SearchBar";
-import CategoryGrid from "../components/CategoryGrid";
 import ItemSection from "../components/ItemSection.astro";
 import { Image } from "astro:assets";
 import hintaIcon from "../assets/hinta.png";
 import { sections } from "../data/index";
-
-// Sample data for categories
-const categories = [
-  { id: "bash", name: "Bash scripting", color: "#8860D0" },
-  { id: "enzyme", name: "Enzyme", color: "#5C7080" },
-  { id: "es6", name: "ES2015+", color: "#1ABC9C" },
-  { id: "go", name: "Go", color: "#8860D0" },
-  { id: "react", name: "React.js", color: "#5C7080" },
-  { id: "sass", name: "Sass", color: "#1ABC9C" },
-  { id: "vim", name: "Vim", color: "#8860D0" },
-  { id: "xpath", name: "Xpath", color: "#5C7080" },
-  { id: "vue", name: "Vue.js", color: "#42b883" },
-  { id: "typescript", name: "TypeScript", color: "#3178c6" },
-  { id: "javascript", name: "JavaScript", color: "#f7df1e" },
-  { id: "css", name: "CSS", color: "#264de4" },
-];
 ---
 
 <Layout>
@@ -46,8 +29,6 @@ const categories = [
     </div>
 
     <div class="pages-list" role="main">
-      {false && <CategoryGrid categories={categories} client:load />}
-
       {sections.map((section) => <ItemSection title={section.title} items={section.items} />)}
     </div>
   </main>
