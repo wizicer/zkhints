@@ -9,9 +9,9 @@ import { primitiveData, legendItems } from "../data/primitive";
   <div class="container mx-auto px-4 py-8">
     <div class="mb-8">
       <div class="flex items-center gap-2 mb-4">
-        <span class="text-sm">🟢 推荐使用</span>
-        <span class="text-sm">🟡 可用但谨慎</span>
-        <span class="text-sm">🔴 不推荐</span>
+        <span class="text-sm">🟢 Recommended</span>
+        <span class="text-sm">🟡 Usable with caution</span>
+        <span class="text-sm">🔴 Not recommended</span>
       </div>
     </div>
 
@@ -34,7 +34,7 @@ import { primitiveData, legendItems } from "../data/primitive";
         {
           legendItems.map((item) => (
             <li class="mb-1">
-              <strong>{item.term}</strong>：{item.description}
+              <strong>{item.term}</strong>: {item.description}
             </li>
           ))
         }

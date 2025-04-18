@@ -262,8 +262,11 @@ export const primitiveData: TableData[] = [
 ];
 
 export const legendItems = [
-  { term: "Use Case", description: "主要适用场景" },
-  { term: "ZK-Friendly", description: "是否为低约束设计" },
-  { term: "Recommend", description: "开发者优先级选择建议" },
-  { term: "Implementations", description: "有成熟实现的框架（Circom, Arkworks, Noir, Halo2 等）" },
+  { term: "Use Case", description: "Main application scenarios" },
+  { term: "ZK-Friendly", description: "Designed for low constraints" },
+  { term: "Recommend", description: "Developer priority recommendation" },
+  {
+    term: "Implementations",
+    description: "Frameworks with mature implementations (Circom, Arkworks, Noir, Halo2, etc.)",
+  },
 ];
