@@ -2,6 +2,39 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 
+// Keywords to look for in titles
+const keywords = [
+  "zk",
+  "zero knowledge",
+  "zksnark",
+  "zk-snark",
+  "snark",
+  "stark",
+  "kzg",
+  "bls",
+  "pairing",
+  "cryptograph",
+  "math",
+  "elliptic curve",
+  "verif",
+  "commit",
+  "polynomial",
+  "bn128",
+  "bn256",
+  "bls12",
+  "signature",
+  "verkle",
+  "poseidon",
+];
+
+// Specific EIP IDs to include regardless of title
+const specificIds = [2565, 7667];
+
+// Specific EIP IDs to exclude even if they match keywords
+const excludeIds = [1890, 6066, 7549];
+
+const stars = [196, 197, 2537];
+
 // Get the directory name of the current module
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -127,37 +160,6 @@ function parseEIPMarkdown(filePath) {
 
 // Function to filter ZKP-related EIPs
 function filterZKPRelatedEIPs(eips) {
-  // Keywords to look for in titles
-  const keywords = [
-    "zk",
-    "zero knowledge",
-    "zksnark",
-    "zk-snark",
-    "snark",
-    "stark",
-    "kzg",
-    "bls",
-    "pairing",
-    "cryptograph",
-    "math",
-    "elliptic curve",
-    "verif",
-    "commit",
-    "polynomial",
-    "bn128",
-    "bn256",
-    "bls12",
-    "signature",
-    "verkle",
-    "poseidon",
-  ];
-
-  // Specific EIP IDs to include regardless of title
-  const specificIds = [2565, 7667];
-
-  // Specific EIP IDs to exclude even if they match keywords
-  const excludeIds = [1890, 6066, 7549];
-
   // Filter EIPs based on keywords in title or specific IDs
   return eips
     .filter((eip) => {
@@ -180,6 +182,7 @@ function filterZKPRelatedEIPs(eips) {
       title: eip.title,
       status: eip.status,
       authors: eip.authors,
+      star: stars.includes(eip.id) ? true : undefined,
     }));
 }
 

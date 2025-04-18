@@ -10,7 +10,8 @@ export const eips: EIP[] = [
         "name": "Christian Reitwiessner",
         "email": "chris@ethereum.org"
       }
-    ]
+    ],
+    "star": true
   },
   {
     "id": 197,
@@ -25,7 +26,8 @@ export const eips: EIP[] = [
         "name": "Christian Reitwiessner",
         "email": "chris@ethereum.org"
       }
-    ]
+    ],
+    "star": true
   },
   {
     "id": 1108,
@@ -230,7 +232,8 @@ export const eips: EIP[] = [
         "nick": "asanso",
         "url": "https://github.com/asanso"
       }
-    ]
+    ],
+    "star": true
   },
   {
     "id": 6327,

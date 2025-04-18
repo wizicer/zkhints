@@ -19,6 +19,7 @@ import argument from "../assets/hinta/argument.png";
 import paper from "../assets/hinta/paper.png";
 import research from "../assets/hinta/research.png";
 import glossary from "../assets/hinta/glossary.png";
+import eips from "../assets/hinta/learn.png";
 
 export interface Item {
   id: string;
@@ -135,6 +136,13 @@ export const sections: Section[] = [
         description: "Where to find the latest ZK events and research",
         image: events,
         sourceFile: "src/data/list/events.ts",
+      },
+      {
+        id: "eip",
+        title: "EIPs",
+        description: "ZKP related EIPs",
+        image: eips,
+        sourceFile: "docs/eip/eip-parser.js",
       },
     ],
   },
