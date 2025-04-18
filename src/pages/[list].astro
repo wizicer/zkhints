@@ -50,6 +50,74 @@ const currentDate = new Date();
 
 <Layout id={resource.id}>
   <div class="container mx-auto px-4 py-8">
+    <!-- Table of Contents -->
+    <div
+      class="mb-8 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg shadow-lg overflow-hidden"
+    >
+      <div class="bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-4">
+        <h2 class="text-xl font-bold text-white flex items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 mr-2"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h7"></path>
+          </svg>
+          Table of Contents
+        </h2>
+      </div>
+
+      <div class="p-6">
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          {
+            resource.sections.map((section: ResourceSection, index) => (
+              <li class="transform transition duration-200 hover:translate-x-1">
+                <a
+                  href={`#${section.id}`}
+                  class="flex items-center p-3 rounded-md hover:bg-white group transition-all duration-200 hover:shadow-md"
+                >
+                  <span class="flex items-center justify-center w-8 h-8 mr-3 rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 text-white text-lg">
+                    {section.emoji}
+                  </span>
+                  <div class="flex flex-col">
+                    <span class="font-medium text-gray-800 group-hover:text-blue-600">
+                      {section.title}
+                    </span>
+                    {section.description && (
+                      <span class="text-xs text-gray-500 truncate max-w-xs">
+                        {section.description}
+                      </span>
+                    )}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4 ml-auto text-gray-400 group-hover:text-blue-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+
+    <!-- Sections -->
     {
       resource.sections.map((section: ResourceSection) => (
         <div class="mb-12" id={section.id}>
@@ -198,3 +266,74 @@ const currentDate = new Date();
     </div>
   </div>
 </Layout>
+
+<style>
+  /* Smooth scrolling for anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Add some padding to account for fixed header if you have one */
+  :target {
+    scroll-margin-top: 2rem;
+  }
+
+  /* Back to top button styles */
+  .back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: linear-gradient(to right, #3b82f6, #6366f1);
+    color: white;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+  }
+
+  .back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .back-to-top:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  }
+</style>
+
+<script>
+  // Back to top button functionality
+  document.addEventListener("DOMContentLoaded", () => {
+    const backToTopButton = document.createElement("a");
+    backToTopButton.href = "#";
+    backToTopButton.className = "back-to-top";
+    backToTopButton.innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+      </svg>
+    `;
+
+    document.body.appendChild(backToTopButton);
+
+    window.addEventListener("scroll", () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.add("visible");
+      } else {
+        backToTopButton.classList.remove("visible");
+      }
+    });
+
+    backToTopButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  });
+</script>
