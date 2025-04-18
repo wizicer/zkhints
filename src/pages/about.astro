@@ -2,6 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import hintaIcon from "../assets/hinta.png";
+import hintaMuppet from "../assets/hinta/muppet/front.jpg";
+import hintaMuppetDeparted from "../assets/hinta/muppet/departed.jpg";
 import aliceBulb from "../assets/role/alice.png";
 import bobBulb from "../assets/role/bob.png";
 import eveBulb from "../assets/role/eve.png";
@@ -31,20 +33,31 @@ import malloryBulb from "../assets/role/mallory.png";
         </div>
       </div>
 
-      <div class="text-center relative z-10">
-        <div class="inline-block p-4 mb-6 animate-bounce" style="animation-duration: 3s;">
-          <Image src={hintaIcon} alt="zkHints Logo" class="w-24 h-24" />
+      <div class="flex items-center gap-12 relative z-10">
+        <div class="flex-shrink-0">
+          <div
+            class="p-2 bg-purple-50 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+          >
+            <Image
+              src={hintaMuppet}
+              alt="zkHints Logo"
+              class="w-40 h-auto hover:scale-105 rounded-lg transition-transform duration-300"
+            />
+          </div>
         </div>
-        <h1
-          class="text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-500"
-        >
-          About ZK Hints
-        </h1>
-        <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-6"></div>
-        <p class="text-xl text-gray-700 max-w-2xl mx-auto">
-          A curated knowledge base for developers, researchers, and enthusiasts exploring the world
-          of Zero-Knowledge Proofs.
-        </p>
+
+        <div>
+          <h1
+            class="text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-500"
+          >
+            About ZK Hints
+          </h1>
+          <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mb-6"></div>
+          <p class="text-xl text-gray-700">
+            A curated knowledge base for developers, researchers, and enthusiasts exploring the
+            world of Zero-Knowledge Proofs.
+          </p>
+        </div>
       </div>
     </div>
 
@@ -66,72 +79,82 @@ import malloryBulb from "../assets/role/mallory.png";
       <section
         class="my-16 bg-white rounded-xl p-8 shadow-lg transform hover:scale-[1.01] transition-transform duration-300"
       >
-        <div class="flex items-center mb-6">
-          <div
-            class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mr-4 shadow-sm"
-          >
-            <span class="text-2xl">✨</span>
-          </div>
-          <h2
-            class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-orange-500"
-          >
-            Why zkHints?
-          </h2>
-        </div>
-
-        <p class="leading-relaxed">
-          Zero-Knowledge technologies are evolving rapidly, but learning resources are scattered,
-          overly theoretical, or hard to keep up with. We created zkHints to:
-        </p>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-          <div
-            class="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-400 hover:shadow-md transition-shadow"
-          >
-            <div class="flex items-center mb-2">
-              <span class="text-xl mr-2">📚</span>
-              <h3 class="font-bold text-yellow-700">Developer Cheatsheets</h3>
+        <div class="flex flex-col gap-8">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center flex-1">
+              <div
+                class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mr-4 shadow-sm"
+              >
+                <span class="text-2xl">✨</span>
+              </div>
+              <div>
+                <h2
+                  class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-orange-500"
+                >
+                  Why zkHints?
+                </h2>
+                <p class="mt-2 leading-relaxed">
+                  Zero-Knowledge technologies are evolving rapidly, but learning resources are
+                  scattered, overly theoretical, or hard to keep up with. We created zkHints to:
+                </p>
+              </div>
             </div>
-            <p class="text-sm text-gray-700">
-              Provide developer-friendly <strong>cheatsheets</strong> for ZK systems, languages, gadgets,
-              primitives, and applications
-            </p>
+            <div class="flex-shrink-0 p-2 bg-purple-50 rounded-lg shadow-md">
+              <Image src={hintaMuppetDeparted} alt="zkp departed" class="w-auto h-40 rounded-lg" />
+            </div>
           </div>
 
-          <div
-            class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-400 hover:shadow-md transition-shadow"
-          >
-            <div class="flex items-center mb-2">
-              <span class="text-xl mr-2">🧭</span>
-              <h3 class="font-bold text-blue-700">Guided Roadmaps</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div
+              class="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-400 hover:shadow-md transition-shadow"
+            >
+              <div class="flex items-center mb-2">
+                <span class="text-xl mr-2">📚</span>
+                <h3 class="font-bold text-yellow-700">Developer Cheatsheets</h3>
+              </div>
+              <p class="text-sm text-gray-700">
+                Provide developer-friendly <strong>cheatsheets</strong> for ZK systems, languages, gadgets,
+                primitives, and applications
+              </p>
             </div>
-            <p class="text-sm text-gray-700">
-              Offer <strong>guided roadmaps</strong> for ZK learners from beginner to advanced levels
-            </p>
-          </div>
 
-          <div
-            class="bg-green-50 p-4 rounded-lg border-l-4 border-green-400 hover:shadow-md transition-shadow"
-          >
-            <div class="flex items-center mb-2">
-              <span class="text-xl mr-2">🧰</span>
-              <h3 class="font-bold text-green-700">Practical Focus</h3>
+            <div
+              class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-400 hover:shadow-md transition-shadow"
+            >
+              <div class="flex items-center mb-2">
+                <span class="text-xl mr-2">🧭</span>
+                <h3 class="font-bold text-blue-700">Guided Roadmaps</h3>
+              </div>
+              <p class="text-sm text-gray-700">
+                Offer <strong>guided roadmaps</strong> for ZK learners from beginner to advanced levels
+              </p>
             </div>
-            <p class="text-sm text-gray-700">
-              Maintain a practical focus on tools, real-world use cases, and implementation details
-            </p>
-          </div>
 
-          <div
-            class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-400 hover:shadow-md transition-shadow"
-          >
-            <div class="flex items-center mb-2">
-              <span class="text-xl mr-2">🎓</span>
-              <h3 class="font-bold text-purple-700">Research Highlights</h3>
+            <div
+              class="bg-green-50 p-4 rounded-lg border-l-4 border-green-400 hover:shadow-md transition-shadow"
+            >
+              <div class="flex items-center mb-2">
+                <span class="text-xl mr-2">🧰</span>
+                <h3 class="font-bold text-green-700">Practical Focus</h3>
+              </div>
+              <p class="text-sm text-gray-700">
+                Maintain a practical focus on tools, real-world use cases, and implementation
+                details
+              </p>
             </div>
-            <p class="text-sm text-gray-700">
-              Highlight foundational <strong>papers</strong>, terminology, and active research areas
-            </p>
+
+            <div
+              class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-400 hover:shadow-md transition-shadow"
+            >
+              <div class="flex items-center mb-2">
+                <span class="text-xl mr-2">🎓</span>
+                <h3 class="font-bold text-purple-700">Research Highlights</h3>
+              </div>
+              <p class="text-sm text-gray-700">
+                Highlight foundational <strong>papers</strong>, terminology, and active research
+                areas
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -308,21 +331,3 @@ import malloryBulb from "../assets/role/mallory.png";
     </div>
   </main>
 </Layout>
-
-<style>
-  @keyframes float {
-    0% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-    100% {
-      transform: translateY(0px);
-    }
-  }
-
-  .animate-float {
-    animation: float 3s ease-in-out infinite;
-  }
-</style>
