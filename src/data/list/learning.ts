@@ -202,13 +202,6 @@ export const learning: Resource = {
       ],
     },
     {
-      id: "tools",
-      title: "Beginner-Friendly Tools",
-      description: "Tools and playgrounds to help beginners start experimenting with ZK.",
-      emoji: "🛠️",
-      links: [],
-    },
-    {
       id: "playgrounds",
       title: "Online Playgrounds",
       description:
@@ -459,27 +452,9 @@ export const learning: Resource = {
       ],
     },
     {
-      id: "dsl-guides",
-      title: "ZK DSL Guides",
-      description: "Intermediate tutorials on languages like Circom and Noir.",
-      emoji: "💻",
-      links: [
-        {
-          title: "Noir Book",
-          description: "Official Noir language documentation and guides.",
-          link: "https://noir-lang.org/",
-        },
-        {
-          title: "Awesome Circom",
-          description: "A collection of Circom examples and useful links.",
-          link: "https://github.com/Obscuronet/awesome-circom",
-        },
-      ],
-    },
-    {
       id: "awesome-knowledge-base",
       title: "Knowledge Base",
-      description: "",
+      description: "A collective of resources for learning ZK thoroughly.",
       emoji: "📚",
       links: [
         {
@@ -493,12 +468,17 @@ export const learning: Resource = {
           description: "A knowledge base for ZK.",
           link: "https://zkknowledgebase.com/",
         },
+        {
+          title: "Noir Book",
+          description: "Official Noir language documentation and guides.",
+          link: "https://noir-lang.org/",
+        },
       ],
     },
     {
       id: "awesome-cheatsheet",
       title: "Cheatsheets",
-      description: "",
+      description: "Cheatsheets for ZK related works.",
       emoji: "🧱",
       links: [
         {

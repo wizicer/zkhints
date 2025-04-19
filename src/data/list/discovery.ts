@@ -118,6 +118,11 @@ export const discovery: Resource = {
           description: "A curated list of resources for learning and programming in Noir.",
           link: "https://github.com/noir-lang/awesome-noir",
         },
+        {
+          title: "Obscuronet's Awesome Circom",
+          description: "A collection of Circom examples and useful links.",
+          link: "https://github.com/Obscuronet/awesome-circom",
+        },
       ],
     },
     {

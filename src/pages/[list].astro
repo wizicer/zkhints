@@ -6,6 +6,7 @@ import { Image } from "astro:assets";
 import externalLinkIcon from "../assets/icons/external-link.svg";
 import locationIcon from "../assets/icons/location.svg";
 import calendarIcon from "../assets/icons/calendar.svg";
+import SectionHeading from "../components/SectionHeading.astro";
 
 interface PathItem {
   params: { list: string };
@@ -121,10 +122,7 @@ const currentDate = new Date();
     {
       resource.sections.map((section: ResourceSection) => (
         <div class="mb-12" id={section.id}>
-          <div class="flex items-center mb-4">
-            <span class="text-2xl mr-2">{section.emoji}</span>
-            <h2 class="text-xl font-bold">{section.title}</h2>
-          </div>
+          <SectionHeading title={section.emoji + section.title} gradientPart={section.title} />
 
           {section.description && <p class="text-gray-600 mb-4">{section.description}</p>}
 
