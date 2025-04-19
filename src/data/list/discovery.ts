@@ -1,7 +1,7 @@
 import type { Resource } from "../list";
 
-export const events: Resource = {
-  id: "events",
+export const discovery: Resource = {
+  id: "discovery",
   sections: [
     {
       id: "meetings",
@@ -82,6 +82,77 @@ export const events: Resource = {
           location: "Prague, Czech Republic",
           outdated: "2025-06-01",
           dateDescription: "May 30 - June 1, 2025",
+        },
+      ],
+    },
+
+    {
+      id: "awesome-list",
+      title: "Awesome List",
+      description: "Curated lists of ZK resources, libraries, tools and more.",
+      emoji: "📦",
+      links: [
+        {
+          title: "ventali's Awesome ZK",
+          description: "A curated list of awesome ZK resources, libraries, tools and more.",
+          link: "https://github.com/ventali/awesome-zk",
+        },
+        {
+          title: "sCrypt-Inc's Awesome ZKPs",
+          description: "A curated list of awesome ZKP resources, libraries, tools and more.",
+          link: "https://github.com/sCrypt-Inc/awesome-zero-knowledge-proofs",
+        },
+        {
+          title: "matter-labs' Awesome Zero Knowledge Proofs",
+          description:
+            "A curated list of awesome things related to learning zero knowledge proofs.",
+          link: "https://github.com/matter-labs/awesome-zero-knowledge-proofs",
+        },
+        {
+          title: "Fluidex's Awesome PLONK",
+          description: "A curated list of awesome PLONK resources, libraries, tools and more.",
+          link: "https://github.com/Fluidex/awesome-plonk",
+        },
+        {
+          title: "noir-lang's Awesome Noir",
+          description: "A curated list of resources for learning and programming in Noir.",
+          link: "https://github.com/noir-lang/awesome-noir",
+        },
+      ],
+    },
+    {
+      id: "newsletters",
+      title: "Newsletters & Weekly Updates",
+      description: "Trusted sources for staying up to date on ZK-related developments.",
+      emoji: "📰",
+      links: [
+        {
+          title: "ZK Security News",
+          description: "Hacker news-style news about ZK.",
+          link: "https://news.zksecurity.xyz/",
+        },
+        {
+          title: "ZKMesh",
+          description: "Weekly zk-focused newsletter curated by Geometry and friends.",
+          link: "https://zkmesh.substack.com/",
+        },
+        {
+          title: "ZK Punk Insights",
+          description: "Weekly zkNews about ZK.",
+          link: "https://insights.zkpunk.pro/",
+        },
+      ],
+    },
+    {
+      id: "feeds",
+      title: "Realtime Updates & Blogs",
+      description: "Dynamic sources like blog posts, Twitter accounts, and GitHub feeds.",
+      emoji: "📡",
+      links: [
+        {
+          title: "Zero Knowledge Podcast",
+          description: "Weekly podcast exploring ZK research and applications.",
+          link: "https://www.zeroknowledge.fm/",
         },
       ],
     },

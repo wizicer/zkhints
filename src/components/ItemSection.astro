@@ -1,17 +1,9 @@
 ---
 import { Image } from "astro:assets";
 import constructionIcon from "../assets/icons/construction.svg";
-import type { ImageMetadata } from "astro";
 import favoriteIcon from "../assets/icons/star.svg";
 import favoriteFilledIcon from "../assets/icons/star-filled.svg";
-
-export interface Item {
-  id: string;
-  title: string;
-  description?: string;
-  image?: ImageMetadata;
-  construction?: boolean;
-}
+import type { Item } from "../data/index";
 
 interface Props {
   title: string;
@@ -29,7 +21,7 @@ const { title, items } = Astro.props;
     {
       items.map((item) => (
         <a
-          href={`/${item.id}`}
+          href={`/${item.path || item.id}`}
           class="favorite-item-container overflow-hidden block p-4 hover:text-blue-600 transition-colors text-gray-700 bg-white rounded-md shadow-sm border border-gray-100 hover:shadow-md hover:border-gray-200 transition-all relative"
         >
           {item.construction && (

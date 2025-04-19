@@ -6,9 +6,9 @@ import gnark from "../assets/hinta/gnark.png";
 import r1cs from "../assets/hinta/r1cs.png";
 import plonkish from "../assets/hinta/plonkish.png";
 import bugs from "../assets/hinta/bug.png";
-import beginner from "../assets/hinta/beginner.png";
+import learning from "../assets/hinta/beginner.png";
 import intermediate from "../assets/hinta/intermediate.png";
-import awesome from "../assets/hinta/awesome.png";
+import discovery from "../assets/hinta/awesome.png";
 import news from "../assets/hinta/news.png";
 import events from "../assets/hinta/events.png";
 import curve from "../assets/hinta/curve.png";
@@ -24,6 +24,7 @@ import eips from "../assets/hinta/learn.png";
 export interface Item {
   id: string;
   title: string;
+  path?: string;
   description: string;
   image: ImageMetadata;
   construction?: boolean;
@@ -100,49 +101,21 @@ export const sections: Section[] = [
     ],
   },
   {
-    title: "Learning Resources",
+    title: "Resources",
     items: [
       {
-        id: "beginner",
-        title: "Beginner Learning",
+        id: "learning",
+        title: "Learning",
         description: "Getting started with zero-knowledge proofs",
-        image: beginner,
-        sourceFile: "src/data/list/beginner.ts",
+        image: learning,
+        sourceFile: "src/data/list/learning.ts",
       },
       {
-        id: "intermediate",
-        title: "Intermediate Learning",
-        description: "Intermediate topics for ZK practitioners",
-        image: intermediate,
-        sourceFile: "src/data/list/intermediate.ts",
-      },
-      {
-        id: "awesome",
-        title: "Awesome List",
-        description: "The list of curated collection of ZK resources, tools and projects",
-        image: awesome,
-        sourceFile: "src/data/list/awesome.ts",
-      },
-      {
-        id: "news",
-        title: "News Sources",
-        description: "Where to find the latest ZK news and research",
-        image: news,
-        sourceFile: "src/data/list/news.ts",
-      },
-      {
-        id: "events",
-        title: "Events",
-        description: "Where to find the latest ZK events and research",
-        image: events,
-        sourceFile: "src/data/list/events.ts",
-      },
-      {
-        id: "eip",
-        title: "EIPs",
-        description: "ZKP related EIPs",
-        image: eips,
-        sourceFile: "docs/eip/eip-parser.js",
+        id: "discovery",
+        title: "Discovery",
+        description: "Discover the latest news, events, and awesome lists.",
+        image: discovery,
+        sourceFile: "src/data/list/discovery.ts",
       },
     ],
   },
@@ -209,6 +182,39 @@ export const sections: Section[] = [
         construction: true,
         description: "Common terms and definitions in zero-knowledge proofs",
         image: glossary,
+      },
+    ],
+  },
+  {
+    title: "Ecosystem",
+    items: [
+      {
+        id: "eip",
+        title: "EIPs",
+        description: "ZKP related EIPs",
+        image: eips,
+        sourceFile: "docs/eip/eip-parser.js",
+      },
+      {
+        id: "bitvm",
+        title: "BitVM",
+        description:
+          "BitVM is the most significant improvement to Bitcoin, with targeting ZK proofs on Bitcoin.",
+        construction: true,
+        image: intermediate,
+        sourceFile: "src/data/bitvm.ts",
+      },
+    ],
+  },
+  {
+    title: "Interactive",
+    items: [
+      {
+        id: "3color",
+        path: "demo/3color",
+        title: "3-Colorability",
+        description: "Interactive demonstration of the 3-colorability problem",
+        image: news,
       },
     ],
   },

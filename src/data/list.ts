@@ -1,8 +1,5 @@
-import { awesome } from "./list/awesome";
-import { beginner } from "./list/beginner";
-import { intermediate } from "./list/intermediate";
-import { news } from "./list/news";
-import { events } from "./list/events";
+import { discovery } from "./list/discovery";
+import { learning } from "./list/learning";
 
 export interface ResourceLink {
   title: string;
@@ -36,4 +33,4 @@ export interface Resource {
   sections: ResourceSection[];
 }
 
-export const resourceList: Resource[] = [beginner, intermediate, awesome, news, events];
+export const resourceList: Resource[] = [discovery, learning];
