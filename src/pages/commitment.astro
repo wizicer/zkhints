@@ -6,6 +6,16 @@ import { Content as PedersenCommitment } from "./commitment/pedersen-commitment.
 import { Content as VectorCommitment } from "./commitment/vector-commitment.md";
 import { Content as KZGCommitment } from "./commitment/kzg-commitment.md";
 import Prose from "../components/Prose.astro";
+import References from "../components/References.astro";
+
+export const references = [
+  {
+    title: "Commitment Schemes",
+    authors: "Shuang Liang, zkShanghai",
+    year: "2023",
+    link: "https://zkshanghai.xyz/notes/lecture5.html",
+  },
+];
 ---
 
 <Layout id="commitment">
@@ -289,6 +299,10 @@ import Prose from "../components/Prose.astro";
       </div>
     </section>
   </main>
+
+  <div class="container mx-auto px-4 py-8 max-w-6xl">
+    <References references={references} />
+  </div>
 </Layout>
 
 <script>
