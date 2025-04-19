@@ -1,10 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import SectionHeading from "../components/SectionHeading.astro";
-import SubsectionHeading from "../components/SubsectionHeading.astro";
-import { Image } from "astro:assets";
-import constructionCat1 from "../assets/construction/construction_cat_1.png";
-import MathTex from "../components/MathTex.astro";
+import { Content as CommitmentScheme } from "./commitment/commitment-scheme.md";
+import { Content as PedersenCommitment } from "./commitment/pedersen-commitment.md";
+import { Content as VectorCommitment } from "./commitment/vector-commitment.md";
+import { Content as KZGCommitment } from "./commitment/kzg-commitment.md";
+import Prose from "../components/Prose.astro";
 ---
 
 <Layout id="commitment">
@@ -12,35 +13,9 @@ import MathTex from "../components/MathTex.astro";
     <section class="mb-10">
       <SectionHeading title="Commitment Schemes" gradientPart="Commitment Schemes" />
       <div class="flex flex-col md:flex-row gap-6">
-        <div class="prose max-w-none md:w-3/5">
-          <p>
-            Commitment schemes are cryptographic primitives that allow a party to commit to a chosen
-            value while keeping it hidden from others, with the ability to reveal the committed
-            value later. They are fundamental building blocks in zero-knowledge proofs and other
-            cryptographic protocols.
-          </p>
-          <div class="mt-4">
-            <p>
-              <strong>💡 Key Properties:</strong>
-            </p>
-            <ul class="space-y-1 list-disc pl-5 mt-2">
-              <li>
-                🔒 <strong>Binding</strong>: The committer cannot change the committed value after
-                the commitment is made
-              </li>
-              <li>
-                🔍 <strong>Hiding</strong>: The commitment does not reveal information about the
-                committed value
-              </li>
-            </ul>
-          </div>
-          <p class="mt-4">
-            Commitment schemes are essential for many cryptographic protocols, especially in
-            zero-knowledge proofs where a prover needs to commit to certain values without revealing
-            them immediately. They provide a way to "lock" a value in a way that can be verified
-            later.
-          </p>
-        </div>
+        <Prose class="md:w-3/5 max-w-none">
+          <CommitmentScheme />
+        </Prose>
         <div class="md:w-2/5 bg-gray-50 p-4 rounded-lg">
           <h3 class="text-lg font-semibold mb-2">Why Use Commitment Schemes?</h3>
           <ul class="space-y-2 list-disc pl-5">
@@ -60,53 +35,9 @@ import MathTex from "../components/MathTex.astro";
     <section class="mb-10">
       <SectionHeading title="Pedersen Commitment" gradientPart="Pedersen" />
       <div class="flex flex-col md:flex-row gap-6">
-        <div class="prose max-w-none md:w-3/5">
-          <p>
-            Pedersen commitment is a widely used commitment scheme based on the discrete logarithm
-            problem. It provides perfect hiding and computational binding properties.
-          </p>
-          <div class="mt-4">
-            <p><strong>🔢 Mathematical Definition:</strong></p>
-            <div class="bg-gray-100 p-4 rounded-md my-4">
-              <MathTex formula={"\\text{Commit}(m, r) = g^m \\cdot h^r"} />
-            </div>
-            <p>Where:</p>
-            <ul class="space-y-1 list-disc pl-5 mt-2">
-              <li><MathTex formula="m" /> is the message to commit to</li>
-              <li><MathTex formula="r" /> is a random value (blinding factor)</li>
-              <li><MathTex formula="g" /> and <MathTex formula="h" /> are group generators</li>
-            </ul>
-          </div>
-
-          <div class="mt-6">
-            <p><strong>🔄 Homomorphic Property:</strong></p>
-            <p>One of the key features of Pedersen commitments is their homomorphic property:</p>
-            <div class="bg-gray-100 p-4 rounded-md my-4">
-              <MathTex
-                formula={"\\text{Commit}(m_1, r_1) \\cdot \\text{Commit}(m_2, r_2) = \\text{Commit}(m_1 + m_2, r_1 + r_2)"}
-              />
-            </div>
-            <p>
-              This property allows operations on committed values without revealing them, which is
-              particularly useful in zero-knowledge proofs and secure multi-party computation.
-            </p>
-          </div>
-
-          <div class="mt-6">
-            <p><strong>🔐 Security Properties:</strong></p>
-            <ul class="space-y-1 list-disc pl-5 mt-2">
-              <li>
-                <strong>Perfect Hiding</strong>: Even with unlimited computational power, the
-                commitment reveals no information about the committed value.
-              </li>
-              <li>
-                <strong>Computational Binding</strong>: It's computationally infeasible to find two
-                different messages that produce the same commitment, assuming the discrete logarithm
-                problem is hard.
-              </li>
-            </ul>
-          </div>
-        </div>
+        <Prose class="md:w-3/5 max-w-none">
+          <PedersenCommitment />
+        </Prose>
         <div class="md:w-2/5">
           <div class="bg-white border border-gray-300 rounded-md p-4 my-4 sticky top-4">
             <h3 class="text-lg font-semibold mb-4">Interactive Pedersen Calculator</h3>
@@ -163,53 +94,9 @@ import MathTex from "../components/MathTex.astro";
     <section class="mb-10">
       <SectionHeading title="Vector Commitment" gradientPart="Vector" />
       <div class="flex flex-col md:flex-row gap-6">
-        <div class="prose max-w-none md:w-3/5">
-          <p>
-            Vector commitments allow committing to a vector of values while being able to open the
-            commitment at specific positions. They are particularly useful in applications where you
-            need to commit to multiple values at once.
-          </p>
-          <div class="mt-4">
-            <p><strong>🔢 Mathematical Definition:</strong></p>
-            <div class="bg-gray-100 p-4 rounded-md my-4">
-              <MathTex
-                formula={"\\text{Commit}(\\vec{m}, r) = h^r \\cdot \\prod_{i=1}^{n} g_i^{m_i}"}
-              />
-            </div>
-            <p>Where:</p>
-            <ul class="space-y-1 list-disc pl-5 mt-2">
-              <li>
-                <MathTex formula={"\\vec{m} = (m_1, m_2, \\ldots, m_n)"} /> is the vector to commit to
-              </li>
-              <li><MathTex formula="r" /> is a random value (blinding factor)</li>
-              <li><MathTex formula="g_1, g_2, \\ldots, g_n" /> are independent group generators</li>
-              <li><MathTex formula="h" /> is another independent group generator</li>
-            </ul>
-          </div>
-
-          <div class="mt-6">
-            <p><strong>🔍 Applications:</strong></p>
-            <p>Vector commitments are used in:</p>
-            <ul class="space-y-1 list-disc pl-5 mt-2">
-              <li>Verifiable databases where you need to prove membership of elements</li>
-              <li>Zero-knowledge proofs for multiple values</li>
-              <li>Blockchain systems for committing to multiple transactions</li>
-            </ul>
-          </div>
-
-          <div class="mt-6">
-            <p><strong>⚡ Efficiency Considerations:</strong></p>
-            <p>
-              The main challenge with vector commitments is efficiency, especially as the vector
-              size grows. Various optimizations exist to make vector commitments more practical:
-            </p>
-            <ul class="space-y-1 list-disc pl-5 mt-2">
-              <li>Merkle trees for logarithmic-sized proofs</li>
-              <li>Polynomial commitments for batch openings</li>
-              <li>Specialized constructions like KZG for vectors</li>
-            </ul>
-          </div>
-        </div>
+        <Prose class="md:w-3/5 max-w-none">
+          <VectorCommitment />
+        </Prose>
         <div class="md:w-2/5">
           <div class="bg-gray-50 p-4 rounded-lg">
             <h3 class="text-lg font-semibold mb-2">Vector Commitment Example</h3>
@@ -235,108 +122,9 @@ import MathTex from "../components/MathTex.astro";
     <section class="mb-10">
       <SectionHeading title="KZG Polynomial Commitment" gradientPart="KZG" />
       <div class="flex flex-col md:flex-row gap-6">
-        <div class="prose max-w-none md:w-3/5">
-          <p>
-            KZG (Kate-Zaverucha-Goldberg) polynomial commitments allow committing to a polynomial
-            and later proving evaluations of that polynomial at specific points. They are widely
-            used in modern zero-knowledge proof systems due to their efficiency and succinctness.
-          </p>
-
-          <div class="mt-4">
-            <p><strong>🔑 Key Insight:</strong></p>
-            <p>
-              The core idea behind KZG commitments is to use a bilinear pairing to verify polynomial
-              evaluations. This allows for constant-sized proofs regardless of the polynomial
-              degree, making them extremely efficient for large polynomials.
-            </p>
-          </div>
-
-          <div class="mt-4">
-            <p><strong>🔢 Setup Phase:</strong></p>
-            <div class="bg-gray-100 p-4 rounded-md my-4">
-              <MathTex formula={"\\text{Setup}(d) \\rightarrow (ck, vk)"} />
-            </div>
-            <p>Where:</p>
-            <ul class="space-y-1 list-disc pl-5 mt-2">
-              <li><MathTex formula="d" /> is the maximum degree of the polynomial</li>
-              <li>
-                <MathTex formula={"ck = (g, g^{\\alpha}, g^{\\alpha^2}, \\ldots, g^{\\alpha^d})"} />
-                is the commitment key
-              </li>
-              <li><MathTex formula={"vk = g^{\\alpha}"} /> in group G2 is the verification key</li>
-              <li>
-                <MathTex formula="\\alpha" /> is a secret value that must be discarded after setup (the
-                "toxic waste")
-              </li>
-            </ul>
-          </div>
-
-          <div class="mt-6">
-            <p><strong>🔢 Commit Phase:</strong></p>
-            <div class="bg-gray-100 p-4 rounded-md my-4">
-              <MathTex
-                formula={"\\text{Commit}(ck, f(X)) = \\prod_{i=0}^{d} (g^{\\alpha^i})^{f_i} = g^{f(\\alpha)}"}
-              />
-            </div>
-            <p>Where:</p>
-            <ul class="space-y-1 list-disc pl-5 mt-2">
-              <li><MathTex formula={"f(X) = \\sum_{i=0}^{d} f_i X^i"} /> is the polynomial</li>
-              <li><MathTex formula={"f_i"} /> are the coefficients of the polynomial</li>
-            </ul>
-          </div>
-
-          <div class="mt-6">
-            <p><strong>🔢 Prove Phase:</strong></p>
-            <div class="bg-gray-100 p-4 rounded-md my-4">
-              <MathTex formula={"\\text{Prove}(ck, f(X), z) \\rightarrow (y, \\pi)"} />
-            </div>
-            <p>Where:</p>
-            <ul class="space-y-1 list-disc pl-5 mt-2">
-              <li><MathTex formula="z" /> is the evaluation point</li>
-              <li><MathTex formula="y = f(z)" /> is the claimed evaluation</li>
-              <li><MathTex formula="\\pi = g^{\\frac{f(X) - f(z)}{X - z}}" /> is the proof</li>
-            </ul>
-            <p>
-              The key insight is that <MathTex formula="f(X) - f(z)" /> is always divisible by <MathTex
-                formula="X - z"
-              /> when <MathTex formula="f(z)" /> is the correct evaluation. The quotient polynomial <MathTex
-                formula="q(X) = \\frac{f(X) - f(z)}{X - z}"
-              /> is what we commit to in the proof.
-            </p>
-          </div>
-
-          <div class="mt-6">
-            <p><strong>🔢 Verify Phase:</strong></p>
-            <div class="bg-gray-100 p-4 rounded-md my-4">
-              <MathTex formula={"\\text{Verify}(vk, C, z, y, \\pi) \\rightarrow \\{0, 1\\}"} />
-            </div>
-            <p>The verification checks if:</p>
-            <div class="bg-gray-100 p-4 rounded-md my-4">
-              <MathTex formula={"e(C \\cdot g^{-y}, g) = e(\\pi, vk \\cdot g^{-z})"} />
-            </div>
-            <p>
-              This equation verifies that <MathTex formula="f(z) = y" /> without revealing the polynomial
-              <MathTex formula="f(X)" />. The verification works because of the properties of
-              bilinear pairings.
-            </p>
-          </div>
-
-          <div class="mt-6">
-            <p><strong>🔍 Security and Trust Assumptions:</strong></p>
-            <p>KZG commitments rely on:</p>
-            <ul class="space-y-1 list-disc pl-5 mt-2">
-              <li>The q-Strong Diffie-Hellman assumption</li>
-              <li>A trusted setup to generate the parameters</li>
-              <li>The security of the underlying elliptic curve and pairing</li>
-            </ul>
-            <p>
-              The need for a trusted setup is often addressed through multi-party computation
-              ceremonies where many participants contribute randomness to the generation of <MathTex
-                formula="\\alpha"
-              />.
-            </p>
-          </div>
-        </div>
+        <Prose class="md:w-3/5 max-w-none">
+          <KZGCommitment />
+        </Prose>
         <div class="md:w-2/5">
           <div class="bg-white border border-gray-300 rounded-md p-4 my-4 sticky top-4">
             <h3 class="text-lg font-semibold mb-4">Interactive KZG Example</h3>
