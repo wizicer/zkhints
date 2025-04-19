@@ -1,0 +1,121 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import SectionHeading from "../../components/SectionHeading.astro";
+import SubsectionHeading from "../../components/SubsectionHeading.astro";
+---
+
+<Layout id="3color">
+  <main class="container mx-auto px-4 py-8">
+    <section class="mb-10">
+      <SectionHeading
+        title="Interactive Zero Knowledge 3-Colorability Demonstration"
+        gradientPart="3-Colorability"
+      />
+
+      <div class="flex justify-between items-center mb-4">
+        <div class="text-sm text-gray-600 italic">
+          <a
+            href="http://web.mit.edu/~ezyang/Public/graph/svg.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-blue-600 transition-colors"
+          >
+            Original Source
+          </a>
+        </div>
+        <button
+          id="toggle-language"
+          class="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-md transition-colors"
+        >
+        </button>
+      </div>
+
+      <div class="prose max-w-none mb-6">
+        <p id="intro1"></p>
+        <p id="intro2" class="mt-4"></p>
+      </div>
+
+      <div class="flex justify-center">
+        <div class="w-150">
+          <div id="main" class="w-full h-96 mb-6 bg-white rounded-lg shadow-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" style="height: 380px; width: 100%">
+              <defs>
+                <marker
+                  id="Triangle"
+                  viewBox="0 0 10 10"
+                  refX="0"
+                  refY="5"
+                  markerUnits="strokeWidth"
+                  markerWidth="4"
+                  markerHeight="3"
+                  orient="auto"
+                >
+                  <path d="M 0 0 L 10 5 L 0 10 z"></path>
+                </marker>
+              </defs>
+              <text id="pick-graph-text" dx="50%" dy="50%" text-anchor="middle">Pick a graph</text>
+              <path
+                d="M 310 200 L 400 280"
+                fill="none"
+                stroke="black"
+                stroke-width="30"
+                marker-end="url(#Triangle)"></path>
+            </svg>
+          </div>
+
+          <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+            <div>
+              <button
+                id="reveal"
+                class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors"
+              >
+                Reveal
+              </button>
+              <label id="turbo-label" for="turbo" class="ml-4">Turbo:</label>
+              <input type="checkbox" id="turbo" class="ml-1" />
+            </div>
+            <div class="my-4 md:my-0">
+              <span id="confidence-label">Confidence:</span>
+              <span id="confidence-value">0</span>%
+            </div>
+            <div>
+              <button
+                id="graph1"
+                class="px-4 py-2 bg-gray-200 rounded-md hover:bg-gray-300 transition-colors"
+              >
+                Graph 1
+              </button>
+              <button
+                id="graph2"
+                class="ml-2 px-4 py-2 bg-gray-200 rounded-md hover:bg-gray-300 transition-colors"
+              >
+                Graph 2
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="prose max-w-none">
+        <p id="explanation1"></p>
+        <p id="explanation2" class="mt-4"></p>
+        <p id="exercise1" class="mt-4"></p>
+        <p id="exercise2" class="mt-4"></p>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<script>
+  import { init, setup } from "../../scripts/3color";
+
+  // Initialize the application
+  init();
+
+  // Set up click handlers for the graph buttons
+  document.getElementById("graph1")?.addEventListener("click", () => setup("honest"));
+  document.getElementById("graph2")?.addEventListener("click", () => setup("tricky"));
+
+  // Make setup available globally for any legacy code that might need it
+  window.setup = setup;
+</script>
