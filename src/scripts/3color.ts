@@ -174,7 +174,7 @@ const translations = {
   en: {
     title: "Interactive Zero Knowledge 3-Colorability Demonstration",
     intro1:
-      'This is an interactive demonstration of the <a href="http://en.wikipedia.org/wiki/Zero-knowledge_proof">zero knowledge proof protocol</a> for 3-colorable graphs. Zero-knowledge proofs permit you to convince a <em>verifier</em> of the truth of a fact (namely, that a graph is three colorable), without revealing the actual three coloring of the graph.',
+      'This is an interactive demonstration of the <a href="http://en.wikipedia.org/wiki/Zero-knowledge_proof" target="_blank" class="hover:underline">zero knowledge proof protocol</a> for 3-colorable graphs. Zero-knowledge proofs permit you to convince a <em>verifier</em> of the truth of a fact (namely, that a graph is three colorable), without revealing the actual three coloring of the graph.',
     intro2:
       "This application allows you to play the game as a verifier. The application (the prover) offers you a graph whose colorings are obscured from you, and you are allowed to pick an edge, which the verifier will reveal the coloring of. Select a graph and try clicking on some edges.",
     pickGraph: "Pick a graph",
@@ -197,7 +197,7 @@ const translations = {
   zh: {
     title: "交互式零知识三色问题演示",
     intro1:
-      '这是针对三色图的<a href="http://en.wikipedia.org/wiki/Zero-knowledge_proof">零知识证明协议</a>的交互式演示。零知识证明可以让<em>验证者</em>相信一个事实的真实性（即，一个图仅三色），而无需揭示图的具体颜色。',
+      '这是针对三色图的<a href="http://en.wikipedia.org/wiki/Zero-knowledge_proof" target="_blank" class="hover:underline">零知识证明协议</a>的交互式演示。零知识证明可以让<em>验证者</em>相信一个事实的真实性（即，一个图仅三色），而无需揭示图的具体颜色。',
     intro2:
       "此应用程序允许您以验证者的身份玩游戏。该应用程序（证明者）为您提供了一个图形，其颜色对您来说是隐藏的，并且您可以选择一条边，验证器将显示其颜色。选择一个图并尝试点击一些边。",
     pickGraph: "选择一个图开始",
@@ -226,7 +226,7 @@ let globalDot: Edge[] | null = null;
 let globalAuto = false;
 let globalTricky = false;
 let globalTrials = 0;
-let globalLanguage = "en"; // Default language is English
+let globalLanguage: "en" | "zh" = "en"; // Default language is English
 let rescheduleTimer = -1;
 
 // Utility functions
@@ -395,7 +395,7 @@ function main(): void {
   const gChoices: (() => boolean | undefined)[] = [];
   const gPerm = random_permutation();
   let gRevealed = false;
-  const gReveal = get("reveal");
+  const gReveal = get("reveal") as HTMLButtonElement | null;
   const gTurbo = get("turbo") as HTMLInputElement | null;
   const gConfidence = get("confidence-value");
 
@@ -597,7 +597,7 @@ function main(): void {
           if (gConfidence) {
             gConfidence.style.color = "black";
             gConfidence.textContent = Math.min(
-              (1 - Math.pow(1 - 1 / globalDot.length, globalTrials)) * 100,
+              (1 - Math.pow(1 - 1 / (globalDot?.length ?? 0), globalTrials)) * 100,
               99.99
             ).toFixed(2);
           }
@@ -637,7 +637,7 @@ function main(): void {
 
 function init(): void {
   document.addEventListener("DOMContentLoaded", function () {
-    const revealEl = get("reveal");
+    const revealEl = get("reveal") as HTMLButtonElement | null;
     const turboEl = get("turbo") as HTMLInputElement | null;
 
     if (revealEl) revealEl.disabled = true;
