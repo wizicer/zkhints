@@ -157,6 +157,13 @@ export const sections: Section[] = [
         description: "Technical overview of ZK argument structures, like lookup",
         image: argument,
       },
+      {
+        id: "commitment",
+        title: "Commitment Schemes",
+        construction: true,
+        description: "Commitment schemes from pedersen to KZG",
+        image: events,
+      },
     ],
   },
   {

@@ -14,6 +14,7 @@
     "@types/react": "^19.0.12",
     "astro": "^5.5.5",
     "highlight.js": "^11.11.1",
+    "katex": "^0.16.22",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tailwindcss": "^4.1.3",
