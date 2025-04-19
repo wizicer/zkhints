@@ -8,6 +8,8 @@ export interface ResourceLink {
   recommended?: boolean;
   rip?: boolean;
   seriesLinks?: { title: string; link: string }[];
+  year?: string;
+  author?: string;
 }
 
 export interface EventLink {
