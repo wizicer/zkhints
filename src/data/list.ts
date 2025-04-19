@@ -24,6 +24,7 @@ export interface ResourceSection {
   id: string;
   title: string;
   description?: string;
+  subsections?: ResourceSection[];
   emoji: string;
   links: (ResourceLink | EventLink)[];
 }
