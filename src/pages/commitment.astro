@@ -11,8 +11,8 @@ import MathTex from "../components/MathTex.astro";
   <main class="container mx-auto px-4 py-8">
     <section class="mb-10">
       <SectionHeading title="Commitment Schemes" gradientPart="Commitment Schemes" />
-      <div class="flex flex-col md:flex-row gap-6 items-center">
-        <div class="prose max-w-none md:w-full">
+      <div class="flex flex-col md:flex-row gap-6">
+        <div class="prose max-w-none md:w-3/5">
           <p>
             Commitment schemes are cryptographic primitives that allow a party to commit to a chosen
             value while keeping it hidden from others, with the ability to reveal the committed
@@ -34,14 +34,33 @@ import MathTex from "../components/MathTex.astro";
               </li>
             </ul>
           </div>
+          <p class="mt-4">
+            Commitment schemes are essential for many cryptographic protocols, especially in
+            zero-knowledge proofs where a prover needs to commit to certain values without revealing
+            them immediately. They provide a way to "lock" a value in a way that can be verified
+            later.
+          </p>
+        </div>
+        <div class="md:w-2/5 bg-gray-50 p-4 rounded-lg">
+          <h3 class="text-lg font-semibold mb-2">Why Use Commitment Schemes?</h3>
+          <ul class="space-y-2 list-disc pl-5">
+            <li>Enable verification without revealing sensitive information</li>
+            <li>Prevent participants from changing their inputs after seeing others' inputs</li>
+            <li>Allow for deferred verification of claims</li>
+            <li>Support for homomorphic operations on committed values</li>
+          </ul>
+          <p class="mt-4 text-sm text-gray-600">
+            In blockchain and ZK applications, commitments allow for privacy-preserving verification
+            of transactions and claims.
+          </p>
         </div>
       </div>
     </section>
 
     <section class="mb-10">
       <SectionHeading title="Pedersen Commitment" gradientPart="Pedersen" />
-      <div class="flex flex-col md:flex-row gap-6 items-center">
-        <div class="prose max-w-none md:w-full">
+      <div class="flex flex-col md:flex-row gap-6">
+        <div class="prose max-w-none md:w-3/5">
           <p>
             Pedersen commitment is a widely used commitment scheme based on the discrete logarithm
             problem. It provides perfect hiding and computational binding properties.
@@ -60,46 +79,6 @@ import MathTex from "../components/MathTex.astro";
           </div>
 
           <div class="mt-6">
-            <p><strong>🧮 Interactive Example:</strong></p>
-            <div class="bg-white border border-gray-300 rounded-md p-4 my-4">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label for="pedersen-message" class="block text-sm font-medium text-gray-700"
-                    >Message (m):</label
-                  >
-                  <input
-                    type="number"
-                    id="pedersen-message"
-                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                    value="42"
-                  />
-                </div>
-                <div>
-                  <label for="pedersen-random" class="block text-sm font-medium text-gray-700"
-                    >Random Value (r):</label
-                  >
-                  <input
-                    type="number"
-                    id="pedersen-random"
-                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                    value="123"
-                  />
-                </div>
-              </div>
-              <button
-                id="pedersen-calculate"
-                class="mt-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                >Calculate Commitment</button
-              >
-              <div class="mt-4">
-                <p class="text-sm font-medium text-gray-700">Commitment Result:</p>
-                <div id="pedersen-result" class="mt-1 p-2 bg-gray-100 rounded-md overflow-x-auto">
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-6">
             <p><strong>🔄 Homomorphic Property:</strong></p>
             <p>One of the key features of Pedersen commitments is their homomorphic property:</p>
             <div class="bg-gray-100 p-4 rounded-md my-4">
@@ -107,7 +86,75 @@ import MathTex from "../components/MathTex.astro";
                 formula={"\\text{Commit}(m_1, r_1) \\cdot \\text{Commit}(m_2, r_2) = \\text{Commit}(m_1 + m_2, r_1 + r_2)"}
               />
             </div>
-            <p>This property allows operations on committed values without revealing them.</p>
+            <p>
+              This property allows operations on committed values without revealing them, which is
+              particularly useful in zero-knowledge proofs and secure multi-party computation.
+            </p>
+          </div>
+
+          <div class="mt-6">
+            <p><strong>🔐 Security Properties:</strong></p>
+            <ul class="space-y-1 list-disc pl-5 mt-2">
+              <li>
+                <strong>Perfect Hiding</strong>: Even with unlimited computational power, the
+                commitment reveals no information about the committed value.
+              </li>
+              <li>
+                <strong>Computational Binding</strong>: It's computationally infeasible to find two
+                different messages that produce the same commitment, assuming the discrete logarithm
+                problem is hard.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="md:w-2/5">
+          <div class="bg-white border border-gray-300 rounded-md p-4 my-4 sticky top-4">
+            <h3 class="text-lg font-semibold mb-4">Interactive Pedersen Calculator</h3>
+            <div class="grid grid-cols-1 gap-4">
+              <div>
+                <label for="pedersen-message" class="block text-sm font-medium text-gray-700"
+                  >Message (m):</label
+                >
+                <input
+                  type="number"
+                  id="pedersen-message"
+                  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                  value="42"
+                />
+              </div>
+              <div>
+                <label for="pedersen-random" class="block text-sm font-medium text-gray-700"
+                  >Random Value (r):</label
+                >
+                <input
+                  type="number"
+                  id="pedersen-random"
+                  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                  value="123"
+                />
+              </div>
+            </div>
+            <button
+              id="pedersen-calculate"
+              class="mt-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              >Calculate Commitment</button
+            >
+            <div class="mt-4">
+              <p class="text-sm font-medium text-gray-700">Commitment Result:</p>
+              <div id="pedersen-result" class="mt-1 p-2 bg-gray-100 rounded-md overflow-x-auto">
+              </div>
+            </div>
+            <div class="mt-4 text-sm text-gray-600">
+              <p>This is a simplified implementation using:</p>
+              <ul class="list-disc pl-5 mt-1">
+                <li>Generator g = 7</li>
+                <li>Generator h = 11</li>
+                <li>Prime modulus p = 2147483647</li>
+              </ul>
+              <p class="mt-2">
+                In real applications, these would be carefully chosen cryptographic parameters.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -115,11 +162,12 @@ import MathTex from "../components/MathTex.astro";
 
     <section class="mb-10">
       <SectionHeading title="Vector Commitment" gradientPart="Vector" />
-      <div class="flex flex-col md:flex-row gap-6 items-center">
-        <div class="prose max-w-none md:w-full">
+      <div class="flex flex-col md:flex-row gap-6">
+        <div class="prose max-w-none md:w-3/5">
           <p>
             Vector commitments allow committing to a vector of values while being able to open the
-            commitment at specific positions.
+            commitment at specific positions. They are particularly useful in applications where you
+            need to commit to multiple values at once.
           </p>
           <div class="mt-4">
             <p><strong>🔢 Mathematical Definition:</strong></p>
@@ -138,18 +186,71 @@ import MathTex from "../components/MathTex.astro";
               <li><MathTex formula="h" /> is another independent group generator</li>
             </ul>
           </div>
+
+          <div class="mt-6">
+            <p><strong>🔍 Applications:</strong></p>
+            <p>Vector commitments are used in:</p>
+            <ul class="space-y-1 list-disc pl-5 mt-2">
+              <li>Verifiable databases where you need to prove membership of elements</li>
+              <li>Zero-knowledge proofs for multiple values</li>
+              <li>Blockchain systems for committing to multiple transactions</li>
+            </ul>
+          </div>
+
+          <div class="mt-6">
+            <p><strong>⚡ Efficiency Considerations:</strong></p>
+            <p>
+              The main challenge with vector commitments is efficiency, especially as the vector
+              size grows. Various optimizations exist to make vector commitments more practical:
+            </p>
+            <ul class="space-y-1 list-disc pl-5 mt-2">
+              <li>Merkle trees for logarithmic-sized proofs</li>
+              <li>Polynomial commitments for batch openings</li>
+              <li>Specialized constructions like KZG for vectors</li>
+            </ul>
+          </div>
+        </div>
+        <div class="md:w-2/5">
+          <div class="bg-gray-50 p-4 rounded-lg">
+            <h3 class="text-lg font-semibold mb-2">Vector Commitment Example</h3>
+            <p class="text-sm">Consider a vector of 3 values: [5, 12, 7]</p>
+            <div class="mt-4 bg-white p-3 rounded border">
+              <p class="font-mono text-sm">
+                g₁ = 3, g₂ = 5, g₃ = 7<br />
+                h = 11<br />
+                r = 9<br /><br />
+                Commit([5, 12, 7], 9) = 11⁹ · 3⁵ · 5¹² · 7⁷<br />
+                = 2,357,947,691 (mod p)
+              </p>
+            </div>
+            <p class="mt-4 text-sm">
+              To open just the second position (value 12), the prover would provide the value 12 and
+              a proof that this value is indeed at position 2 in the committed vector.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="mb-10">
       <SectionHeading title="KZG Polynomial Commitment" gradientPart="KZG" />
-      <div class="flex flex-col md:flex-row gap-6 items-center">
-        <div class="prose max-w-none md:w-full">
+      <div class="flex flex-col md:flex-row gap-6">
+        <div class="prose max-w-none md:w-3/5">
           <p>
             KZG (Kate-Zaverucha-Goldberg) polynomial commitments allow committing to a polynomial
-            and later proving evaluations of that polynomial at specific points.
+            and later proving evaluations of that polynomial at specific points. They are widely
+            used in modern zero-knowledge proof systems due to their efficiency and succinctness.
           </p>
+
+          <div class="mt-4">
+            <p><strong>🔑 Key Insight:</strong></p>
+            <p>
+              The core idea behind KZG commitments is to use a bilinear pairing to verify polynomial
+              evaluations. This allows for constant-sized proofs regardless of the polynomial
+              degree, making them extremely efficient for large polynomials.
+            </p>
+          </div>
+
           <div class="mt-4">
             <p><strong>🔢 Setup Phase:</strong></p>
             <div class="bg-gray-100 p-4 rounded-md my-4">
@@ -164,7 +265,8 @@ import MathTex from "../components/MathTex.astro";
               </li>
               <li><MathTex formula={"vk = g^{\\alpha}"} /> in group G2 is the verification key</li>
               <li>
-                <MathTex formula="\\alpha" /> is a secret value that must be discarded after setup
+                <MathTex formula="\\alpha" /> is a secret value that must be discarded after setup (the
+                "toxic waste")
               </li>
             </ul>
           </div>
@@ -194,6 +296,13 @@ import MathTex from "../components/MathTex.astro";
               <li><MathTex formula="y = f(z)" /> is the claimed evaluation</li>
               <li><MathTex formula="\\pi = g^{\\frac{f(X) - f(z)}{X - z}}" /> is the proof</li>
             </ul>
+            <p>
+              The key insight is that <MathTex formula="f(X) - f(z)" /> is always divisible by <MathTex
+                formula="X - z"
+              /> when <MathTex formula="f(z)" /> is the correct evaluation. The quotient polynomial <MathTex
+                formula="q(X) = \\frac{f(X) - f(z)}{X - z}"
+              /> is what we commit to in the proof.
+            </p>
           </div>
 
           <div class="mt-6">
@@ -207,53 +316,86 @@ import MathTex from "../components/MathTex.astro";
             </div>
             <p>
               This equation verifies that <MathTex formula="f(z) = y" /> without revealing the polynomial
-              <MathTex formula="f(X)" />.
+              <MathTex formula="f(X)" />. The verification works because of the properties of
+              bilinear pairings.
             </p>
           </div>
 
           <div class="mt-6">
-            <p><strong>🧮 Interactive KZG Example:</strong></p>
-            <div class="bg-white border border-gray-300 rounded-md p-4 my-4">
-              <p class="text-sm text-gray-600 mb-4">
-                Define a polynomial by entering its coefficients (from constant term to highest
-                degree)
-              </p>
-              <div>
-                <label for="kzg-poly" class="block text-sm font-medium text-gray-700"
-                  >Polynomial Coefficients (comma-separated):</label
-                >
-                <input
-                  type="text"
-                  id="kzg-poly"
-                  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                  value="8,0,-2,5"
-                />
-              </div>
-              <div class="mt-4">
-                <label for="kzg-point" class="block text-sm font-medium text-gray-700"
-                  >Evaluation Point (z):</label
-                >
-                <input
-                  type="number"
-                  id="kzg-point"
-                  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                  value="2"
-                />
-              </div>
-              <button
-                id="kzg-calculate"
-                class="mt-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                >Calculate KZG Proof</button
+            <p><strong>🔍 Security and Trust Assumptions:</strong></p>
+            <p>KZG commitments rely on:</p>
+            <ul class="space-y-1 list-disc pl-5 mt-2">
+              <li>The q-Strong Diffie-Hellman assumption</li>
+              <li>A trusted setup to generate the parameters</li>
+              <li>The security of the underlying elliptic curve and pairing</li>
+            </ul>
+            <p>
+              The need for a trusted setup is often addressed through multi-party computation
+              ceremonies where many participants contribute randomness to the generation of <MathTex
+                formula="\\alpha"
+              />.
+            </p>
+          </div>
+        </div>
+        <div class="md:w-2/5">
+          <div class="bg-white border border-gray-300 rounded-md p-4 my-4 sticky top-4">
+            <h3 class="text-lg font-semibold mb-4">Interactive KZG Example</h3>
+            <p class="text-sm text-gray-600 mb-4">
+              Define a polynomial by entering its coefficients (from constant term to highest
+              degree)
+            </p>
+            <div>
+              <label for="kzg-poly" class="block text-sm font-medium text-gray-700"
+                >Polynomial Coefficients (comma-separated):</label
               >
-              <div class="mt-4">
-                <p class="text-sm font-medium text-gray-700">Polynomial Evaluation:</p>
-                <div id="kzg-eval" class="mt-1 p-2 bg-gray-100 rounded-md overflow-x-auto"></div>
+              <input
+                type="text"
+                id="kzg-poly"
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                value="8,0,-2,5"
+              />
+            </div>
+            <div class="mt-4">
+              <label for="kzg-point" class="block text-sm font-medium text-gray-700"
+                >Evaluation Point (z):</label
+              >
+              <input
+                type="number"
+                id="kzg-point"
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                value="2"
+              />
+            </div>
+            <button
+              id="kzg-calculate"
+              class="mt-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              >Calculate KZG Proof</button
+            >
+            <div class="mt-4">
+              <p class="text-sm font-medium text-gray-700">Polynomial:</p>
+              <div id="kzg-polynomial" class="mt-1 p-2 bg-gray-100 rounded-md overflow-x-auto">
               </div>
-              <div class="mt-4">
-                <p class="text-sm font-medium text-gray-700">Quotient Polynomial:</p>
-                <div id="kzg-quotient" class="mt-1 p-2 bg-gray-100 rounded-md overflow-x-auto">
-                </div>
-              </div>
+            </div>
+            <div class="mt-4">
+              <p class="text-sm font-medium text-gray-700">Polynomial Evaluation:</p>
+              <div id="kzg-eval" class="mt-1 p-2 bg-gray-100 rounded-md overflow-x-auto"></div>
+            </div>
+            <div class="mt-4">
+              <p class="text-sm font-medium text-gray-700">Quotient Polynomial:</p>
+              <div id="kzg-quotient" class="mt-1 p-2 bg-gray-100 rounded-md overflow-x-auto"></div>
+            </div>
+            <div class="mt-4 text-sm text-gray-600">
+              <p>
+                This example demonstrates the polynomial division that forms the basis of KZG
+                proofs. In a real KZG implementation:
+              </p>
+              <ul class="list-disc pl-5 mt-1">
+                <li>
+                  The polynomial and quotient would be committed to using elliptic curve operations
+                </li>
+                <li>The verification would use bilinear pairings</li>
+                <li>The proof would be a single group element</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -262,144 +404,106 @@ import MathTex from "../components/MathTex.astro";
 
     <section class="mb-10">
       <SectionHeading title="Applications in ZK Proofs" gradientPart="Applications" />
-      <div class="flex flex-col md:flex-row gap-6 items-center">
-        <div class="prose max-w-none md:w-full">
+      <div class="flex flex-col md:flex-row gap-6">
+        <div class="prose max-w-none md:w-3/5">
           <p>Commitment schemes are essential components in zero-knowledge proof systems:</p>
           <ul class="space-y-2 list-disc pl-5 mt-2">
             <li>
               <strong>🔒 Plonk and Plonkish Protocols:</strong> Use KZG polynomial commitments to commit
-              to witness polynomials
+              to witness polynomials. The efficiency of KZG commitments makes these protocols practical
+              for complex circuits.
             </li>
             <li>
               <strong>🔍 Bulletproofs:</strong> Use Pedersen commitments for range proofs and confidential
-              transactions
+              transactions. The homomorphic properties of Pedersen commitments are crucial for the efficiency
+              of Bulletproofs.
             </li>
             <li>
               <strong>⚡ SNARKs:</strong> Various commitment schemes are used depending on the specific
-              SNARK construction
+              SNARK construction. Many modern SNARKs rely on polynomial commitments for efficiency.
+            </li>
+            <li>
+              <strong>🔄 Rollups:</strong> Layer 2 scaling solutions often use commitment schemes to
+              compress transaction data while maintaining verifiability.
             </li>
           </ul>
           <p class="mt-4">
             The choice of commitment scheme affects the security, efficiency, and setup requirements
-            of the ZK proof system.
+            of the ZK proof system. Different applications may prioritize different properties:
           </p>
+          <ul class="space-y-1 list-disc pl-5 mt-2">
+            <li><strong>Transparency:</strong> Some applications require no trusted setup</li>
+            <li>
+              <strong>Proof Size:</strong> Compact proofs are essential for blockchain applications
+            </li>
+            <li><strong>Verification Speed:</strong> Critical for on-chain verification</li>
+            <li>
+              <strong>Post-Quantum Security:</strong> Increasingly important for long-term security
+            </li>
+          </ul>
+        </div>
+        <div class="md:w-2/5">
+          <div class="bg-gray-50 p-4 rounded-lg">
+            <h3 class="text-lg font-semibold mb-2">Commitment Scheme Comparison</h3>
+            <table class="min-w-full divide-y divide-gray-200 mt-4">
+              <thead class="bg-gray-100">
+                <tr>
+                  <th
+                    class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    >Scheme</th
+                  >
+                  <th
+                    class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    >Proof Size</th
+                  >
+                  <th
+                    class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    >Setup</th
+                  >
+                  <th
+                    class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    >Security</th
+                  >
+                </tr>
+              </thead>
+              <tbody class="bg-white divide-y divide-gray-200">
+                <tr>
+                  <td class="px-3 py-2 whitespace-nowrap text-sm">Pedersen</td>
+                  <td class="px-3 py-2 whitespace-nowrap text-sm">Constant</td>
+                  <td class="px-3 py-2 whitespace-nowrap text-sm">No</td>
+                  <td class="px-3 py-2 whitespace-nowrap text-sm">DL</td>
+                </tr>
+                <tr>
+                  <td class="px-3 py-2 whitespace-nowrap text-sm">KZG</td>
+                  <td class="px-3 py-2 whitespace-nowrap text-sm">Constant</td>
+                  <td class="px-3 py-2 whitespace-nowrap text-sm">Yes</td>
+                  <td class="px-3 py-2 whitespace-nowrap text-sm">q-SDH</td>
+                </tr>
+                <tr>
+                  <td class="px-3 py-2 whitespace-nowrap text-sm">Merkle</td>
+                  <td class="px-3 py-2 whitespace-nowrap text-sm">Logarithmic</td>
+                  <td class="px-3 py-2 whitespace-nowrap text-sm">No</td>
+                  <td class="px-3 py-2 whitespace-nowrap text-sm">Hash</td>
+                </tr>
+                <tr>
+                  <td class="px-3 py-2 whitespace-nowrap text-sm">FRI</td>
+                  <td class="px-3 py-2 whitespace-nowrap text-sm">Logarithmic</td>
+                  <td class="px-3 py-2 whitespace-nowrap text-sm">No</td>
+                  <td class="px-3 py-2 whitespace-nowrap text-sm">Hash</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="mt-4 text-sm text-gray-600">
+              DL = Discrete Logarithm, q-SDH = q-Strong Diffie-Hellman
+            </p>
+          </div>
         </div>
       </div>
     </section>
-
-    <div
-      class="mt-40 bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-8 flex items-start relative flex-col md:flex-row"
-    >
-      <Image
-        src={constructionCat1}
-        alt="Under Construction"
-        class="h-32 w-32 mr-4 object-contain md:absolute md:-top-12"
-      />
-      <div class="ml-0 md:ml-40">
-        <p class="text-yellow-700 font-bold">More commitment schemes coming soon</p>
-        <p class="text-yellow-600">
-          We're working on adding more interactive examples and commitment schemes.
-        </p>
-      </div>
-    </div>
   </main>
 </Layout>
 
 <script>
-  // Polynomial class for calculations
-  class Polynomial {
-    constructor(coeffs) {
-      this.coeffs = Array.isArray(coeffs) ? coeffs : [];
-    }
-
-    evaluate(x) {
-      return this.coeffs.reduce((sum, coeff, i) => sum + coeff * Math.pow(x, i), 0);
-    }
-
-    toString() {
-      return (
-        this.coeffs
-          .map((coeff, i) => {
-            if (coeff === 0) return null;
-            const sign = coeff > 0 ? (i > 0 ? " + " : "") : " - ";
-            const absCoeff = Math.abs(coeff);
-            const coeffStr = absCoeff === 1 && i > 0 ? "" : absCoeff.toString();
-            const varPower = i === 0 ? "" : i === 1 ? "x" : `x^${i}`;
-            return `${i > 0 || coeff < 0 ? sign : ""}${coeffStr}${varPower}`;
-          })
-          .filter((term) => term !== null)
-          .join("") || "0"
-      );
-    }
-
-    // Calculate quotient polynomial when divided by (x - z)
-    quotient(z) {
-      const n = this.coeffs.length;
-      const result = new Array(n - 1).fill(0);
-
-      let prev = 0;
-      for (let i = n - 1; i >= 0; i--) {
-        const current = this.coeffs[i];
-        if (i < n - 1) {
-          result[i] = prev;
-        }
-        prev = current + prev * z;
-      }
-
-      return new Polynomial(result);
-    }
-  }
-
-  // Pedersen commitment calculation (simplified for demonstration)
-  function calculatePedersenCommitment(message, random) {
-    // This is a simplified version for demonstration
-    // In a real implementation, this would use elliptic curve operations
-    const g = 7; // Example generator
-    const h = 11; // Example generator
-    const p = 2147483647; // Large prime for modulo
-
-    const gm = Math.pow(g, message) % p;
-    const hr = Math.pow(h, random) % p;
-    return (gm * hr) % p;
-  }
-
-  // Set up event listeners when the DOM is loaded
-  document.addEventListener("DOMContentLoaded", () => {
-    // Pedersen commitment calculator
-    const pedersenCalculateBtn = document.getElementById("pedersen-calculate");
-    if (pedersenCalculateBtn) {
-      pedersenCalculateBtn.addEventListener("click", () => {
-        const message = parseInt(document.getElementById("pedersen-message").value);
-        const random = parseInt(document.getElementById("pedersen-random").value);
-
-        const commitment = calculatePedersenCommitment(message, random);
-
-        document.getElementById("pedersen-result").textContent =
-          `Commit(${message}, ${random}) = ${commitment}`;
-      });
-    }
-
-    // KZG polynomial commitment calculator
-    const kzgCalculateBtn = document.getElementById("kzg-calculate");
-    if (kzgCalculateBtn) {
-      kzgCalculateBtn.addEventListener("click", () => {
-        const polyInput = document.getElementById("kzg-poly").value;
-        const z = parseFloat(document.getElementById("kzg-point").value);
-
-        // Parse polynomial coefficients
-        const coeffs = polyInput.split(",").map((c) => parseFloat(c.trim()));
-        const poly = new Polynomial(coeffs);
-
-        // Calculate evaluation
-        const evaluation = poly.evaluate(z);
-
-        // Calculate quotient polynomial
-        const quotientPoly = poly.quotient(z);
-
-        document.getElementById("kzg-eval").textContent = `f(${z}) = ${evaluation}`;
-        document.getElementById("kzg-quotient").textContent =
-          `q(X) = (f(X) - f(${z}))/(X - ${z}) = ${quotientPoly.toString()}`;
-      });
-    }
-  });
+  import { init } from "../scripts/commitment.js";
+  init();
 </script>
