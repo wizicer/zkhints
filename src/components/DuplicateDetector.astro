@@ -1,0 +1,37 @@
+---
+import type { ResourceSection } from "../data/list";
+import { resourceList } from "../data/list";
+
+function collectLinks(sections: ResourceSection[]): string[] {
+  let links: string[] = [];
+  for (const section of sections) {
+    if (section.links) {
+      links.push(...section.links.map((l: { link: string }) => l.link));
+    }
+    if (section.subsections) {
+      links.push(...collectLinks(section.subsections));
+    }
+  }
+  return links;
+}
+
+const allLinks = resourceList.flatMap((resource) => collectLinks(resource.sections));
+const linkCounts = allLinks.reduce((acc: Record<string, number>, link: string) => {
+  acc[link] = (acc[link] || 0) + 1;
+  return acc;
+}, {});
+const duplicateLinks = Object.keys(linkCounts).filter((link: string) => linkCounts[link] > 1);
+---
+
+{
+  duplicateLinks.length > 0 && (
+    <div class="mb-6 p-4 rounded bg-orange-100 border-l-4 border-orange-400 text-orange-800">
+      <strong>Warning:</strong> Duplicate links found:
+      <ul class="list-disc ml-6">
+        {duplicateLinks.map((link) => (
+          <li>{link}</li>
+        ))}
+      </ul>
+    </div>
+  )
+}

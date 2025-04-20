@@ -5,9 +5,11 @@ import ItemSection from "../components/ItemSection.astro";
 import { Image } from "astro:assets";
 import hintaIcon from "../assets/hinta.png";
 import { sections } from "../data/index";
+import DuplicateDetector from "../components/DuplicateDetector.astro";
 ---
 
 <Layout>
+  <DuplicateDetector />
   <main class="p-6 md:px-8 mx-auto">
     <div class="my-12 text-center">
       <h1
