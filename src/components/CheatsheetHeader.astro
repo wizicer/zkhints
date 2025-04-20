@@ -19,9 +19,17 @@ const { title, description, category, image, imageAlt = "Header image" } = Astro
   <div class="container mx-auto px-4">
     <div class="flex flex-col items-center">
       <h1
-        class="font-extrabold tracking-tight text-5xl text-zinc-950 flex items-center justify-center gap-3"
+        class="font-extrabold tracking-tight text-5xl text-zinc-950 flex flex-col md:flex-row items-center md:justify-center"
       >
-        {image && <Image src={image} alt={imageAlt} class="w-24 h-24 object-contain" />}
+        {
+          image && (
+            <Image
+              src={image}
+              alt={imageAlt}
+              class="w-24 h-24 object-contain md:mr-3 mb-2 md:mb-0"
+            />
+          )
+        }
         {title}
       </h1>
       {description && <p class="text-xl text-gray-600 max-w-2xl mx-auto">{description}</p>}
