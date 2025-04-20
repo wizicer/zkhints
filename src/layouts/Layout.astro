@@ -6,6 +6,7 @@ import CheatsheetHeader from "../components/CheatsheetHeader.astro";
 import { Image } from "astro:assets";
 import reportErrorIcon from "../assets/icons/report-error.svg";
 import editPageIcon from "../assets/icons/edit-page.svg";
+import DuplicateDetector from "../components/DuplicateDetector.astro";
 
 interface Props {
   title?: string;
@@ -82,6 +83,7 @@ const sectionTitle = sections
   </head>
   <body class="font-sans text-gray-800 leading-relaxed bg-gray-50">
     <Header />
+    <DuplicateDetector />
 
     <main class="w-full max-w-7xl mx-auto px-4">
       {
