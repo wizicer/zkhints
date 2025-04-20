@@ -7,6 +7,8 @@ import { Content as VectorCommitment } from "./commitment/vector-commitment.md";
 import { Content as KZGCommitment } from "./commitment/kzg-commitment.md";
 import Prose from "../components/Prose.astro";
 import References from "../components/References.astro";
+import constructionCat1 from "../assets/construction/construction_cat_1.png";
+import { Image } from "astro:assets";
 
 export const references = [
   {
@@ -19,6 +21,20 @@ export const references = [
 ---
 
 <Layout id="commitment">
+  <div
+    class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-8 flex items-start relative flex-col md:flex-row"
+  >
+    <Image
+      src={constructionCat1}
+      alt="Under Construction"
+      class="h-32 w-32 mr-4 object-contain md:absolute md:-top-12"
+    />
+    <div class="ml-0 md:ml-40">
+      <p class="text-yellow-700 font-bold">This page is under construction</p>
+      <p class="text-yellow-600">Existing content is being updating and will be changed soon.</p>
+    </div>
+  </div>
+
   <main class="container mx-auto px-4 py-8">
     <section class="mb-10">
       <SectionHeading title="Commitment Schemes" gradientPart="Commitment Schemes" />
