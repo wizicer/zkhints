@@ -153,11 +153,6 @@ export const discovery: Resource = {
           link: "https://github.com/keep-starknet-strange/awesome-starknet",
         },
         {
-          title: "matter-labs' Awesome ZKP",
-          description: "A curated list of awesome zero-knowledge proof resources.",
-          link: "https://github.com/matter-labs/awesome-zero-knowledge-proofs",
-        },
-        {
           title: "phklive's Awesome Miden",
           description: "A curated list of awesome miden resources.",
           link: "https://github.com/phklive/awesome-miden",
