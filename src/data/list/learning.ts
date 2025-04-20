@@ -96,6 +96,13 @@ export const learning: Resource = {
           description: "Detailed comments and explanations on a key zkSNARK paper.",
           link: "https://github.com/ventali/awesome-zk/tree/main/zk-intro",
         },
+        {
+          title: "Jack O'Connor: A Zero-Knowledge PCP Theorem",
+          description:
+            "The intersection of ZK and PCP theorems: every NP statement has a polynomial-size proof that is both locally checkable and zero-knowledge.",
+          link: "https://www.youtube.com/watch?v=OWTMrlZW7oc",
+          difficulty: "advanced",
+        },
       ],
     },
     {
@@ -306,6 +313,7 @@ export const learning: Resource = {
               description:
                 "Detailed explanation of STARKs from basic principles to implementation details.",
               link: "https://vitalik.eth.limo/general/2017/11/09/starks_part_1.html",
+              difficulty: "beginner",
               seriesLinks: [
                 {
                   title: "Part 1: Proofs with Polynomials",
@@ -324,6 +332,7 @@ export const learning: Resource = {
             {
               title: "STARK Anatomy Series",
               recommended: true,
+              difficulty: "advanced",
               description: "Comprehensive breakdown of STARK components and implementation.",
               link: "https://aszepieniec.github.io/stark-anatomy/overview",
               seriesLinks: [
@@ -353,6 +362,7 @@ export const learning: Resource = {
             {
               title: "Brainfuck STARK Tutorial",
               recommended: true,
+              difficulty: "intermediate",
               description:
                 "Hands-on tutorial implementing a STARK prover for the Brainfuck language.",
               link: "https://neptune.cash/learn/brainfuck-tutorial/",
@@ -361,6 +371,7 @@ export const learning: Resource = {
               title: "ZK STARKs Overview",
               recommended: true,
               description: "Explains the motivation and construction of STARKs.",
+              difficulty: "beginner",
               link: "https://starkware.co/stark/",
             },
             {
@@ -368,7 +379,22 @@ export const learning: Resource = {
               recommended: true,
               description:
                 "STARK 101 is a hands-on tutorial on how to write a STARK prover from scratch (in Python).",
+              difficulty: "intermediate",
               link: "https://starkware.co/stark-101/",
+            },
+            {
+              title: "FRI is a proof of proximity, not a low-degree test",
+              description:
+                "Explains the misconception that FRI is a low-degree test and clarifies its true role as a proof of proximity.",
+              link: "https://building-babylon.net/2025/01/10/fri-is-a-proof-of-proximity-not-a-low-degree-test/",
+              difficulty: "advanced",
+              related: [
+                {
+                  title: "FRI 是鄰近性證明，而非低次測試",
+                  link: "https://mp.weixin.qq.com/s/LCMom_jnCWhnGY1SJe5_Yg",
+                  short: "翻译",
+                },
+              ],
             },
           ],
         },

@@ -10,6 +10,8 @@ export interface ResourceLink {
   seriesLinks?: { title: string; link: string }[];
   year?: string;
   author?: string;
+  difficulty?: "beginner" | "intermediate" | "advanced";
+  related?: { title: string; link: string; short: string }[];
 }
 
 export interface EventLink {
