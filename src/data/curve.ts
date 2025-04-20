@@ -114,6 +114,34 @@ export const curves = [
     notes:
       "Used in BN254 circuits for efficient in-circuit EC operations such as signatures and key derivation.",
   },
+  {
+    id: "koala_bear",
+    name: "Koala Bear",
+    family: "Prime Field",
+    security_bits: 31,
+    field_size: 31,
+    pairing_friendly: false,
+    in_circuit_friendly: true,
+    partners: [],
+    used_in: ["Plonky3"],
+    performance: "very_fast",
+    links: ["https://github.com/Plonky3/Plonky3/blob/main/koala-bear/src/koala_bear.rs"],
+    notes: "The prime field 2^31 - 2^24 + 1, a.k.a. the Koala Bear field, is used by Plonky3.",
+  },
+  {
+    id: "baby_bear",
+    name: "Baby Bear",
+    family: "Prime Field",
+    security_bits: 31,
+    field_size: 31,
+    pairing_friendly: false,
+    in_circuit_friendly: true,
+    partners: [],
+    used_in: ["Plonky3"],
+    performance: "very_fast",
+    links: ["https://github.com/Plonky3/Plonky3/blob/main/baby-bear/src/baby_bear.rs"],
+    notes: "The prime field 2^31 - 2^27 + 1, a.k.a. the Baby Bear field.",
+  },
 ];
 
 export const cases = [

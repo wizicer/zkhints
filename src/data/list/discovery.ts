@@ -132,6 +132,46 @@ export const discovery: Resource = {
           description: "A collection of Circom examples and useful links.",
           link: "https://github.com/Obscuronet/awesome-circom",
         },
+        {
+          title: "rkdud007's Awesome ZKVM",
+          description: "A curated list of zkVM, zero-knowledge virtual machine.",
+          link: "https://github.com/rkdud007/awesome-zkvm",
+        },
+        {
+          title: "gakonst's Awesome SP1",
+          description: "A curated list of awesome SP1 resources, tutorials, tools and libraries.",
+          link: "https://github.com/gakonst/awesome-sp1",
+        },
+        {
+          title: "inversebrah's Awesome Risc0",
+          description: "A curated list of awesome risc0 resources.",
+          link: "https://github.com/inversebrah/awesome-risc0",
+        },
+        {
+          title: "keep-starknet-strange's Awesome Starknet",
+          description: "A curated list of cryptography and maths resources for Starknet.",
+          link: "https://github.com/keep-starknet-strange/awesome-starknet",
+        },
+        {
+          title: "matter-labs' Awesome ZKP",
+          description: "A curated list of awesome zero-knowledge proof resources.",
+          link: "https://github.com/matter-labs/awesome-zero-knowledge-proofs",
+        },
+        {
+          title: "phklive's Awesome Miden",
+          description: "A curated list of awesome miden resources.",
+          link: "https://github.com/phklive/awesome-miden",
+        },
+        {
+          title: "Plonky3's Awesome Plonky3",
+          description: "A curated list of awesome plonky3 resources.",
+          link: "https://github.com/Plonky3/awesome-plonky3",
+        },
+        {
+          title: "keep-starknet-strange's Awesome Stwo",
+          description: "A curated list of awesome stwo resources.",
+          link: "https://github.com/keep-starknet-strange/awesome-stwo",
+        },
       ],
     },
     {

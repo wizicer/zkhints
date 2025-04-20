@@ -113,6 +113,14 @@ export const applications: Application[] = [
     primitives: "zk-SNARKs/zk-STARKs",
     notes: "Core of scalability protocols",
   },
+  {
+    id: "image",
+    application: "Private Image Manipulation",
+    description: "Privately prove the image manipulation",
+    constructs: "Matrix calculation, Transformation",
+    primitives: "zk-SNARKs, Commitment",
+    notes: "",
+  },
 ];
 
 const privacyApplications: ApplicationType[] = [
