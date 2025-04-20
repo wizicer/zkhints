@@ -1,10 +1,12 @@
+import type { Reference } from "../components/References.astro";
+
 export interface DslDefinition {
   name: string;
   link: string | null;
   company_or_brand: string | null;
   arithmetization: string | null;
   syntax: string | null;
-  programming_capability: "Yes" | "No" | null;
+  programming_capability: "Yes" | "No" | "VM" | null;
   backend_supported: string | null;
   note: string | null;
 }
@@ -85,7 +87,8 @@ export const dslDefinitions: DslDefinition[] = [
     arithmetization: "R1CS",
     syntax: "Rust-like",
     programming_capability: "Yes",
-    backend_supported: "Abstract ACIR intermediate representation (trace), backend can be selected later",
+    backend_supported:
+      "Abstract ACIR intermediate representation (trace), backend can be selected later",
     note: null,
   },
   {
@@ -278,6 +281,216 @@ export const dslDefinitions: DslDefinition[] = [
     backend_supported: null,
     note: null,
   },
+  {
+    name: "cairo",
+    link: "https://github.com/lambdaclass/cairo-vm",
+    company_or_brand: "Cairo",
+    arithmetization: "AIR",
+    syntax: null,
+    programming_capability: "VM",
+    backend_supported: null,
+    note: "FRI",
+  },
+  {
+    name: "ceno",
+    link: "https://github.com/scroll-tech/ceno",
+    company_or_brand: "Scroll",
+    arithmetization: "GKR",
+    syntax: null,
+    programming_capability: "VM",
+    backend_supported: "Brakedown, Rust",
+    note: "Lookup, Sumcheck",
+  },
+  {
+    name: "eigen zkvm",
+    link: "https://github.com/0xEigenLabs/eigen-zkvm",
+    company_or_brand: "EigenLabs",
+    arithmetization: "eAIR",
+    syntax: null,
+    programming_capability: "VM",
+    backend_supported: "FRI, Groth16, Solidity",
+    note: null,
+  },
+  {
+    name: "jolt",
+    link: "https://github.com/a16z/jolt",
+    company_or_brand: "a16z",
+    arithmetization: "R1CS",
+    syntax: null,
+    programming_capability: "VM",
+    backend_supported: "Spartan, WASM",
+    note: "Lookup, Sumcheck, Offline Mem Check",
+  },
+  {
+    name: "miden",
+    link: "https://github.com/0xPolygonMiden/miden-vm",
+    company_or_brand: "Polygon",
+    arithmetization: "AIR (winterfell)",
+    syntax: null,
+    programming_capability: "VM",
+    backend_supported: "Rust",
+    note: "Lookup, Winterfell",
+  },
+  {
+    name: "mozak vm",
+    link: "https://github.com/0xmozak/mozak-vm",
+    company_or_brand: "Mozak",
+    arithmetization: "AIR (Starky)",
+    syntax: null,
+    programming_capability: "VM",
+    backend_supported: "Rust",
+    note: "Lookup, FRI",
+  },
+  {
+    name: "nexus",
+    link: "https://github.com/nexus-xyz/nexus-zkvm",
+    company_or_brand: "Nexus",
+    arithmetization: "Folded Accumulated Relaxed R1CS",
+    syntax: null,
+    programming_capability: "VM",
+    backend_supported: "Accumulated Folding Spartan + {Zeromorph, PSE-Halo2 (KZG)}, Rust",
+    note: null,
+  },
+  {
+    name: "o1vm",
+    link: "https://github.com/o1-labs/proof-systems/tree/master/o1vm",
+    company_or_brand: "O(1) Labs",
+    arithmetization: "Plonkish",
+    syntax: null,
+    programming_capability: "VM",
+    backend_supported: "IPA, Rust",
+    note: "Lookup",
+  },
+  {
+    name: "olavm",
+    link: "https://github.com/Sin7Y/olavm",
+    company_or_brand: "Ola",
+    arithmetization: "AIR (plonky2)",
+    syntax: null,
+    programming_capability: "VM",
+    backend_supported: "FRI, Rust",
+    note: "Lookup",
+  },
+  {
+    name: "openvm",
+    link: "https://github.com/openvm-org/openvm",
+    company_or_brand: "OpenVM",
+    arithmetization: "AIR (plonky3), GKR",
+    syntax: null,
+    programming_capability: "VM",
+    backend_supported: "FRI, Rust",
+    note: null,
+  },
+  {
+    name: "pico",
+    link: "https://github.com/brevis-network/pico",
+    company_or_brand: "Brevis",
+    arithmetization: "AIR (plonky3)",
+    syntax: null,
+    programming_capability: "VM",
+    backend_supported: "FRI, Rust, Solidity",
+    note: "Lookup",
+  },
+  {
+    name: "powdrVM",
+    link: "https://github.com/powdr-labs/powdr",
+    company_or_brand: "Powdr Labs",
+    arithmetization: "AIR -ish (PIL, plonky3)",
+    syntax: null,
+    programming_capability: "VM",
+    backend_supported:
+      "PSE-Halo2 (KZG), Plonky3, FRI([eSTARK](https://eprint.iacr.org/2023/474)), Solidity",
+    note: null,
+  },
+  {
+    name: "risc0",
+    link: "https://github.com/risc0/risc0",
+    company_or_brand: "Risc Zero",
+    arithmetization: "PLONK",
+    syntax: null,
+    programming_capability: "VM",
+    backend_supported: "Plookup, Rust, Solidity",
+    note: "[DEEP-FRI & ALI](https://eprint.iacr.org/2021/582.pdf)",
+  },
+  {
+    name: "sp1",
+    link: "https://github.com/succinctlabs/sp1",
+    company_or_brand: "Succinct",
+    arithmetization: "AIR (plonky3)",
+    syntax: null,
+    programming_capability: "VM",
+    backend_supported: "FRI, Rust, Solidity",
+    note: "Lookup",
+  },
+  {
+    name: "sphinx",
+    link: "https://github.com/argumentcomputer/sphinx",
+    company_or_brand: "Argument Computer",
+    arithmetization: "AIR (core), PLONK (wrap)",
+    syntax: null,
+    programming_capability: "VM",
+    backend_supported: "FRI, Rust",
+    note: "Lookup",
+  },
+  {
+    name: "triton vm",
+    link: "https://github.com/TritonVM/triton-vm",
+    company_or_brand: "TritonVM",
+    arithmetization: "AIR",
+    syntax: null,
+    programming_capability: "VM",
+    backend_supported: "FRI, Rust",
+    note: "Lookup, [Contiguity](https://triton-vm.org/spec/memory-consistency.html)",
+  },
+  {
+    name: "valida",
+    link: "https://github.com/lita-xyz/valida-releases",
+    company_or_brand: "Valida",
+    arithmetization: "AIR (plonky3)",
+    syntax: null,
+    programming_capability: "VM",
+    backend_supported: "FRI",
+    note: null,
+  },
+  {
+    name: "zisk",
+    link: "https://github.com/0xPolygonHermez/zisk",
+    company_or_brand: "Polygon Hermez",
+    arithmetization: "?",
+    syntax: null,
+    programming_capability: "VM",
+    backend_supported: "?",
+    note: "?",
+  },
+  {
+    name: "zkm",
+    link: "https://github.com/zkMIPS/zkm",
+    company_or_brand: "zkMIPS",
+    arithmetization: "AIR (plonky2)",
+    syntax: null,
+    programming_capability: "VM",
+    backend_supported: "FRI, Rust",
+    note: "Lookup",
+  },
+  {
+    name: "zkWasm",
+    link: "https://github.com/DelphinusLab/zkWasm",
+    company_or_brand: "DelphinusLab",
+    arithmetization: "PLONK",
+    syntax: null,
+    programming_capability: "VM",
+    backend_supported: "IPA?, Rust",
+    note: null,
+  },
+];
+
+export const references: Reference[] = [
+  {
+    title: "",
+    authors: "",
+    year: "2025",
+    link: "https://github.com/rkdud007/awesome-zkvm",
+  },
 ];
 
 export const dslExamples: DslExample[] = [
@@ -309,7 +522,8 @@ nullifier
     exampleCodeHighlightType: "rust",
     exampleLink:
       "https://github.com/noir-lang/noir-examples/blob/master/foundry-voting/circuits/src/main.nr",
-    comment: "Compiles to ACIR, similar to R1CS, supports raw loops. Already has Halo2 backend and received funding, suitable for ZK developers",
+    comment:
+      "Compiles to ACIR, similar to R1CS, supports raw loops. Already has Halo2 backend and received funding, suitable for ZK developers",
   },
   {
     name: "AirScript",
@@ -361,7 +575,8 @@ def pyth a b c = {
 pyth x y R;`,
     exampleCodeHighlightType: "haskell",
     exampleLink: "https://github.com/anoma/vamp-ir",
-    comment: "As an intermediate representation IR, does not support witness programming, syntax is relatively raw",
+    comment:
+      "As an intermediate representation IR, does not support witness programming, syntax is relatively raw",
   },
   {
     name: "ALucard (Alu)",
@@ -417,7 +632,8 @@ function main {
 }}`,
     exampleCodeHighlightType: "typescript",
     exampleLink: "https://docs.powdr.org/hello_world.html",
-    comment: "Used to describe virtual machine assembly programs, relatively low-level, supports RISCV frontend connection",
+    comment:
+      "Used to describe virtual machine assembly programs, relatively low-level, supports RISCV frontend connection",
   },
   {
     name: "Chiquito",
@@ -457,7 +673,8 @@ fibo_witness = fibo.gen_witness(None)
 fibo.halo2_mock_prover(fibo_witness)`,
     exampleCodeHighlightType: "python",
     exampleLink: "https://github.com/privacy-scaling-explorations/chiquito",
-    comment: "Clear structure, suitable for expressing step-based systems, syntax is close to Python",
+    comment:
+      "Clear structure, suitable for expressing step-based systems, syntax is close to Python",
   },
   {
     name: "zkas",
@@ -503,7 +720,8 @@ circuit "Vote" {
 }`,
     exampleCodeHighlightType: "typescript",
     exampleLink: "https://darkrenaissance.github.io/darkfi/zkas/examples/voting.html",
-    comment: "Tends to chain on zkVM operations, less documentation, syntax is close to zk assembly",
+    comment:
+      "Tends to chain on zkVM operations, less documentation, syntax is close to zk assembly",
   },
   {
     name: "plaf",
