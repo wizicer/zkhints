@@ -4,20 +4,18 @@ import SectionHeading from "../components/SectionHeading.astro";
 import { Content as CommitmentScheme } from "./commitment/commitment-scheme.md";
 import { Content as PedersenCommitment } from "./commitment/pedersen-commitment.md";
 import { Content as VectorCommitment } from "./commitment/vector-commitment.md";
+import { Content as VectorPedersenCommitment } from "./commitment/vector-pedersen-commitment.md";
 import { Content as KZGCommitment } from "./commitment/kzg-commitment.md";
+import { Content as CommitmentSchemeSide } from "./commitment/commitment-scheme-side.md";
+import { Content as PolynomialCommitment } from "./commitment/polynomial-commitment.md";
+import { Content as PolynomialCommitmentSide } from "./commitment/polynomial-commitment-side.md";
 import Prose from "../components/Prose.astro";
 import References from "../components/References.astro";
 import constructionCat1 from "../assets/construction/construction_cat_1.png";
 import { Image } from "astro:assets";
-
-export const references = [
-  {
-    title: "Commitment Schemes",
-    authors: "Shuang Liang, zkShanghai",
-    year: "2023",
-    link: "https://zkshanghai.xyz/notes/lecture5.html",
-  },
-];
+import SubsectionHeading from "../components/SubsectionHeading.astro";
+import { references, resources } from "../data/commitment";
+import ResourceLink from "../components/ResourceLink.astro";
 ---
 
 <Layout id="commitment">
@@ -37,33 +35,36 @@ export const references = [
 
   <main class="container mx-auto px-4 py-8">
     <section class="mb-10">
-      <SectionHeading title="Commitment Schemes" gradientPart="Commitment Schemes" />
+      <SectionHeading title="Commitment Schemes" gradientPart="Commitment" />
       <div class="flex flex-col md:flex-row gap-6">
-        <Prose class="md:w-3/5 max-w-none">
-          <CommitmentScheme />
-        </Prose>
-        <div class="md:w-2/5 bg-gray-50 p-4 rounded-lg">
-          <h3 class="text-lg font-semibold mb-2">Why Use Commitment Schemes?</h3>
-          <ul class="space-y-2 list-disc pl-5">
-            <li>Enable verification without revealing sensitive information</li>
-            <li>Prevent participants from changing their inputs after seeing others' inputs</li>
-            <li>Allow for deferred verification of claims</li>
-            <li>Support for homomorphic operations on committed values</li>
-          </ul>
-          <p class="mt-4 text-sm text-gray-600">
-            In blockchain and ZK applications, commitments allow for privacy-preserving verification
-            of transactions and claims.
-          </p>
+        <div class="md:w-3/5 max-w-none">
+          <Prose>
+            <CommitmentScheme />
+          </Prose>
+        </div>
+        <div class="md:w-2/5">
+          <div class="bg-white border border-gray-300 rounded-md p-4 my-4 sticky top-4">
+            <Prose className="prose-sm">
+              <CommitmentSchemeSide />
+            </Prose>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="mb-10">
-      <SectionHeading title="Pedersen Commitment" gradientPart="Pedersen" />
+      <SectionHeading title="Vector Commitment" gradientPart="Vector" />
+      <VectorCommitment />
+    </section>
+
+    <section class="mb-10">
+      <SubsectionHeading title="Pedersen Commitment" />
       <div class="flex flex-col md:flex-row gap-6">
-        <Prose class="md:w-3/5 max-w-none">
-          <PedersenCommitment />
-        </Prose>
+        <div class="md:w-3/5 max-w-none">
+          <Prose>
+            <PedersenCommitment />
+          </Prose>
+        </div>
         <div class="md:w-2/5">
           <div class="bg-white border border-gray-300 rounded-md p-4 my-4 sticky top-4">
             <h3 class="text-lg font-semibold mb-4">Interactive Pedersen Calculator</h3>
@@ -118,11 +119,13 @@ export const references = [
     </section>
 
     <section class="mb-10">
-      <SectionHeading title="Vector Commitment" gradientPart="Vector" />
+      <SubsectionHeading title="Vector Pedersen Commitment" />
       <div class="flex flex-col md:flex-row gap-6">
-        <Prose class="md:w-3/5 max-w-none">
-          <VectorCommitment />
-        </Prose>
+        <div class="md:w-3/5 max-w-none">
+          <Prose>
+            <VectorPedersenCommitment />
+          </Prose>
+        </div>
         <div class="md:w-2/5">
           <div class="bg-gray-50 p-4 rounded-lg">
             <h3 class="text-lg font-semibold mb-2">Vector Commitment Example</h3>
@@ -146,11 +149,31 @@ export const references = [
     </section>
 
     <section class="mb-10">
-      <SectionHeading title="KZG Polynomial Commitment" gradientPart="KZG" />
+      <SectionHeading title="Polynomial Commitment" gradientPart="Polynomial" />
       <div class="flex flex-col md:flex-row gap-6">
-        <Prose class="md:w-3/5 max-w-none">
-          <KZGCommitment />
-        </Prose>
+        <div class="md:w-3/5 max-w-none">
+          <Prose>
+            <PolynomialCommitment />
+          </Prose>
+        </div>
+        <div class="md:w-2/5">
+          <div class="bg-white border border-gray-300 rounded-md p-4 my-4 sticky top-4">
+            <Prose className="prose-sm">
+              <PolynomialCommitmentSide />
+            </Prose>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <SubsectionHeading title="KZG Polynomial Commitment" />
+      <div class="flex flex-col md:flex-row gap-6">
+        <div class="md:w-3/5 max-w-none">
+          <Prose>
+            <KZGCommitment />
+          </Prose>
+        </div>
         <div class="md:w-2/5">
           <div class="bg-white border border-gray-300 rounded-md p-4 my-4 sticky top-4">
             <h3 class="text-lg font-semibold mb-4">Interactive KZG Example</h3>
@@ -217,101 +240,10 @@ export const references = [
     </section>
 
     <section class="mb-10">
-      <SectionHeading title="Applications in ZK Proofs" gradientPart="Applications" />
-      <div class="flex flex-col md:flex-row gap-6">
-        <div class="prose max-w-none md:w-3/5">
-          <p>Commitment schemes are essential components in zero-knowledge proof systems:</p>
-          <ul class="space-y-2 list-disc pl-5 mt-2">
-            <li>
-              <strong>🔒 Plonk and Plonkish Protocols:</strong> Use KZG polynomial commitments to commit
-              to witness polynomials. The efficiency of KZG commitments makes these protocols practical
-              for complex circuits.
-            </li>
-            <li>
-              <strong>🔍 Bulletproofs:</strong> Use Pedersen commitments for range proofs and confidential
-              transactions. The homomorphic properties of Pedersen commitments are crucial for the efficiency
-              of Bulletproofs.
-            </li>
-            <li>
-              <strong>⚡ SNARKs:</strong> Various commitment schemes are used depending on the specific
-              SNARK construction. Many modern SNARKs rely on polynomial commitments for efficiency.
-            </li>
-            <li>
-              <strong>🔄 Rollups:</strong> Layer 2 scaling solutions often use commitment schemes to
-              compress transaction data while maintaining verifiability.
-            </li>
-          </ul>
-          <p class="mt-4">
-            The choice of commitment scheme affects the security, efficiency, and setup requirements
-            of the ZK proof system. Different applications may prioritize different properties:
-          </p>
-          <ul class="space-y-1 list-disc pl-5 mt-2">
-            <li><strong>Transparency:</strong> Some applications require no trusted setup</li>
-            <li>
-              <strong>Proof Size:</strong> Compact proofs are essential for blockchain applications
-            </li>
-            <li><strong>Verification Speed:</strong> Critical for on-chain verification</li>
-            <li>
-              <strong>Post-Quantum Security:</strong> Increasingly important for long-term security
-            </li>
-          </ul>
-        </div>
-        <div class="md:w-2/5">
-          <div class="bg-gray-50 p-4 rounded-lg">
-            <h3 class="text-lg font-semibold mb-2">Commitment Scheme Comparison</h3>
-            <table class="min-w-full divide-y divide-gray-200 mt-4">
-              <thead class="bg-gray-100">
-                <tr>
-                  <th
-                    class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    >Scheme</th
-                  >
-                  <th
-                    class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    >Proof Size</th
-                  >
-                  <th
-                    class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    >Setup</th
-                  >
-                  <th
-                    class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    >Security</th
-                  >
-                </tr>
-              </thead>
-              <tbody class="bg-white divide-y divide-gray-200">
-                <tr>
-                  <td class="px-3 py-2 whitespace-nowrap text-sm">Pedersen</td>
-                  <td class="px-3 py-2 whitespace-nowrap text-sm">Constant</td>
-                  <td class="px-3 py-2 whitespace-nowrap text-sm">No</td>
-                  <td class="px-3 py-2 whitespace-nowrap text-sm">DL</td>
-                </tr>
-                <tr>
-                  <td class="px-3 py-2 whitespace-nowrap text-sm">KZG</td>
-                  <td class="px-3 py-2 whitespace-nowrap text-sm">Constant</td>
-                  <td class="px-3 py-2 whitespace-nowrap text-sm">Yes</td>
-                  <td class="px-3 py-2 whitespace-nowrap text-sm">q-SDH</td>
-                </tr>
-                <tr>
-                  <td class="px-3 py-2 whitespace-nowrap text-sm">Merkle</td>
-                  <td class="px-3 py-2 whitespace-nowrap text-sm">Logarithmic</td>
-                  <td class="px-3 py-2 whitespace-nowrap text-sm">No</td>
-                  <td class="px-3 py-2 whitespace-nowrap text-sm">Hash</td>
-                </tr>
-                <tr>
-                  <td class="px-3 py-2 whitespace-nowrap text-sm">FRI</td>
-                  <td class="px-3 py-2 whitespace-nowrap text-sm">Logarithmic</td>
-                  <td class="px-3 py-2 whitespace-nowrap text-sm">No</td>
-                  <td class="px-3 py-2 whitespace-nowrap text-sm">Hash</td>
-                </tr>
-              </tbody>
-            </table>
-            <p class="mt-4 text-sm text-gray-600">
-              DL = Discrete Logarithm, q-SDH = q-Strong Diffie-Hellman
-            </p>
-          </div>
-        </div>
+      <SectionHeading title="Commitment Resources" gradientPart="Resources" />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {resources.map((link) => <ResourceLink link={link} />)}
       </div>
     </section>
   </main>

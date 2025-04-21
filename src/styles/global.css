@@ -8,3 +8,10 @@
 .has-tooltip:hover .tooltip {
   @apply visible z-50;
 }
+
+.katex-display {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}

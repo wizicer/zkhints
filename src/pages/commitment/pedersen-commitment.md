@@ -1,28 +1,17 @@
-Pedersen commitment is a widely used commitment scheme based on the discrete logarithm problem. It provides perfect hiding and computational binding properties.
+**Vector Pedersen commitment**. The Pedersen commitment [9] is a binding and hiding commitment scheme for the message space $\mathbb{F}_{q}$. For a secret message $m \in \mathbb{Z}_{q}$ :
 
-**🔢 Mathematical Definition:**
+- $\operatorname{Pedersen.Setup} \left(1^{\lambda}, q\right) \rightarrow \mathrm{pp}: \mathrm{pp}=G, H \in \mathbb{G}$, where $\mathbb{G}$ is a **cryptographic group** of order $q$.
 
-$$
-\text{Commit}(m, r) = g^m \cdot h^r
-$$
+- $\operatorname{Pedersen.Commit} (\mathrm{pp} ; m) \rightarrow(C ; r): C=[m] G+[r] H$, where $r \in \mathbb{Z}_{q}$ is a random secret.
 
-Where:
+- $\operatorname{Pedersen.Open} (\mathrm{pp}, C ; m, r) \rightarrow\{0,1\}:$ the prover $\mathcal{P}$ reveals $m$ and $r$, and the verifier $\mathcal{V}$ checks $C \stackrel{?}{=}[m] G+[r] H$
 
-- $m$ is the message to commit to
-- $r$ is a random value (blinding factor)
-- $g$ and $h$ are group generators
-
-**🔄 Homomorphic Property:**
-
-One of the key features of Pedersen commitments is their homomorphic property:
+Note that the Pedersen commitment is additively homomorphic:
 
 $$
-\text{Commit}(m_1, r_1) \cdot \text{Commit}(m_2, r_2) = \text{Commit}(m_1 + m_2, r_1 + r_2)
+\begin{aligned}
+\operatorname{Commit}(m, r)+\operatorname{Commit}\left(m^{\prime}, r^{\prime}\right) & =[m] G+[r] H+\left[m^{\prime}\right] G+\left[r^{\prime}\right] H \\
+& =\left[m+m^{\prime}\right] G+\left[r+r^{\prime}\right] H \\
+& =\operatorname{Commit}\left(m+m^{\prime}, r+r^{\prime}\right) .
+\end{aligned}
 $$
-
-This property allows operations on committed values without revealing them, which is particularly useful in zero-knowledge proofs and secure multi-party computation.
-
-**🔐 Security Properties:**
-
-- **Perfect Hiding**: Even with unlimited computational power, the commitment reveals no information about the committed value.
-- **Computational Binding**: It's computationally infeasible to find two different messages that produce the same commitment, assuming the discrete logarithm problem is hard.

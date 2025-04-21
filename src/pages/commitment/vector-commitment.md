@@ -1,28 +1,15 @@
-Vector commitments allow committing to a vector of values while being able to open the commitment at specific positions. They are particularly useful in applications where you need to commit to multiple values at once.
+A vector commitment scheme for the message space $M$ is a **commitment scheme** for a vector $\vec{m}=\left(m_{1}, \ldots, m_{k}\right) \in \mathrm{M}^{k}$.
 
-**🔢 Mathematical Definition:**
+The main security property for a vector commitment is position binding:
+
+**Definition** (Position binding). A vector commitment scheme $\Gamma$ is **position binding** if for any PPT adversary $\mathcal{A}$ :
 
 $$
-\text{Commit}(\vec{m}, r) = h^r \cdot \prod_{i=1}^{n} g_i^{m_i}
+\operatorname{Pr}\left[\begin{array}{l|l}
+\text { Open }(\mathrm{pp}, C, \vec{m}, i) \rightarrow 1 \\
+\text { Open }(\mathrm{pp}, C, \vec{m^{\prime}}, i) & \mathrm{pp} \stackrel{\$}{\leftarrow} \operatorname{Setup}(1^\lambda) \\
+m \neq m^{\prime} & \mathcal{A}(\mathrm{pp}) \rightarrow(c, \vec{m}, \vec{m^{\prime}}, i)
+\end{array}\right] \leq \operatorname{negl}(\lambda)
 $$
 
-Where:
-
-- $\vec{m} = (m_1, m_2, \ldots, m_n)$ is the vector to commit to
-- $r$ is a random value (blinding factor)
-- $g_1, g_2, \ldots, g_n$ are independent group generators
-- $h$ is another independent group generator
-
-**🔍 Applications:**
-Vector commitments are used in:
-
-- Verifiable databases where you need to prove membership of elements
-- Zero-knowledge proofs for multiple values
-- Blockchain systems for committing to multiple transactions
-
-**⚡ Efficiency Considerations:**
-The main challenge with vector commitments is efficiency, especially as the vector size grows. Various optimizations exist to make vector commitments more practical:
-
-- Merkle trees for logarithmic-sized proofs
-- Polynomial commitments for batch openings
-- Specialized constructions like KZG for vectors
+Informally, this states that no adversary can open $C$ to two different values at the same position.

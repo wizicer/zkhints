@@ -1,65 +1,94 @@
-KZG (Kate-Zaverucha-Goldberg) polynomial commitments allow committing to a polynomial and later proving evaluations of that polynomial at specific points. They are widely used in modern zero-knowledge proof systems due to their efficiency and succinctness.
+**KZG (Kate-Zaverucha-Goldberg)** polynomial commitments allow committing to a polynomial and later proving evaluations of that polynomial at specific points. They are widely used in modern zero-knowledge proof systems due to their efficiency and succinctness.
 
-**🔑 Key Insight**
-The core idea behind KZG commitments is to use a bilinear pairing to verify polynomial evaluations. This allows for constant-sized proofs regardless of the polynomial degree, making them extremely efficient for large polynomials.
+Its core idea is:
 
-**🔢 Setup Phase**
+- The prover can commit to a polynomial.
+- Later, they can prove to the verifier the value of that polynomial at a specific point without revealing the underlying polynomial.
+
+This method is so useful because any content that can be encoded as a polynomial can now be easily disclosed selectively.
+
+We will use the shorthand notation $[x]_{1}:=[x] G_{1},[x]_{2}:=[x] G_{2}$, for any $x \in \mathbb{F}_{p}$.
+
+- $\operatorname{KZG.Setup} \left(1^{\lambda}, d\right) \rightarrow srs$:
+
+  set $srs =(\mathrm{ck}, \mathrm{vk})=\left(\left\{\left[\alpha^{i}\right]_{1}\right\}_{i=0}^{d-1},[\alpha]_{2}\right)$. $\alpha$ here is a secret element and must be discarded after the Setup.
+
+- $\operatorname{KZG.Commit} (\mathrm{ck} ; f(X)) \rightarrow C$:
+
+  for $f(X)=\sum_{i=0}^{n-1} f_{i} X^{i}, C=\sum_{i=0}^{n-1}\left[f_{i}\right]\left[\alpha^{i}\right]_{1}=[f(\alpha)]_{1}$.
+
+- $\operatorname{KZG.Open}(srs, C, x, y ; f(X)) \rightarrow\{0,1\}$:
+
+  To "open" the commitment at evaluation point $x$ to a claimed value $y$
+
+  1. the prover $\mathcal{P}$ computes the quotient polynomial $q(X)=\frac{f(X)-y}{X-x}$ and sends the verifier $\pi=\operatorname{KZG.Commit} (ck; q(X))=[q(\alpha)]_{1}$
+
+  2. the verifier $\mathcal{V}$ checks $e\left(C-[y]_{1}, H\right) \stackrel{?}{=} e\left(\pi,[\alpha]_{2}-[x]_{2}\right)$.
+
+  The 1 and 2 steps in $\operatorname{KZG.Open}$ are often written as two separate algorithms:
+
+  - $\operatorname{Open} (\mathrm{ck}, C, x, y ; f(X)) \rightarrow \pi$ returns an opening proof for the relation
+
+  $$
+  \mathcal{R}:=\left\{(\mathrm{ck}, C, x, y ; f(X)): \begin{array}{rl}
+  & C \operatorname{deg}(f(X)) \leq d \\
+  & \wedge y=f(x)
+  \end{array}\right\} ;
+  $$
+
+  - $\operatorname{Verify} (\mathrm{vk}, C, x, y, \pi) \rightarrow\{0,1\}$ verifies the opening proof's correctness.
+
+<details class="group w-full max-w-xl rounded-xl border border-gray-300 bg-white p-4 shadow-md transition-all open:shadow-lg open:bg-gray-50">
+  <summary class="cursor-pointer list-none text-lg font-semibold text-gray-800 flex items-center justify-between">
+    <span>
+    
+Quotient Polynomial $q(X)$
+    
+</span>
+    <svg class="ml-2 h-5 w-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2"
+         viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+    </svg>
+  </summary>
+  <div class="mt-3 text-gray-700 leading-relaxed">
+
+**Goal:**  
+Prove that $y = f(z)$ **without revealing** what $f(X)$ is.
+
+**Method:**
+
+- Since $f(z) = y$, this guarantees that $f(X) - y$ is zero at $X = z$.  
+  Therefore, $(X - z)$ is a factor of $f(X) - y$.
+
+- We divide $f(X) - y$ by $(X - z)$, and the result is a polynomial of one degree lower, denoted as $q(X)$.
+
+**Example:**
+
+Suppose $f(X) = X^2 + 2X + 1$, and we know $f(1) = 4$, i.e., $y = 4$. Then:
 
 $$
-\text{Setup}(d) \rightarrow (ck, vk)
+f(X) - y = (X^2 + 2X + 1) - 4 = X^2 + 2X - 3
 $$
 
-Where:
-
-- $d$ is the maximum degree of the polynomial
-- $ck = (g, g^{\alpha}, g^{\alpha^2}, \ldots, g^{\alpha^d})$ is the commitment key
-- $vk = g^{\alpha}$ in group G2 is the verification key
-- $\alpha$ is a secret value that must be discarded after setup (the "toxic waste")
-
-**🔢 Commit Phase**
+Now we verify that $f(X) - y$ is zero at $X = 1$:
 
 $$
-\text{Commit}(ck, f(X)) = \prod_{i=0}^{d} (g^{\alpha^i})^{f_i} = g^{f(\alpha)}
+f(1) - y = (1^2 + 2 \cdot 1 - 3) = 0
 $$
 
-Where:
+So $X = 1$ is a root of $f(X) - y$.
 
-- $f(X) = \sum_{i=0}^{d} f_i X^i$ is the polynomial
-- $f_i$ are the coefficients of the polynomial
-
-**🔢 Prove Phase**
+Therefore, we can factor $f(X) - y$ as:
 
 $$
-\text{Prove}(ck, f(X), z) \rightarrow (y, \pi)
+f(X) - y = (X - 1)(X + 3)
 $$
 
-Where:
-
-- $z$ is the evaluation point
-- $y = f(z)$ is the claimed evaluation
-- $\pi = g^{\frac{f(X) - f(z)}{X - z}}$ is the proof
-
-The key insight is that $f(X) - f(z)$ is always divisible by $X - z$ when $f(z)$ is the correct evaluation. The quotient polynomial $q(X) = \frac{f(X) - f(z)}{X - z}$ is what we commit to in the proof.
-
-**🔢 Verify Phase**
+In this case, the **quotient polynomial** is:
 
 $$
-\text{Verify}(vk, C, z, y, \pi) \rightarrow \{0, 1\}
+q(X) = X + 3
 $$
 
-The verification checks if:
-
-$$
-e(C \cdot g^{-y}, g) = e(\pi, vk \cdot g^{-z})
-$$
-
-This equation verifies that $f(z) = y$ without revealing the polynomial $f(X)$. The verification works because of the properties of bilinear pairings.
-
-**🔍 Security and Trust Assumptions**
-KZG commitments rely on:
-
-- The q-Strong Diffie-Hellman assumption
-- A trusted setup to generate the parameters
-- The security of the underlying elliptic curve and pairing
-
-The need for a trusted setup is often addressed through multi-party computation ceremonies where many participants contribute randomness to the generation of $\alpha$.
+  </div>
+</details>
