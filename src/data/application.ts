@@ -1,3 +1,4 @@
+import type { ResourceLink } from "./list";
 import privacy from "/src/assets/hinta/privacy.png";
 import scaling from "/src/assets/hinta/scaling.png";
 
@@ -120,6 +121,17 @@ export const applications: Application[] = [
     constructs: "Matrix calculation, Transformation",
     primitives: "zk-SNARKs, Commitment",
     notes: "",
+  },
+];
+
+const links: ResourceLink[] = [
+  {
+    title: "MProve-Nova: A Privacy-Preserving Proof of Reserves Protocol for Monero",
+    description:
+      "MProve-Nova is a privacy-preserving Monero proof-of-reserves protocol that uses recursive SNARKs to verify exchange solvency.",
+    link: "https://eprint.iacr.org/2025/665",
+    difficulty: "advanced",
+    category: "por",
   },
 ];
 
