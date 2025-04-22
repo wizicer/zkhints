@@ -1,7 +1,8 @@
 ---
 export interface Reference {
+  id?: string;
   title: string;
-  authors: string;
+  authors: string | string[];
   year: string;
   link: string;
 }

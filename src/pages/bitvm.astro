@@ -1,0 +1,233 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import SubsectionHeading from "../components/SubsectionHeading.astro";
+import Prose from "../components/Prose.astro";
+import { Image } from "astro:assets";
+import { Content as BitVMIntro } from "./bitvm/intro.md";
+import { Content as BitVMBasicConcepts } from "./bitvm/basic-concepts.md";
+import { Content as BitVMScriptEnhancement } from "./bitvm/script-enhancement.md";
+import { Content as BitVMImplementation } from "./bitvm/implementation.md";
+import { Content as BitVMBridge } from "./bitvm/bridge.md";
+import { Content as BitVMX } from "./bitvm/bitvmx.md";
+import { Content as BitVMScript } from "./bitvm/script.md";
+import { Content as BitVMFAQ } from "./bitvm/faq.md";
+import { Content as BitVMChallenges } from "./bitvm/challenges.md";
+import { references, resources, experts } from "../data/bitvm";
+import ResourceLink from "../components/ResourceLink.astro";
+import References from "../components/References.astro";
+import Icon from "../components/Icon.astro";
+import { marked } from "marked";
+
+// Import images
+import constructionCat1 from "../assets/construction/construction_cat_1.png";
+import arch from "../assets/bitvm/arch.png";
+import type { ResourceSection } from "../data/list";
+---
+
+<Layout id="bitvm">
+  <div
+    class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-8 flex items-start relative flex-col md:flex-row"
+  >
+    <Image
+      src={constructionCat1}
+      alt="Under Construction"
+      class="h-32 w-32 mr-4 object-contain md:absolute md:-top-12"
+    />
+    <div class="ml-0 md:ml-40">
+      <p class="text-yellow-700 font-bold">Work in progress</p>
+      <p class="text-yellow-600">More content will be added soon.</p>
+    </div>
+  </div>
+
+  <main class="container mx-auto px-4 py-8">
+    <section class="mb-10">
+      <SectionHeading title="Understanding BitVM" gradientPart="BitVM" />
+      <div class="flex flex-col md:flex-row gap-6 items-center">
+        <div class="prose max-w-none md:w-3/5">
+          <Prose>
+            <BitVMIntro />
+          </Prose>
+        </div>
+        <div class="md:w-2/5 flex justify-center">
+          <div class="p-4">
+            <div
+              class="max-w-md w-full rounded-xl border-0 bg-gray-100 backdrop-blur-sm text-black overflow-hidden shadow-xl"
+            >
+              <div class="p-6 space-y-6">
+                <p class="text-center text-gray-700">BitVM aims to solve just two problems:</p>
+                <div class="space-y-4">
+                  <div class="flex items-center gap-4 p-3 rounded-lg bg-purple-500/5">
+                    <div class="bg-purple-500/20 p-2 rounded-full">🗄️</div>
+                    <p class="text-gray-700">Ability to store state</p>
+                  </div>
+                  <div class="flex items-center gap-4 p-3 rounded-lg bg-pink-500/5">
+                    <div class="bg-pink-500/20 p-2 rounded-full">🔮</div>
+                    <p class="text-gray-700">Ability to execute arbitrary computation</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <Image
+              src={arch}
+              alt="BitVM Architecture"
+              class="mt-10 p-3 backdrop-blur-sm shadow-xl rounded-xl"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <SectionHeading title="Frequently Asked Questions" gradientPart="Questions" />
+      <div class="prose max-w-none">
+        <BitVMFAQ />
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <SectionHeading title="Domain Experts" gradientPart="Experts" />
+      <p class="text-gray-600 mb-6">
+        Recommended to follow the <a
+          href="https://t.me/bitVM_chat"
+          class="text-blue-600 hover:underline">TG group</a
+        > to see the latest intellectual exchanges between these experts.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {
+          experts.map((expert) => (
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+              <div class="p-6">
+                <div class="flex justify-between items-start">
+                  <div>
+                    <h3 class="text-xl font-bold text-gray-800">{expert.name}</h3>
+                    <p class="text-sm text-purple-600 font-medium">{expert.role}</p>
+                  </div>
+                  <div class="flex space-x-2">
+                    {Object.entries(expert.links).map(([type, url]) => {
+                      if (!url) return null;
+
+                      const iconColors = {
+                        twitter: "text-blue-400 hover:text-blue-600",
+                        github: "text-gray-700 hover:text-gray-900",
+                        youtube: "text-red-600 hover:text-red-700",
+                        website: "text-green-600 hover:text-green-700",
+                      };
+
+                      return (
+                        <a
+                          href={url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class={
+                            iconColors[type as keyof typeof iconColors] ||
+                            "text-blue-500 hover:text-blue-700"
+                          }
+                        >
+                          <span class="sr-only">
+                            {type.charAt(0).toUpperCase() + type.slice(1)}
+                          </span>
+                          <Icon name={type} class="h-5 w-5" />
+                        </a>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                <div class="mt-4">
+                  <div class="mb-3">
+                    <h4 class="text-sm font-semibold text-gray-500">Contribution</h4>
+                    <div
+                      class="text-gray-700 prose prose-sm"
+                      set:html={marked.parse(expert.contribution)}
+                    />
+                  </div>
+                  <div>
+                    <h4 class="text-sm font-semibold text-gray-500">Background</h4>
+                    <div
+                      class="text-gray-700 prose prose-sm"
+                      set:html={marked.parse(expert.background)}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <SectionHeading title="Challenges" gradientPart="Challenges" />
+      <div class="prose max-w-none">
+        <BitVMChallenges />
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <SectionHeading title="Basic Concepts" gradientPart="Concepts" />
+      <div class="prose max-w-none">
+        <BitVMBasicConcepts />
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <SectionHeading title="Bitcoin Script Enhancement" gradientPart="Script Enhancement" />
+      <div class="prose max-w-none">
+        <BitVMScriptEnhancement />
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <SectionHeading title="BitVM" gradientPart="BitVM" />
+      <div class="prose max-w-none">
+        <BitVMImplementation />
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <SectionHeading title="Cross-chain Bridge" gradientPart="Bridge" />
+      <div class="prose max-w-none">
+        <BitVMBridge />
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <SectionHeading title="BitVMX" gradientPart="BitVMX" />
+      <div class="prose max-w-none">
+        <BitVMX />
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <SectionHeading title="Script" gradientPart="Script" />
+      <div class="prose max-w-none">
+        <BitVMScript />
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <SectionHeading title="BitVM Resources" gradientPart="Resources" />
+      {
+        resources.map((section: ResourceSection) => (
+          <div>
+            <SubsectionHeading title={section.emoji + section.title} />
+
+            {section.description && <p class="text-gray-600 mb-4">{section.description}</p>}
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {section.links.map((link) => (
+                <ResourceLink link={link} />
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </section>
+  </main>
+
+  <div class="container mx-auto px-4 py-8 max-w-6xl">
+    <References references={references} />
+  </div>
+</Layout>
