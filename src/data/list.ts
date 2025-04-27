@@ -12,6 +12,7 @@ export interface ResourceLink {
   author?: string;
   difficulty?: "beginner" | "intermediate" | "advanced";
   related?: { title: string; link: string; short: string }[];
+  category?: string;
 }
 
 export interface EventLink {

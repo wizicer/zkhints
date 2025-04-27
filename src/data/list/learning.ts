@@ -103,6 +103,12 @@ export const learning: Resource = {
           link: "https://www.youtube.com/watch?v=OWTMrlZW7oc",
           difficulty: "advanced",
         },
+        {
+          title: "Zero-Knowledge Proofs Explained in 3 Examples",
+          description: "A simple explanation of zero-knowledge proofs in 3 examples.",
+          link: "https://www.circularise.com/blogs/zero-knowledge-proofs-explained-in-3-examples",
+          difficulty: "beginner",
+        },
       ],
     },
     {

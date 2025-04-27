@@ -133,6 +133,21 @@ const links: ResourceLink[] = [
     difficulty: "advanced",
     category: "por",
   },
+  {
+    title:
+      "SAVER: SNARK-friendly, Additively-homomorphic, and Verifiable Encryption and decryption with Rerandomization",
+    description:
+      "SAVER is a SNARK-friendly, additively-homomorphic, and verifiable encryption and decryption with rerandomization.",
+    link: "https://eprint.iacr.org/2019/1270",
+    difficulty: "advanced",
+    category: "encryption",
+    seriesLinks: [
+      {
+        title: "Source Code",
+        link: "https://github.com/jiwonlee-dev/SAVER",
+      },
+    ],
+  },
 ];
 
 const privacyApplications: ApplicationType[] = [

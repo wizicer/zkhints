@@ -26,6 +26,13 @@ export const discovery: Resource = {
               dateDescription: "April 1, 2025",
             },
             {
+              title: "zkVM Hacker House 2025",
+              link: "https://coset.notion.site/zkVM-Hacker-House-Suzhou-April-2025-1b928ff043c8805c95eaf3143495820b",
+              location: "Suzhou, China",
+              outdated: "2025-04-27",
+              dateDescription: "April 14 - 27, 2025",
+            },
+            {
               title: "zkSummit13",
               link: "https://www.zksummit.com/",
               recommended: true,
@@ -167,6 +174,11 @@ export const discovery: Resource = {
           description: "A curated list of awesome stwo resources.",
           link: "https://github.com/keep-starknet-strange/awesome-stwo",
         },
+        {
+          title: "Xor0v0's Awesome Zero Knowledge Proofs Security",
+          description: "A curated list of awesome zero-knowledge proofs security resources.",
+          link: "https://github.com/Xor0v0/awesome-zero-knowledge-proofs-security",
+        },
       ],
     },
     {
@@ -197,6 +209,11 @@ export const discovery: Resource = {
               description: "Weekly zkNews about ZK.",
               link: "https://insights.zkpunk.pro/",
             },
+            {
+              title: "The State of ZK",
+              description: "Quarterly insights on ZK developments.",
+              link: "https://zkv.xyz/the-state-of-zk/",
+            },
           ],
         },
         {
@@ -209,6 +226,17 @@ export const discovery: Resource = {
               title: "Zero Knowledge Podcast",
               description: "Weekly podcast exploring ZK research and applications.",
               link: "https://www.zeroknowledge.fm/",
+            },
+            {
+              title: "Coset",
+              description:
+                "Coset (a.k.a Antalpha Labs) is a Web3 developer community dedicated to push the boundaries of crypto space.",
+              link: "https://coset.notion.site/",
+            },
+            {
+              title: "Cysic",
+              description: "Cysic team's blog: ZK Proof Layer.",
+              link: "https://hackmd.io/@Cysic",
             },
           ],
         },
