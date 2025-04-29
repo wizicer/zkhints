@@ -127,6 +127,7 @@ export const applications: Application[] = [
 const links: ResourceLink[] = [
   {
     title: "MProve-Nova: A Privacy-Preserving Proof of Reserves Protocol for Monero",
+    short: "MProve-Nova",
     description:
       "MProve-Nova is a privacy-preserving Monero proof-of-reserves protocol that uses recursive SNARKs to verify exchange solvency.",
     link: "https://eprint.iacr.org/2025/665",
@@ -136,6 +137,7 @@ const links: ResourceLink[] = [
   {
     title:
       "SAVER: SNARK-friendly, Additively-homomorphic, and Verifiable Encryption and decryption with Rerandomization",
+    short: "SAVER",
     description:
       "SAVER is a SNARK-friendly, additively-homomorphic, and verifiable encryption and decryption with rerandomization.",
     link: "https://eprint.iacr.org/2019/1270",
@@ -145,6 +147,10 @@ const links: ResourceLink[] = [
       {
         title: "Source Code",
         link: "https://github.com/jiwonlee-dev/SAVER",
+      },
+      {
+        title: "Video",
+        link: "https://www.youtube.com/watch?v=kiZIJ9ojc3U",
       },
     ],
   },

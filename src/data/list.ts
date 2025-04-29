@@ -3,6 +3,7 @@ import { learning } from "./list/learning";
 
 export interface ResourceLink {
   title: string;
+  short?: string;
   description: string;
   link: string;
   recommended?: boolean;
