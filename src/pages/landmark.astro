@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { papers, contributions, references } from "../data/paper";
+import { papers, contributions, references } from "../data/landmark";
 import { Image } from "astro:assets";
 import References from "../components/References.astro";
 import PaperDrawing from "../components/PaperDrawing.astro";
@@ -61,7 +61,7 @@ const imageMap = {
 const sortedPapers = [...papers].sort((a, b) => parseInt(a.year) - parseInt(b.year));
 ---
 
-<Layout id="paper">
+<Layout id="landmark">
   <div class="container mx-auto px-4 py-8 max-w-6xl">
     <div class="space-y-8">
       {

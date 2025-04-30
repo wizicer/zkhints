@@ -170,11 +170,11 @@ export const sections: Section[] = [
     title: "Foundations & Future",
     items: [
       {
-        id: "paper",
+        id: "landmark",
         title: "Landmark Papers",
         description: "Essential academic papers in zero-knowledge research",
         image: paper,
-        sourceFile: "src/data/paper.ts",
+        sourceFile: "src/data/landmark.ts",
       },
       {
         id: "research",
