@@ -116,3 +116,43 @@ Resources can have the following properties:
 - `author`: Optional - Content creator
 - `related`: Optional - Related resources
 - `category`: Optional - Additional categorization
+
+## Paper Resources
+
+[src/data/list/paper.ts]
+
+Academic papers and research content:
+
+### SNARK Frontend & Protocol
+
+[src/data/list/paper/frontend.ts]
+
+- Domain-Specific Languages
+- SNARK Primitives
+- Privacy Applications
+- Scaling Applications
+
+### Backend & Proving System
+
+[src/data/list/paper/backend.ts]
+
+- Proving Schemes
+- Proof Optimization Techniques
+- zkVM
+- Primitives
+
+### Cryptography & Theory
+
+[src/data/list/paper/cryptography.ts]
+
+- Pairing-Based Cryptography
+- Algebraic Foundations
+- Indistinguishability Obfuscation
+
+### Analysis & Literature
+
+[src/data/list/paper/analysis.ts]
+
+- Survey & SoK
+- Benchmark
+- Security

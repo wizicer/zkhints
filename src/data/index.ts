@@ -117,6 +117,14 @@ export const sections: Section[] = [
         image: discovery,
         sourceFile: "src/data/list/discovery.ts",
       },
+      {
+        id: "paper",
+        title: "Research Papers",
+        construction: true,
+        description: "Current research papers in zero-knowledge proofs",
+        image: research,
+        sourceFile: "src/data/list/paper.ts",
+      },
     ],
   },
   {
@@ -175,13 +183,6 @@ export const sections: Section[] = [
         description: "Essential academic papers in zero-knowledge research",
         image: paper,
         sourceFile: "src/data/landmark.ts",
-      },
-      {
-        id: "research",
-        title: "Research Directions",
-        construction: true,
-        description: "Current research directions in zero-knowledge proofs",
-        image: research,
       },
       {
         id: "glossary",

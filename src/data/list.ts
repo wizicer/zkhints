@@ -1,5 +1,6 @@
 import { discovery } from "./list/discovery";
 import { learning } from "./list/learning";
+import { paper } from "./list/paper";
 
 export interface ResourceLink {
   title: string;
@@ -40,4 +41,4 @@ export interface Resource {
   sections: ResourceSection[];
 }
 
-export const resourceList: Resource[] = [discovery, learning];
+export const resourceList: Resource[] = [discovery, learning, paper];
