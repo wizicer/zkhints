@@ -16,5 +16,10 @@ export const cheatsheet: ResourceSection = {
       description: "A ZK-focused programming language designed for writing private applications.",
       link: "https://developer.aleo.org/leo/",
     },
+    {
+      title: "ProofLab.dev",
+      description: "Comprehensive, up-to-date reports and benchmarks for zkVM.",
+      link: "https://prooflab.dev/",
+    },
   ],
 };
