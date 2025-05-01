@@ -7,6 +7,7 @@ import { Image } from "astro:assets";
 import reportErrorIcon from "../assets/icons/report-error.svg";
 import editPageIcon from "../assets/icons/edit-page.svg";
 import DuplicateDetector from "../components/DuplicateDetector.astro";
+import GoogleAnalytics from "../components/GoogleAnalytics.astro";
 
 interface Props {
   title?: string;
@@ -80,6 +81,7 @@ const sectionTitle = sections
         font-size: 1.1em;
       }
     </style>
+    <GoogleAnalytics />
   </head>
   <body class="font-sans text-gray-800 leading-relaxed bg-gray-50">
     <Header />
