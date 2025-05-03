@@ -12,11 +12,24 @@ export const curves = [
     family: "BN",
     security_bits: 100,
     field_size: 254,
+    fields: {
+      q: {
+        number: "21888242871839275222246405745257275088696311157297823662689037894645226208583",
+        hex: "",
+        explain: "",
+      },
+      r: {
+        number: "21888242871839275222246405745257275088548364400416034343698204186575808495617",
+        explain: "",
+      },
+    },
+    equation: "y^2 = x^3 + 3",
     pairing_friendly: true,
     in_circuit_friendly: false,
     partners: ["baby_jubjub"],
     used_in: ["ZoKrates", "SnarkJS", "Ethereum (alt_bn128 precompile)"],
     performance: "very_fast",
+    links: ["https://eips.ethereum.org/EIPS/eip-196"],
     notes: "Legacy curve with fast proving time. Known as alt_bn128 in Ethereum precompiles.",
   },
   {
@@ -25,11 +38,25 @@ export const curves = [
     family: "BLS12",
     security_bits: 128,
     field_size: 381,
+    fields: {
+      q: {
+        number: "",
+        hex: "0x1a0111ea397fe69a4b1ba7b6434bacd764774b84f38512bf6730d2a0f6b0f6241eabfffeb153ffffb9feffffffffaaab",
+        explain: "\frac{1}{3}({\tt x}-1)^2({\tt x}^4-{\tt x}^2+1)+{\tt x}",
+      },
+      r: {
+        number: "",
+        hex: "0x73eda753299d7d483339d80809a1d80553bda402fffe5bfeffffffff00000001",
+        explain: "({\tt x}^4-{\tt x}^2+1)",
+      },
+    },
+    equation: "y^2 = x^3 + 4",
     pairing_friendly: true,
     in_circuit_friendly: false,
     partners: ["jubjub"],
     used_in: ["Ethereum 2.0", "Halo2", "Arkworks", "Zcash"],
     performance: "balanced",
+    links: ["https://hackmd.io/@benjaminion/bls12-381"],
     notes: "Modern widely-used pairing curve, often used with Jubjub for in-circuit operations.",
   },
   {
@@ -106,6 +133,17 @@ export const curves = [
     family: "Twisted Edwards",
     security_bits: 128,
     field_size: 254,
+    fields: {
+      q: {
+        number: "21888242871839275222246405745257275088548364400416034343698204186575808495617",
+        explain: "scalar field of BN254",
+      },
+      r: {
+        number: "2736030358979909402780800718157159386076813972158567259200215660948447373041",
+        explain: "",
+      },
+    },
+    equation: "168700 x^2 + y^2 = 1 + 168696 x^2 y^2",
     pairing_friendly: false,
     in_circuit_friendly: true,
     partners: ["bn254"],
@@ -141,6 +179,27 @@ export const curves = [
     performance: "very_fast",
     links: ["https://github.com/Plonky3/Plonky3/blob/main/baby-bear/src/baby_bear.rs"],
     notes: "The prime field 2^31 - 2^27 + 1, a.k.a. the Baby Bear field.",
+  },
+  {
+    id: "goldilocks",
+    name: "Goldilocks",
+    family: "Prime Field",
+    security_bits: null,
+    field_size: 32,
+    fields: {
+      p: {
+        number: "18446744069414584321",
+        hex: "0xffffffff00000001",
+        explain: "p=2^{64} - 2^{32} + 1",
+      },
+    },
+    pairing_friendly: true,
+    in_circuit_friendly: false,
+    partners: [],
+    used_in: ["Plonky2", "Plonky3"],
+    performance: "very_fast",
+    links: ["https://xn--2-umb.com/22/goldilocks/"],
+    notes: "",
   },
 ];
 
