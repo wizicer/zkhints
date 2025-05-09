@@ -1,0 +1,2 @@
+- 🔗 Copy constraints bind two cells together, ensuring their values must be the same
+- ⚡ These are the most efficient constraints. We can use them as much as we want

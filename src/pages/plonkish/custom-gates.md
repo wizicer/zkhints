@@ -1,0 +1,4 @@
+- ✨ Custom gates are expressions that constrain multiple cells
+- 🔘 Selectors are essentially fixed constant columns. They are boolean, used to enable or disable gates
+- 🔄 We can reference cells from the previous row, next row, but max to 7 in halo2.
+- 📝 In our examples, we use `b[1]` to represent the next row
