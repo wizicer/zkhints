@@ -44,6 +44,7 @@
   - [ ] https://thelatticeclub.com/
 - [ ] 连载中
   - [ ] Hash-Based Signature Schemes https://cryptography101.ca/hash-based-signature-schemes/
+- [ ] https://github.com/bkomuves/hash-circuits
 
 ## Topic (Cheatsheet)
 
