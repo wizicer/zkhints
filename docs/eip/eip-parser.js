@@ -25,6 +25,7 @@ const keywords = [
   "signature",
   "verkle",
   "poseidon",
+  "trustless",
 ];
 
 // Specific EIP IDs to include regardless of title
@@ -144,7 +145,7 @@ function parseEIPMarkdown(filePath) {
         // Add the EIP to our array
         eips.push({
           id: parseInt(id),
-          title,
+          title: title.replaceAll("\\", ""),
           status: sectionTitle,
           authors,
         });

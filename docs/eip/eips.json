@@ -68,7 +68,7 @@
   },
   {
     "id": 5,
-    "title": "Gas Usage for \\`RETURN\\` and \\`CALL\\*\\`",
+    "title": "Gas Usage for `RETURN` and `CALL*`",
     "status": "Final",
     "authors": [
       {
@@ -223,7 +223,7 @@
   },
   {
     "id": 152,
-    "title": "Add BLAKE2 compression function \\`F\\` precompile",
+    "title": "Add BLAKE2 compression function `F` precompile",
     "status": "Final",
     "authors": [
       {
@@ -519,7 +519,7 @@
   },
   {
     "id": 234,
-    "title": "Add \\`blockHash\\` to JSON-RPC filter options.",
+    "title": "Add `blockHash` to JSON-RPC filter options.",
     "status": "Final",
     "authors": [
       {
@@ -681,7 +681,7 @@
   },
   {
     "id": 695,
-    "title": "Create \\`eth_chainId\\` method for JSON-RPC",
+    "title": "Create `eth_chainId` method for JSON-RPC",
     "status": "Final",
     "authors": [
       {
@@ -1249,7 +1249,7 @@
   },
   {
     "id": 1898,
-    "title": "Add \\`blockHash\\` to defaultBlock methods",
+    "title": "Add `blockHash` to defaultBlock methods",
     "status": "Final",
     "authors": [
       {
@@ -1517,6 +1517,33 @@
     ]
   },
   {
+    "id": 2537,
+    "title": "Precompile for BLS12-381 curve operations",
+    "status": "Final",
+    "authors": [
+      {
+        "name": "Alex Vlasov",
+        "nick": "shamatar",
+        "url": "https://github.com/shamatar"
+      },
+      {
+        "name": "Kelly Olson",
+        "nick": "ineffectualproperty",
+        "url": "https://github.com/ineffectualproperty"
+      },
+      {
+        "name": "Alex Stokes",
+        "nick": "ralexstokes",
+        "url": "https://github.com/ralexstokes"
+      },
+      {
+        "name": "Antonio Sanso",
+        "nick": "asanso",
+        "url": "https://github.com/asanso"
+      }
+    ]
+  },
+  {
     "id": 2565,
     "title": "ModExp Gas Cost",
     "status": "Final",
@@ -1611,7 +1638,7 @@
   },
   {
     "id": 2696,
-    "title": "JavaScript \\`request\\` method RPC transport",
+    "title": "JavaScript `request` method RPC transport",
     "status": "Final",
     "authors": [
       {
@@ -1748,6 +1775,53 @@
         "name": "Martin Swende",
         "nick": "holiman",
         "url": "https://github.com/holiman"
+      }
+    ]
+  },
+  {
+    "id": 2935,
+    "title": "Serve historical block hashes from state",
+    "status": "Final",
+    "authors": [
+      {
+        "name": "Vitalik Buterin",
+        "nick": "vbuterin",
+        "url": "https://github.com/vbuterin"
+      },
+      {
+        "name": "Tomasz Stanczak",
+        "nick": "tkstanczak",
+        "url": "https://github.com/tkstanczak"
+      },
+      {
+        "name": "Guillaume Ballet",
+        "nick": "gballet",
+        "url": "https://github.com/gballet"
+      },
+      {
+        "name": "Gajinder Singh",
+        "nick": "g11tech",
+        "url": "https://github.com/g11tech"
+      },
+      {
+        "name": "Tanishq Jasoria",
+        "nick": "tanishqjasoria",
+        "url": "https://github.com/tanishqjasoria"
+      },
+      {
+        "name": "Ignacio Hagopian",
+        "nick": "jsign",
+        "url": "https://github.com/jsign"
+      },
+      {
+        "name": "Jochem Brouwer",
+        "nick": "jochem-brouwer",
+        "url": "https://github.com/jochem-brouwer"
+      },
+      {
+        "name": "Sina Mahmoodi",
+        "nick": "s1na",
+        "url": "https://github.com/s1na"
       }
     ]
   },
@@ -2168,6 +2242,38 @@
         "name": "Thomas Jay Rush",
         "nick": "tjayrush",
         "url": "https://github.com/tjayrush"
+      }
+    ]
+  },
+  {
+    "id": 4361,
+    "title": "Sign-In with Ethereum",
+    "status": "Final",
+    "authors": [
+      {
+        "name": "Wayne Chang",
+        "nick": "wyc",
+        "url": "https://github.com/wyc"
+      },
+      {
+        "name": "Gregory Rocco",
+        "nick": "obstropolos",
+        "url": "https://github.com/obstropolos"
+      },
+      {
+        "name": "Brantly Millegan",
+        "nick": "brantlymillegan",
+        "url": "https://github.com/brantlymillegan"
+      },
+      {
+        "name": "Nick Johnson",
+        "nick": "Arachnid",
+        "url": "https://github.com/Arachnid"
+      },
+      {
+        "name": "Oliver Terbu",
+        "nick": "awoie",
+        "url": "https://github.com/awoie"
       }
     ]
   },
@@ -2732,7 +2838,7 @@
     "status": "Final",
     "authors": [
       {
-        "name": "IronMan_CH",
+        "name": "IronMan\\_CH",
         "nick": "coderfengyun",
         "url": "https://github.com/coderfengyun"
       }
@@ -3050,7 +3156,7 @@
   },
   {
     "id": 5749,
-    "title": "The 'window\\.evmproviders' object",
+    "title": "The 'window.evmproviders' object",
     "status": "Final",
     "authors": [
       {
@@ -3113,6 +3219,77 @@
         "name": "Jan Turk",
         "nick": "ThunderDeliverer",
         "url": "https://github.com/ThunderDeliverer"
+      }
+    ]
+  },
+  {
+    "id": 5792,
+    "title": "Wallet Call API",
+    "status": "Final",
+    "authors": [
+      {
+        "name": "Moody Salem",
+        "nick": "moodysalem",
+        "url": "https://github.com/moodysalem"
+      },
+      {
+        "name": "Lukas Rosario",
+        "nick": "lukasrosario",
+        "url": "https://github.com/lukasrosario"
+      },
+      {
+        "name": "Wilson Cusack",
+        "nick": "wilsoncusack",
+        "url": "https://github.com/wilsoncusack"
+      },
+      {
+        "name": "Dror Tirosh",
+        "nick": "drortirosh",
+        "url": "https://github.com/drortirosh"
+      },
+      {
+        "name": "Jake Moxey",
+        "nick": "jxom",
+        "url": "https://github.com/jxom"
+      },
+      {
+        "name": "Derek Rein",
+        "nick": "arein",
+        "url": "https://github.com/arein"
+      },
+      {
+        "name": "Alex Forshtat",
+        "nick": "forshtat",
+        "url": "https://github.com/forshtat"
+      },
+      {
+        "name": "Sam Wilson (@SamWilsn)",
+        "email": "sam@binarycake.ca"
+      },
+      {
+        "name": "Borislav Itskov",
+        "nick": "Oxbobby",
+        "url": "https://github.com/Oxbobby"
+      },
+      {
+        "name": "Joao Tavares",
+        "nick": "cryptotavares",
+        "url": "https://github.com/cryptotavares"
+      },
+      {
+        "name": "Adam Fuller",
+        "nick": "azf20",
+        "url": "https://github.com/azf20"
+      },
+      {
+        "name": "Philip Liao",
+        "nick": "phil-ociraptor",
+        "url": "https://github.com/phil-ociraptor"
+      },
+      {
+        "name": "bumblefudge",
+        "nick": "bumblefudge",
+        "url": "https://github.com/bumblefudge"
       }
     ]
   },
@@ -3185,6 +3362,28 @@
     ]
   },
   {
+    "id": 6093,
+    "title": "Custom errors for commonly-used tokens",
+    "status": "Final",
+    "authors": [
+      {
+        "name": "Ernesto García",
+        "nick": "ernestognw",
+        "url": "https://github.com/ernestognw"
+      },
+      {
+        "name": "Francisco Giordano",
+        "nick": "frangio",
+        "url": "https://github.com/frangio"
+      },
+      {
+        "name": "Hadrien Croubois",
+        "nick": "Amxx",
+        "url": "https://github.com/Amxx"
+      }
+    ]
+  },
+  {
     "id": 6105,
     "title": "No Intermediary NFT Trading Protocol",
     "status": "Final",
@@ -3210,6 +3409,28 @@
       },
       {
         "name": "Wizard Wang"
+      }
+    ]
+  },
+  {
+    "id": 6110,
+    "title": "Supply validator deposits on chain",
+    "status": "Final",
+    "authors": [
+      {
+        "name": "Mikhail Kalinin",
+        "nick": "mkalinin",
+        "url": "https://github.com/mkalinin"
+      },
+      {
+        "name": "Danny Ryan",
+        "nick": "djrtwo",
+        "url": "https://github.com/djrtwo"
+      },
+      {
+        "name": "Peter Davies",
+        "nick": "petertdavies",
+        "url": "https://github.com/petertdavies"
       }
     ]
   },
@@ -3519,6 +3740,70 @@
     ]
   },
   {
+    "id": 6909,
+    "title": "Minimal Multi-Token Interface",
+    "status": "Final",
+    "authors": [
+      {
+        "name": "JT Riley",
+        "nick": "jtriley2p",
+        "url": "https://github.com/jtriley2p"
+      },
+      {
+        "name": "Dillon",
+        "nick": "d1ll0n",
+        "url": "https://github.com/d1ll0n"
+      },
+      {
+        "name": "Sara",
+        "nick": "snreynolds",
+        "url": "https://github.com/snreynolds"
+      },
+      {
+        "name": "Vectorized",
+        "nick": "Vectorized",
+        "url": "https://github.com/Vectorized"
+      },
+      {
+        "name": "Neodaoist",
+        "nick": "neodaoist",
+        "url": "https://github.com/neodaoist"
+      }
+    ]
+  },
+  {
+    "id": 6916,
+    "title": "Automatically Reset Testnet",
+    "status": "Final",
+    "authors": [
+      {
+        "name": "Mário Havel",
+        "nick": "taxmeifyoucan",
+        "url": "https://github.com/taxmeifyoucan"
+      },
+      {
+        "name": "pk910",
+        "nick": "pk910",
+        "url": "https://github.com/pk910"
+      },
+      {
+        "name": "Rémy Roy",
+        "nick": "remyroy",
+        "url": "https://github.com/remyroy"
+      },
+      {
+        "name": "Holly Atkinson",
+        "nick": "atkinsonholly",
+        "url": "https://github.com/atkinsonholly"
+      },
+      {
+        "name": "Tereza Burianova",
+        "nick": "T-ess",
+        "url": "https://github.com/T-ess"
+      }
+    ]
+  },
+  {
     "id": 6953,
     "title": "Network Upgrade Activation Triggers",
     "status": "Final",
@@ -3601,6 +3886,43 @@
         "name": "Alexe Spataru",
         "nick": "urataps",
         "url": "https://github.com/urataps"
+      }
+    ]
+  },
+  {
+    "id": 7002,
+    "title": "Execution layer triggerable withdrawals",
+    "status": "Final",
+    "authors": [
+      {
+        "name": "Danny Ryan",
+        "nick": "djrtwo",
+        "url": "https://github.com/djrtwo"
+      },
+      {
+        "name": "Mikhail Kalinin",
+        "nick": "mkalinin",
+        "url": "https://github.com/mkalinin"
+      },
+      {
+        "name": "Ansgar Dietrichs",
+        "nick": "adietrichs",
+        "url": "https://github.com/adietrichs"
+      },
+      {
+        "name": "Hsiao-Wei Wang",
+        "nick": "hwwhww",
+        "url": "https://github.com/hwwhww"
+      },
+      {
+        "name": "lightclient",
+        "nick": "lightclient",
+        "url": "https://github.com/lightclient"
+      },
+      {
+        "name": "Felix Lange",
+        "nick": "fjl",
+        "url": "https://github.com/fjl"
       }
     ]
   },
@@ -3830,6 +4152,53 @@
     ]
   },
   {
+    "id": 7251,
+    "title": "Increase the MAX_EFFECTIVE_BALANCE",
+    "status": "Final",
+    "authors": [
+      {
+        "name": "mike",
+        "nick": "michaelneuder",
+        "url": "https://github.com/michaelneuder"
+      },
+      {
+        "name": "Francesco",
+        "nick": "fradamt",
+        "url": "https://github.com/fradamt"
+      },
+      {
+        "name": "dapplion",
+        "nick": "dapplion",
+        "url": "https://github.com/dapplion"
+      },
+      {
+        "name": "Mikhail",
+        "nick": "mkalinin",
+        "url": "https://github.com/mkalinin"
+      },
+      {
+        "name": "Aditya",
+        "nick": "adiasg",
+        "url": "https://github.com/adiasg"
+      },
+      {
+        "name": "Justin",
+        "nick": "justindrake",
+        "url": "https://github.com/justindrake"
+      },
+      {
+        "name": "lightclient",
+        "nick": "lightclient",
+        "url": "https://github.com/lightclient"
+      },
+      {
+        "name": "Felix Lange",
+        "nick": "fjl",
+        "url": "https://github.com/fjl"
+      }
+    ]
+  },
+  {
     "id": 7329,
     "title": "ERC/EIP Repository split",
     "status": "Final",
@@ -4037,6 +4406,23 @@
     ]
   },
   {
+    "id": 7549,
+    "title": "Move committee index outside Attestation",
+    "status": "Final",
+    "authors": [
+      {
+        "name": "dapplion",
+        "nick": "dapplion",
+        "url": "https://github.com/dapplion"
+      },
+      {
+        "name": "Mikhail Kalinin",
+        "nick": "mkalinin",
+        "url": "https://github.com/mkalinin"
+      }
+    ]
+  },
+  {
     "id": 7568,
     "title": "Hardfork Meta Backfill - Berlin to Shapella",
     "status": "Final",
@@ -4172,14 +4558,164 @@
     ]
   },
   {
-    "id": 7636,
-    "title": "Extension of EIP-778 for \"client\" ENR Entry",
+    "id": 7600,
+    "title": "Hardfork Meta - Pectra",
     "status": "Final",
     "authors": [
       {
-        "name": "James Kempton",
-        "nick": "JKincorperated",
-        "url": "https://github.com/JKincorperated"
+        "name": "Tim Beiko",
+        "nick": "timbeiko",
+        "url": "https://github.com/timbeiko"
+      }
+    ]
+  },
+  {
+    "id": 7623,
+    "title": "Increase calldata cost",
+    "status": "Final",
+    "authors": [
+      {
+        "name": "Toni Wahrstätter",
+        "nick": "nerolation",
+        "url": "https://github.com/nerolation"
+      },
+      {
+        "name": "Vitalik Buterin",
+        "nick": "vbuterin",
+        "url": "https://github.com/vbuterin"
+      }
+    ]
+  },
+  {
+    "id": 7631,
+    "title": "Dual Nature Token Pair",
+    "status": "Final",
+    "authors": [
+      {
+        "name": "vectorized",
+        "nick": "vectorized",
+        "url": "https://github.com/vectorized"
+      },
+      {
+        "name": "Thomas",
+        "nick": "0xth0mas",
+        "url": "https://github.com/0xth0mas"
+      },
+      {
+        "name": "Quit",
+        "nick": "quitcrypto",
+        "url": "https://github.com/quitcrypto"
+      },
+      {
+        "name": "Michael Amadi",
+        "nick": "AmadiMichael",
+        "url": "https://github.com/AmadiMichael"
+      },
+      {
+        "name": "cygaar",
+        "nick": "cygaar",
+        "url": "https://github.com/cygaar"
+      },
+      {
+        "name": "Harrison",
+        "nick": "pop-punk",
+        "url": "https://github.com/pop-punk"
+      }
+    ]
+  },
+  {
+    "id": 7642,
+    "title": "eth/69 - history expiry and simpler receipts",
+    "status": "Final",
+    "authors": [
+      {
+        "name": "Marius van der Wijden",
+        "nick": "MariusVanDerWijden",
+        "url": "https://github.com/MariusVanDerWijden"
+      },
+      {
+        "name": "Felix Lange",
+        "email": "fjl@ethereum.org"
+      },
+      {
+        "name": "Ahmad Bitar (@smartprogrammer93)",
+        "email": "smartprogrammer@windowslive.com"
+      }
+    ]
+  },
+  {
+    "id": 7685,
+    "title": "General purpose execution layer requests",
+    "status": "Final",
+    "authors": [
+      {
+        "name": "lightclient",
+        "nick": "lightclient",
+        "url": "https://github.com/lightclient"
+      },
+      {
+        "name": "Felix Lange",
+        "nick": "fjl",
+        "url": "https://github.com/fjl"
+      }
+    ]
+  },
+  {
+    "id": 7691,
+    "title": "Blob throughput increase",
+    "status": "Final",
+    "authors": [
+      {
+        "name": "Parithosh Jayanthi",
+        "nick": "parithosh",
+        "url": "https://github.com/parithosh"
+      },
+      {
+        "name": "Toni Wahrstätter",
+        "nick": "nerolation",
+        "url": "https://github.com/nerolation"
+      },
+      {
+        "name": "Sam Calder-Mason",
+        "nick": "samcm",
+        "url": "https://github.com/samcm"
+      },
+      {
+        "name": "Andrew Davis",
+        "nick": "savid",
+        "url": "https://github.com/savid"
+      },
+      {
+        "name": "Ansgar Dietrichs",
+        "nick": "adietrichs",
+        "url": "https://github.com/adietrichs"
+      }
+    ]
+  },
+  {
+    "id": 7702,
+    "title": "Set Code for EOAs",
+    "status": "Final",
+    "authors": [
+      {
+        "name": "Vitalik Buterin",
+        "nick": "vbuterin",
+        "url": "https://github.com/vbuterin"
+      },
+      {
+        "name": "Sam Wilson",
+        "nick": "SamWilsn",
+        "url": "https://github.com/SamWilsn"
+      },
+      {
+        "name": "Ansgar Dietrichs",
+        "nick": "adietrichs",
+        "url": "https://github.com/adietrichs"
+      },
+      {
+        "name": "lightclient",
+        "nick": "lightclient",
+        "url": "https://github.com/lightclient"
       }
     ]
   },
@@ -4191,6 +4727,17 @@
       {
         "name": "Anushka Yadav (@64anushka)",
         "email": "64anushka@gmail.com"
+      }
+    ]
+  },
+  {
+    "id": 7743,
+    "title": "Multi-Owner Non-Fungible Tokens (MO-NFT)",
+    "status": "Final",
+    "authors": [
+      {
+        "name": "Cheng Qian (@jamesavechives)",
+        "email": "james.walstonn@gmail.com"
       }
     ]
   },
@@ -4260,6 +4807,68 @@
     ]
   },
   {
+    "id": 7837,
+    "title": "Diffusive Tokens",
+    "status": "Final",
+    "authors": [
+      {
+        "name": "Cheng Qian (@jamesavechives)",
+        "email": "james.walstonn@gmail.com"
+      }
+    ]
+  },
+  {
+    "id": 7840,
+    "title": "Add blob schedule to EL config files",
+    "status": "Final",
+    "authors": [
+      {
+        "name": "lightclient",
+        "nick": "lightclient",
+        "url": "https://github.com/lightclient"
+      }
+    ]
+  },
+  {
+    "id": 7858,
+    "title": "Expirable NFTs and SBTs",
+    "status": "Final",
+    "authors": [
+      {
+        "name": "sirawt",
+        "nick": "MASDXI",
+        "url": "https://github.com/MASDXI"
+      },
+      {
+        "name": "ADISAKBOONMARK",
+        "nick": "ADISAKBOONMARK",
+        "url": "https://github.com/ADISAKBOONMARK"
+      },
+      {
+        "name": "parametprame",
+        "nick": "parametprame",
+        "url": "https://github.com/parametprame"
+      },
+      {
+        "name": "Nacharoen",
+        "nick": "najaroen",
+        "url": "https://github.com/najaroen"
+      }
+    ]
+  },
+  {
+    "id": 7878,
+    "title": "Bequeathable Contracts",
+    "status": "Final",
+    "authors": [
+      {
+        "name": "Wamith Mockbill",
+        "nick": "wamith",
+        "url": "https://github.com/wamith"
+      }
+    ]
+  },
+  {
     "id": 1191,
     "title": "Add chain id to mixed-case checksum address encoding",
     "status": "Last Call",
@@ -4287,80 +4896,6 @@
       {
         "name": "Jiangshan Yu",
         "email": "jiangshan.yu@monash.edu"
-      }
-    ]
-  },
-  {
-    "id": 2537,
-    "title": "Precompile for BLS12-381 curve operations",
-    "status": "Last Call",
-    "authors": [
-      {
-        "name": "Alex Vlasov",
-        "nick": "shamatar",
-        "url": "https://github.com/shamatar"
-      },
-      {
-        "name": "Kelly Olson",
-        "nick": "ineffectualproperty",
-        "url": "https://github.com/ineffectualproperty"
-      },
-      {
-        "name": "Alex Stokes",
-        "nick": "ralexstokes",
-        "url": "https://github.com/ralexstokes"
-      },
-      {
-        "name": "Antonio Sanso",
-        "nick": "asanso",
-        "url": "https://github.com/asanso"
-      }
-    ]
-  },
-  {
-    "id": 2935,
-    "title": "Serve historical block hashes from state",
-    "status": "Last Call",
-    "authors": [
-      {
-        "name": "Vitalik Buterin",
-        "nick": "vbuterin",
-        "url": "https://github.com/vbuterin"
-      },
-      {
-        "name": "Tomasz Stanczak",
-        "nick": "tkstanczak",
-        "url": "https://github.com/tkstanczak"
-      },
-      {
-        "name": "Guillaume Ballet",
-        "nick": "gballet",
-        "url": "https://github.com/gballet"
-      },
-      {
-        "name": "Gajinder Singh",
-        "nick": "g11tech",
-        "url": "https://github.com/g11tech"
-      },
-      {
-        "name": "Tanishq Jasoria",
-        "nick": "tanishqjasoria",
-        "url": "https://github.com/tanishqjasoria"
-      },
-      {
-        "name": "Ignacio Hagopian",
-        "nick": "jsign",
-        "url": "https://github.com/jsign"
-      },
-      {
-        "name": "Jochem Brouwer",
-        "nick": "jochem-brouwer",
-        "url": "https://github.com/jochem-brouwer"
-      },
-      {
-        "name": "Sina Mahmoodi",
-        "nick": "s1na",
-        "url": "https://github.com/s1na"
       }
     ]
   },
@@ -4500,46 +5035,14 @@
     ]
   },
   {
-    "id": 6093,
-    "title": "Custom errors for commonly-used tokens",
+    "id": 6224,
+    "title": "Contracts Dependencies Registry",
     "status": "Last Call",
     "authors": [
       {
-        "name": "Ernesto García",
-        "nick": "ernestognw",
-        "url": "https://github.com/ernestognw"
-      },
-      {
-        "name": "Francisco Giordano",
-        "nick": "frangio",
-        "url": "https://github.com/frangio"
-      },
-      {
-        "name": "Hadrien Croubois",
-        "nick": "Amxx",
-        "url": "https://github.com/Amxx"
-      }
-    ]
-  },
-  {
-    "id": 6110,
-    "title": "Supply validator deposits on chain",
-    "status": "Last Call",
-    "authors": [
-      {
-        "name": "Mikhail Kalinin",
-        "nick": "mkalinin",
-        "url": "https://github.com/mkalinin"
-      },
-      {
-        "name": "Danny Ryan",
-        "nick": "djrtwo",
-        "url": "https://github.com/djrtwo"
-      },
-      {
-        "name": "Peter Davies",
-        "nick": "petertdavies",
-        "url": "https://github.com/petertdavies"
+        "name": "Artem Chystiakov",
+        "nick": "arvolear",
+        "url": "https://github.com/arvolear"
       }
     ]
   },
@@ -4556,118 +5059,39 @@
     ]
   },
   {
-    "id": 6916,
-    "title": "Automatically Reset Testnet",
+    "id": 7291,
+    "title": "Purpose bound money",
     "status": "Last Call",
     "authors": [
       {
-        "name": "Mário Havel",
-        "nick": "taxmeifyoucan",
-        "url": "https://github.com/taxmeifyoucan"
+        "name": "Orchid-Dev",
+        "nick": "proj-orchid-straitsx",
+        "url": "https://github.com/proj-orchid-straitsx"
       },
       {
-        "name": "pk910",
-        "nick": "pk910",
-        "url": "https://github.com/pk910"
+        "name": "Victor Liew",
+        "nick": "alcedo",
+        "url": "https://github.com/alcedo"
       },
       {
-        "name": "Rémy Roy",
-        "nick": "remyroy",
-        "url": "https://github.com/remyroy"
+        "name": "Wong Tse Jian",
+        "nick": "wongtsejian",
+        "url": "https://github.com/wongtsejian"
       },
       {
-        "name": "Holly Atkinson",
-        "nick": "atkinsonholly",
-        "url": "https://github.com/atkinsonholly"
+        "name": "Jacob Shan",
+        "nick": "Jacobshan429",
+        "url": "https://github.com/Jacobshan429"
       },
       {
-        "name": "Tereza Burianova",
-        "nick": "T-ess",
-        "url": "https://github.com/T-ess"
-      }
-    ]
-  },
-  {
-    "id": 7002,
-    "title": "Execution layer triggerable withdrawals",
-    "status": "Last Call",
-    "authors": [
-      {
-        "name": "Danny Ryan",
-        "nick": "djrtwo",
-        "url": "https://github.com/djrtwo"
+        "name": "Chin Sin Ong",
+        "nick": "chinsinong",
+        "url": "https://github.com/chinsinong"
       },
       {
-        "name": "Mikhail Kalinin",
-        "nick": "mkalinin",
-        "url": "https://github.com/mkalinin"
-      },
-      {
-        "name": "Ansgar Dietrichs",
-        "nick": "adietrichs",
-        "url": "https://github.com/adietrichs"
-      },
-      {
-        "name": "Hsiao-Wei Wang",
-        "nick": "hwwhww",
-        "url": "https://github.com/hwwhww"
-      },
-      {
-        "name": "lightclient",
-        "nick": "lightclient",
-        "url": "https://github.com/lightclient"
-      },
-      {
-        "name": "Felix Lange",
-        "nick": "fjl",
-        "url": "https://github.com/fjl"
-      }
-    ]
-  },
-  {
-    "id": 7251,
-    "title": "Increase the MAX_EFFECTIVE_BALANCE",
-    "status": "Last Call",
-    "authors": [
-      {
-        "name": "mike",
-        "nick": "michaelneuder",
-        "url": "https://github.com/michaelneuder"
-      },
-      {
-        "name": "Francesco",
-        "nick": "fradamt",
-        "url": "https://github.com/fradamt"
-      },
-      {
-        "name": "dapplion",
-        "nick": "dapplion",
-        "url": "https://github.com/dapplion"
-      },
-      {
-        "name": "Mikhail",
-        "nick": "mkalinin",
-        "url": "https://github.com/mkalinin"
-      },
-      {
-        "name": "Aditya",
-        "nick": "adiasg",
-        "url": "https://github.com/adiasg"
-      },
-      {
-        "name": "Justin",
-        "nick": "justindrake",
-        "url": "https://github.com/justindrake"
-      },
-      {
-        "name": "lightclient",
-        "nick": "lightclient",
-        "url": "https://github.com/lightclient"
-      },
-      {
-        "name": "Felix Lange",
-        "nick": "fjl",
-        "url": "https://github.com/fjl"
+        "name": "Praveen Kumar",
+        "nick": "veenkumarr",
+        "url": "https://github.com/veenkumarr"
       }
     ]
   },
@@ -4680,35 +5104,6 @@
         "name": "Peter Davies",
         "nick": "petertdavies",
         "url": "https://github.com/petertdavies"
-      }
-    ]
-  },
-  {
-    "id": 7549,
-    "title": "Move committee index outside Attestation",
-    "status": "Last Call",
-    "authors": [
-      {
-        "name": "dapplion",
-        "nick": "dapplion",
-        "url": "https://github.com/dapplion"
-      },
-      {
-        "name": "Mikhail Kalinin",
-        "nick": "mkalinin",
-        "url": "https://github.com/mkalinin"
-      }
-    ]
-  },
-  {
-    "id": 7600,
-    "title": "Hardfork Meta - Pectra",
-    "status": "Last Call",
-    "authors": [
-      {
-        "name": "Tim Beiko",
-        "nick": "timbeiko",
-        "url": "https://github.com/timbeiko"
       }
     ]
   },
@@ -4730,23 +5125,6 @@
     ]
   },
   {
-    "id": 7623,
-    "title": "Increase calldata cost",
-    "status": "Last Call",
-    "authors": [
-      {
-        "name": "Toni Wahrstätter",
-        "nick": "nerolation",
-        "url": "https://github.com/nerolation"
-      },
-      {
-        "name": "Vitalik Buterin",
-        "nick": "vbuterin",
-        "url": "https://github.com/vbuterin"
-      }
-    ]
-  },
-  {
     "id": 7627,
     "title": "Secure Messaging Protocol",
     "status": "Last Call",
@@ -4754,102 +5132,6 @@
       {
         "name": "Chen Liaoyuan (@chenly)",
         "email": "cly@kip.pro"
-      }
-    ]
-  },
-  {
-    "id": 7642,
-    "title": "eth/69 - history expiry and simpler receipts",
-    "status": "Last Call",
-    "authors": [
-      {
-        "name": "Marius van der Wijden",
-        "nick": "MariusVanDerWijden",
-        "url": "https://github.com/MariusVanDerWijden"
-      },
-      {
-        "name": "Felix Lange",
-        "email": "fjl@ethereum.org"
-      },
-      {
-        "name": "Ahmad Bitar (@smartprogrammer93)",
-        "email": "smartprogrammer@windowslive.com"
-      }
-    ]
-  },
-  {
-    "id": 7685,
-    "title": "General purpose execution layer requests",
-    "status": "Last Call",
-    "authors": [
-      {
-        "name": "lightclient",
-        "nick": "lightclient",
-        "url": "https://github.com/lightclient"
-      },
-      {
-        "name": "Felix Lange",
-        "nick": "fjl",
-        "url": "https://github.com/fjl"
-      }
-    ]
-  },
-  {
-    "id": 7691,
-    "title": "Blob throughput increase",
-    "status": "Last Call",
-    "authors": [
-      {
-        "name": "Parithosh Jayanthi",
-        "nick": "parithosh",
-        "url": "https://github.com/parithosh"
-      },
-      {
-        "name": "Toni Wahrstätter",
-        "nick": "nerolation",
-        "url": "https://github.com/nerolation"
-      },
-      {
-        "name": "Sam Calder-Mason",
-        "nick": "samcm",
-        "url": "https://github.com/samcm"
-      },
-      {
-        "name": "Andrew Davis",
-        "nick": "savid",
-        "url": "https://github.com/savid"
-      },
-      {
-        "name": "Ansgar Dietrichs",
-        "nick": "adietrichs",
-        "url": "https://github.com/adietrichs"
-      }
-    ]
-  },
-  {
-    "id": 7702,
-    "title": "Set EOA account code",
-    "status": "Last Call",
-    "authors": [
-      {
-        "name": "Vitalik Buterin",
-        "nick": "vbuterin",
-        "url": "https://github.com/vbuterin"
-      },
-      {
-        "name": "Sam Wilson",
-        "nick": "SamWilsn",
-        "url": "https://github.com/SamWilsn"
-      },
-      {
-        "name": "Ansgar Dietrichs",
-        "nick": "adietrichs",
-        "url": "https://github.com/adietrichs"
-      },
-      {
-        "name": "lightclient",
-        "nick": "lightclient",
-        "url": "https://github.com/lightclient"
       }
     ]
   },
@@ -4862,18 +5144,137 @@
         "name": "Tim Beiko",
         "nick": "timbeiko",
         "url": "https://github.com/timbeiko"
+      },
+      {
+        "name": "Alex Stokes",
+        "nick": "ralexstokes",
+        "url": "https://github.com/ralexstokes"
       }
     ]
   },
   {
-    "id": 7840,
-    "title": "Add blob schedule to EL config files",
+    "id": 7744,
+    "title": "Code Index",
     "status": "Last Call",
     "authors": [
       {
-        "name": "lightclient",
-        "nick": "lightclient",
-        "url": "https://github.com/lightclient"
+        "name": "Tim Pechersky (@peersky)",
+        "email": "t@peersky.xyz"
+      }
+    ]
+  },
+  {
+    "id": 7746,
+    "title": "Composable Security Middleware Hooks",
+    "status": "Last Call",
+    "authors": [
+      {
+        "name": "Tim Pechersky",
+        "nick": "peersky",
+        "url": "https://github.com/peersky"
+      }
+    ]
+  },
+  {
+    "id": 7786,
+    "title": "Cross-Chain Messaging Gateway",
+    "status": "Last Call",
+    "authors": [
+      {
+        "name": "Francisco Giordano",
+        "nick": "frangio",
+        "url": "https://github.com/frangio"
+      },
+      {
+        "name": "Hadrien Croubois",
+        "nick": "Amxx",
+        "url": "https://github.com/Amxx"
+      },
+      {
+        "name": "Ernesto Garcia",
+        "nick": "ernestognw",
+        "url": "https://github.com/ernestognw"
+      },
+      {
+        "name": "CJ Cobb",
+        "nick": "cjcobb23",
+        "url": "https://github.com/cjcobb23"
+      },
+      {
+        "name": "Sergey Gorbunov",
+        "nick": "sergeynog",
+        "url": "https://github.com/sergeynog"
+      },
+      {
+        "name": "joxes",
+        "nick": "Joxess",
+        "url": "https://github.com/Joxess"
+      }
+    ]
+  },
+  {
+    "id": 7857,
+    "title": "AI Agents NFT with Private Metadata",
+    "status": "Last Call",
+    "authors": [
+      {
+        "name": "Ming Wu",
+        "nick": "sparkmiw",
+        "url": "https://github.com/sparkmiw"
+      },
+      {
+        "name": "Jason Zeng",
+        "nick": "zenghbo",
+        "url": "https://github.com/zenghbo"
+      },
+      {
+        "name": "Wei Wu",
+        "nick": "Wilbert957",
+        "url": "https://github.com/Wilbert957"
+      },
+      {
+        "name": "Michael Heinrich",
+        "nick": "michaelomg",
+        "url": "https://github.com/michaelomg"
+      }
+    ]
+  },
+  {
+    "id": 7913,
+    "title": "Signature Verifiers",
+    "status": "Last Call",
+    "authors": [
+      {
+        "name": "Hadrien Croubois",
+        "nick": "Amxx",
+        "url": "https://github.com/Amxx"
+      },
+      {
+        "name": "Ernesto García",
+        "nick": "ernestognw",
+        "url": "https://github.com/ernestognw"
+      },
+      {
+        "name": "Francisco Giordano",
+        "nick": "frangio",
+        "url": "https://github.com/frangio"
+      },
+      {
+        "name": "Aryeh Greenberg",
+        "nick": "arr00",
+        "url": "https://github.com/arr00"
+      }
+    ]
+  },
+  {
+    "id": 7950,
+    "title": "Encode chain id with transaction hash",
+    "status": "Last Call",
+    "authors": [
+      {
+        "name": "Lauri Peltonen",
+        "nick": "microbecode",
+        "url": "https://github.com/microbecode"
       }
     ]
   },
@@ -4966,28 +5367,6 @@
     ]
   },
   {
-    "id": 3670,
-    "title": "EOF - Code Validation",
-    "status": "Review",
-    "authors": [
-      {
-        "name": "Alex Beregszaszi",
-        "nick": "axic",
-        "url": "https://github.com/axic"
-      },
-      {
-        "name": "Andrei Maiboroda",
-        "nick": "gumb0",
-        "url": "https://github.com/gumb0"
-      },
-      {
-        "name": "Paweł Bylica",
-        "nick": "chfast",
-        "url": "https://github.com/chfast"
-      }
-    ]
-  },
-  {
     "id": 4200,
     "title": "EOF - Static relative jumps",
     "status": "Review",
@@ -5010,34 +5389,44 @@
     ]
   },
   {
-    "id": 4361,
-    "title": "Sign-In with Ethereum",
+    "id": 4337,
+    "title": "Account Abstraction Using Alt Mempool",
     "status": "Review",
     "authors": [
       {
-        "name": "Wayne Chang",
-        "nick": "wyc",
-        "url": "https://github.com/wyc"
+        "name": "Vitalik Buterin",
+        "nick": "vbuterin",
+        "url": "https://github.com/vbuterin"
       },
       {
-        "name": "Gregory Rocco",
-        "nick": "obstropolos",
-        "url": "https://github.com/obstropolos"
+        "name": "Yoav Weiss",
+        "nick": "yoavw",
+        "url": "https://github.com/yoavw"
       },
       {
-        "name": "Brantly Millegan",
-        "nick": "brantlymillegan",
-        "url": "https://github.com/brantlymillegan"
+        "name": "Dror Tirosh",
+        "nick": "drortirosh",
+        "url": "https://github.com/drortirosh"
       },
       {
-        "name": "Nick Johnson",
-        "nick": "Arachnid",
-        "url": "https://github.com/Arachnid"
+        "name": "Shahaf Nacson",
+        "nick": "shahafn",
+        "url": "https://github.com/shahafn"
       },
       {
-        "name": "Oliver Terbu",
-        "nick": "awoie",
-        "url": "https://github.com/awoie"
+        "name": "Alex Forshtat",
+        "nick": "forshtat",
+        "url": "https://github.com/forshtat"
+      },
+      {
+        "name": "Kristof Gazso",
+        "nick": "kristofgazso",
+        "url": "https://github.com/kristofgazso"
+      },
+      {
+        "name": "Tjaden Hess",
+        "nick": "tjade273",
+        "url": "https://github.com/tjade273"
       }
     ]
   },
@@ -5060,18 +5449,6 @@
         "name": "Paweł Bylica",
         "nick": "chfast",
         "url": "https://github.com/chfast"
-      }
-    ]
-  },
-  {
-    "id": 4803,
-    "title": "Limit transaction gas to a maximum of 2^63-1",
-    "status": "Review",
-    "authors": [
-      {
-        "name": "Alex Beregszaszi",
-        "nick": "axic",
-        "url": "https://github.com/axic"
       }
     ]
   },
@@ -5229,72 +5606,6 @@
     ]
   },
   {
-    "id": 5792,
-    "title": "Wallet Call API",
-    "status": "Review",
-    "authors": [
-      {
-        "name": "Moody Salem",
-        "nick": "moodysalem",
-        "url": "https://github.com/moodysalem"
-      },
-      {
-        "name": "Lukas Rosario",
-        "nick": "lukasrosario",
-        "url": "https://github.com/lukasrosario"
-      },
-      {
-        "name": "Wilson Cusack",
-        "nick": "wilsoncusack",
-        "url": "https://github.com/wilsoncusack"
-      },
-      {
-        "name": "Dror Tirosh",
-        "nick": "drortirosh",
-        "url": "https://github.com/drortirosh"
-      },
-      {
-        "name": "Jake Moxey",
-        "nick": "jxom",
-        "url": "https://github.com/jxom"
-      },
-      {
-        "name": "Derek Rein",
-        "nick": "arein",
-        "url": "https://github.com/arein"
-      },
-      {
-        "name": "Alex Forshtat",
-        "nick": "forshtat",
-        "url": "https://github.com/forshtat"
-      },
-      {
-        "name": "Sam Wilson (@SamWilsn)",
-        "email": "sam@binarycake.ca"
-      },
-      {
-        "name": "Borislav Itskov",
-        "nick": "Oxbobby",
-        "url": "https://github.com/Oxbobby"
-      },
-      {
-        "name": "Joao Tavares",
-        "nick": "cryptotavares",
-        "url": "https://github.com/cryptotavares"
-      },
-      {
-        "name": "Adam Fuller",
-        "nick": "azf20",
-        "url": "https://github.com/azf20"
-      },
-      {
-        "name": "Philip Liao",
-        "nick": "phil-ociraptor",
-        "url": "https://github.com/phil-ociraptor"
-      }
-    ]
-  },
-  {
     "id": 5920,
     "title": "PAY opcode",
     "status": "Review",
@@ -5313,6 +5624,16 @@
         "name": "Sam Wilson",
         "nick": "SamWilsn",
         "url": "https://github.com/SamWilsn"
+      },
+      {
+        "name": "Jochem Brouwer",
+        "nick": "jochem-brouwer",
+        "url": "https://github.com/jochem-brouwer"
+      },
+      {
+        "name": "Charles Cooper",
+        "nick": "charles-cooper",
+        "url": "https://github.com/charles-cooper"
       }
     ]
   },
@@ -5411,18 +5732,6 @@
         "name": "Matt Garnett",
         "nick": "lightclient",
         "url": "https://github.com/lightclient"
-      }
-    ]
-  },
-  {
-    "id": 6224,
-    "title": "Contracts Dependencies Registry",
-    "status": "Review",
-    "authors": [
-      {
-        "name": "Artem Chystiakov",
-        "nick": "arvolear",
-        "url": "https://github.com/arvolear"
       }
     ]
   },
@@ -5692,38 +6001,6 @@
     ]
   },
   {
-    "id": 6909,
-    "title": "Minimal Multi-Token Interface",
-    "status": "Review",
-    "authors": [
-      {
-        "name": "JT Riley",
-        "nick": "jtriley-eth",
-        "url": "https://github.com/jtriley-eth"
-      },
-      {
-        "name": "Dillon",
-        "nick": "d1ll0n",
-        "url": "https://github.com/d1ll0n"
-      },
-      {
-        "name": "Sara",
-        "nick": "snreynolds",
-        "url": "https://github.com/snreynolds"
-      },
-      {
-        "name": "Vectorized",
-        "nick": "Vectorized",
-        "url": "https://github.com/Vectorized"
-      },
-      {
-        "name": "Neodaoist",
-        "nick": "neodaoist",
-        "url": "https://github.com/neodaoist"
-      }
-    ]
-  },
-  {
     "id": 6956,
     "title": "Asset-bound Non-Fungible Tokens",
     "status": "Review",
@@ -5805,6 +6082,38 @@
         "name": "Eduard López i Fina",
         "nick": "eduardfina",
         "url": "https://github.com/eduardfina"
+      }
+    ]
+  },
+  {
+    "id": 7399,
+    "title": "⚡ Flash Loans ⚡",
+    "status": "Review",
+    "authors": [
+      {
+        "name": "Alberto Cuesta Cañada",
+        "nick": "alcueca",
+        "url": "https://github.com/alcueca"
+      },
+      {
+        "name": "Michael Amadi",
+        "nick": "AmadiMichaels",
+        "url": "https://github.com/AmadiMichaels"
+      },
+      {
+        "name": "Devtooligan",
+        "nick": "devtooligan",
+        "url": "https://github.com/devtooligan"
+      },
+      {
+        "name": "Ultrasecr.eth",
+        "nick": "ultrasecreth",
+        "url": "https://github.com/ultrasecreth"
+      },
+      {
+        "name": "Sam Bacha",
+        "nick": "sambacha",
+        "url": "https://github.com/sambacha"
       }
     ]
   },
@@ -5906,6 +6215,33 @@
         "name": "Hsiao-Wei Wang",
         "nick": "hwwhww",
         "url": "https://github.com/hwwhww"
+      },
+      {
+        "name": "Alex Stokes",
+        "nick": "ralexstokes",
+        "url": "https://github.com/ralexstokes"
+      }
+    ]
+  },
+  {
+    "id": 7607,
+    "title": "Hardfork Meta - Fusaka",
+    "status": "Review",
+    "authors": [
+      {
+        "name": "Tim Beiko",
+        "nick": "timbeiko",
+        "url": "https://github.com/timbeiko"
+      },
+      {
+        "name": "Alex Stokes",
+        "nick": "ralexstokes",
+        "url": "https://github.com/ralexstokes"
+      },
+      {
+        "name": "Ansgar Dietrichs",
+        "nick": "adietrichs",
+        "url": "https://github.com/adietrichs"
       }
     ]
   },
@@ -5948,39 +6284,23 @@
     ]
   },
   {
-    "id": 7631,
-    "title": "Dual Nature Token Pair",
+    "id": 7634,
+    "title": "Limited Transfer Count NFT",
     "status": "Review",
     "authors": [
       {
-        "name": "vectorized",
-        "nick": "vectorized",
-        "url": "https://github.com/vectorized"
+        "name": "Qin Wang",
+        "nick": "qinwang-git",
+        "url": "https://github.com/qinwang-git"
       },
       {
-        "name": "Thomas",
-        "nick": "0xth0mas",
-        "url": "https://github.com/0xth0mas"
+        "name": "Saber Yu",
+        "nick": "OniReimu",
+        "url": "https://github.com/OniReimu"
       },
       {
-        "name": "Quit",
-        "nick": "quitcrypto",
-        "url": "https://github.com/quitcrypto"
-      },
-      {
-        "name": "Michael Amadi",
-        "nick": "AmadiMichael",
-        "url": "https://github.com/AmadiMichael"
-      },
-      {
-        "name": "cygaar",
-        "nick": "cygaar",
-        "url": "https://github.com/cygaar"
-      },
-      {
-        "name": "Harrison",
-        "nick": "pop-punk",
-        "url": "https://github.com/pop-punk"
+        "name": "Shiping Chen",
+        "email": "shiping.chen@data61.csiro.au"
       }
     ]
   },
@@ -6088,53 +6408,6 @@
     ]
   },
   {
-    "id": 7742,
-    "title": "Uncouple blob count between CL and EL",
-    "status": "Review",
-    "authors": [
-      {
-        "name": "Alex Stokes",
-        "nick": "ralexstokes",
-        "url": "https://github.com/ralexstokes"
-      }
-    ]
-  },
-  {
-    "id": 7743,
-    "title": "Multi-Owner Non-Fungible Tokens (MO-NFT)",
-    "status": "Review",
-    "authors": [
-      {
-        "name": "James Savechives",
-        "nick": "jamesavechives",
-        "url": "https://github.com/jamesavechives"
-      }
-    ]
-  },
-  {
-    "id": 7744,
-    "title": "Code Index",
-    "status": "Review",
-    "authors": [
-      {
-        "name": "Tim Pechersky (@peersky)",
-        "email": "t@peersky.xyz"
-      }
-    ]
-  },
-  {
-    "id": 7746,
-    "title": "Composable Security Middleware Hooks",
-    "status": "Review",
-    "authors": [
-      {
-        "name": "Tim Pechersky",
-        "nick": "peersky",
-        "url": "https://github.com/peersky"
-      }
-    ]
-  },
-  {
     "id": 7750,
     "title": "Decentralized Employment System",
     "status": "Review",
@@ -6217,6 +6490,17 @@
     ]
   },
   {
+    "id": 7776,
+    "title": "Transparent Financial Statements",
+    "status": "Review",
+    "authors": [
+      {
+        "name": "Ignacio Ceaglio (@Nachoxt17)",
+        "email": "ignacioceaglio@gmail.com"
+      }
+    ]
+  },
+  {
     "id": 7777,
     "title": "Governance for Human Robot Societies",
     "status": "Review",
@@ -6253,36 +6537,66 @@
     ]
   },
   {
-    "id": 7784,
-    "title": "GETCONTRACT opcode",
+    "id": 7812,
+    "title": "ZK Identity Registry",
     "status": "Review",
     "authors": [
       {
-        "name": "Tim Pechersky",
-        "nick": "peersky",
-        "url": "https://github.com/peersky"
+        "name": "Artem Chystiakov (@arvolear)",
+        "email": "artem@rarilabs.com"
+      },
+      {
+        "name": "Oleksandr Kurbatov",
+        "email": "oleksandr@rarilabs.com"
+      },
+      {
+        "name": "Yaroslav Panasenko",
+        "email": "yaroslav@rarilabs.com"
+      },
+      {
+        "name": "Michael Elliot (@michaelelliot)",
+        "email": "mike@zkpassport.id"
+      },
+      {
+        "name": "Vitalik Buterin",
+        "nick": "vbuterin",
+        "url": "https://github.com/vbuterin"
       }
     ]
   },
   {
-    "id": 7808,
-    "title": "Reserve Tx-Type Range for RIPs",
+    "id": 7813,
+    "title": "Store, Table-Based Introspectable Storage",
     "status": "Review",
     "authors": [
       {
-        "name": "Carl Beekhuizen",
-        "nick": "carlbeek",
-        "url": "https://github.com/carlbeek"
+        "name": "alvarius",
+        "nick": "alvrs",
+        "url": "https://github.com/alvrs"
       },
       {
-        "name": "Yoav Weiss",
-        "nick": "yoavw",
-        "url": "https://github.com/yoavw"
+        "name": "dk1a",
+        "nick": "dk1a",
+        "url": "https://github.com/dk1a"
       },
       {
-        "name": "Ansgar Dietrichs",
-        "nick": "adietrichs",
-        "url": "https://github.com/adietrichs"
+        "name": "frolic",
+        "nick": "frolic",
+        "url": "https://github.com/frolic"
+      },
+      {
+        "name": "ludens",
+        "nick": "ludns",
+        "url": "https://github.com/ludns"
+      },
+      {
+        "name": "vdrg",
+        "nick": "vdrg",
+        "url": "https://github.com/vdrg"
+      },
+      {
+        "name": "yonada",
+        "email": "yonada@proton.me"
       }
     ]
   },
@@ -6300,6 +6614,43 @@
         "name": "Radoslaw Zagorowicz",
         "nick": "rodiazet",
         "url": "https://github.com/rodiazet"
+      }
+    ]
+  },
+  {
+    "id": 7825,
+    "title": "Transaction Gas Limit Cap",
+    "status": "Review",
+    "authors": [
+      {
+        "name": "Giulio Rebuffo",
+        "nick": "Giulio2002",
+        "url": "https://github.com/Giulio2002"
+      },
+      {
+        "name": "Toni Wahrstätter",
+        "nick": "nerolation",
+        "url": "https://github.com/nerolation"
+      }
+    ]
+  },
+  {
+    "id": 7829,
+    "title": "Data Asset NFT",
+    "status": "Review",
+    "authors": [
+      {
+        "name": "Allen Dong",
+        "nick": "Allen2730",
+        "url": "https://github.com/Allen2730"
+      },
+      {
+        "name": "Lonika Zhang",
+        "email": "lonika@memolabs.net"
+      },
+      {
+        "name": "Steven He",
+        "email": "steven@memolabs.net"
       }
     ]
   },
@@ -6343,14 +6694,14 @@
     ]
   },
   {
-    "id": 7837,
-    "title": "Diffusive Tokens",
+    "id": 7843,
+    "title": "SLOTNUM opcode",
     "status": "Review",
     "authors": [
       {
-        "name": "James Savechives",
-        "nick": "jamesavechives",
-        "url": "https://github.com/jamesavechives"
+        "name": "Marc Harvey-Hill",
+        "nick": "Marchhill",
+        "url": "https://github.com/Marchhill"
       }
     ]
   },
@@ -6497,6 +6848,103 @@
     ]
   },
   {
+    "id": 7883,
+    "title": "ModExp Gas Cost Increase",
+    "status": "Review",
+    "authors": [
+      {
+        "name": "Marcin Sobczak",
+        "nick": "marcindsobczak",
+        "url": "https://github.com/marcindsobczak"
+      },
+      {
+        "name": "Marek Moraczyński",
+        "nick": "MarekM25",
+        "url": "https://github.com/MarekM25"
+      },
+      {
+        "name": "Marcos Maceo",
+        "nick": "stdevMac",
+        "url": "https://github.com/stdevMac"
+      }
+    ]
+  },
+  {
+    "id": 7892,
+    "title": "Blob Parameter Only Hardforks",
+    "status": "Review",
+    "authors": [
+      {
+        "name": "Mark Mackey",
+        "nick": "ethDreamer",
+        "url": "https://github.com/ethDreamer"
+      },
+      {
+        "name": "Raúl Kripalani",
+        "nick": "raulk",
+        "url": "https://github.com/raulk"
+      }
+    ]
+  },
+  {
+    "id": 7908,
+    "title": "HD wallet In Treasury Management",
+    "status": "Review",
+    "authors": [
+      {
+        "name": "Xiaoyu Liu (@elizabethxiaoyu)",
+        "email": "jiushi.lxy@antgroup.com"
+      },
+      {
+        "name": "Yuxiang Fu (@tmac4096)",
+        "email": "kunfu.fyx@antgroup.com"
+      },
+      {
+        "name": "Yanyi Liang",
+        "email": "eason.lyy@antgroup.com"
+      },
+      {
+        "name": "Hao Zou (@BruceZH0915)",
+        "email": "situ.zh@antgroup.com"
+      },
+      {
+        "name": "Siyuan Zheng (@andrewcoder666)",
+        "email": "zhengsiyuan.zsy@antgroup.com"
+      },
+      {
+        "name": "yuanshanhshan (@xunayuan)",
+        "email": "yuanshanshan.yss@antgroup.com"
+      }
+    ]
+  },
+  {
+    "id": 7910,
+    "title": "eth_config JSON-RPC Method",
+    "status": "Review",
+    "authors": [
+      {
+        "name": "Danno Ferrin",
+        "nick": "shemnon",
+        "url": "https://github.com/shemnon"
+      }
+    ]
+  },
+  {
+    "id": 7917,
+    "title": "Deterministic proposer lookahead",
+    "status": "Review",
+    "authors": [
+      {
+        "name": "Lin Oshitani (@linoscope)",
+        "email": "lin@nethermind.io"
+      },
+      {
+        "name": "Justin Drake (@JustinDrake)",
+        "email": "justin@ethereum.org"
+      }
+    ]
+  },
+  {
     "id": 7918,
     "title": "Blob base fee bounded by execution cost",
     "status": "Review",
@@ -6505,6 +6953,183 @@
         "name": "Anders Elowsson",
         "nick": "anderselowsson",
         "url": "https://github.com/anderselowsson"
+      },
+      {
+        "name": "Ben Adams",
+        "nick": "benaadams",
+        "url": "https://github.com/benaadams"
+      },
+      {
+        "name": "Francesco D'Amato",
+        "nick": "fradamt",
+        "url": "https://github.com/fradamt"
+      }
+    ]
+  },
+  {
+    "id": 7934,
+    "title": "RLP Execution Block Size Limit",
+    "status": "Review",
+    "authors": [
+      {
+        "name": "Giulio Rebuffo",
+        "nick": "Giulio2002",
+        "url": "https://github.com/Giulio2002"
+      },
+      {
+        "name": "Ben Adams",
+        "nick": "benaadams",
+        "url": "https://github.com/benaadams"
+      },
+      {
+        "name": "Storm Slivkoff",
+        "nick": "sslivkoff",
+        "url": "https://github.com/sslivkoff"
+      }
+    ]
+  },
+  {
+    "id": 7935,
+    "title": "Set default gas limit to 60M",
+    "status": "Review",
+    "authors": [
+      {
+        "name": "Sophia Gold",
+        "nick": "sophia-gold",
+        "url": "https://github.com/sophia-gold"
+      },
+      {
+        "name": "Parithosh Jayanthi",
+        "nick": "parithoshj",
+        "url": "https://github.com/parithoshj"
+      },
+      {
+        "name": "Toni Wahrstätter",
+        "nick": "nerolation",
+        "url": "https://github.com/nerolation"
+      },
+      {
+        "name": "Carl Beekhuizen",
+        "nick": "CarlBeek",
+        "url": "https://github.com/CarlBeek"
+      },
+      {
+        "name": "Ansgar Dietrichs",
+        "nick": "adietrichs",
+        "url": "https://github.com/adietrichs"
+      },
+      {
+        "name": "Dankrad Feist",
+        "nick": "dankrad",
+        "url": "https://github.com/dankrad"
+      },
+      {
+        "name": "Alex Stokes",
+        "nick": "ralexstokes",
+        "url": "https://github.com/ralexstokes"
+      },
+      {
+        "name": "Josh Rudolph",
+        "nick": "jrudolph",
+        "url": "https://github.com/jrudolph"
+      },
+      {
+        "name": "Giulio Rebuffo",
+        "nick": "Giulio2002",
+        "url": "https://github.com/Giulio2002"
+      },
+      {
+        "name": "Storm Slivkoff",
+        "nick": "sslivkoff",
+        "url": "https://github.com/sslivkoff"
+      }
+    ]
+  },
+  {
+    "id": 7939,
+    "title": "Count leading zeros (CLZ) opcode",
+    "status": "Review",
+    "authors": [
+      {
+        "name": "Vectorized",
+        "nick": "Vectorized",
+        "url": "https://github.com/Vectorized"
+      },
+      {
+        "name": "Georgios Konstantopoulos",
+        "nick": "gakonst",
+        "url": "https://github.com/gakonst"
+      },
+      {
+        "name": "Jochem Brouwer",
+        "nick": "jochem-brouwer",
+        "url": "https://github.com/jochem-brouwer"
+      },
+      {
+        "name": "Ben Adams",
+        "nick": "benaadams",
+        "url": "https://github.com/benaadams"
+      },
+      {
+        "name": "Giulio Rebuffo",
+        "nick": "Giulio2002",
+        "url": "https://github.com/Giulio2002"
+      }
+    ]
+  },
+  {
+    "id": 7943,
+    "title": "uRWA - Universal Real World Asset Interface",
+    "status": "Review",
+    "authors": [
+      {
+        "name": "Dario Lo Buglio",
+        "nick": "xaler5",
+        "url": "https://github.com/xaler5"
+      }
+    ]
+  },
+  {
+    "id": 7951,
+    "title": "Precompile for secp256r1 Curve Support",
+    "status": "Review",
+    "authors": [
+      {
+        "name": "Carl Beekhuizen",
+        "nick": "carlbeek",
+        "url": "https://github.com/carlbeek"
+      },
+      {
+        "name": "Ulaş Erdoğan",
+        "nick": "ulerdogan",
+        "url": "https://github.com/ulerdogan"
+      },
+      {
+        "name": "Doğan Alpaslan",
+        "nick": "doganalpaslan",
+        "url": "https://github.com/doganalpaslan"
+      }
+    ]
+  },
+  {
+    "id": 8024,
+    "title": "Backward compatible SWAPN, DUPN, EXCHANGE",
+    "status": "Review",
+    "authors": [
+      {
+        "name": "Francisco Giordano",
+        "nick": "frangio",
+        "url": "https://github.com/frangio"
+      },
+      {
+        "name": "Charles Cooper",
+        "nick": "charles-cooper",
+        "url": "https://github.com/charles-cooper"
+      },
+      {
+        "name": "Alex Beregszaszi",
+        "nick": "axic",
+        "url": "https://github.com/axic"
       }
     ]
   },
@@ -6593,6 +7218,65 @@
     ]
   },
   {
+    "id": 2780,
+    "title": "Reduce intrinsic transaction gas",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Matt Garnett",
+        "nick": "lightclient",
+        "url": "https://github.com/lightclient"
+      },
+      {
+        "name": "Uri Klarman",
+        "nick": "uriklarman",
+        "url": "https://github.com/uriklarman"
+      },
+      {
+        "name": "Ben Adams",
+        "nick": "benaadams",
+        "url": "https://github.com/benaadams"
+      },
+      {
+        "name": "Maria Inês Silva",
+        "nick": "misilva73",
+        "url": "https://github.com/misilva73"
+      }
+    ]
+  },
+  {
+    "id": 2926,
+    "title": "Chunk-Based Code Merkleization",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Sina Mahmoodi",
+        "nick": "s1na",
+        "url": "https://github.com/s1na"
+      },
+      {
+        "name": "Alex Beregszaszi",
+        "nick": "axic",
+        "url": "https://github.com/axic"
+      },
+      {
+        "name": "Guillaume Ballet",
+        "nick": "gballet",
+        "url": "https://github.com/gballet"
+      },
+      {
+        "name": "Jochem Brouwer",
+        "nick": "jochem-brouwer",
+        "url": "https://github.com/jochem-brouwer"
+      },
+      {
+        "name": "Ignacio Hagopian",
+        "nick": "jsign",
+        "url": "https://github.com/jsign"
+      }
+    ]
+  },
+  {
     "id": 3770,
     "title": "Chain-specific addresses",
     "status": "Draft",
@@ -6615,48 +7299,6 @@
       {
         "name": "ligi",
         "email": "ligi@ligi.de"
-      }
-    ]
-  },
-  {
-    "id": 4337,
-    "title": "Account Abstraction Using Alt Mempool",
-    "status": "Draft",
-    "authors": [
-      {
-        "name": "Vitalik Buterin",
-        "nick": "vbuterin",
-        "url": "https://github.com/vbuterin"
-      },
-      {
-        "name": "Yoav Weiss",
-        "nick": "yoavw",
-        "url": "https://github.com/yoavw"
-      },
-      {
-        "name": "Dror Tirosh",
-        "nick": "drortirosh",
-        "url": "https://github.com/drortirosh"
-      },
-      {
-        "name": "Shahaf Nacson",
-        "nick": "shahafn",
-        "url": "https://github.com/shahafn"
-      },
-      {
-        "name": "Alex Forshtat",
-        "nick": "forshtat",
-        "url": "https://github.com/forshtat"
-      },
-      {
-        "name": "Kristof Gazso",
-        "nick": "kristofgazso",
-        "url": "https://github.com/kristofgazso"
-      },
-      {
-        "name": "Tjaden Hess",
-        "nick": "tjade273",
-        "url": "https://github.com/tjade273"
       }
     ]
   },
@@ -7178,38 +7820,6 @@
     ]
   },
   {
-    "id": 6690,
-    "title": "EVM Modular Arithmetic Extensions",
-    "status": "Draft",
-    "authors": [
-      {
-        "name": "Jared Wasinger",
-        "nick": "jwasinger",
-        "url": "https://github.com/jwasinger"
-      },
-      {
-        "name": "Alex Beregszaszi",
-        "nick": "axic",
-        "url": "https://github.com/axic"
-      },
-      {
-        "name": "Vitalik Buterin",
-        "nick": "vbuterin",
-        "url": "https://github.com/vbuterin"
-      },
-      {
-        "name": "Radosław Zagórowicz",
-        "nick": "rodiazet",
-        "url": "https://github.com/rodiazet"
-      },
-      {
-        "name": "Paweł Bylica",
-        "nick": "chfast",
-        "url": "https://github.com/chfast"
-      }
-    ]
-  },
-  {
     "id": 6785,
     "title": "ERC-721 Utilities Information Extension",
     "status": "Draft",
@@ -7262,63 +7872,6 @@
         "name": "Jun",
         "nick": "SniperUsopp",
         "url": "https://github.com/SniperUsopp"
-      }
-    ]
-  },
-  {
-    "id": 6800,
-    "title": "Ethereum state using a unified verkle tree",
-    "status": "Draft",
-    "authors": [
-      {
-        "name": "Vitalik Buterin",
-        "nick": "vbuterin",
-        "url": "https://github.com/vbuterin"
-      },
-      {
-        "name": "Dankrad Feist",
-        "nick": "dankrad",
-        "url": "https://github.com/dankrad"
-      },
-      {
-        "name": "Kevaundray Wedderburn",
-        "nick": "kevaundray",
-        "url": "https://github.com/kevaundray"
-      },
-      {
-        "name": "Guillaume Ballet",
-        "nick": "gballet",
-        "url": "https://github.com/gballet"
-      },
-      {
-        "name": "Piper Merriam",
-        "nick": "pipermerriam",
-        "url": "https://github.com/pipermerriam"
-      },
-      {
-        "name": "Gottfried Herold",
-        "nick": "GottfriedHerold",
-        "url": "https://github.com/GottfriedHerold"
-      },
-      {
-        "name": "Ignacio Hagopian",
-        "nick": "jsign",
-        "url": "https://github.com/jsign"
-      },
-      {
-        "name": "Tanishq Jasoria",
-        "nick": "tanishqjasoria",
-        "url": "https://github.com/tanishqjasoria"
-      },
-      {
-        "name": "Gajinder Singh",
-        "nick": "g11tech",
-        "url": "https://github.com/g11tech"
-      },
-      {
-        "name": "Danno Ferrin",
-        "nick": "shemnon",
-        "url": "https://github.com/shemnon"
       }
     ]
   },
@@ -7418,18 +7971,6 @@
         "name": "Abderrahmen Hanafi",
         "nick": "a6-dou",
         "url": "https://github.com/a6-dou"
-      }
-    ]
-  },
-  {
-    "id": 6888,
-    "title": "Arithmetic verification at EVM level",
-    "status": "Draft",
-    "authors": [
-      {
-        "name": "Renan Rodrigues de Souza",
-        "nick": "RenanSouza2",
-        "url": "https://github.com/RenanSouza2"
       }
     ]
   },
@@ -7756,38 +8297,6 @@
     ]
   },
   {
-    "id": 7291,
-    "title": "Purpose bound money",
-    "status": "Draft",
-    "authors": [
-      {
-        "name": "Orchid-Dev",
-        "nick": "proj-orchid-straitsx",
-        "url": "https://github.com/proj-orchid-straitsx"
-      },
-      {
-        "name": "Victor Liew",
-        "nick": "alcedo",
-        "url": "https://github.com/alcedo"
-      },
-      {
-        "name": "Wong Tse Jian",
-        "nick": "wongtsejian",
-        "url": "https://github.com/wongtsejian"
-      },
-      {
-        "name": "Jacob Shan",
-        "nick": "Jacobshan429",
-        "url": "https://github.com/Jacobshan429"
-      },
-      {
-        "name": "Chin Sin Ong",
-        "nick": "chinsinong",
-        "url": "https://github.com/chinsinong"
-      }
-    ]
-  },
-  {
     "id": 7303,
     "title": "Token-Controlled Token Circulation",
     "status": "Draft",
@@ -7811,38 +8320,6 @@
       {
         "name": "Lassi Maksimainen (@mlalma)",
         "email": "lassi.maksimainen@gmail.com"
-      }
-    ]
-  },
-  {
-    "id": 7399,
-    "title": "⚡ Flash Loans ⚡",
-    "status": "Draft",
-    "authors": [
-      {
-        "name": "Alberto Cuesta Cañada",
-        "nick": "alcueca",
-        "url": "https://github.com/alcueca"
-      },
-      {
-        "name": "Michael Amadi",
-        "nick": "AmadiMichaels",
-        "url": "https://github.com/AmadiMichaels"
-      },
-      {
-        "name": "Devtooligan",
-        "nick": "devtooligan",
-        "url": "https://github.com/devtooligan"
-      },
-      {
-        "name": "Ultrasecr.eth",
-        "nick": "ultrasecreth",
-        "url": "https://github.com/ultrasecreth"
-      },
-      {
-        "name": "Sam Bacha",
-        "nick": "sambacha",
-        "url": "https://github.com/sambacha"
       }
     ]
   },
@@ -7964,7 +8441,7 @@
   },
   {
     "id": 7495,
-    "title": "SSZ StableContainer",
+    "title": "SSZ ProgressiveContainer",
     "status": "Draft",
     "authors": [
       {
@@ -8287,18 +8764,6 @@
       {
         "name": "Prasanth Kalangi",
         "email": "pkalangi@zoniqx.com"
-      }
-    ]
-  },
-  {
-    "id": 7519,
-    "title": "Atomic Storage Operations SCREDIT and SDEBIT",
-    "status": "Draft",
-    "authors": [
-      {
-        "name": "Danno Ferrin",
-        "nick": "shemnon",
-        "url": "https://github.com/shemnon"
       }
     ]
   },
@@ -8657,7 +9122,7 @@
   },
   {
     "id": 7572,
-    "title": "Contract-level metadata via \\`contractURI()\\`",
+    "title": "Contract-level metadata via `contractURI()`",
     "status": "Draft",
     "authors": [
       {
@@ -8895,18 +9360,6 @@
     ]
   },
   {
-    "id": 7607,
-    "title": "Hardfork Meta - Fusaka",
-    "status": "Draft",
-    "authors": [
-      {
-        "name": "Tim Beiko",
-        "nick": "timbeiko",
-        "url": "https://github.com/timbeiko"
-      }
-    ]
-  },
-  {
     "id": 7612,
     "title": "Verkle state transition via an overlay tree",
     "status": "Draft",
@@ -9088,27 +9541,6 @@
     ]
   },
   {
-    "id": 7634,
-    "title": "Limited Transfer Count NFT",
-    "status": "Draft",
-    "authors": [
-      {
-        "name": "Qin Wang",
-        "nick": "qinwang-git",
-        "url": "https://github.com/qinwang-git"
-      },
-      {
-        "name": "Saber Yu",
-        "nick": "OniReimu",
-        "url": "https://github.com/OniReimu"
-      },
-      {
-        "name": "Shiping Chen",
-        "email": "shiping.chen@data61.csiro.au"
-      }
-    ]
-  },
-  {
     "id": 7638,
     "title": "Batch Calls Encoding in SCA",
     "status": "Draft",
@@ -9122,18 +9554,6 @@
         "name": "Zisu",
         "nick": "lazy1523",
         "url": "https://github.com/lazy1523"
-      }
-    ]
-  },
-  {
-    "id": 7639,
-    "title": "eth/70 - Cease serving history before PoS",
-    "status": "Draft",
-    "authors": [
-      {
-        "name": "lightclient",
-        "nick": "lightclient",
-        "url": "https://github.com/lightclient"
       }
     ]
   },
@@ -9363,6 +9783,11 @@
         "name": "Wilson Cusack",
         "nick": "wilsoncusack",
         "url": "https://github.com/wilsoncusack"
+      },
+      {
+        "name": "Alex Donesky",
+        "nick": "adonesky1",
+        "url": "https://github.com/adonesky1"
       }
     ]
   },
@@ -9475,7 +9900,7 @@
   },
   {
     "id": 7701,
-    "title": "Native Account Abstraction with EOF",
+    "title": "Native Account Abstraction",
     "status": "Draft",
     "authors": [
       {
@@ -9502,18 +9927,6 @@
         "name": "Shahaf Nacson",
         "nick": "shahafn",
         "url": "https://github.com/shahafn"
-      }
-    ]
-  },
-  {
-    "id": 7703,
-    "title": "Increase calldata cost",
-    "status": "Draft",
-    "authors": [
-      {
-        "name": "William Morriss",
-        "nick": "wjmelements",
-        "url": "https://github.com/wjmelements"
       }
     ]
   },
@@ -9939,7 +10352,7 @@
   },
   {
     "id": 7754,
-    "title": "Tamperproof Web Immutable Transaction (TWIT)",
+    "title": "Tamperproof Extension Wallets API (TWIST)",
     "status": "Draft",
     "authors": [
       {
@@ -9951,28 +10364,6 @@
         "name": "Guillaume Grosbois",
         "nick": "uni-guillaume",
         "url": "https://github.com/uni-guillaume"
-      }
-    ]
-  },
-  {
-    "id": 7756,
-    "title": "EOF/EVM Trace Specification",
-    "status": "Draft",
-    "authors": [
-      {
-        "name": "Martin Holst Swende",
-        "nick": "holiman",
-        "url": "https://github.com/holiman"
-      },
-      {
-        "name": "Marius van der Wijden",
-        "nick": "MariusVanDerWijden",
-        "url": "https://github.com/MariusVanDerWijden"
-      },
-      {
-        "name": "Danno Ferrin",
-        "nick": "shemnon",
-        "url": "https://github.com/shemnon"
       }
     ]
   },
@@ -10096,6 +10487,40 @@
     ]
   },
   {
+    "id": 7770,
+    "title": "Fractional Reserve Token",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Yaron Velner",
+        "nick": "yaronvel",
+        "url": "https://github.com/yaronvel"
+      }
+    ]
+  },
+  {
+    "id": 7773,
+    "title": "Hardfork Meta - Glamsterdam",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Tim Beiko",
+        "nick": "timbeiko",
+        "url": "https://github.com/timbeiko"
+      },
+      {
+        "name": "Alex Stokes",
+        "nick": "ralexstokes",
+        "url": "https://github.com/ralexstokes"
+      },
+      {
+        "name": "Ansgar Dietrichs",
+        "nick": "adietrichs",
+        "url": "https://github.com/adietrichs"
+      }
+    ]
+  },
+  {
     "id": 7774,
     "title": "Cache invalidation in ERC-5219 mode Web3 URL",
     "status": "Draft",
@@ -10113,37 +10538,19 @@
     ]
   },
   {
-    "id": 7775,
-    "title": "BURN opcode",
-    "status": "Draft",
-    "authors": [
-      {
-        "name": "Dev Bear",
-        "nick": "itsdevbear",
-        "url": "https://github.com/itsdevbear"
-      }
-    ]
-  },
-  {
-    "id": 7776,
-    "title": "Transparent Financial Statements",
-    "status": "Draft",
-    "authors": [
-      {
-        "name": "Ignacio Ceaglio (@Nachoxt17)",
-        "email": "ignacioceaglio@gmail.com"
-      }
-    ]
-  },
-  {
     "id": 7778,
-    "title": "Prevent Block Gas Smuggling",
+    "title": "Block Gas Accounting without Refunds",
     "status": "Draft",
     "authors": [
       {
         "name": "Ben Adams",
         "nick": "benaadams",
         "url": "https://github.com/benaadams"
+      },
+      {
+        "name": "Toni Wahrstätter",
+        "nick": "nerolation",
+        "url": "https://github.com/nerolation"
       }
     ]
   },
@@ -10213,25 +10620,23 @@
   },
   {
     "id": 7782,
-    "title": "Reduce Slot Time for Lower Peak Bandwidth",
+    "title": "Reduce Block Latency",
     "status": "Draft",
     "authors": [
       {
         "name": "Ben Adams",
         "nick": "benaadams",
         "url": "https://github.com/benaadams"
-      }
-    ]
-  },
-  {
-    "id": 7783,
-    "title": "Add Controlled Gas Limit Increase Strategy",
-    "status": "Draft",
-    "authors": [
+      },
       {
-        "name": "Giulio Rebuffo",
-        "nick": "Giulio2002",
-        "url": "https://github.com/Giulio2002"
+        "name": "Dankrad Feist",
+        "nick": "dankrad",
+        "url": "https://github.com/dankrad"
+      },
+      {
+        "name": "Maria Inês Silva",
+        "nick": "misilva73",
+        "url": "https://github.com/misilva73"
       }
     ]
   },
@@ -10253,38 +10658,6 @@
     ]
   },
   {
-    "id": 7786,
-    "title": "Cross-Chain Messaging Gateway",
-    "status": "Draft",
-    "authors": [
-      {
-        "name": "Francisco Giordano",
-        "nick": "frangio",
-        "url": "https://github.com/frangio"
-      },
-      {
-        "name": "Hadrien Croubois",
-        "nick": "Amxx",
-        "url": "https://github.com/Amxx"
-      },
-      {
-        "name": "Ernesto Garcia",
-        "nick": "ernestognw",
-        "url": "https://github.com/ernestognw"
-      },
-      {
-        "name": "CJ Cobb",
-        "nick": "cjcobb23",
-        "url": "https://github.com/cjcobb23"
-      },
-      {
-        "name": "Sergey Gorbunov",
-        "nick": "sergeynog",
-        "url": "https://github.com/sergeynog"
-      }
-    ]
-  },
-  {
     "id": 7787,
     "title": "Soulbound Degradable Governance",
     "status": "Draft",
@@ -10297,35 +10670,6 @@
       {
         "name": "Rafael Castaneda",
         "email": "rafaelcastaneda@gmail.com"
-      }
-    ]
-  },
-  {
-    "id": 7788,
-    "title": "Dynamic target blob count",
-    "status": "Draft",
-    "authors": [
-      {
-        "name": "Marc Harvey-Hill",
-        "nick": "Marchhill",
-        "url": "https://github.com/Marchhill"
-      }
-    ]
-  },
-  {
-    "id": 7790,
-    "title": "Controlled Gas Limit Increase Guidelines",
-    "status": "Draft",
-    "authors": [
-      {
-        "name": "Giulio Rebuffo",
-        "nick": "Giulio2002",
-        "url": "https://github.com/Giulio2002"
-      },
-      {
-        "name": "Ben Adams",
-        "nick": "benaadams",
-        "url": "https://github.com/benaadams"
       }
     ]
   },
@@ -10370,7 +10714,7 @@
   },
   {
     "id": 7793,
-    "title": "TXINDEX precompile",
+    "title": "Conditional Transactions",
     "status": "Draft",
     "authors": [
       {
@@ -10636,6 +10980,18 @@
     ]
   },
   {
+    "id": 7806,
+    "title": "Minimal intent-centric EOA smart account",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "hellohanchen",
+        "nick": "hellohanchen",
+        "url": "https://github.com/hellohanchen"
+      }
+    ]
+  },
+  {
     "id": 7807,
     "title": "SSZ execution blocks",
     "status": "Draft",
@@ -10680,83 +11036,14 @@
     ]
   },
   {
-    "id": 7812,
-    "title": "ZK Identity Registry",
-    "status": "Draft",
-    "authors": [
-      {
-        "name": "Artem Chystiakov (@arvolear)",
-        "email": "artem@rarilabs.com"
-      },
-      {
-        "name": "Oleksandr Kurbatov",
-        "email": "oleksandr@rarilabs.com"
-      },
-      {
-        "name": "Yaroslav Panasenko",
-        "email": "yaroslav@rarilabs.com"
-      },
-      {
-        "name": "Michael Elliot (@michaelelliot)",
-        "email": "mike@zkpassport.id"
-      },
-      {
-        "name": "Vitalik Buterin",
-        "nick": "vbuterin",
-        "url": "https://github.com/vbuterin"
-      }
-    ]
-  },
-  {
-    "id": 7813,
-    "title": "Store, Table-Based Introspectable Storage",
-    "status": "Draft",
-    "authors": [
-      {
-        "name": "alvarius",
-        "nick": "alvrs",
-        "url": "https://github.com/alvrs"
-      },
-      {
-        "name": "dk1a",
-        "nick": "dk1a",
-        "url": "https://github.com/dk1a"
-      },
-      {
-        "name": "frolic",
-        "nick": "holic",
-        "url": "https://github.com/holic"
-      },
-      {
-        "name": "ludens",
-        "nick": "ludns",
-        "url": "https://github.com/ludns"
-      },
-      {
-        "name": "vdrg",
-        "nick": "vdrg",
-        "url": "https://github.com/vdrg"
-      },
-      {
-        "name": "yonada",
-        "email": "yonada@proton.me"
-      }
-    ]
-  },
-  {
     "id": 7819,
-    "title": "Create delegate",
+    "title": "SETDELEGATE instruction",
     "status": "Draft",
     "authors": [
       {
         "name": "Hadrien Croubois",
         "nick": "amxx",
         "url": "https://github.com/amxx"
-      },
-      {
-        "name": "Danno Ferrin",
-        "nick": "shemnon",
-        "url": "https://github.com/shemnon"
       }
     ]
   },
@@ -10783,34 +11070,89 @@
     ]
   },
   {
-    "id": 7825,
-    "title": "Transaction Gas Limit Cap",
+    "id": 7828,
+    "title": "Readable Interoperable Addresses using ENS",
     "status": "Draft",
     "authors": [
       {
-        "name": "Giulio Rebuffo",
-        "nick": "Giulio2002",
-        "url": "https://github.com/Giulio2002"
-      }
-    ]
-  },
-  {
-    "id": 7829,
-    "title": "Data Asset NFT",
-    "status": "Draft",
-    "authors": [
-      {
-        "name": "Allen Dong",
-        "nick": "Allen2730",
-        "url": "https://github.com/Allen2730"
+        "name": "Sam Kaufman",
+        "nick": "SampkaML",
+        "url": "https://github.com/SampkaML"
       },
       {
-        "name": "Lonika Zhang",
-        "email": "lonika@memolabs.net"
+        "name": "Marco Stronati",
+        "nick": "paracetamolo",
+        "url": "https://github.com/paracetamolo"
       },
       {
-        "name": "Steven He",
-        "email": "steven@memolabs.net"
+        "name": "Yuliya Alexiev",
+        "nick": "yuliyaalexiev",
+        "url": "https://github.com/yuliyaalexiev"
+      },
+      {
+        "name": "Jeff Lau",
+        "nick": "jefflau",
+        "url": "https://github.com/jefflau"
+      },
+      {
+        "name": "Sam Wilson",
+        "nick": "samwilsn",
+        "url": "https://github.com/samwilsn"
+      },
+      {
+        "name": "Vitalik Buterin",
+        "nick": "vbuterin",
+        "url": "https://github.com/vbuterin"
+      },
+      {
+        "name": "Teddy",
+        "nick": "0xteddybear",
+        "url": "https://github.com/0xteddybear"
+      },
+      {
+        "name": "Joxes",
+        "nick": "Joxess",
+        "url": "https://github.com/Joxess"
+      },
+      {
+        "name": "Racu",
+        "nick": "0xRacoon",
+        "url": "https://github.com/0xRacoon"
+      },
+      {
+        "name": "Skeletor Spaceman",
+        "nick": "0xskeletor-spaceman",
+        "url": "https://github.com/0xskeletor-spaceman"
+      },
+      {
+        "name": "TiTi",
+        "nick": "0xtiti",
+        "url": "https://github.com/0xtiti"
+      },
+      {
+        "name": "Gori",
+        "nick": "0xGorilla",
+        "url": "https://github.com/0xGorilla"
+      },
+      {
+        "name": "Ardy",
+        "nick": "0xArdy",
+        "url": "https://github.com/0xArdy"
+      },
+      {
+        "name": "Onizuka",
+        "nick": "onizuka-wl",
+        "url": "https://github.com/onizuka-wl"
+      },
+      {
+        "name": "Lumi",
+        "nick": "oxlumi",
+        "url": "https://github.com/oxlumi"
+      },
+      {
+        "name": "Moebius",
+        "nick": "0xmoebius",
+        "url": "https://github.com/0xmoebius"
       }
     ]
   },
@@ -10826,30 +11168,106 @@
     ]
   },
   {
-    "id": 7833,
-    "title": "Scheduled function calls",
+    "id": 7832,
+    "title": "Sustainable collaborative NFT collections",
     "status": "Draft",
     "authors": [
       {
-        "name": "Keyvan Kambakhsh",
-        "nick": "keyvank",
-        "url": "https://github.com/keyvank"
-      },
-      {
-        "name": "Nobitex Labs",
-        "email": "labs@nobitex.ir"
+        "name": "Gustavo Lobo",
+        "nick": "gflobo",
+        "url": "https://github.com/gflobo"
       }
     ]
   },
   {
-    "id": 7843,
-    "title": "SLOT precompile",
+    "id": 7836,
+    "title": "Wallet Call Preparation API",
     "status": "Draft",
     "authors": [
       {
-        "name": "Marc Harvey-Hill",
-        "nick": "Marchhill",
-        "url": "https://github.com/Marchhill"
+        "name": "Lukas Rosario",
+        "nick": "lukasrosario",
+        "url": "https://github.com/lukasrosario"
+      },
+      {
+        "name": "Conner Swenberg",
+        "nick": "ilikesymmetry",
+        "url": "https://github.com/ilikesymmetry"
+      },
+      {
+        "name": "Adam Hodges",
+        "nick": "ajhodges",
+        "url": "https://github.com/ajhodges"
+      },
+      {
+        "name": "Paaras Bhandari",
+        "nick": "paarasbhandari",
+        "url": "https://github.com/paarasbhandari"
+      },
+      {
+        "name": "Jake Moxey",
+        "nick": "jxom",
+        "url": "https://github.com/jxom"
+      }
+    ]
+  },
+  {
+    "id": 7845,
+    "title": "Universal Orchestrator RPC",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Kieran Goodary",
+        "nick": "IAmKio",
+        "url": "https://github.com/IAmKio"
+      },
+      {
+        "name": "Pillar Wallet",
+        "nick": "pillarwallet",
+        "url": "https://github.com/pillarwallet"
+      },
+      {
+        "name": "Luke Wickens",
+        "nick": "lbw33",
+        "url": "https://github.com/lbw33"
+      },
+      {
+        "name": "Rana Khoury",
+        "nick": "RanaBug",
+        "url": "https://github.com/RanaBug"
+      }
+    ]
+  },
+  {
+    "id": 7846,
+    "title": "Wallet Connection API",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Conner Swenberg",
+        "nick": "ilikesymmetry",
+        "url": "https://github.com/ilikesymmetry"
+      },
+      {
+        "name": "Jake Moxey",
+        "nick": "jxom",
+        "url": "https://github.com/jxom"
+      },
+      {
+        "name": "Lukas Rosario",
+        "nick": "lukasrosario",
+        "url": "https://github.com/lukasrosario"
+      }
+    ]
+  },
+  {
+    "id": 7847,
+    "title": "Social Media NFTs",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Nick Juntilla (@nickjuntilla)",
+        "email": "nick@ownerfy.com"
       }
     ]
   },
@@ -10866,18 +11284,6 @@
     ]
   },
   {
-    "id": 7851,
-    "title": "Deactivate/Reactivate a Delegated EOA's Key",
-    "status": "Draft",
-    "authors": [
-      {
-        "name": "Liyi Guo",
-        "nick": "colinlyguo",
-        "url": "https://github.com/colinlyguo"
-      }
-    ]
-  },
-  {
     "id": 7856,
     "title": "Chain-Specific Payment Requests",
     "status": "Draft",
@@ -10890,35 +11296,20 @@
     ]
   },
   {
-    "id": 7858,
-    "title": "Expirable NFTs and SBTs",
+    "id": 7861,
+    "title": "ERC-721 Verifiable Credential Extension",
     "status": "Draft",
     "authors": [
       {
-        "name": "sirawt",
-        "nick": "MASDXI",
-        "url": "https://github.com/MASDXI"
-      },
-      {
-        "name": "ADISAKBOONMARK",
-        "nick": "ADISAKBOONMARK",
-        "url": "https://github.com/ADISAKBOONMARK"
-      },
-      {
-        "name": "parametprame",
-        "nick": "parametprame",
-        "url": "https://github.com/parametprame"
-      },
-      {
-        "name": "Nacharoen",
-        "nick": "najaroen",
-        "url": "https://github.com/najaroen"
+        "name": "Valerio Massimo Camaiani",
+        "nick": "vmc-crossmint",
+        "url": "https://github.com/vmc-crossmint"
       }
     ]
   },
   {
     "id": 7862,
-    "title": "Delayed Execution Layer State Root",
+    "title": "Delayed State Root",
     "status": "Draft",
     "authors": [
       {
@@ -10964,6 +11355,16 @@
         "name": "Ansgar Dietrichs",
         "nick": "adietrichs",
         "url": "https://github.com/adietrichs"
+      },
+      {
+        "name": "Yoav Weiss",
+        "nick": "yoavw",
+        "url": "https://github.com/yoavw"
+      },
+      {
+        "name": "Alex Forshtat",
+        "nick": "forshtat",
+        "url": "https://github.com/forshtat"
       }
     ]
   },
@@ -11025,6 +11426,18 @@
     ]
   },
   {
+    "id": 7866,
+    "title": "Decentralised User Profiles",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Kumar Anirudha",
+        "nick": "anistark",
+        "url": "https://github.com/anistark"
+      }
+    ]
+  },
+  {
     "id": 7867,
     "title": "Flow Control Wallet Call Capability",
     "status": "Draft",
@@ -11032,6 +11445,33 @@
       {
         "name": "Sam Wilson (@SamWilsn)",
         "email": "sam@binarycake.ca"
+      }
+    ]
+  },
+  {
+    "id": 7871,
+    "title": "Wallet Signing API",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Lukas Rosario",
+        "nick": "lukasrosario",
+        "url": "https://github.com/lukasrosario"
+      },
+      {
+        "name": "Jake Moxey",
+        "nick": "jxom",
+        "url": "https://github.com/jxom"
+      },
+      {
+        "name": "Cody Crozier",
+        "nick": "wcrozier12",
+        "url": "https://github.com/wcrozier12"
+      },
+      {
+        "name": "Conner Swenberg",
+        "nick": "ilikesymmetry",
+        "url": "https://github.com/ilikesymmetry"
       }
     ]
   },
@@ -11044,28 +11484,6 @@
         "name": "Josh Weintraub",
         "nick": "jhweintraub",
         "url": "https://github.com/jhweintraub"
-      }
-    ]
-  },
-  {
-    "id": 7883,
-    "title": "ModExp Gas Cost Increase",
-    "status": "Draft",
-    "authors": [
-      {
-        "name": "Marcin Sobczak",
-        "nick": "marcindsobczak",
-        "url": "https://github.com/marcindsobczak"
-      },
-      {
-        "name": "Marek Moraczyński",
-        "nick": "MarekM25",
-        "url": "https://github.com/MarekM25"
-      },
-      {
-        "name": "Marcos Maceo",
-        "nick": "stdevMac",
-        "url": "https://github.com/stdevMac"
       }
     ]
   },
@@ -11097,7 +11515,7 @@
     "status": "Draft",
     "authors": [
       {
-        "name": "Francesco D\\`Amato",
+        "name": "Francesco D'Amato",
         "nick": "fradamt",
         "url": "https://github.com/fradamt"
       },
@@ -11126,6 +11544,23 @@
     ]
   },
   {
+    "id": 7888,
+    "title": "Crosschain Broadcaster",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Henry Arneson",
+        "nick": "godzillaba",
+        "url": "https://github.com/godzillaba"
+      },
+      {
+        "name": "Chris Buckland",
+        "nick": "yahgwai",
+        "url": "https://github.com/yahgwai"
+      }
+    ]
+  },
+  {
     "id": 7889,
     "title": "Emit log on revert",
     "status": "Draft",
@@ -11143,20 +11578,70 @@
     ]
   },
   {
-    "id": 7892,
-    "title": "Blob Parameter Only Hardforks",
+    "id": 7891,
+    "title": "Splitting and Merging of NFTs",
     "status": "Draft",
     "authors": [
       {
-        "name": "Mark Mackey",
-        "nick": "ethDreamer",
-        "url": "https://github.com/ethDreamer"
+        "name": "Nitin Bhagat (@nitin312)",
+        "email": "bhagatnitin312@gmail.com"
+      },
+      {
+        "name": "JongWook Bae",
+        "email": "bae@cwnu.ac.kr"
+      },
+      {
+        "name": "Su-Hyun Lee",
+        "email": "sleepl@changwon.ac.kr"
+      }
+    ]
+  },
+  {
+    "id": 7893,
+    "title": "DeFi Protocol Solvency Proof Mechanism",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Sean Luis Guada Rodríguez (@SeanLuis)",
+        "email": "seanluis47@gmail.com"
+      }
+    ]
+  },
+  {
+    "id": 7895,
+    "title": "API for Hierarchical Accounts",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Wilson Cusack",
+        "nick": "wilsoncusack",
+        "url": "https://github.com/wilsoncusack"
+      },
+      {
+        "name": "Jake Feldman",
+        "nick": "jakefeldman",
+        "url": "https://github.com/jakefeldman"
+      },
+      {
+        "name": "Montana Wong",
+        "nick": "montycheese",
+        "url": "https://github.com/montycheese"
+      },
+      {
+        "name": "Felix Zhang",
+        "nick": "fan-zhang-sv",
+        "url": "https://github.com/fan-zhang-sv"
+      },
+      {
+        "name": "Jake Moxey",
+        "nick": "jxom",
+        "url": "https://github.com/jxom"
       }
     ]
   },
   {
     "id": 7896,
-    "title": "ABI attachment in \\`wallet_sendCalls\\`",
+    "title": "ABI attachment in `wallet_sendCalls`",
     "status": "Draft",
     "authors": [
       {
@@ -11179,6 +11664,33 @@
     ]
   },
   {
+    "id": 7902,
+    "title": "Wallet Capabilities for Account Abstraction",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Yoav Weiss",
+        "nick": "yoavw",
+        "url": "https://github.com/yoavw"
+      },
+      {
+        "name": "Alex Forshtat",
+        "nick": "forshtat",
+        "url": "https://github.com/forshtat"
+      },
+      {
+        "name": "Dror Tirosh",
+        "nick": "drortirosh",
+        "url": "https://github.com/drortirosh"
+      },
+      {
+        "name": "Shahaf Nacson",
+        "nick": "shahafn",
+        "url": "https://github.com/shahafn"
+      }
+    ]
+  },
+  {
     "id": 7903,
     "title": "Remove Initcode Size Limit",
     "status": "Draft",
@@ -11187,6 +11699,28 @@
         "name": "Charles Cooper",
         "nick": "charles-cooper",
         "url": "https://github.com/charles-cooper"
+      }
+    ]
+  },
+  {
+    "id": 7904,
+    "title": "General Repricing",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Jacek Glen",
+        "nick": "JacekGlen",
+        "url": "https://github.com/JacekGlen"
+      },
+      {
+        "name": "Lukasz Glen",
+        "nick": "lukasz-glen",
+        "url": "https://github.com/lukasz-glen"
+      },
+      {
+        "name": "Maria Silva",
+        "nick": "misilva73",
+        "url": "https://github.com/misilva73"
       }
     ]
   },
@@ -11204,45 +11738,28 @@
         "name": "Qi Zhou",
         "nick": "qizhou",
         "url": "https://github.com/qizhou"
+      },
+      {
+        "name": "Matt",
+        "nick": "lightclient",
+        "url": "https://github.com/lightclient"
+      },
+      {
+        "name": "Dragan Rakita",
+        "nick": "rakita",
+        "url": "https://github.com/rakita"
       }
     ]
   },
   {
-    "id": 7910,
-    "title": "eth_config JSON-RPC Method",
+    "id": 7912,
+    "title": "Pragmatic stack manipulation tools",
     "status": "Draft",
     "authors": [
       {
-        "name": "Danno Ferrin",
-        "nick": "shemnon",
-        "url": "https://github.com/shemnon"
-      }
-    ]
-  },
-  {
-    "id": 7913,
-    "title": "Signature Verifiers",
-    "status": "Draft",
-    "authors": [
-      {
-        "name": "Hadrien Croubois",
-        "nick": "Amxx",
-        "url": "https://github.com/Amxx"
-      },
-      {
-        "name": "Ernesto García",
-        "nick": "ernestognw",
-        "url": "https://github.com/ernestognw"
-      },
-      {
-        "name": "Francisco Giordano",
-        "nick": "frangio",
-        "url": "https://github.com/frangio"
-      },
-      {
-        "name": "Aryeh Greenberg",
-        "nick": "arr00",
-        "url": "https://github.com/arr00"
+        "name": "lightclient",
+        "nick": "lightclient",
+        "url": "https://github.com/lightclient"
       }
     ]
   },
@@ -11281,21 +11798,6 @@
     ]
   },
   {
-    "id": 7917,
-    "title": "Deterministic proposer lookahead",
-    "status": "Draft",
-    "authors": [
-      {
-        "name": "Lin Oshitani (@linoscope)",
-        "email": "lin@nethermind.io"
-      },
-      {
-        "name": "Justin Drake (@JustinDrake)",
-        "email": "justin@ethereum.org"
-      }
-    ]
-  },
-  {
     "id": 7919,
     "title": "Pureth Meta",
     "status": "Draft",
@@ -11313,8 +11815,20 @@
     ]
   },
   {
+    "id": 7920,
+    "title": "Composite EIP-712 Signatures",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Sola Ogunsakin",
+        "nick": "sola92",
+        "url": "https://github.com/sola92"
+      }
+    ]
+  },
+  {
     "id": 7921,
-    "title": "Skip \\`JUMPDEST\\` immediate argument check",
+    "title": "Skip `JUMPDEST` immediate argument check",
     "status": "Draft",
     "authors": [
       {
@@ -11360,6 +11874,777 @@
         "name": "Qi Zhou",
         "nick": "qizhou",
         "url": "https://github.com/qizhou"
+      }
+    ]
+  },
+  {
+    "id": 7927,
+    "title": "History Expiry Meta",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Piper Merriam",
+        "nick": "pipermerriam",
+        "url": "https://github.com/pipermerriam"
+      }
+    ]
+  },
+  {
+    "id": 7928,
+    "title": "Block-Level Access Lists",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Toni Wahrstätter",
+        "nick": "nerolation",
+        "url": "https://github.com/nerolation"
+      },
+      {
+        "name": "Dankrad Feist",
+        "nick": "dankrad",
+        "url": "https://github.com/dankrad"
+      },
+      {
+        "name": "Francesco D\\`Amato",
+        "nick": "fradamt",
+        "url": "https://github.com/fradamt"
+      },
+      {
+        "name": "Jochem Brouwer",
+        "nick": "jochem-brouwer",
+        "url": "https://github.com/jochem-brouwer"
+      },
+      {
+        "name": "Ignacio Hagopian",
+        "nick": "jsign",
+        "url": "https://github.com/jsign"
+      }
+    ]
+  },
+  {
+    "id": 7929,
+    "title": "PermaLink Asset Bound Token",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Mihai Onila",
+        "nick": "MihaiORO",
+        "url": "https://github.com/MihaiORO"
+      },
+      {
+        "name": "Nick Zeman",
+        "nick": "NickZCZ",
+        "url": "https://github.com/NickZCZ"
+      },
+      {
+        "name": "Narcis Cotaie",
+        "nick": "NarcisCRO",
+        "url": "https://github.com/NarcisCRO"
+      }
+    ]
+  },
+  {
+    "id": 7930,
+    "title": "Interoperable Addresses",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Teddy",
+        "nick": "0xteddybear",
+        "url": "https://github.com/0xteddybear"
+      },
+      {
+        "name": "Joxes",
+        "nick": "0xJoxess",
+        "url": "https://github.com/0xJoxess"
+      },
+      {
+        "name": "Nick Johnson",
+        "nick": "Arachnid",
+        "url": "https://github.com/Arachnid"
+      },
+      {
+        "name": "Francisco Giordano",
+        "nick": "frangio",
+        "url": "https://github.com/frangio"
+      },
+      {
+        "name": "Skeletor Spaceman",
+        "nick": "skeletor-spaceman",
+        "url": "https://github.com/skeletor-spaceman"
+      },
+      {
+        "name": "Racu",
+        "nick": "0xRacoon",
+        "url": "https://github.com/0xRacoon"
+      },
+      {
+        "name": "TiTi",
+        "nick": "0xtiti",
+        "url": "https://github.com/0xtiti"
+      },
+      {
+        "name": "Gori",
+        "nick": "0xGorilla",
+        "url": "https://github.com/0xGorilla"
+      },
+      {
+        "name": "Ardy",
+        "nick": "0xArdy",
+        "url": "https://github.com/0xArdy"
+      },
+      {
+        "name": "Onizuka",
+        "nick": "onizuka-wl",
+        "url": "https://github.com/onizuka-wl"
+      },
+      {
+        "name": "Sam Kaufman",
+        "nick": "SampkaML",
+        "url": "https://github.com/SampkaML"
+      },
+      {
+        "name": "Marco Stronati",
+        "nick": "paracetamolo",
+        "url": "https://github.com/paracetamolo"
+      },
+      {
+        "name": "Yuliya Alexiev",
+        "nick": "yuliyaalexiev",
+        "url": "https://github.com/yuliyaalexiev"
+      },
+      {
+        "name": "Jeff Lau",
+        "nick": "jefflau",
+        "url": "https://github.com/jefflau"
+      },
+      {
+        "name": "Sam Wilson",
+        "nick": "samwilsn",
+        "url": "https://github.com/samwilsn"
+      },
+      {
+        "name": "Vitalik Buterin",
+        "nick": "vbuterin",
+        "url": "https://github.com/vbuterin"
+      }
+    ]
+  },
+  {
+    "id": 7932,
+    "title": "Secondary Signature Algorithms",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "James Kempton",
+        "nick": "SirSpudlington",
+        "url": "https://github.com/SirSpudlington"
+      }
+    ]
+  },
+  {
+    "id": 7936,
+    "title": "Versioned Proxy Contract Interface",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Raphina Liu",
+        "nick": "Stamp9",
+        "url": "https://github.com/Stamp9"
+      },
+      {
+        "name": "Monica Jin",
+        "nick": "mokita-j",
+        "url": "https://github.com/mokita-j"
+      },
+      {
+        "name": "Martin Monperrus",
+        "nick": "monperrus",
+        "url": "https://github.com/monperrus"
+      }
+    ]
+  },
+  {
+    "id": 7937,
+    "title": "EVM64 - 64-bit mode EVM opcodes",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Wei Tang",
+        "nick": "sorpaas",
+        "url": "https://github.com/sorpaas"
+      }
+    ]
+  },
+  {
+    "id": 7938,
+    "title": "Exponential Gas Limit Increase",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Dankrad Feist",
+        "nick": "dankrad",
+        "url": "https://github.com/dankrad"
+      }
+    ]
+  },
+  {
+    "id": 7940,
+    "title": "Ethereum Shah",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Ameen Soleimani",
+        "nick": "ameensol",
+        "url": "https://github.com/ameensol"
+      },
+      {
+        "name": "Gregory Markou"
+      }
+    ]
+  },
+  {
+    "id": 7942,
+    "title": "Available Attestation",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Mingfei Zhang (@Mart1i1n)",
+        "email": "mingfei.zh@outlook.com"
+      },
+      {
+        "name": "Rujia Li",
+        "email": "rujia@tsinghua.edu.cn"
+      },
+      {
+        "name": "Xueqian Lu",
+        "email": "xueqian.lu@bitheart.org"
+      },
+      {
+        "name": "Sisi Duan",
+        "email": "duansisi@tsinghua.edu.cn"
+      }
+    ]
+  },
+  {
+    "id": 7946,
+    "title": "Unidirectional Wallet Uplink aka UWULink",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Moody Salem",
+        "nick": "moodysalem",
+        "url": "https://github.com/moodysalem"
+      },
+      {
+        "name": "Tina Zheng",
+        "nick": "tinaszheng",
+        "url": "https://github.com/tinaszheng"
+      }
+    ]
+  },
+  {
+    "id": 7947,
+    "title": "Account Abstraction Recovery Interface",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Artem Chystiakov (@arvolear)",
+        "email": "artem@rarilabs.com"
+      }
+    ]
+  },
+  {
+    "id": 7949,
+    "title": "Genesis File Format",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Justin Florentine (@jflo)",
+        "email": "justin@florentine.us"
+      },
+      {
+        "name": "Jochem Brouwer (@jochem-brouwer)",
+        "email": "jochem@ethereum.org"
+      }
+    ]
+  },
+  {
+    "id": 7954,
+    "title": "Increase Maximum Contract Size",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Giulio Rebuffo",
+        "nick": "Giulio2002",
+        "url": "https://github.com/Giulio2002"
+      },
+      {
+        "name": "Ben Adams",
+        "nick": "badams",
+        "url": "https://github.com/badams"
+      }
+    ]
+  },
+  {
+    "id": 7955,
+    "title": "Permissionless CREATE2 Factory",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Nicholas Rodrigues Lordello",
+        "nick": "nlordell",
+        "url": "https://github.com/nlordell"
+      },
+      {
+        "name": "Richard Meissner",
+        "nick": "rmeissner",
+        "url": "https://github.com/rmeissner"
+      },
+      {
+        "name": "Valentin Seehausen",
+        "nick": "vseehausen",
+        "url": "https://github.com/vseehausen"
+      }
+    ]
+  },
+  {
+    "id": 7956,
+    "title": "Tx Ordering via Block-level Randomness",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Aryaethn",
+        "nick": "aryaethn",
+        "url": "https://github.com/aryaethn"
+      }
+    ]
+  },
+  {
+    "id": 7957,
+    "title": "EVM64 - EOF support",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Wei Tang",
+        "nick": "sorpaas",
+        "url": "https://github.com/sorpaas"
+      }
+    ]
+  },
+  {
+    "id": 7958,
+    "title": "EVM64 - Little endian opcodes",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Wei Tang",
+        "nick": "sorpaas",
+        "url": "https://github.com/sorpaas"
+      }
+    ]
+  },
+  {
+    "id": 7960,
+    "title": "EOF - Extended types section",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Wei Tang",
+        "nick": "sorpaas",
+        "url": "https://github.com/sorpaas"
+      }
+    ]
+  },
+  {
+    "id": 7961,
+    "title": "EVM64 - EOF code section",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Wei Tang",
+        "nick": "sorpaas",
+        "url": "https://github.com/sorpaas"
+      }
+    ]
+  },
+  {
+    "id": 7964,
+    "title": "Cross-Chain EIP-712 Signing Domains",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Ernesto García",
+        "nick": "ernestognw",
+        "url": "https://github.com/ernestognw"
+      }
+    ]
+  },
+  {
+    "id": 7965,
+    "title": "Proof-based Broadcast in ERC-7786 Gateways",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Ernesto García",
+        "nick": "ernestognw",
+        "url": "https://github.com/ernestognw"
+      }
+    ]
+  },
+  {
+    "id": 7966,
+    "title": "eth_sendRawTransactionSync Method",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Sam Battenally",
+        "nick": "SmoothBot",
+        "url": "https://github.com/SmoothBot"
+      },
+      {
+        "name": "Hai Nguyen",
+        "nick": "hai-rise",
+        "url": "https://github.com/hai-rise"
+      },
+      {
+        "name": "Thanh Nguyen",
+        "nick": "LampardNguyen234",
+        "url": "https://github.com/LampardNguyen234"
+      }
+    ]
+  },
+  {
+    "id": 7968,
+    "title": "Owner-Authorized Token Transfer Protocol",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Julius Lauterbach",
+        "nick": "Julius278",
+        "url": "https://github.com/Julius278"
+      }
+    ]
+  },
+  {
+    "id": 7969,
+    "title": "DomainKeys Identified Mail (DKIM) Registry",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Mike Fu",
+        "nick": "fumeng00mike",
+        "url": "https://github.com/fumeng00mike"
+      },
+      {
+        "name": "Matthew Yu",
+        "nick": "0xknon",
+        "url": "https://github.com/0xknon"
+      },
+      {
+        "name": "Ernesto García",
+        "nick": "ernestognw",
+        "url": "https://github.com/ernestognw"
+      }
+    ]
+  },
+  {
+    "id": 7975,
+    "title": "eth/70 - partial block receipt lists",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Felix Lange",
+        "email": "fjl@ethereum.org"
+      },
+      {
+        "name": "Jochem Brouwer",
+        "nick": "jochem-brouwer",
+        "url": "https://github.com/jochem-brouwer"
+      },
+      {
+        "name": "Giulio Rebuffo",
+        "nick": "Giulio2002",
+        "url": "https://github.com/Giulio2002"
+      }
+    ]
+  },
+  {
+    "id": 7976,
+    "title": "Increase Calldata Floor Cost",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Toni Wahrstätter",
+        "nick": "nerolation",
+        "url": "https://github.com/nerolation"
+      }
+    ]
+  },
+  {
+    "id": 7979,
+    "title": "Call and Return Opcodes for the EVM",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Greg Colvin",
+        "nick": "gcolvin",
+        "url": "https://github.com/gcolvin"
+      },
+      {
+        "name": "Martin Holst Swende",
+        "nick": "holiman",
+        "url": "https://github.com/holiman"
+      },
+      {
+        "name": "Brooklyn Zelenka",
+        "nick": "expede",
+        "url": "https://github.com/expede"
+      },
+      {
+        "name": "John Max Skaller",
+        "email": "skaller@internode.on.net"
+      }
+    ]
+  },
+  {
+    "id": 7981,
+    "title": "Increase access list cost",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Toni Wahrstätter",
+        "nick": "nerolation",
+        "url": "https://github.com/nerolation"
+      }
+    ]
+  },
+  {
+    "id": 7985,
+    "title": "Gateway Attributes for Message Control",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Ernesto García",
+        "nick": "ernestognw",
+        "url": "https://github.com/ernestognw"
+      },
+      {
+        "name": "Kalman Lajko",
+        "nick": "LajkoKalman",
+        "url": "https://github.com/LajkoKalman"
+      },
+      {
+        "name": "Valera Grinenko",
+        "nick": "0xValera",
+        "url": "https://github.com/0xValera"
+      }
+    ]
+  },
+  {
+    "id": 7997,
+    "title": "Deterministic Factory Predeploy",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Francisco Giordano",
+        "nick": "frangio",
+        "url": "https://github.com/frangio"
+      }
+    ]
+  },
+  {
+    "id": 7998,
+    "title": "Turn `randao_reveal` into a VRF",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Alberto La Rocca",
+        "nick": "71104",
+        "url": "https://github.com/71104"
+      },
+      {
+        "name": "Aryaethn",
+        "nick": "aryaethn",
+        "url": "https://github.com/aryaethn"
+      }
+    ]
+  },
+  {
+    "id": 7999,
+    "title": "Unified multidimensional fee market",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Anders Elowsson",
+        "nick": "anderselowsson",
+        "url": "https://github.com/anderselowsson"
+      },
+      {
+        "name": "Vitalik Buterin",
+        "nick": "vbuterin",
+        "url": "https://github.com/vbuterin"
+      }
+    ]
+  },
+  {
+    "id": 8001,
+    "title": "Agent Coordination Framework",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Kwame Bryan",
+        "nick": "kbryan",
+        "url": "https://github.com/kbryan"
+      }
+    ]
+  },
+  {
+    "id": 8004,
+    "title": "Trustless Agents",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Marco De Rossi",
+        "nick": "MarcoMetaMask",
+        "url": "https://github.com/MarcoMetaMask"
+      },
+      {
+        "name": "Davide Crapis (@dcrapis)",
+        "email": "davide@ethereum.org"
+      },
+      {
+        "name": "Jordan Ellis",
+        "nick": "jorellis",
+        "url": "https://github.com/jorellis"
+      }
+    ]
+  },
+  {
+    "id": 8007,
+    "title": "Glamsterdam Gas Repricings",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Maria Silva",
+        "nick": "misilva73",
+        "url": "https://github.com/misilva73"
+      },
+      {
+        "name": "Ansgar Dietrichs",
+        "nick": "adietrichs",
+        "url": "https://github.com/adietrichs"
+      }
+    ]
+  },
+  {
+    "id": 8011,
+    "title": "Multidimensional Gas Metering",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Maria Silva",
+        "nick": "misilva73",
+        "url": "https://github.com/misilva73"
+      },
+      {
+        "name": "Davide Crapis",
+        "nick": "dcrapis",
+        "url": "https://github.com/dcrapis"
+      },
+      {
+        "name": "Anders Elowsson",
+        "nick": "anderselowsson",
+        "url": "https://github.com/anderselowsson"
+      },
+      {
+        "name": "Toni Wahrstätter",
+        "nick": "nerolation",
+        "url": "https://github.com/nerolation"
+      }
+    ]
+  },
+  {
+    "id": 8012,
+    "title": "Generalized consolidation requests",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Potuz",
+        "nick": "potuz",
+        "url": "https://github.com/potuz"
+      }
+    ]
+  },
+  {
+    "id": 8013,
+    "title": "Static relative jumps and calls for the EVM",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Greg Colvin",
+        "nick": "gcolvin",
+        "url": "https://github.com/gcolvin"
+      },
+      {
+        "name": "Alex Beregszaszi",
+        "nick": "axic",
+        "url": "https://github.com/axic"
+      },
+      {
+        "name": "Andrei Maiboroda",
+        "nick": "gumb0",
+        "url": "https://github.com/gumb0"
+      },
+      {
+        "name": "Paweł Bylica",
+        "nick": "chfast",
+        "url": "https://github.com/chfast"
+      }
+    ]
+  },
+  {
+    "id": 8015,
+    "title": "Remove `deposit` and `eth1data` fields",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Terence",
+        "nick": "terencechain",
+        "url": "https://github.com/terencechain"
+      }
+    ]
+  },
+  {
+    "id": 8016,
+    "title": "SSZ CompatibleUnion",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Etan Kissling",
+        "nick": "etan-status",
+        "url": "https://github.com/etan-status"
+      },
+      {
+        "name": "Cayman",
+        "nick": "wemeetagain",
+        "url": "https://github.com/wemeetagain"
+      }
+    ]
+  },
+  {
+    "id": 8025,
+    "title": "Optional Execution Proofs",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Kevaundray Wedderburn",
+        "nick": "kevaundray",
+        "url": "https://github.com/kevaundray"
+      },
+      {
+        "name": "Justin Drake (@JustinDrake)",
+        "email": "justin@ethereum.org"
       }
     ]
   },
@@ -11664,7 +12949,7 @@
         "email": "jlogelin@alumni.harvard.edu"
       },
       {
-        "name": "Infernal_toast",
+        "name": "Infernal\\_toast",
         "email": "admin@0xbitcoin.org"
       },
       {
@@ -13914,23 +15199,6 @@
     ]
   },
   {
-    "id": 2926,
-    "title": "Chunk-Based Code Merkleization",
-    "status": "Stagnant",
-    "authors": [
-      {
-        "name": "Sina Mahmoodi",
-        "nick": "s1na",
-        "url": "https://github.com/s1na"
-      },
-      {
-        "name": "Alex Beregszaszi",
-        "nick": "axic",
-        "url": "https://github.com/axic"
-      }
-    ]
-  },
-  {
     "id": 2936,
     "title": "EXTCLEAR Opcode For SELFDESTRUCTed contracts",
     "status": "Stagnant",
@@ -13951,38 +15219,6 @@
         "name": "Vitalik Buterin",
         "nick": "vbuterin",
         "url": "https://github.com/vbuterin"
-      }
-    ]
-  },
-  {
-    "id": 2938,
-    "title": "Account Abstraction",
-    "status": "Stagnant",
-    "authors": [
-      {
-        "name": "Vitalik Buterin",
-        "nick": "vbuterin",
-        "url": "https://github.com/vbuterin"
-      },
-      {
-        "name": "Ansgar Dietrichs",
-        "nick": "adietrichs",
-        "url": "https://github.com/adietrichs"
-      },
-      {
-        "name": "Matt Garnett",
-        "nick": "lightclient",
-        "url": "https://github.com/lightclient"
-      },
-      {
-        "name": "Will Villanueva",
-        "nick": "villanuevawill",
-        "url": "https://github.com/villanuevawill"
-      },
-      {
-        "name": "Sam Wilson",
-        "nick": "SamWilsn",
-        "url": "https://github.com/SamWilsn"
       }
     ]
   },
@@ -14167,7 +15403,7 @@
   },
   {
     "id": 3041,
-    "title": "Adds \\`baseFee\\` to \\`eth_getBlockByHash\\`",
+    "title": "Adds `baseFee` to `eth_getBlockByHash`",
     "status": "Stagnant",
     "authors": [
       {
@@ -14179,7 +15415,7 @@
   },
   {
     "id": 3044,
-    "title": "Adds \\`baseFee\\` to \\`eth_getBlockByNumber\\`",
+    "title": "Adds `baseFee` to `eth_getBlockByNumber`",
     "status": "Stagnant",
     "authors": [
       {
@@ -14191,7 +15427,7 @@
   },
   {
     "id": 3045,
-    "title": "Adds \\`baseFee\\` to \\`eth_getUncleByBlockHashAndIndex\\`",
+    "title": "Adds `baseFee` to `eth_getUncleByBlockHashAndIndex`",
     "status": "Stagnant",
     "authors": [
       {
@@ -14203,7 +15439,7 @@
   },
   {
     "id": 3046,
-    "title": "Adds \\`baseFee\\` to \\`eth_getUncleByBlockNumberAndIndex\\`",
+    "title": "Adds `baseFee` to `eth_getUncleByBlockNumberAndIndex`",
     "status": "Stagnant",
     "authors": [
       {
@@ -14222,33 +15458,6 @@
         "name": "Dr. Christopher Gorman",
         "nick": "chgormanMH",
         "url": "https://github.com/chgormanMH"
-      }
-    ]
-  },
-  {
-    "id": 3074,
-    "title": "AUTH and AUTHCALL opcodes",
-    "status": "Stagnant",
-    "authors": [
-      {
-        "name": "Sam Wilson",
-        "nick": "SamWilsn",
-        "url": "https://github.com/SamWilsn"
-      },
-      {
-        "name": "Ansgar Dietrichs",
-        "nick": "adietrichs",
-        "url": "https://github.com/adietrichs"
-      },
-      {
-        "name": "Matt Garnett",
-        "nick": "lightclient",
-        "url": "https://github.com/lightclient"
-      },
-      {
-        "name": "Micah Zoltu",
-        "nick": "micahzoltu",
-        "url": "https://github.com/micahzoltu"
       }
     ]
   },
@@ -14464,7 +15673,7 @@
   },
   {
     "id": 3326,
-    "title": "Wallet Switch Ethereum Chain RPC Method (\\`wallet_switchEthereumChain\\`)",
+    "title": "Wallet Switch Ethereum Chain RPC Method (`wallet_switchEthereumChain`)",
     "status": "Stagnant",
     "authors": [
       {
@@ -14728,6 +15937,28 @@
         "name": "Xinqi Yang",
         "nick": "xinqiyang",
         "url": "https://github.com/xinqiyang"
+      }
+    ]
+  },
+  {
+    "id": 3670,
+    "title": "EOF - Code Validation",
+    "status": "Stagnant",
+    "authors": [
+      {
+        "name": "Alex Beregszaszi",
+        "nick": "axic",
+        "url": "https://github.com/axic"
+      },
+      {
+        "name": "Andrei Maiboroda",
+        "nick": "gumb0",
+        "url": "https://github.com/gumb0"
+      },
+      {
+        "name": "Paweł Bylica",
+        "nick": "chfast",
+        "url": "https://github.com/chfast"
       }
     ]
   },
@@ -15180,6 +16411,18 @@
         "name": "Isaac Buckman",
         "nick": "isaacbuckman",
         "url": "https://github.com/isaacbuckman"
+      }
+    ]
+  },
+  {
+    "id": 4803,
+    "title": "Limit transaction gas to a maximum of 2^63-1",
+    "status": "Stagnant",
+    "authors": [
+      {
+        "name": "Alex Beregszaszi",
+        "nick": "axic",
+        "url": "https://github.com/axic"
       }
     ]
   },
@@ -16065,7 +17308,7 @@
   },
   {
     "id": 5850,
-    "title": "Complex Numbers stored in \\`bytes32\\` types",
+    "title": "Complex Numbers stored in `bytes32` types",
     "status": "Stagnant",
     "authors": [
       {
@@ -16336,6 +17579,38 @@
     ]
   },
   {
+    "id": 6690,
+    "title": "EVM Modular Arithmetic Extensions",
+    "status": "Stagnant",
+    "authors": [
+      {
+        "name": "Jared Wasinger",
+        "nick": "jwasinger",
+        "url": "https://github.com/jwasinger"
+      },
+      {
+        "name": "Alex Beregszaszi",
+        "nick": "axic",
+        "url": "https://github.com/axic"
+      },
+      {
+        "name": "Vitalik Buterin",
+        "nick": "vbuterin",
+        "url": "https://github.com/vbuterin"
+      },
+      {
+        "name": "Radosław Zagórowicz",
+        "nick": "rodiazet",
+        "url": "https://github.com/rodiazet"
+      },
+      {
+        "name": "Paweł Bylica",
+        "nick": "chfast",
+        "url": "https://github.com/chfast"
+      }
+    ]
+  },
+  {
     "id": 6789,
     "title": "Rename gas to mana",
     "status": "Stagnant",
@@ -16344,6 +17619,63 @@
         "name": "Pascal Caversaccio",
         "nick": "pcaversaccio",
         "url": "https://github.com/pcaversaccio"
+      }
+    ]
+  },
+  {
+    "id": 6800,
+    "title": "Ethereum state using a unified verkle tree",
+    "status": "Stagnant",
+    "authors": [
+      {
+        "name": "Vitalik Buterin",
+        "nick": "vbuterin",
+        "url": "https://github.com/vbuterin"
+      },
+      {
+        "name": "Dankrad Feist",
+        "nick": "dankrad",
+        "url": "https://github.com/dankrad"
+      },
+      {
+        "name": "Kevaundray Wedderburn",
+        "nick": "kevaundray",
+        "url": "https://github.com/kevaundray"
+      },
+      {
+        "name": "Guillaume Ballet",
+        "nick": "gballet",
+        "url": "https://github.com/gballet"
+      },
+      {
+        "name": "Piper Merriam",
+        "nick": "pipermerriam",
+        "url": "https://github.com/pipermerriam"
+      },
+      {
+        "name": "Gottfried Herold",
+        "nick": "GottfriedHerold",
+        "url": "https://github.com/GottfriedHerold"
+      },
+      {
+        "name": "Ignacio Hagopian",
+        "nick": "jsign",
+        "url": "https://github.com/jsign"
+      },
+      {
+        "name": "Tanishq Jasoria",
+        "nick": "tanishqjasoria",
+        "url": "https://github.com/tanishqjasoria"
+      },
+      {
+        "name": "Gajinder Singh",
+        "nick": "g11tech",
+        "url": "https://github.com/g11tech"
+      },
+      {
+        "name": "Danno Ferrin",
+        "nick": "shemnon",
+        "url": "https://github.com/shemnon"
       }
     ]
   },
@@ -16380,6 +17712,18 @@
         "name": "Guillaume Ballet",
         "nick": "gballet",
         "url": "https://github.com/gballet"
+      }
+    ]
+  },
+  {
+    "id": 6888,
+    "title": "Arithmetic verification at EVM level",
+    "status": "Stagnant",
+    "authors": [
+      {
+        "name": "Renan Rodrigues de Souza",
+        "nick": "RenanSouza2",
+        "url": "https://github.com/RenanSouza2"
       }
     ]
   },
@@ -16517,6 +17861,18 @@
     ]
   },
   {
+    "id": 7519,
+    "title": "Atomic Storage Operations SCREDIT and SDEBIT",
+    "status": "Stagnant",
+    "authors": [
+      {
+        "name": "Danno Ferrin",
+        "nick": "shemnon",
+        "url": "https://github.com/shemnon"
+      }
+    ]
+  },
+  {
     "id": 7543,
     "title": "EVM arbitrary precision decimal math",
     "status": "Stagnant",
@@ -16642,6 +17998,18 @@
         "name": "Jame",
         "nick": "ZWJKFLC",
         "url": "https://github.com/ZWJKFLC"
+      }
+    ]
+  },
+  {
+    "id": 7639,
+    "title": "eth/70 - Cease serving history before PoS",
+    "status": "Stagnant",
+    "authors": [
+      {
+        "name": "lightclient",
+        "nick": "lightclient",
+        "url": "https://github.com/lightclient"
       }
     ]
   },
@@ -16793,6 +18161,18 @@
     ]
   },
   {
+    "id": 7703,
+    "title": "Increase calldata cost",
+    "status": "Stagnant",
+    "authors": [
+      {
+        "name": "William Morriss",
+        "nick": "wjmelements",
+        "url": "https://github.com/wjmelements"
+      }
+    ]
+  },
+  {
     "id": 7705,
     "title": "NONREENTRANT and REENTRANT opcodes",
     "status": "Stagnant",
@@ -16914,14 +18294,139 @@
     ]
   },
   {
-    "id": 7773,
-    "title": "Hardfork Meta - Amsterdam",
+    "id": 7742,
+    "title": "Uncouple blob count between CL and EL",
     "status": "Stagnant",
     "authors": [
       {
-        "name": "Tim Beiko",
-        "nick": "timbeiko",
-        "url": "https://github.com/timbeiko"
+        "name": "Alex Stokes",
+        "nick": "ralexstokes",
+        "url": "https://github.com/ralexstokes"
+      }
+    ]
+  },
+  {
+    "id": 7756,
+    "title": "EOF/EVM Trace Specification",
+    "status": "Stagnant",
+    "authors": [
+      {
+        "name": "Martin Holst Swende",
+        "nick": "holiman",
+        "url": "https://github.com/holiman"
+      },
+      {
+        "name": "Marius van der Wijden",
+        "nick": "MariusVanDerWijden",
+        "url": "https://github.com/MariusVanDerWijden"
+      },
+      {
+        "name": "Danno Ferrin",
+        "nick": "shemnon",
+        "url": "https://github.com/shemnon"
+      }
+    ]
+  },
+  {
+    "id": 7775,
+    "title": "BURN opcode",
+    "status": "Stagnant",
+    "authors": [
+      {
+        "name": "Dev Bear",
+        "nick": "itsdevbear",
+        "url": "https://github.com/itsdevbear"
+      }
+    ]
+  },
+  {
+    "id": 7783,
+    "title": "Add Controlled Gas Limit Increase Strategy",
+    "status": "Stagnant",
+    "authors": [
+      {
+        "name": "Giulio Rebuffo",
+        "nick": "Giulio2002",
+        "url": "https://github.com/Giulio2002"
+      }
+    ]
+  },
+  {
+    "id": 7784,
+    "title": "GETCONTRACT opcode",
+    "status": "Stagnant",
+    "authors": [
+      {
+        "name": "Tim Pechersky",
+        "nick": "peersky",
+        "url": "https://github.com/peersky"
+      }
+    ]
+  },
+  {
+    "id": 7790,
+    "title": "Controlled Gas Limit Increase Guidelines",
+    "status": "Stagnant",
+    "authors": [
+      {
+        "name": "Giulio Rebuffo",
+        "nick": "Giulio2002",
+        "url": "https://github.com/Giulio2002"
+      },
+      {
+        "name": "Ben Adams",
+        "nick": "benaadams",
+        "url": "https://github.com/benaadams"
+      }
+    ]
+  },
+  {
+    "id": 7808,
+    "title": "Reserve Tx-Type Range for RIPs",
+    "status": "Stagnant",
+    "authors": [
+      {
+        "name": "Carl Beekhuizen",
+        "nick": "carlbeek",
+        "url": "https://github.com/carlbeek"
+      },
+      {
+        "name": "Yoav Weiss",
+        "nick": "yoavw",
+        "url": "https://github.com/yoavw"
+      },
+      {
+        "name": "Ansgar Dietrichs",
+        "nick": "adietrichs",
+        "url": "https://github.com/adietrichs"
+      }
+    ]
+  },
+  {
+    "id": 7833,
+    "title": "Scheduled function calls",
+    "status": "Stagnant",
+    "authors": [
+      {
+        "name": "Keyvan Kambakhsh",
+        "nick": "keyvank",
+        "url": "https://github.com/keyvank"
+      },
+      {
+        "name": "Nobitex Labs",
+        "email": "labs@nobitex.ir"
+      }
+    ]
+  },
+  {
+    "id": 7851,
+    "title": "Deactivate/Reactivate a Delegated EOA's Key",
+    "status": "Stagnant",
+    "authors": [
+      {
+        "name": "Liyi Guo",
+        "nick": "colinlyguo",
+        "url": "https://github.com/colinlyguo"
       }
     ]
   },
@@ -17186,7 +18691,7 @@
   },
   {
     "id": 2677,
-    "title": "Limit size of \\`initcode\\`",
+    "title": "Limit size of `initcode`",
     "status": "Withdrawn",
     "authors": [
       {
@@ -17231,23 +18736,6 @@
     ]
   },
   {
-    "id": 2780,
-    "title": "Reduce intrinsic transaction gas",
-    "status": "Withdrawn",
-    "authors": [
-      {
-        "name": "Matt Garnett",
-        "nick": "lightclient",
-        "url": "https://github.com/lightclient"
-      },
-      {
-        "name": "Uri Klarman",
-        "nick": "uriklarman",
-        "url": "https://github.com/uriklarman"
-      }
-    ]
-  },
-  {
     "id": 2786,
     "title": "Ethereum Provider Connect/Disconnect Events",
     "status": "Withdrawn",
@@ -17265,6 +18753,38 @@
     ]
   },
   {
+    "id": 2938,
+    "title": "Account Abstraction",
+    "status": "Withdrawn",
+    "authors": [
+      {
+        "name": "Vitalik Buterin",
+        "nick": "vbuterin",
+        "url": "https://github.com/vbuterin"
+      },
+      {
+        "name": "Ansgar Dietrichs",
+        "nick": "adietrichs",
+        "url": "https://github.com/adietrichs"
+      },
+      {
+        "name": "Matt Garnett",
+        "nick": "lightclient",
+        "url": "https://github.com/lightclient"
+      },
+      {
+        "name": "Will Villanueva",
+        "nick": "villanuevawill",
+        "url": "https://github.com/villanuevawill"
+      },
+      {
+        "name": "Sam Wilson",
+        "nick": "SamWilsn",
+        "url": "https://github.com/SamWilsn"
+      }
+    ]
+  },
+  {
     "id": 2972,
     "title": "Wrapped Legacy Transactions",
     "status": "Withdrawn",
@@ -17273,6 +18793,33 @@
         "name": "Micah Zoltu",
         "nick": "MicahZoltu",
         "url": "https://github.com/MicahZoltu"
+      }
+    ]
+  },
+  {
+    "id": 3074,
+    "title": "AUTH and AUTHCALL opcodes",
+    "status": "Withdrawn",
+    "authors": [
+      {
+        "name": "Sam Wilson",
+        "nick": "SamWilsn",
+        "url": "https://github.com/SamWilsn"
+      },
+      {
+        "name": "Ansgar Dietrichs",
+        "nick": "adietrichs",
+        "url": "https://github.com/adietrichs"
+      },
+      {
+        "name": "Matt Garnett",
+        "nick": "lightclient",
+        "url": "https://github.com/lightclient"
+      },
+      {
+        "name": "Micah Zoltu",
+        "nick": "micahzoltu",
+        "url": "https://github.com/micahzoltu"
       }
     ]
   },
@@ -17386,6 +18933,18 @@
     ]
   },
   {
+    "id": 7636,
+    "title": "Extension of EIP-778 for \"client\" ENR Entry",
+    "status": "Withdrawn",
+    "authors": [
+      {
+        "name": "James Kempton",
+        "nick": "SirSpudlington",
+        "url": "https://github.com/SirSpudlington"
+      }
+    ]
+  },
+  {
     "id": 7664,
     "title": "Access-Key opcode",
     "status": "Withdrawn",
@@ -17410,6 +18969,18 @@
     ]
   },
   {
+    "id": 7788,
+    "title": "Dynamic target blob count",
+    "status": "Withdrawn",
+    "authors": [
+      {
+        "name": "Marc Harvey-Hill",
+        "nick": "Marchhill",
+        "url": "https://github.com/Marchhill"
+      }
+    ]
+  },
+  {
     "id": 7897,
     "title": "Wallet-Linked Services for Smart Accounts",
     "status": "Withdrawn",
@@ -17418,6 +18989,18 @@
         "name": "Francesco Sullo",
         "nick": "sullof",
         "url": "https://github.com/sullof"
+      }
+    ]
+  },
+  {
+    "id": 7980,
+    "title": "Ed25519 transaction support",
+    "status": "Withdrawn",
+    "authors": [
+      {
+        "name": "James Kempton",
+        "nick": "SirSpudlington",
+        "url": "https://github.com/SirSpudlington"
       }
     ]
   }

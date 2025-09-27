@@ -100,6 +100,34 @@ export const eips: EIP[] = [
     ]
   },
   {
+    "id": 2537,
+    "title": "Precompile for BLS12-381 curve operations",
+    "status": "Final",
+    "authors": [
+      {
+        "name": "Alex Vlasov",
+        "nick": "shamatar",
+        "url": "https://github.com/shamatar"
+      },
+      {
+        "name": "Kelly Olson",
+        "nick": "ineffectualproperty",
+        "url": "https://github.com/ineffectualproperty"
+      },
+      {
+        "name": "Alex Stokes",
+        "nick": "ralexstokes",
+        "url": "https://github.com/ralexstokes"
+      },
+      {
+        "name": "Antonio Sanso",
+        "nick": "asanso",
+        "url": "https://github.com/asanso"
+      }
+    ],
+    "star": true
+  },
+  {
     "id": 2565,
     "title": "ModExp Gas Cost",
     "status": "Final",
@@ -208,32 +236,59 @@ export const eips: EIP[] = [
     ]
   },
   {
-    "id": 2537,
-    "title": "Precompile for BLS12-381 curve operations",
+    "id": 7913,
+    "title": "Signature Verifiers",
     "status": "Last Call",
     "authors": [
       {
-        "name": "Alex Vlasov",
-        "nick": "shamatar",
-        "url": "https://github.com/shamatar"
+        "name": "Hadrien Croubois",
+        "nick": "Amxx",
+        "url": "https://github.com/Amxx"
       },
       {
-        "name": "Kelly Olson",
-        "nick": "ineffectualproperty",
-        "url": "https://github.com/ineffectualproperty"
+        "name": "Ernesto García",
+        "nick": "ernestognw",
+        "url": "https://github.com/ernestognw"
       },
       {
-        "name": "Alex Stokes",
-        "nick": "ralexstokes",
-        "url": "https://github.com/ralexstokes"
+        "name": "Francisco Giordano",
+        "nick": "frangio",
+        "url": "https://github.com/frangio"
       },
       {
-        "name": "Antonio Sanso",
-        "nick": "asanso",
-        "url": "https://github.com/asanso"
+        "name": "Aryeh Greenberg",
+        "nick": "arr00",
+        "url": "https://github.com/arr00"
       }
-    ],
-    "star": true
+    ]
+  },
+  {
+    "id": 7812,
+    "title": "ZK Identity Registry",
+    "status": "Review",
+    "authors": [
+      {
+        "name": "Artem Chystiakov (@arvolear)",
+        "email": "artem@rarilabs.com"
+      },
+      {
+        "name": "Oleksandr Kurbatov",
+        "email": "oleksandr@rarilabs.com"
+      },
+      {
+        "name": "Yaroslav Panasenko",
+        "email": "yaroslav@rarilabs.com"
+      },
+      {
+        "name": "Michael Elliot (@michaelelliot)",
+        "email": "mike@zkpassport.id"
+      },
+      {
+        "name": "Vitalik Buterin",
+        "nick": "vbuterin",
+        "url": "https://github.com/vbuterin"
+      }
+    ]
   },
   {
     "id": 6327,
@@ -271,75 +326,6 @@ export const eips: EIP[] = [
         "name": "Vitalik Buterin",
         "nick": "vbuterin",
         "url": "https://github.com/vbuterin"
-      }
-    ]
-  },
-  {
-    "id": 6800,
-    "title": "Ethereum state using a unified verkle tree",
-    "status": "Draft",
-    "authors": [
-      {
-        "name": "Vitalik Buterin",
-        "nick": "vbuterin",
-        "url": "https://github.com/vbuterin"
-      },
-      {
-        "name": "Dankrad Feist",
-        "nick": "dankrad",
-        "url": "https://github.com/dankrad"
-      },
-      {
-        "name": "Kevaundray Wedderburn",
-        "nick": "kevaundray",
-        "url": "https://github.com/kevaundray"
-      },
-      {
-        "name": "Guillaume Ballet",
-        "nick": "gballet",
-        "url": "https://github.com/gballet"
-      },
-      {
-        "name": "Piper Merriam",
-        "nick": "pipermerriam",
-        "url": "https://github.com/pipermerriam"
-      },
-      {
-        "name": "Gottfried Herold",
-        "nick": "GottfriedHerold",
-        "url": "https://github.com/GottfriedHerold"
-      },
-      {
-        "name": "Ignacio Hagopian",
-        "nick": "jsign",
-        "url": "https://github.com/jsign"
-      },
-      {
-        "name": "Tanishq Jasoria",
-        "nick": "tanishqjasoria",
-        "url": "https://github.com/tanishqjasoria"
-      },
-      {
-        "name": "Gajinder Singh",
-        "nick": "g11tech",
-        "url": "https://github.com/g11tech"
-      },
-      {
-        "name": "Danno Ferrin",
-        "nick": "shemnon",
-        "url": "https://github.com/shemnon"
-      }
-    ]
-  },
-  {
-    "id": 6888,
-    "title": "Arithmetic verification at EVM level",
-    "status": "Draft",
-    "authors": [
-      {
-        "name": "Renan Rodrigues de Souza",
-        "nick": "RenanSouza2",
-        "url": "https://github.com/RenanSouza2"
       }
     ]
   },
@@ -647,57 +633,59 @@ export const eips: EIP[] = [
     ]
   },
   {
-    "id": 7812,
-    "title": "ZK Identity Registry",
+    "id": 7861,
+    "title": "ERC-721 Verifiable Credential Extension",
     "status": "Draft",
     "authors": [
       {
-        "name": "Artem Chystiakov (@arvolear)",
-        "email": "artem@rarilabs.com"
-      },
-      {
-        "name": "Oleksandr Kurbatov",
-        "email": "oleksandr@rarilabs.com"
-      },
-      {
-        "name": "Yaroslav Panasenko",
-        "email": "yaroslav@rarilabs.com"
-      },
-      {
-        "name": "Michael Elliot (@michaelelliot)",
-        "email": "mike@zkpassport.id"
-      },
-      {
-        "name": "Vitalik Buterin",
-        "nick": "vbuterin",
-        "url": "https://github.com/vbuterin"
+        "name": "Valerio Massimo Camaiani",
+        "nick": "vmc-crossmint",
+        "url": "https://github.com/vmc-crossmint"
       }
     ]
   },
   {
-    "id": 7913,
-    "title": "Signature Verifiers",
+    "id": 7920,
+    "title": "Composite EIP-712 Signatures",
     "status": "Draft",
     "authors": [
       {
-        "name": "Hadrien Croubois",
-        "nick": "Amxx",
-        "url": "https://github.com/Amxx"
+        "name": "Sola Ogunsakin",
+        "nick": "sola92",
+        "url": "https://github.com/sola92"
+      }
+    ]
+  },
+  {
+    "id": 7932,
+    "title": "Secondary Signature Algorithms",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "James Kempton",
+        "nick": "SirSpudlington",
+        "url": "https://github.com/SirSpudlington"
+      }
+    ]
+  },
+  {
+    "id": 8004,
+    "title": "Trustless Agents",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Marco De Rossi",
+        "nick": "MarcoMetaMask",
+        "url": "https://github.com/MarcoMetaMask"
       },
       {
-        "name": "Ernesto García",
-        "nick": "ernestognw",
-        "url": "https://github.com/ernestognw"
+        "name": "Davide Crapis (@dcrapis)",
+        "email": "davide@ethereum.org"
       },
       {
-        "name": "Francisco Giordano",
-        "nick": "frangio",
-        "url": "https://github.com/frangio"
-      },
-      {
-        "name": "Aryeh Greenberg",
-        "nick": "arr00",
-        "url": "https://github.com/arr00"
+        "name": "Jordan Ellis",
+        "nick": "jorellis",
+        "url": "https://github.com/jorellis"
       }
     ]
   },
@@ -1002,6 +990,75 @@ export const eips: EIP[] = [
         "name": "RoiV",
         "nick": "DeVaz1",
         "url": "https://github.com/DeVaz1"
+      }
+    ]
+  },
+  {
+    "id": 6800,
+    "title": "Ethereum state using a unified verkle tree",
+    "status": "Stagnant",
+    "authors": [
+      {
+        "name": "Vitalik Buterin",
+        "nick": "vbuterin",
+        "url": "https://github.com/vbuterin"
+      },
+      {
+        "name": "Dankrad Feist",
+        "nick": "dankrad",
+        "url": "https://github.com/dankrad"
+      },
+      {
+        "name": "Kevaundray Wedderburn",
+        "nick": "kevaundray",
+        "url": "https://github.com/kevaundray"
+      },
+      {
+        "name": "Guillaume Ballet",
+        "nick": "gballet",
+        "url": "https://github.com/gballet"
+      },
+      {
+        "name": "Piper Merriam",
+        "nick": "pipermerriam",
+        "url": "https://github.com/pipermerriam"
+      },
+      {
+        "name": "Gottfried Herold",
+        "nick": "GottfriedHerold",
+        "url": "https://github.com/GottfriedHerold"
+      },
+      {
+        "name": "Ignacio Hagopian",
+        "nick": "jsign",
+        "url": "https://github.com/jsign"
+      },
+      {
+        "name": "Tanishq Jasoria",
+        "nick": "tanishqjasoria",
+        "url": "https://github.com/tanishqjasoria"
+      },
+      {
+        "name": "Gajinder Singh",
+        "nick": "g11tech",
+        "url": "https://github.com/g11tech"
+      },
+      {
+        "name": "Danno Ferrin",
+        "nick": "shemnon",
+        "url": "https://github.com/shemnon"
+      }
+    ]
+  },
+  {
+    "id": 6888,
+    "title": "Arithmetic verification at EVM level",
+    "status": "Stagnant",
+    "authors": [
+      {
+        "name": "Renan Rodrigues de Souza",
+        "nick": "RenanSouza2",
+        "url": "https://github.com/RenanSouza2"
       }
     ]
   },
