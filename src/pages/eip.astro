@@ -55,6 +55,16 @@ const statusColors: Record<string, string> = {
                     <span class="font-medium flex items-center">
                       {eip.star && <span class="text-yellow-500 mr-2">⭐</span>}
                       EIP-{eip.id}: {eip.title}
+                      {eip.flag === "new" && (
+                        <span class="ml-2 px-2 py-0.5 text-xs font-semibold text-green-800 bg-green-100 rounded-full">
+                          New
+                        </span>
+                      )}
+                      {eip.flag === "update" && (
+                        <span class="ml-2 px-2 py-0.5 text-xs font-semibold text-blue-800 bg-blue-100 rounded-full">
+                          Updated
+                        </span>
+                      )}
                     </span>
                     <a
                       href={`https://eips.ethereum.org/EIPS/eip-${eip.id}`}

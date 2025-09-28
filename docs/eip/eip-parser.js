@@ -184,6 +184,7 @@ function filterZKPRelatedEIPs(eips) {
       status: eip.status,
       authors: eip.authors,
       star: stars.includes(eip.id) ? true : undefined,
+      flag: eip.flag,
     }));
 }
 
@@ -205,6 +206,19 @@ function calculateStatistics(eips) {
 
 // Main function
 function main() {
+  // Read previous EIPs if they exist
+  let previousEIPs = [];
+  const eipsJsonPath = path.resolve(__dirname, "eips.json");
+  if (fs.existsSync(eipsJsonPath)) {
+    try {
+      previousEIPs = JSON.parse(fs.readFileSync(eipsJsonPath, "utf8"));
+    } catch (error) {
+      console.error("Error reading or parsing eips.json:", error);
+    }
+  }
+
+  const previousEIPsMap = new Map(previousEIPs.map((eip) => [eip.id, eip]));
+
   const filePath = path.resolve(__dirname, "input.md");
 
   // Check if file exists
@@ -215,7 +229,18 @@ function main() {
   }
 
   // Parse the markdown file
-  const eips = parseEIPMarkdown(filePath);
+  let eips = parseEIPMarkdown(filePath);
+
+  // Add flags for new or updated EIPs
+  eips = eips.map((eip) => {
+    const prevEip = previousEIPsMap.get(eip.id);
+    if (!prevEip) {
+      eip.flag = "new";
+    } else if (prevEip.status !== eip.status) {
+      eip.flag = "update";
+    }
+    return eip;
+  });
 
   // Calculate statistics
   const stats = calculateStatistics(eips);

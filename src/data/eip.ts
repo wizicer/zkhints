@@ -125,7 +125,8 @@ export const eips: EIP[] = [
         "url": "https://github.com/asanso"
       }
     ],
-    "star": true
+    "star": true,
+    "flag": "update"
   },
   {
     "id": 2565,
@@ -260,7 +261,8 @@ export const eips: EIP[] = [
         "nick": "arr00",
         "url": "https://github.com/arr00"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7812,
@@ -288,7 +290,8 @@ export const eips: EIP[] = [
         "nick": "vbuterin",
         "url": "https://github.com/vbuterin"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 6327,
@@ -642,7 +645,8 @@ export const eips: EIP[] = [
         "nick": "vmc-crossmint",
         "url": "https://github.com/vmc-crossmint"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7920,
@@ -654,7 +658,8 @@ export const eips: EIP[] = [
         "nick": "sola92",
         "url": "https://github.com/sola92"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7932,
@@ -666,7 +671,8 @@ export const eips: EIP[] = [
         "nick": "SirSpudlington",
         "url": "https://github.com/SirSpudlington"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 8004,
@@ -687,7 +693,8 @@ export const eips: EIP[] = [
         "nick": "jorellis",
         "url": "https://github.com/jorellis"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 86,
@@ -1048,7 +1055,8 @@ export const eips: EIP[] = [
         "nick": "shemnon",
         "url": "https://github.com/shemnon"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 6888,
@@ -1060,7 +1068,8 @@ export const eips: EIP[] = [
         "nick": "RenanSouza2",
         "url": "https://github.com/RenanSouza2"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7543,

@@ -3,6 +3,7 @@ export interface EIP {
   title: string;
   status: string;
   star?: boolean;
+  flag?: "new" | "update";
   authors: {
     name: string;
     email?: string;

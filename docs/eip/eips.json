@@ -1541,7 +1541,8 @@
         "nick": "asanso",
         "url": "https://github.com/asanso"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 2565,
@@ -1823,7 +1824,8 @@
         "nick": "s1na",
         "url": "https://github.com/s1na"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 2976,
@@ -2275,7 +2277,8 @@
         "nick": "awoie",
         "url": "https://github.com/awoie"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 4399,
@@ -3291,7 +3294,8 @@
         "nick": "bumblefudge",
         "url": "https://github.com/bumblefudge"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 5793,
@@ -3381,7 +3385,8 @@
         "nick": "Amxx",
         "url": "https://github.com/Amxx"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 6105,
@@ -3432,7 +3437,8 @@
         "nick": "petertdavies",
         "url": "https://github.com/petertdavies"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 6122,
@@ -3769,7 +3775,8 @@
         "nick": "neodaoist",
         "url": "https://github.com/neodaoist"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 6916,
@@ -3801,7 +3808,8 @@
         "nick": "T-ess",
         "url": "https://github.com/T-ess"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 6953,
@@ -3924,7 +3932,8 @@
         "nick": "fjl",
         "url": "https://github.com/fjl"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7007,
@@ -4196,7 +4205,8 @@
         "nick": "fjl",
         "url": "https://github.com/fjl"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7329,
@@ -4420,7 +4430,8 @@
         "nick": "mkalinin",
         "url": "https://github.com/mkalinin"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7568,
@@ -4567,7 +4578,8 @@
         "nick": "timbeiko",
         "url": "https://github.com/timbeiko"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7623,
@@ -4584,7 +4596,8 @@
         "nick": "vbuterin",
         "url": "https://github.com/vbuterin"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7631,
@@ -4621,7 +4634,8 @@
         "nick": "pop-punk",
         "url": "https://github.com/pop-punk"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7642,
@@ -4641,7 +4655,8 @@
         "name": "Ahmad Bitar (@smartprogrammer93)",
         "email": "smartprogrammer@windowslive.com"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7685,
@@ -4658,7 +4673,8 @@
         "nick": "fjl",
         "url": "https://github.com/fjl"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7691,
@@ -4690,7 +4706,8 @@
         "nick": "adietrichs",
         "url": "https://github.com/adietrichs"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7702,
@@ -4717,7 +4734,8 @@
         "nick": "lightclient",
         "url": "https://github.com/lightclient"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7734,
@@ -4739,7 +4757,8 @@
         "name": "Cheng Qian (@jamesavechives)",
         "email": "james.walstonn@gmail.com"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7751,
@@ -4815,7 +4834,8 @@
         "name": "Cheng Qian (@jamesavechives)",
         "email": "james.walstonn@gmail.com"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7840,
@@ -4827,7 +4847,8 @@
         "nick": "lightclient",
         "url": "https://github.com/lightclient"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7858,
@@ -4854,7 +4875,8 @@
         "nick": "najaroen",
         "url": "https://github.com/najaroen"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7878,
@@ -4866,7 +4888,8 @@
         "nick": "wamith",
         "url": "https://github.com/wamith"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 1191,
@@ -5044,7 +5067,8 @@
         "nick": "arvolear",
         "url": "https://github.com/arvolear"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 6357,
@@ -5093,7 +5117,8 @@
         "nick": "veenkumarr",
         "url": "https://github.com/veenkumarr"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7523,
@@ -5161,7 +5186,8 @@
         "name": "Tim Pechersky (@peersky)",
         "email": "t@peersky.xyz"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7746,
@@ -5173,7 +5199,8 @@
         "nick": "peersky",
         "url": "https://github.com/peersky"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7786,
@@ -5210,7 +5237,8 @@
         "nick": "Joxess",
         "url": "https://github.com/Joxess"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7857,
@@ -5237,7 +5265,8 @@
         "nick": "michaelomg",
         "url": "https://github.com/michaelomg"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7913,
@@ -5264,7 +5293,8 @@
         "nick": "arr00",
         "url": "https://github.com/arr00"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7950,
@@ -5276,7 +5306,8 @@
         "nick": "microbecode",
         "url": "https://github.com/microbecode"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 663,
@@ -5428,7 +5459,8 @@
         "nick": "tjade273",
         "url": "https://github.com/tjade273"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 4750,
@@ -6115,7 +6147,8 @@
         "nick": "sambacha",
         "url": "https://github.com/sambacha"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7417,
@@ -6243,7 +6276,8 @@
         "nick": "adietrichs",
         "url": "https://github.com/adietrichs"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7620,
@@ -6302,7 +6336,8 @@
         "name": "Shiping Chen",
         "email": "shiping.chen@data61.csiro.au"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7656,
@@ -6498,7 +6533,8 @@
         "name": "Ignacio Ceaglio (@Nachoxt17)",
         "email": "ignacioceaglio@gmail.com"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7777,
@@ -6562,7 +6598,8 @@
         "nick": "vbuterin",
         "url": "https://github.com/vbuterin"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7813,
@@ -6598,7 +6635,8 @@
         "name": "yonada",
         "email": "yonada@proton.me"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7823,
@@ -6632,7 +6670,8 @@
         "nick": "nerolation",
         "url": "https://github.com/nerolation"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7829,
@@ -6652,7 +6691,8 @@
         "name": "Steven He",
         "email": "steven@memolabs.net"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7830,
@@ -6703,7 +6743,8 @@
         "nick": "Marchhill",
         "url": "https://github.com/Marchhill"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7870,
@@ -6867,7 +6908,8 @@
         "nick": "stdevMac",
         "url": "https://github.com/stdevMac"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7892,
@@ -6884,7 +6926,8 @@
         "nick": "raulk",
         "url": "https://github.com/raulk"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7908,
@@ -6915,7 +6958,8 @@
         "name": "yuanshanhshan (@xunayuan)",
         "email": "yuanshanshan.yss@antgroup.com"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7910,
@@ -6927,7 +6971,8 @@
         "nick": "shemnon",
         "url": "https://github.com/shemnon"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7917,
@@ -6942,7 +6987,8 @@
         "name": "Justin Drake (@JustinDrake)",
         "email": "justin@ethereum.org"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7918,
@@ -6986,7 +7032,8 @@
         "nick": "sslivkoff",
         "url": "https://github.com/sslivkoff"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7935,
@@ -7043,7 +7090,8 @@
         "nick": "sslivkoff",
         "url": "https://github.com/sslivkoff"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7939,
@@ -7075,7 +7123,8 @@
         "nick": "Giulio2002",
         "url": "https://github.com/Giulio2002"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7943,
@@ -7087,7 +7136,8 @@
         "nick": "xaler5",
         "url": "https://github.com/xaler5"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7951,
@@ -7109,7 +7159,8 @@
         "nick": "doganalpaslan",
         "url": "https://github.com/doganalpaslan"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 8024,
@@ -7131,7 +7182,8 @@
         "nick": "axic",
         "url": "https://github.com/axic"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 725,
@@ -7242,7 +7294,8 @@
         "nick": "misilva73",
         "url": "https://github.com/misilva73"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 2926,
@@ -7274,7 +7327,8 @@
         "nick": "jsign",
         "url": "https://github.com/jsign"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 3770,
@@ -10496,7 +10550,8 @@
         "nick": "yaronvel",
         "url": "https://github.com/yaronvel"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7773,
@@ -10518,7 +10573,8 @@
         "nick": "adietrichs",
         "url": "https://github.com/adietrichs"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7774,
@@ -10989,7 +11045,8 @@
         "nick": "hellohanchen",
         "url": "https://github.com/hellohanchen"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7807,
@@ -11154,7 +11211,8 @@
         "nick": "0xmoebius",
         "url": "https://github.com/0xmoebius"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7831,
@@ -11177,7 +11235,8 @@
         "nick": "gflobo",
         "url": "https://github.com/gflobo"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7836,
@@ -11209,7 +11268,8 @@
         "nick": "jxom",
         "url": "https://github.com/jxom"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7845,
@@ -11236,7 +11296,8 @@
         "nick": "RanaBug",
         "url": "https://github.com/RanaBug"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7846,
@@ -11258,7 +11319,8 @@
         "nick": "lukasrosario",
         "url": "https://github.com/lukasrosario"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7847,
@@ -11269,7 +11331,8 @@
         "name": "Nick Juntilla (@nickjuntilla)",
         "email": "nick@ownerfy.com"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7848,
@@ -11305,7 +11368,8 @@
         "nick": "vmc-crossmint",
         "url": "https://github.com/vmc-crossmint"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7862,
@@ -11435,7 +11499,8 @@
         "nick": "anistark",
         "url": "https://github.com/anistark"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7867,
@@ -11473,7 +11538,8 @@
         "nick": "ilikesymmetry",
         "url": "https://github.com/ilikesymmetry"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7877,
@@ -11558,7 +11624,8 @@
         "nick": "yahgwai",
         "url": "https://github.com/yahgwai"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7889,
@@ -11594,7 +11661,8 @@
         "name": "Su-Hyun Lee",
         "email": "sleepl@changwon.ac.kr"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7893,
@@ -11605,7 +11673,8 @@
         "name": "Sean Luis Guada Rodríguez (@SeanLuis)",
         "email": "seanluis47@gmail.com"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7895,
@@ -11637,7 +11706,8 @@
         "nick": "jxom",
         "url": "https://github.com/jxom"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7896,
@@ -11688,7 +11758,8 @@
         "nick": "shahafn",
         "url": "https://github.com/shahafn"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7903,
@@ -11722,7 +11793,8 @@
         "nick": "misilva73",
         "url": "https://github.com/misilva73"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7907,
@@ -11761,7 +11833,8 @@
         "nick": "lightclient",
         "url": "https://github.com/lightclient"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7915,
@@ -11824,7 +11897,8 @@
         "nick": "sola92",
         "url": "https://github.com/sola92"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7921,
@@ -11887,7 +11961,8 @@
         "nick": "pipermerriam",
         "url": "https://github.com/pipermerriam"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7928,
@@ -11919,7 +11994,8 @@
         "nick": "jsign",
         "url": "https://github.com/jsign"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7929,
@@ -11941,7 +12017,8 @@
         "nick": "NarcisCRO",
         "url": "https://github.com/NarcisCRO"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7930,
@@ -12028,7 +12105,8 @@
         "nick": "vbuterin",
         "url": "https://github.com/vbuterin"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7932,
@@ -12040,7 +12118,8 @@
         "nick": "SirSpudlington",
         "url": "https://github.com/SirSpudlington"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7936,
@@ -12062,7 +12141,8 @@
         "nick": "monperrus",
         "url": "https://github.com/monperrus"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7937,
@@ -12074,7 +12154,8 @@
         "nick": "sorpaas",
         "url": "https://github.com/sorpaas"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7938,
@@ -12086,7 +12167,8 @@
         "nick": "dankrad",
         "url": "https://github.com/dankrad"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7940,
@@ -12101,7 +12183,8 @@
       {
         "name": "Gregory Markou"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7942,
@@ -12124,7 +12207,8 @@
         "name": "Sisi Duan",
         "email": "duansisi@tsinghua.edu.cn"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7946,
@@ -12141,7 +12225,8 @@
         "nick": "tinaszheng",
         "url": "https://github.com/tinaszheng"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7947,
@@ -12152,7 +12237,8 @@
         "name": "Artem Chystiakov (@arvolear)",
         "email": "artem@rarilabs.com"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7949,
@@ -12167,7 +12253,8 @@
         "name": "Jochem Brouwer (@jochem-brouwer)",
         "email": "jochem@ethereum.org"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7954,
@@ -12184,7 +12271,8 @@
         "nick": "badams",
         "url": "https://github.com/badams"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7955,
@@ -12206,7 +12294,8 @@
         "nick": "vseehausen",
         "url": "https://github.com/vseehausen"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7956,
@@ -12218,7 +12307,8 @@
         "nick": "aryaethn",
         "url": "https://github.com/aryaethn"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7957,
@@ -12230,7 +12320,8 @@
         "nick": "sorpaas",
         "url": "https://github.com/sorpaas"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7958,
@@ -12242,7 +12333,8 @@
         "nick": "sorpaas",
         "url": "https://github.com/sorpaas"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7960,
@@ -12254,7 +12346,8 @@
         "nick": "sorpaas",
         "url": "https://github.com/sorpaas"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7961,
@@ -12266,7 +12359,8 @@
         "nick": "sorpaas",
         "url": "https://github.com/sorpaas"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7964,
@@ -12278,7 +12372,8 @@
         "nick": "ernestognw",
         "url": "https://github.com/ernestognw"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7965,
@@ -12290,7 +12385,8 @@
         "nick": "ernestognw",
         "url": "https://github.com/ernestognw"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7966,
@@ -12312,7 +12408,8 @@
         "nick": "LampardNguyen234",
         "url": "https://github.com/LampardNguyen234"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7968,
@@ -12324,7 +12421,8 @@
         "nick": "Julius278",
         "url": "https://github.com/Julius278"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7969,
@@ -12346,7 +12444,8 @@
         "nick": "ernestognw",
         "url": "https://github.com/ernestognw"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7975,
@@ -12367,7 +12466,8 @@
         "nick": "Giulio2002",
         "url": "https://github.com/Giulio2002"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7976,
@@ -12379,7 +12479,8 @@
         "nick": "nerolation",
         "url": "https://github.com/nerolation"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7979,
@@ -12405,7 +12506,8 @@
         "name": "John Max Skaller",
         "email": "skaller@internode.on.net"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7981,
@@ -12417,7 +12519,8 @@
         "nick": "nerolation",
         "url": "https://github.com/nerolation"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7985,
@@ -12439,7 +12542,8 @@
         "nick": "0xValera",
         "url": "https://github.com/0xValera"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7997,
@@ -12451,7 +12555,8 @@
         "nick": "frangio",
         "url": "https://github.com/frangio"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7998,
@@ -12468,7 +12573,8 @@
         "nick": "aryaethn",
         "url": "https://github.com/aryaethn"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 7999,
@@ -12485,7 +12591,8 @@
         "nick": "vbuterin",
         "url": "https://github.com/vbuterin"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 8001,
@@ -12497,7 +12604,8 @@
         "nick": "kbryan",
         "url": "https://github.com/kbryan"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 8004,
@@ -12518,7 +12626,8 @@
         "nick": "jorellis",
         "url": "https://github.com/jorellis"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 8007,
@@ -12535,7 +12644,8 @@
         "nick": "adietrichs",
         "url": "https://github.com/adietrichs"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 8011,
@@ -12562,7 +12672,8 @@
         "nick": "nerolation",
         "url": "https://github.com/nerolation"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 8012,
@@ -12574,7 +12685,8 @@
         "nick": "potuz",
         "url": "https://github.com/potuz"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 8013,
@@ -12601,7 +12713,8 @@
         "nick": "chfast",
         "url": "https://github.com/chfast"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 8015,
@@ -12613,7 +12726,8 @@
         "nick": "terencechain",
         "url": "https://github.com/terencechain"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 8016,
@@ -12630,7 +12744,8 @@
         "nick": "wemeetagain",
         "url": "https://github.com/wemeetagain"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 8025,
@@ -12646,7 +12761,8 @@
         "name": "Justin Drake (@JustinDrake)",
         "email": "justin@ethereum.org"
       }
-    ]
+    ],
+    "flag": "new"
   },
   {
     "id": 86,
@@ -15960,7 +16076,8 @@
         "nick": "chfast",
         "url": "https://github.com/chfast"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 3690,
@@ -16424,7 +16541,8 @@
         "nick": "axic",
         "url": "https://github.com/axic"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 4863,
@@ -17608,7 +17726,8 @@
         "nick": "chfast",
         "url": "https://github.com/chfast"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 6789,
@@ -17677,7 +17796,8 @@
         "nick": "shemnon",
         "url": "https://github.com/shemnon"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 6810,
@@ -17725,7 +17845,8 @@
         "nick": "RenanSouza2",
         "url": "https://github.com/RenanSouza2"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 6914,
@@ -17870,7 +17991,8 @@
         "nick": "shemnon",
         "url": "https://github.com/shemnon"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7543,
@@ -18011,7 +18133,8 @@
         "nick": "lightclient",
         "url": "https://github.com/lightclient"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7643,
@@ -18170,7 +18293,8 @@
         "nick": "wjmelements",
         "url": "https://github.com/wjmelements"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7705,
@@ -18303,7 +18427,8 @@
         "nick": "ralexstokes",
         "url": "https://github.com/ralexstokes"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7756,
@@ -18325,7 +18450,8 @@
         "nick": "shemnon",
         "url": "https://github.com/shemnon"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7775,
@@ -18337,7 +18463,8 @@
         "nick": "itsdevbear",
         "url": "https://github.com/itsdevbear"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7783,
@@ -18349,7 +18476,8 @@
         "nick": "Giulio2002",
         "url": "https://github.com/Giulio2002"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7784,
@@ -18361,7 +18489,8 @@
         "nick": "peersky",
         "url": "https://github.com/peersky"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7790,
@@ -18378,7 +18507,8 @@
         "nick": "benaadams",
         "url": "https://github.com/benaadams"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7808,
@@ -18400,7 +18530,8 @@
         "nick": "adietrichs",
         "url": "https://github.com/adietrichs"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7833,
@@ -18416,7 +18547,8 @@
         "name": "Nobitex Labs",
         "email": "labs@nobitex.ir"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7851,
@@ -18428,7 +18560,8 @@
         "nick": "colinlyguo",
         "url": "https://github.com/colinlyguo"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 3,
@@ -18782,7 +18915,8 @@
         "nick": "SamWilsn",
         "url": "https://github.com/SamWilsn"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 2972,
@@ -18821,7 +18955,8 @@
         "nick": "micahzoltu",
         "url": "https://github.com/micahzoltu"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 3332,
@@ -18942,7 +19077,8 @@
         "nick": "SirSpudlington",
         "url": "https://github.com/SirSpudlington"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7664,
@@ -18978,7 +19114,8 @@
         "nick": "Marchhill",
         "url": "https://github.com/Marchhill"
       }
-    ]
+    ],
+    "flag": "update"
   },
   {
     "id": 7897,
@@ -19002,6 +19139,7 @@
         "nick": "SirSpudlington",
         "url": "https://github.com/SirSpudlington"
       }
-    ]
+    ],
+    "flag": "new"
   }
 ]
