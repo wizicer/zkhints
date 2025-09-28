@@ -294,6 +294,29 @@ export const eips: EIP[] = [
     "flag": "update"
   },
   {
+    "id": 7951,
+    "title": "Precompile for secp256r1 Curve Support",
+    "status": "Review",
+    "authors": [
+      {
+        "name": "Carl Beekhuizen",
+        "nick": "carlbeek",
+        "url": "https://github.com/carlbeek"
+      },
+      {
+        "name": "Ulaş Erdoğan",
+        "nick": "ulerdogan",
+        "url": "https://github.com/ulerdogan"
+      },
+      {
+        "name": "Doğan Alpaslan",
+        "nick": "doganalpaslan",
+        "url": "https://github.com/doganalpaslan"
+      }
+    ],
+    "flag": "new"
+  },
+  {
     "id": 6327,
     "title": "Elastic Signature",
     "status": "Draft",
@@ -469,6 +492,31 @@ export const eips: EIP[] = [
         "name": "Karim Taam",
         "nick": "matkt",
         "url": "https://github.com/matkt"
+      }
+    ]
+  },
+  {
+    "id": 7649,
+    "title": "Bonding curve-embedded liquidity for NFTs",
+    "status": "Draft",
+    "authors": [
+      {
+        "name": "Arif Khan",
+        "email": "arif@alethea.ai"
+      },
+      {
+        "name": "Ahmad Matyana",
+        "email": "ahmad@alethea.ai"
+      },
+      {
+        "name": "Basil Gorin",
+        "nick": "vgorin",
+        "url": "https://github.com/vgorin"
+      },
+      {
+        "name": "Vijay Bhayani",
+        "nick": "unblocktechie",
+        "url": "https://github.com/unblocktechie"
       }
     ]
   },
@@ -884,6 +932,32 @@ export const eips: EIP[] = [
         "name": "Alex Vlasov",
         "nick": "shamatar",
         "url": "https://github.com/shamatar"
+      },
+      {
+        "name": "hujw77",
+        "nick": "hujw77",
+        "url": "https://github.com/hujw77"
+      }
+    ]
+  },
+  {
+    "id": 3026,
+    "title": "BW6-761 curve operations",
+    "status": "Stagnant",
+    "authors": [
+      {
+        "name": "Youssef El Housni",
+        "nick": "yelhousni",
+        "url": "https://github.com/yelhousni"
+      },
+      {
+        "name": "Michael Connor",
+        "nick": "iAmMichaelConnor",
+        "url": "https://github.com/iAmMichaelConnor"
+      },
+      {
+        "name": "Aurore Guillevic",
+        "email": "aurore.guillevic@inria.fr"
       },
       {
         "name": "hujw77",

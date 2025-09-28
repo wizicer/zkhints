@@ -15,7 +15,7 @@ const keywords = [
   "pairing",
   "cryptograph",
   "math",
-  "elliptic curve",
+  "curve",
   "verif",
   "commit",
   "polynomial",
