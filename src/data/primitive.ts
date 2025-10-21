@@ -270,3 +270,63 @@ export const legendItems = [
     description: "Frameworks with mature implementations (Circom, Arkworks, Noir, Halo2, etc.)",
   },
 ];
+
+export const contraintStatistics = [
+  {
+    name: "Hash To Curve (Sha256 + Secp256k1)",
+    repo: "https://github.com/geometryxyz/secp256k1_hash_to_curve",
+    constraints: [
+      {
+        name: "hash_to_field",
+        file: {
+          name: "hash_to_field_test.circom",
+          link: "https://github.com/geometryxyz/secp256k1_hash_to_curve/blob/main/circuits/circom/test/hash_to_field_test.circom",
+        },
+        non_linear_constraints: 288787,
+        linear_constraints: 15572,
+        proportion: 1,
+      },
+      {
+        name: "map_to_curve",
+        file: {
+          name: "map_to_curve_test.circom",
+          link: "https://github.com/geometryxyz/secp256k1_hash_to_curve/blob/main/circuits/circom/test/map_to_curve_test.circom",
+        },
+        non_linear_constraints: 147600,
+        linear_constraints: 5202,
+        proportion: 2,
+      },
+      // {
+      //   name: "iso_map",
+      //   file: {
+      //     name: "iso_map_test.circom",
+      //     link: "https://github.com/geometryxyz/secp256k1_hash_to_curve/blob/main/circuits/circom/test/iso_map_test.circom",
+      //   },
+      //   non_linear_constraints: 85762,
+      //   linear_constraints: 3061,
+      //   proportion: 2,
+      // },
+      {
+        name: "hash_to_curve",
+        file: {
+          name: "hash_to_curve_test.circom",
+          link: "https://github.com/geometryxyz/secp256k1_hash_to_curve/blob/main/circuits/circom/test/hash_to_curve_test.circom",
+        },
+        non_linear_constraints: 586502,
+        linear_constraints: 26091,
+        proportion: 1,
+      },
+    ],
+    description: `hash_to_curve(msg)
+
+Input: msg, an arbitrary-length byte string.
+Output: P, a point in the secp256k1 curve.
+
+Steps:
+1. u = hash_to_field(msg)
+2. Q0 = map_to_curve(u[0])
+3. Q1 = map_to_curve(u[1])
+4. R = iso_map(Q0) + iso_map(Q1)
+5. return P`,
+  },
+];

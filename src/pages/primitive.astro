@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import TableSection from "../components/TableSection.astro";
 import "highlight.js/styles/atom-one-dark.css";
-import { primitiveData, legendItems } from "../data/primitive";
+import { primitiveData, legendItems, contraintStatistics } from "../data/primitive";
 ---
 
 <Layout id="primitive">
@@ -25,6 +25,69 @@ import { primitiveData, legendItems } from "../data/primitive";
           footnote={section.footnote}
         />
       ))
+    }
+
+    <!-- Constraint Statistics Section -->
+    {
+      contraintStatistics.map((stat) => {
+        return (
+          <div class="mb-10">
+            <h2 class="text-xl font-bold mb-4">📊 {stat.name}</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <!-- Left: Constraints Table -->
+              <div class="overflow-x-auto">
+                <table class="min-w-full bg-white border border-gray-300 text-sm">
+                  <thead class="bg-gray-100">
+                    <tr>
+                      <th class="px-4 py-2 border-b text-left font-semibold">Component</th>
+                      <th class="px-4 py-2 border-b text-right font-semibold">Non-Linear Constraints</th>
+                      <th class="px-4 py-2 border-b text-right font-semibold">Linear Constraints</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {stat.constraints.map((constraint) => (
+                      <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-2 border-b font-mono text-xs">
+                          {constraint.name}
+                          <a 
+                            href={constraint.file.link} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            class="flex items-center gap-1 text-blue-600 hover:text-blue-800 inline-block"
+                            title={constraint.file.name}
+                          >
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                          </a>
+                        </td>
+                        <td class="px-4 py-2 border-b text-right font-mono text-xs">{constraint.non_linear_constraints.toLocaleString()}</td>
+                        <td class="px-4 py-2 border-b text-right font-mono text-xs">{constraint.linear_constraints.toLocaleString()}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+                <div class="mt-2 text-xs text-gray-600">
+                  <a 
+                    href={stat.repo} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="text-blue-600 hover:text-blue-800"
+                  >
+                    📦 Repository
+                  </a>
+                </div>
+              </div>
+
+              <!-- Right: Description -->
+              <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                <h3 class="text-lg font-semibold mb-3">Description</h3>
+                <pre class="text-sm font-mono whitespace-pre-wrap text-gray-800">{stat.description}</pre>
+              </div>
+            </div>
+          </div>
+        );
+      })
     }
 
     <!-- Legend Section -->
