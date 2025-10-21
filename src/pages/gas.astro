@@ -21,6 +21,7 @@ import { gasData, formatGas, getGasLevel, getGasColorClass } from "../data/gas";
           <thead>
             <tr class="bg-gray-100 text-gray-700 uppercase text-sm leading-normal">
               <th class="py-3 px-4 text-left">Framework</th>
+              <th class="py-3 px-4 text-left">Curve</th>
               <th class="py-3 px-4 text-left">Schema</th>
               <th class="py-3 px-4 text-left">Public Inputs</th>
               <th class="py-3 px-4 text-left">Sepolia Deployment Gas</th>
@@ -32,6 +33,9 @@ import { gasData, formatGas, getGasLevel, getGasColorClass } from "../data/gas";
               gasData.map((item) => (
                 <tr class="border-b border-gray-200 hover:bg-gray-50">
                   <td class="py-3 px-4 font-medium">{item.framework}</td>
+                  <td class="py-3 px-4">
+                    {item.curve == "bls12_381" ? "BLS12-381" : item.curve.toUpperCase()}
+                  </td>
                   <td class="py-3 px-4">{item.schema}</td>
                   <td class="py-3 px-4">{item.publicInputs}</td>
 

@@ -1,5 +1,6 @@
 export interface GasData {
   framework: string;
+  curve: "bn254" | "bls12_381";
   schema: string;
   publicInputs: number | string;
   sepoliaDeploymentGas: number[];
@@ -9,6 +10,7 @@ export interface GasData {
 export const gasData: GasData[] = [
   {
     framework: "gnark",
+    curve: "bn254",
     schema: "groth16",
     publicInputs: 2,
     sepoliaDeploymentGas: [1917298],
@@ -16,6 +18,7 @@ export const gasData: GasData[] = [
   },
   {
     framework: "gnark",
+    curve: "bn254",
     schema: "groth16(compressed proof)",
     publicInputs: 2,
     sepoliaDeploymentGas: [1945169],
@@ -23,6 +26,7 @@ export const gasData: GasData[] = [
   },
   {
     framework: "gnark",
+    curve: "bn254",
     schema: "groth16 with pedersen",
     publicInputs: 1,
     sepoliaDeploymentGas: [1439031],
@@ -30,6 +34,7 @@ export const gasData: GasData[] = [
   },
   {
     framework: "gnark",
+    curve: "bn254",
     schema: "groth16(compressed with pedersen)",
     publicInputs: 1,
     sepoliaDeploymentGas: [1439031],
@@ -37,6 +42,7 @@ export const gasData: GasData[] = [
   },
   {
     framework: "gnark",
+    curve: "bn254",
     schema: "plonk",
     publicInputs: 2,
     sepoliaDeploymentGas: [2083848],
@@ -44,6 +50,7 @@ export const gasData: GasData[] = [
   },
   {
     framework: "snarkjs",
+    curve: "bn254",
     schema: "groth16",
     publicInputs: 2,
     sepoliaDeploymentGas: [412528],
@@ -51,6 +58,7 @@ export const gasData: GasData[] = [
   },
   {
     framework: "snarkjs",
+    curve: "bn254",
     schema: "plonk",
     publicInputs: 2,
     sepoliaDeploymentGas: [1591128],
@@ -58,13 +66,47 @@ export const gasData: GasData[] = [
   },
   {
     framework: "snarkjs",
+    curve: "bn254",
     schema: "fflonk",
     publicInputs: 2,
     sepoliaDeploymentGas: [5273847],
     sepoliaFunctionGas: [201077],
   },
   {
+    framework: "snarkjs",
+    curve: "bls12_381",
+    schema: "groth16",
+    publicInputs: 1,
+    sepoliaDeploymentGas: [436657],
+    sepoliaFunctionGas: [227151],
+  },
+  {
+    framework: "snarkjs",
+    curve: "bls12_381",
+    schema: "groth16",
+    publicInputs: 2,
+    sepoliaDeploymentGas: [],
+    sepoliaFunctionGas: [235175],
+  },
+  {
+    framework: "snarkjs",
+    curve: "bls12_381",
+    schema: "groth16",
+    publicInputs: 10,
+    sepoliaDeploymentGas: [],
+    sepoliaFunctionGas: [259403],
+  },
+  {
+    framework: "snarkjs",
+    curve: "bls12_381",
+    schema: "groth16",
+    publicInputs: 50,
+    sepoliaDeploymentGas: [],
+    sepoliaFunctionGas: [411209],
+  },
+  {
     framework: "noir",
+    curve: "bn254",
     schema: "plonk",
     publicInputs: 1,
     sepoliaDeploymentGas: [2571102],
@@ -72,6 +114,7 @@ export const gasData: GasData[] = [
   },
   {
     framework: "halo2",
+    curve: "bn254",
     schema: "plonk(degree:16)",
     publicInputs: 16,
     sepoliaDeploymentGas: [308351, 828497],
@@ -79,6 +122,7 @@ export const gasData: GasData[] = [
   },
   {
     framework: "halo2",
+    curve: "bn254",
     schema: "plonk(degree:16)",
     publicInputs: 2,
     sepoliaDeploymentGas: [308315, 828497],
@@ -86,6 +130,7 @@ export const gasData: GasData[] = [
   },
   {
     framework: "halo2",
+    curve: "bn254",
     schema: "plonk(degree:16, efixed:200)",
     publicInputs: 2,
     sepoliaDeploymentGas: [2904633, 841012],
