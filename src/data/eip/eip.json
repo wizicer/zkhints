@@ -1,6 +1,4 @@
-import type { EIP } from "./model";
-
-export const eips: EIP[] = [
+[
   {
     "id": 196,
     "title": "Precompiled contracts for addition and scalar multiplication on the elliptic curve alt_bn128",
@@ -10,8 +8,7 @@ export const eips: EIP[] = [
         "name": "Christian Reitwiessner",
         "email": "chris@ethereum.org"
       }
-    ],
-    "star": true
+    ]
   },
   {
     "id": 197,
@@ -26,8 +23,7 @@ export const eips: EIP[] = [
         "name": "Christian Reitwiessner",
         "email": "chris@ethereum.org"
       }
-    ],
-    "star": true
+    ]
   },
   {
     "id": 1108,
@@ -81,7 +77,8 @@ export const eips: EIP[] = [
         "nick": "catageek",
         "url": "https://github.com/catageek"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2098,
@@ -97,7 +94,8 @@ export const eips: EIP[] = [
         "name": "Nick Johnson",
         "email": "nick@ethereum.org"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2537,
@@ -124,9 +122,7 @@ export const eips: EIP[] = [
         "nick": "asanso",
         "url": "https://github.com/asanso"
       }
-    ],
-    "star": true,
-    "flag": "update"
+    ]
   },
   {
     "id": 2565,
@@ -175,7 +171,8 @@ export const eips: EIP[] = [
         "nick": "mattstam",
         "url": "https://github.com/mattstam"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6492,
@@ -192,7 +189,8 @@ export const eips: EIP[] = [
         "nick": "Agusx1211",
         "url": "https://github.com/Agusx1211"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7007,
@@ -223,7 +221,8 @@ export const eips: EIP[] = [
         "name": "Kartin",
         "email": "kartin@hyperoracle.io"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7734,
@@ -234,7 +233,8 @@ export const eips: EIP[] = [
         "name": "Anushka Yadav (@64anushka)",
         "email": "64anushka@gmail.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7913,
@@ -262,7 +262,7 @@ export const eips: EIP[] = [
         "url": "https://github.com/arr00"
       }
     ],
-    "flag": "update"
+    "erc": true
   },
   {
     "id": 7812,
@@ -291,7 +291,7 @@ export const eips: EIP[] = [
         "url": "https://github.com/vbuterin"
       }
     ],
-    "flag": "update"
+    "erc": true
   },
   {
     "id": 7951,
@@ -313,8 +313,7 @@ export const eips: EIP[] = [
         "nick": "doganalpaslan",
         "url": "https://github.com/doganalpaslan"
       }
-    ],
-    "flag": "new"
+    ]
   },
   {
     "id": 6327,
@@ -326,7 +325,8 @@ export const eips: EIP[] = [
         "nick": "JXRow",
         "url": "https://github.com/JXRow"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6493,
@@ -376,7 +376,8 @@ export const eips: EIP[] = [
         "name": "Kai Chen",
         "email": "kai@dauth.network"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7524,
@@ -407,7 +408,8 @@ export const eips: EIP[] = [
         "nick": "barryWhiteHat",
         "url": "https://github.com/barryWhiteHat"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7597,
@@ -424,7 +426,8 @@ export const eips: EIP[] = [
         "nick": "circle-aloychan",
         "url": "https://github.com/circle-aloychan"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7598,
@@ -441,7 +444,8 @@ export const eips: EIP[] = [
         "nick": "circle-aloychan",
         "url": "https://github.com/circle-aloychan"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7612,
@@ -518,7 +522,8 @@ export const eips: EIP[] = [
         "nick": "unblocktechie",
         "url": "https://github.com/unblocktechie"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7739,
@@ -570,7 +575,8 @@ export const eips: EIP[] = [
         "nick": "0xcuriousapple",
         "url": "https://github.com/0xcuriousapple"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7748,
@@ -659,7 +665,8 @@ export const eips: EIP[] = [
         "nick": "forshtat",
         "url": "https://github.com/forshtat"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7792,
@@ -694,7 +701,7 @@ export const eips: EIP[] = [
         "url": "https://github.com/vmc-crossmint"
       }
     ],
-    "flag": "new"
+    "erc": true
   },
   {
     "id": 7920,
@@ -707,7 +714,7 @@ export const eips: EIP[] = [
         "url": "https://github.com/sola92"
       }
     ],
-    "flag": "new"
+    "erc": true
   },
   {
     "id": 7932,
@@ -719,8 +726,7 @@ export const eips: EIP[] = [
         "nick": "SirSpudlington",
         "url": "https://github.com/SirSpudlington"
       }
-    ],
-    "flag": "new"
+    ]
   },
   {
     "id": 8004,
@@ -742,7 +748,7 @@ export const eips: EIP[] = [
         "url": "https://github.com/jorellis"
       }
     ],
-    "flag": "new"
+    "erc": true
   },
   {
     "id": 86,
@@ -782,7 +788,8 @@ export const eips: EIP[] = [
         "nick": "pb25193",
         "url": "https://github.com/pb25193"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1812,
@@ -794,7 +801,8 @@ export const eips: EIP[] = [
         "nick": "pelle",
         "url": "https://github.com/pelle"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1829,
@@ -835,7 +843,8 @@ export const eips: EIP[] = [
         "name": "Duncan Westland",
         "email": "duncan.westland@uk.ey.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1923,
@@ -854,7 +863,8 @@ export const eips: EIP[] = [
         "name": "Duncan Westland",
         "email": "duncan.westland@uk.ey.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1962,
@@ -877,7 +887,8 @@ export const eips: EIP[] = [
         "name": "Carl Beekhuizen (@CarlBeek)",
         "email": "carl@ethereum.org"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2334,
@@ -888,7 +899,8 @@ export const eips: EIP[] = [
         "name": "Carl Beekhuizen (@CarlBeek)",
         "email": "carl@ethereum.org"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2335,
@@ -899,7 +911,8 @@ export const eips: EIP[] = [
         "name": "Carl Beekhuizen (@CarlBeek)",
         "email": "carl@ethereum.org"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2494,
@@ -921,7 +934,8 @@ export const eips: EIP[] = [
         "nick": "jbaylina",
         "url": "https://github.com/jbaylina"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2539,
@@ -1000,7 +1014,8 @@ export const eips: EIP[] = [
         "nick": "Agusx1211",
         "url": "https://github.com/Agusx1211"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5851,
@@ -1017,7 +1032,8 @@ export const eips: EIP[] = [
         "nick": "Jooeys",
         "url": "https://github.com/Jooeys"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5988,
@@ -1072,7 +1088,8 @@ export const eips: EIP[] = [
         "nick": "DeVaz1",
         "url": "https://github.com/DeVaz1"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6800,
@@ -1129,8 +1146,7 @@ export const eips: EIP[] = [
         "nick": "shemnon",
         "url": "https://github.com/shemnon"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 6888,
@@ -1142,8 +1158,7 @@ export const eips: EIP[] = [
         "nick": "RenanSouza2",
         "url": "https://github.com/RenanSouza2"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 7543,
@@ -1227,4 +1242,4 @@ export const eips: EIP[] = [
       }
     ]
   }
-];
+]

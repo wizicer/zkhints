@@ -124,7 +124,8 @@
         "name": "Vitalik Buterin",
         "email": "vitalik.buterin@ethereum.org"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 55,
@@ -139,7 +140,8 @@
         "name": "Alex Van de Sande",
         "email": "avsa@ethereum.org"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 100,
@@ -162,7 +164,8 @@
         "name": "Nick Johnson",
         "email": "arachnid@notdot.net"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 140,
@@ -311,7 +314,8 @@
         "name": "Alex Van de Sande",
         "email": "avsa@ethereum.org"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 165,
@@ -342,7 +346,8 @@
         "name": "William Entriken",
         "email": "github.com@phor.net"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 170,
@@ -370,7 +375,8 @@
         "name": "Dan Finlay",
         "email": "dan@danfinlay.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 181,
@@ -381,7 +387,8 @@
         "name": "Nick Johnson",
         "email": "arachnid@notdot.net"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 190,
@@ -413,7 +420,8 @@
         "nick": "iurimatias",
         "url": "https://github.com/iurimatias"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 191,
@@ -429,7 +437,8 @@
         "name": "Nick Johnson",
         "email": "arachnid@notdot.net"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 196,
@@ -504,7 +513,8 @@
         "name": "Dexaran (@Dexaran)",
         "email": "dexaran@ethereumclassic.org"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 225,
@@ -544,7 +554,8 @@
         "nick": "micahzoltu",
         "url": "https://github.com/micahzoltu"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 601,
@@ -561,7 +572,8 @@
         "nick": "micahzoltu",
         "url": "https://github.com/micahzoltu"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 606,
@@ -660,7 +672,8 @@
         "nick": "nagydani",
         "url": "https://github.com/nagydani"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 684,
@@ -760,7 +773,8 @@
         "name": "Nastassia Sachs",
         "email": "nastassia.sachs@protonmail.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 747,
@@ -801,7 +815,8 @@
         "name": "Thomas Shababi",
         "email": "tom@truelevel.io"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 778,
@@ -839,7 +854,8 @@
         "name": "Jacques Dafflon",
         "email": "jacques@dafflon.tech"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 868,
@@ -906,7 +922,8 @@
         "nick": "Pandapip1",
         "url": "https://github.com/Pandapip1"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1052,
@@ -986,7 +1003,8 @@
         "name": "Ronan Sandford (@wighawag)",
         "email": "wighawag@gmail.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1167,
@@ -1008,7 +1026,8 @@
         "nick": "JAMesserman",
         "url": "https://github.com/JAMesserman"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1193,
@@ -1089,7 +1108,8 @@
         "nick": "catageek",
         "url": "https://github.com/catageek"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1283,
@@ -1118,7 +1138,8 @@
         "nick": "pedrouid",
         "url": "https://github.com/pedrouid"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1344,
@@ -1147,7 +1168,8 @@
         "nick": "vittominacori",
         "url": "https://github.com/vittominacori"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1559,
@@ -1233,7 +1255,8 @@
         "name": "Jacques Dafflon",
         "email": "mail@0xjac.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1884,
@@ -1279,7 +1302,8 @@
         "nick": "Amxx",
         "url": "https://github.com/Amxx"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2028,
@@ -1323,7 +1347,8 @@
         "name": "Nick Johnson",
         "email": "nick@ethereum.org"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2124,
@@ -1350,7 +1375,8 @@
         "nick": "xinbenlv",
         "url": "https://github.com/xinbenlv"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2159,
@@ -1420,7 +1446,8 @@
         "nick": "pizzarob",
         "url": "https://github.com/pizzarob"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2364,
@@ -1514,7 +1541,8 @@
         "nick": "mudgen",
         "url": "https://github.com/mudgen"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2537,
@@ -1541,8 +1569,7 @@
         "nick": "asanso",
         "url": "https://github.com/asanso"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 2565,
@@ -1586,7 +1613,8 @@
         "nick": "Mrchico",
         "url": "https://github.com/Mrchico"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2678,
@@ -1623,7 +1651,8 @@
         "nick": "fubuloubu",
         "url": "https://github.com/fubuloubu"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2681,
@@ -1743,7 +1772,8 @@
         "nick": "Pandapip1",
         "url": "https://github.com/Pandapip1"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2929,
@@ -1824,8 +1854,7 @@
         "nick": "s1na",
         "url": "https://github.com/s1na"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 2976,
@@ -1864,7 +1893,8 @@
         "nick": "seibelj",
         "url": "https://github.com/seibelj"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2982,
@@ -1908,7 +1938,8 @@
         "nick": "onewayfunction",
         "url": "https://github.com/onewayfunction"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 3198,
@@ -1937,7 +1968,8 @@
         "nick": "pinkiebell",
         "url": "https://github.com/pinkiebell"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 3475,
@@ -1974,7 +2006,8 @@
         "nick": "toufic0710",
         "url": "https://github.com/toufic0710"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 3525,
@@ -2008,7 +2041,8 @@
         "nick": "AlvisDu",
         "url": "https://github.com/AlvisDu"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 3529,
@@ -2128,7 +2162,8 @@
         "nick": "Aboudjem",
         "url": "https://github.com/Aboudjem"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 3651,
@@ -2152,7 +2187,8 @@
         "nick": "arachnid",
         "url": "https://github.com/arachnid"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 3675,
@@ -2278,7 +2314,7 @@
         "url": "https://github.com/awoie"
       }
     ],
-    "flag": "update"
+    "erc": true
   },
   {
     "id": 4399,
@@ -2312,7 +2348,8 @@
         "nick": "Perseverance",
         "url": "https://github.com/Perseverance"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 4519,
@@ -2338,7 +2375,8 @@
         "nick": "lumi2018",
         "url": "https://github.com/lumi2018"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 4626,
@@ -2370,7 +2408,8 @@
         "nick": "fubuloubu",
         "url": "https://github.com/fubuloubu"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 4736,
@@ -2441,7 +2480,8 @@
         "nick": "SamWilsn",
         "url": "https://github.com/SamWilsn"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 4834,
@@ -2453,7 +2493,8 @@
         "nick": "Pandapip1",
         "url": "https://github.com/Pandapip1"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 4844,
@@ -2549,7 +2590,8 @@
         "name": "Nathan",
         "email": "nathan.gang@gemini.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 4907,
@@ -2570,7 +2612,8 @@
         "name": "Shrug",
         "email": "shrug@emojidao.org"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 4910,
@@ -2582,7 +2625,8 @@
         "nick": "Therecanbeonlyone1969",
         "url": "https://github.com/Therecanbeonlyone1969"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 4938,
@@ -2614,7 +2658,8 @@
         "nick": "nachomazzara",
         "url": "https://github.com/nachomazzara"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5006,
@@ -2635,7 +2680,8 @@
         "name": "Shrug",
         "email": "shrug@emojidao.org"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5007,
@@ -2656,7 +2702,8 @@
         "name": "Shrug",
         "email": "shrug@emojidao.org"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5023,
@@ -2673,7 +2720,8 @@
         "nick": "mmartinmo",
         "url": "https://github.com/mmartinmo"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5133,
@@ -2717,7 +2765,8 @@
         "nick": "weiwu-zhang",
         "url": "https://github.com/weiwu-zhang"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5192,
@@ -2734,7 +2783,8 @@
         "nick": "0xanders",
         "url": "https://github.com/0xanders"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5202,
@@ -2751,7 +2801,8 @@
         "nick": "skellet0r",
         "url": "https://github.com/skellet0r"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5219,
@@ -2763,7 +2814,8 @@
         "nick": "Pandapip1",
         "url": "https://github.com/Pandapip1"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5267,
@@ -2775,7 +2827,8 @@
         "nick": "frangio",
         "url": "https://github.com/frangio"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5313,
@@ -2787,7 +2840,8 @@
         "nick": "fulldecent",
         "url": "https://github.com/fulldecent"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5375,
@@ -2804,7 +2858,8 @@
         "nick": "lucadonnoh",
         "url": "https://github.com/lucadonnoh"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5380,
@@ -2821,7 +2876,8 @@
         "nick": "TimDaub",
         "url": "https://github.com/TimDaub"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5484,
@@ -2833,7 +2889,8 @@
         "nick": "buzzcai",
         "url": "https://github.com/buzzcai"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5489,
@@ -2845,7 +2902,8 @@
         "nick": "coderfengyun",
         "url": "https://github.com/coderfengyun"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5507,
@@ -2862,7 +2920,8 @@
         "nick": "Pandapip1",
         "url": "https://github.com/Pandapip1"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5521,
@@ -2898,7 +2957,8 @@
         "name": "Jiangshan Yu",
         "email": "jiangshan.yu@monash.edu"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5528,
@@ -2910,7 +2970,8 @@
         "nick": "StartfundInc",
         "url": "https://github.com/StartfundInc"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5564,
@@ -2937,7 +2998,8 @@
         "nick": "vbuterin",
         "url": "https://github.com/vbuterin"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5570,
@@ -2949,7 +3011,8 @@
         "nick": "darcys22",
         "url": "https://github.com/darcys22"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5585,
@@ -2981,7 +3044,8 @@
         "nick": "fovcao",
         "url": "https://github.com/fovcao"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5606,
@@ -3003,7 +3067,8 @@
         "nick": "nikhilasrani",
         "url": "https://github.com/nikhilasrani"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5615,
@@ -3015,7 +3080,8 @@
         "nick": "Pandapip1",
         "url": "https://github.com/Pandapip1"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5625,
@@ -3047,7 +3113,8 @@
         "nick": "wuhaixian1984",
         "url": "https://github.com/wuhaixian1984"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5646,
@@ -3059,7 +3126,8 @@
         "nick": "ashhanai",
         "url": "https://github.com/ashhanai"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5656,
@@ -3108,7 +3176,8 @@
         "nick": "xinbenlv",
         "url": "https://github.com/xinbenlv"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5725,
@@ -3138,7 +3207,8 @@
         "nick": "elliott-green",
         "url": "https://github.com/elliott-green"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5732,
@@ -3155,7 +3225,8 @@
         "nick": "mattstam",
         "url": "https://github.com/mattstam"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5749,
@@ -3179,7 +3250,8 @@
         "nick": "xinbenlv",
         "url": "https://github.com/xinbenlv"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5757,
@@ -3223,7 +3295,8 @@
         "nick": "ThunderDeliverer",
         "url": "https://github.com/ThunderDeliverer"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5792,
@@ -3294,8 +3367,7 @@
         "nick": "bumblefudge",
         "url": "https://github.com/bumblefudge"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 5793,
@@ -3351,7 +3423,8 @@
         "nick": "ThunderDeliverer",
         "url": "https://github.com/ThunderDeliverer"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6066,
@@ -3363,7 +3436,8 @@
         "nick": "boyuanx",
         "url": "https://github.com/boyuanx"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6093,
@@ -3386,7 +3460,7 @@
         "url": "https://github.com/Amxx"
       }
     ],
-    "flag": "update"
+    "erc": true
   },
   {
     "id": 6105,
@@ -3415,7 +3489,8 @@
       {
         "name": "Wizard Wang"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6110,
@@ -3437,8 +3512,7 @@
         "nick": "petertdavies",
         "url": "https://github.com/petertdavies"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 6122,
@@ -3465,7 +3539,8 @@
       {
         "name": "Wizard Wang"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6150,
@@ -3490,7 +3565,8 @@
         "nick": "qizhou",
         "url": "https://github.com/qizhou"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6220,
@@ -3522,7 +3598,8 @@
         "nick": "ThunderDeliverer",
         "url": "https://github.com/ThunderDeliverer"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6239,
@@ -3534,7 +3611,8 @@
         "nick": "JessicaChg",
         "url": "https://github.com/JessicaChg"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6381,
@@ -3561,7 +3639,8 @@
         "nick": "ThunderDeliverer",
         "url": "https://github.com/ThunderDeliverer"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6454,
@@ -3593,7 +3672,8 @@
         "nick": "ThunderDeliverer",
         "url": "https://github.com/ThunderDeliverer"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6492,
@@ -3610,7 +3690,8 @@
         "nick": "Agusx1211",
         "url": "https://github.com/Agusx1211"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6538,
@@ -3642,7 +3723,8 @@
         "nick": "garyghayrat",
         "url": "https://github.com/garyghayrat"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6672,
@@ -3677,7 +3759,8 @@
         "name": "Jason Cheng (@JasonCheng0729)",
         "email": "jason@redreamer.io"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6780,
@@ -3721,7 +3804,8 @@
         "nick": "NarcisCRO",
         "url": "https://github.com/NarcisCRO"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6809,
@@ -3743,7 +3827,8 @@
         "nick": "NarcisCRO",
         "url": "https://github.com/NarcisCRO"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6909,
@@ -3776,7 +3861,7 @@
         "url": "https://github.com/neodaoist"
       }
     ],
-    "flag": "update"
+    "erc": true
   },
   {
     "id": 6916,
@@ -3808,8 +3893,7 @@
         "nick": "T-ess",
         "url": "https://github.com/T-ess"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 6953,
@@ -3895,7 +3979,8 @@
         "nick": "urataps",
         "url": "https://github.com/urataps"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7002,
@@ -3932,8 +4017,7 @@
         "nick": "fjl",
         "url": "https://github.com/fjl"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 7007,
@@ -3964,7 +4048,8 @@
         "name": "Kartin",
         "email": "kartin@hyperoracle.io"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7044,
@@ -4005,7 +4090,8 @@
         "nick": "tammyyang",
         "url": "https://github.com/tammyyang"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7066,
@@ -4027,7 +4113,8 @@
         "nick": "SrinivasJoshi",
         "url": "https://github.com/SrinivasJoshi"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7092,
@@ -4039,7 +4126,8 @@
         "nick": "Edoumou",
         "url": "https://github.com/Edoumou"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7160,
@@ -4056,7 +4144,8 @@
         "nick": "mpeyfuss",
         "url": "https://github.com/mpeyfuss"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7201,
@@ -4083,7 +4172,8 @@
         "nick": "ericglau",
         "url": "https://github.com/ericglau"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7208,
@@ -4135,7 +4225,8 @@
         "nick": "xdaniortega",
         "url": "https://github.com/xdaniortega"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7231,
@@ -4158,7 +4249,8 @@
       {
         "name": "Archer H."
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7251,
@@ -4205,8 +4297,7 @@
         "nick": "fjl",
         "url": "https://github.com/fjl"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 7329,
@@ -4255,7 +4346,8 @@
         "nick": "ThunderDeliverer",
         "url": "https://github.com/ThunderDeliverer"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7409,
@@ -4282,7 +4374,8 @@
         "nick": "ThunderDeliverer",
         "url": "https://github.com/ThunderDeliverer"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7432,
@@ -4299,7 +4392,8 @@
         "nick": "karacurt",
         "url": "https://github.com/karacurt"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7439,
@@ -4323,7 +4417,8 @@
         "name": "Taien Wang",
         "email": "taien.wang@getoken.io"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7514,
@@ -4364,7 +4459,8 @@
         "nick": "joeysantoro",
         "url": "https://github.com/joeysantoro"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7535,
@@ -4376,7 +4472,8 @@
         "nick": "joeysantoro",
         "url": "https://github.com/joeysantoro"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7540,
@@ -4413,7 +4510,8 @@
         "nick": "0xTimepunk",
         "url": "https://github.com/0xTimepunk"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7549,
@@ -4430,8 +4528,7 @@
         "nick": "mkalinin",
         "url": "https://github.com/mkalinin"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 7568,
@@ -4487,7 +4584,8 @@
         "nick": "0xfarhaan",
         "url": "https://github.com/0xfarhaan"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7578,
@@ -4512,7 +4610,8 @@
         "nick": "gabrielstoica",
         "url": "https://github.com/gabrielstoica"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7587,
@@ -4566,7 +4665,8 @@
         "nick": "4ever9",
         "url": "https://github.com/4ever9"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7600,
@@ -4578,8 +4678,7 @@
         "nick": "timbeiko",
         "url": "https://github.com/timbeiko"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 7623,
@@ -4596,8 +4695,7 @@
         "nick": "vbuterin",
         "url": "https://github.com/vbuterin"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 7631,
@@ -4635,7 +4733,7 @@
         "url": "https://github.com/pop-punk"
       }
     ],
-    "flag": "update"
+    "erc": true
   },
   {
     "id": 7642,
@@ -4655,8 +4753,7 @@
         "name": "Ahmad Bitar (@smartprogrammer93)",
         "email": "smartprogrammer@windowslive.com"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 7685,
@@ -4673,8 +4770,7 @@
         "nick": "fjl",
         "url": "https://github.com/fjl"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 7691,
@@ -4706,8 +4802,7 @@
         "nick": "adietrichs",
         "url": "https://github.com/adietrichs"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 7702,
@@ -4734,8 +4829,7 @@
         "nick": "lightclient",
         "url": "https://github.com/lightclient"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 7734,
@@ -4746,7 +4840,8 @@
         "name": "Anushka Yadav (@64anushka)",
         "email": "64anushka@gmail.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7743,
@@ -4758,7 +4853,7 @@
         "email": "james.walstonn@gmail.com"
       }
     ],
-    "flag": "update"
+    "erc": true
   },
   {
     "id": 7751,
@@ -4789,7 +4884,8 @@
         "nick": "Amxx",
         "url": "https://github.com/Amxx"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7818,
@@ -4806,7 +4902,8 @@
         "nick": "ADISAKBOONMARK",
         "url": "https://github.com/ADISAKBOONMARK"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7820,
@@ -4823,7 +4920,8 @@
         "nick": "anushka642000",
         "url": "https://github.com/anushka642000"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7837,
@@ -4835,7 +4933,7 @@
         "email": "james.walstonn@gmail.com"
       }
     ],
-    "flag": "update"
+    "erc": true
   },
   {
     "id": 7840,
@@ -4847,8 +4945,7 @@
         "nick": "lightclient",
         "url": "https://github.com/lightclient"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 7858,
@@ -4876,7 +4973,7 @@
         "url": "https://github.com/najaroen"
       }
     ],
-    "flag": "update"
+    "erc": true
   },
   {
     "id": 7878,
@@ -4889,7 +4986,7 @@
         "url": "https://github.com/wamith"
       }
     ],
-    "flag": "new"
+    "erc": true
   },
   {
     "id": 1191,
@@ -4901,7 +4998,8 @@
         "nick": "juli",
         "url": "https://github.com/juli"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2266,
@@ -4920,7 +5018,8 @@
         "name": "Jiangshan Yu",
         "email": "jiangshan.yu@monash.edu"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 3076,
@@ -4980,7 +5079,8 @@
         "name": "Shrug",
         "email": "shrug@emojidao.org"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5114,
@@ -4992,7 +5092,8 @@
         "nick": "MicahZoltu",
         "url": "https://github.com/MicahZoltu"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5164,
@@ -5014,7 +5115,8 @@
         "nick": "cwhinfrey",
         "url": "https://github.com/cwhinfrey"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5216,
@@ -5031,7 +5133,8 @@
         "nick": "EscuelaCryptoES",
         "url": "https://github.com/EscuelaCryptoES"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5453,
@@ -5043,7 +5146,8 @@
         "nick": "xinbenlv",
         "url": "https://github.com/xinbenlv"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5496,
@@ -5055,7 +5159,8 @@
         "nick": "wnft",
         "url": "https://github.com/wnft"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6224,
@@ -5068,7 +5173,7 @@
         "url": "https://github.com/arvolear"
       }
     ],
-    "flag": "update"
+    "erc": true
   },
   {
     "id": 6357,
@@ -5080,7 +5185,8 @@
         "nick": "Pandapip1",
         "url": "https://github.com/Pandapip1"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7291,
@@ -5118,7 +5224,7 @@
         "url": "https://github.com/veenkumarr"
       }
     ],
-    "flag": "update"
+    "erc": true
   },
   {
     "id": 7523,
@@ -5158,7 +5264,8 @@
         "name": "Chen Liaoyuan (@chenly)",
         "email": "cly@kip.pro"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7723,
@@ -5187,7 +5294,7 @@
         "email": "t@peersky.xyz"
       }
     ],
-    "flag": "update"
+    "erc": true
   },
   {
     "id": 7746,
@@ -5200,7 +5307,7 @@
         "url": "https://github.com/peersky"
       }
     ],
-    "flag": "update"
+    "erc": true
   },
   {
     "id": 7786,
@@ -5238,7 +5345,7 @@
         "url": "https://github.com/Joxess"
       }
     ],
-    "flag": "update"
+    "erc": true
   },
   {
     "id": 7857,
@@ -5266,7 +5373,7 @@
         "url": "https://github.com/michaelomg"
       }
     ],
-    "flag": "new"
+    "erc": true
   },
   {
     "id": 7913,
@@ -5294,7 +5401,7 @@
         "url": "https://github.com/arr00"
       }
     ],
-    "flag": "update"
+    "erc": true
   },
   {
     "id": 7950,
@@ -5307,7 +5414,7 @@
         "url": "https://github.com/microbecode"
       }
     ],
-    "flag": "new"
+    "erc": true
   },
   {
     "id": 663,
@@ -5341,7 +5448,8 @@
         "nick": "mcdee",
         "url": "https://github.com/mcdee"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2294,
@@ -5460,7 +5568,7 @@
         "url": "https://github.com/tjade273"
       }
     ],
-    "flag": "update"
+    "erc": true
   },
   {
     "id": 4750,
@@ -5517,7 +5625,8 @@
         "nick": "nivida",
         "url": "https://github.com/nivida"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 4973,
@@ -5529,7 +5638,8 @@
         "nick": "TimDaub",
         "url": "https://github.com/TimDaub"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5247,
@@ -5541,7 +5651,8 @@
         "nick": "xinbenlv",
         "url": "https://github.com/xinbenlv"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5269,
@@ -5553,7 +5664,8 @@
         "nick": "xinbenlv",
         "url": "https://github.com/xinbenlv"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5289,
@@ -5565,7 +5677,8 @@
         "nick": "Pandapip1",
         "url": "https://github.com/Pandapip1"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5450,
@@ -5604,7 +5717,8 @@
         "nick": "Pandapip1",
         "url": "https://github.com/Pandapip1"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5639,
@@ -5635,7 +5749,8 @@
         "nick": "andy8052",
         "url": "https://github.com/andy8052"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5920,
@@ -5679,7 +5794,8 @@
         "nick": "xinbenlv",
         "url": "https://github.com/xinbenlv"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6065,
@@ -5701,7 +5817,8 @@
         "nick": "dfalloncyr",
         "url": "https://github.com/dfalloncyr"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6120,
@@ -5738,7 +5855,8 @@
         "nick": "h4l",
         "url": "https://github.com/h4l"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6206,
@@ -5777,7 +5895,8 @@
         "nick": "Pandapip1",
         "url": "https://github.com/Pandapip1"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6358,
@@ -5803,7 +5922,8 @@
         "nick": "kay404",
         "url": "https://github.com/kay404"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6366,
@@ -5820,7 +5940,8 @@
         "nick": "vdusart",
         "url": "https://github.com/vdusart"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6372,
@@ -5837,7 +5958,8 @@
         "nick": "frangio",
         "url": "https://github.com/frangio"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6551,
@@ -5921,7 +6043,8 @@
         "nick": "0xadrii",
         "url": "https://github.com/0xadrii"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6596,
@@ -5974,7 +6097,8 @@
         "nick": "dhl",
         "url": "https://github.com/dhl"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6617,
@@ -5991,7 +6115,8 @@
         "nick": "vdusart",
         "url": "https://github.com/vdusart"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6734,
@@ -6013,7 +6138,8 @@
         "nick": "psinelnikov",
         "url": "https://github.com/psinelnikov"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6735,
@@ -6030,7 +6156,8 @@
         "nick": "Therecanbeonlyone1969",
         "url": "https://github.com/Therecanbeonlyone1969"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6956,
@@ -6047,7 +6174,8 @@
         "nick": "ibex-technology",
         "url": "https://github.com/ibex-technology"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6997,
@@ -6059,7 +6187,8 @@
         "nick": "eduardfina",
         "url": "https://github.com/eduardfina"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7015,
@@ -6071,7 +6200,8 @@
         "nick": "strollinghome",
         "url": "https://github.com/strollinghome"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7069,
@@ -6115,7 +6245,8 @@
         "nick": "eduardfina",
         "url": "https://github.com/eduardfina"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7399,
@@ -6148,7 +6279,7 @@
         "url": "https://github.com/sambacha"
       }
     ],
-    "flag": "update"
+    "erc": true
   },
   {
     "id": 7417,
@@ -6159,7 +6290,8 @@
         "name": "Dexaran (@Dexaran)",
         "email": "dexaran@ethereumclassic.org"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7480,
@@ -6193,7 +6325,8 @@
         "nick": "sullof",
         "url": "https://github.com/sullof"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7586,
@@ -6205,7 +6338,8 @@
         "nick": "Edoumou",
         "url": "https://github.com/Edoumou"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7590,
@@ -6222,7 +6356,8 @@
         "nick": "ThunderDeliverer",
         "url": "https://github.com/ThunderDeliverer"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7594,
@@ -6276,8 +6411,7 @@
         "nick": "adietrichs",
         "url": "https://github.com/adietrichs"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 7620,
@@ -6315,7 +6449,8 @@
         "name": "Chen Liaoyuan (@chenly)",
         "email": "cly@kip.pro"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7634,
@@ -6337,7 +6472,7 @@
         "email": "shiping.chen@data61.csiro.au"
       }
     ],
-    "flag": "update"
+    "erc": true
   },
   {
     "id": 7656,
@@ -6349,7 +6484,8 @@
         "nick": "sullof",
         "url": "https://github.com/sullof"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7677,
@@ -6381,7 +6517,8 @@
         "nick": "hazim-j",
         "url": "https://github.com/hazim-j"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7692,
@@ -6451,7 +6588,8 @@
         "name": "James Savechives (@jamesavechives)",
         "email": "james.walstonn@gmail.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7758,
@@ -6478,7 +6616,8 @@
         "nick": "dongri",
         "url": "https://github.com/dongri"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7761,
@@ -6534,7 +6673,7 @@
         "email": "ignacioceaglio@gmail.com"
       }
     ],
-    "flag": "update"
+    "erc": true
   },
   {
     "id": 7777,
@@ -6570,7 +6709,8 @@
         "name": "Thamer Dridi",
         "email": "thamer.dridi@nethermind.io"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7812,
@@ -6599,7 +6739,7 @@
         "url": "https://github.com/vbuterin"
       }
     ],
-    "flag": "update"
+    "erc": true
   },
   {
     "id": 7813,
@@ -6636,7 +6776,7 @@
         "email": "yonada@proton.me"
       }
     ],
-    "flag": "update"
+    "erc": true
   },
   {
     "id": 7823,
@@ -6670,8 +6810,7 @@
         "nick": "nerolation",
         "url": "https://github.com/nerolation"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 7829,
@@ -6692,7 +6831,7 @@
         "email": "steven@memolabs.net"
       }
     ],
-    "flag": "update"
+    "erc": true
   },
   {
     "id": 7830,
@@ -6743,8 +6882,7 @@
         "nick": "Marchhill",
         "url": "https://github.com/Marchhill"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 7870,
@@ -6908,8 +7046,7 @@
         "nick": "stdevMac",
         "url": "https://github.com/stdevMac"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 7892,
@@ -6926,8 +7063,7 @@
         "nick": "raulk",
         "url": "https://github.com/raulk"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 7908,
@@ -6959,7 +7095,7 @@
         "email": "yuanshanshan.yss@antgroup.com"
       }
     ],
-    "flag": "new"
+    "erc": true
   },
   {
     "id": 7910,
@@ -6971,8 +7107,7 @@
         "nick": "shemnon",
         "url": "https://github.com/shemnon"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 7917,
@@ -6987,8 +7122,7 @@
         "name": "Justin Drake (@JustinDrake)",
         "email": "justin@ethereum.org"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 7918,
@@ -7032,8 +7166,7 @@
         "nick": "sslivkoff",
         "url": "https://github.com/sslivkoff"
       }
-    ],
-    "flag": "new"
+    ]
   },
   {
     "id": 7935,
@@ -7090,8 +7223,7 @@
         "nick": "sslivkoff",
         "url": "https://github.com/sslivkoff"
       }
-    ],
-    "flag": "new"
+    ]
   },
   {
     "id": 7939,
@@ -7123,8 +7255,7 @@
         "nick": "Giulio2002",
         "url": "https://github.com/Giulio2002"
       }
-    ],
-    "flag": "new"
+    ]
   },
   {
     "id": 7943,
@@ -7137,7 +7268,7 @@
         "url": "https://github.com/xaler5"
       }
     ],
-    "flag": "new"
+    "erc": true
   },
   {
     "id": 7951,
@@ -7159,8 +7290,7 @@
         "nick": "doganalpaslan",
         "url": "https://github.com/doganalpaslan"
       }
-    ],
-    "flag": "new"
+    ]
   },
   {
     "id": 8024,
@@ -7182,8 +7312,7 @@
         "nick": "axic",
         "url": "https://github.com/axic"
       }
-    ],
-    "flag": "new"
+    ]
   },
   {
     "id": 725,
@@ -7200,7 +7329,8 @@
         "nick": "tyleryasaka",
         "url": "https://github.com/tyleryasaka"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 838,
@@ -7217,7 +7347,8 @@
         "nick": "RenanSouza2",
         "url": "https://github.com/RenanSouza2"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 998,
@@ -7245,7 +7376,8 @@
         "nick": "xinbenlv",
         "url": "https://github.com/xinbenlv"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1202,
@@ -7267,7 +7399,8 @@
         "nick": "yingogobot",
         "url": "https://github.com/yingogobot"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2780,
@@ -7294,8 +7427,7 @@
         "nick": "misilva73",
         "url": "https://github.com/misilva73"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 2926,
@@ -7327,8 +7459,7 @@
         "nick": "jsign",
         "url": "https://github.com/jsign"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 3770,
@@ -7354,7 +7485,8 @@
         "name": "ligi",
         "email": "ligi@ligi.de"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 4762,
@@ -7423,7 +7555,8 @@
         "nick": "austintgriffith",
         "url": "https://github.com/austintgriffith"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 4972,
@@ -7445,7 +7578,8 @@
         "nick": "zihaoccc",
         "url": "https://github.com/zihaoccc"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5115,
@@ -7467,7 +7601,8 @@
         "nick": "ayobuenavista",
         "url": "https://github.com/ayobuenavista"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5173,
@@ -7491,7 +7626,8 @@
         "name": "PhD",
         "email": "david@iob.fi"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5189,
@@ -7513,7 +7649,8 @@
         "nick": "ScreamingHawk",
         "url": "https://github.com/ScreamingHawk"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5485,
@@ -7525,7 +7662,8 @@
         "nick": "xinbenlv",
         "url": "https://github.com/xinbenlv"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5573,
@@ -7562,7 +7700,8 @@
         "nick": "chunningham",
         "url": "https://github.com/chunningham"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5604,
@@ -7582,7 +7721,8 @@
         "name": "Alex Qin",
         "email": "alex@ubiloan.io"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5630,
@@ -7602,7 +7742,8 @@
         "nick": "weijiguo",
         "url": "https://github.com/weijiguo"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5700,
@@ -7614,7 +7755,8 @@
         "nick": "leeren",
         "url": "https://github.com/leeren"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5727,
@@ -7630,7 +7772,8 @@
         "name": "Terry Chen",
         "email": "terry.chen@phaneroz.io"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5791,
@@ -7672,7 +7815,8 @@
         "nick": "djdabs",
         "url": "https://github.com/djdabs"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6123,
@@ -7694,7 +7838,8 @@
         "nick": "kourouta",
         "url": "https://github.com/kourouta"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6170,
@@ -7706,7 +7851,8 @@
         "nick": "sujithsomraaj",
         "url": "https://github.com/sujithsomraaj"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6229,
@@ -7726,7 +7872,8 @@
         "name": "Anton Cheng",
         "email": "antonassocareer@gmail.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6327,
@@ -7738,7 +7885,8 @@
         "nick": "JXRow",
         "url": "https://github.com/JXRow"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6404,
@@ -7837,7 +7985,8 @@
         "name": "Chris Walker (@cr-walker)",
         "email": "chris@ckwalker.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6662,
@@ -7859,7 +8008,8 @@
         "nick": "pette1999",
         "url": "https://github.com/pette1999"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6682,
@@ -7871,7 +8021,8 @@
         "nick": "outdoteth",
         "url": "https://github.com/outdoteth"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6785,
@@ -7888,7 +8039,8 @@
         "nick": "BogdanKTHD",
         "url": "https://github.com/BogdanKTHD"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6786,
@@ -7905,7 +8057,8 @@
         "nick": "BogdanKTHD",
         "url": "https://github.com/BogdanKTHD"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6787,
@@ -7927,7 +8080,8 @@
         "nick": "SniperUsopp",
         "url": "https://github.com/SniperUsopp"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6806,
@@ -7947,7 +8101,8 @@
         "name": "Luigi",
         "email": "luigi@1combo.io"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6821,
@@ -7964,7 +8119,8 @@
         "nick": "qzhodl",
         "url": "https://github.com/qzhodl"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6823,
@@ -7975,7 +8131,8 @@
         "name": "qdqd (@qd-qd)",
         "email": "qdqdqdqdqd@protonmail.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6860,
@@ -8002,7 +8159,8 @@
         "nick": "nand2",
         "url": "https://github.com/nand2"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6864,
@@ -8014,7 +8172,8 @@
         "nick": "jeffishjeff",
         "url": "https://github.com/jeffishjeff"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6865,
@@ -8026,7 +8185,8 @@
         "nick": "a6-dou",
         "url": "https://github.com/a6-dou"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6900,
@@ -8093,7 +8253,8 @@
         "nick": "PowerStream3604",
         "url": "https://github.com/PowerStream3604"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6932,
@@ -8109,7 +8270,8 @@
         "nick": "0xRobinR",
         "url": "https://github.com/0xRobinR"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6944,
@@ -8126,7 +8288,8 @@
         "nick": "qizhou",
         "url": "https://github.com/qizhou"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6960,
@@ -8162,7 +8325,8 @@
         "name": "Ashish Sood",
         "email": "soodgen@gmail.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6981,
@@ -8181,7 +8345,8 @@
         "name": "Kartik Patel (@Slokh)",
         "email": "kartik@manifold.xyz"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7085,
@@ -8193,7 +8358,8 @@
         "nick": "xg1990",
         "url": "https://github.com/xg1990"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7087,
@@ -8210,7 +8376,8 @@
         "nick": "nand2",
         "url": "https://github.com/nand2"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7093,
@@ -8237,7 +8404,8 @@
         "nick": "odysseus0",
         "url": "https://github.com/odysseus0"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7196,
@@ -8259,7 +8427,8 @@
         "nick": "newnewsms",
         "url": "https://github.com/newnewsms"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7204,
@@ -8281,7 +8450,8 @@
         "nick": "newnewsms",
         "url": "https://github.com/newnewsms"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7246,
@@ -8303,7 +8473,8 @@
         "nick": "scott-silver",
         "url": "https://github.com/scott-silver"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7254,
@@ -8319,7 +8490,8 @@
         "name": "Quy Phan",
         "email": "quy.phan@cryptoviet.info"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7272,
@@ -8336,7 +8508,8 @@
         "nick": "ra-phael",
         "url": "https://github.com/ra-phael"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7280,
@@ -8348,7 +8521,8 @@
         "nick": "yoheinishikubo",
         "url": "https://github.com/yoheinishikubo"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7303,
@@ -8360,7 +8534,8 @@
         "nick": "kofujimura",
         "url": "https://github.com/kofujimura"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7390,
@@ -8375,7 +8550,8 @@
         "name": "Lassi Maksimainen (@mlalma)",
         "email": "lassi.maksimainen@gmail.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7405,
@@ -8387,7 +8563,8 @@
         "nick": "aaronyee-eth",
         "url": "https://github.com/aaronyee-eth"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7406,
@@ -8404,7 +8581,8 @@
         "nick": "zihaoccc",
         "url": "https://github.com/zihaoccc"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7410,
@@ -8426,7 +8604,8 @@
         "nick": "mohamadhammoud",
         "url": "https://github.com/mohamadhammoud"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7412,
@@ -8443,7 +8622,8 @@
         "nick": "dbeal-eth",
         "url": "https://github.com/dbeal-eth"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7425,
@@ -8455,7 +8635,8 @@
         "nick": "jimstir",
         "url": "https://github.com/jimstir"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7444,
@@ -8474,7 +8655,8 @@
         "name": "Rob Montgomery (@RobAnon)",
         "email": "rob@revest.finance"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7484,
@@ -8491,7 +8673,8 @@
         "nick": "zeroknots",
         "url": "https://github.com/zeroknots"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7495,
@@ -8540,7 +8723,8 @@
         "nick": "stephankmin",
         "url": "https://github.com/stephankmin"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7498,
@@ -8567,7 +8751,8 @@
         "nick": "stephankmin",
         "url": "https://github.com/stephankmin"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7503,
@@ -8619,7 +8804,8 @@
         "nick": "lleifermann",
         "url": "https://github.com/lleifermann"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7507,
@@ -8641,7 +8827,8 @@
         "nick": "fayang",
         "url": "https://github.com/fayang"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7508,
@@ -8658,7 +8845,8 @@
         "nick": "ThunderDeliverer",
         "url": "https://github.com/ThunderDeliverer"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7509,
@@ -8670,7 +8858,8 @@
         "nick": "HelloRickey",
         "url": "https://github.com/HelloRickey"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7510,
@@ -8692,7 +8881,8 @@
         "nick": "fayang",
         "url": "https://github.com/fayang"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7511,
@@ -8714,7 +8904,8 @@
         "nick": "0age",
         "url": "https://github.com/0age"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7512,
@@ -8756,7 +8947,8 @@
         "nick": "alex-ppg",
         "url": "https://github.com/alex-ppg"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7513,
@@ -8779,7 +8971,8 @@
         "name": "Johnny.c",
         "email": "johnny.c@a3sprotocol.xyz"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7517,
@@ -8796,7 +8989,8 @@
         "nick": "tammyyang",
         "url": "https://github.com/tammyyang"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7518,
@@ -8819,7 +9013,8 @@
         "name": "Prasanth Kalangi",
         "email": "pkalangi@zoniqx.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7521,
@@ -8836,7 +9031,8 @@
         "nick": "supiket",
         "url": "https://github.com/supiket"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7522,
@@ -8859,7 +9055,8 @@
         "name": "Kai Chen",
         "email": "kai@dauth.network"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7524,
@@ -8890,7 +9087,8 @@
         "nick": "barryWhiteHat",
         "url": "https://github.com/barryWhiteHat"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7527,
@@ -8917,7 +9115,8 @@
         "name": "0xPoet",
         "email": "0xpoets@gmail.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7529,
@@ -8938,7 +9137,8 @@
         "nick": "seansing",
         "url": "https://github.com/seansing"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7533,
@@ -8955,7 +9155,8 @@
         "nick": "lazy1523",
         "url": "https://github.com/lazy1523"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7538,
@@ -8967,7 +9168,8 @@
         "nick": "Pandapip1",
         "url": "https://github.com/Pandapip1"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7546,
@@ -8982,7 +9184,8 @@
         "name": "Kai Hiroi (@KaiHiroi)",
         "email": "kai.hiroi@pm.me"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7548,
@@ -9006,7 +9209,8 @@
         "name": "Luigi",
         "email": "luigi@1combo.io"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7555,
@@ -9043,7 +9247,8 @@
         "nick": "pedrouid",
         "url": "https://github.com/pedrouid"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7557,
@@ -9092,7 +9297,8 @@
         "nick": "newnewsms",
         "url": "https://github.com/newnewsms"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7562,
@@ -9119,7 +9325,8 @@
         "nick": "shahafn",
         "url": "https://github.com/shahafn"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7564,
@@ -9141,7 +9348,8 @@
         "nick": "newnewsms",
         "url": "https://github.com/newnewsms"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7565,
@@ -9160,7 +9368,8 @@
         "name": "Hyun-Sik Kim",
         "email": "hskim@keti.re.kr"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7566,
@@ -9172,7 +9381,8 @@
         "nick": "HelloRickey",
         "url": "https://github.com/HelloRickey"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7572,
@@ -9194,7 +9404,8 @@
         "nick": "ryanio",
         "url": "https://github.com/ryanio"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7573,
@@ -9211,7 +9422,8 @@
         "nick": "pekola",
         "url": "https://github.com/pekola"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7579,
@@ -9248,7 +9460,8 @@
         "nick": "rockmin216",
         "url": "https://github.com/rockmin216"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7580,
@@ -9260,7 +9473,8 @@
         "nick": "wartstone",
         "url": "https://github.com/wartstone"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7582,
@@ -9277,7 +9491,8 @@
         "nick": "z0r0z",
         "url": "https://github.com/z0r0z"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7585,
@@ -9304,7 +9519,8 @@
         "nick": "photosssa",
         "url": "https://github.com/photosssa"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7589,
@@ -9321,7 +9537,8 @@
         "nick": "karacurt",
         "url": "https://github.com/karacurt"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7595,
@@ -9348,7 +9565,8 @@
         "nick": "harpocrates555",
         "url": "https://github.com/harpocrates555"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7597,
@@ -9365,7 +9583,8 @@
         "nick": "circle-aloychan",
         "url": "https://github.com/circle-aloychan"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7598,
@@ -9382,7 +9601,8 @@
         "nick": "circle-aloychan",
         "url": "https://github.com/circle-aloychan"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7603,
@@ -9394,7 +9614,8 @@
         "nick": "haruu8",
         "url": "https://github.com/haruu8"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7604,
@@ -9411,7 +9632,8 @@
         "nick": "emiliolanzalaco",
         "url": "https://github.com/emiliolanzalaco"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7612,
@@ -9475,7 +9697,8 @@
         "nick": "CodeSandwich",
         "url": "https://github.com/CodeSandwich"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7615,
@@ -9506,7 +9729,8 @@
         "name": "Henry Yuan (@onehumanbeing)",
         "email": "hy2878@nyu.edu"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7617,
@@ -9523,7 +9747,8 @@
         "nick": "nand2",
         "url": "https://github.com/nand2"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7618,
@@ -9540,7 +9765,8 @@
         "nick": "nand2",
         "url": "https://github.com/nand2"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7621,
@@ -9563,7 +9789,8 @@
         "name": "Michael Ryder",
         "email": "mike@alvaraprotocol.io"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7629,
@@ -9580,7 +9807,8 @@
         "nick": "Nvuwa",
         "url": "https://github.com/Nvuwa"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7632,
@@ -9592,7 +9820,8 @@
         "nick": "xinbenlv",
         "url": "https://github.com/xinbenlv"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7638,
@@ -9609,7 +9838,8 @@
         "nick": "lazy1523",
         "url": "https://github.com/lazy1523"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7641,
@@ -9640,7 +9870,8 @@
         "name": "Kartin",
         "email": "kartin@hyperoracle.io"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7644,
@@ -9652,7 +9883,8 @@
         "nick": "chenly",
         "url": "https://github.com/chenly"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7649,
@@ -9677,7 +9909,8 @@
         "nick": "unblocktechie",
         "url": "https://github.com/unblocktechie"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7651,
@@ -9694,7 +9927,8 @@
         "nick": "caldereth",
         "url": "https://github.com/caldereth"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7652,
@@ -9709,7 +9943,8 @@
         "name": "Sam",
         "email": "1047180870@qq.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7654,
@@ -9721,7 +9956,8 @@
         "nick": "HelloRickey",
         "url": "https://github.com/HelloRickey"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7662,
@@ -9733,7 +9969,8 @@
         "nick": "marleymarl",
         "url": "https://github.com/marleymarl"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7673,
@@ -9745,7 +9982,8 @@
         "nick": "wjmelements",
         "url": "https://github.com/wjmelements"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7674,
@@ -9767,7 +10005,8 @@
         "nick": "Amxx",
         "url": "https://github.com/Amxx"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7679,
@@ -9809,7 +10048,8 @@
         "nick": "bumblefudge",
         "url": "https://github.com/bumblefudge"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7681,
@@ -9821,7 +10061,8 @@
         "nick": "sennett-lau",
         "url": "https://github.com/sennett-lau"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7682,
@@ -9843,7 +10084,8 @@
         "nick": "adonesky1",
         "url": "https://github.com/adonesky1"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7683,
@@ -9865,7 +10107,8 @@
         "nick": "nicholaspai",
         "url": "https://github.com/nicholaspai"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7688,
@@ -9899,7 +10142,8 @@
         "nick": "0xc0de4c0ffee",
         "url": "https://github.com/0xc0de4c0ffee"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7695,
@@ -9911,7 +10155,8 @@
         "nick": "ducthotran2010",
         "url": "https://github.com/ducthotran2010"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7699,
@@ -9923,7 +10168,8 @@
         "nick": "radeksvarz",
         "url": "https://github.com/radeksvarz"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7700,
@@ -9950,7 +10196,8 @@
         "nick": "makoto",
         "url": "https://github.com/makoto"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7701,
@@ -10056,7 +10303,8 @@
         "nick": "derekchiang",
         "url": "https://github.com/derekchiang"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7715,
@@ -10103,7 +10351,8 @@
         "nick": "lukasrosario",
         "url": "https://github.com/lukasrosario"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7720,
@@ -10114,7 +10363,8 @@
         "name": "Chen Liaoyuan (@chenly)",
         "email": "cly@kip.pro"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7721,
@@ -10126,7 +10376,8 @@
         "nick": "piyush-chittara",
         "url": "https://github.com/piyush-chittara"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7722,
@@ -10151,7 +10402,8 @@
       {
         "name": "SWIAT"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7726,
@@ -10178,7 +10430,8 @@
         "nick": "r0ohafza",
         "url": "https://github.com/r0ohafza"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7729,
@@ -10190,7 +10443,8 @@
         "nick": "fewwwww",
         "url": "https://github.com/fewwwww"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7730,
@@ -10202,7 +10456,8 @@
         "nick": "lcastillo-ledger",
         "url": "https://github.com/lcastillo-ledger"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7732,
@@ -10247,7 +10502,8 @@
         "nick": "JamesSmartCell",
         "url": "https://github.com/JamesSmartCell"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7739,
@@ -10299,7 +10555,8 @@
         "nick": "0xcuriousapple",
         "url": "https://github.com/0xcuriousapple"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7741,
@@ -10316,7 +10573,8 @@
         "nick": "0xTimepunk",
         "url": "https://github.com/0xTimepunk"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7745,
@@ -10419,7 +10677,8 @@
         "nick": "uni-guillaume",
         "url": "https://github.com/uni-guillaume"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7760,
@@ -10451,7 +10710,8 @@
         "nick": "Vectorized",
         "url": "https://github.com/Vectorized"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7765,
@@ -10462,7 +10722,8 @@
         "name": "frank (@frankmint2024)",
         "email": "frank@mintchain.io"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7766,
@@ -10494,7 +10755,8 @@
         "nick": "forshtat",
         "url": "https://github.com/forshtat"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7768,
@@ -10538,7 +10800,8 @@
         "nick": "forshtat",
         "url": "https://github.com/forshtat"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7770,
@@ -10551,7 +10814,7 @@
         "url": "https://github.com/yaronvel"
       }
     ],
-    "flag": "new"
+    "erc": true
   },
   {
     "id": 7773,
@@ -10573,8 +10836,7 @@
         "nick": "adietrichs",
         "url": "https://github.com/adietrichs"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 7774,
@@ -10591,7 +10853,8 @@
         "nick": "SamWilsn",
         "url": "https://github.com/SamWilsn"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7778,
@@ -10645,7 +10908,8 @@
         "nick": "yoavw",
         "url": "https://github.com/yoavw"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7780,
@@ -10672,7 +10936,8 @@
         "nick": "filmakarov",
         "url": "https://github.com/filmakarov"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7782,
@@ -10711,7 +10976,8 @@
         "nick": "jefflau",
         "url": "https://github.com/jefflau"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7787,
@@ -10727,7 +10993,8 @@
         "name": "Rafael Castaneda",
         "email": "rafaelcastaneda@gmail.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7791,
@@ -10795,7 +11062,8 @@
         "nick": "0xneves",
         "url": "https://github.com/0xneves"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7795,
@@ -10827,7 +11095,8 @@
         "nick": "PhABC",
         "url": "https://github.com/PhABC"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7796,
@@ -10854,7 +11123,8 @@
         "nick": "shahafn",
         "url": "https://github.com/shahafn"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7797,
@@ -10969,7 +11239,8 @@
         "nick": "blmalone",
         "url": "https://github.com/blmalone"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7803,
@@ -10981,7 +11252,8 @@
         "nick": "frangio",
         "url": "https://github.com/frangio"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7804,
@@ -11046,7 +11318,7 @@
         "url": "https://github.com/hellohanchen"
       }
     ],
-    "flag": "new"
+    "erc": true
   },
   {
     "id": 7807,
@@ -11090,7 +11362,8 @@
         "nick": "chris13524",
         "url": "https://github.com/chris13524"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7819,
@@ -11124,7 +11397,8 @@
         "nick": "Amxx",
         "url": "https://github.com/Amxx"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7828,
@@ -11212,7 +11486,7 @@
         "url": "https://github.com/0xmoebius"
       }
     ],
-    "flag": "new"
+    "erc": true
   },
   {
     "id": 7831,
@@ -11223,7 +11497,8 @@
         "name": "Sam Wilson (@SamWilsn)",
         "email": "sam@binarycake.ca"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7832,
@@ -11236,7 +11511,7 @@
         "url": "https://github.com/gflobo"
       }
     ],
-    "flag": "new"
+    "erc": true
   },
   {
     "id": 7836,
@@ -11269,7 +11544,7 @@
         "url": "https://github.com/jxom"
       }
     ],
-    "flag": "new"
+    "erc": true
   },
   {
     "id": 7845,
@@ -11297,7 +11572,7 @@
         "url": "https://github.com/RanaBug"
       }
     ],
-    "flag": "new"
+    "erc": true
   },
   {
     "id": 7846,
@@ -11320,7 +11595,7 @@
         "url": "https://github.com/lukasrosario"
       }
     ],
-    "flag": "new"
+    "erc": true
   },
   {
     "id": 7847,
@@ -11332,7 +11607,7 @@
         "email": "nick@ownerfy.com"
       }
     ],
-    "flag": "new"
+    "erc": true
   },
   {
     "id": 7848,
@@ -11356,7 +11631,8 @@
         "nick": "jackchuma",
         "url": "https://github.com/jackchuma"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7861,
@@ -11369,7 +11645,7 @@
         "url": "https://github.com/vmc-crossmint"
       }
     ],
-    "flag": "new"
+    "erc": true
   },
   {
     "id": 7862,
@@ -11500,7 +11776,7 @@
         "url": "https://github.com/anistark"
       }
     ],
-    "flag": "new"
+    "erc": true
   },
   {
     "id": 7867,
@@ -11539,7 +11815,7 @@
         "url": "https://github.com/ilikesymmetry"
       }
     ],
-    "flag": "new"
+    "erc": true
   },
   {
     "id": 7877,
@@ -11573,7 +11849,8 @@
         "nick": "arachnid",
         "url": "https://github.com/arachnid"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7886,
@@ -11607,7 +11884,8 @@
         "nick": "vikramarun",
         "url": "https://github.com/vikramarun"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7888,
@@ -11625,7 +11903,7 @@
         "url": "https://github.com/yahgwai"
       }
     ],
-    "flag": "new"
+    "erc": true
   },
   {
     "id": 7889,
@@ -11662,7 +11940,7 @@
         "email": "sleepl@changwon.ac.kr"
       }
     ],
-    "flag": "new"
+    "erc": true
   },
   {
     "id": 7893,
@@ -11674,7 +11952,7 @@
         "email": "seanluis47@gmail.com"
       }
     ],
-    "flag": "new"
+    "erc": true
   },
   {
     "id": 7895,
@@ -11707,7 +11985,7 @@
         "url": "https://github.com/jxom"
       }
     ],
-    "flag": "new"
+    "erc": true
   },
   {
     "id": 7896,
@@ -11759,7 +12037,7 @@
         "url": "https://github.com/shahafn"
       }
     ],
-    "flag": "new"
+    "erc": true
   },
   {
     "id": 7903,
@@ -11793,8 +12071,7 @@
         "nick": "misilva73",
         "url": "https://github.com/misilva73"
       }
-    ],
-    "flag": "new"
+    ]
   },
   {
     "id": 7907,
@@ -11833,8 +12110,7 @@
         "nick": "lightclient",
         "url": "https://github.com/lightclient"
       }
-    ],
-    "flag": "new"
+    ]
   },
   {
     "id": 7915,
@@ -11898,7 +12174,7 @@
         "url": "https://github.com/sola92"
       }
     ],
-    "flag": "new"
+    "erc": true
   },
   {
     "id": 7921,
@@ -11961,8 +12237,7 @@
         "nick": "pipermerriam",
         "url": "https://github.com/pipermerriam"
       }
-    ],
-    "flag": "new"
+    ]
   },
   {
     "id": 7928,
@@ -11994,8 +12269,7 @@
         "nick": "jsign",
         "url": "https://github.com/jsign"
       }
-    ],
-    "flag": "new"
+    ]
   },
   {
     "id": 7929,
@@ -12018,7 +12292,7 @@
         "url": "https://github.com/NarcisCRO"
       }
     ],
-    "flag": "new"
+    "erc": true
   },
   {
     "id": 7930,
@@ -12106,7 +12380,7 @@
         "url": "https://github.com/vbuterin"
       }
     ],
-    "flag": "new"
+    "erc": true
   },
   {
     "id": 7932,
@@ -12118,8 +12392,7 @@
         "nick": "SirSpudlington",
         "url": "https://github.com/SirSpudlington"
       }
-    ],
-    "flag": "new"
+    ]
   },
   {
     "id": 7936,
@@ -12142,7 +12415,7 @@
         "url": "https://github.com/monperrus"
       }
     ],
-    "flag": "new"
+    "erc": true
   },
   {
     "id": 7937,
@@ -12154,8 +12427,7 @@
         "nick": "sorpaas",
         "url": "https://github.com/sorpaas"
       }
-    ],
-    "flag": "new"
+    ]
   },
   {
     "id": 7938,
@@ -12167,8 +12439,7 @@
         "nick": "dankrad",
         "url": "https://github.com/dankrad"
       }
-    ],
-    "flag": "new"
+    ]
   },
   {
     "id": 7940,
@@ -12183,8 +12454,7 @@
       {
         "name": "Gregory Markou"
       }
-    ],
-    "flag": "new"
+    ]
   },
   {
     "id": 7942,
@@ -12207,8 +12477,7 @@
         "name": "Sisi Duan",
         "email": "duansisi@tsinghua.edu.cn"
       }
-    ],
-    "flag": "new"
+    ]
   },
   {
     "id": 7946,
@@ -12226,7 +12495,7 @@
         "url": "https://github.com/tinaszheng"
       }
     ],
-    "flag": "new"
+    "erc": true
   },
   {
     "id": 7947,
@@ -12238,7 +12507,7 @@
         "email": "artem@rarilabs.com"
       }
     ],
-    "flag": "new"
+    "erc": true
   },
   {
     "id": 7949,
@@ -12253,8 +12522,7 @@
         "name": "Jochem Brouwer (@jochem-brouwer)",
         "email": "jochem@ethereum.org"
       }
-    ],
-    "flag": "new"
+    ]
   },
   {
     "id": 7954,
@@ -12271,8 +12539,7 @@
         "nick": "badams",
         "url": "https://github.com/badams"
       }
-    ],
-    "flag": "new"
+    ]
   },
   {
     "id": 7955,
@@ -12295,7 +12562,7 @@
         "url": "https://github.com/vseehausen"
       }
     ],
-    "flag": "new"
+    "erc": true
   },
   {
     "id": 7956,
@@ -12307,8 +12574,7 @@
         "nick": "aryaethn",
         "url": "https://github.com/aryaethn"
       }
-    ],
-    "flag": "new"
+    ]
   },
   {
     "id": 7957,
@@ -12320,8 +12586,7 @@
         "nick": "sorpaas",
         "url": "https://github.com/sorpaas"
       }
-    ],
-    "flag": "new"
+    ]
   },
   {
     "id": 7958,
@@ -12333,8 +12598,7 @@
         "nick": "sorpaas",
         "url": "https://github.com/sorpaas"
       }
-    ],
-    "flag": "new"
+    ]
   },
   {
     "id": 7960,
@@ -12346,8 +12610,7 @@
         "nick": "sorpaas",
         "url": "https://github.com/sorpaas"
       }
-    ],
-    "flag": "new"
+    ]
   },
   {
     "id": 7961,
@@ -12359,8 +12622,7 @@
         "nick": "sorpaas",
         "url": "https://github.com/sorpaas"
       }
-    ],
-    "flag": "new"
+    ]
   },
   {
     "id": 7964,
@@ -12373,7 +12635,7 @@
         "url": "https://github.com/ernestognw"
       }
     ],
-    "flag": "new"
+    "erc": true
   },
   {
     "id": 7965,
@@ -12386,7 +12648,7 @@
         "url": "https://github.com/ernestognw"
       }
     ],
-    "flag": "new"
+    "erc": true
   },
   {
     "id": 7966,
@@ -12408,8 +12670,7 @@
         "nick": "LampardNguyen234",
         "url": "https://github.com/LampardNguyen234"
       }
-    ],
-    "flag": "new"
+    ]
   },
   {
     "id": 7968,
@@ -12422,7 +12683,7 @@
         "url": "https://github.com/Julius278"
       }
     ],
-    "flag": "new"
+    "erc": true
   },
   {
     "id": 7969,
@@ -12445,7 +12706,7 @@
         "url": "https://github.com/ernestognw"
       }
     ],
-    "flag": "new"
+    "erc": true
   },
   {
     "id": 7975,
@@ -12466,8 +12727,7 @@
         "nick": "Giulio2002",
         "url": "https://github.com/Giulio2002"
       }
-    ],
-    "flag": "new"
+    ]
   },
   {
     "id": 7976,
@@ -12479,8 +12739,7 @@
         "nick": "nerolation",
         "url": "https://github.com/nerolation"
       }
-    ],
-    "flag": "new"
+    ]
   },
   {
     "id": 7979,
@@ -12506,8 +12765,7 @@
         "name": "John Max Skaller",
         "email": "skaller@internode.on.net"
       }
-    ],
-    "flag": "new"
+    ]
   },
   {
     "id": 7981,
@@ -12519,8 +12777,7 @@
         "nick": "nerolation",
         "url": "https://github.com/nerolation"
       }
-    ],
-    "flag": "new"
+    ]
   },
   {
     "id": 7985,
@@ -12543,7 +12800,7 @@
         "url": "https://github.com/0xValera"
       }
     ],
-    "flag": "new"
+    "erc": true
   },
   {
     "id": 7997,
@@ -12555,8 +12812,7 @@
         "nick": "frangio",
         "url": "https://github.com/frangio"
       }
-    ],
-    "flag": "new"
+    ]
   },
   {
     "id": 7998,
@@ -12573,8 +12829,7 @@
         "nick": "aryaethn",
         "url": "https://github.com/aryaethn"
       }
-    ],
-    "flag": "new"
+    ]
   },
   {
     "id": 7999,
@@ -12591,8 +12846,7 @@
         "nick": "vbuterin",
         "url": "https://github.com/vbuterin"
       }
-    ],
-    "flag": "new"
+    ]
   },
   {
     "id": 8001,
@@ -12605,7 +12859,7 @@
         "url": "https://github.com/kbryan"
       }
     ],
-    "flag": "new"
+    "erc": true
   },
   {
     "id": 8004,
@@ -12627,7 +12881,7 @@
         "url": "https://github.com/jorellis"
       }
     ],
-    "flag": "new"
+    "erc": true
   },
   {
     "id": 8007,
@@ -12644,8 +12898,7 @@
         "nick": "adietrichs",
         "url": "https://github.com/adietrichs"
       }
-    ],
-    "flag": "new"
+    ]
   },
   {
     "id": 8011,
@@ -12672,8 +12925,7 @@
         "nick": "nerolation",
         "url": "https://github.com/nerolation"
       }
-    ],
-    "flag": "new"
+    ]
   },
   {
     "id": 8012,
@@ -12685,8 +12937,7 @@
         "nick": "potuz",
         "url": "https://github.com/potuz"
       }
-    ],
-    "flag": "new"
+    ]
   },
   {
     "id": 8013,
@@ -12713,8 +12964,7 @@
         "nick": "chfast",
         "url": "https://github.com/chfast"
       }
-    ],
-    "flag": "new"
+    ]
   },
   {
     "id": 8015,
@@ -12726,8 +12976,7 @@
         "nick": "terencechain",
         "url": "https://github.com/terencechain"
       }
-    ],
-    "flag": "new"
+    ]
   },
   {
     "id": 8016,
@@ -12744,8 +12993,7 @@
         "nick": "wemeetagain",
         "url": "https://github.com/wemeetagain"
       }
-    ],
-    "flag": "new"
+    ]
   },
   {
     "id": 8025,
@@ -12761,8 +13009,7 @@
         "name": "Justin Drake (@JustinDrake)",
         "email": "justin@ethereum.org"
       }
-    ],
-    "flag": "new"
+    ]
   },
   {
     "id": 86,
@@ -12809,7 +13056,8 @@
         "name": "Nick Johnson",
         "email": "nick@ethereum.org"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 210,
@@ -12882,7 +13130,8 @@
         "nick": "ricmoo",
         "url": "https://github.com/ricmoo"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 665,
@@ -12937,7 +13186,8 @@
         "name": "ligi",
         "email": "ligi@ligi.de"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 823,
@@ -12948,7 +13198,8 @@
         "name": "Kashish Khullar",
         "email": "kkhullar7@gmail.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 831,
@@ -12960,7 +13211,8 @@
         "nick": "ligi",
         "url": "https://github.com/ligi"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 858,
@@ -13001,7 +13253,8 @@
         "name": "Dave Sag",
         "email": "davesag@gmail.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 897,
@@ -13016,7 +13269,8 @@
         "name": "Manuel Araoz",
         "email": "manuel@zeppelin.solutions"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 900,
@@ -13031,7 +13285,8 @@
         "name": "Jorge Izquierdo",
         "email": "jorge@aragon.one"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 902,
@@ -13053,7 +13308,8 @@
         "nick": "naumenkogs",
         "url": "https://github.com/naumenkogs"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 918,
@@ -13076,7 +13332,8 @@
         "name": "Brandon Grill",
         "email": "bg2655@columbia.edu"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 926,
@@ -13087,7 +13344,8 @@
         "name": "Nick Johnson",
         "email": "nick@ethereum.org"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 927,
@@ -13098,7 +13356,8 @@
         "name": "Nick Johnson",
         "email": "nick@ethereum.org"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 969,
@@ -13175,7 +13434,8 @@
         "name": "Joel Torstensson",
         "email": "oed@consensys.net"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1057,
@@ -13214,7 +13474,8 @@
       {
         "name": "Portal Network Team"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1066,
@@ -13236,7 +13497,8 @@
         "nick": "naumenkogs",
         "url": "https://github.com/naumenkogs"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1077,
@@ -13252,7 +13514,8 @@
         "nick": "3esmit",
         "url": "https://github.com/3esmit"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1078,
@@ -13263,7 +13526,8 @@
         "name": "Alex Van de Sande",
         "email": "avsa@ethereum.org"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1080,
@@ -13274,7 +13538,8 @@
         "name": "Bradley Leatherwood",
         "email": "bradleat@inkibra.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1081,
@@ -13294,7 +13559,8 @@
         "nick": "3esmit",
         "url": "https://github.com/3esmit"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1087,
@@ -13346,7 +13612,8 @@
         "nick": "ThunderDeliverer",
         "url": "https://github.com/ThunderDeliverer"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1132,
@@ -13357,7 +13624,8 @@
         "name": "nitika-goel",
         "email": "nitika@govblocks.io"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1175,
@@ -13369,7 +13637,8 @@
         "nick": "Nitro888",
         "url": "https://github.com/Nitro888"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1178,
@@ -13380,7 +13649,8 @@
         "name": "Albert Chon",
         "email": "achon@stanford.edu"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1186,
@@ -13410,7 +13680,8 @@
         "name": "Min Zu",
         "email": "crawlregister@gmail.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1207,
@@ -13427,7 +13698,8 @@
         "nick": "Wangbicong",
         "url": "https://github.com/Wangbicong"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1227,
@@ -13456,7 +13728,8 @@
         "nick": "pb25193",
         "url": "https://github.com/pb25193"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1276,
@@ -13519,7 +13792,8 @@
         "nick": "njgheorghita",
         "url": "https://github.com/njgheorghita"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1337,
@@ -13567,7 +13841,8 @@
         "name": "Nathan Creswell",
         "email": "nathantr@gmail.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1352,
@@ -13611,7 +13886,8 @@
         "name": "James Sangalli",
         "email": "j.l.sangalli@gmail.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1387,
@@ -13626,7 +13902,8 @@
         "name": "James Sangalli",
         "email": "j.l.sangalli@gmail.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1388,
@@ -13641,7 +13918,8 @@
         "name": "James Sangalli",
         "email": "j.l.sangalli@gmail.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1417,
@@ -13658,7 +13936,8 @@
         "nick": "pb25193",
         "url": "https://github.com/pb25193"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1418,
@@ -13682,7 +13961,8 @@
         "nick": "Nitro888",
         "url": "https://github.com/Nitro888"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1444,
@@ -13699,7 +13979,8 @@
         "nick": "jenncoop",
         "url": "https://github.com/jenncoop"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1450,
@@ -13719,7 +14000,8 @@
         "name": "David Zhang",
         "email": "david@startengine.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1459,
@@ -13751,7 +14033,8 @@
         "name": "Julian Svirsky",
         "email": "js@atlant.io"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1470,
@@ -13814,7 +14097,8 @@
         "name": "Noah Zinsmeister",
         "email": "noahwz@gmail.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1485,
@@ -13841,7 +14125,8 @@
         "nick": "cohabo",
         "url": "https://github.com/cohabo"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1504,
@@ -13868,7 +14153,8 @@
         "name": "Xuanzhe Liu",
         "email": "liuxuanzhe@pku.edu.cn"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1523,
@@ -13880,7 +14166,8 @@
         "nick": "christoph2806",
         "url": "https://github.com/christoph2806"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1571,
@@ -13917,7 +14204,8 @@
         "name": "Nick Johnson",
         "email": "nick@ens.domains"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1581,
@@ -13929,7 +14217,8 @@
         "nick": "bitgamma",
         "url": "https://github.com/bitgamma"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1588,
@@ -13956,7 +14245,8 @@
         "name": "Laurent Aapro",
         "email": "laurent.aapro@mtpelerin.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1613,
@@ -13975,7 +14265,8 @@
         "name": "Alex Forshtat",
         "email": "alex@tabookey.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1616,
@@ -14007,7 +14298,8 @@
         "nick": "thegostep",
         "url": "https://github.com/thegostep"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1620,
@@ -14019,7 +14311,8 @@
         "nick": "PaulRBerg",
         "url": "https://github.com/PaulRBerg"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1633,
@@ -14043,7 +14336,8 @@
         "name": "Nate van der Ende",
         "email": "nate@artblx.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1681,
@@ -14079,7 +14373,8 @@
         "nick": "brunobar79",
         "url": "https://github.com/brunobar79"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1753,
@@ -14108,7 +14403,8 @@
         "name": "Katrina Donaghy",
         "email": "katrina@civicledger.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1761,
@@ -14131,7 +14427,8 @@
         "name": "Eric Binet",
         "email": "eric@enjin.io"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1767,
@@ -14170,7 +14467,8 @@
         "nick": "DanFinlay",
         "url": "https://github.com/DanFinlay"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1803,
@@ -14194,7 +14492,8 @@
         "nick": "pelle",
         "url": "https://github.com/pelle"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1822,
@@ -14209,7 +14508,8 @@
         "name": "Patrick Gallagher",
         "email": "blockchainbuddha@gmail.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1829,
@@ -14232,7 +14532,8 @@
         "nick": "arachnid",
         "url": "https://github.com/arachnid"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1872,
@@ -14272,7 +14573,8 @@
         "nick": "ctzurcanu",
         "url": "https://github.com/ctzurcanu"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1901,
@@ -14306,7 +14608,8 @@
         "nick": "ctzurcanu",
         "url": "https://github.com/ctzurcanu"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1922,
@@ -14325,7 +14628,8 @@
         "name": "Duncan Westland",
         "email": "duncan.westland@uk.ey.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1923,
@@ -14344,7 +14648,8 @@
         "name": "Duncan Westland",
         "email": "duncan.westland@uk.ey.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1930,
@@ -14377,7 +14682,8 @@
         "nick": "pinkiebell",
         "url": "https://github.com/pinkiebell"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1959,
@@ -14430,7 +14736,8 @@
         "nick": "qinjian",
         "url": "https://github.com/qinjian"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1985,
@@ -14466,7 +14773,8 @@
         "name": "Daniel Lehrner",
         "email": "daniel@io.builders"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2003,
@@ -14494,7 +14802,8 @@
         "name": "Daniel Lehrner",
         "email": "daniel@io.builders"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2014,
@@ -14547,7 +14856,8 @@
         "name": "Daniel Lehrner",
         "email": "daniel@io.builders"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2019,
@@ -14566,7 +14876,8 @@
         "name": "Daniel Lehrner",
         "email": "daniel@io.builders"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2020,
@@ -14585,7 +14896,8 @@
         "name": "Daniel Lehrner",
         "email": "daniel@io.builders"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2021,
@@ -14604,7 +14916,8 @@
         "name": "Daniel Lehrner",
         "email": "daniel@io.builders"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2026,
@@ -14722,7 +15035,8 @@
         "nick": "ctzurcanu",
         "url": "https://github.com/ctzurcanu"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2193,
@@ -14739,7 +15053,8 @@
         "nick": "ctzurcanu",
         "url": "https://github.com/ctzurcanu"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2242,
@@ -14774,7 +15089,8 @@
         "name": "Nick Johnson",
         "email": "nick@ens.domains"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2327,
@@ -14814,7 +15130,8 @@
         "name": "Carl Beekhuizen (@CarlBeek)",
         "email": "carl@ethereum.org"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2334,
@@ -14825,7 +15142,8 @@
         "name": "Carl Beekhuizen (@CarlBeek)",
         "email": "carl@ethereum.org"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2335,
@@ -14836,7 +15154,8 @@
         "name": "Carl Beekhuizen (@CarlBeek)",
         "email": "carl@ethereum.org"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2378,
@@ -14859,7 +15178,8 @@
         "name": "Jim McDonald",
         "email": "Jim@mcdee.net"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2390,
@@ -14871,7 +15191,8 @@
         "nick": "james-choncholas",
         "url": "https://github.com/james-choncholas"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2400,
@@ -14888,7 +15209,8 @@
         "nick": "yenda",
         "url": "https://github.com/yenda"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2470,
@@ -14900,7 +15222,8 @@
         "nick": "3esmit",
         "url": "https://github.com/3esmit"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2474,
@@ -14932,7 +15255,8 @@
         "name": "Witek Radomski",
         "email": "witek@enjin.io"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2488,
@@ -14966,7 +15290,8 @@
         "nick": "jbaylina",
         "url": "https://github.com/jbaylina"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2515,
@@ -14990,7 +15315,8 @@
         "nick": "filips123",
         "url": "https://github.com/filips123"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2525,
@@ -15002,7 +15328,8 @@
         "nick": "amxx",
         "url": "https://github.com/amxx"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2539,
@@ -15047,7 +15374,8 @@
         "nick": "0age",
         "url": "https://github.com/0age"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2566,
@@ -15086,7 +15414,8 @@
         "nick": "lemontreeran",
         "url": "https://github.com/lemontreeran"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2583,
@@ -15132,7 +15461,8 @@
         "name": "Kohshi Shiba",
         "email": "kohshi.shiba@gmail.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2645,
@@ -15147,7 +15477,8 @@
         "name": "Louis Guthmann",
         "email": "louis@starkware.co"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2657,
@@ -15182,7 +15513,8 @@
         "name": "Jim McDonald",
         "email": "Jim@mcdee.net"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2746,
@@ -15199,7 +15531,8 @@
         "nick": "juanfranblanco",
         "url": "https://github.com/juanfranblanco"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2767,
@@ -15216,7 +15549,8 @@
         "nick": "mudgen",
         "url": "https://github.com/mudgen"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2770,
@@ -15233,7 +15567,8 @@
         "nick": "drortirosh",
         "url": "https://github.com/drortirosh"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2803,
@@ -15281,7 +15616,8 @@
         "nick": "Neurone",
         "url": "https://github.com/Neurone"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2876,
@@ -15293,7 +15629,8 @@
         "nick": "junderw",
         "url": "https://github.com/junderw"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2917,
@@ -15312,7 +15649,8 @@
         "name": "Süleyman Kardaş",
         "email": "skardas@gmail.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2936,
@@ -15363,7 +15701,8 @@
         "nick": "iamdefinitelyahuman",
         "url": "https://github.com/iamdefinitelyahuman"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2970,
@@ -15402,7 +15741,8 @@
         "nick": "manvel79",
         "url": "https://github.com/manvel79"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 2997,
@@ -15431,7 +15771,8 @@
         "nick": "bonustrack",
         "url": "https://github.com/bonustrack"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 3005,
@@ -15443,7 +15784,8 @@
         "nick": "defifuture",
         "url": "https://github.com/defifuture"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 3009,
@@ -15465,7 +15807,8 @@
         "nick": "DavidLKnott",
         "url": "https://github.com/DavidLKnott"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 3014,
@@ -15643,7 +15986,8 @@
         "nick": "Ungigdu",
         "url": "https://github.com/Ungigdu"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 3143,
@@ -15689,7 +16033,8 @@
         "nick": "arachnid",
         "url": "https://github.com/arachnid"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 3234,
@@ -15716,7 +16061,8 @@
         "nick": "onewayfunction",
         "url": "https://github.com/onewayfunction"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 3238,
@@ -15861,7 +16207,8 @@
         "nick": "ashrowz",
         "url": "https://github.com/ashrowz"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 3403,
@@ -15919,7 +16266,8 @@
         "nick": "nginnever",
         "url": "https://github.com/nginnever"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 3450,
@@ -15931,7 +16279,8 @@
         "nick": "danielstreit",
         "url": "https://github.com/danielstreit"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 3455,
@@ -16008,7 +16357,8 @@
         "nick": "SamPorter1984",
         "url": "https://github.com/SamPorter1984"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 3569,
@@ -16020,7 +16370,8 @@
         "nick": "pizzarob",
         "url": "https://github.com/pizzarob"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 3584,
@@ -16054,7 +16405,8 @@
         "nick": "xinqiyang",
         "url": "https://github.com/xinqiyang"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 3670,
@@ -16076,8 +16428,7 @@
         "nick": "chfast",
         "url": "https://github.com/chfast"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 3690,
@@ -16123,7 +16474,8 @@
         "nick": "auryn-macmillan",
         "url": "https://github.com/auryn-macmillan"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 3754,
@@ -16135,7 +16487,8 @@
         "nick": "simontianx",
         "url": "https://github.com/simontianx"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 3756,
@@ -16159,7 +16512,8 @@
         "nick": "zemse",
         "url": "https://github.com/zemse"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 3788,
@@ -16200,7 +16554,8 @@
         "nick": "simontianx",
         "url": "https://github.com/simontianx"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 4353,
@@ -16216,7 +16571,8 @@
         "name": "Dane Scarborough",
         "email": "dane@nftapps.us"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 4393,
@@ -16228,7 +16584,8 @@
         "nick": "julesl23",
         "url": "https://github.com/julesl23"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 4396,
@@ -16257,7 +16614,8 @@
         "nick": "arachnid",
         "url": "https://github.com/arachnid"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 4444,
@@ -16313,7 +16671,8 @@
         "nick": "wschwab",
         "url": "https://github.com/wschwab"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 4520,
@@ -16342,7 +16701,8 @@
         "nick": "z0r0z",
         "url": "https://github.com/z0r0z"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 4524,
@@ -16354,7 +16714,8 @@
         "nick": "wschwab",
         "url": "https://github.com/wschwab"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 4527,
@@ -16396,7 +16757,8 @@
         "nick": "BitcoinLixin",
         "url": "https://github.com/BitcoinLixin"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 4546,
@@ -16408,7 +16770,8 @@
         "nick": "jchancehud",
         "url": "https://github.com/jchancehud"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 4573,
@@ -16444,7 +16807,8 @@
         "nick": "MarvinMartin24",
         "url": "https://github.com/MarvinMartin24"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 4675,
@@ -16456,7 +16820,8 @@
         "nick": "powerstream3604",
         "url": "https://github.com/powerstream3604"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 4747,
@@ -16529,7 +16894,8 @@
         "nick": "isaacbuckman",
         "url": "https://github.com/isaacbuckman"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 4803,
@@ -16541,8 +16907,7 @@
         "nick": "axic",
         "url": "https://github.com/axic"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 4863,
@@ -16571,7 +16936,8 @@
         "nick": "julesl23",
         "url": "https://github.com/julesl23"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 4886,
@@ -16583,7 +16949,8 @@
         "nick": "omnus",
         "url": "https://github.com/omnus"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 4931,
@@ -16605,7 +16972,8 @@
         "nick": "cygnusv",
         "url": "https://github.com/cygnusv"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 4944,
@@ -16627,7 +16995,8 @@
         "nick": "Bluezfish",
         "url": "https://github.com/Bluezfish"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 4950,
@@ -16649,7 +17018,8 @@
         "nick": "easyinnova",
         "url": "https://github.com/easyinnova"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 4974,
@@ -16661,7 +17031,8 @@
         "nick": "dtedesco1",
         "url": "https://github.com/dtedesco1"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 4987,
@@ -16673,7 +17044,8 @@
         "nick": "devinaconley",
         "url": "https://github.com/devinaconley"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5000,
@@ -16729,7 +17101,8 @@
         "nick": "keikreutler",
         "url": "https://github.com/keikreutler"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5018,
@@ -16741,7 +17114,8 @@
         "nick": "qizhou",
         "url": "https://github.com/qizhou"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5022,
@@ -16777,7 +17151,8 @@
         "nick": "alexi",
         "url": "https://github.com/alexi"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5058,
@@ -16799,7 +17174,8 @@
         "nick": "sfumato00",
         "url": "https://github.com/sfumato00"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5065,
@@ -16854,7 +17230,8 @@
         "nick": "thejoshuahendrix",
         "url": "https://github.com/thejoshuahendrix"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5095,
@@ -16876,7 +17253,8 @@
         "nick": "alcueca",
         "url": "https://github.com/alcueca"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5131,
@@ -16907,7 +17285,8 @@
         "nick": "CyberpnkWin",
         "url": "https://github.com/CyberpnkWin"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5139,
@@ -16919,7 +17298,8 @@
         "nick": "SamWilsn",
         "url": "https://github.com/SamWilsn"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5143,
@@ -16931,7 +17311,8 @@
         "nick": "amxx",
         "url": "https://github.com/amxx"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5185,
@@ -16943,7 +17324,8 @@
         "nick": "clbrge",
         "url": "https://github.com/clbrge"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5187,
@@ -16955,7 +17337,8 @@
         "nick": "DerivStudio",
         "url": "https://github.com/DerivStudio"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5218,
@@ -16977,7 +17360,8 @@
         "nick": "relyt29",
         "url": "https://github.com/relyt29"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5252,
@@ -16994,7 +17378,8 @@
         "nick": "smuxx",
         "url": "https://github.com/smuxx"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5283,
@@ -17018,7 +17403,8 @@
         "nick": "xinbenlv",
         "url": "https://github.com/xinbenlv"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5334,
@@ -17030,7 +17416,8 @@
         "nick": "yan253319066",
         "url": "https://github.com/yan253319066"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5345,
@@ -17064,7 +17451,8 @@
         "nick": "wighawag",
         "url": "https://github.com/wighawag"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5437,
@@ -17076,7 +17464,8 @@
         "nick": "xinbenlv",
         "url": "https://github.com/xinbenlv"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5478,
@@ -17119,7 +17508,8 @@
         "nick": "DOBBYLABS",
         "url": "https://github.com/DOBBYLABS"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5505,
@@ -17131,7 +17521,8 @@
         "nick": "liszechung",
         "url": "https://github.com/liszechung"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5516,
@@ -17148,7 +17539,8 @@
         "nick": "MatiArazi",
         "url": "https://github.com/MatiArazi"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5539,
@@ -17170,7 +17562,8 @@
         "nick": "DennisVonDerBey",
         "url": "https://github.com/DennisVonDerBey"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5553,
@@ -17182,7 +17575,8 @@
         "nick": "royosherove",
         "url": "https://github.com/royosherove"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5554,
@@ -17198,7 +17592,8 @@
         "name": "COALA Licensing Taskforce",
         "email": "info@coala.org"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5559,
@@ -17215,7 +17610,8 @@
         "nick": "arachnid",
         "url": "https://github.com/arachnid"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5560,
@@ -17237,7 +17633,8 @@
         "nick": "julienbrg",
         "url": "https://github.com/julienbrg"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5593,
@@ -17276,7 +17673,8 @@
         "nick": "honorworldio",
         "url": "https://github.com/honorworldio"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5635,
@@ -17293,7 +17691,8 @@
         "nick": "ysqi",
         "url": "https://github.com/ysqi"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5643,
@@ -17305,7 +17704,8 @@
         "nick": "cygaar",
         "url": "https://github.com/cygaar"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5719,
@@ -17317,7 +17717,8 @@
         "nick": "Agusx1211",
         "url": "https://github.com/Agusx1211"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5744,
@@ -17359,7 +17760,8 @@
         "nick": "Dendrimer",
         "url": "https://github.com/Dendrimer"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5753,
@@ -17371,7 +17773,8 @@
         "nick": "filmakarov",
         "url": "https://github.com/filmakarov"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5805,
@@ -17388,7 +17791,8 @@
         "nick": "frangio",
         "url": "https://github.com/frangio"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5806,
@@ -17422,7 +17826,8 @@
         "nick": "edison0xyz",
         "url": "https://github.com/edison0xyz"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5850,
@@ -17434,7 +17839,8 @@
         "nick": "genkifs",
         "url": "https://github.com/genkifs"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5851,
@@ -17451,7 +17857,8 @@
         "nick": "Jooeys",
         "url": "https://github.com/Jooeys"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5883,
@@ -17468,7 +17875,8 @@
         "nick": "wsdt",
         "url": "https://github.com/wsdt"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5902,
@@ -17480,7 +17888,8 @@
         "nick": "orbmis",
         "url": "https://github.com/orbmis"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 5988,
@@ -17531,7 +17940,8 @@
         "nick": "xinbenlv",
         "url": "https://github.com/xinbenlv"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6051,
@@ -17596,7 +18006,8 @@
         "nick": "yuki-js",
         "url": "https://github.com/yuki-js"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6353,
@@ -17622,7 +18033,8 @@
         "nick": "eliakemp",
         "url": "https://github.com/eliakemp"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6384,
@@ -17638,7 +18050,8 @@
         "nick": "DeVaz1",
         "url": "https://github.com/DeVaz1"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6464,
@@ -17665,7 +18078,8 @@
         "nick": "aschlosberg",
         "url": "https://github.com/aschlosberg"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6475,
@@ -17694,7 +18108,8 @@
         "nick": "jhweintraub",
         "url": "https://github.com/jhweintraub"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 6690,
@@ -17726,8 +18141,7 @@
         "nick": "chfast",
         "url": "https://github.com/chfast"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 6789,
@@ -17796,8 +18210,7 @@
         "nick": "shemnon",
         "url": "https://github.com/shemnon"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 6810,
@@ -17845,8 +18258,7 @@
         "nick": "RenanSouza2",
         "url": "https://github.com/RenanSouza2"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 6914,
@@ -17991,8 +18403,7 @@
         "nick": "shemnon",
         "url": "https://github.com/shemnon"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 7543,
@@ -18133,8 +18544,7 @@
         "nick": "lightclient",
         "url": "https://github.com/lightclient"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 7643,
@@ -18293,8 +18703,7 @@
         "nick": "wjmelements",
         "url": "https://github.com/wjmelements"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 7705,
@@ -18427,8 +18836,7 @@
         "nick": "ralexstokes",
         "url": "https://github.com/ralexstokes"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 7756,
@@ -18450,8 +18858,7 @@
         "nick": "shemnon",
         "url": "https://github.com/shemnon"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 7775,
@@ -18463,8 +18870,7 @@
         "nick": "itsdevbear",
         "url": "https://github.com/itsdevbear"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 7783,
@@ -18476,8 +18882,7 @@
         "nick": "Giulio2002",
         "url": "https://github.com/Giulio2002"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 7784,
@@ -18489,8 +18894,7 @@
         "nick": "peersky",
         "url": "https://github.com/peersky"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 7790,
@@ -18507,8 +18911,7 @@
         "nick": "benaadams",
         "url": "https://github.com/benaadams"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 7808,
@@ -18530,8 +18933,7 @@
         "nick": "adietrichs",
         "url": "https://github.com/adietrichs"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 7833,
@@ -18547,8 +18949,7 @@
         "name": "Nobitex Labs",
         "email": "labs@nobitex.ir"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 7851,
@@ -18560,8 +18961,7 @@
         "nick": "colinlyguo",
         "url": "https://github.com/colinlyguo"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 3,
@@ -18584,7 +18984,8 @@
         "nick": "alexvansande",
         "url": "https://github.com/alexvansande"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 875,
@@ -18599,7 +19000,8 @@
         "name": "James Sangalli",
         "email": "j.l.sangalli@gmail.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 908,
@@ -18655,7 +19057,8 @@
         "nick": "djrtwo",
         "url": "https://github.com/djrtwo"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1154,
@@ -18667,7 +19070,8 @@
         "nick": "cag",
         "url": "https://github.com/cag"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1240,
@@ -18707,7 +19111,8 @@
         "name": "Nick Mudge",
         "email": "nick@perfectabstractions.com"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 1682,
@@ -18915,8 +19320,7 @@
         "nick": "SamWilsn",
         "url": "https://github.com/SamWilsn"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 2972,
@@ -18955,8 +19359,7 @@
         "nick": "micahzoltu",
         "url": "https://github.com/micahzoltu"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 3332,
@@ -19077,8 +19480,7 @@
         "nick": "SirSpudlington",
         "url": "https://github.com/SirSpudlington"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 7664,
@@ -19114,8 +19516,7 @@
         "nick": "Marchhill",
         "url": "https://github.com/Marchhill"
       }
-    ],
-    "flag": "update"
+    ]
   },
   {
     "id": 7897,
@@ -19127,7 +19528,8 @@
         "nick": "sullof",
         "url": "https://github.com/sullof"
       }
-    ]
+    ],
+    "erc": true
   },
   {
     "id": 7980,
@@ -19139,7 +19541,6 @@
         "nick": "SirSpudlington",
         "url": "https://github.com/SirSpudlington"
       }
-    ],
-    "flag": "new"
+    ]
   }
 ]

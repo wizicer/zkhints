@@ -34,8 +34,6 @@ const specificIds = [2565, 7667];
 // Specific EIP IDs to exclude even if they match keywords
 const excludeIds = [1890, 6066, 7549];
 
-const stars = [196, 197, 2537];
-
 // Get the directory name of the current module
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -183,8 +181,7 @@ function filterZKPRelatedEIPs(eips) {
       title: eip.title,
       status: eip.status,
       authors: eip.authors,
-      star: stars.includes(eip.id) ? true : undefined,
-      flag: eip.flag,
+      erc: eip.erc,
     }));
 }
 
@@ -219,54 +216,66 @@ function main() {
 
   const previousEIPsMap = new Map(previousEIPs.map((eip) => [eip.id, eip]));
 
-  const filePath = path.resolve(__dirname, "input.md");
-
-  // Check if file exists
-  if (!fs.existsSync(filePath)) {
-    console.error(`File not found: ${filePath}`);
-    console.log("Please provide the correct path to the EIP markdown file.");
+  // Parse erc.md to get a set of ERC IDs
+  const ercFilePath = path.resolve(__dirname, "erc.md");
+  if (!fs.existsSync(ercFilePath)) {
+    console.error(`File not found: ${ercFilePath}`);
     process.exit(1);
   }
+  const ercs = parseEIPMarkdown(ercFilePath);
+  const ercIds = new Set(ercs.map((erc) => erc.id));
 
-  // Parse the markdown file
-  let eips = parseEIPMarkdown(filePath);
+  // Parse input.md as the base list of all items
+  const allItemsFilePath = path.resolve(__dirname, "input.md");
+  if (!fs.existsSync(allItemsFilePath)) {
+    console.error(`File not found: ${allItemsFilePath}`);
+    process.exit(1);
+  }
+  let allItems = parseEIPMarkdown(allItemsFilePath);
 
-  // Add flags for new or updated EIPs
-  eips = eips.map((eip) => {
-    const prevEip = previousEIPsMap.get(eip.id);
-    if (!prevEip) {
-      eip.flag = "new";
-    } else if (prevEip.status !== eip.status) {
-      eip.flag = "update";
+  // Add 'erc: true' to items that are in the ercIds set
+  allItems = allItems.map((item) => {
+    if (ercIds.has(item.id)) {
+      item.erc = true;
     }
-    return eip;
+    return item;
+  });
+
+  // Add flags for new or updated items
+  const flags = {};
+  allItems = allItems.map((item) => {
+    const prevItem = previousEIPsMap.get(item.id);
+    if (!prevItem) {
+      flags[item.id] = "new";
+    } else if (prevItem.status !== item.status) {
+      flags[item.id] = "update";
+    }
+    return item;
   });
 
   // Calculate statistics
-  const stats = calculateStatistics(eips);
+  const stats = calculateStatistics(allItems);
 
-  // Save to JSON file
-  fs.writeFileSync(path.resolve(__dirname, "eips.json"), JSON.stringify(eips, null, 2));
-  console.log(`Successfully parsed ${eips.length} EIPs and saved to eips.json`);
+  // Save all items to eips.json
+  fs.writeFileSync(path.resolve(__dirname, "eips.json"), JSON.stringify(allItems, null, 2));
+  console.log(`Successfully parsed ${allItems.length} items and saved to eips.json`);
 
-  // Create text file with just ID and title
-  if (false) {
-    const textContent = eips.map((eip) => `${eip.id}: ${eip.title}`).join("\n");
-    fs.writeFileSync(path.resolve(__dirname, "eips-list.txt"), textContent);
-    console.log(`Also saved simplified list to eips-list.txt`);
-  }
+  // Filter ZKP-related items
+  const zkpItems = filterZKPRelatedEIPs(allItems);
 
-  // Filter ZKP-related EIPs and save to zkp.json
-  const zkpEIPs = filterZKPRelatedEIPs(eips);
+  // Save the filtered ZKP items to eip.json in src/data
   fs.writeFileSync(
-    path.resolve(__dirname, "../../src/data/eip.ts"),
-    `import type { EIP } from "./model";
-
-export const eips: EIP[] = ` +
-      JSON.stringify(zkpEIPs, null, 2) +
-      ";"
+    path.resolve(__dirname, "../../src/data/eip.json"),
+    JSON.stringify(zkpItems, null, 2)
   );
-  console.log(`Filtered ${zkpEIPs.length} ZKP-related EIPs and saved to zkp.json`);
+  console.log(`Filtered ${zkpItems.length} ZKP-related items and saved to src/data/eip.json`);
+
+  // Save flags to a separate file
+  fs.writeFileSync(
+    path.resolve(__dirname, "../../src/data/eip-flags.json"),
+    JSON.stringify(flags, null, 2)
+  );
+  console.log("Saved EIP flags to src/data/eip-flags.json");
 
   // Output statistics
   console.log("\nEIP Statistics:");

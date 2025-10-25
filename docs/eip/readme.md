@@ -13,6 +13,7 @@ First, you need to prepare the input markdown file:
 1. Get the latest EIP list from https://eips.ethereum.org/all
 2. Copy with [copycat](https://microsoftedge.microsoft.com/addons/detail/copycat/afnfdembabcfmjgjdklllnenkkldfdin) with Markdown format.
 3. Save it as `input.md` in the `docs/eip/` directory
+4. Similarly, copy [ERC](https://eips.ethereum.org/erc) with copycat and save to `erc.md` in the `docs/eip/` directory
 
 ### 2. Run the Parser
 

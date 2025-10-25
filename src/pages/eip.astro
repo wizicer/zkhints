@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { eips } from "../data/eip";
+import { eips } from "../data/eip/index";
 import { Image } from "astro:assets";
 import externalLinkIcon from "../assets/icons/external-link.svg";
 import type { EIP } from "../data/model";
@@ -60,7 +60,7 @@ const statusColors: Record<string, string> = {
                   <summary class="p-3 cursor-pointer hover:bg-gray-50 flex justify-between items-center">
                     <span class="font-medium flex items-center">
                       {eip.star && <span class="text-yellow-500 mr-2">⭐</span>}
-                      EIP-{eip.id}: {eip.title}
+                      {eip.erc ? `ERC-${eip.id}` : `EIP-${eip.id}`}: {eip.title}
                       {eip.flag === "new" && (
                         <span class="ml-2 px-2 py-0.5 text-xs font-semibold text-green-800 bg-green-100 rounded-full">
                           New
@@ -123,7 +123,12 @@ const statusColors: Record<string, string> = {
                     </div>
                   )}
 
-                  {(eip.id === 196 || eip.id === 197 || eip.id === 1108 || eip.id === 2537 || eip.id === 2565 || eip.id === 7951) && (
+                  {(eip.id === 196 ||
+                    eip.id === 197 ||
+                    eip.id === 1108 ||
+                    eip.id === 2537 ||
+                    eip.id === 2565 ||
+                    eip.id === 7951) && (
                     <div class="p-3 border-t border-gray-100">
                       {eip.id === 196 && <Eip196 />}
                       {eip.id === 197 && <Eip197 />}
