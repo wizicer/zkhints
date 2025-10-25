@@ -4,6 +4,7 @@ import { eips } from "../data/eip";
 import { Image } from "astro:assets";
 import externalLinkIcon from "../assets/icons/external-link.svg";
 import type { EIP } from "../data/model";
+import Eip196 from "../components/eip/Eip196.astro";
 
 // Group EIPs by status
 const statusOrder = ["Final", "Last Call", "Review", "Draft", "Stagnant", "Withdrawn"];
@@ -114,6 +115,12 @@ const statusColors: Record<string, string> = {
                           understanding ZK cryptography in Ethereum.
                         </div>
                       )}
+                    </div>
+                  )}
+
+                  {eip.id === 196 && (
+                    <div class="p-3 border-t border-gray-100">
+                      <Eip196 />
                     </div>
                   )}
                 </details>

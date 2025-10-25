@@ -1,0 +1,50 @@
+<div class="prose prose-sm max-w-none p-4">
+  <h4 class="font-semibold">TL;DR</h4>
+  <p>
+    This EIP introduces precompiled contracts for elliptic curve operations to enable zkSNARK
+    verification within the block gas limit, enhancing privacy and scalability on Ethereum.
+  </p>
+
+  <h4 class="font-semibold">Specification</h4>
+  <p>
+    Two precompiled contracts were added on the <code>alt_bn128</code> curve (<code
+      >Y^2 = X^3 + 3</code
+    >):
+  </p>
+  <ul class="list-disc pl-5 space-y-2">
+    <li>
+      <strong>Point Addition (ECADD)</strong>
+      <ul class="list-disc pl-5">
+        <li>Address: <code>0x6</code></li>
+        <li>Gas Cost: <code>500</code></li>
+        <li>Input: Two curve points <code>(x, y)</code>.</li>
+        <li>Output: The resulting curve point from the addition.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Scalar Multiplication (ECMUL)</strong>
+      <ul class="list-disc pl-5">
+        <li>Address: <code>0x7</code></li>
+        <li>Gas Cost: <code>40,000</code></li>
+        <li>Input: A curve point <code>(x, y)</code> and a scalar <code>s</code>.</li>
+        <li>Output: The resulting curve point from the multiplication.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h4 class="font-semibold">Key Details</h4>
+  <ul class="list-disc pl-5 space-y-1">
+    <li>
+      <strong>Encoding:</strong> Field elements and scalars are 32-byte big-endian numbers. Curve points
+      are <code>(x, y)</code>, with infinity as <code>(0, 0)</code>.
+    </li>
+    <li>
+      <strong>Error Handling:</strong> Contracts fail if input points are not on the curve or if coordinates
+      exceed the field modulus.
+    </li>
+    <li>
+      <strong>Rationale:</strong> The <code>alt_bn128</code> curve was chosen for its efficiency in pairing-based
+      cryptography and for compatibility with ZCash components.
+    </li>
+  </ul>
+</div>
