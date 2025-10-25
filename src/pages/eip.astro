@@ -5,6 +5,11 @@ import { Image } from "astro:assets";
 import externalLinkIcon from "../assets/icons/external-link.svg";
 import type { EIP } from "../data/model";
 import Eip196 from "../components/eip/Eip196.astro";
+import Eip197 from "../components/eip/Eip197.astro";
+import Eip1108 from "../components/eip/Eip1108.astro";
+import Eip2537 from "../components/eip/Eip2537.astro";
+import Eip2565 from "../components/eip/Eip2565.astro";
+import Eip7951 from "../components/eip/Eip7951.astro";
 
 // Group EIPs by status
 const statusOrder = ["Final", "Last Call", "Review", "Draft", "Stagnant", "Withdrawn"];
@@ -118,9 +123,14 @@ const statusColors: Record<string, string> = {
                     </div>
                   )}
 
-                  {eip.id === 196 && (
+                  {(eip.id === 196 || eip.id === 197 || eip.id === 1108 || eip.id === 2537 || eip.id === 2565 || eip.id === 7951) && (
                     <div class="p-3 border-t border-gray-100">
-                      <Eip196 />
+                      {eip.id === 196 && <Eip196 />}
+                      {eip.id === 197 && <Eip197 />}
+                      {eip.id === 1108 && <Eip1108 />}
+                      {eip.id === 2537 && <Eip2537 />}
+                      {eip.id === 2565 && <Eip2565 />}
+                      {eip.id === 7951 && <Eip7951 />}
                     </div>
                   )}
                 </details>

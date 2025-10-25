@@ -1,0 +1,69 @@
+<div class="prose prose-sm max-w-none p-4">
+  <h4 class="font-semibold">TL;DR</h4>
+  <p>
+    This EIP introduces a set of precompiled contracts for operations on the BLS12-381 curve, providing a higher security level (120+ bits) compared to the older BN254 curve. These operations are essential for advanced cryptographic schemes like BLS signatures, which are critical for Ethereum's scalability and consensus upgrades.
+  </p>
+
+  <h4 class="font-semibold">New Precompiles</h4>
+  <p>
+    Seven new precompiles were added to support various operations:
+  </p>
+  <div class="overflow-x-auto">
+    <table class="min-w-full divide-y divide-gray-200">
+      <thead class="bg-gray-50">
+        <tr>
+          <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Operation</th>
+          <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Address</th>
+          <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Gas Cost</th>
+        </tr>
+      </thead>
+      <tbody class="bg-white divide-y divide-gray-200">
+        <tr>
+          <td class="px-4 py-2 whitespace-nowrap">G1 Addition</td>
+          <td class="px-4 py-2 whitespace-nowrap"><code>0x0b</code></td>
+          <td class="px-4 py-2 whitespace-nowrap">375</td>
+        </tr>
+        <tr>
+          <td class="px-4 py-2 whitespace-nowrap">G2 Addition</td>
+          <td class="px-4 py-2 whitespace-nowrap"><code>0x0d</code></td>
+          <td class="px-4 py-2 whitespace-nowrap">600</td>
+        </tr>
+        <tr>
+          <td class="px-4 py-2 whitespace-nowrap">G1 MSM</td>
+          <td class="px-4 py-2 whitespace-nowrap"><code>0x0c</code></td>
+          <td class="px-4 py-2 whitespace-nowrap">Formula-based</td>
+        </tr>
+        <tr>
+          <td class="px-4 py-2 whitespace-nowrap">G2 MSM</td>
+          <td class="px-4 py-2 whitespace-nowrap"><code>0x0e</code></td>
+          <td class="px-4 py-2 whitespace-nowrap">Formula-based</td>
+        </tr>
+        <tr>
+          <td class="px-4 py-2 whitespace-nowrap">Pairing Check</td>
+          <td class="px-4 py-2 whitespace-nowrap"><code>0x0f</code></td>
+          <td class="px-4 py-2 whitespace-nowrap"><code>32,600 * k + 37,700</code></td>
+        </tr>
+        <tr>
+          <td class="px-4 py-2 whitespace-nowrap">Map Fp to G1</td>
+          <td class="px-4 py-2 whitespace-nowrap"><code>0x10</code></td>
+          <td class="px-4 py-2 whitespace-nowrap">5,500</td>
+        </tr>
+        <tr>
+          <td class="px-4 py-2 whitespace-nowrap">Map Fp2 to G2</td>
+          <td class="px-4 py-2 whitespace-nowrap"><code>0x11</code></td>
+          <td class="px-4 py-2 whitespace-nowrap">23,800</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4 class="font-semibold">Rationale</h4>
+  <ul class="list-disc pl-5 space-y-1">
+    <li>
+      <strong>MSM as a separate call:</strong> Providing a dedicated Multi-Scalar Multiplication (MSM) precompile is more gas-efficient than performing many individual multiplication and addition calls. It saves on both computational cost (by using algorithms like Pippenger's) and the overhead of multiple <code>CALL</code> opcodes.
+    </li>
+    <li>
+      <strong>No dedicated MUL call:</strong> A separate multiplication (MUL) precompile is unnecessary because a single multiplication is just an MSM with one pair (<code>k=1</code>). The MSM precompile handles this case efficiently.
+    </li>
+  </ul>
+</div>

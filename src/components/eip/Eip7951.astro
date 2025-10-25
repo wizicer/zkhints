@@ -1,0 +1,30 @@
+<div class="prose prose-sm max-w-none p-4">
+  <h4 class="font-semibold">TL;DR</h4>
+  <p>
+    This EIP adds a precompile for <code>secp256r1</code> ECDSA signature verification, enabling native support for signatures from modern hardware like Apple's Secure Enclave and Android Keystore. This is crucial for account abstraction and improves user experience by allowing device-native authentication. It also fixes critical security vulnerabilities found in a previous, similar proposal (RIP-7212).
+  </p>
+
+  <h4 class="font-semibold">Specification</h4>
+  <p>
+    A new precompile, <code>P256VERIFY</code>, is introduced at address <code>0x100</code>.
+  </p>
+  <ul class="list-disc pl-5 space-y-2">
+    <li>
+      <strong>Operation:</strong> Performs ECDSA signature verification on the <code>secp256r1</code> curve.
+    </li>
+    <li>
+      <strong>Gas Cost:</strong> <code>6900</code>
+    </li>
+    <li>
+      <strong>Input:</strong> 160 bytes, consisting of the message hash (32 bytes), signature components <code>r</code> and <code>s</code> (32 bytes each), and the public key coordinates <code>qx</code> and <code>qy</code> (32 bytes each).
+    </li>
+    <li>
+      <strong>Output:</strong> Returns <code>1</code> on successful verification and an empty response on failure. It includes strict input validation and does not revert on error.
+    </li>
+  </ul>
+
+  <h4 class="font-semibold">Rationale</h4>
+  <p>
+    This EIP was designed to be a secure replacement for RIP-7212, fixing critical bugs related to point-at-infinity and modular comparison checks. It uses signature verification (rather than key recovery like <code>ecrecover</code>) because it aligns with hardware standards and is more efficient for this curve.
+  </p>
+</div>
