@@ -1,25 +1,35 @@
 <div class="prose prose-sm max-w-none p-4">
   <h4 class="font-semibold">TL;DR</h4>
   <p>
-    This EIP reprices the <code>ModExp</code> (modular exponentiation) precompile to more accurately reflect its true computational cost. This makes various cryptographic functions that depend on it (like VDFs, SNARKs, and accumulators) cheaper and more practical to use on Ethereum.
+    This EIP reprices the <code>ModExp</code> (modular exponentiation) precompile to more accurately
+    reflect its true computational cost. This makes various cryptographic functions that depend on it
+    (like VDFs, SNARKs, and accumulators) cheaper and more practical to use on Ethereum.
   </p>
 
   <h4 class="font-semibold">New Gas Cost Formula</h4>
   <p>
-    A new algorithm was introduced to calculate the gas cost, replacing the one from EIP-198. The formula is designed to better approximate the complexity of the underlying "bigint" library operations.
+    A new algorithm was introduced to calculate the gas cost, replacing the one from EIP-198. The
+    formula is designed to better approximate the complexity of the underlying "bigint" library
+    operations.
   </p>
-  <pre class="bg-gray-100 p-2 rounded"><code>max(200, floor(multiplication_complexity * iteration_count / 3))</code></pre>
+  <pre
+    class="p-2 rounded"><code>max(200, floor(multiplication_complexity * iteration_count / 3))</code></pre>
   <ul class="list-disc pl-5 space-y-1">
     <li>
-      <strong>Multiplication Complexity:</strong> Approximates the cost of a multiplication, calculated as <code>(ceil(max(base_length, modulus_length) / 8))^2</code>.
+      <strong>Multiplication Complexity:</strong> Approximates the cost of a multiplication, calculated
+      as <code>(ceil(max(base_length, modulus_length) / 8))^2</code>.
     </li>
     <li>
-      <strong>Iteration Count:</strong> Approximates the number of multiplications needed, based on the bit length of the exponent.
+      <strong>Iteration Count:</strong> Approximates the number of multiplications needed, based on the
+      bit length of the exponent.
     </li>
   </ul>
 
   <h4 class="font-semibold">Rationale</h4>
   <p>
-    The previous formula from EIP-198 was found to be an inaccurate approximation. The new formula better models the performance of modern exponentiation algorithms, and the gas cost is calibrated against other precompiles like <code>ECRecover</code> to ensure network security and prevent DoS vectors.
+    The previous formula from EIP-198 was found to be an inaccurate approximation. The new formula
+    better models the performance of modern exponentiation algorithms, and the gas cost is
+    calibrated against other precompiles like <code>ECRecover</code> to ensure network security and prevent
+    DoS vectors.
   </p>
 </div>
