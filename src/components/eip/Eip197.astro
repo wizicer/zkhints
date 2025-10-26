@@ -1,21 +1,29 @@
 <div class="prose prose-sm max-w-none p-4">
   <h4 class="font-semibold">TL;DR</h4>
   <p>
-    This EIP introduces a precompiled contract for pairing checks on the <code>alt_bn128</code> elliptic curve. This is a crucial component for verifying zkSNARKs efficiently on-chain, complementing EIP-196.
+    This EIP introduces a precompiled contract for pairing checks on the <code>alt_bn128</code> elliptic
+    curve. This is a crucial component for verifying zkSNARKs efficiently on-chain, complementing EIP-196.
   </p>
 
   <h4 class="font-semibold">Specification</h4>
   <p>
-    A precompiled contract was added to perform a pairing check, which is a form of multiplicatively homomorphic operation essential for zkSNARKs.
+    A precompiled contract was added to perform a pairing check, which is a form of multiplicatively
+    homomorphic operation essential for zkSNARKs.
   </p>
   <ul class="list-disc pl-5 space-y-2">
     <li>
       <strong>Pairing Check (BNPAIR)</strong>
       <ul class="list-disc pl-5">
         <li>Address: <code>0x8</code></li>
-        <li>Gas Cost: <code>80,000 * k + 100,000</code> (where <code>k</code> is the number of pairs)</li>
+        <li>
+          Gas Cost: <code>80,000 * k + 100,000</code> (where <code>k</code> is the number of pairs)
+        </li>
         <li>Input: A series of point pairs <code>(a1, b1, a2, b2, ..., ak, bk)</code>.</li>
-        <li>Output: Returns <code>1</code> if the pairing equation <code>e(a1, b1) * ... * e(ak, bk) = 1</code> is satisfied, otherwise <code>0</code>.</li>
+        <li>
+          Output: Returns <code>1</code> if the pairing equation <code
+            >e(a1, b1) * ... * e(ak, bk) = 1</code
+          > is satisfied, otherwise <code>0</code>.
+        </li>
       </ul>
     </li>
   </ul>
@@ -23,13 +31,18 @@
   <h4 class="font-semibold">Key Details</h4>
   <ul class="list-disc pl-5 space-y-1">
     <li>
-      <strong>Groups:</strong> The operation involves two groups, <code>G1</code> (on <code>F_p</code>) and <code>G2</code> (on <code>F_p^2</code>), both derived from the <code>alt_bn128</code> curve.
+      <strong>Groups:</strong> The operation involves two groups, <code>G1</code> (on <code
+        >F_p</code
+      >) and <code>G2</code> (on <code>F_p^2</code>), both derived from the <code>alt_bn128</code> curve.
     </li>
     <li>
-      <strong>Input Encoding:</strong> The input is a concatenation of encoded points. The total length must be a multiple of 192 bytes (96 bytes for a G1 point and 96 for a G2 point).
+      <strong>Input Encoding:</strong> The input is a concatenation of encoded points. The total length
+      must be a multiple of 192 bytes (96 bytes for a G1 point and 96 for a G2 point).
     </li>
     <li>
-      <strong>Rationale:</strong> Instead of evaluating a full pairing, this EIP specifies a pairing *check*. This is sufficient for zkSNARK verification and avoids the complexity of handling the pairing's output field (<code>F_p^12</code>).
+      <strong>Rationale:</strong> Instead of evaluating a full pairing, this EIP specifies a pairing
+      *check*. This is sufficient for zkSNARK verification and avoids the complexity of handling the
+      pairing's output field (<code>F_p^12</code>).
     </li>
   </ul>
 </div>

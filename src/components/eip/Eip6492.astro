@@ -1,22 +1,32 @@
 <div class="prose prose-sm max-w-none p-4">
   <h4 class="font-semibold">TL;DR</h4>
   <p>
-    This ERC extends EIP-1271 to allow signature verification for smart contracts that have not been deployed yet (counterfactual accounts). It introduces a wrapper format for signatures that includes the necessary data to deploy the contract, enabling dApps to verify signatures from users who haven't made their first on-chain transaction.
+    This ERC extends EIP-1271 to allow signature verification for smart contracts that have not been
+    deployed yet (counterfactual accounts). It introduces a wrapper format for signatures that
+    includes the necessary data to deploy the contract, enabling dApps to verify signatures from
+    users who haven't made their first on-chain transaction.
   </p>
 
   <h4 class="font-semibold">Specification</h4>
   <p>
-    When a contract is not yet deployed, it wraps its standard EIP-1271 signature with deployment data. The wrapper format is detected by a specific <code>magicBytes</code> suffix.
+    When a contract is not yet deployed, it wraps its standard EIP-1271 signature with deployment
+    data. The wrapper format is detected by a specific <code>magicBytes</code> suffix.
   </p>
   <ul class="list-disc pl-5 space-y-2">
     <li>
-      <strong>Wrapper Format:</strong> <code>concat(abi.encode((create2Factory, factoryCalldata, originalSignature)), magicBytes)</code>
+      <strong>Wrapper Format:</strong>
+      <code
+        >concat(abi.encode((create2Factory, factoryCalldata, originalSignature)), magicBytes)</code
+      >
     </li>
     <li>
       <strong>Magic Suffix:</strong> The signature ends with <code>0x64926492...6492</code>.
     </li>
     <li>
-      <strong>Verification Process:</strong> A verifier checks for the magic suffix. If present, it uses the provided <code>create2Factory</code> and <code>factoryCalldata</code> to deploy the contract. After deployment, it calls the standard <code>isValidSignature</code> function on the now-deployed contract with the original, unwrapped signature.
+      <strong>Verification Process:</strong> A verifier checks for the magic suffix. If present, it uses
+      the provided <code>create2Factory</code> and <code>factoryCalldata</code> to deploy the contract.
+      After deployment, it calls the standard <code>isValidSignature</code> function on the now-deployed
+      contract with the original, unwrapped signature.
     </li>
   </ul>
 </div>

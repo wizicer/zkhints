@@ -1,7 +1,10 @@
 <div class="prose prose-sm max-w-none p-4">
   <h4 class="font-semibold">TL;DR</h4>
   <p>
-    This ERC introduces a minimalistic standard for decentralized identity (DID) verification. It allows users to create, verify, and revoke their identity through a smart contract, using cryptographic hashes to keep sensitive data off-chain. The goal is to provide a simple, private, and user-controlled identity layer for dApps without the complexity of other DID solutions.
+    This ERC introduces a minimalistic standard for decentralized identity (DID) verification. It
+    allows users to create, verify, and revoke their identity through a smart contract, using
+    cryptographic hashes to keep sensitive data off-chain. The goal is to provide a simple, private,
+    and user-controlled identity layer for dApps without the complexity of other DID solutions.
   </p>
 
   <h4 class="font-semibold">Specification</h4>
@@ -10,18 +13,25 @@
   </p>
   <ul class="list-disc pl-5 space-y-2">
     <li>
-      <strong><code>Identity</code> Struct:</strong> Stores the user's address, an identity hash, verification hashes, and a boolean <code>isVerified</code> status.
+      <strong><code>Identity</code> Struct:</strong> Stores the user's address, an identity hash, verification
+      hashes, and a boolean <code>isVerified</code> status.
     </li>
     <li>
       <strong>Core Functions:</strong>
       <ul class="list-disc pl-5">
-        <li><code>createIdentity(bytes32 identityHash)</code>: Creates a new identity for the caller.</li>
-        <li><code>verifyIdentity(bytes32[2] calldata verificationHashes)</code>: Verifies the identity by submitting hashes derived from off-chain proofs.</li>
+        <li>
+          <code>createIdentity(bytes32 identityHash)</code>: Creates a new identity for the caller.
+        </li>
+        <li>
+          <code>verifyIdentity(bytes32[2] calldata verificationHashes)</code>: Verifies the identity
+          by submitting hashes derived from off-chain proofs.
+        </li>
         <li><code>revokeIdentity()</code>: Revokes the verification status of an identity.</li>
       </ul>
     </li>
     <li>
-      <strong>Events:</strong> Emits <code>IdentityCreated</code>, <code>IdentityVerified</code>, and <code>IdentityRevoked</code> events for transparency and traceability.
+      <strong>Events:</strong> Emits <code>IdentityCreated</code>, <code>IdentityVerified</code>,
+      and <code>IdentityRevoked</code> events for transparency and traceability.
     </li>
   </ul>
 </div>
