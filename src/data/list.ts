@@ -1,6 +1,4 @@
-import { discovery } from "./list/discovery";
-import { learning } from "./list/learning";
-import { paper } from "./list/paper";
+import list_data from "./list/list.json";
 
 export interface ResourceLink {
   title: string;
@@ -41,4 +39,4 @@ export interface Resource {
   sections: ResourceSection[];
 }
 
-export const resourceList: Resource[] = [discovery, learning, paper];
+export const resourceList: Resource[] = list_data as Resource[];
