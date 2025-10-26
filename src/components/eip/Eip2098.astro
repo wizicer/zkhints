@@ -1,0 +1,31 @@
+<div class="prose prose-sm max-w-none p-4">
+  <h4 class="font-semibold">TL;DR</h4>
+  <p>
+    This ERC proposes a compact 64-byte signature representation for <code>secp256k1</code> signatures,
+    down from the standard 65 bytes. It achieves this by storing the <code>yParity</code> bit (recovery
+    ID) in the most significant bit of the <code>s</code> value, which is otherwise unused in canonical
+    signatures. This saves space and gas, especially in contexts like meta-transactions.
+  </p>
+
+  <h4 class="font-semibold">Specification</h4>
+  <p>
+    A standard signature consists of <code>r</code>, <code>s</code>, and <code>yParity</code>. Since
+    the top bit of <code>s</code> is always zero for canonical signatures (per EIP-2), this ERC "hijacks"
+    that unused bit to store the <code>yParity</code>. The resulting 64-byte signature is a
+    concatenation of two 32-byte values:
+  </p>
+  <ul class="list-disc pl-5 space-y-2">
+    <li>
+      <strong><code>r</code>:</strong> The first 32 bytes, representing the x-coordinate of the signature
+      point.
+    </li>
+    <li>
+      <strong><code>yParityAndS</code>:</strong> The second 32 bytes, which combines the <code
+        >yParity</code
+      > and <code>s</code>.
+    </li>
+  </ul>
+  <p class="mt-2">Visually, the structure is:</p>
+  <pre
+    class="p-2 rounded text-center"><code>[256-bit r value][1-bit yParity value][255-bit s value]</code></pre>
+</div>

@@ -1,0 +1,29 @@
+<div class="prose prose-sm max-w-none p-4">
+  <h4 class="font-semibold">TL;DR</h4>
+  <p>
+    This ERC defines a standard interface for commit-reveal schemes. It provides a generic <code>commit</code> function that can be added to any contract, allowing users to commit to an action without revealing it immediately. This helps prevent front-running attacks and adds a layer of privacy to applications like voting systems. The reveal mechanism is intentionally left open for developers to implement as needed.
+  </p>
+
+  <h4 class="font-semibold">Specification</h4>
+  <p>
+    The standard defines two interfaces for implementing commit-reveal schemes. The core interface is minimal for backward compatibility, while the general interface provides more features.
+  </p>
+  <pre class="language-solidity"><code>{`interface IERC_COMMIT_CORE {
+    function commit(bytes32 _commitment) payable external;
+}
+
+interface IERC_COMMIT_GENERAL {
+    event Commit(
+        uint256 indexed _timePoint,
+        address indexed _from,
+        bytes32 indexed _commitment,
+        bytes _extraData);
+
+    function commitFrom(
+        address _from,
+        bytes32 _commitment,
+        bytes calldata _extraData)
+    payable external returns(uint256 timePoint);
+}`}
+</code></pre>
+</div>

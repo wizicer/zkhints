@@ -1,0 +1,32 @@
+<div class="prose prose-sm max-w-none p-4">
+  <h4 class="font-semibold">TL;DR</h4>
+  <p>
+    This ERC provides a standard way to verify signatures from keys that don't have a native Ethereum address, such as those from mobile secure enclaves (secp256r1), RSA hardware, or ZK-based systems. It extends ERC-1271 by introducing shared "verifier" contracts, making it cheaper and easier to integrate diverse cryptographic keys into account abstraction.
+  </p>
+
+  <h4 class="font-semibold">Specification</h4>
+  <p>
+    Instead of identifying a signer by a single address, this standard uses a <code>(verifier, key)</code> pair:
+  </p>
+  <ul class="list-disc pl-5 space-y-2">
+    <li>
+      <strong>Verifier:</strong> A smart contract that knows how to validate signatures for a specific type of key (e.g., a secp256r1 verifier).
+    </li>
+    <li>
+      <strong>Key:</strong> The public key material, represented as <code>bytes</code>.
+    </li>
+  </ul>
+  <p class="mt-2">
+    The verifier contract must implement the <code>IERC7913SignatureVerifier</code> interface, which has a single function:
+  </p>
+  <pre class="language-solidity"><code>{`interface IERC7913SignatureVerifier {
+  function verify(
+    bytes calldata key,
+    bytes32 hash,
+    bytes calldata signature
+  ) external view returns (bytes4);
+}`}</code></pre>
+  <p class="mt-2">
+    On successful verification, the function must return its own selector (<code>0x024ad318</code>).
+  </p>
+</div>

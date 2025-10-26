@@ -1,0 +1,38 @@
+<div class="prose prose-sm max-w-none p-4">
+  <h4 class="font-semibold">TL;DR</h4>
+  <p>
+    This EIP defines a standard way for smart contracts to verify signatures, enabling them to act
+    like externally owned accounts (EOAs) for authentication. Contracts can implement an <code
+      >isValidSignature</code
+    > function, allowing other contracts to check if a signature is valid on their behalf. This is crucial
+    for applications like decentralized exchanges with off-chain order books where smart contract wallets
+    need to sign orders.
+  </p>
+
+  <h4 class="font-semibold">Specification</h4>
+  <p>
+    A contract that wishes to be able to sign messages must implement the <code>ERC1271</code> interface,
+    which contains a single function:
+  </p>
+  <pre
+    class="p-2 rounded"><code>function isValidSignature(
+  bytes32 _hash,
+  bytes memory _signature
+) public view returns (bytes4 magicValue);</code></pre>
+  <ul class="list-disc pl-5 space-y-2">
+    <li>
+      <strong>Functionality:</strong> When called, this function should return a magic value (<code
+        >0x1626ba7e</code
+      >) if the signature is valid for the given hash. Otherwise, it should return a different
+      value.
+    </li>
+    <li>
+      <strong>State:</strong> The function must not modify state (it is a <code>view</code> function).
+    </li>
+    <li>
+      <strong>Flexibility:</strong> The implementation can use any logic to validate the signature, such
+      as checking against a list of authorized signers, using multi-sig logic, or supporting different
+      signature schemes.
+    </li>
+  </ul>
+</div>
