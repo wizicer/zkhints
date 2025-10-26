@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import { eips } from "../data/eip/index";
 import { Image } from "astro:assets";
 import externalLinkIcon from "../assets/icons/external-link.svg";
+import githubIcon from "../assets/icons/github.svg";
 import type { EIP } from "../data/model";
 import Eip196 from "../components/eip/Eip196.astro";
 import Eip197 from "../components/eip/Eip197.astro";
@@ -100,18 +101,39 @@ const statusColors: Record<string, string> = {
                                 class="inline-block px-2 py-1 text-xs font-medium text-gray-700 hover:text-blue-600 bg-gray-100 rounded-full hover:bg-blue-50 transition-colors"
                                 title={`${author.name}${author.email ? ` (${author.email})` : ""}`}
                               >
-                                {author.nick || author.name.split(" ")[0]}
+                                {author.name}
+                                {author.nick && ` (${author.nick})`}
                               </a>
                             ) : (
                               <span
                                 class="inline-block px-2 py-1 text-xs font-medium text-gray-700 bg-gray-100 rounded-full"
                                 title={`${author.name}${author.email ? ` (${author.email})` : ""}`}
                               >
-                                {author.name.split(" ")[0]}
+                                {author.name}
+                                {author.nick && ` (${author.nick})`}
                               </span>
                             )}
                           </div>
                         ))}
+                        <div class="inline-block">
+                          <span class="text-sm font-medium text-gray-700">Links:</span>
+                        </div>
+                        <div class="inline-block">
+                          <a
+                            href={
+                              eip.erc
+                                ? `https://github.com/ethereum/ercs/blob/master/ERCS/erc-${eip.id}.md`
+                                : `https://github.com/ethereum/EIPs/blob/master/EIPS/eip-${eip.id}.md`
+                            }
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-block px-2 py-1 text-xs font-medium text-gray-700 hover:text-blue-600 bg-gray-100 rounded-full hover:bg-blue-50 transition-colors"
+                            title="View on ethereum.org"
+                            onclick="event.stopPropagation()"
+                          >
+                            <Image src={githubIcon} alt="Github" class="h-4 w-4 inline" />
+                          </a>
+                        </div>
                       </div>
 
                       {eip.star && (
