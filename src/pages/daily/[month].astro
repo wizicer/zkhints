@@ -1,0 +1,350 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { newsData } from "../../data/daily/index";
+import { Image } from "astro:assets";
+
+// Import all hinta avatars
+import applicationImg from "../../assets/hinta/application.png";
+import argumentImg from "../../assets/hinta/argument.png";
+import awesomeImg from "../../assets/hinta/awesome.png";
+import beginnerImg from "../../assets/hinta/beginner.png";
+import bugImg from "../../assets/hinta/bug.png";
+import constraintImg from "../../assets/hinta/constraint.png";
+import curveImg from "../../assets/hinta/curve.png";
+import dslImg from "../../assets/hinta/dsl.png";
+import eventsImg from "../../assets/hinta/events.png";
+import gasImg from "../../assets/hinta/gas.png";
+import glossaryImg from "../../assets/hinta/glossary.png";
+import gnarkImg from "../../assets/hinta/gnark.png";
+import intermediateImg from "../../assets/hinta/intermediate.png";
+import learnImg from "../../assets/hinta/learn.png";
+import newsImg from "../../assets/hinta/news.png";
+import paperImg from "../../assets/hinta/paper.png";
+import plonkishImg from "../../assets/hinta/plonkish.png";
+import popularSnarkImg from "../../assets/hinta/popular-snark.png";
+import primitiveImg from "../../assets/hinta/primitive.png";
+import privacyImg from "../../assets/hinta/privacy.png";
+import r1csImg from "../../assets/hinta/r1cs.png";
+import researchImg from "../../assets/hinta/research.png";
+import scalingImg from "../../assets/hinta/scaling.png";
+import transpilerImg from "../../assets/hinta/transpiler.png";
+
+const avatars = [
+  applicationImg, argumentImg, awesomeImg, beginnerImg, bugImg,
+  constraintImg, curveImg, dslImg, eventsImg, gasImg,
+  glossaryImg, gnarkImg, intermediateImg, learnImg, newsImg,
+  paperImg, plonkishImg, popularSnarkImg, primitiveImg, privacyImg,
+  r1csImg, researchImg, scalingImg, transpilerImg
+];
+
+interface PathItem {
+  params: { month: string };
+  props: {
+    monthData: typeof newsData;
+    monthKey: string;
+  };
+}
+
+export function getStaticPaths() {
+  const paths: PathItem[] = [];
+  
+  // Group news by year-month
+  const monthGroups = newsData.reduce((acc, item) => {
+    const monthKey = `${item.year}-${item.month}`;
+    if (!acc[monthKey]) {
+      acc[monthKey] = [];
+    }
+    acc[monthKey].push(item);
+    return acc;
+  }, {} as Record<string, typeof newsData>);
+
+  // Create paths for each month
+  Object.entries(monthGroups).forEach(([monthKey, data]) => {
+    paths.push({
+      params: { month: monthKey },
+      props: {
+        monthData: data.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
+        monthKey,
+      },
+    });
+  });
+
+  return paths;
+}
+
+const { monthData, monthKey } = Astro.props;
+const [year, month] = monthKey.split('-');
+
+// Get random avatar for each project
+const getRandomAvatar = (index: number) => {
+  return avatars[index % avatars.length];
+};
+
+const monthNames = {
+  en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+  zh: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
+};
+
+const getMonthName = (monthNum: string, lang: 'en' | 'zh') => {
+  return monthNames[lang][parseInt(monthNum) - 1];
+};
+
+const typeColors: Record<string, string> = {
+  '开源': 'bg-green-100 text-green-800 border-green-300',
+  '论文': 'bg-blue-100 text-blue-800 border-blue-300',
+  '工具': 'bg-purple-100 text-purple-800 border-purple-300',
+  '教程': 'bg-yellow-100 text-yellow-800 border-yellow-300',
+};
+
+const typeLabels: Record<'zh' | 'en', Record<string, string>> = {
+  zh: {
+    '开源': '开源',
+    '论文': '论文',
+    '工具': '工具',
+    '教程': '教程',
+  },
+  en: {
+    '开源': 'Open Source',
+    '论文': 'Paper',
+    '工具': 'Tool',
+    '教程': 'Tutorial',
+  }
+};
+---
+
+<Layout title={`Daily Digest - ${year}-${month}`}>
+  <div class="container mx-auto px-4 py-8 max-w-6xl">
+    <!-- Header with Language Toggle -->
+    <div class="mb-8 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-8 shadow-lg">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div>
+          <h1 class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 mb-2">
+            <span data-lang-en>Daily Digest</span>
+            <span data-lang-zh class="hidden">每日摘要</span>
+          </h1>
+          <p class="text-2xl text-gray-700">
+            <span data-lang-en>{getMonthName(month, 'en')} {year}</span>
+            <span data-lang-zh class="hidden">{year} 年 {getMonthName(month, 'zh')}</span>
+          </p>
+        </div>
+        
+        <!-- Language Toggle -->
+        <div class="flex items-center gap-3 bg-white rounded-lg shadow-md p-2">
+          <button
+            id="lang-en"
+            class="lang-toggle px-4 py-2 rounded-md font-medium transition-all duration-200 bg-indigo-600 text-white"
+            data-lang="en"
+          >
+            English
+          </button>
+          <button
+            id="lang-zh"
+            class="lang-toggle px-4 py-2 rounded-md font-medium transition-all duration-200 text-gray-600 hover:bg-gray-100"
+            data-lang="zh"
+          >
+            中文
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="relative">
+      <!-- Timeline line -->
+      <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-indigo-200 via-purple-200 to-pink-200"></div>
+
+      {monthData.map((dayItem, dayIndex) => (
+        <div class="mb-12 relative">
+          <!-- Date Badge -->
+          <div class="flex items-center mb-6">
+            <div class="relative z-10 flex items-center justify-center w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full shadow-lg">
+              <div class="text-center">
+                <div class="text-white text-xl font-bold">{dayItem.day}</div>
+                <div class="text-white text-xs opacity-90">
+                  <span data-lang-en>{dayItem.weekday.en.slice(0, 3)}</span>
+                  <span data-lang-zh class="hidden">{dayItem.weekday.zh.slice(2)}</span>
+                </div>
+              </div>
+            </div>
+            <div class="ml-4 text-gray-500 text-sm">
+              {dayItem.year}-{dayItem.month}-{dayItem.day}
+            </div>
+          </div>
+
+          <!-- Projects for this day -->
+          <div class="ml-24 space-y-6">
+            {dayItem.projects.map((project, projectIndex) => {
+              const avatarIndex = dayIndex * 10 + projectIndex;
+              const avatar = getRandomAvatar(avatarIndex);
+              
+              return (
+                <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-indigo-200">
+                  <div class="p-6">
+                    <!-- Project Header -->
+                    <div class="flex items-start gap-4 mb-4">
+                      <div class="flex-shrink-0">
+                        <Image
+                          src={avatar}
+                          alt="Project avatar"
+                          class="w-16 h-16 rounded-lg shadow-sm"
+                        />
+                      </div>
+                      
+                      <div class="flex-1 min-w-0">
+                        <div class="flex items-start justify-between gap-2 mb-2">
+                          <a
+                            href={project.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-xl font-bold text-gray-900 hover:text-indigo-600 transition-colors line-clamp-2"
+                          >
+                            {project.name}
+                          </a>
+                          <span class={`flex-shrink-0 px-3 py-1 text-xs font-semibold rounded-full border ${typeColors[project.type] || 'bg-gray-100 text-gray-800 border-gray-300'}`}>
+                            <span data-lang-en>{typeLabels.en[project.type] || project.type}</span>
+                            <span data-lang-zh class="hidden">{typeLabels.zh[project.type] || project.type}</span>
+                          </span>
+                        </div>
+                        
+                        <!-- Tags -->
+                        <div class="flex flex-wrap gap-2 mb-3">
+                          {project.tags.map((tag) => (
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-100 text-gray-700">
+                              {typeof tag === 'string' ? tag : (
+                                <>
+                                  <span data-lang-en>{tag.en}</span>
+                                  <span data-lang-zh class="hidden">{tag.zh}</span>
+                                </>
+                              )}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Summary -->
+                    <div class="mb-4 p-4 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-lg">
+                      <p class="text-gray-800 leading-relaxed">
+                        <span data-lang-en>{project.summary.en}</span>
+                        <span data-lang-zh class="hidden">{project.summary.zh}</span>
+                      </p>
+                    </div>
+
+                    <!-- Notes -->
+                    {project.notes && (
+                      <div class="space-y-2">
+                        <h4 class="text-sm font-semibold text-gray-700 mb-2">
+                          <span data-lang-en>Key Points:</span>
+                          <span data-lang-zh class="hidden">要点：</span>
+                        </h4>
+                        <ul class="space-y-1.5">
+                          {project.notes.en.map((note, noteIndex) => (
+                            <li class="flex items-start gap-2 text-sm text-gray-600">
+                              <span class="text-indigo-500 mt-1 flex-shrink-0">•</span>
+                              <span>
+                                <span data-lang-en>{note}</span>
+                                <span data-lang-zh class="hidden">{project.notes.zh[noteIndex]}</span>
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Navigation -->
+    <div class="mt-12 flex justify-center">
+      <a
+        href="/"
+        class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-all duration-200 hover:scale-105"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5 mr-2"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"
+          ></path>
+        </svg>
+        <span data-lang-en>Back to Home</span>
+        <span data-lang-zh class="hidden">返回首页</span>
+      </a>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  // Language toggle functionality
+  const initLanguageToggle = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const savedLang = urlParams.get('lang') || 'en';
+    
+    const setLanguage = (lang: string) => {
+      // Update URL
+      const url = new URL(window.location.href);
+      url.searchParams.set('lang', lang);
+      window.history.replaceState({}, '', url);
+      
+      // Toggle visibility
+      document.querySelectorAll('[data-lang-en]').forEach(el => {
+        (el as HTMLElement).classList.toggle('hidden', lang !== 'en');
+      });
+      document.querySelectorAll('[data-lang-zh]').forEach(el => {
+        (el as HTMLElement).classList.toggle('hidden', lang !== 'zh');
+      });
+      
+      // Update button styles
+      document.querySelectorAll('.lang-toggle').forEach(btn => {
+        const button = btn as HTMLButtonElement;
+        const btnLang = button.dataset.lang;
+        if (btnLang === lang) {
+          button.classList.add('bg-indigo-600', 'text-white');
+          button.classList.remove('text-gray-600', 'hover:bg-gray-100');
+        } else {
+          button.classList.remove('bg-indigo-600', 'text-white');
+          button.classList.add('text-gray-600', 'hover:bg-gray-100');
+        }
+      });
+    };
+    
+    // Set initial language
+    setLanguage(savedLang);
+    
+    // Add click handlers
+    document.querySelectorAll('.lang-toggle').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const lang = (e.target as HTMLButtonElement).dataset.lang;
+        if (lang) setLanguage(lang);
+      });
+    });
+  };
+  
+  // Initialize on page load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLanguageToggle);
+  } else {
+    initLanguageToggle();
+  }
+</script>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

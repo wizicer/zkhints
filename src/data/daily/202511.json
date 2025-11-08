@@ -1,0 +1,150 @@
+[
+  {
+    "date": "2025-11-01",
+    "projects": [
+      {
+        "name": "zkEnc: Witness Encryption for Circom Circuits",
+        "url": "https://zkenc.limaois.me/",
+        "type": "开源",
+        "tags": [
+          "zkEnc",
+          "Witness Encryption",
+          "Circom"
+        ],
+        "summary": {
+          "zh": "@billwu1999 发布了zkEnc开源项目，包括基于Circom定义解密条件、支持R1CS等特性，允许在终端、Node.js和浏览器中实现高性能加密。",
+          "en": "@billwu1999 released zkEnc open source project, including based on Circom defining decryption conditions, supporting R1CS, allowing high-performance encryption in terminal, Node.js and browser."
+        },
+        "notes": {
+          "zh": [
+            "见证加密允许加密到计算语句，而非密钥",
+            "使用Circom电路定义解密条件，支持R1CS",
+            "可在终端、Node.js和浏览器中部署",
+            "基于Rust和WASM实现高性能",
+            "无需密钥交换或可信第三方",
+            "强调可验证计算和隐私安全"
+          ],
+          "en": [
+            "Witness encryption allows encryption to computation statements, not keys",
+            "Using Circom circuits to define decryption conditions, supporting R1CS",
+            "Can be deployed in terminal, Node.js, and browser",
+            "Based on Rust and WASM for high performance",
+            "No key exchange or trusted third party required",
+            "Emphasizing verifiable computation and privacy security"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-11-03",
+    "projects": [
+      {
+        "name": "Anchored Merkle Range Proof for Pedersen Commitments",
+        "url": "https://eprint.iacr.org/2025/1811",
+        "type": "论文",
+        "tags": [
+          "Leona Hioki",
+          "Pedersen Commitment"
+        ],
+        "summary": {
+          "zh": "来自Intmax的Leona Hioki在{{name}}论文中提出了一种基于Merkle树的Pedersen承诺范围证明机制，通过锚定和轻量级验证避免ZK验证和配对运算，降低交易成本。",
+          "en": "Leona Hioki from Intmax proposed a range proof mechanism for Pedersen commitments based on Merkle trees, avoiding ZK verification and pairings, reducing transaction costs."
+        },
+        "notes": {
+          "zh": [
+            "避免每笔交易的重ZK验证和配对运算，降低计算开销",
+            "使用Merkle树和锚定机制确保范围证明的隐私性",
+            "结合DLEQ和Schnorr证明强化安全性",
+            "验证成本低，仅需Merkle证明、DLEQ和Schnorr证明",
+            "适用于EVM环境，优化gas使用",
+            "预印本形式发布，尚未正式同行评审"
+          ],
+          "en": [
+            "Avoids repeated ZK verification and pairings in each transaction, reducing computational overhead",
+            "Uses Merkle trees and anchor mechanism to ensure privacy of range proofs",
+            "Combines DLEQ and Schnorr proofs for enhanced security",
+            "Verification cost is low, requiring only Merkle proofs, DLEQ, and Schnorr proofs",
+            "Suitable for EVM environment, optimizing gas usage",
+            "Preprint form, not yet peer-reviewed"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-11-04",
+    "projects": [
+      {
+        "name": "zk-Cookies: Continuous Anonymous Authentication for the Web",
+        "url": "https://eprint.iacr.org/2025/1938",
+        "type": "论文",
+        "tags": [
+          "Alexander Frolov",
+          "Anonymous Credentials"
+        ],
+        "summary": {
+          "zh": "Frolov等人在{{name}}论文中提出了一种连续匿名认证方案(CAA) zk-Cookies，使用zkSNARKs实现高效行为信号分析，防止凭证共享和盗窃，并支持差分隐私。",
+          "en": "Frolov et al. proposed a continuous anonymous authentication (CAA) scheme named zk-Cookies in their paper {{name}}, which utilizes zkSNARKs for efficient behavior signal analysis to prevent credential sharing and theft, and supports differential privacy."
+        },
+        "notes": {
+          "zh": [
+            "CAA方案将行为信号处理移至客户端，减少服务器数据收集",
+            "使用zkSNARKs实现高效计算和隐私保护",
+            "支持IP地址、地理位置、浏览器指纹等常见行为信号",
+            "原型应用用于基于传统凭证的年龄验证",
+            "集成差分隐私分析，提升数据安全性",
+            "计算性能优化，更新操作在200毫秒内完成"
+          ],
+          "en": [
+            "Shifts behavior signal processing to the client, reducing server data collection",
+            "Utilizes zkSNARKs for efficient computation and privacy protection",
+            "Supports common behavior signals such as IP addresses, geolocation, and browser fingerprints",
+            "Prototype application for age verification based on traditional credentials",
+            "Integrates differential privacy analysis to enhance data security",
+            "Performance optimization, updating operations completed in 200 milliseconds"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-11-05",
+    "projects": [
+      {
+        "name": "Cryptographic Personas: Responsible Pseudonyms Without De-Anonymization",
+        "url": "https://eprint.iacr.org/2025/1969",
+        "type": "论文",
+        "tags": [
+          "Rachel Thomas",
+          {
+            "zh": "匿名消息",
+            "en": "Anonymous Messaging"
+          }
+        ],
+        "summary": {
+          "zh": "Thomas等人在{{name}}论文中提出了加密角色系统，支持用户在社区中创建不可链接的匿名身份，并在违反规范时撤销匿名发布能力，通过离线证明生成和证明折叠技术优化实时应用性能。",
+          "en": "Thomas et al. proposed a cryptographic personas system in their paper {{name}}, which supports users in creating unlinkable anonymous identities in communities and revoking anonymous publishing capabilities when users violate rules, optimizing real-time application performance through offline proof generation and proof folding."
+        },
+        "notes": {
+          "zh": [
+            "提出可撤销匿名权的“Cryptographic Personas”，实现负责任的匿名发言。",
+            "基于 zk-promises 构建可更新状态的匿名凭证体系。",
+            "利用 Privacy Pass 将证明生成离线化，显著降低延迟。",
+            "采用 Proof Folding 优化服务器验证性能。",
+            "在 Signal 群聊中实现原型验证其实用性。",
+            "平衡匿名自由与社群治理的密码学方案。"
+          ],
+          "en": [
+            "Proposes 'Cryptographic Personas' for revocable, responsible anonymity.",
+            "Builds a stateful anonymous credential system on zk-promises.",
+            "Uses Privacy Pass to offline proof generation and cut latency.",
+            "Applies Proof Folding to boost server efficiency.",
+            "Implements a prototype in Signal group chats.",
+            "Balances anonymity and community accountability cryptographically."
+          ]
+        }
+      }
+    ]
+  }
+]

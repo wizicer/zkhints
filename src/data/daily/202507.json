@@ -1,0 +1,553 @@
+[
+  {
+    "date": "2025-07-01",
+    "projects": [
+      {
+        "name": "Diving Deep into Binius M3 Arithmetization Using Merkle Tree",
+        "url": "https://blog.lambdaclass.com/diving-deep-into-binius-m3-arithmetization-using-merkle-tree/",
+        "type": "博客",
+        "tags": [
+          "LambdaClass",
+          "Binius",
+          {
+            "zh": "M3算术化",
+            "en": "M3 Arithmetization"
+          }
+        ],
+        "summary": {
+          "zh": "@class_lambda 在博客{{name}}中深入探讨了Binius框架下的M3算术化过程，特别是通过Merkle树的具体实现，详细解释了约束系统、表格和通道的表示与处理方式。",
+          "en": "@class_lambda discussed the M3 arithmetization process in Binius in blog{{name}}, particularly through the Merkle tree implementation, explaining the representation and processing of constraints, tables, and channels."
+        },
+        "notes": {
+          "zh": [
+            "M3算术化通过表格和通道而非传统的执行轨迹来构建和验证复杂计算。",
+            "MerkleTreeCS包含5个表格和3个通道，确保验证正确。",
+            "不同表格分别处理不同情况下的Merkle路径验证。",
+            "通道负责数据流动和验证过程中的关键通信。",
+            "M3算术化不依赖全局执行轨迹，而通过通道平衡来验证。",
+            "通过具体示例展示了如何构建Merkle树和验证路径。"
+          ],
+          "en": [
+            "M3 arithmetization uses tables and channels instead of traditional execution traces to build and verify complex calculations.",
+            "MerkleTreeCS contains 5 tables and 3 channels to ensure verification correctness.",
+            "Tables handle different cases of Merkle path verification.",
+            "Channels are responsible for data flow and key communication during the verification process.",
+            "M3 arithmetization does not depend on global execution traces but verifies through channel balance.",
+            "Through specific examples, it shows how to build a Merkle tree and verify paths."
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-07-03",
+    "projects": [
+      {
+        "name": "Unboxing Indistinguishability Obfuscation: A Practical Guide",
+        "url": "https://machina-io.com/posts/unboxing.html",
+        "type": "博客",
+        "tags": [
+          "Enrico Bottazzi",
+          "iO"
+        ],
+        "summary": {
+          "zh": "Enrico Bottazzi等人在博客{{name}}中分享了关于不可区分性混淆(iO)的实践指南，包括从基础概念到构建非交互条件签名生成器的全过程。",
+          "en": "Enrico Bottazzi et al. shared a practical guide to indistinguishability obfuscation (iO) in blog{{name}}, covering the entire process from basic concepts to building non-interactive conditional signature printer."
+        },
+        "notes": {
+          "zh": [
+            "iO被视为函数加密(FE)的扩展，可在密文中动态注入输入。",
+            "构建iO的核心原语包括矩阵乘法、BGG+编码和格陷门。",
+            "当前iO构造的主要效率瓶颈在于递归使用FE。",
+            "通过非黑盒方式使用FE可以替换递归FE为简单的矩阵乘法，提高效率。",
+            "iO技术有望解锁之前不可能的应用场景。",
+            "文章旨在填补iO领域高深技术论文与初学者之间的空白。"
+          ],
+          "en": [
+            "iO is considered an extension of functional encryption (FE), allowing dynamic inputs to be injected into ciphertexts.",
+            "The core primitives for building iO include matrix multiplication, BGG+ encoding, and lattice gates.",
+            "The main efficiency bottleneck in current iO constructions is the recursive use of FE.",
+            "Using FE in a non-black-box way can replace recursive FE with simple matrix multiplication, improving efficiency.",
+            "iO technology is expected to unlock previously impossible application scenarios.",
+            "This blog aims to be beginner-friendly."
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-07-04",
+    "projects": [
+      {
+        "name": "Proof of Geolocation",
+        "url": "https://x.com/aurobindo_arman/status/1940513543423668618",
+        "type": "开源",
+        "tags": [
+          "Arman Aurobindo",
+          {
+            "zh": "地理位置",
+            "en": "Geolocation"
+          },
+          "Mobile Proving"
+        ],
+        "summary": {
+          "zh": "@aurobindo_arman 使用 @zkmopro 和 @ZKVProtocol 构建了一个地理位置证明开源项目，支持在不泄露GPS坐标的情况下证明距离参考点的范围。",
+          "en": "@aurobindo_arman used @zkmopro and @ZKVProtocol to build a geolocation proof open-source project, supporting distance proofs without disclosing GPS coordinates."
+        }
+      },
+      {
+        "name": "Roc Camera: Capture verifiably real moments in the age of AI",
+        "url": "https://roc.camera/",
+        "type": "新闻",
+        "tags": [
+          "Roc Camera",
+          {
+            "zh": "摄影",
+            "en": "Photography"
+          },
+          "TEE"
+        ],
+        "summary": {
+          "zh": "Roc Camera推出了一款能够捕捉可验证真实瞬间的相机，通过结合传感器、设备端零知识证明和防篡改的TEE环境，确保照片的真实性。",
+          "en": "Roc Camera launched a camera that can capture verifiably real moments, combining sensors, device-end zero-knowledge proofs, and tamper-proof TEE environments to ensure the authenticity of photos."
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-07-06",
+    "projects": [
+      {
+        "name": "Opening up ZKP technology to promote privacy in age assurance",
+        "url": "https://blog.google/technology/safety-security/opening-up-zero-knowledge-proof-technology-to-promote-privacy-in-age-assurance/",
+        "type": "开源",
+        "tags": [
+          "Alan Stapelberg",
+          "Google",
+          "Age Assurance"
+        ],
+        "summary": {
+          "zh": "Google开源了其ZKP库，旨在支持欧盟年龄验证，使开发者和企业能够更容易地构建隐私增强应用和数字ID解决方案。",
+          "en": "Google open-sourced its ZKP library, aiming to support age verification in the EU, making it easier for developers and companies to build privacy-enhancing applications and digital ID solutions."
+        }
+      },
+      {
+        "name": "Exploring Onchain Identity with ZK: A Discussion with Self and Celo",
+        "url": "https://zeroknowledge.fm/podcast/366/",
+        "type": "视频",
+        "tags": [
+          "Zero Knowledge Podcast",
+          "Identity"
+        ],
+        "summary": {
+          "zh": "ZK Podcast第366集邀请 @selfprotocol 的Florent Tavernier和 @Celo 的Marek Olszewski，探讨了如何利用ZK技术将身份上链、Sybil保护机制及OpenPassport的起源。",
+          "en": "ZK Podcast episode 366 invited @selfprotocol 's Florent Tavernier and @Celo 's Marek Olszewski to discuss how to use ZK technology to on-chain identity, Sybil protection mechanism, and the origin of OpenPassport."
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-07-07",
+    "projects": [
+      {
+        "name": "ZK Hack Berlin Wraps Up Successfully",
+        "url": "https://x.com/__zkhack__/status/1937497743464788015",
+        "type": "活动",
+        "tags": [
+          "@__zkhack__",
+          "ZK Hack"
+        ],
+        "summary": {
+          "zh": "@__zkhack__ 在柏林成功举办了第5届ZK Hack活动，作为BerBlockWeek的一部分，活动圆满结束，在这个推上做了总结。",
+          "en": "@__zkhack__ held the 5th ZK Hack in Berlin as part of BerBlockWeek, and the event was successfully concluded with a summary on this tweet."
+        },
+        "notes": {
+          "zh": [
+            "ZeroHour（冠军）：在仅有64KB内存的PineTime智能手表上实现客户端零知识证明生成，突破硬件限制，由@leonardoalt和@georgwiese开发",
+            "ZK-AntiCheat（亚军）：基于NoirLang和Aztec Network开发的首个隐私保护反作弊引擎，将游戏内存数据形成默克尔树并证明，由@pop_eax开发",
+            "God's Hand（季军）：利用NoirLang和ZKPassport构建的救灾透明度解决方案，解决灾害救援中的问责问题，由@gabrielaxyeth开发"
+          ],
+          "en": [
+            "ZeroHour (1st): Generates ZK proofs on a 64KB smartwatch, breaking hardware limits (by @leonardoalt & @georgwiese)",
+            "ZK-AntiCheat (2nd): First privacy-preserving anti-cheat engine using NoirLang/Aztec (by @pop_eax)",
+            "God's Hand (3rd): ZK solution for transparent disaster relief using NoirLang/ZKPassport (by @gabrielaxyeth)"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-07-08",
+    "projects": [
+      {
+        "name": "SnarkSentinel: AI-Powered ZK Auditing Tool",
+        "url": "https://blog.zksecurity.xyz/posts/snarksentinel/",
+        "type": "博客",
+        "tags": [
+          "zkSecurity",
+          "Auditing",
+          "Circom"
+        ],
+        "summary": {
+          "zh": "@zksecurityXYZ 团队分享了他们开发的AI驱动的ZK审计工具SnarkSentinel，探讨了AI在发现零知识电路和应用中的漏洞方面的潜力，以及人类审计师与AI合作的未来。",
+          "en": "@zksecurityXYZ team shared their AI-powered ZK audit tool SnarkSentinel, discussing the potential of AI in identifying vulnerabilities in ZK circuits and applications, and the future of human auditors working with AI."
+        },
+        "notes": {
+          "zh": [
+            "AI在审计ZK电路中的应用展示了识别已知漏洞的潜力。",
+            "SnarkSentinel工具在比较规范与实现方面表现出色。",
+            "AI审计工具面临识别低级别加密漏洞的挑战。",
+            "使用Circom语言的代码库是SnarkSentinel的首个目标。",
+            "团队采用了RAG和代理技术来提高AI的审计效率。",
+            "未来的审计可能会更加依赖人类与AI的合作。"
+          ],
+          "en": [
+            "AI in ZK circuit auditing shows potential for identifying known vulnerabilities.",
+            "SnarkSentinel performs well in comparing specifications and implementations.",
+            "AI audit tools face challenges in identifying low-level encryption vulnerabilities.",
+            "The codebase using Circom language is SnarkSentinel's first target.",
+            "The team adopted RAG and proxy technologies to improve AI audit efficiency.",
+            "Future audits may increasingly rely on human-AI collaboration."
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-07-10",
+    "projects": [
+      {
+        "name": "Halo2 Query Collision Bug",
+        "url": "https://blog.zksecurity.xyz/posts/halo2-query-collision/",
+        "type": "博客",
+        "tags": [
+          "zksecurity.xyz",
+          "Halo2"
+        ],
+        "summary": {
+          "zh": "@zksecurityXYZ 在博客{{name}}中揭示了Halo2中的一个重要安全性问题——查询碰撞漏洞，影响了包括Zcash和PSE在内的多个实现，并讨论了其修复方法。",
+          "en": "@zksecurityXYZ revealed an important security issue in Halo2 -- Query Collision Bug, affecting multiple implementations including Zcash and PSE, and discussed its fix."
+        },
+        "notes": {
+          "zh": [
+            "查询碰撞漏洞允许恶意证明者通过重复查询同一多项式在同一评估点来伪造证明。",
+            "该漏洞影响多个广泛使用的Halo2版本，包括Zcash和PSE。",
+            "修复方法包括在多点开放参数中检测并拒绝查询碰撞。",
+            "目前没有已知的生产电路受到此漏洞的影响。",
+            "相关团队已经迅速响应并修复了此漏洞。"
+          ],
+          "en": [
+            "It allows malicious provers to forge proofs by repeatedly querying the same polynomial at the same evaluation point.",
+            "The vulnerability affects multiple widely used Halo2 versions, including Zcash and PSE.",
+            "Fix methods include detecting and rejecting query collisions in multi-point opening parameters.",
+            "Currently, no known production circuits are affected by this vulnerability.",
+            "The relevant teams have quickly responded and fixed this vulnerability."
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-07-13",
+    "projects": [
+      {
+        "name": "Hobbit: Space-Efficient zkSNARK with Optimal Prover Time",
+        "url": "https://eprint.iacr.org/2025/1214",
+        "type": "论文",
+        "tags": [
+          "Christodoulos Pappas"
+        ],
+        "summary": {
+          "zh": "港科大的Pappas和Papadopoulos在{{name}}论文中提出了Hobbit，一种空间高效的zkSNARK，实现了证明者时间的最优性$O(|C|)$，同时保持透明性和后量子安全性。",
+          "en": "Christodoulos Pappas and Dimitrios Papadopoulos proposed Hobbit, a space-efficient zkSNARK, achieving optimal prover time $O(|C|)$, while maintaining transparency and post-quantum security."
+        }
+      },
+      {
+        "name": "Linear Prover IOPs in Log Star Rounds",
+        "url": "https://eprint.iacr.org/2025/1269",
+        "type": "论文",
+        "tags": [
+          "Noor Athamnah",
+          "IOP"
+        ],
+        "summary": {
+          "zh": "Athamnah等人在{{name}}论文中提出了一种针对布尔电路的高效线性证明者IOP，仅需$O(\\log^*(S))$轮，显著降低了证明者的计算瓶颈。",
+          "en": "Athamnah et al. proposed a linear prover IOP for Boolean circuits in their paper {{name}}, achieving $O(\\log^*(S))$ rounds, significantly reducing the prover's computational bottleneck."
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-07-15",
+    "projects": [
+      {
+        "name": "Cryptography 10 Years Later: Obfuscation, Proof Systems, and Secure Computation",
+        "url": "https://simons.berkeley.edu/workshops/obfuscation/schedule",
+        "type": "视频",
+        "tags": [
+          "Simons Institute",
+          "Obfuscation"
+        ],
+        "summary": {
+          "zh": "Simons Institute举办了关于混淆、证明系统和安全计算的研讨会，聚焦于混淆的最新进展及其应用。链接中有视频回放。",
+          "en": "Simons Institute held a workshop on obfuscation, proof systems, and secure computation, focusing on the latest progress and applications of obfuscation."
+        }
+      },
+      {
+        "name": "World-leaders in Cryptography: Victor S Miller",
+        "url": "https://open.spotify.com/episode/2sDHSTIck9so4IctEkSTDB",
+        "type": "视频",
+        "tags": [
+          "ASecuritySite",
+          {
+            "zh": "椭圆曲线",
+            "en": "Elliptic Curve"
+          }
+        ],
+        "summary": {
+          "zh": "ASecuritySite Podcast发布了与Victor S Miller的访谈视频，讨论了他在计算数论、数据压缩和密码学领域的研究，包括椭圆曲线密码学的共同创造等成就。",
+          "en": "ASecuritySite Podcast released an interview with Victor S Miller, discussing his research in computational number theory, data compression, and cryptography, including his joint creation of elliptic curve cryptography."
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-07-16",
+    "projects": [
+      {
+        "name": "A Fiat–Shamir Transformation From Duplex Sponges",
+        "url": "https://eprint.iacr.org/2025/536",
+        "type": "论文",
+        "tags": [
+          "Alessandro Chiesa",
+          "Fiat-Shamir"
+        ],
+        "summary": {
+          "zh": "Chiesa等人在{{name}}论文中分析了基于理想置换的Fiat-Shamir变换变体，利用双工海绵范式最小化置换调用次数，为实践中的安全参数提供具体界限。",
+          "en": "Chiesa et al. analyzed Fiat-Shamir transformations based on ideal permutations, using duplex sponge paradigms to minimize permutation calls, providing specific bounds for practical security parameters."
+        }
+      },
+      {
+        "name": "Let's Labrador",
+        "url": "https://hackmd.io/@Ingonyama/fast-labrador-prover",
+        "type": "博客",
+        "tags": [
+          "Ashutosh Marwah",
+          "lattice-based"
+        ],
+        "summary": {
+          "zh": "Ashutosh Marwah在{{name}}博客中详细介绍了Labrador，这是一种基于格的zkSNARK协议，能够生成约50 kB的紧凑证明，并探讨了其在后量子签名聚合等任务中的应用。",
+          "en": "Ashutosh Marwah introduced Labrador, a lattice-based zkSNARK protocol, in his blog {{name}}, which generates compact proofs of about 50 kB and discusses its applications in post-quantum signature aggregation and other tasks."
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-07-17",
+    "projects": [
+      {
+        "name": "Gödel in Cryptography: Effectively Zero-Knowledge Proofs for NP with No Interaction, No Setup, and Perfect Soundness",
+        "url": "https://eprint.iacr.org/2025/1296",
+        "type": "论文",
+        "tags": [
+          "Rahul Ilango",
+          "Witness Indistinguishability"
+        ],
+        "summary": {
+          "zh": "Rahul Ilango在{{name}}论文中提出了一种新的零知识证明放松定义，实现了无需交互、无需设置且具有完美可靠性的零知识证明，突破了Goldreich和Oren的经典不可能性结果。",
+          "en": "Rahul Ilango proposed a new zero-knowledge proof relaxation definition in paper{{name}}, achieving interaction-free, setup-free, and perfect soundness zero-knowledge proofs, breaking the classic impossibility results of Goldreich and Oren."
+        }
+      },
+      {
+        "name": "PlasmaFold: An Efficient and Scalable Layer 2 with Client-Side Proving",
+        "url": "https://eprint.iacr.org/2025/1300",
+        "type": "论文",
+        "tags": [
+          "Pierre Daix-Moreux",
+          "Scalability",
+          "IVC"
+        ],
+        "summary": {
+          "zh": "Pierre Daix-Moreux和Chengru Zhang在{{name}}论文中提出了PlasmaFold，一种新颖的L2设计，旨在通过混合架构克服现有L2设计的限制，实现高效和可扩展性。",
+          "en": "Pierre Daix-Moreux and Chengru Zhang proposed PlasmaFold, a novel L2 design, in paper{{name}}, aiming to overcome the limitations of existing L2 designs through a hybrid architecture, achieving efficiency and scalability."
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-07-18",
+    "projects": [
+      {
+        "name": "Fully Homomorphic Encryption and the Dawn of A Truly Private Internet",
+        "url": "https://bozmen.io/fhe",
+        "type": "博客",
+        "tags": [
+          "gene-spafford",
+          "FHE",
+          {
+            "zh": "抗量子",
+            "en": "Quantum-Resistant"
+          }
+        ],
+        "summary": {
+          "zh": "gene-spafford在博客{{name}}中探讨了全同态加密（FHE）技术，分析了其在实现真正私有互联网中的潜力，包括加密云计算、加密LLM推理和保密区块链智能合约等应用。",
+          "en": "gene-spafford discussed fully homomorphic encryption (FHE) technology in blog{{name}}, analyzing its potential for realizing a truly private internet, including encrypted cloud computing, encrypted LLM inference, and confidential blockchain smart contracts."
+        },
+        "notes": {
+          "zh": [
+            "FHE支持加密数据直接计算，结果与明文一致",
+            "当前FHE的计算开销是明文操作的1,000x到10,000x，存储开销是原文的40到1,000倍",
+            "FHE算法每年以8倍的速度进步",
+            "FHE是基于格的密码学，是抗量子的",
+            "Craig Gentry的自举技术是FHE能够实现无限次加法和乘法的关键",
+            "FHE的应用将使得基于用户数据收集的业务模型变得过时，实现'隐私默认'的互联网"
+          ],
+          "en": [
+            "FHE supports encrypted data direct calculation, with results consistent with plaintext",
+            "Current FHE calculation overhead is 1,000x to 10,000x of plaintext operations, storage overhead is 40 to 1,000 times the original text",
+            "FHE algorithm improves 8 times per year",
+            "FHE is based on lattice cryptography, quantum-resistant",
+            "Craig Gentry's bootstrap technology is the key to FHE's ability to perform infinite addition and multiplication",
+            "FHE applications will make user data collection-based business models obsolete, achieving 'privacy default' internet"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-07-20",
+    "projects": [
+      {
+        "name": "Small Fields in Plonky3",
+        "url": "https://hackmd.io/51_gB_3ZSBSZ4KafGGvkUw",
+        "type": "博客",
+        "tags": [
+          "Angus Gruen",
+          "Plonky3",
+          {
+            "zh": "有限域",
+            "en": "Finite Fields"
+          }
+        ],
+        "summary": {
+          "zh": "Angus Gruen在{{name}}博客中简要介绍了Plonky3中的五种有限域，重点分析了三种31位域（BabyBear、KoalaBear、Mersenne31）的性能优势及适用场景。",
+          "en": "Angus Gruen introduced five finite fields in Plonky3 in his blog {{name}}, analyzing the performance advantages and application scenarios of three 31-bit fields (BabyBear, KoalaBear, Mersenne31)."
+        }
+      },
+      {
+        "name": "A note on implementing subgroup membership using the Tate pairing",
+        "url": "https://hackmd.io/@yelhousni/tate-subgroup",
+        "type": "博客",
+        "tags": [
+          "Youssef El Housni",
+          "Tate pairing"
+        ],
+        "summary": {
+          "zh": "Youssef El Housni在{{name}}博客中介绍了使用Tate配对实现椭圆曲线子群成员测试的高效方法，特别适用于小指数情况，显著提升了性能。",
+          "en": "Youssef El Housni introduced an efficient method for implementing subgroup membership using the Tate pairing in his blog {{name}}, which is particularly suitable for small indices and significantly improves performance."
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-07-24",
+    "projects": [
+      {
+        "name": "Revisiting the IPA-sumcheck connection",
+        "url": "https://eprint.iacr.org/2025/1325",
+        "type": "论文",
+        "tags": [
+          "Liam Eagen",
+          "Ariel Gabizon",
+          "sumcheck"
+        ],
+        "summary": {
+          "zh": "Eagen和Gabizon在{{name}}论文中重新审视了IPA与sumcheck协议的联系，提出了改进多线性多项式承诺性能的方法，包括简化的Halo-style累积和减少验证者复杂度的新技术。",
+          "en": "Eagen and Gabizon re-examined the connection between IPA and sumcheck protocol in paper{{name}}, proposing improvements to the performance of multilinear polynomial commitment schemes, including simplified Halo-style accumulation and reduced verifier complexity."
+        }
+      },
+      {
+        "name": "Hyrax: A Polynomial Commitment Scheme with Sublinear Complexity",
+        "url": "https://alinush.github.io/hyrax",
+        "type": "博客",
+        "tags": [
+          "alinush",
+          "Pedersen",
+          {
+            "zh": "内积论证",
+            "en": "IPA"
+          }
+        ],
+        "summary": {
+          "zh": "alinush在{{name}}博客中介绍了Hyrax多项式承诺方案，结合Pedersen向量承诺和Bulletproofs内积论证(IPAs)，实现了次线性的承诺和证明大小及验证时间。",
+          "en": "alinush introduced Hyrax, a polynomial commitment scheme with sublinear complexity, in blog{{name}}, combining Pedersen vector commitment and Bulletproofs inner-product arguments (IPAs), achieving sublinear commitment and proof sizes and verification time."
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-07-26",
+    "projects": [
+      {
+        "name": "Reshaping KYC/AML in the Age of Web3 with Self-Sovereign Compliance",
+        "url": "https://ligero-inc.com/kyc-aml",
+        "type": "博客",
+        "tags": [
+          "Ligero",
+          "KYC",
+          "AML"
+        ],
+        "summary": {
+          "zh": "Ligero分享了关于如何在Web3时代通过自我主权合规重塑KYC/AML的见解，包括利用零知识证明技术保护用户数据安全，同时减少金融服务的摩擦。",
+          "en": "Ligero shared insights on how to reshape KYC/AML in the Age of Web3 with self-sovereign compliance, including using zero-knowledge proofs to protect user data security while reducing friction in financial services."
+        }
+      },
+      {
+        "name": "eBook State of ZK Q1 - 25 v3.pdf",
+        "url": "https://drive.google.com/file/d/14JVg-MM20er05MymH5jUrfMfLcXCwCSX/view",
+        "type": "新闻",
+        "tags": [
+          "ZKV",
+          "ZK Stats"
+        ],
+        "summary": {
+          "zh": "Q2 2025 ZK生态系统报告强调了ZK系统的安全焦点，揭示了大多数ZK漏洞源于电路约束不足，导致健全性失败，强调了更严格的规范和工具需求。",
+          "en": "Q2 2025 ZK ecosystem report emphasizes the security focus of ZK systems, revealing that most ZK vulnerabilities arise from circuit constraints, leading to soundness failures, and stressing the need for stricter standards and tools."
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-07-27",
+    "projects": [
+      {
+        "name": "zkSDK: Streamlining zero-knowledge proof development through automated trace-driven ZK-backend selection",
+        "url": "https://arxiv.org/abs/2507.05294v1",
+        "type": "论文",
+        "tags": [
+          "William Law",
+          "zkSDK",
+          "Presto"
+        ],
+        "summary": {
+          "zh": "William Law在{{name}}论文中提出了zkSDK，一个模块化框架，通过抽象后端复杂性简化ZK应用开发。核心是Presto，一种类似Python的自定义编程语言，用于分析和评估程序的计算工作量强度。",
+          "en": "William Law proposed zkSDK in paper{{name}}, a modular framework that abstracts backend complexity to simplify ZK application development. The core is Presto, a custom programming language similar to Python, used for analyzing and evaluating the computational workload intensity of programs."
+        }
+      },
+      {
+        "name": "Preprocessing for Life: Dishonest-Majority MPC with a Trusted or Untrusted Dealer",
+        "url": "https://eprint.iacr.org/2025/787",
+        "type": "论文",
+        "tags": [
+          "Elette Boyle",
+          "MPC",
+          "FLIOP"
+        ],
+        "summary": {
+          "zh": "Boyle等人在{{name}}论文中提出了一种新的实用安全多方计算(MPC)预处理模型，通过一次性设置实现高效的在线安全计算，改进了存储和离线通信需求。",
+          "en": "Boyle et al. proposed a new practical secure multi-party computation (MPC) preprocessing model in paper{{name}}, achieving efficient online secure computation through one-time setup, improving storage and offline communication requirements."
+        }
+      }
+    ]
+  }
+]
