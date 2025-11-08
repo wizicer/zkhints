@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import SearchBar from "../components/SearchBar";
 import ItemSection from "../components/ItemSection.astro";
+import RecentNews from "../components/RecentNews.astro";
 import { Image } from "astro:assets";
 import hintaIcon from "../assets/hinta.png";
 import { sections } from "../data/index";
@@ -26,6 +27,11 @@ import { sections } from "../data/index";
     <div role="banner">
       <SearchBar client:load />
       <div class="mt-8"></div>
+    </div>
+
+    <!-- Recent News Section -->
+    <div class="mb-12">
+      <RecentNews />
     </div>
 
     <div class="pages-list" role="main">

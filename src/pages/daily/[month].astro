@@ -1,34 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { newsData, type ProcessedDailyNewsItem, type BilingualNotes } from "../../data/daily/index";
+import { newsData, type ProcessedDailyNewsItem, type BilingualNotes, categoryAvatars, defaultAvatar } from "../../data/daily/index";
 import { Image } from "astro:assets";
-
-// Import avatars for each category
-import paperImg from "../../assets/hinta/paper.png";
-import newsImg from "../../assets/hinta/news.png";
-import applicationImg from "../../assets/hinta/application.png";
-import eventsImg from "../../assets/hinta/events.png";
-import dslImg from "../../assets/hinta/dsl.png";
-import bugImg from "../../assets/hinta/bug.png";
-import gnarkImg from "../../assets/hinta/gnark.png";
-import researchImg from "../../assets/hinta/research.png";
-
-// Category to avatar mapping (deterministic)
-const categoryAvatars: Record<string, any> = {
-  '论文': paperImg,
-  '新闻': newsImg,
-  '开源': applicationImg,
-  '视频': eventsImg,
-  '博客': dslImg,
-  '活动': eventsImg,
-  '工具': gnarkImg,
-  '应用': applicationImg,
-  '信息': newsImg,
-  '漏洞': bugImg,
-};
-
-// Default avatar for unknown categories
-const defaultAvatar = researchImg;
 
 interface PathItem {
   params: { month: string };
@@ -272,7 +245,7 @@ const getWeekdayColor = (weekdayNum: number): string => {
       <div class="hidden md:block absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-indigo-200 via-purple-200 to-pink-200"></div>
 
       {monthData.map((dayItem, dayIndex) => (
-        <div class="mb-12 relative">
+        <div class="mb-12 relative" id={`date-${dayItem.date}`}>
           <!-- Date Badge -->
           <div class="flex items-center mb-6">
             <div 

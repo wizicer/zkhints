@@ -1,0 +1,189 @@
+---
+import {
+  newsData,
+  type ProcessedDailyNewsItem,
+  type BilingualText,
+  categoryAvatars,
+  defaultAvatar,
+} from "../data/daily/index";
+import { Image } from "astro:assets";
+
+// Get the 5 most recent news items with their first project
+const recentNews = newsData
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  .slice(0, 5)
+  .map((item) => ({
+    date: item.date,
+    year: item.year,
+    month: item.month,
+    day: item.day,
+    project: item.projects[0],
+  }));
+
+// Helper to get bilingual text
+const getText = (text: string | BilingualText, lang: "en" | "zh"): string => {
+  if (typeof text === "string") {
+    return lang === "zh" ? text : "";
+  }
+  return text[lang];
+};
+
+// Format date
+const formatDate = (dateStr: string, lang: "en" | "zh"): string => {
+  const date = new Date(dateStr);
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+
+  if (lang === "zh") {
+    return `${month}月${day}日`;
+  }
+  const monthNames = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  return `${monthNames[month - 1]} ${day}`;
+};
+
+// Get avatar for project type
+const getAvatar = (type: string) => {
+  return categoryAvatars[type] || defaultAvatar;
+};
+---
+
+<div class="mb-8">
+  <h2 class="category item mt-8 font-medium text-lg border-b pb-1">
+    <span data-lang-en>Recent News</span>
+    <span data-lang-zh class="hidden">最近新闻</span>
+  </h2>
+
+  <div class="mt-4 bg-white rounded-md shadow-sm border border-gray-100 overflow-hidden">
+    <div class="news-ticker-container relative h-14">
+      {
+        recentNews.map((item, index) => (
+          <a
+            href={`/daily/${item.year}-${item.month}#date-${item.date}`}
+            class="news-ticker-item absolute inset-0 flex items-center gap-3 px-3 hover:bg-gray-50 transition-colors opacity-0"
+            data-index={index}
+            style={index === 0 ? "opacity: 1;" : ""}
+          >
+            <Image
+              src={getAvatar(item.project.type)}
+              alt={item.project.type}
+              width={32}
+              height={32}
+              class="w-8 h-8 rounded-full flex-shrink-0"
+            />
+            <div class="text-xs text-gray-500 flex-shrink-0 w-16">
+              <span data-lang-en>{formatDate(item.date, "en")}</span>
+              <span data-lang-zh class="hidden">
+                {formatDate(item.date, "zh")}
+              </span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <span class="font-medium text-gray-900 truncate block">{item.project.name}</span>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<style>
+  .news-ticker-item {
+    transition:
+      opacity 0.5s ease-in-out,
+      transform 0.5s ease-in-out;
+  }
+
+  .news-ticker-item.fade-out {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  .news-ticker-item.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  let currentIndex = 0;
+  const totalItems = 5;
+  let intervalId: number;
+  let isTransitioning = false;
+
+  function showNewsItem(index: number) {
+    if (isTransitioning) return;
+    isTransitioning = true;
+
+    const items = document.querySelectorAll(".news-ticker-item");
+    const currentItem = items[currentIndex] as HTMLElement;
+    const nextItem = items[index] as HTMLElement;
+
+    // Fade out current item
+    currentItem.classList.add("fade-out");
+    currentItem.classList.remove("fade-in");
+
+    setTimeout(() => {
+      // Hide current item completely
+      currentItem.style.opacity = "0";
+      currentItem.style.transform = "translateY(-10px)";
+
+      // Prepare next item
+      nextItem.style.opacity = "0";
+      nextItem.style.transform = "translateY(10px)";
+
+      // Small delay before fading in
+      setTimeout(() => {
+        nextItem.classList.remove("fade-out");
+        nextItem.classList.add("fade-in");
+        nextItem.style.opacity = "1";
+        nextItem.style.transform = "translateY(0)";
+
+        isTransitioning = false;
+      }, 50);
+    }, 300);
+  }
+
+  function nextNews() {
+    const nextIndex = (currentIndex + 1) % totalItems;
+    showNewsItem(nextIndex);
+    currentIndex = nextIndex;
+  }
+
+  function startTicker() {
+    // Clear any existing interval
+    if (intervalId) {
+      clearInterval(intervalId);
+    }
+    // Auto-scroll every 4 seconds (increased for smoother experience)
+    intervalId = setInterval(nextNews, 4000);
+  }
+
+  // Start ticker on load
+  document.addEventListener("DOMContentLoaded", startTicker);
+
+  // Also start if already loaded
+  if (document.readyState === "complete" || document.readyState === "interactive") {
+    setTimeout(startTicker, 1);
+  }
+
+  // Pause on hover
+  document.querySelector(".news-ticker-container")?.addEventListener("mouseenter", () => {
+    if (intervalId) clearInterval(intervalId);
+  });
+
+  // Resume on mouse leave
+  document.querySelector(".news-ticker-container")?.addEventListener("mouseleave", startTicker);
+</script>

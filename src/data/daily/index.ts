@@ -11,6 +11,33 @@ import news2509 from './202509.json' with { type: 'json' }
 import news2510 from './202510.json' with { type: 'json' }
 import news2511 from './202511.json' with { type: 'json' }
 
+// Import avatars for each category
+import paperImg from "../../assets/hinta/paper.png";
+import newsImg from "../../assets/hinta/news.png";
+import applicationImg from "../../assets/hinta/application.png";
+import eventsImg from "../../assets/hinta/events.png";
+import dslImg from "../../assets/hinta/dsl.png";
+import bugImg from "../../assets/hinta/bug.png";
+import gnarkImg from "../../assets/hinta/gnark.png";
+import researchImg from "../../assets/hinta/research.png";
+
+// Category to avatar mapping (deterministic)
+export const categoryAvatars: Record<string, any> = {
+  '论文': paperImg,
+  '新闻': newsImg,
+  '开源': applicationImg,
+  '视频': eventsImg,
+  '博客': dslImg,
+  '活动': eventsImg,
+  '工具': gnarkImg,
+  '应用': applicationImg,
+  '信息': newsImg,
+  '漏洞': bugImg,
+};
+
+// Default avatar for unknown categories
+export const defaultAvatar = researchImg;
+
 // Type definitions for daily news data
 export interface BilingualText {
   zh: string;
