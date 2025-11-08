@@ -11,7 +11,43 @@ import news2509 from './202509.json' with { type: 'json' }
 import news2510 from './202510.json' with { type: 'json' }
 import news2511 from './202511.json' with { type: 'json' }
 
-const getWeekday = (dateStr: string) => {
+// Type definitions for daily news data
+export interface BilingualText {
+  zh: string;
+  en: string;
+}
+
+export interface BilingualNotes {
+  zh: string[];
+  en: string[];
+}
+
+export interface Project {
+  name: string;
+  url: string;
+  type: string;
+  tags: (string | BilingualText)[];
+  summary: string | BilingualText;
+  notes?: string[] | BilingualNotes;
+  icon?: string;
+}
+
+export interface DailyNewsItem {
+  date: string;
+  projects: Project[];
+  languages?: string[];
+  insights?: any[];
+}
+
+export interface ProcessedDailyNewsItem extends DailyNewsItem {
+  year: string;
+  month: string;
+  day: string;
+  weekday: BilingualText;
+  weekdayNumber: number;
+}
+
+const getWeekday = (dateStr: string): BilingualText => {
   const weekdays = {
     zh: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'],
     en: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
@@ -23,7 +59,7 @@ const getWeekday = (dateStr: string) => {
   };
 };
 
-export const newsData = [
+export const newsData: ProcessedDailyNewsItem[] = [
   ...news2412,
   ...news2501,
   ...news2502,
@@ -36,7 +72,7 @@ export const newsData = [
   ...news2509,
   ...news2510,
   ...news2511,
-].map(item => {
+].map((item: DailyNewsItem): ProcessedDailyNewsItem => {
   const [year, month, day] = item.date.split('-');
   return {
     ...item,

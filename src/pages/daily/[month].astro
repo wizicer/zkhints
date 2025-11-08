@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { newsData } from "../../data/daily/index";
+import { newsData, type ProcessedDailyNewsItem, type BilingualNotes } from "../../data/daily/index";
 import { Image } from "astro:assets";
 
 // Import avatars for each category
@@ -33,7 +33,7 @@ const defaultAvatar = researchImg;
 interface PathItem {
   params: { month: string };
   props: {
-    monthData: typeof newsData;
+    monthData: ProcessedDailyNewsItem[];
     monthKey: string;
   };
 }
@@ -49,7 +49,7 @@ export function getStaticPaths() {
     }
     acc[monthKey].push(item);
     return acc;
-  }, {} as Record<string, typeof newsData>);
+  }, {} as Record<string, ProcessedDailyNewsItem[]>);
 
   // Create paths for each month
   Object.entries(monthGroups).forEach(([monthKey, data]) => {
@@ -306,8 +306,20 @@ const getWeekdayColor = (weekdayNum: number): string => {
                         </h4>
                         <ul class="space-y-1.5">
                           {(() => {
-                            const notesEn = typeof project.notes === 'object' && Array.isArray(project.notes.en) ? project.notes.en : (Array.isArray(project.notes) ? project.notes : []);
-                            const notesZh = typeof project.notes === 'object' && Array.isArray(project.notes.zh) ? project.notes.zh : (Array.isArray(project.notes) ? project.notes : []);
+                            // Type-safe notes handling
+                            let notesEn: string[] = [];
+                            let notesZh: string[] = [];
+                            
+                            if (Array.isArray(project.notes)) {
+                              // Old format: string array (Chinese only)
+                              notesZh = project.notes;
+                              notesEn = [];
+                            } else if (project.notes && typeof project.notes === 'object' && 'en' in project.notes && 'zh' in project.notes) {
+                              // New format: BilingualNotes
+                              notesEn = project.notes.en;
+                              notesZh = project.notes.zh;
+                            }
+                            
                             const maxLength = Math.max(notesEn.length, notesZh.length);
                             
                             return Array.from({ length: maxLength }).map((_, noteIndex) => (
