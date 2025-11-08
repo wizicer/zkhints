@@ -41,6 +41,30 @@ const getMonthName = (monthNum: string, lang: 'en' | 'zh') => {
 
 <Layout title="Daily Digest Archive">
   <div class="container mx-auto px-4 py-8 max-w-5xl">
+    <!-- Back to Home Button (Top) -->
+    <div class="mb-6">
+      <a
+        href="/"
+        class="inline-flex items-center px-4 py-2 text-gray-600 hover:text-indigo-600 transition-colors font-medium"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5 mr-2"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"
+          ></path>
+        </svg>
+        <span data-lang-en>Back to Home</span>
+        <span data-lang-zh class="hidden">返回首页</span>
+      </a>
+    </div>
     <!-- Header -->
     <div class="mb-12 text-center">
       <div class="flex justify-center mb-6">
@@ -207,30 +231,6 @@ const getMonthName = (monthNum: string, lang: 'en' | 'zh') => {
       })}
     </div>
 
-    <!-- Back to Home -->
-    <div class="mt-12 text-center">
-      <a
-        href="/"
-        class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-all duration-200 hover:scale-105"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5 mr-2"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M10 19l-7-7m0 0l7-7m-7 7h18"
-          ></path>
-        </svg>
-        <span data-lang-en>Back to Home</span>
-        <span data-lang-zh class="hidden">返回首页</span>
-      </a>
-    </div>
   </div>
 </Layout>
 

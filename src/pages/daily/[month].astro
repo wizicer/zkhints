@@ -3,39 +3,32 @@ import Layout from "../../layouts/Layout.astro";
 import { newsData } from "../../data/daily/index";
 import { Image } from "astro:assets";
 
-// Import all hinta avatars
-import applicationImg from "../../assets/hinta/application.png";
-import argumentImg from "../../assets/hinta/argument.png";
-import awesomeImg from "../../assets/hinta/awesome.png";
-import beginnerImg from "../../assets/hinta/beginner.png";
-import bugImg from "../../assets/hinta/bug.png";
-import constraintImg from "../../assets/hinta/constraint.png";
-import curveImg from "../../assets/hinta/curve.png";
-import dslImg from "../../assets/hinta/dsl.png";
-import eventsImg from "../../assets/hinta/events.png";
-import gasImg from "../../assets/hinta/gas.png";
-import glossaryImg from "../../assets/hinta/glossary.png";
-import gnarkImg from "../../assets/hinta/gnark.png";
-import intermediateImg from "../../assets/hinta/intermediate.png";
-import learnImg from "../../assets/hinta/learn.png";
-import newsImg from "../../assets/hinta/news.png";
+// Import avatars for each category
 import paperImg from "../../assets/hinta/paper.png";
-import plonkishImg from "../../assets/hinta/plonkish.png";
-import popularSnarkImg from "../../assets/hinta/popular-snark.png";
-import primitiveImg from "../../assets/hinta/primitive.png";
-import privacyImg from "../../assets/hinta/privacy.png";
-import r1csImg from "../../assets/hinta/r1cs.png";
+import newsImg from "../../assets/hinta/news.png";
+import applicationImg from "../../assets/hinta/application.png";
+import eventsImg from "../../assets/hinta/events.png";
+import dslImg from "../../assets/hinta/dsl.png";
+import bugImg from "../../assets/hinta/bug.png";
+import gnarkImg from "../../assets/hinta/gnark.png";
 import researchImg from "../../assets/hinta/research.png";
-import scalingImg from "../../assets/hinta/scaling.png";
-import transpilerImg from "../../assets/hinta/transpiler.png";
 
-const avatars = [
-  applicationImg, argumentImg, awesomeImg, beginnerImg, bugImg,
-  constraintImg, curveImg, dslImg, eventsImg, gasImg,
-  glossaryImg, gnarkImg, intermediateImg, learnImg, newsImg,
-  paperImg, plonkishImg, popularSnarkImg, primitiveImg, privacyImg,
-  r1csImg, researchImg, scalingImg, transpilerImg
-];
+// Category to avatar mapping (deterministic)
+const categoryAvatars: Record<string, any> = {
+  '论文': paperImg,
+  '新闻': newsImg,
+  '开源': applicationImg,
+  '视频': eventsImg,
+  '博客': dslImg,
+  '活动': eventsImg,
+  '工具': gnarkImg,
+  '应用': applicationImg,
+  '信息': newsImg,
+  '漏洞': bugImg,
+};
+
+// Default avatar for unknown categories
+const defaultAvatar = researchImg;
 
 interface PathItem {
   params: { month: string };
@@ -75,9 +68,9 @@ export function getStaticPaths() {
 const { monthData, monthKey } = Astro.props;
 const [year, month] = monthKey.split('-');
 
-// Get random avatar for each project
-const getRandomAvatar = (index: number) => {
-  return avatars[index % avatars.length];
+// Get deterministic avatar based on project type
+const getAvatarForType = (type: string) => {
+  return categoryAvatars[type] || defaultAvatar;
 };
 
 const monthNames = {
@@ -89,31 +82,85 @@ const getMonthName = (monthNum: string, lang: 'en' | 'zh') => {
   return monthNames[lang][parseInt(monthNum) - 1];
 };
 
+// Category colors and labels from textGenerator.js
 const typeColors: Record<string, string> = {
-  '开源': 'bg-green-100 text-green-800 border-green-300',
   '论文': 'bg-blue-100 text-blue-800 border-blue-300',
+  '新闻': 'bg-gray-100 text-gray-800 border-gray-300',
+  '开源': 'bg-green-100 text-green-800 border-green-300',
+  '视频': 'bg-red-100 text-red-800 border-red-300',
+  '博客': 'bg-yellow-100 text-yellow-800 border-yellow-300',
+  '活动': 'bg-pink-100 text-pink-800 border-pink-300',
   '工具': 'bg-purple-100 text-purple-800 border-purple-300',
-  '教程': 'bg-yellow-100 text-yellow-800 border-yellow-300',
+  '应用': 'bg-indigo-100 text-indigo-800 border-indigo-300',
+  '信息': 'bg-teal-100 text-teal-800 border-teal-300',
+  '漏洞': 'bg-orange-100 text-orange-800 border-orange-300',
 };
 
 const typeLabels: Record<'zh' | 'en', Record<string, string>> = {
   zh: {
-    '开源': '开源',
     '论文': '论文',
+    '新闻': '新闻',
+    '开源': '开源',
+    '视频': '视频',
+    '博客': '博客',
+    '活动': '活动',
     '工具': '工具',
-    '教程': '教程',
+    '应用': '应用',
+    '信息': '信息',
+    '漏洞': '漏洞',
   },
   en: {
-    '开源': 'Open Source',
     '论文': 'Paper',
+    '新闻': 'News',
+    '开源': 'OSS',
+    '视频': 'Video',
+    '博客': 'Blog',
+    '活动': 'Event',
     '工具': 'Tool',
-    '教程': 'Tutorial',
+    '应用': 'App',
+    '信息': 'News',
+    '漏洞': 'Vulnerability',
   }
 };
+
+// Helper function to get text content with language fallback
+const getText = (content: any, lang: 'en' | 'zh'): string => {
+  if (!content) return '';
+  if (typeof content === 'string') return content; // Old format, default to zh
+  if (typeof content === 'object') {
+    return content[lang] || content.zh || content.en || '';
+  }
+  return '';
+};
+
 ---
 
 <Layout title={`Daily Digest - ${year}-${month}`}>
   <div class="container mx-auto px-4 py-8 max-w-6xl">
+    <!-- Back to Home Button (Top) -->
+    <div class="mb-6">
+      <a
+        href="/daily"
+        class="inline-flex items-center px-4 py-2 text-gray-600 hover:text-indigo-600 transition-colors font-medium"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5 mr-2"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"
+          ></path>
+        </svg>
+        <span data-lang-en>Back to Archive</span>
+        <span data-lang-zh class="hidden">返回归档</span>
+      </a>
+    </div>
     <!-- Header with Language Toggle -->
     <div class="mb-8 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-8 shadow-lg">
       <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
@@ -174,8 +221,7 @@ const typeLabels: Record<'zh' | 'en', Record<string, string>> = {
           <!-- Projects for this day -->
           <div class="ml-24 space-y-6">
             {dayItem.projects.map((project, projectIndex) => {
-              const avatarIndex = dayIndex * 10 + projectIndex;
-              const avatar = getRandomAvatar(avatarIndex);
+              const avatar = getAvatarForType(project.type);
               
               return (
                 <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-indigo-200">
@@ -224,9 +270,9 @@ const typeLabels: Record<'zh' | 'en', Record<string, string>> = {
 
                     <!-- Summary -->
                     <div class="mb-4 p-4 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-lg">
-                      <p class="text-gray-800 leading-relaxed">
-                        <span data-lang-en>{project.summary.en}</span>
-                        <span data-lang-zh class="hidden">{project.summary.zh}</span>
+                      <p class="text-gray-800 leading-relaxed twitter-content">
+                        <span data-lang-en>{getText(project.summary, 'en').replace(/{{name}}/g, '')}</span>
+                        <span data-lang-zh class="hidden">{getText(project.summary, 'zh').replace(/{{name}}/g, '')}</span>
                       </p>
                     </div>
 
@@ -238,15 +284,21 @@ const typeLabels: Record<'zh' | 'en', Record<string, string>> = {
                           <span data-lang-zh class="hidden">要点：</span>
                         </h4>
                         <ul class="space-y-1.5">
-                          {project.notes.en.map((note, noteIndex) => (
-                            <li class="flex items-start gap-2 text-sm text-gray-600">
-                              <span class="text-indigo-500 mt-1 flex-shrink-0">•</span>
-                              <span>
-                                <span data-lang-en>{note}</span>
-                                <span data-lang-zh class="hidden">{project.notes.zh[noteIndex]}</span>
-                              </span>
-                            </li>
-                          ))}
+                          {(() => {
+                            const notesEn = typeof project.notes === 'object' && Array.isArray(project.notes.en) ? project.notes.en : (Array.isArray(project.notes) ? project.notes : []);
+                            const notesZh = typeof project.notes === 'object' && Array.isArray(project.notes.zh) ? project.notes.zh : (Array.isArray(project.notes) ? project.notes : []);
+                            const maxLength = Math.max(notesEn.length, notesZh.length);
+                            
+                            return Array.from({ length: maxLength }).map((_, noteIndex) => (
+                              <li class="flex items-start gap-2 text-sm text-gray-600">
+                                <span class="text-indigo-500 mt-1 flex-shrink-0">•</span>
+                                <span class="twitter-content">
+                                  <span data-lang-en>{notesEn[noteIndex] || ''}</span>
+                                  <span data-lang-zh class="hidden">{notesZh[noteIndex] || ''}</span>
+                                </span>
+                              </li>
+                            ));
+                          })()}
                         </ul>
                       </div>
                     )}
@@ -259,34 +311,21 @@ const typeLabels: Record<'zh' | 'en', Record<string, string>> = {
       ))}
     </div>
 
-    <!-- Navigation -->
-    <div class="mt-12 flex justify-center">
-      <a
-        href="/"
-        class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-all duration-200 hover:scale-105"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5 mr-2"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M10 19l-7-7m0 0l7-7m-7 7h18"
-          ></path>
-        </svg>
-        <span data-lang-en>Back to Home</span>
-        <span data-lang-zh class="hidden">返回首页</span>
-      </a>
-    </div>
   </div>
 </Layout>
 
 <script>
+  // Convert Twitter handles to links
+  const convertTwitterHandles = () => {
+    document.querySelectorAll('.twitter-content').forEach(el => {
+      const element = el as HTMLElement;
+      element.innerHTML = element.innerHTML.replace(
+        /@([A-Za-z0-9_]+)/g,
+        '<a href="https://x.com/$1" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-800 font-medium">@$1</a>'
+      );
+    });
+  };
+
   // Language toggle functionality
   const initLanguageToggle = () => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -334,8 +373,12 @@ const typeLabels: Record<'zh' | 'en', Record<string, string>> = {
   
   // Initialize on page load
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initLanguageToggle);
+    document.addEventListener('DOMContentLoaded', () => {
+      convertTwitterHandles();
+      initLanguageToggle();
+    });
   } else {
+    convertTwitterHandles();
     initLanguageToggle();
   }
 </script>
