@@ -97,6 +97,20 @@ const getAvatar = (type: string) => {
       }
     </div>
   </div>
+
+  <!-- Navigation Dots -->
+  <div class="flex items-center justify-center gap-1.5 py-2 bg-gray-50">
+    {
+      recentNews.map((_, index) => (
+        <button
+          class="news-dot w-1.5 h-1.5 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors"
+          data-dot-index={index}
+          style={index === 0 ? "background-color: #4f46e5;" : ""}
+          aria-label={`Go to news ${index + 1}`}
+        />
+      ))
+    }
+  </div>
 </div>
 
 <style>
@@ -123,6 +137,13 @@ const getAvatar = (type: string) => {
   let intervalId: number;
   let isTransitioning = false;
 
+  function updateDots(activeIndex: number) {
+    const dots = document.querySelectorAll(".news-dot");
+    dots.forEach((dot, i) => {
+      (dot as HTMLElement).style.backgroundColor = i === activeIndex ? "#4f46e5" : "#d1d5db";
+    });
+  }
+
   function showNewsItem(index: number) {
     if (isTransitioning) return;
     isTransitioning = true;
@@ -130,6 +151,9 @@ const getAvatar = (type: string) => {
     const items = document.querySelectorAll(".news-ticker-item");
     const currentItem = items[currentIndex] as HTMLElement;
     const nextItem = items[index] as HTMLElement;
+
+    // Update dots
+    updateDots(index);
 
     // Fade out current item
     currentItem.classList.add("fade-out");
@@ -186,4 +210,18 @@ const getAvatar = (type: string) => {
 
   // Resume on mouse leave
   document.querySelector(".news-ticker-container")?.addEventListener("mouseleave", startTicker);
+
+  // Add click handlers for dots
+  document.querySelectorAll(".news-dot").forEach((dot) => {
+    dot.addEventListener("click", (e) => {
+      e.preventDefault();
+      const targetIndex = parseInt((dot as HTMLElement).getAttribute("data-dot-index") || "0");
+      if (targetIndex !== currentIndex) {
+        showNewsItem(targetIndex);
+        currentIndex = targetIndex;
+        // Restart the auto-scroll timer
+        startTicker();
+      }
+    });
+  });
 </script>
