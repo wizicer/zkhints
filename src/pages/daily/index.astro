@@ -20,7 +20,7 @@ const monthGroups = newsData.reduce((acc, item) => {
   return acc;
 }, {} as Record<string, { year: string; month: string; count: number; dates: Set<string> }>);
 
-// Sort by year-month descending (newest first)
+// Sort by year-month descending (newest first) and group by year
 const sortedMonths = Object.entries(monthGroups)
   .sort(([a], [b]) => b.localeCompare(a))
   .map(([key, data]) => ({
@@ -29,13 +29,22 @@ const sortedMonths = Object.entries(monthGroups)
     daysCount: data.dates.size,
   }));
 
-const monthNames = {
-  en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-  zh: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
-};
+// Group months by year
+const monthsByYear = sortedMonths.reduce((acc, month) => {
+  if (!acc[month.year]) {
+    acc[month.year] = [];
+  }
+  acc[month.year].push(month);
+  return acc;
+}, {} as Record<string, typeof sortedMonths>);
 
-const getMonthName = (monthNum: string, lang: 'en' | 'zh') => {
-  return monthNames[lang][parseInt(monthNum) - 1];
+// Get sorted years (newest first)
+const sortedYears = Object.keys(monthsByYear).sort((a, b) => b.localeCompare(a));
+
+const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+const getMonthName = (monthNum: string) => {
+  return monthNames[parseInt(monthNum) - 1];
 };
 ---
 
@@ -61,8 +70,7 @@ const getMonthName = (monthNum: string, lang: 'en' | 'zh') => {
             d="M10 19l-7-7m0 0l7-7m-7 7h18"
           ></path>
         </svg>
-        <span data-lang-en>Back to Home</span>
-        <span data-lang-zh class="hidden">返回首页</span>
+        Back to Home
       </a>
     </div>
     <!-- Header -->
@@ -78,32 +86,12 @@ const getMonthName = (monthNum: string, lang: 'en' | 'zh') => {
       </div>
       
       <h1 class="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 mb-4">
-        <span data-lang-en>Daily Digest Archive</span>
-        <span data-lang-zh class="hidden">每日摘要归档</span>
+        Daily Digest Archive
       </h1>
       
-      <p class="text-xl text-gray-600 mb-6">
-        <span data-lang-en>Explore our curated collection of ZK projects, papers, and tools</span>
-        <span data-lang-zh class="hidden">探索我们精选的零知识证明项目、论文和工具集合</span>
+      <p class="text-xl text-gray-600">
+        Explore our curated collection of ZK projects, papers, and tools
       </p>
-
-      <!-- Language Toggle -->
-      <div class="flex items-center justify-center gap-3 bg-white rounded-lg shadow-md p-2 inline-flex">
-        <button
-          id="lang-en"
-          class="lang-toggle px-4 py-2 rounded-md font-medium transition-all duration-200 bg-indigo-600 text-white"
-          data-lang="en"
-        >
-          English
-        </button>
-        <button
-          id="lang-zh"
-          class="lang-toggle px-4 py-2 rounded-md font-medium transition-all duration-200 text-gray-600 hover:bg-gray-100"
-          data-lang="zh"
-        >
-          中文
-        </button>
-      </div>
     </div>
 
     <!-- Stats Summary -->
@@ -111,10 +99,7 @@ const getMonthName = (monthNum: string, lang: 'en' | 'zh') => {
       <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 shadow-md">
         <div class="flex items-center justify-between">
           <div>
-            <p class="text-sm font-medium text-gray-600 mb-1">
-              <span data-lang-en>Total Months</span>
-              <span data-lang-zh class="hidden">总月份数</span>
-            </p>
+            <p class="text-sm font-medium text-gray-600 mb-1">Total Months</p>
             <p class="text-3xl font-bold text-indigo-600">{sortedMonths.length}</p>
           </div>
           <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center">
@@ -128,10 +113,7 @@ const getMonthName = (monthNum: string, lang: 'en' | 'zh') => {
       <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-6 shadow-md">
         <div class="flex items-center justify-between">
           <div>
-            <p class="text-sm font-medium text-gray-600 mb-1">
-              <span data-lang-en>Total Projects</span>
-              <span data-lang-zh class="hidden">总项目数</span>
-            </p>
+            <p class="text-sm font-medium text-gray-600 mb-1">Total Projects</p>
             <p class="text-3xl font-bold text-purple-600">
               {sortedMonths.reduce((sum, m) => sum + m.count, 0)}
             </p>
@@ -147,10 +129,7 @@ const getMonthName = (monthNum: string, lang: 'en' | 'zh') => {
       <div class="bg-gradient-to-br from-green-50 to-teal-50 rounded-xl p-6 shadow-md">
         <div class="flex items-center justify-between">
           <div>
-            <p class="text-sm font-medium text-gray-600 mb-1">
-              <span data-lang-en>Active Days</span>
-              <span data-lang-zh class="hidden">活跃天数</span>
-            </p>
+            <p class="text-sm font-medium text-gray-600 mb-1">Active Days</p>
             <p class="text-3xl font-bold text-green-600">
               {sortedMonths.reduce((sum, m) => sum + m.daysCount, 0)}
             </p>
@@ -164,136 +143,78 @@ const getMonthName = (monthNum: string, lang: 'en' | 'zh') => {
       </div>
     </div>
 
-    <!-- Month Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {sortedMonths.map((month, index) => {
-        const gradients = [
-          'from-blue-500 to-indigo-600',
-          'from-purple-500 to-pink-600',
-          'from-green-500 to-teal-600',
-          'from-orange-500 to-red-600',
-          'from-cyan-500 to-blue-600',
-          'from-violet-500 to-purple-600',
-        ];
-        const gradient = gradients[index % gradients.length];
+    <!-- Month Cards Grouped by Year -->
+    {sortedYears.map((year) => (
+      <div class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+          <span class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-4 py-2 rounded-lg shadow-md">
+            {year}
+          </span>
+          <span class="ml-4 text-lg text-gray-500 font-normal">
+            {monthsByYear[year].length} {monthsByYear[year].length === 1 ? 'month' : 'months'}
+          </span>
+        </h2>
         
-        return (
-          <a
-            href={`/daily/${month.key}?lang=en`}
-            class="group block bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-indigo-200 hover:scale-105"
-          >
-            <div class={`h-2 bg-gradient-to-r ${gradient}`}></div>
-            <div class="p-6">
-              <div class="flex items-start justify-between mb-4">
-                <div>
-                  <h3 class="text-2xl font-bold text-gray-900 mb-1">
-                    <span data-lang-en>{getMonthName(month.month, 'en')}</span>
-                    <span data-lang-zh class="hidden">{getMonthName(month.month, 'zh')}</span>
-                  </h3>
-                  <p class="text-gray-500 text-lg">{month.year}</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {monthsByYear[year].map((month, index) => {
+            const gradients = [
+              'from-blue-500 to-indigo-600',
+              'from-purple-500 to-pink-600',
+              'from-green-500 to-teal-600',
+              'from-orange-500 to-red-600',
+              'from-cyan-500 to-blue-600',
+              'from-violet-500 to-purple-600',
+            ];
+            const gradient = gradients[index % gradients.length];
+            
+            return (
+              <a
+                href={`/daily/${month.key}?lang=en`}
+                class="group block bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-indigo-200 hover:scale-105"
+              >
+                <div class={`h-2 bg-gradient-to-r ${gradient}`}></div>
+                <div class="p-6">
+                  <div class="flex items-start justify-between mb-4">
+                    <div>
+                      <h3 class="text-2xl font-bold text-gray-900 mb-1">
+                        {getMonthName(month.month)}
+                      </h3>
+                      <p class="text-gray-500 text-lg">{month.year}</p>
+                    </div>
+                    <div class={`w-12 h-12 bg-gradient-to-br ${gradient} rounded-lg flex items-center justify-center text-white font-bold text-lg shadow-md group-hover:scale-110 transition-transform`}>
+                      {month.month}
+                    </div>
+                  </div>
+                  
+                  <div class="space-y-2 mb-4">
+                    <div class="flex items-center text-sm text-gray-600">
+                      <svg class="w-4 h-4 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                      </svg>
+                      <span>{month.count} projects</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                      <svg class="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                      </svg>
+                      <span>{month.daysCount} active days</span>
+                    </div>
+                  </div>
+                  
+                  <div class="flex items-center text-indigo-600 font-medium text-sm group-hover:text-indigo-700">
+                    View details
+                    <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </div>
                 </div>
-                <div class={`w-12 h-12 bg-gradient-to-br ${gradient} rounded-lg flex items-center justify-center text-white font-bold text-lg shadow-md group-hover:scale-110 transition-transform`}>
-                  {month.month}
-                </div>
-              </div>
-              
-              <div class="space-y-2 mb-4">
-                <div class="flex items-center text-sm text-gray-600">
-                  <svg class="w-4 h-4 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-                  </svg>
-                  <span>
-                    <span data-lang-en>{month.count} projects</span>
-                    <span data-lang-zh class="hidden">{month.count} 个项目</span>
-                  </span>
-                </div>
-                <div class="flex items-center text-sm text-gray-600">
-                  <svg class="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                  </svg>
-                  <span>
-                    <span data-lang-en>{month.daysCount} active days</span>
-                    <span data-lang-zh class="hidden">{month.daysCount} 个活跃日</span>
-                  </span>
-                </div>
-              </div>
-              
-              <div class="flex items-center text-indigo-600 font-medium text-sm group-hover:text-indigo-700">
-                <span data-lang-en>View details</span>
-                <span data-lang-zh class="hidden">查看详情</span>
-                <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-              </div>
-            </div>
-          </a>
-        );
-      })}
-    </div>
+              </a>
+            );
+          })}
+        </div>
+      </div>
+    ))}
 
   </div>
 </Layout>
 
-<script>
-  // Language toggle functionality
-  const initLanguageToggle = () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const savedLang = urlParams.get('lang') || 'en';
-    
-    const setLanguage = (lang: string) => {
-      // Update URL
-      const url = new URL(window.location.href);
-      url.searchParams.set('lang', lang);
-      window.history.replaceState({}, '', url);
-      
-      // Toggle visibility
-      document.querySelectorAll('[data-lang-en]').forEach(el => {
-        (el as HTMLElement).classList.toggle('hidden', lang !== 'en');
-      });
-      document.querySelectorAll('[data-lang-zh]').forEach(el => {
-        (el as HTMLElement).classList.toggle('hidden', lang !== 'zh');
-      });
-      
-      // Update button styles
-      document.querySelectorAll('.lang-toggle').forEach(btn => {
-        const button = btn as HTMLButtonElement;
-        const btnLang = button.dataset.lang;
-        if (btnLang === lang) {
-          button.classList.add('bg-indigo-600', 'text-white');
-          button.classList.remove('text-gray-600', 'hover:bg-gray-100');
-        } else {
-          button.classList.remove('bg-indigo-600', 'text-white');
-          button.classList.add('text-gray-600', 'hover:bg-gray-100');
-        }
-      });
-      
-      // Update all month links to include language parameter
-      document.querySelectorAll('a[href^="/daily/"]').forEach(link => {
-        const anchor = link as HTMLAnchorElement;
-        if (!anchor.href.includes('?lang=')) {
-          const url = new URL(anchor.href);
-          url.searchParams.set('lang', lang);
-          anchor.href = url.toString();
-        }
-      });
-    };
-    
-    // Set initial language
-    setLanguage(savedLang);
-    
-    // Add click handlers
-    document.querySelectorAll('.lang-toggle').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const lang = (e.target as HTMLButtonElement).dataset.lang;
-        if (lang) setLanguage(lang);
-      });
-    });
-  };
-  
-  // Initialize on page load
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initLanguageToggle);
-  } else {
-    initLanguageToggle();
-  }
-</script>

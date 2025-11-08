@@ -126,11 +126,29 @@ const typeLabels: Record<'zh' | 'en', Record<string, string>> = {
 // Helper function to get text content with language fallback
 const getText = (content: any, lang: 'en' | 'zh'): string => {
   if (!content) return '';
-  if (typeof content === 'string') return content; // Old format, default to zh
+  if (typeof content === 'string') {
+    // Old format is Chinese only, return empty for EN
+    return lang === 'zh' ? content : '';
+  }
   if (typeof content === 'object') {
-    return content[lang] || content.zh || content.en || '';
+    // Return the requested language, or empty if not available
+    return content[lang] || '';
   }
   return '';
+};
+
+// Get weekday color based on day number (0=Sunday, 1=Monday, etc.)
+const getWeekdayColor = (weekdayNum: number): string => {
+  const colors = [
+    '#e91e63', // Sunday - Pink
+    '#e74c3c', // Monday - Red
+    '#f39c12', // Tuesday - Orange
+    '#f1c40f', // Wednesday - Yellow
+    '#2ecc71', // Thursday - Green
+    '#3498db', // Friday - Blue
+    '#9b59b6', // Saturday - Purple
+  ];
+  return colors[weekdayNum];
 };
 
 ---
@@ -204,7 +222,10 @@ const getText = (content: any, lang: 'en' | 'zh'): string => {
         <div class="mb-12 relative">
           <!-- Date Badge -->
           <div class="flex items-center mb-6">
-            <div class="relative z-10 flex items-center justify-center w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full shadow-lg">
+            <div 
+              class="relative z-10 flex items-center justify-center w-16 h-16 rounded-full shadow-lg"
+              style={`background: ${getWeekdayColor(dayItem.weekdayNumber)}`}
+            >
               <div class="text-center">
                 <div class="text-white text-xl font-bold">{dayItem.day}</div>
                 <div class="text-white text-xs opacity-90">
