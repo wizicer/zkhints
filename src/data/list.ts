@@ -15,6 +15,7 @@ export interface ResourceLink {
   category?: string;
 }
 
+// only `meetings` and `hackathons` sections are using this interface
 export interface EventLink {
   title: string;
   description?: string;
