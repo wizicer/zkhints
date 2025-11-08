@@ -125,6 +125,13 @@ export const sections: Section[] = [
         image: research,
         sourceFile: "src/data/list/paper.ts",
       },
+      {
+        id: "daily",
+        title: "Daily News",
+        description: "Daily digest of ZK news",
+        image: news,
+        sourceFile: "src/data/daily/index.ts",
+      },
     ],
   },
   {
