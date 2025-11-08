@@ -146,5 +146,45 @@
         }
       }
     ]
+  },
+  {
+    "date": "2025-11-08",
+    "projects": [
+      {
+        "name": "Sum-check Is All You Need: An Opinionated Survey on Fast Provers in SNARK Design",
+        "url": "https://eprint.iacr.org/2025/2041",
+        "type": "论文",
+        "tags": [
+          "Justin Thaler",
+          "sum-check",
+          "zkVMs"
+        ],
+        "slogan": {
+          "zh": "【ZK论文】\n为什么所有高性能 SNARK 都离不开 Sum-check？\nJustin Thaler 告诉你"
+        },
+        "summary": {
+          "zh": "Justin Thaler在{{name}}论文中分析了sum-check协议在快速SNARK设计中的应用，强调其通过批处理评估、内存检查等技术最小化证明者工作。",
+          "en": "Justin Thaler in {{name}} paper analyzed the application of sum-check protocol in fast SNARK design, emphasizing its minimization of prover work through batch evaluation and memory checks."
+        },
+        "notes": {
+          "zh": [
+            "sum-check协议是快速SNARK设计的核心，能最小化承诺和证明成本",
+            "批处理评估和内存检查技术可显著减少证明者工作量",
+            "虚拟多项式和稀疏sum-checks方法提升协议效率",
+            "小值保持技术优化计算结构利用",
+            "该调查强调sum-check在zkVMs等应用中的潜力",
+            "论文为SNARK设计提供实用指导，聚焦实际性能提升"
+          ],
+          "en": [
+            "sum-check protocol is the core of fast SNARK design, minimizing commitment and proof costs",
+            "Batch evaluation and memory checks significantly reduce prover workloads",
+            "Virtual polynomials and sparse sum-checks improve protocol efficiency",
+            "Small-value preservation optimizes computational structure utilization",
+            "The survey emphasizes the potential of sum-check in zkVMs and other applications",
+            "The paper provides practical guidance for SNARK design, focusing on performance improvements"
+          ]
+        }
+      }
+    ]
   }
 ]
