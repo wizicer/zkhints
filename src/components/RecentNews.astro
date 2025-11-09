@@ -67,35 +67,37 @@ const getAvatar = (type: string) => {
   </h2>
 
   <div class="mt-4 bg-white rounded-md shadow-sm border border-gray-100 overflow-hidden">
-    <div class="news-ticker-container relative h-14">
-      {
-        recentNews.map((item, index) => (
-          <a
-            href={`/daily/${item.year}-${item.month}#date-${item.date}`}
-            class="news-ticker-item absolute inset-0 flex items-center gap-3 px-3 hover:bg-gray-50 transition-colors opacity-0"
-            data-index={index}
-            style={index === 0 ? "opacity: 1;" : ""}
-          >
-            <Image
-              src={getAvatar(item.project.type)}
-              alt={item.project.type}
-              width={32}
-              height={32}
-              class="w-8 h-8 rounded-full flex-shrink-0"
-            />
-            <div class="text-xs text-gray-500 flex-shrink-0 w-16">
-              <span data-lang-en>{formatDate(item.date, "en")}</span>
-              <span data-lang-zh class="hidden">
-                {formatDate(item.date, "zh")}
-              </span>
+    <a id="news-ticker-link" href={`/daily/${recentNews[0].year}-${recentNews[0].month}#date-${recentNews[0].date}`} class="block">
+      <div class="news-ticker-container relative h-14 hover:bg-gray-50 transition-colors cursor-pointer">
+        {
+          recentNews.map((item, index) => (
+            <div
+              class="news-ticker-item absolute inset-0 flex items-center gap-3 px-3 opacity-0 pointer-events-none"
+              data-index={index}
+              data-url={`/daily/${item.year}-${item.month}#date-${item.date}`}
+              style={index === 0 ? "opacity: 1;" : ""}
+            >
+              <Image
+                src={getAvatar(item.project.type)}
+                alt={item.project.type}
+                width={32}
+                height={32}
+                class="w-8 h-8 rounded-full flex-shrink-0"
+              />
+              <div class="text-xs text-gray-500 flex-shrink-0 w-16">
+                <span data-lang-en>{formatDate(item.date, "en")}</span>
+                <span data-lang-zh class="hidden">
+                  {formatDate(item.date, "zh")}
+                </span>
+              </div>
+              <div class="flex-1 min-w-0">
+                <span class="font-medium text-gray-900 truncate block">{item.project.name}</span>
+              </div>
             </div>
-            <div class="flex-1 min-w-0">
-              <span class="font-medium text-gray-900 truncate block">{item.project.name}</span>
-            </div>
-          </a>
-        ))
-      }
-    </div>
+          ))
+        }
+      </div>
+    </a>
   </div>
 
   <!-- Navigation Dots -->
@@ -154,6 +156,13 @@ const getAvatar = (type: string) => {
 
     // Update dots
     updateDots(index);
+
+    // Update the link href to match the current news item
+    const tickerLink = document.getElementById("news-ticker-link") as HTMLAnchorElement;
+    const newUrl = nextItem.getAttribute("data-url");
+    if (tickerLink && newUrl) {
+      tickerLink.href = newUrl;
+    }
 
     // Fade out current item
     currentItem.classList.add("fade-out");
