@@ -253,5 +253,89 @@ const getMonthName = (monthNum: string) => {
         </div>
       ))
     }
+
+    <!-- Legacy zkWeekly News Section -->
+    <div class="mb-12">
+      <h2 class="flex flex-row flex-nowrap items-center my-10">
+        <span class="flex-grow block border-t border-gray-400"></span>
+        <span
+          class="flex-none block mx-4 px-4 py-2.5 text-2xl rounded leading-none font-medium bg-gradient-to-r from-amber-500 to-orange-600 text-white"
+        >
+          Legacy zkWeekly News (2024)
+        </span>
+        <span class="flex-grow block border-t border-gray-400"></span>
+      </h2>
+
+      <div class="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-8">
+        <p class="text-gray-700 text-sm">
+          📚 Archive of zkWeekly news from 2024 (April - December).
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {
+          [
+            { month: "12", name: "December", year: "2024" },
+            { month: "11", name: "November", year: "2024" },
+            { month: "10", name: "October", year: "2024" },
+            { month: "09", name: "September", year: "2024" },
+            { month: "08", name: "August", year: "2024" },
+            { month: "07", name: "July", year: "2024" },
+            { month: "06", name: "June", year: "2024" },
+            { month: "05", name: "May", year: "2024" },
+            { month: "04", name: "April", year: "2024" },
+          ].map((item, index) => {
+            const gradients = [
+              "from-amber-500 to-orange-600",
+              "from-orange-500 to-red-600",
+              "from-red-500 to-pink-600",
+              "from-pink-500 to-purple-600",
+              "from-purple-500 to-indigo-600",
+              "from-indigo-500 to-blue-600",
+            ];
+            const gradient = gradients[index % gradients.length];
+
+            return (
+              <a
+                href={`/daily/weekly/2024/monthly/2024-${item.month}?lang=en`}
+                class="group block bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-amber-200 hover:scale-105"
+              >
+                <div class={`h-2 bg-gradient-to-r ${gradient}`} />
+                <div class="p-6">
+                  <div class="flex items-start justify-between mb-4">
+                    <div>
+                      <h3 class="text-2xl font-bold text-gray-900 mb-1">{item.name}</h3>
+                      <p class="text-gray-500 text-lg">{item.year}</p>
+                    </div>
+                    <div
+                      class={`w-12 h-12 bg-gradient-to-br ${gradient} rounded-lg flex items-center justify-center text-white font-bold text-lg shadow-md group-hover:scale-110 transition-transform`}
+                    >
+                      {item.month}
+                    </div>
+                  </div>
+
+                  <div class="flex items-center text-amber-600 font-medium text-sm group-hover:text-amber-700">
+                    View archive
+                    <svg
+                      class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            );
+          })
+        }
+      </div>
+    </div>
   </div>
 </Layout>

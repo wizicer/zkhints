@@ -1,0 +1,360 @@
+---
+import Layout from "../../../../../layouts/Layout.astro";
+
+interface PathItem {
+  params: { month: string };
+  props: {
+    monthKey: string;
+  };
+}
+
+export async function getStaticPaths() {
+  const paths: PathItem[] = [];
+
+  const months = ["04", "05", "06", "07", "08", "09", "10", "11", "12"];
+
+  for (const month of months) {
+    const monthKey = `2024-${month}`;
+
+    paths.push({
+      params: { month: monthKey },
+      props: {
+        monthKey,
+      },
+    });
+  }
+
+  return paths;
+}
+
+const { monthKey } = Astro.props;
+const [year, month] = monthKey.split("-");
+
+// Dynamically import markdown content
+const zhModule = await import(`./${monthKey}-zh.md`);
+const enModule = await import(`./${monthKey}-en.md`);
+
+const ContentZh = zhModule.Content;
+const ContentEn = enModule.Content;
+
+// All available legacy months
+const allMonths = [
+  "2024-04",
+  "2024-05",
+  "2024-06",
+  "2024-07",
+  "2024-08",
+  "2024-09",
+  "2024-10",
+  "2024-11",
+  "2024-12",
+];
+
+const currentIndex = allMonths.indexOf(monthKey);
+const prevMonth = currentIndex > 0 ? allMonths[currentIndex - 1] : null;
+const nextMonth = currentIndex < allMonths.length - 1 ? allMonths[currentIndex + 1] : null;
+
+const monthNames = {
+  en: [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ],
+  zh: [
+    "一月",
+    "二月",
+    "三月",
+    "四月",
+    "五月",
+    "六月",
+    "七月",
+    "八月",
+    "九月",
+    "十月",
+    "十一月",
+    "十二月",
+  ],
+};
+
+const getMonthName = (monthNum: string, lang: "en" | "zh") => {
+  return monthNames[lang][parseInt(monthNum) - 1];
+};
+---
+
+<Layout title={`Legacy zkWeekly - ${year}-${month}`}>
+  <div class="container mx-auto px-4 py-8 max-w-6xl">
+    <!-- Header with Language Toggle and View All -->
+    <div
+      class="mb-8 bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl p-6 md:p-8 shadow-lg border border-amber-200"
+    >
+      <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
+        <div>
+          <h1
+            class="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-orange-600 mb-2"
+          >
+            <span data-lang-en>Legacy zkWeekly News</span>
+            <span data-lang-zh class="hidden">旧版 zkWeekly 新闻</span>
+
+            <!-- View All Archive Button -->
+            <a
+              href="/daily"
+              class="inline-flex items-center px-3 py-1 text-sm bg-amber-600 text-white font-medium rounded hover:bg-amber-700 transition-colors"
+            >
+              <span data-lang-en>View All</span>
+              <span data-lang-zh class="hidden">查看全部</span>
+            </a>
+          </h1>
+          <!-- Month Date with Navigation -->
+          <div class="flex items-center gap-2">
+            <!-- Previous Month Icon -->
+            {
+              prevMonth ? (
+                <a
+                  href={`/daily/weekly/2024/monthly/${prevMonth}?lang=en`}
+                  class="inline-flex items-center justify-center w-8 h-8 text-gray-600 hover:text-amber-600 transition-colors rounded-lg hover:bg-white/50"
+                  title="Previous Month"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 19l-7-7 7-7"
+                    />
+                  </svg>
+                </a>
+              ) : (
+                <div class="w-8" />
+              )
+            }
+
+            <p class="text-xl md:text-2xl text-gray-700">
+              <span data-lang-en>{getMonthName(month, "en")} {year}</span>
+              <span data-lang-zh class="hidden">{year} 年 {getMonthName(month, "zh")}</span>
+            </p>
+
+            <!-- Next Month Icon -->
+            {
+              nextMonth ? (
+                <a
+                  href={`/daily/weekly/2024/monthly/${nextMonth}?lang=en`}
+                  class="inline-flex items-center justify-center w-8 h-8 text-gray-600 hover:text-amber-600 transition-colors rounded-lg hover:bg-white/50"
+                  title="Next Month"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </a>
+              ) : (
+                <div class="w-8" />
+              )
+            }
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <!-- Language Toggle -->
+          <div class="flex items-center gap-3 bg-white rounded-lg shadow-md p-2">
+            <button
+              id="lang-en"
+              class="lang-toggle px-4 py-2 rounded-md font-medium transition-all duration-200 bg-amber-600 text-white"
+              data-lang="en"
+            >
+              English
+            </button>
+            <button
+              id="lang-zh"
+              class="lang-toggle px-4 py-2 rounded-md font-medium transition-all duration-200 text-gray-600 hover:bg-gray-100"
+              data-lang="zh"
+            >
+              中文
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div data-lang-en class="markdown-content bg-white rounded-xl shadow-md p-8">
+      <ContentEn />
+    </div>
+    <div data-lang-zh class="hidden markdown-content bg-white rounded-xl shadow-md p-8">
+      <ContentZh />
+    </div>
+  </div>
+</Layout>
+
+<script>
+  // Language toggle functionality
+  const initLanguageToggle = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const savedLang = urlParams.get("lang") || "en";
+
+    const setLanguage = (lang: string) => {
+      // Update URL
+      const url = new URL(window.location.href);
+      url.searchParams.set("lang", lang);
+      window.history.replaceState({}, "", url);
+
+      // Toggle visibility
+      document.querySelectorAll("[data-lang-en]").forEach((el) => {
+        (el as HTMLElement).classList.toggle("hidden", lang !== "en");
+      });
+      document.querySelectorAll("[data-lang-zh]").forEach((el) => {
+        (el as HTMLElement).classList.toggle("hidden", lang !== "zh");
+      });
+
+      // Update button styles
+      document.querySelectorAll(".lang-toggle").forEach((btn) => {
+        const button = btn as HTMLButtonElement;
+        const btnLang = button.dataset.lang;
+        if (btnLang === lang) {
+          button.classList.add("bg-amber-600", "text-white");
+          button.classList.remove("text-gray-600", "hover:bg-gray-100");
+        } else {
+          button.classList.remove("bg-amber-600", "text-white");
+          button.classList.add("text-gray-600", "hover:bg-gray-100");
+        }
+      });
+
+      // Update navigation links to include language parameter
+      document.querySelectorAll('a[href*="/daily/weekly/2024/monthly/"]').forEach((link) => {
+        const anchor = link as HTMLAnchorElement;
+        const url = new URL(anchor.href);
+        url.searchParams.set("lang", lang);
+        anchor.href = url.toString();
+      });
+    };
+
+    // Set initial language
+    setLanguage(savedLang);
+
+    // Add click handlers
+    document.querySelectorAll(".lang-toggle").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        const lang = (e.target as HTMLButtonElement).dataset.lang;
+        if (lang) setLanguage(lang);
+      });
+    });
+  };
+
+  // Initialize on page load
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => {
+      initLanguageToggle();
+    });
+  } else {
+    initLanguageToggle();
+  }
+</script>
+
+<style>
+  .markdown-content :global(h2) {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #fbbf24;
+  }
+
+  .markdown-content :global(h3) {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .markdown-content :global(h4) {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #374151;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .markdown-content :global(p) {
+    color: #374151;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+
+  .markdown-content :global(ul) {
+    list-style-type: disc;
+    list-style-position: inside;
+    margin-bottom: 1rem;
+  }
+
+  .markdown-content :global(li) {
+    color: #374151;
+    margin-bottom: 0.5rem;
+  }
+
+  .markdown-content :global(a) {
+    color: #d97706;
+    text-decoration: underline;
+  }
+
+  .markdown-content :global(a:hover) {
+    color: #92400e;
+  }
+
+  .markdown-content :global(strong) {
+    font-weight: 700;
+    color: #111827;
+  }
+
+  .markdown-content :global(em) {
+    font-style: italic;
+    color: #4b5563;
+  }
+
+  .markdown-content :global(code) {
+    background-color: #f3f4f6;
+    padding: 0.125rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    font-family: monospace;
+  }
+
+  .markdown-content :global(blockquote) {
+    border-left: 4px solid #fbbf24;
+    padding-left: 1rem;
+    font-style: italic;
+    color: #4b5563;
+    margin: 1rem 0;
+  }
+
+  .markdown-content :global(li p) {
+    margin: 0;
+    display: inline;
+  }
+</style>
