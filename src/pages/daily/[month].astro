@@ -260,9 +260,9 @@ const getWeekdayColor = (weekdayNum: number): string => {
                 </div>
               </div>
             </div>
-            <div class="ml-3 md:ml-4 text-gray-500 text-sm">
+            <a href={`/daily/${dayItem.date}?lang=en`} class="ml-3 md:ml-4 text-gray-500 text-sm hover:text-indigo-600 transition-colors">
               {dayItem.year}-{dayItem.month}-{dayItem.day}
-            </div>
+            </a>
           </div>
 
           <!-- Projects for this day -->

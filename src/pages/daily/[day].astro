@@ -1,0 +1,807 @@
+---
+import {
+  newsData,
+  type ProcessedDailyNewsItem,
+  categoryAvatars,
+  defaultAvatar,
+} from "../../data/daily/index";
+import { Image } from "astro:assets";
+
+interface PathItem {
+  params: { day: string };
+  props: {
+    dayData: ProcessedDailyNewsItem;
+    dayKey: string;
+  };
+}
+
+export function getStaticPaths() {
+  const paths: PathItem[] = [];
+
+  newsData.forEach((item) => {
+    paths.push({
+      params: { day: item.date },
+      props: {
+        dayData: item,
+        dayKey: item.date,
+      },
+    });
+  });
+
+  return paths;
+}
+
+const { dayData, dayKey } = Astro.props;
+const [year, month, day] = dayKey.split("-");
+
+const getAvatarForType = (type: string) => {
+  return categoryAvatars[type] || defaultAvatar;
+};
+
+const typeLabels: Record<"zh" | "en", Record<string, string>> = {
+  zh: {
+    论文: "论文",
+    新闻: "新闻",
+    开源: "开源",
+    视频: "视频",
+    博客: "博客",
+    活动: "活动",
+    工具: "工具",
+    应用: "应用",
+    信息: "信息",
+    漏洞: "漏洞",
+  },
+  en: {
+    论文: "Paper",
+    新闻: "News",
+    开源: "OSS",
+    视频: "Video",
+    博客: "Blog",
+    活动: "Event",
+    工具: "Tool",
+    应用: "App",
+    信息: "News",
+    漏洞: "Vulnerability",
+  },
+};
+
+const getText = (content: any, lang: "en" | "zh"): string => {
+  if (!content) return "";
+  if (typeof content === "string") {
+    return lang === "zh" ? content : "";
+  }
+  if (typeof content === "object") {
+    return content[lang] || "";
+  }
+  return "";
+};
+
+const getWeekdayColor = (weekdayNum: number): string => {
+  const colors = [
+    "#e91e63", // Sunday - Pink
+    "#e74c3c", // Monday - Red
+    "#f39c12", // Tuesday - Orange
+    "#f1c40f", // Wednesday - Yellow
+    "#2ecc71", // Thursday - Green
+    "#3498db", // Friday - Blue
+    "#9b59b6", // Saturday - Purple
+  ];
+  return colors[weekdayNum];
+};
+
+const weekdayColor = getWeekdayColor(dayData.weekdayNumber);
+
+// Split projects into groups of 2
+const projectGroups: (typeof dayData.projects)[] = [];
+for (let i = 0; i < dayData.projects.length; i += 2) {
+  projectGroups.push(dayData.projects.slice(i, i + 2));
+}
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=480, height=640" />
+    <title>zkDaily - {dayKey}</title>
+    <style define:vars={{ primaryColor: weekdayColor }}>
+      :root {
+        --color-monday: #e74c3c;
+        --color-tuesday: #f39c12;
+        --color-wednesday: #f1c40f;
+        --color-thursday: #2ecc71;
+        --color-friday: #3498db;
+        --color-saturday: #9b59b6;
+        --color-sunday: #e91e63;
+        --primary-color: var(--primaryColor);
+        --primary-light: #ebf5fb;
+        --primary-dark: #2980b9;
+        --text-primary: #2c3e50;
+        --text-secondary: #7f8c8d;
+        --border-color: #e1e8ed;
+        --card-bg: #ffffff;
+        --link-color: #e65c1a;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        width: 480px;
+        height: 640px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+          sans-serif;
+        background-color: #e3f2fd;
+        box-sizing: border-box;
+        position: relative;
+        overflow-y: auto;
+      }
+
+      .app-controls {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+      }
+
+      .copy-button,
+      .lang-button {
+        padding: 8px 16px;
+        background: #1a1a1a;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: all 0.3s;
+        opacity: 0;
+      }
+
+      .copy-button:hover,
+      .lang-button:hover {
+        background: #333;
+        opacity: 1;
+      }
+
+      .news-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 465px;
+        height: 100%;
+        margin: 10px;
+        overflow-y: auto;
+        position: relative;
+        padding-bottom: 20px;
+      }
+
+      .news-card {
+        position: relative;
+        background: var(--card-bg);
+        border-radius: 20px;
+        padding: 24px;
+        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.08);
+        page-break-after: always;
+        width: 461px;
+        min-height: 626px;
+        box-sizing: border-box;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+      }
+
+      .news-card:last-child {
+        margin-bottom: 0;
+      }
+
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 12px;
+      }
+
+      .github-title {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .en .github-title .highlight {
+        margin-left: -10px;
+      }
+
+      .en .github-title .title-text {
+        font-size: 26px;
+        font-weight: bold;
+        letter-spacing: -1px;
+        margin-left: -6px;
+      }
+
+      .title-icon {
+        font-size: 28px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .subtitle-text {
+        font-size: 22px;
+        color: var(--text-primary);
+        position: relative;
+        z-index: 1;
+        padding: 0 2px;
+      }
+
+      .subtitle-text::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 3px;
+        width: 100%;
+        height: 40%;
+        background-color: var(--primary-color);
+        opacity: 0.4;
+        z-index: -1;
+        border-radius: 2px;
+      }
+
+      .highlight {
+        background-color: var(--primary-color);
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-weight: bold;
+      }
+
+      .date {
+        display: flex;
+        flex-direction: column;
+        border-radius: 8px;
+        overflow: hidden;
+        width: 90px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-top: 4px;
+      }
+
+      .date-weekday {
+        background: var(--primary-color);
+        color: var(--text-primary);
+        text-align: center;
+        padding: 4px 0;
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .date-details {
+        background: white;
+        color: var(--text-primary);
+        text-align: center;
+        padding: 4px 0;
+        border: 1px solid #eee;
+        border-top: none;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .date-number {
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 1;
+      }
+
+      .date-year {
+        font-size: 14px;
+        color: var(--text-secondary);
+        margin-bottom: 2px;
+      }
+
+      .card-subtitle {
+        border-bottom: 2px solid var(--primary-light);
+        margin: 12px 0;
+      }
+
+      .project-item {
+        display: flex;
+        gap: 16px;
+        padding-bottom: 24px;
+        margin-bottom: 24px;
+        overflow: hidden;
+      }
+
+      .project-item:not(:last-child) {
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .project-item:last-child {
+        border-bottom: none;
+      }
+
+      .project-meta {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        margin-right: 8px;
+        position: relative;
+        justify-content: flex-start;
+        min-width: 64px;
+      }
+
+      .project-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 48px;
+        height: 48px;
+        font-size: 32px;
+      }
+
+      .project-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .project-content {
+        flex: 1;
+        min-width: 0;
+        overflow: hidden;
+        word-wrap: break-word;
+      }
+
+      .project-name {
+        color: var(--link-color);
+        margin: 0 0 8px 0;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.4;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+      }
+
+      .project-name:hover {
+        text-decoration: underline;
+      }
+
+      .project-url {
+        color: var(--link-color);
+        text-decoration: none;
+        font-size: 14px;
+        display: block;
+        margin-bottom: 8px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .project-type {
+        font-size: 0.8em;
+        color: #666;
+        font-weight: bold;
+        min-width: 2em;
+      }
+
+      .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 8px 0;
+      }
+
+      .tag {
+        background-color: #f0f0f0;
+        padding: 2px 8px;
+        border-radius: 12px;
+        font-size: 0.9em;
+        color: #666;
+      }
+
+      .project-summary {
+        color: var(--text-secondary);
+        font-size: 14px;
+        margin: 8px 0;
+        line-height: 1.5;
+      }
+
+      .project-item:has(+ .project-notes) {
+        margin-bottom: 0px;
+        padding-bottom: 12px;
+        border-bottom: none;
+        border-radius: 20px 20px 0 0;
+      }
+
+      .project-notes {
+        margin-top: 0px;
+        padding: 12px 16px 16px;
+        background-color: rgba(245, 245, 250, 0.7);
+        border-radius: 8px;
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+        position: relative;
+        z-index: 1;
+        margin-bottom: 20px;
+        padding-top: 16px;
+      }
+
+      .notes-title {
+        color: var(--primary-color);
+        font-size: 16px;
+        font-weight: 600;
+        text-align: right;
+        position: absolute;
+        top: -36px;
+        right: 24px;
+        background: linear-gradient(to bottom, white 50%, rgba(245, 245, 250, 0.7) 50%);
+        padding: 2px 12px;
+        text-shadow:
+          2px 2px 4px rgba(179, 147, 211, 0.1),
+          3px 4px 4px rgba(179, 147, 211, 0.15),
+          4px 6px 4px rgba(179, 147, 211, 0.2),
+          5px 8px 4px rgba(179, 147, 211, 0.25);
+        z-index: 2;
+      }
+
+      .notes-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .note-item {
+        margin-bottom: 6px;
+        font-size: 14px;
+        line-height: 1.5;
+        padding-left: 16px;
+        position: relative;
+      }
+
+      .note-item:before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--primary-color);
+      }
+
+      .card-footer {
+        color: var(--text-secondary);
+        position: absolute;
+        bottom: 16px;
+        right: 32px;
+        font-size: 14px;
+      }
+
+      .card-footer a {
+        color: var(--link-color);
+        text-decoration: none;
+      }
+
+      .page-indicator {
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+        display: flex;
+        gap: 4px;
+        align-items: flex-end;
+      }
+
+      .indicator-dot {
+        width: 4px;
+        height: 8px;
+        background-color: #ddd;
+      }
+
+      .indicator-dot.active {
+        background-color: #666;
+        height: 10px;
+      }
+
+      .hidden {
+        display: none !important;
+      }
+
+      @media print {
+        @page {
+          size: 480px 640px;
+          margin: 0;
+        }
+
+        body {
+          margin: 0;
+          padding: 0;
+          background: none;
+        }
+
+        .news-container {
+          margin: 0;
+          padding: 0;
+          max-width: none;
+        }
+
+        .news-card {
+          width: 480px;
+          height: 640px;
+          margin: 0;
+          padding: 24px;
+          box-sizing: border-box;
+          page-break-after: always;
+          break-inside: avoid;
+          box-shadow: none;
+          border-radius: 0;
+        }
+
+        .app-controls {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app-controls">
+      <button class="copy-button" id="copy-btn">Copy Text</button>
+      <button class="lang-button" id="lang-btn">中文</button>
+    </div>
+
+    <div class="news-container" id="news-container">
+      {
+        projectGroups.map((projects, cardIndex) => (
+          <div class="news-card">
+            <div class="card-header">
+              <div class="github-title">
+                <div class="title-icon">
+                  <span class="title-text" data-lang-zh>
+                    零知识证明
+                  </span>
+                  <span class="highlight">zkDaily</span>
+                </div>
+                <div class="subtitle-text">
+                  <span data-lang-en>ZKP Frontier Tracker 🎯</span>
+                  <span data-lang-zh class="hidden">
+                    零知识证明 前沿热点追踪 🎯
+                  </span>
+                </div>
+              </div>
+              <div class="date">
+                <span class="date-weekday">
+                  <span data-lang-en>{dayData.weekday.en.slice(0, 3)}</span>
+                  <span data-lang-zh class="hidden">
+                    {dayData.weekday.zh}
+                  </span>
+                </span>
+                <div class="date-details">
+                  <div class="date-number">
+                    {month}.{day}
+                  </div>
+                  <div class="date-year">{year}</div>
+                </div>
+              </div>
+            </div>
+            <div class="card-subtitle" />
+            <div class="projects">
+              {projects.map((project) => {
+                const avatar = getAvatarForType(project.type);
+
+                // Process notes
+                let notesEn: string[] = [];
+                let notesZh: string[] = [];
+                if (project.notes) {
+                  if (Array.isArray(project.notes)) {
+                    notesZh = project.notes;
+                  } else if (
+                    typeof project.notes === "object" &&
+                    "en" in project.notes &&
+                    "zh" in project.notes
+                  ) {
+                    notesEn = project.notes.en;
+                    notesZh = project.notes.zh;
+                  }
+                }
+                const maxNotesLength = Math.max(notesEn.length, notesZh.length);
+
+                return (
+                  <>
+                    <div class="project-item">
+                      <div class="project-meta">
+                        <div class="project-icon">
+                          <Image src={avatar} alt="Project avatar" />
+                        </div>
+                        <span class="project-type">
+                          <span data-lang-en>{typeLabels.en[project.type] || project.type}</span>
+                          <span data-lang-zh class="hidden">
+                            {typeLabels.zh[project.type] || project.type}
+                          </span>
+                        </span>
+                      </div>
+                      <div class="project-content">
+                        <a
+                          href={project.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="project-name"
+                        >
+                          {project.name}
+                        </a>
+                        <a
+                          href={project.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="project-url"
+                        >
+                          {project.url}
+                        </a>
+                        <div class="project-tags">
+                          {project.tags.map((tag) => (
+                            <span class="tag">
+                              {typeof tag === "string" ? (
+                                tag
+                              ) : (
+                                <>
+                                  <span data-lang-en>{tag.en}</span>
+                                  <span data-lang-zh class="hidden">
+                                    {tag.zh}
+                                  </span>
+                                </>
+                              )}
+                            </span>
+                          ))}
+                        </div>
+                        <div class="project-summary twitter-content">
+                          <span data-lang-en>
+                            {getText(project.summary, "en").replace(/\{\{name\}\}/g, "")}
+                          </span>
+                          <span data-lang-zh class="hidden">
+                            {getText(project.summary, "zh").replace(/\{\{name\}\}/g, "")}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    {project.notes && maxNotesLength > 0 && (
+                      <div class="project-notes">
+                        <h4 class="notes-title">Notes</h4>
+                        <ul class="notes-list">
+                          {Array.from({ length: maxNotesLength }).map((_, noteIndex) => (
+                            <li class="note-item twitter-content">
+                              <span data-lang-en>{notesEn[noteIndex] || ""}</span>
+                              <span data-lang-zh class="hidden">
+                                {notesZh[noteIndex] || ""}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </>
+                );
+              })}
+            </div>
+            <div class="card-footer">
+              <span data-lang-en>Collected by </span>
+              <span data-lang-zh class="hidden">
+                由
+              </span>
+              <a href="https://x.com/icerdesign" target="_blank">
+                @icerdesign
+              </a>
+              <span data-lang-zh class="hidden">
+                {" "}
+                收集
+              </span>
+            </div>
+            {projectGroups.length > 1 && (
+              <div class="page-indicator">
+                {projectGroups.map((_, i) => (
+                  <div class={`indicator-dot ${i === cardIndex ? "active" : ""}`} />
+                ))}
+              </div>
+            )}
+          </div>
+        ))
+      }
+    </div>
+  </body>
+</html>
+
+<script>
+  // Convert Twitter handles to links
+  const convertTwitterHandles = () => {
+    document.querySelectorAll(".twitter-content").forEach((el) => {
+      const element = el as HTMLElement;
+      element.innerHTML = element.innerHTML.replace(
+        /@([A-Za-z0-9_]+)/g,
+        '<a href="https://x.com/$1" target="_blank" rel="noopener noreferrer" style="color: var(--link-color);">@$1</a>'
+      );
+    });
+  };
+
+  // Language toggle functionality
+  const initLanguageToggle = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    let currentLang = urlParams.get("lang") || "zh";
+    const langBtn = document.getElementById("lang-btn");
+    const container = document.getElementById("news-container");
+
+    const setLanguage = (lang: string) => {
+      currentLang = lang;
+
+      // Update URL
+      const url = new URL(window.location.href);
+      url.searchParams.set("lang", lang);
+      window.history.replaceState({}, "", url);
+
+      // Update container class for styling
+      if (container) {
+        container.classList.toggle("en", lang === "en");
+        container.classList.toggle("zh", lang === "zh");
+      }
+
+      // Toggle visibility
+      document.querySelectorAll("[data-lang-en]").forEach((el) => {
+        (el as HTMLElement).classList.toggle("hidden", lang !== "en");
+      });
+      document.querySelectorAll("[data-lang-zh]").forEach((el) => {
+        (el as HTMLElement).classList.toggle("hidden", lang !== "zh");
+      });
+
+      // Update button text
+      if (langBtn) {
+        langBtn.textContent = lang === "zh" ? "English" : "中文";
+      }
+    };
+
+    // Set initial language
+    setLanguage(currentLang);
+
+    // Add click handler
+    if (langBtn) {
+      langBtn.addEventListener("click", () => {
+        setLanguage(currentLang === "zh" ? "en" : "zh");
+      });
+    }
+  };
+
+  // Copy functionality
+  const initCopyButton = () => {
+    const copyBtn = document.getElementById("copy-btn");
+    if (copyBtn) {
+      copyBtn.addEventListener("click", async () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const lang = urlParams.get("lang") || "zh";
+
+        // Get visible text content
+        let text = "";
+        document.querySelectorAll(".news-card").forEach((card) => {
+          const projects = card.querySelectorAll(".project-item");
+          projects.forEach((project) => {
+            const name = project.querySelector(".project-name")?.textContent?.trim() || "";
+            const url = project.querySelector(".project-url")?.textContent?.trim() || "";
+            const summary =
+              project.querySelector(`.project-summary [data-lang-${lang}]`)?.textContent?.trim() ||
+              "";
+            text += `${name}\n${url}\n${summary}\n\n`;
+          });
+        });
+
+        try {
+          await navigator.clipboard.writeText(text);
+        } catch (err) {
+          console.error("Copy failed:", err);
+        }
+      });
+    }
+  };
+
+  // Initialize on page load
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => {
+      convertTwitterHandles();
+      initLanguageToggle();
+      initCopyButton();
+    });
+  } else {
+    convertTwitterHandles();
+    initLanguageToggle();
+    initCopyButton();
+  }
+</script>
