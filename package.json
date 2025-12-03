@@ -23,7 +23,13 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.16",
     "@types/qrcode": "^1.5.6",
+    "axios": "^1.13.2",
+    "commander": "^14.0.2",
+    "crypto": "^1.0.1",
+    "dotenv": "^17.2.3",
     "marked": "^15.0.9",
+    "node-telegram-bot-api": "^0.66.0",
+    "puppeteer": "^24.31.0",
     "qrcode": "^1.5.4",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0"
