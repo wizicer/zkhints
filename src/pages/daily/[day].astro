@@ -703,7 +703,13 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
   </body>
 </html>
 
+<script is:inline define:vars={{ dayDataJson: JSON.stringify(dayData) }}>
+  window.__DAY_DATA__ = JSON.parse(dayDataJson);
+</script>
+
 <script>
+  import { generateTextContent } from "./textGenerator";
+
   // Convert Twitter handles to links
   const convertTwitterHandles = () => {
     document.querySelectorAll(".twitter-content").forEach((el) => {
@@ -761,7 +767,7 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
     }
   };
 
-  // Copy functionality
+  // Copy functionality using generateTextContent
   const initCopyButton = () => {
     const copyBtn = document.getElementById("copy-btn");
     if (copyBtn) {
@@ -769,19 +775,9 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
         const urlParams = new URLSearchParams(window.location.search);
         const lang = urlParams.get("lang") || "zh";
 
-        // Get visible text content
-        let text = "";
-        document.querySelectorAll(".news-card").forEach((card) => {
-          const projects = card.querySelectorAll(".project-item");
-          projects.forEach((project) => {
-            const name = project.querySelector(".project-name")?.textContent?.trim() || "";
-            const url = project.querySelector(".project-url")?.textContent?.trim() || "";
-            const summary =
-              project.querySelector(`.project-summary [data-lang-${lang}]`)?.textContent?.trim() ||
-              "";
-            text += `${name}\n${url}\n${summary}\n\n`;
-          });
-        });
+        // Use the embedded day data and generate text
+        const dayData = (window as any).__DAY_DATA__;
+        const text = generateTextContent([dayData], lang, true, true);
 
         try {
           await navigator.clipboard.writeText(text);
