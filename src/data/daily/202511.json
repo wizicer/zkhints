@@ -22,7 +22,8 @@
             "可在终端、Node.js和浏览器中部署",
             "基于Rust和WASM实现高性能",
             "无需密钥交换或可信第三方",
-            "强调可验证计算和隐私安全"
+            "强调可验证计算和隐私安全",
+            "作者已澄清该工作仍无法证明安全性。[链接](https://x.com/billwu1999/status/1985375556226224252)"
           ],
           "en": [
             "Witness encryption allows encryption to computation statements, not keys",
@@ -30,7 +31,8 @@
             "Can be deployed in terminal, Node.js, and browser",
             "Based on Rust and WASM for high performance",
             "No key exchange or trusted third party required",
-            "Emphasizing verifiable computation and privacy security"
+            "Emphasizing verifiable computation and privacy security",
+            "Author clarified the work's security remains unproven. [Link](https://x.com/billwu1999/status/1985375556226224252)"
           ]
         }
       }
@@ -182,6 +184,674 @@
             "Small-value preservation optimizes computational structure utilization",
             "The survey emphasizes the potential of sum-check in zkVMs and other applications",
             "The paper provides practical guidance for SNARK design, focusing on performance improvements"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-11-09",
+    "projects": [
+      {
+        "name": "On Reed–Solomon Proximity Gaps Conjectures",
+        "url": "https://eprint.iacr.org/2025/2046",
+        "type": "论文",
+        "tags": [
+          "Elizabeth Crites",
+          "Reed-Solomon Codes"
+        ],
+        "slogan": {
+          "zh": "【ZK论文】\n证伪多个Reed-Solomon邻近间隙猜想，\n影响FRI、DEEP-FRI等SNARK安全"
+        },
+        "summary": {
+          "zh": "Crites和Stewart在{{name}}论文中证伪了多个Reed-Solomon邻近间隙猜想，这些猜想支撑FRI、DEEP-FRI等SNARK系统的安全性与效率，并提出最小修改方案。",
+          "en": "Crites and Stewart in {{name}} paper disproved multiple Reed-Solomon proximity gap conjectures, supporting the security and efficiency of FRI, DEEP-FRI, and other SNARK systems, and proposed minimal modifications to meet list decoding capacity bounds."
+        },
+        "notes": {
+          "zh": [
+            "证伪多个Reed-Solomon邻近间隙猜想，影响FRI、DEEP-FRI等SNARK安全",
+            "提出最小修改方案以符合列表解码容量界限",
+            "证明相关协议与列表解码的关联，解决开放问题",
+            "可能削弱依赖这些猜想的ZK证明系统安全性",
+            "需重新评估现有证明系统的理论基础",
+            "为编码理论和ZK领域提供新的研究方向"
+          ],
+          "en": [
+            "Disproved multiple Reed-Solomon proximity gap conjectures, affecting the security of FRI, DEEP-FRI, and other SNARK systems",
+            "Proposed minimal modifications to meet list decoding capacity bounds",
+            "Proved the relationship between related protocols and list decoding, solving open problems",
+            "May weaken the security of ZK proof systems relying on these conjectures",
+            "Need to re-evaluate the theoretical foundations of existing proof systems",
+            "Provides new research directions for coding theory and ZK"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-11-10",
+    "projects": [
+      {
+        "name": "Linear-time and Logarithmically-sound Permutation and Multiset SNARKs",
+        "url": "https://eprint.iacr.org/2025/1967",
+        "type": "论文",
+        "tags": [
+          "Bing-Jyue Chen",
+          "Sumcheck"
+        ],
+        "slogan": {
+          "zh": "【ZK论文】\n从 sum-check 到线性代数，\nSNARK 的优化逻辑正在被重写"
+        },
+        "summary": {
+          "zh": "Chen等人在{{name}}论文中提出了一种线性时间且对数可靠的置换和多重集SNARK，通过线性代数视角消除二次证明开销，无需辅助承诺即可实现高效验证。",
+          "en": "Chen et al. proposed a linear-time and logarithmically-sound permutation and multiset SNARK in their {{name}} paper, eliminating quadratic proof overhead through a linear-algebraic perspective, avoiding auxiliary commitments for efficient verification."
+        },
+        "notes": {
+          "zh": [
+            "新方法避免辅助承诺，降低可靠性错误风险，增强安全性",
+            "线性代数视角使部分评估无额外代数成本，优化性能",
+            "支持证明者提供置换，无需预处理，提高灵活性",
+            "验证者可O(polylog(n))时间评估置换，减少对证明者依赖",
+            "匹配最优证明者下界，确保理论效率",
+            "域无关设计扩展应用范围，提升通用性"
+          ],
+          "en": [
+            "New method avoids auxiliary commitments, reducing soundness errors and enhancing security",
+            "Linear-algebraic perspective allows partial evaluation without additional algebraic costs, optimizing performance",
+            "Supports permutation proofs from provers without preprocessing, enhancing flexibility",
+            "Verifiers can evaluate permutations in O(polylog(n)) time, reducing dependency on provers",
+            "Matches optimal prover bounds, ensuring theoretical efficiency",
+            "Field-independent design extends application scope, improving universality"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-11-11",
+    "projects": [
+      {
+        "name": "Lagrange interpolation for IQ < 200",
+        "url": "https://medium.com/@laurippeltonen/lagrange-interpolation-for-iq-200-8cec1e99647d",
+        "type": "博客",
+        "tags": [
+          "Lauri Peltonen",
+          "Polynomials"
+        ],
+        "slogan": {
+          "zh": "【ZK博客】\n别被名字吓到！\n5分钟看懂 Lagrange 插值到底在干嘛"
+        },
+        "summary": {
+          "zh": "Lauri Peltonen在{{name}}博客中分享了Lagrange插值方法的基础知识，包括其定义、步骤和应用，并提及了在ZKP中多项式插值的重要性。",
+          "en": "Lauri Peltonen in {{name}} blog shared the basic knowledge of Lagrange interpolation, including its definition, steps, and applications, and mentioned the importance of polynomial interpolation in ZKP."
+        },
+        "notes": {
+          "zh": [
+            "Lagrange插值生成唯一最低次多项式通过所有给定点",
+            "插值可用于数据恢复，如音频丢失数据填补",
+            "在ZKP中，多项式插值支持高效验证和比较",
+            "Schwartz-Zippel引理允许通过少数点验证多项式",
+            "Lagrange方法简单易懂，适合教学和基础实现",
+            "实际应用中，FFT等其他方法可能更高效"
+          ],
+          "en": [
+            "Lagrange interpolation generates the unique lowest degree polynomial through all given points",
+            "Interpolation can be used for data recovery, such as audio data recovery",
+            "In ZKP, polynomial interpolation supports efficient verification and comparison",
+            "Schwartz-Zippel lemma allows verification of polynomials through a few points",
+            "Lagrange method is simple and easy to understand, suitable for teaching and basic implementation",
+            "In practical applications, other methods such as FFT may be more efficient"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-11-12",
+    "projects": [
+      {
+        "name": "A Note on Notes: Towards Scalable Anonymous Payments via Evolving Nullifiers and Oblivious Synchronization",
+        "url": "https://eprint.iacr.org/2025/2031",
+        "type": "论文",
+        "tags": [
+          "Sean Bowe",
+          "Oblivious Synchronization"
+        ],
+        "slogan": {
+          "zh": "【ZK论文】\n为什么匿名支付会‘越用越慢’？\n这篇论文给出突破性解决"
+        },
+        "summary": {
+          "zh": "Bowe和Miers在{{name}}论文中提出了一种通过演化无效器和遗忘同步实现可扩展匿名支付的新技术，允许验证者永久修剪无效器而不影响隐私或用户开销。",
+          "en": "Bowe and Miers in {{name}}paper proposed a new technique for scalable anonymous payments via evolving nullifiers and oblivious synchronization, allowing validators to permanently trim nullifiers without affecting privacy or user costs."
+        },
+        "notes": {
+          "zh": [
+            "匿名支付协议存在无效器线性增长问题，限制扩展性",
+            "演化无效器技术允许永久修剪无效器，不破坏未花费资金",
+            "遗忘同步模型使用远程服务生成简洁证明，服务对交易细节不可知",
+            "服务仅维护临时状态，用户可自由切换服务",
+            "该技术不增加用户计算、带宽或延迟开销",
+            "增强隐私保护，防止服务链接用户与交易"
+          ],
+          "en": [
+            "Anonymous payment protocols have linear growth of nullifiers, limiting scalability",
+            "Evolutionary nullifiers allow permanent trimming of nullifiers without destroying unspent funds",
+            "Oblivious synchronization model uses remote services to generate concise proofs, services are unaware of transaction details",
+            "Services maintain temporary states, users can freely switch services",
+            "This technology does not increase user computation, bandwidth, or latency costs",
+            "Enhances privacy protection, preventing service linking users with transactions"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-11-13",
+    "projects": [
+      {
+        "name": "Circom Pitfalls Part 2: Output Constraints, Input Assumptions, and Signed Comparisons",
+        "url": "https://blog.zksecurity.xyz/posts/circom-pitfalls-2/",
+        "type": "博客",
+        "tags": [
+          "ZKSecurity",
+          "Circom",
+          "Vulnerabilities"
+        ],
+        "slogan": {
+          "zh": "【ZK博客】\n别掉坑里！\nCircom 三大隐藏漏洞：输出约束、输入假设、比较陷阱"
+        },
+        "summary": {
+          "zh": "@zksecurityXYZ 在{{name}}博客中讨论了Circom电路设计中的常见陷阱，包括输出约束缺失、输入假设未验证和比较运算的符号问题，强调了安全性漏洞的预防措施。",
+          "en": "@zksecurityXYZ in {{name}} blog discussed common traps in Circom, including missing output constraints, unverified input assumptions, and signed comparison operators."
+        },
+        "notes": {
+          "zh": [
+            "输出约束缺失是常见漏洞源，如IsEqual输出未强制为1可被恶意利用",
+            "输入假设未验证可导致AND门输出错误，需添加布尔约束如flag*(flag-1)=0",
+            "Circom比较运算符基于有符号整数，val函数映射元素到(-p/2, p/2]区间",
+            "大整数模板如BigLessThan输出未约束可允许越界输入，需显式检查输出",
+            "安全最佳实践：始终显式约束组件输出和输入，避免依赖隐式假设",
+            "比较运算符的有符号语义可能导致p/2 > p/2+1等反直觉结果，需在见证生成时注意"
+          ],
+          "en": [
+            "Output constraints are common vulnerabilities, such as IsEqual output not forced to 1 can be exploited by malicious users",
+            "Input assumptions can cause AND gate output errors, need to add boolean constraints like flag*(flag-1)=0",
+            "Circom comparison operators are based on signed integers, val function maps elements to (-p/2, p/2] interval",
+            "Large integer templates like BigLessThan output without constraints can allow out-of-bound inputs, need to explicitly check outputs",
+            "Security best practices: always explicitly constrain component outputs and inputs, avoid relying on implicit assumptions",
+            "Comparison operators' signed semantics may cause p/2 > p/2+1 etc. counterintuitive results, need to pay attention to witness generation"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-11-15",
+    "projects": [
+      {
+        "name": "TensorSwitch: Nearly Optimal Polynomial Commitments from Tensor Codes",
+        "url": "https://eprint.iacr.org/2025/2065",
+        "type": "论文",
+        "tags": [
+          "Benedikt Bünz",
+          "Tensor Codes"
+        ],
+        "slogan": {
+          "zh": "【ZK论文】\nSNARG 的新基石？\nTensorSwitch 将 PCS 证明大小压到 O(log log n)"
+        },
+        "summary": {
+          "zh": "Bünz等人在{{name}}论文中提出了TensorSwitch，一种基于哈希的多线性多项式承诺方案，显著优化了证明者时间和证明大小，适用于SNARG设计。",
+          "en": "Bünz et al. proposed TensorSwitch, a hash-based multi-linear polynomial commitment scheme in paper{{name}}, which significantly optimizes prover time and proof size, suitable for SNARG designs."
+        },
+        "notes": {
+          "zh": [
+            "TensorSwitch优化PCS的证明者时间和证明大小，降低ZK证明开销",
+            "使用线性码和交互式预言模型，可编译为标准密码学PCS",
+            "承诺时间依赖码率ρ和编码时间τ，支持高效场运算",
+            "验证时间对数级增长，适合大规模多项式处理",
+            "证明大小极小，仅O(log log n)预言，提升可扩展性",
+            "基于哈希构建，增强安全性，减少对复杂密码学假设的依赖"
+          ],
+          "en": [
+            "TensorSwitch optimizes the prover time and proof size of PCs to reduce ZK proof overhead",
+            "It uses linear codes and interactive predicative models, which can be compiled into standard cryptographic PCs",
+            "Commitment time depends on coding rate ρ and encoding time τ, supporting efficient gate operations",
+            "Verification time grows logarithmically, suitable for large-scale polynomial processing",
+            "Proof size is minimal, only O(log log n) witnesses",
+            "Built on hashing for increased security and reduced dependence on complex cryptographic assumptions"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-11-16",
+    "projects": [
+      {
+        "name": "Vega: Low-Latency Zero-Knowledge Proofs over Existing Credentials",
+        "url": "https://eprint.iacr.org/2025/2094",
+        "type": "论文",
+        "tags": [
+          "Darya Kaviani",
+          "Srinath Setty",
+          "Anonymous Credentials"
+        ],
+        "slogan": {
+          "zh": "【ZK论文】\n折叠重用 + 查找算术化：\nVega 重新定义数字身份中的 ZKP 性能"
+        },
+        "summary": {
+          "zh": "Kaviani和Setty在{{name}}论文中提出Vega系统，利用折叠重用和查找中心化算术化技术，实现低延迟ZKP，无需可信设置，显著提升数字身份验证效率。",
+          "en": "Kaviani and Setty proposed Vega system in {{name}} paper, which uses folding reuse and lookup centralized arithmetization to achieve low-latency ZKP, without trusted setup, significantly improving digital identity authentication efficiency."
+        },
+        "notes": {
+          "zh": [
+            "Vega无需可信设置，降低安全依赖",
+            "折叠重用技术减少重复计算，提升效率",
+            "查找中心化算术化优化字段提取和哈希",
+            "证明大小和延迟优于现有技术",
+            "支持数字身份隐私保护"
+          ],
+          "en": [
+            "Vega does not require a trusted setup, reducing security dependencies",
+            "Folding reuse technology reduces repeated calculations, improving efficiency",
+            "Lookup centralized arithmetization optimizes field extraction and hashing",
+            "Proof size and latency are better than existing technologies",
+            "Supports digital identity privacy protection"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-11-17",
+    "projects": [
+      {
+        "name": "Merkle Multi-Proofs",
+        "url": "https://xn--2-umb.com/25/merkle-multi-proof/",
+        "type": "博客",
+        "tags": [
+          "Remco Bloemen",
+          "Merkle Tree",
+          "2π.com"
+        ],
+        "slogan": {
+          "zh": "【ZK博客】\n为什么 Merkle 多证明的大小总在变？\n数学告诉你答案"
+        },
+        "summary": {
+          "zh": "Remco Bloemen在{{name}}博客中分析了Merkle多证明在哈希证明系统中的性能，推导了证明大小和验证者工作量的精确分布，包括期望值、方差和概率质量函数。",
+          "en": "Remco Bloemen analyzed the performance of Merkle multi-proofs in hash-based proofs, deriving the exact distribution of proof size and verifier work, including expected values, variances, and probability mass functions."
+        },
+        "notes": {
+          "zh": [
+            "Merkle证明是哈希证明系统的核心，影响证明大小和验证者工作量",
+            "索引分布为均匀随机有放回抽样，允许精确性能分析",
+            "推导了证明大小和验证者工作量的期望值、方差和概率质量函数",
+            "支持压缩多证明和纯验证者端实现，提升效率",
+            "分析可扩展至非完美树和混合分支树，适应不同向量长度",
+            "提供了高效计算方法和近似公式，适用于实际应用场景"
+          ],
+          "en": [
+            "Merkle proofs are the core of hash-based proofs, affecting proof size and verifier work",
+            "Index distribution is uniform random sampling with replacement, allowing precise performance analysis",
+            "Derived the exact distribution of proof size and verifier work, including expected values, variances, and probability mass functions",
+            "Supports compressed multi-proofs and pure verifier-end implementation, improving efficiency",
+            "Analysis extends to imperfect trees and mixed branch trees, adapting to different vector lengths",
+            "Provides efficient calculation methods and approximate formulas, suitable for practical applications"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-11-18",
+    "projects": [
+      {
+        "name": "Ztarknet: Starknet-based L2 for Zcash",
+        "url": "https://github.com/Ztarknet/ztarknet",
+        "type": "开源",
+        "tags": [
+          "Ztarknet",
+          "Circle STARK",
+          "Zcash"
+        ],
+        "slogan": {
+          "zh": "【ZK开源】\nZtarknet：把 Starknet 搬到 Zcash 上的 L2 方案正式开源"
+        },
+        "summary": {
+          "zh": "Ztarknet 团队开源了Ztarknet项目，提出基于Starknet的L2解决方案，使用Circle STARK证明在Zcash L1上验证状态转换，支持Cairo程序执行和透明Zcash扩展。",
+          "en": "Ztarknet team open-sourced Ztarknet project, proposing a Starknet-based L2 solution for Zcash, using Circle STARK proofs to validate state transitions on Zcash L1, supporting Cairo program execution and transparent Zcash extensions."
+        },
+        "notes": {
+          "zh": [
+            "使用Circle STARK证明验证L2状态转换，增强安全性",
+            "通过TZE框架在Zcash L1原生验证，避免Script更改",
+            "集成Madara和Stwo/Cairo，优化Rust生态系统开发",
+            "数据可用性在PoC阶段最小化，需后续评估",
+            "锚定UTXO链模式，确保L2进展与L1同步",
+            "项目处于概念阶段，提供开发资源和测试指南"
+          ],
+          "en": [
+            "Use Circle STARK proofs to verify L2 state transitions, enhancing security",
+            "Verify directly on Zcash L1 using the TZE framework to avoid script changes",
+            "Integrate Madara and Stwo/Cairo to optimize Rust ecosystem development",
+            "Data availability is minimized during PoC stage, and further evaluation is needed",
+            "Anchor the UTXO chain mode to ensure L2 progress synchronizes with L1",
+            "The project is in concept stage, providing development resources and testing guidelines"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-11-20",
+    "projects": [
+      {
+        "name": "Single-Server Private Outsourcing of zk-SNARKs",
+        "url": "https://eprint.iacr.org/2025/2113",
+        "type": "论文",
+        "tags": [
+          "Kasra Abbaszadeh",
+          "Outsourcing",
+          "MSM"
+        ],
+        "slogan": {
+          "zh": "【ZK论文】\nZK 证明太慢？这项技术让你把计算外包给服务器，还不泄露隐私"
+        },
+        "summary": {
+          "zh": "Abbaszadeh等人在论文中提出了一种单服务器私有外包zkSNARK框架，通过EMSM原语实现客户端计算降低20倍，并保护见证和证明隐私。",
+          "en": "Abbaszadeh et al. proposed a single-server private outsourcing zkSNARK framework, which utilizes EMSM primitives to reduce client computation by 20 times, and protect witness and proof privacy."
+        },
+        "notes": {
+          "zh": [
+            "提出单服务器私有外包zkSNARK，解决高证明成本问题",
+            "核心为EMSM原语，基于LPN假设，保护见证和证明隐私",
+            "支持主流zkSNARK如Nova、Groth16和Plonk",
+            "客户端计算降低20倍，证明延迟减少9倍",
+            "实现并评估构造，验证实用性和性能提升",
+            "安全性依赖于LPN变体，确保外包过程无信息泄露"
+          ],
+          "en": [
+            "Proposed a single-server private outsourcing zkSNARK framework, which utilizes EMSM primitives to reduce client computation by 20 times, and protect witness and proof privacy.",
+            "Supports mainstream zkSNARKs such as Nova, Groth16, and Plonk",
+            "Reduces client computation by 20 times and decreases proof latency by 9 times",
+            "Implemented and evaluated the construction, verifying practicality and performance improvements",
+            "Security depends on LPN variants, ensuring information leak during outsourcing"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-11-21",
+    "projects": [
+      {
+        "name": "Privacy Commitment",
+        "url": "https://blog.ethereum.org/2025/10/08/privacy-commitment",
+        "type": "博客",
+        "tags": [
+          "Ethereum Foundation",
+          "Privacy"
+        ],
+        "slogan": {
+          "zh": "【ZK新闻】\n以太坊将隐私设为一等属性？EF 发布官方 Privacy Commitment"
+        },
+        "summary": {
+          "zh": "Ethereum Foundation在博客{{name}}中分享了其对隐私的承诺，包括隐私的重要性、EF隐私集群的组成以及关键项目如PSE和IPTF，旨在将隐私融入以太坊生态核心。",
+          "en": "Ethereum Foundation in blog{{name}} shared its commitment to privacy, including the importance of privacy, the composition of EF privacy cluster, and key projects such as PSE and IPTF, aiming to integrate privacy into the core of the Ethereum ecosystem."
+        },
+        "notes": {
+          "zh": [
+            "隐私是数字信任的核心，对个人、开发者和机构至关重要",
+            "EF隐私集群包括PSE团队，专注于ZKP等前沿密码学研究",
+            "关键项目包括隐私读写、隐私证明和身份，提升用户体验",
+            "机构隐私任务组（IPTF）连接监管与隐私技术解决实际用例",
+            "开源工具如Semaphore和Kohaku已广泛用于生态隐私研发",
+            "EF致力于与生态合作，使隐私成为以太坊的一等属性"
+          ],
+          "en": [
+            "Privacy is the core of digital trust, important for individuals, developers, and institutions",
+            "EF privacy cluster includes PSE team, focusing on frontier cryptography research such as ZKP",
+            "Key projects include private read-write, private proofs, and private identity, enhancing user experience",
+            "IPTF connects regulators with privacy technology to address real-world cases",
+            "Open-source tools like Semaphore and Kohaku are widely used in privacy research in the ecosystem",
+            "EF commits to working with the ecosystem to make privacy an equal attribute of Ethereum"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-11-22",
+    "projects": [
+      {
+        "name": "Master ZKPs through Sumcheck & SageMath | Interactive Tutorial",
+        "url": "https://sumcheck.zksecurity.xyz/",
+        "type": "教程",
+        "tags": [
+          "zksecurity.xyz",
+          "Sumcheck",
+          "SageMath"
+        ],
+        "slogan": {
+          "zh": "【ZK教程】\n从零实现 Sumcheck！这份互动式教程带你真正学懂 ZK"
+        },
+        "summary": {
+          "zh": "@zksecurityXYZ 分享了Sumcheck教程，通过SageMath交互式教程掌握Sumcheck协议和MLEs，包括从基础到高级ZKP协议的完整实现和练习。",
+          "en": "@zksecurityXYZ shared a Sumcheck tutorial, teaching Sumcheck protocol and MLEs through interactive SageMath tutorials, including a complete implementation and exercises from basic to advanced ZKP protocols."
+        },
+        "notes": {
+          "zh": [
+            "教程使用SageMath构建Sumcheck和MLEs从零开始",
+            "涵盖从基础概念到高级协议如HyperPlonk的完整学习路径",
+            "包括交互式代码和练习，提升学习效果",
+            "Sumcheck协议作为现代ZK系统的核心组件被详细讲解",
+            "Fiat-Shamir转换用于将交互式协议转为非交互式证明",
+            "教程结构模块化，允许用户按兴趣跳转学习"
+          ],
+          "en": [
+            "The tutorial uses SageMath to build Sumcheck and MLEs from scratch",
+            "Covers a complete learning path from basic concepts to advanced protocols like HyperPlonk",
+            "Includes interactive code and exercises to enhance learning effectiveness",
+            "Sumcheck protocol is thoroughly explained as a core component of modern ZK systems",
+            "Fiat-Shamir conversion is used to convert interactive protocols into non-interactive proofs",
+            "The tutorial is modular, allowing users to learn by interest"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-11-24",
+    "projects": [
+      {
+        "name": "S-two book",
+        "url": "https://blog.zksecurity.xyz/posts/stwo-book/",
+        "type": "教程",
+        "tags": [
+          "zkSecurity",
+          "S-Two",
+          "Cairo AIR"
+        ],
+        "slogan": {
+          "zh": "【ZK教程】\n从 Cairo AIR 到 S-two Prover：下一代 STARK 技术全解读"
+        },
+        "summary": {
+          "zh": "@zksecurityXYZ 分享了与 @StarkWareLtd 合作开发的S-two书籍，内容包括学习如何编写AIR、Cairo AIR实现以及Circle STARKs技术细节。",
+          "en": "@zksecurityXYZ shared a S-two book, teaching how to write AIR, Cairo AIR implementation, and Circle STARKs details."
+        },
+        "notes": {
+          "zh": [
+            "S-two是Starkware的下一代证明器，采用Circle STARKs技术",
+            "在Mersenne31素数域上实现，提供高性能证明生成",
+            "支持自定义电路，包括虚拟机(VM)和机器学习(ML)推理",
+            "书籍内容涵盖AIR编写、Cairo AIR实现和Circle STARKs细节",
+            "zkSecurity提供ZK系统审计、研究和开发服务",
+            "鼓励读者参考相关博客系列以深入了解Circle STARKs"
+          ],
+          "en": [
+            "S-two is the next generation verifier of Starkware, adopting Circle STARKs technology",
+            "Implemented on the Mersenne31 prime field, providing high-performance proof generation",
+            "Supports custom circuits, including virtual machines (VM) and machine learning (ML) inference",
+            "The book covers writing AIR, implementing Cairo AIR, and details of Circle STARKs",
+            "zkSecurity provides audit, research, and development services for ZK systems",
+            "Encourages readers to refer to related blog series to deepen their understanding of Circle STARKs"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-11-25",
+    "projects": [
+      {
+        "name": "PSS: TACEO Services",
+        "url": "https://core.taceo.io/articles/pss-taceo-services/",
+        "type": "博客",
+        "tags": [
+          "TACEO",
+          "MPC",
+          "coSNARKs"
+        ],
+        "slogan": {
+          "zh": "【ZK博客】\nTACEO 推出 PSS：用 MPC+ZK 做到真正去中心化的私有共享状态"
+        },
+        "summary": {
+          "zh": "TACEO团队在{{name}}博客中分享了Private Shared State（PSS）解决方案，结合MPC和ZK技术实现去中心化、隐私和可验证性，并介绍了OPRF、OMap和Proof三大核心服务。",
+          "en": "TACEO team shared a PSS solution, combining MPC and ZK technology to achieve decentralized, privacy, and verifiability, and introduced OPRF, OMap, and Proof three core services."
+        },
+        "notes": {
+          "zh": [
+            "PSS结合MPC和ZK，同时实现去中心化、隐私和可验证性",
+            "TACEO:OPRF提供匿名身份识别，防止Sybil攻击且不泄露用户信息",
+            "TACEO:OMap通过ORAM技术避免访问模式攻击，保护数据隐私",
+            "TACEO:Proof允许委托生成coSNARK证明，降低用户计算负担",
+            "网络架构包括协调层、MPC节点和coSNARK引擎，确保高效安全",
+            "性能指标：支付吞吐量达200 TPS，身份证明生成约1秒"
+          ],
+          "en": [
+            "PSS integrates MPC and ZK to achieve decentralized, privacy, and verifiability",
+            "TACEO:OPRF provides anonymous identity recognition, preventing Sybil attacks without revealing user information",
+            "TACEO:OMap uses ORAM technology to avoid access pattern attacks, protecting data privacy",
+            "TACEO:Proof allows generating coSNARK proofs by delegating computation burden to users",
+            "The network architecture includes a coordinator layer, MPC nodes, and coSNARK engines, ensuring efficient security",
+            "Performance indicators: Payment throughput reaches 200 TPS, identity proof generation is about 1 second"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-11-26",
+    "projects": [
+      {
+        "name": "Plinko PIR tutorial",
+        "url": "https://vitalik.eth.limo/general/2025/11/25/plinko.html",
+        "type": "博客",
+        "tags": [
+          "Vitalik Buterin",
+          "PIR"
+        ],
+        "slogan": {
+          "zh": "【ZK博客】\nVitalik 教你 Plinko：单服务器 PIR 也能做到高效隐私读取"
+        },
+        "summary": {
+          "zh": "Vitalik Buterin 在博客{{name}}中讨论了私有信息检索协议 Plinko，包括其如何实现高效隐私读取、降低通信和计算开销，并应用于区块链数据查询等场景。",
+          "en": "Vitalik Buterin in blog {{name}} discussed the private information retrieval protocol Plinko, including how it achieves efficient privacy reading, reduces communication and computational overhead, and applies to blockchain data queries."
+        },
+        "notes": {
+          "zh": [
+            "Plinko 协议通过预处理和可逆 PRF 实现高效 PIR，降低通信和计算开销",
+            "协议支持单服务器设置，无需信任假设，提升隐私安全性",
+            "查询阶段使用随机化技术保护客户端索引隐私，防止服务器推断",
+            "可结合 FHE 进一步优化，但当前效率问题待解决",
+            "适用于隐私保护数据库查询、区块链数据读取等场景",
+            "实际部署需考虑存储和带宽成本，例如以太坊状态树查询"
+          ],
+          "en": [
+            "Plinko protocol achieves efficient PIR through preprocessing and reversible PRF, reducing communication and computational overhead",
+            "The protocol supports single-server settings, enhancing privacy security without trust assumptions",
+            "Randomization techniques protect client index privacy during the query phase, preventing server inference",
+            "Can be further optimized with FHE, but current efficiency issues remain unresolved",
+            "Suitable for privacy-protected database queries, blockchain data reading, etc.",
+            "Actual deployment requires considering storage and bandwidth costs, such as Ethereum state tree queries"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-11-27",
+    "projects": [
+      {
+        "name": "Proximity Conjecture",
+        "url": "https://blog.zksecurity.xyz/posts/proximity-conjecture/",
+        "type": "博客",
+        "tags": [
+          "zkSecurity",
+          "Reed-Solomon Codes"
+        ],
+        "slogan": {
+          "zh": "【ZK博客】\n你的 SNARK 参数可能不安全？Proximity Conjecture 最新分析来了"
+        },
+        "summary": {
+          "zh": "@zksecurityXYZ 在{{name}}博客中讨论了近期多项研究证伪邻近间隙猜想的影响，分析了其对基于哈希的SNARKs安全性和性能的后果，包括参数调整的必要性。",
+          "en": "@zksecurityXYZ discussed the recent multi-project refutation of the proximity conjecture in the blog, analyzing the impact on the security and performance of hash-based SNARKs, including the necessity of parameter adjustment."
+        },
+        "notes": {
+          "zh": [
+            "邻近间隙猜想被证伪，影响基于哈希的SNARKs参数设置",
+            "不安全参数区域被识别，需调整δ值以避免安全风险",
+            "从推测安全到证明安全，证明大小和验证时间翻倍，证明者时间基本不变",
+            "从推测安全到新推测安全，性能下降2-3%，证明者时间影响小",
+            "问题与列表解码问题相关，剩余未知区域安全性未解",
+            "建议在审计和开发中优先考虑参数安全，避免性能与安全权衡失误"
+          ],
+          "en": [
+            "The proximity conjecture has been refuted, affecting the parameter settings of hash-based SNARKs",
+            "Unsafe parameter regions have been identified, requiring adjustment of δ values to avoid security risks",
+            "From speculative security to proven security, proof size and verification time double, prover time remains",
+            "From speculative security to new speculative security, performance decreases by 2-3%, prover time impact is small",
+            "The problem is related to list decoding, and the remaining unknown regions' security remains unresolved",
+            "It is recommended to prioritize parameter security in audits and development to avoid performance and security trade-offs"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-11-29",
+    "projects": [
+      {
+        "name": "Lattice Basis Reduction Lectures",
+        "url": "https://cryptography101.ca/lattice-basis-reduction/",
+        "type": "视频",
+        "tags": [
+          "cryptography101.ca",
+          "Lattice Cryptography"
+        ],
+        "slogan": {
+          "zh": "【ZK视频】\n想学格密码？这套 LLL 视频讲座从零讲到攻击实战"
+        },
+        "summary": {
+          "zh": "cryptography101.ca 发布了关于LLL格基约简算法的视频讲座，详细介绍了格理论、LLL算法及其在密码分析中的应用，包括数学背景和实际示例。",
+          "en": "cryptography101.ca has released a video lecture on LLL lattice basis reduction algorithm, providing a detailed introduction to lattice theory, LLL algorithm, and its applications in cryptanalysis, including mathematical background and practical examples."
+        },
+        "notes": {
+          "zh": [
+            "LLL算法是密码分析中的强大工具，适用于多种攻击场景",
+            "课程涵盖线性代数和格理论等数学背景，便于初学者理解",
+            "视频讲座包括从基础到应用的完整系列，如Gauss算法和Gram-Schmidt正交化",
+            "提供错误修正和额外材料，确保内容准确性",
+            "强调LLL在密码学中的实际应用，如解决最短向量问题",
+            "支持教育者整合资源，促进密码学教学"
+          ],
+          "en": [
+            "LLL algorithm is a powerful tool in cryptanalysis, applicable to various attack scenarios",
+            "The course covers linear algebra and lattice theory, making it easy for beginners to understand",
+            "The video lecture includes a complete series from foundation to application, such as Gauss algorithm and Gram-Schmidt orthogonalization",
+            "Error correction and additional materials are provided to ensure content accuracy",
+            "Emphasizes the practical application of LLL in cryptography, such as solving the shortest vector problem",
+            "Supports educators in integrating resources to promote cryptography education"
           ]
         }
       }
