@@ -67,8 +67,8 @@ async function takeScreenshot(language = "zh", dateStr = null) {
     fs.mkdirSync(screenshotDir, { recursive: true });
   }
 
-  // Start Astro preview server
-  const { preview } = await import("astro");
+  // Start Astro dev server
+  const { dev } = await import("astro");
   const puppeteer = (await import("puppeteer")).default;
 
   // Workaround: disable devToolbar before starting preview server
@@ -80,9 +80,14 @@ async function takeScreenshot(language = "zh", dateStr = null) {
   );
   fs.writeFileSync(configPath, modifiedConfig, "utf-8");
 
+  const defaultPort = 51234;
   let server;
   try {
-    server = await preview({});
+    server = await dev({
+      server: {
+        port: defaultPort,
+      },
+    });
   } catch (err) {
     // Restore config on error
     fs.writeFileSync(configPath, configContent, "utf-8");
@@ -91,9 +96,9 @@ async function takeScreenshot(language = "zh", dateStr = null) {
 
   // Get the server URL from the address info
   const address = server.host || "localhost";
-  const port = server.port || 4321;
+  const port = server.port || defaultPort;
   const url = `http://${address}:${port}/`;
-  console.log("Preview server started at:", url);
+  console.log("Dev server started at:", url);
 
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
