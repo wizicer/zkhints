@@ -5,6 +5,7 @@ import {
   categoryAvatars,
   defaultAvatar,
 } from "../../data/daily/index";
+import { typeLabels } from "./textGenerator";
 import { Image } from "astro:assets";
 import { marked } from "marked";
 
@@ -53,33 +54,6 @@ const [year, month, day] = dayKey.split("-");
 
 const getAvatarForType = (type: string) => {
   return categoryAvatars[type] || defaultAvatar;
-};
-
-const typeLabels: Record<"zh" | "en", Record<string, string>> = {
-  zh: {
-    论文: "论文",
-    新闻: "新闻",
-    开源: "开源",
-    视频: "视频",
-    博客: "博客",
-    活动: "活动",
-    工具: "工具",
-    应用: "应用",
-    信息: "信息",
-    漏洞: "漏洞",
-  },
-  en: {
-    论文: "Paper",
-    新闻: "News",
-    开源: "OSS",
-    视频: "Video",
-    博客: "Blog",
-    活动: "Event",
-    工具: "Tool",
-    应用: "App",
-    信息: "News",
-    漏洞: "Vulnerability",
-  },
 };
 
 const getText = (content: any, lang: "en" | "zh"): string => {

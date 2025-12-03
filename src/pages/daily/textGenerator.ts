@@ -26,6 +26,23 @@ export const categoryNameMapEn: Record<string, string> = {
   教程: "Tutorial",
 };
 
+export const typeLabels: Record<"zh" | "en", Record<string, string>> = {
+  zh: {
+    论文: "论文",
+    新闻: "新闻",
+    开源: "开源",
+    视频: "视频",
+    博客: "博客",
+    活动: "活动",
+    工具: "工具",
+    应用: "应用",
+    信息: "信息",
+    漏洞: "漏洞",
+    教程: "教程",
+  },
+  en: categoryNameMapEn,
+};
+
 export const getTypeIcon = (type: string): string => {
   return iconMap[type] || "📌";
 };
