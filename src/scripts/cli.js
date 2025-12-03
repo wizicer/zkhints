@@ -160,7 +160,7 @@ async function generateText(language = "zh", dateStr = null) {
   }
 
   const generateTextContent = await loadTextGenerator();
-  return generateTextContent([dayData], language, true, true);
+  return generateTextContent([dayData], language, false, true);
 }
 
 async function sendWecomNotification(imagePath, textContent, language = "zh") {
