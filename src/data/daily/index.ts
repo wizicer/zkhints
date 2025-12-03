@@ -10,6 +10,7 @@ import news2508 from './202508.json' with { type: 'json' }
 import news2509 from './202509.json' with { type: 'json' }
 import news2510 from './202510.json' with { type: 'json' }
 import news2511 from './202511.json' with { type: 'json' }
+import news2512 from './202512.json' with { type: 'json' }
 
 // Import avatars for each category
 import paperImg from "../../assets/hinta/paper.png";
@@ -99,6 +100,7 @@ export const newsData: ProcessedDailyNewsItem[] = [
   ...news2509,
   ...news2510,
   ...news2511,
+  ...news2512,
 ].map((item: DailyNewsItem): ProcessedDailyNewsItem => {
   const [year, month, day] = item.date.split('-');
   return {
