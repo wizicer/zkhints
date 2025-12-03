@@ -32,10 +32,10 @@ function getDateParts(dateStr = null) {
   };
 }
 
-// Load news data
+// Load news data (using dataLoader to avoid image imports)
 async function loadNewsData() {
-  const { newsData } = await import("../data/daily/index.ts");
-  return newsData;
+  const { loadNewsData: load } = await import("./dataLoader.ts");
+  return load();
 }
 
 // Load text generator
@@ -71,9 +71,28 @@ async function takeScreenshot(language = "zh", dateStr = null) {
   const { preview } = await import("astro");
   const puppeteer = (await import("puppeteer")).default;
 
-  const { server, url } = await preview({
-    configFile: "./astro.config.mjs",
-  });
+  // Workaround: disable devToolbar before starting preview server
+  const configPath = path.join(process.cwd(), "astro.config.mjs");
+  const configContent = fs.readFileSync(configPath, "utf-8");
+  const modifiedConfig = configContent.replace(
+    /devToolbar:\s*\{\s*enabled:\s*true\s*,?\s*\}/,
+    "devToolbar: { enabled: false }"
+  );
+  fs.writeFileSync(configPath, modifiedConfig, "utf-8");
+
+  let server;
+  try {
+    server = await preview({});
+  } catch (err) {
+    // Restore config on error
+    fs.writeFileSync(configPath, configContent, "utf-8");
+    throw err;
+  }
+
+  // Get the server URL from the address info
+  const address = server.host || "localhost";
+  const port = server.port || 4321;
+  const url = `http://${address}:${port}/`;
   console.log("Preview server started at:", url);
 
   const browser = await puppeteer.launch();
@@ -115,6 +134,9 @@ async function takeScreenshot(language = "zh", dateStr = null) {
 
   await browser.close();
   await server.stop();
+
+  // Restore devToolbar config
+  fs.writeFileSync(configPath, configContent, "utf-8");
 
   return filepaths;
 }

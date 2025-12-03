@@ -18,4 +18,7 @@ export default defineConfig({
     rehypePlugins: [rehypeKatex],
     remarkPlugins: [remarkMath],
   },
+  devToolbar: {
+    enabled: true,
+  },
 });
