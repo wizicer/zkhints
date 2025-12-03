@@ -338,11 +338,6 @@ program
       // Check if data exists for the specified date
       const newsData = await loadNewsData();
       const todayData = newsData.find((entry) => entry.date === dateString);
-      console.log(
-        "Data for",
-        dateString + ":",
-        todayData ? JSON.stringify(todayData, null, 2) : "No data found"
-      );
 
       if (!todayData) {
         console.error(`No data found for ${dateString}. Aborting notification.`);
