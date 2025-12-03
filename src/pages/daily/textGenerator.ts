@@ -157,7 +157,10 @@ export const generateTextContent = (
 
     text += `---\n${
       translations[language].viewWeb
-    } https://news.plonk.pro/${language}/${card.date.replace(/-/g, "/")}.html\n`;
+    } https://hints.plonk.pro/daily/${card.date.substring(
+      0,
+      card.date.indexOf("-", 5)
+    )}?lang=${language}\n`;
     text += `${translations[language].collectedBy}`;
   });
 
