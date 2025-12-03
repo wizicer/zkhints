@@ -44,22 +44,17 @@ async function loadTextGenerator() {
   return generateTextContent;
 }
 
-async function takeScreenshot(language = "zh", dateStr = null) {
+// Take screenshots for multiple languages, reusing server
+async function takeScreenshots(languages = ["zh"], dateStr = null) {
   const { year, month, day } = getDateParts(dateStr);
   const dateString = `${year}-${month}-${day}`;
 
-  // Check if content exists for this language in the data
+  // Check if data exists
   const newsData = await loadNewsData();
   const dayData = newsData.find((entry) => entry.date === dateString);
   if (!dayData) {
     console.log(`No data found for ${dateString}`);
-    return [];
-  }
-  if (dayData.languages && !dayData.languages.includes(language)) {
-    console.log(
-      `Skipping screenshot for ${language} as it's not listed in languages array for ${dateString}`
-    );
-    return [];
+    return {};
   }
 
   const screenshotDir = path.join("./screenshots", year, month);
@@ -71,7 +66,7 @@ async function takeScreenshot(language = "zh", dateStr = null) {
   const { dev } = await import("astro");
   const puppeteer = (await import("puppeteer")).default;
 
-  // Workaround: disable devToolbar before starting preview server
+  // Workaround: disable devToolbar before starting dev server
   const configPath = path.join(process.cwd(), "astro.config.mjs");
   const configContent = fs.readFileSync(configPath, "utf-8");
   const modifiedConfig = configContent.replace(
@@ -110,31 +105,47 @@ async function takeScreenshot(language = "zh", dateStr = null) {
     deviceScaleFactor: 2,
   });
 
-  // Load the page from Astro server
-  const targetUrl = `${url}daily/${dateString}?lang=${language}`;
-  console.log(`Loading: ${targetUrl}`);
-  await page.goto(targetUrl, {
-    waitUntil: "networkidle0",
-  });
+  // Results map: language -> filepaths
+  const results = {};
 
-  // Small delay to ensure all content is rendered
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+  for (const language of languages) {
+    // Check if this language is supported
+    if (dayData.languages && !dayData.languages.includes(language)) {
+      console.log(
+        `Skipping screenshot for ${language} as it's not listed in languages array for ${dateString}`
+      );
+      results[language] = [];
+      continue;
+    }
 
-  // Get all news cards
-  const cards = await page.$$(".news-card, .insight-card");
-  const filepaths = [];
-
-  for (let i = 0; i < cards.length; i++) {
-    const card = cards[i];
-    const filepath = path.join(screenshotDir, `${day}-${i + 1}-${language}.png`);
-
-    // Screenshot individual card
-    await card.screenshot({
-      path: filepath,
+    // Load the page from Astro server
+    const targetUrl = `${url}daily/${dateString}?lang=${language}`;
+    console.log(`Loading: ${targetUrl}`);
+    await page.goto(targetUrl, {
+      waitUntil: "networkidle0",
     });
 
-    filepaths.push(filepath);
-    console.log(`Card ${i + 1} (${language}) screenshot saved to: ${filepath}`);
+    // Small delay to ensure all content is rendered
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    // Get all news cards
+    const cards = await page.$$(".news-card, .insight-card");
+    const filepaths = [];
+
+    for (let i = 0; i < cards.length; i++) {
+      const card = cards[i];
+      const filepath = path.join(screenshotDir, `${day}-${i + 1}-${language}.png`);
+
+      // Screenshot individual card
+      await card.screenshot({
+        path: filepath,
+      });
+
+      filepaths.push(filepath);
+      console.log(`Card ${i + 1} (${language}) screenshot saved to: ${filepath}`);
+    }
+
+    results[language] = filepaths;
   }
 
   await browser.close();
@@ -143,7 +154,7 @@ async function takeScreenshot(language = "zh", dateStr = null) {
   // Restore devToolbar config
   fs.writeFileSync(configPath, configContent, "utf-8");
 
-  return filepaths;
+  return results;
 }
 
 // Generate text content using textGenerator
@@ -307,9 +318,7 @@ program
   .action(async (options) => {
     try {
       const languages = options.language === "all" ? ["zh", "en"] : [options.language];
-      for (const lang of languages) {
-        await takeScreenshot(lang, options.date);
-      }
+      await takeScreenshots(languages, options.date);
     } catch (error) {
       console.error("Failed to take screenshot:", error);
       process.exit(1);
@@ -342,6 +351,10 @@ program
 
       const languages = options.language === "all" ? ["zh", "en"] : [options.language];
 
+      // Take screenshots for all languages at once (reuses server)
+      const screenshotResults = await takeScreenshots(languages, options.date);
+
+      // Send notifications for each language
       for (const lang of languages) {
         // Generate text content on-the-fly
         const textContent = await generateText(lang, options.date);
@@ -350,8 +363,7 @@ program
           continue;
         }
 
-        // Take screenshots
-        const imagePaths = await takeScreenshot(lang, options.date);
+        const imagePaths = screenshotResults[lang] || [];
         if (imagePaths.length === 0) {
           console.log(`Skipping ${lang} - no screenshots generated`);
           continue;
