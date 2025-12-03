@@ -302,11 +302,14 @@ program.name("zkpnewscards-cli").description("CLI for ZKP News Cards operations"
 program
   .command("screenshot")
   .description("Take a screenshot of the news card")
-  .option("-l, --language <language>", "Language to use (zh or en)", "zh")
+  .option("-l, --language <language>", "Language to use (zh, en, or all)", "all")
   .option("-d, --date <date>", "Date to screenshot (YYYY-MM-DD format)", null)
   .action(async (options) => {
     try {
-      await takeScreenshot(options.language, options.date);
+      const languages = options.language === "all" ? ["zh", "en"] : [options.language];
+      for (const lang of languages) {
+        await takeScreenshot(lang, options.date);
+      }
     } catch (error) {
       console.error("Failed to take screenshot:", error);
       process.exit(1);
@@ -316,7 +319,7 @@ program
 program
   .command("notify")
   .description("Send notification with screenshot and text content")
-  .option("-l, --language <language>", "Language to use (zh or en)", "zh")
+  .option("-l, --language <language>", "Language to use (zh, en, or all)", "all")
   .option("-d, --date <date>", "Date to notify (YYYY-MM-DD format)", null)
   .action(async (options) => {
     try {
@@ -337,26 +340,34 @@ program
         process.exit(1);
       }
 
-      // Generate text content on-the-fly
-      const textContent = await generateText(options.language, options.date);
-      if (!textContent) {
-        console.error(`Failed to generate text content for ${dateString}`);
-        process.exit(1);
-      }
+      const languages = options.language === "all" ? ["zh", "en"] : [options.language];
 
-      // Take screenshots
-      const imagePaths = await takeScreenshot(options.language, options.date);
-
-      if (WECOM_WEBHOOK_URL_ZH || WECOM_WEBHOOK_URL_EN) {
-        await sendWecomNotification(null, textContent, options.language);
-        for (const imagePath of imagePaths) {
-          await sendWecomNotification(imagePath, null, options.language);
+      for (const lang of languages) {
+        // Generate text content on-the-fly
+        const textContent = await generateText(lang, options.date);
+        if (!textContent) {
+          console.log(`Skipping ${lang} - no text content generated`);
+          continue;
         }
-      }
-      if (TELEGRAM_BOT_TOKEN && (TELEGRAM_CHAT_ID_ZH || TELEGRAM_CHAT_ID_EN)) {
-        await sendTelegramNotification(null, textContent, options.language);
-        for (const imagePath of imagePaths) {
-          await sendTelegramNotification(imagePath, null, options.language);
+
+        // Take screenshots
+        const imagePaths = await takeScreenshot(lang, options.date);
+        if (imagePaths.length === 0) {
+          console.log(`Skipping ${lang} - no screenshots generated`);
+          continue;
+        }
+
+        if (WECOM_WEBHOOK_URL_ZH || WECOM_WEBHOOK_URL_EN) {
+          await sendWecomNotification(null, textContent, lang);
+          for (const imagePath of imagePaths) {
+            await sendWecomNotification(imagePath, null, lang);
+          }
+        }
+        if (TELEGRAM_BOT_TOKEN && (TELEGRAM_CHAT_ID_ZH || TELEGRAM_CHAT_ID_EN)) {
+          await sendTelegramNotification(null, textContent, lang);
+          for (const imagePath of imagePaths) {
+            await sendTelegramNotification(imagePath, null, lang);
+          }
         }
       }
     } catch (error) {
