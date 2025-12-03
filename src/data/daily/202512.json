@@ -88,6 +88,9 @@
           "zkID",
           "privacy-ethereum"
         ],
+        "slogan": {
+          "zh": "【ZK论文】\nOpenAC：PSE 团队推出的无可信设置 ZK 身份方案，移动端证明只要 100ms"
+        },
         "summary": {
           "zh": "PSE的zkID团队在{{name}}论文中提出了基于ZKP的去中心化身份方案OpenAC，旨在增强用户隐私保护和身份验证安全性。",
           "en": "PSE's zkID team proposed OpenAC, a decentralized identity scheme based on ZKP, to enhance user privacy protection and identity authentication security."
