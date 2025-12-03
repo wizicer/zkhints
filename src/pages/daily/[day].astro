@@ -119,7 +119,7 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=480, height=640" />
+    <meta name="viewport" content="width=480" />
     <title>zkDaily - {dayKey}</title>
     <style define:vars={{ primaryColor: weekdayColor }}>
       :root {
@@ -144,7 +144,6 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
         margin: 0;
         padding: 0;
         width: 480px;
-        height: 640px;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
           sans-serif;
         background-color: #e3f2fd;
@@ -497,33 +496,16 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
         color: var(--primary-color);
       }
 
-      .note-item strong {
-        font-weight: 600;
-      }
-
-      .note-item p {
-        margin: 0;
-      }
-
-      .note-item ul {
-        padding-left: 16px;
-        margin: 4px 0;
-      }
-
-      .note-item li {
-        margin-bottom: 4px;
-      }
-
-      .note-item h1,
-      .note-item h2,
-      .note-item h3,
-      .note-item h4 {
+      .note-item :global(h1),
+      .note-item :global(h2),
+      .note-item :global(h3),
+      .note-item :global(h4) {
         margin: 8px 0 4px;
         font-size: 15px;
-        color: var(--primary-color);
+        color: var(--primaryColor);
       }
 
-      .note-item code {
+      .note-item :global(code) {
         background-color: #f5f5f5;
         padding: 2px 4px;
         border-radius: 3px;
@@ -531,13 +513,30 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
         font-size: 0.9em;
       }
 
-      .note-item a {
-        color: var(--primary-color);
+      .note-item :global(a) {
+        color: var(--link-color);
         text-decoration: none;
       }
 
-      .note-item a:hover {
+      .note-item :global(a:hover) {
         text-decoration: underline;
+      }
+
+      .note-item :global(strong) {
+        font-weight: 600;
+      }
+
+      .note-item :global(ul) {
+        padding-left: 16px;
+        margin: 4px 0;
+      }
+
+      .note-item :global(li) {
+        margin-bottom: 4px;
+      }
+
+      .note-item :global(p) {
+        margin: 0;
       }
 
       .card-footer {
@@ -597,7 +596,7 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
 
         .news-card {
           width: 480px;
-          height: 640px;
+          min-height: 640px;
           margin: 0;
           padding: 24px;
           box-sizing: border-box;
