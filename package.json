@@ -23,6 +23,7 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.16",
     "marked": "^15.0.9",
+    "qrcode": "^1.5.4",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0"
   }
