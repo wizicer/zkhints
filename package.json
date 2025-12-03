@@ -6,7 +6,10 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "today": "tsx src/scripts/cli.js today",
+    "screenshot": "tsx src/scripts/cli.js screenshot",
+    "notify": "tsx src/scripts/cli.js notify"
   },
   "dependencies": {
     "@astrojs/react": "4.4.2",
@@ -32,6 +35,7 @@
     "puppeteer": "^24.31.0",
     "qrcode": "^1.5.4",
     "rehype-katex": "^7.0.1",
-    "remark-math": "^6.0.0"
+    "remark-math": "^6.0.0",
+    "tsx": "^4.21.0"
   }
 }

@@ -23,24 +23,41 @@ const TELEGRAM_CHAT_ID_ZH = process.env.TELEGRAM_CHAT_ID_ZH || process.env.TELEG
 const TELEGRAM_CHAT_ID_EN = process.env.TELEGRAM_CHAT_ID_EN || process.env.TELEGRAM_CHAT_ID;
 
 // Date utility function
-function getDateParts() {
-  const today = new Date();
+function getDateParts(dateStr = null) {
+  const date = dateStr ? new Date(dateStr) : new Date();
   return {
-    year: String(today.getFullYear()),
-    month: String(today.getMonth() + 1).padStart(2, "0"),
-    day: String(today.getDate()).padStart(2, "0"),
+    year: String(date.getFullYear()),
+    month: String(date.getMonth() + 1).padStart(2, "0"),
+    day: String(date.getDate()).padStart(2, "0"),
   };
 }
 
-async function takeScreenshot(language = "zh") {
-  const { year, month, day } = getDateParts();
+// Load news data
+async function loadNewsData() {
+  const { newsData } = await import("../data/daily/index.ts");
+  return newsData;
+}
 
-  // Check if content exists for this language in today's data
-  const { newsData } = await import("./src/data.js");
-  const todayData = newsData.find((entry) => entry.date === `${year}-${month}-${day}`);
-  if (todayData && todayData.languages && !todayData.languages.includes(language)) {
+// Load text generator
+async function loadTextGenerator() {
+  const { generateTextContent } = await import("../pages/daily/textGenerator.ts");
+  return generateTextContent;
+}
+
+async function takeScreenshot(language = "zh", dateStr = null) {
+  const { year, month, day } = getDateParts(dateStr);
+  const dateString = `${year}-${month}-${day}`;
+
+  // Check if content exists for this language in the data
+  const newsData = await loadNewsData();
+  const dayData = newsData.find((entry) => entry.date === dateString);
+  if (!dayData) {
+    console.log(`No data found for ${dateString}`);
+    return [];
+  }
+  if (dayData.languages && !dayData.languages.includes(language)) {
     console.log(
-      `Skipping screenshot for ${language} as it's not listed in languages array for today`
+      `Skipping screenshot for ${language} as it's not listed in languages array for ${dateString}`
     );
     return [];
   }
@@ -50,14 +67,15 @@ async function takeScreenshot(language = "zh") {
     fs.mkdirSync(screenshotDir, { recursive: true });
   }
 
-  const htmlDir = path.join("./docs", language, year, month);
-  if (!fs.existsSync(htmlDir)) {
-    fs.mkdirSync(htmlDir, { recursive: true });
-  }
-
-  const htmlPath = path.join(htmlDir, `${day}.html`);
-
+  // Start Astro preview server
+  const { preview } = await import("astro");
   const puppeteer = (await import("puppeteer")).default;
+
+  const { server, url } = await preview({
+    configFile: "./astro.config.mjs",
+  });
+  console.log("Preview server started at:", url);
+
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
 
@@ -68,8 +86,10 @@ async function takeScreenshot(language = "zh") {
     deviceScaleFactor: 2,
   });
 
-  // Load the HTML file with language parameter
-  await page.goto(`file://${path.resolve(htmlPath)}?lang=${language}`, {
+  // Load the page from Astro server
+  const targetUrl = `${url}daily/${dateString}?lang=${language}`;
+  console.log(`Loading: ${targetUrl}`);
+  await page.goto(targetUrl, {
     waitUntil: "networkidle0",
   });
 
@@ -94,11 +114,29 @@ async function takeScreenshot(language = "zh") {
   }
 
   await browser.close();
+  await server.stop();
 
   return filepaths;
 }
 
-async function sendWecomNotification(imagePath, textPath, language = "zh") {
+// Generate text content using textGenerator
+async function generateText(language = "zh", dateStr = null) {
+  const { year, month, day } = getDateParts(dateStr);
+  const dateString = `${year}-${month}-${day}`;
+
+  const newsData = await loadNewsData();
+  const dayData = newsData.find((entry) => entry.date === dateString);
+
+  if (!dayData) {
+    console.log(`No data found for ${dateString}`);
+    return null;
+  }
+
+  const generateTextContent = await loadTextGenerator();
+  return generateTextContent([dayData], language, true, true);
+}
+
+async function sendWecomNotification(imagePath, textContent, language = "zh") {
   const webhookUrl = language === "zh" ? WECOM_WEBHOOK_URL_ZH : WECOM_WEBHOOK_URL_EN;
 
   if (!webhookUrl) {
@@ -122,8 +160,7 @@ async function sendWecomNotification(imagePath, textPath, language = "zh") {
       console.log(`Image sent successfully to Wecom (${language})`);
     }
 
-    if (textPath && fs.existsSync(textPath)) {
-      const textContent = fs.readFileSync(textPath, "utf-8");
+    if (textContent) {
       const textPayload = {
         msgtype: "markdown",
         markdown: {
@@ -142,7 +179,7 @@ async function sendWecomNotification(imagePath, textPath, language = "zh") {
   }
 }
 
-async function sendTelegramNotification(imagePath, textPath, language = "zh") {
+async function sendTelegramNotification(imagePath, textContent, language = "zh") {
   const chatIdConfig = language === "zh" ? TELEGRAM_CHAT_ID_ZH : TELEGRAM_CHAT_ID_EN;
 
   if (!TELEGRAM_BOT_TOKEN || !chatIdConfig) {
@@ -191,9 +228,7 @@ async function sendTelegramNotification(imagePath, textPath, language = "zh") {
       }
     }
 
-    if (textPath && fs.existsSync(textPath)) {
-      const textContent = fs.readFileSync(textPath, "utf-8");
-
+    if (textContent) {
       for (const { chatId, threadId } of chatConfigs) {
         await retrySend(async () => {
           const options = threadId ? { message_thread_id: threadId } : {};
@@ -241,9 +276,10 @@ program
   .command("screenshot")
   .description("Take a screenshot of the news card")
   .option("-l, --language <language>", "Language to use (zh or en)", "zh")
+  .option("-d, --date <date>", "Date to screenshot (YYYY-MM-DD format)", null)
   .action(async (options) => {
     try {
-      await takeScreenshot(options.language);
+      await takeScreenshot(options.language, options.date);
     } catch (error) {
       console.error("Failed to take screenshot:", error);
       process.exit(1);
@@ -254,20 +290,44 @@ program
   .command("notify")
   .description("Send notification with screenshot and text content")
   .option("-l, --language <language>", "Language to use (zh or en)", "zh")
+  .option("-d, --date <date>", "Date to notify (YYYY-MM-DD format)", null)
   .action(async (options) => {
     try {
-      const { year, month, day } = getDateParts();
-      const imagePaths = await takeScreenshot(options.language);
-      const textPath = path.join("./texts", options.language, year, month, `${day}.txt`);
+      const { year, month, day } = getDateParts(options.date);
+      const dateString = `${year}-${month}-${day}`;
+
+      // Check if data exists for the specified date
+      const newsData = await loadNewsData();
+      const todayData = newsData.find((entry) => entry.date === dateString);
+      console.log(
+        "Data for",
+        dateString + ":",
+        todayData ? JSON.stringify(todayData, null, 2) : "No data found"
+      );
+
+      if (!todayData) {
+        console.error(`No data found for ${dateString}. Aborting notification.`);
+        process.exit(1);
+      }
+
+      // Generate text content on-the-fly
+      const textContent = await generateText(options.language, options.date);
+      if (!textContent) {
+        console.error(`Failed to generate text content for ${dateString}`);
+        process.exit(1);
+      }
+
+      // Take screenshots
+      const imagePaths = await takeScreenshot(options.language, options.date);
 
       if (WECOM_WEBHOOK_URL_ZH || WECOM_WEBHOOK_URL_EN) {
-        await sendWecomNotification(null, textPath, options.language);
+        await sendWecomNotification(null, textContent, options.language);
         for (const imagePath of imagePaths) {
           await sendWecomNotification(imagePath, null, options.language);
         }
       }
       if (TELEGRAM_BOT_TOKEN && (TELEGRAM_CHAT_ID_ZH || TELEGRAM_CHAT_ID_EN)) {
-        await sendTelegramNotification(null, textPath, options.language);
+        await sendTelegramNotification(null, textContent, options.language);
         for (const imagePath of imagePaths) {
           await sendTelegramNotification(imagePath, null, options.language);
         }
@@ -286,7 +346,7 @@ program
       const { year, month, day } = getDateParts();
       const yearMonth = `${year}${month}`;
       const dateString = `${year}-${month}-${day}`;
-      const dataFilePath = path.join(__dirname, "src", "data", `${yearMonth}.json`);
+      const dataFilePath = path.join(__dirname, "..", "data", "daily", `${yearMonth}.json`);
 
       // Check if the file exists
       if (!fs.existsSync(dataFilePath)) {
