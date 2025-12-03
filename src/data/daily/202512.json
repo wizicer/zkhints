@@ -76,5 +76,41 @@
         }
       }
     ]
+  },
+  {
+    "date": "2025-12-03",
+    "projects": [
+      {
+        "name": "OpenAC: Open Design for Transparent and Lightweight Anonymous Credentials",
+        "url": "https://github.com/privacy-ethereum/zkID/blob/main/paper/zkID.pdf",
+        "type": "论文",
+        "tags": [
+          "zkID",
+          "privacy-ethereum"
+        ],
+        "summary": {
+          "zh": "PSE的zkID团队在{{name}}论文中提出了基于ZKP的去中心化身份方案OpenAC，旨在增强用户隐私保护和身份验证安全性。",
+          "en": "PSE's zkID team proposed OpenAC, a decentralized identity scheme based on ZKP, to enhance user privacy protection and identity authentication security."
+        },
+        "notes": {
+          "zh": [
+            "OpenAC 在不改 Issuer 的前提下提供匿名与选择性披露。",
+            "Prepare–Show 结构将重计算离线化以降低在线成本。",
+            "Hyrax 承诺用于隐藏、绑定与重随机化避免链接。",
+            "基于透明 zk-Spartan，无需 trusted setup。",
+            "Show 证明移动端约 100ms、40KB。",
+            "兼容 SD-JWT/mDL 与 EUDI ARF，具 PQ 升级空间。"
+          ],
+          "en": [
+            "OpenAC adds anonymity and selective disclosure without changing issuers.",
+            "A Prepare–Show split moves heavy work offline to cut online cost.",
+            "Hyrax commitments enable hiding, binding, and unlinkability via re-randomization.",
+            "Built on transparent zk-Spartan with no trusted setup.",
+            "Show proofs run ~100 ms and ~40 KB on mobile.",
+            "Compatible with SD-JWT/mDL and EUDI ARF, with room for PQ upgrades."
+          ]
+        }
+      }
+    ]
   }
 ]
