@@ -115,5 +115,45 @@
         }
       }
     ]
+  },
+  {
+    "date": "2025-12-04",
+    "projects": [
+      {
+        "name": "Speeding Up Sumcheck: An In-Depth Walkthrough of Our Implementation",
+        "url": "https://blog.lambdaclass.com/speeding-up-sumcheck-an-in-depth-walkthrough-of-our-implementation/",
+        "type": "博客",
+        "tags": [
+          "LambdaClass",
+          "Optimization",
+          "BDDT",
+          "SVO"
+        ],
+        "slogan": {
+          "zh": "【ZK博客】\nSumcheck 还能再快？LambdaClass 用 BDDT 的 SVO + Eq-Poly 做到显著提速"
+        },
+        "summary": {
+          "zh": "@class_lambda 团队在博客{{name}}中分享了Sumcheck协议的优化实现，详细介绍了基于BDDT论文的SVO和Eq-Poly优化策略及其在Whir-P3代码库中的应用。",
+          "en": "@class_lambda team shared the optimization implementation of the Sumcheck protocol in blog{{name}}, introducing the SVO and Eq-Poly optimization strategies based on the BDDT paper and their application in the Whir-P3 code library."
+        },
+        "notes": {
+          "zh": [
+            "BDDT优化通过延迟扩展域运算，将昂贵的𝔩𝔩操作转换为更多基础域𝔰𝔰操作，提升性能",
+            "SVO利用拉格朗日插值替代多项式展开，降低预计算成本从指数级到多项式级",
+            "Eq-Poly优化基于Gruen方法，通过拆分和减少𝔩𝔩乘法处理eq多项式",
+            "实现采用两阶段策略：前3轮使用SVO，后续轮次应用Algorithm 5",
+            "优化针对基础域如Baby Bear，扩展域运算成本显著高于基础域",
+            "代码实现强调与理论概念的一对一映射，便于理解核心逻辑"
+          ],
+          "en": [
+            "BDDT optimization delays extension field operations, converting expensive 𝔩𝔩 operations to more base field 𝔰𝔰 operations, improving performance",
+            "SVO uses Lagrange interpolation to replace polynomial expansion, reducing pre-computation cost from exponential to polynomial",
+            "Eq-Poly optimization based on Gruen method, splitting and reducing 𝔩𝔩 multiplications for eq polynomials",
+            "Two-stage strategy: first 3 rounds use SVO, subsequent rounds apply Algorithm 5",
+            "Optimization is targeted at base field such as Baby Bear, with significant higher extension field operation cost"
+          ]
+        }
+      }
+    ]
   }
 ]
