@@ -709,19 +709,14 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
                     {project.notes && maxNotesLength > 0 && (
                       <div class="project-notes">
                         <h4 class="notes-title">Notes</h4>
-                        <ul class="notes-list">
-                          {Array.from({ length: maxNotesLength }).map((_, noteIndex) => (
-                            <li class="note-item twitter-content">
-                              <span
-                                data-lang-en
-                                set:html={parseMarkdown(notesEn[noteIndex] || "")}
-                              />
-                              <span
-                                data-lang-zh
-                                class="hidden"
-                                set:html={parseMarkdown(notesZh[noteIndex] || "")}
-                              />
-                            </li>
+                        <ul class="notes-list" data-lang-en>
+                          {notesEn.map((note) => (
+                            <li class="note-item twitter-content" set:html={parseMarkdown(note)} />
+                          ))}
+                        </ul>
+                        <ul class="notes-list hidden" data-lang-zh>
+                          {notesZh.map((note) => (
+                            <li class="note-item twitter-content" set:html={parseMarkdown(note)} />
                           ))}
                         </ul>
                       </div>
