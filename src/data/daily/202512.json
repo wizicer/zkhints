@@ -155,5 +155,44 @@
         }
       }
     ]
+  },
+  {
+    "date": "2025-12-07",
+    "projects": [
+      {
+        "name": "Small-field hash-based SNARGs are less sound than conjectured",
+        "url": "https://eprint.iacr.org/2025/2197",
+        "type": "论文",
+        "tags": [
+          "Giacomo Fenzi",
+          "Proximity gaps"
+        ],
+        "slogan": {
+          "zh": "【ZK论文】\n安全性被高估？小域 hash-based SNARG 暴露通用攻击思路"
+        },
+        "summary": {
+          "zh": "Fenzi和Sanso在{{name}}论文中分析了小域哈希SNARG的安全性，提出通用攻击方法，指出其实际安全性低于预期，影响现有部署系统。",
+          "en": "Fenzi and Sanso analyzed the security of small-field hash-based SNARGs, proposing a general attack method, indicating that their actual security is lower than expected, affecting existing deployment systems."
+        },
+        "notes": {
+          "zh": [
+            "小域哈希SNARG的安全性依赖线性码的距离保持误差和列表大小两个组合参数",
+            "现有部署系统在容量机制下操作，但安全性可能被高估",
+            "研究提出通用攻击方法，其成功概率取决于列表大小参数",
+            "对扩展码在小基域上的分析显示组合下界会导致强攻击",
+            "这挑战了接近间隙猜想的乐观假设，影响实际部署系统",
+            "研究为Ethereum Proximity Prize等安全评估提供重要参考"
+          ],
+          "en": [
+            "The security of small-field hash-based SNARGs relies on the combination of proximity error and list size parameters of linear codes.",
+            "Existing deployment systems operate under capacity mechanism, but security may be overestimated.",
+            "The research proposes a general attack method, and the success probability depends on the list size parameter.",
+            "Analysis of extension codes in small fields shows that combining lower bounds leads to strong attacks.",
+            "This challenges the optimistic assumption of the near-gap conjecture, affecting actual deployment systems.",
+            "The research provides important references for Ethereum Proximity Prize and security evaluation."
+          ]
+        }
+      }
+    ]
   }
 ]
