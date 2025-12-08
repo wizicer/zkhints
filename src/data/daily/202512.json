@@ -194,5 +194,44 @@
         }
       }
     ]
+  },
+  {
+    "date": "2025-12-08",
+    "projects": [
+      {
+        "name": "Quantum computing and blockchains: Matching urgency to actual threats",
+        "url": "https://a16zcrypto.com/posts/article/quantum-computing-misconceptions-realities-blockchains-planning-migrations/",
+        "type": "博客",
+        "tags": [
+          "Justin Thaler",
+          "Post-Quantum Cryptography"
+        ],
+        "slogan": {
+          "zh": "【ZK博客】\n后量子并非一刀切：Justin Thaler 重新梳理区块链的真实威胁"
+        },
+        "summary": {
+          "zh": "Justin Thaler在{{name}}博文中分析了量子计算对区块链的威胁，澄清了加密和签名在HNDL攻击下的不同风险，并讨论了zkSNARKs的量子安全性。",
+          "en": "Justin Thaler analyzed the threat of quantum computing to blockchains in {{name}} blog, clarifying the different risks of encryption and signatures under HNDL attacks, and discussing the quantum security of zkSNARKs."
+        },
+        "notes": {
+          "zh": [
+            "HNDL攻击使后量子加密部署紧迫，但签名无此风险，迁移可延迟",
+            "zkSNARKs的零知识属性后量子安全，无HNDL攻击威胁",
+            "量子计算机短期内无法破解加密，CRQC需数十年才可能实现",
+            "后量子签名性能开销大，实施风险高，需审慎迁移",
+            "企业应优先解决更紧迫的安全问题，如代码漏洞",
+            "混合加密方案（如ML-KEM+X25519）可平衡安全与性能"
+          ],
+          "en": [
+            "HNDL attacks make post-quantum encryption deployment urgent, but signatures are not affected, migration can be delayed",
+            "zkSNARKs' zero-knowledge properties are post-quantum secure, with no HNDL attack threat",
+            "Quantum computers cannot break encryption in the short term, CRQC may take decades to achieve",
+            "Post-quantum signatures have high performance overhead and implementation risks, requiring careful migration",
+            "Enterprises should prioritize solving more urgent security issues, such as code vulnerabilities",
+            "Hybrid encryption schemes (e.g., ML-KEM+X25519) can balance security and performance"
+          ]
+        }
+      }
+    ]
   }
 ]
