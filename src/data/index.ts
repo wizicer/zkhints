@@ -120,7 +120,6 @@ export const sections: Section[] = [
       {
         id: "paper",
         title: "Research Papers",
-        construction: true,
         description: "Current research papers in zero-knowledge proofs",
         image: research,
         sourceFile: "src/data/list/paper.ts",
