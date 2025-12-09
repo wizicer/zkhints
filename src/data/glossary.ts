@@ -1,4 +1,10 @@
-import type { Reference } from "../components/References.astro";
+export interface Reference {
+  id?: string;
+  title: string;
+  authors: string | string[];
+  year: string;
+  link: string;
+}
 
 export interface GlossaryTerm {
   term: string;
