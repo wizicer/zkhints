@@ -775,25 +775,113 @@
             "id": "dsl",
             "title": "Domain-Specific Languages",
             "emoji": "📝",
-            "links": []
+            "links": [
+              {
+                "title": "From Evaluation to Enhancement: LLMs for ZK Code Generation",
+                "description": "ZK-Eval framework and ZK-Coder for evaluating and improving LLM capabilities in Circom and Noir code generation.",
+                "link": "https://arxiv.org/abs/2509.11708",
+                "author": "Zhantong Xue et al.",
+                "year": "2025"
+              },
+              {
+                "title": "zkSDK: Streamlining ZKP Development",
+                "description": "A modular framework with Presto language for automated trace-driven ZK-backend selection.",
+                "link": "https://arxiv.org/abs/2507.05294v1",
+                "author": "William Law",
+                "year": "2025"
+              }
+            ]
           },
           {
             "id": "primitives",
             "title": "SNARK Primitives",
             "emoji": "🧱",
-            "links": []
+            "links": [
+              {
+                "title": "Anchored Merkle Range Proof for Pedersen Commitments",
+                "description": "A range proof mechanism using Merkle trees avoiding ZK verification and pairings.",
+                "link": "https://eprint.iacr.org/2025/1811",
+                "author": "Leona Hioki",
+                "year": "2025"
+              }
+            ]
           },
           {
             "id": "privacy",
             "title": "Privacy Applications",
             "emoji": "🔒",
-            "links": []
+            "links": [
+              {
+                "title": "zk-Cookies: Continuous Anonymous Authentication",
+                "description": "A CAA scheme using zkSNARKs for behavior signal analysis preventing credential sharing.",
+                "link": "https://eprint.iacr.org/2025/1938",
+                "author": "Alexander Frolov et al.",
+                "year": "2025"
+              },
+              {
+                "title": "Cryptographic Personas: Responsible Pseudonyms",
+                "description": "Unlinkable anonymous identities with revocable publishing via zk-promises.",
+                "link": "https://eprint.iacr.org/2025/1969",
+                "author": "Rachel Thomas et al.",
+                "year": "2025"
+              },
+              {
+                "title": "Scalable Anonymous Payments via Evolving Nullifiers",
+                "description": "Technique allowing validators to permanently trim nullifiers without affecting privacy.",
+                "link": "https://eprint.iacr.org/2025/2031",
+                "author": "Sean Bowe, Ian Miers",
+                "year": "2025"
+              },
+              {
+                "title": "Vega: Low-Latency ZKP over Existing Credentials",
+                "description": "Folding reuse and lookup-centric arithmetization for low-latency ZKP.",
+                "link": "https://eprint.iacr.org/2025/2094",
+                "author": "Darya Kaviani, Srinath Setty",
+                "year": "2025"
+              },
+              {
+                "title": "OpenAC: Transparent Anonymous Credentials",
+                "description": "Decentralized identity with ~100ms mobile proving, no trusted setup.",
+                "link": "https://github.com/privacy-ethereum/zkID/blob/main/paper/zkID.pdf",
+                "author": "PSE zkID Team",
+                "year": "2025"
+              },
+              {
+                "title": "Shielded CSV: Private Client-Side Validation",
+                "description": "PCD-based efficient privacy transactions requiring only 64 bytes on blockchain.",
+                "link": "https://eprint.iacr.org/2025/068",
+                "author": "Jonas Nick et al.",
+                "year": "2025"
+              }
+            ]
           },
           {
             "id": "scaling",
             "title": "Scaling Applications",
             "emoji": "📈",
-            "links": []
+            "links": [
+              {
+                "title": "PlasmaFold: Efficient L2 with Client-Side Proving",
+                "description": "A novel L2 design using hybrid architecture for efficiency and scalability.",
+                "link": "https://eprint.iacr.org/2025/1300",
+                "author": "Pierre Daix-Moreux, Chengru Zhang",
+                "year": "2025"
+              },
+              {
+                "title": "Optimizing Backend Verification in zk-Rollups",
+                "description": "Polynomial aggregation and scalar decomposition reducing on-chain verification costs.",
+                "link": "https://eprint.iacr.org/2025/1390",
+                "author": "Mehdi Beriane et al.",
+                "year": "2025"
+              },
+              {
+                "title": "Data Matching in Unequal Worlds for Smart Contracts",
+                "description": "Hybrid compression optimizing Groth16 proof costs using different hash functions.",
+                "link": "https://eprint.iacr.org/2025/1500",
+                "author": "Dmitry Khovratovich et al.",
+                "year": "2025"
+              }
+            ]
           }
         ],
         "links": []
@@ -808,19 +896,169 @@
             "id": "proving-schemes",
             "title": "Proving Schemes",
             "emoji": "🔍",
-            "links": []
+            "links": [
+              {
+                "title": "Hobbit: Space-Efficient zkSNARK with Optimal Prover Time",
+                "description": "A space-efficient zkSNARK achieving O(|C|) prover time with transparency and post-quantum security.",
+                "link": "https://eprint.iacr.org/2025/1214",
+                "author": "Christodoulos Pappas, Dimitrios Papadopoulos",
+                "year": "2025"
+              },
+              {
+                "title": "Linear Prover IOPs in Log Star Rounds",
+                "description": "Efficient linear prover IOP for Boolean circuits achieving O(log*(S)) rounds.",
+                "link": "https://eprint.iacr.org/2025/1269",
+                "author": "Noor Athamnah et al.",
+                "year": "2025"
+              },
+              {
+                "title": "Gödel in Cryptography: Effectively ZKP for NP",
+                "description": "Interaction-free, setup-free ZKP with perfect soundness breaking classic impossibility results.",
+                "link": "https://eprint.iacr.org/2025/1296",
+                "author": "Rahul Ilango",
+                "year": "2025"
+              },
+              {
+                "title": "A Fiat-Shamir Transformation From Duplex Sponges",
+                "description": "Fiat-Shamir transformations using duplex sponge paradigms to minimize permutation calls.",
+                "link": "https://eprint.iacr.org/2025/536",
+                "author": "Alessandro Chiesa et al.",
+                "year": "2025"
+              },
+              {
+                "title": "Revisiting the IPA-sumcheck connection",
+                "description": "Improved multilinear polynomial commitment with simplified Halo-style accumulation.",
+                "link": "https://eprint.iacr.org/2025/1325",
+                "author": "Liam Eagen, Ariel Gabizon",
+                "year": "2025"
+              },
+              {
+                "title": "Dynark: Making Groth16 Dynamic",
+                "description": "Dynamic zkSNARK updating proofs in sublinear time when witness changes.",
+                "link": "https://eprint.iacr.org/2025/1897",
+                "author": "Tianyu Zhang et al.",
+                "year": "2025"
+              },
+              {
+                "title": "Symphony: Scalable SNARKs from Lattice-Based Folding",
+                "description": "Lattice-based high-arity folding SNARK with post-quantum security.",
+                "link": "https://eprint.iacr.org/2025/1905",
+                "author": "Binyi Chen et al.",
+                "year": "2025"
+              },
+              {
+                "title": "Pairing-Based SNARGs with Two Group Elements",
+                "description": "Publicly verifiable SNARG with minimum proof size of two group elements.",
+                "link": "https://eprint.iacr.org/2025/2160",
+                "author": "Gal Arnon et al.",
+                "year": "2025"
+              },
+              {
+                "title": "Zinc: Succinct Arguments from IOPs of Proximity to Integers",
+                "description": "Hash-based succinct argument reducing arithmetization overheads.",
+                "link": "https://eprint.iacr.org/2025/316",
+                "author": "Albert Garreta et al.",
+                "year": "2025"
+              }
+            ]
           },
           {
             "id": "optimization",
             "title": "Proof Optimization Techniques",
             "emoji": "⚡",
-            "links": []
+            "links": [
+              {
+                "title": "Time-Space Trade-Offs for Sumcheck",
+                "description": "Time-space trade-offs for sumcheck protocol provers in the stream model.",
+                "link": "https://eprint.iacr.org/2025/1473",
+                "author": "Anubhav Baweja, Alessandro Chiesa et al.",
+                "year": "2025"
+              },
+              {
+                "title": "FRIttata: Distributed Proof Generation of FRI-based SNARKs",
+                "description": "First transparent and post-quantum secure horizontally scalable SNARK system.",
+                "link": "https://eprint.iacr.org/2025/1285",
+                "author": "Hua Xu et al.",
+                "year": "2025"
+              },
+              {
+                "title": "Collaborative zkSNARKs with Sublinear Prover Time",
+                "description": "Collaborative zkSNARK with O(C/n log C/n) prover time and O(1) proof size.",
+                "link": "https://eprint.iacr.org/2025/1388",
+                "author": "Zhiyong Fang et al.",
+                "year": "2025"
+              },
+              {
+                "title": "Single-Server Private Outsourcing of zk-SNARKs",
+                "description": "EMSM primitive reducing client computation by 20x while protecting witness privacy.",
+                "link": "https://eprint.iacr.org/2025/2113",
+                "author": "Kasra Abbaszadeh et al.",
+                "year": "2025"
+              },
+              {
+                "title": "Sum-check Is All You Need",
+                "description": "Survey on sum-check protocol applications in fast SNARK design.",
+                "link": "https://eprint.iacr.org/2025/2041",
+                "author": "Justin Thaler",
+                "year": "2025"
+              },
+              {
+                "title": "Linear-time Permutation and Multiset SNARKs",
+                "description": "Linear-time logarithmically-sound permutation SNARKs via linear-algebraic perspective.",
+                "link": "https://eprint.iacr.org/2025/1967",
+                "author": "Bing-Jyue Chen et al.",
+                "year": "2025"
+              },
+              {
+                "title": "TensorSwitch: Nearly Optimal Polynomial Commitments",
+                "description": "Hash-based multilinear PCS with O(log log n) proof size.",
+                "link": "https://eprint.iacr.org/2025/2065",
+                "author": "Benedikt Bünz et al.",
+                "year": "2025"
+              },
+              {
+                "title": "Sum-check protocol for approximate computations",
+                "description": "Sum-check extension supporting adjustable error parameters for approximate computations.",
+                "link": "https://eprint.iacr.org/2025/2152",
+                "author": "Dor Bitan et al.",
+                "year": "2025"
+              }
+            ]
           },
           {
             "id": "zkvm",
-            "title": "zkVM",
+            "title": "zkVM & zkML",
             "emoji": "💻",
-            "links": []
+            "links": [
+              {
+                "title": "Interstellar: GKR-based Low Prover Cost Folding",
+                "description": "GKR protocol-based folding scheme reducing vector commitment size per fold step.",
+                "link": "https://eprint.iacr.org/2025/1294",
+                "author": "Jieyi Long",
+                "year": "2025"
+              },
+              {
+                "title": "FairZK: Prove ML Fairness in Zero-Knowledge",
+                "description": "Scalable system verifying machine learning model fairness through ZK technology.",
+                "link": "https://ieeexplore.ieee.org/document/11023511",
+                "author": "Tianyu Zhang et al.",
+                "year": "2025"
+              },
+              {
+                "title": "CoBBL: Dynamic Constraint Generation for SNARKs",
+                "description": "Dynamic constraint generation improving proof generation efficiency and flexibility.",
+                "link": "https://ieeexplore.ieee.org/document/11023281",
+                "author": "Kunming Jiang et al.",
+                "year": "2025"
+              },
+              {
+                "title": "Scalable zkSNARKs for Matrix Computations",
+                "description": "Generic framework for verifiable deep learning with linear proving time.",
+                "link": "https://eprint.iacr.org/2025/1646",
+                "author": "Mingshu Cong et al.",
+                "year": "2025"
+              }
+            ]
           },
           {
             "id": "primitives",
@@ -829,9 +1067,37 @@
             "links": [
               {
                 "title": "Linear-Time Accumulation Schemes",
-                "description": "WARP: The first linear-time accumulator with logarithmic verifier time, based on hash, supporting unlimited accumulation depth with post-quantum security.",
+                "description": "WARP: The first linear-time accumulator with logarithmic verifier time.",
                 "link": "https://eprint.iacr.org/2025/753",
                 "author": "Benedikt Bünz, Alessandro Chiesa",
+                "year": "2025"
+              },
+              {
+                "title": "SoK: Lookup Table Arguments",
+                "description": "Unified framework covering standard, projection, index, vector and decomposable lookups.",
+                "link": "https://eprint.iacr.org/2025/1876",
+                "author": "Hossein Hafezi et al.",
+                "year": "2025"
+              },
+              {
+                "title": "Poseidon2b: Binary Field Version of Poseidon2",
+                "description": "Hash function for binary extension fields compatible with Binius proof systems.",
+                "link": "https://eprint.iacr.org/2025/1893",
+                "author": "Lorenzo Grassi et al.",
+                "year": "2025"
+              },
+              {
+                "title": "Constraint-Friendly Map-to-Elliptic-Curve-Group Relations",
+                "description": "Constraint-friendly mapping achieving 23x constraint reduction and 50-100x proof speedup.",
+                "link": "https://eprint.iacr.org/2025/1503",
+                "author": "Jens Groth et al.",
+                "year": "2025"
+              },
+              {
+                "title": "Data Availability Sampling with Repair",
+                "description": "DAS repair framework based on locally repairable codes optimizing storage overhead.",
+                "link": "https://eprint.iacr.org/2025/1414",
+                "author": "Dan Boneh et al.",
                 "year": "2025"
               }
             ]
@@ -855,7 +1121,22 @@
             "id": "algebra",
             "title": "Algebraic Foundations",
             "emoji": "📐",
-            "links": []
+            "links": [
+              {
+                "title": "On Reed-Solomon Proximity Gaps Conjectures",
+                "description": "Disproved multiple RS proximity gap conjectures affecting FRI and DEEP-FRI security.",
+                "link": "https://eprint.iacr.org/2025/2046",
+                "author": "Elizabeth Crites, Giacomo Stewart",
+                "year": "2025"
+              },
+              {
+                "title": "Small-field hash-based SNARGs are less sound than conjectured",
+                "description": "General attack method showing small-field hash SNARGs have lower security than expected.",
+                "link": "https://eprint.iacr.org/2025/2197",
+                "author": "Giacomo Fenzi, Antonio Sanso",
+                "year": "2025"
+              }
+            ]
           },
           {
             "id": "io",
@@ -878,6 +1159,34 @@
                 ]
               }
             ]
+          },
+          {
+            "id": "mpc-fhe",
+            "title": "MPC & FHE",
+            "emoji": "🔐",
+            "links": [
+              {
+                "title": "Preprocessing for Life: Dishonest-Majority MPC",
+                "description": "Practical MPC preprocessing model with one-time setup for efficient online computation.",
+                "link": "https://eprint.iacr.org/2025/787",
+                "author": "Elette Boyle et al.",
+                "year": "2025"
+              },
+              {
+                "title": "High-Throughput UC Threshold FHE Decryption",
+                "description": "Efficient threshold FHE decryption with 20,000x online throughput improvement.",
+                "link": "https://eprint.iacr.org/2025/1781",
+                "author": "Guy Zyskind et al.",
+                "year": "2025"
+              },
+              {
+                "title": "Glock: Garbled Locks for Bitcoin",
+                "description": "Optimistic smart contract protocol using garbled circuits for fraud proofs.",
+                "link": "https://eprint.iacr.org/2025/1485",
+                "author": "Liam Eagen et al.",
+                "year": "2025"
+              }
+            ]
           }
         ],
         "links": []
@@ -892,7 +1201,15 @@
             "id": "survey",
             "title": "Survey & SoK",
             "emoji": "📋",
-            "links": []
+            "links": [
+              {
+                "title": "Zero-Knowledge Proof Frameworks: A Systematic Survey",
+                "description": "Survey of 25 ZKP frameworks including performance testing and Docker support.",
+                "link": "https://arxiv.org/abs/2502.07063v3",
+                "author": "Nojan Sheybani et al.",
+                "year": "2025"
+              }
+            ]
           },
           {
             "id": "benchmark",
