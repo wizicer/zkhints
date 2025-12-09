@@ -852,6 +852,41 @@
                 "link": "https://eprint.iacr.org/2025/068",
                 "author": "Jonas Nick et al.",
                 "year": "2025"
+              },
+              {
+                "title": "zkVoting: Coercion-Resistant E2E Verifiable E-Voting",
+                "description": "ZKP-based voting system with revocable commitment scheme ensuring anonymity and verifiability.",
+                "link": "https://eprint.iacr.org/2024/1003",
+                "author": "Park et al.",
+                "year": "2024"
+              },
+              {
+                "title": "Verifiable and Private Vote-by-Mail",
+                "description": "Remote voting system with ZKP ensuring ballot verifiability and privacy against collusion.",
+                "link": "https://eprint.iacr.org/2024/926",
+                "author": "Devillez et al.",
+                "year": "2024"
+              },
+              {
+                "title": "zk-Promises: Anonymous Credentials with Banning and Reputation",
+                "description": "Framework for private state updates and maintenance without revealing personal information.",
+                "link": "https://eprint.iacr.org/2024/1260",
+                "author": "Shih et al.",
+                "year": "2024"
+              },
+              {
+                "title": "Anonymous Credentials from ECDSA",
+                "description": "ECDSA-based anonymous credential scheme with efficient zk proofs for digital identity.",
+                "link": "https://eprint.iacr.org/2024/2010",
+                "author": "Frigo et al.",
+                "year": "2024"
+              },
+              {
+                "title": "Siniel: Distributed Privacy-Preserving zkSNARK",
+                "description": "Privacy delegation framework allowing proof generation without revealing witness.",
+                "link": "https://eprint.iacr.org/2024/1803",
+                "author": "Yang et al.",
+                "year": "2024"
               }
             ]
           },
@@ -880,6 +915,34 @@
                 "link": "https://eprint.iacr.org/2025/1500",
                 "author": "Dmitry Khovratovich et al.",
                 "year": "2025"
+              },
+              {
+                "title": "Towards a Formal Foundation for Blockchain Rollups",
+                "description": "Formal analysis and design of Rollup L2 using Alloy specification language.",
+                "link": "https://arxiv.org/abs/2406.16219",
+                "author": "Chaliasos et al.",
+                "year": "2024"
+              },
+              {
+                "title": "Analyzing and Benchmarking ZK-Rollups",
+                "description": "Deep theoretical and empirical study of ZK-Rollups focusing on ZK-EVM trade-offs.",
+                "link": "https://eprint.iacr.org/2024/889",
+                "author": "Matter Labs, Chaliasos et al.",
+                "year": "2024"
+              },
+              {
+                "title": "FLIP-and-prove R1CS",
+                "description": "New FLIP folding scheme reducing SNARK proof generation time and communication complexity.",
+                "link": "https://eprint.iacr.org/2024/1364",
+                "author": "Nitulescu et al.",
+                "year": "2024"
+              },
+              {
+                "title": "BitVM2: Bridging Bitcoin to Second Layers",
+                "description": "Method for arbitrary program execution on Bitcoin with SNARK proofs in three transactions.",
+                "link": "https://bitvm.org/bitvm_bridge.pdf",
+                "author": "Robin Linus et al.",
+                "year": "2024"
               }
             ]
           }
@@ -959,6 +1022,111 @@
                 "link": "https://eprint.iacr.org/2025/316",
                 "author": "Albert Garreta et al.",
                 "year": "2025"
+              },
+              {
+                "title": "Polymath: Groth16 Is Not The Limit",
+                "description": "New zk-SNARK with proof length ~50% smaller than Groth16, KZG-compatible with single trapdoor.",
+                "link": "https://eprint.iacr.org/2024/916",
+                "author": "Helger Lipmaa",
+                "year": "2024"
+              },
+              {
+                "title": "Polylogarithmic Proofs for Multilinears over Binary Towers",
+                "description": "FRI-Binius combining binary tower fields with FRI for significantly smaller proofs.",
+                "link": "https://eprint.iacr.org/2024/504",
+                "author": "Ulvetanna",
+                "year": "2024"
+              },
+              {
+                "title": "Lasso and Jolt",
+                "description": "Lookup-based proof system and zkVM achieving 6x faster than RISC Zero.",
+                "link": "https://link.springer.com/chapter/10.1007/978-3-031-58751-1_7",
+                "author": "Srinath Setty, Justin Thaler et al.",
+                "year": "2024"
+              },
+              {
+                "title": "Bulletproofs++: Next Generation Confidential Transactions",
+                "description": "More efficient ZKP system with smaller proofs via reciprocal set membership arguments.",
+                "link": "https://link.springer.com/chapter/10.1007/978-3-031-58740-5_9",
+                "author": "Liam Eagen et al.",
+                "year": "2024"
+              },
+              {
+                "title": "Hekaton: Horizontally-Scalable zkSNARKs via Proof Aggregation",
+                "description": "Distributed prover framework achieving 2^35 gate circuit proofs within one hour.",
+                "link": "https://eprint.iacr.org/2024/1208",
+                "author": "Rosenberg et al.",
+                "year": "2024"
+              },
+              {
+                "title": "Jolt-b: Recursion Friendly Jolt with Basefold Commitment",
+                "description": "Optimized zkVM with Basefold commitment reducing verification to O(log²N).",
+                "link": "https://eprint.iacr.org/2024/1131",
+                "author": "Su et al.",
+                "year": "2024"
+              },
+              {
+                "title": "WHIR: Reed-Solomon Proximity Testing with Super-Fast Verification",
+                "description": "IOP protocol with verification in hundreds of microseconds, far faster than existing FRI.",
+                "link": "https://eprint.iacr.org/2024/1586",
+                "author": "Arnon et al.",
+                "year": "2024"
+              },
+              {
+                "title": "Blaze: Fast SNARKs from Interleaved RAA Codes",
+                "description": "Multilinear polynomial commitment with better efficiency via code switching and RAA codes.",
+                "link": "https://eprint.iacr.org/2024/1609",
+                "author": "Brehm et al.",
+                "year": "2024"
+              },
+              {
+                "title": "NeutronNova: Folding Everything that Reduces to Zero-Check",
+                "description": "New zero-check folding scheme via two-round protocol with sum-check.",
+                "link": "https://eprint.iacr.org/2024/1606",
+                "author": "Kothapalli et al.",
+                "year": "2024"
+              },
+              {
+                "title": "Nebula: Efficient Read-Write Memory for Folding Schemes",
+                "description": "Optimized IVC read-write memory and circuit design for faster proof generation.",
+                "link": "https://eprint.iacr.org/2024/1605",
+                "author": "Arun et al.",
+                "year": "2024"
+              },
+              {
+                "title": "Mova: Nova Folding Without Committing to Error Terms",
+                "description": "New R1CS folding scheme without error/cross-term commitments, improving proof speed.",
+                "link": "https://eprint.iacr.org/2024/1220",
+                "author": "Dimitriou et al.",
+                "year": "2024"
+              },
+              {
+                "title": "Garuda and Pari: Faster and Smaller SNARKs",
+                "description": "SNARK schemes with custom gates and smaller proofs than Polymath via KZG conversion.",
+                "link": "https://eprint.iacr.org/2024/1245",
+                "author": "Dellepere et al.",
+                "year": "2024"
+              },
+              {
+                "title": "Cirrus: Performant and Accountable Distributed SNARK",
+                "description": "First accountable distributed SNARK with linear computation complexity.",
+                "link": "https://eprint.iacr.org/2024/1873",
+                "author": "Wang et al.",
+                "year": "2024"
+              },
+              {
+                "title": "Lova: Lattice-Based Folding Scheme from Unstructured Lattices",
+                "description": "Lattice-based folding for IVC without recursive SNARKs dependency.",
+                "link": "https://eprint.iacr.org/2024/1964",
+                "author": "Pham et al.",
+                "year": "2024"
+              },
+              {
+                "title": "Scribe: Low-memory SNARKs via Read-Write Streaming",
+                "description": "Low-memory SNARK using disk storage for efficient large statement proving.",
+                "link": "https://eprint.iacr.org/2024/1970",
+                "author": "Baweja et al.",
+                "year": "2024"
               }
             ]
           },
@@ -1022,6 +1190,27 @@
                 "link": "https://eprint.iacr.org/2025/2152",
                 "author": "Dor Bitan et al.",
                 "year": "2025"
+              },
+              {
+                "title": "A Time-Space Tradeoff for the Sumcheck Prover",
+                "description": "New prover algorithm optimizing time and space efficiency for multilinear polynomials.",
+                "link": "https://eprint.iacr.org/2024/524",
+                "author": "Alessandro Chiesa et al.",
+                "year": "2024"
+              },
+              {
+                "title": "More Optimizations to Sum-Check Proving",
+                "description": "Significant reduction in computation costs related to equality factors in sumcheck.",
+                "link": "https://eprint.iacr.org/2024/1210",
+                "author": "Justin Thaler et al.",
+                "year": "2024"
+              },
+              {
+                "title": "Elastic MSM: Fast GPU Preprocessing for Multi-Scalar Multiplication",
+                "description": "GPU preprocessing technique improving MSM algorithm efficiency for ZKP systems.",
+                "link": "https://eprint.iacr.org/2024/057",
+                "author": "Zhu et al.",
+                "year": "2024"
               }
             ]
           },
@@ -1057,6 +1246,20 @@
                 "link": "https://eprint.iacr.org/2025/1646",
                 "author": "Mingshu Cong et al.",
                 "year": "2025"
+              },
+              {
+                "title": "zkLLM: Zero Knowledge Proofs for Large Language Models",
+                "description": "Verifying LLM output authenticity using sumcheck, proving 1.3B parameter models in 15 minutes.",
+                "link": "https://arxiv.org/abs/2404.16109",
+                "author": "Sun et al.",
+                "year": "2024"
+              },
+              {
+                "title": "VIMz: Verifiable Image Manipulation using Folding-based zkSNARKs",
+                "description": "Image transformation verification supporting various operations with folding zkSNARK.",
+                "link": "https://eprint.iacr.org/2024/1063",
+                "author": "Dziembowski et al.",
+                "year": "2024"
               }
             ]
           },
@@ -1208,6 +1411,41 @@
                 "link": "https://arxiv.org/abs/2502.07063v3",
                 "author": "Nojan Sheybani et al.",
                 "year": "2025"
+              },
+              {
+                "title": "SoK: Programmable Privacy in Distributed Systems",
+                "description": "Systematic survey of privacy protocols in blockchain with design recommendations.",
+                "link": "https://eprint.iacr.org/2024/982",
+                "author": "Benarroch et al.",
+                "year": "2024"
+              },
+              {
+                "title": "A Survey on Code-Based Cryptography",
+                "description": "Comprehensive analysis of code-based cryptography for post-quantum security.",
+                "link": "https://arxiv.org/abs/2201.07119",
+                "author": "Weger et al.",
+                "year": "2024"
+              },
+              {
+                "title": "A Survey on the Applications of Zero-Knowledge Proofs",
+                "description": "Overview of ZKP applications across multiple domains.",
+                "link": "https://arxiv.org/abs/2408.00243",
+                "author": "Lavin et al.",
+                "year": "2024"
+              },
+              {
+                "title": "Building Cryptographic Proofs from Hash Functions",
+                "description": "Comprehensive book on SNARGs construction using ideal hash functions, featuring STARK.",
+                "link": "https://snargsbook.org/",
+                "author": "Alessandro Chiesa et al.",
+                "year": "2024"
+              },
+              {
+                "title": "零知识证明递归与复合技术研究综述",
+                "description": "Systematic study of ZKP recursion and composition techniques in Chinese.",
+                "link": "http://cjc.ict.ac.cn/online/onlinepaper/zzy-2024928120157.pdf",
+                "author": "Zhang Zongyang et al.",
+                "year": "2024"
               }
             ]
           },
@@ -1221,7 +1459,43 @@
             "id": "security",
             "title": "Security",
             "emoji": "🛡️",
-            "links": []
+            "links": [
+              {
+                "title": "How (Not) to Simulate PLONK",
+                "description": "Discovery and fix of PLONK security vulnerability, proving statistical zero-knowledge.",
+                "link": "https://eprint.iacr.org/2024/848",
+                "author": "Sefranek et al.",
+                "year": "2024"
+              },
+              {
+                "title": "On the Concrete Security of Non-interactive FRI",
+                "description": "Security analysis showing FRI parameters have 21-63 bits less security than assumed.",
+                "link": "https://eprint.iacr.org/2024/1161",
+                "author": "Block et al.",
+                "year": "2024"
+              },
+              {
+                "title": "Cache Timing Leakages in Zero-Knowledge Protocols",
+                "description": "Analysis of ZKP system vulnerabilities to CPU cache attacks with defense measures.",
+                "link": "https://eprint.iacr.org/2024/1390",
+                "author": "Mukherjee et al.",
+                "year": "2024"
+              },
+              {
+                "title": "fAmulet: Finding Finalization Failure Bugs in Polygon zkRollup",
+                "description": "Tool detecting finalization failure vulnerabilities, found 12 zero-day bugs.",
+                "link": "https://arxiv.org/abs/2410.12210",
+                "author": "Li et al.",
+                "year": "2024"
+              },
+              {
+                "title": "Push-Button Verification for BitVM Implementations",
+                "description": "Formal verification tool for BitVM with register-based DSL and CEGIS process.",
+                "link": "https://eprint.iacr.org/2024/1768",
+                "author": "Lie et al.",
+                "year": "2024"
+              }
+            ]
           }
         ],
         "links": []
