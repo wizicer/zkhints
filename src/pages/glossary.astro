@@ -2,6 +2,9 @@
 import Layout from "../layouts/Layout.astro";
 import { glossaryCategories, references } from "../data/glossary";
 import References from "../components/References.astro";
+
+// Helper to create URL-friendly anchor from term
+const toAnchor = (term: string) => term.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 ---
 
 <Layout id="glossary">
@@ -48,59 +51,59 @@ import References from "../components/References.astro";
     <!-- Glossary Categories -->
     {
       glossaryCategories.map((category) => (
-        <div class="mb-8 category-section" id={category.id}>
-          <div class="flex items-center gap-2 mb-4 pb-2 border-b-2 border-indigo-200">
+        <section class="mb-10 category-section" id={category.id}>
+          <div class="flex items-center gap-2 mb-5 pb-2 border-b border-gray-200">
             <span class="text-xl">{category.emoji}</span>
             <h2 class="text-lg font-bold text-gray-800">{category.title}</h2>
-            <span class="text-xs text-gray-500">({category.terms.length} terms)</span>
           </div>
 
-          <div class="overflow-x-auto">
-            <table class="min-w-full bg-white rounded-lg shadow-sm border border-gray-100">
-              <thead>
-                <tr class="bg-gray-50 text-gray-600 text-xs uppercase">
-                  <th class="py-2 px-4 text-left font-semibold w-48">Term</th>
-                  <th class="py-2 px-4 text-left font-semibold">Definition</th>
-                  <th class="py-2 px-4 text-left font-semibold w-40">Related</th>
-                </tr>
-              </thead>
-              <tbody class="text-sm">
-                {category.terms.map((term, idx) => (
-                  <tr
-                    class={`term-row border-b border-gray-100 hover:bg-indigo-50/30 ${idx % 2 === 0 ? "bg-white" : "bg-gray-50/50"}`}
-                    data-term={term.term.toLowerCase()}
-                    data-abbreviation={term.abbreviation?.toLowerCase() || ""}
-                    data-definition={term.definition.toLowerCase()}
-                  >
-                    <td class="py-3 px-4 align-top">
-                      <div class="font-semibold text-gray-800">{term.term}</div>
-                      {term.abbreviation && (
-                        <div class="text-xs text-indigo-600 font-mono mt-0.5">{term.abbreviation}</div>
-                      )}
-                    </td>
-                    <td class="py-3 px-4 text-gray-700 leading-relaxed">{term.definition}</td>
-                    <td class="py-3 px-4 align-top">
-                      {term.relatedTerms && term.relatedTerms.length > 0 && (
-                        <div class="flex flex-wrap gap-1">
-                          {term.relatedTerms.map((related) => (
-                            <span class="related-term text-xs bg-gray-100 text-gray-600 px-1.5 py-0.5 rounded cursor-pointer hover:bg-indigo-100 hover:text-indigo-700" data-search={related}>
+          <dl class="space-y-4">
+            {category.terms.map((term) => {
+              const anchor = toAnchor(term.term);
+              return (
+                <div
+                  class="term-entry group"
+                  id={anchor}
+                  data-term={term.term.toLowerCase()}
+                  data-abbreviation={term.abbreviation?.toLowerCase() || ""}
+                  data-definition={term.definition.toLowerCase()}
+                >
+                  <dt class="flex items-baseline gap-2 mb-1">
+                    <a href={`#${anchor}`} class="anchor-link text-gray-300 hover:text-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity">#</a>
+                    <span class="text-base font-semibold text-gray-900">{term.term}</span>
+                    {term.abbreviation && (
+                      <span class="text-sm text-indigo-600 font-mono">({term.abbreviation})</span>
+                    )}
+                  </dt>
+                  <dd class="pl-5 text-gray-700 text-sm leading-relaxed">
+                    {term.definition}
+                    {term.relatedTerms && term.relatedTerms.length > 0 && (
+                      <span class="inline-flex flex-wrap items-center gap-1 ml-2">
+                        <span class="text-gray-400">→</span>
+                        {term.relatedTerms.map((related, i) => (
+                          <>
+                            <a
+                              href={`#${toAnchor(related)}`}
+                              class="text-indigo-600 hover:text-indigo-800 hover:underline"
+                            >
                               {related}
-                            </span>
-                          ))}
-                        </div>
-                      )}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
+                            </a>
+                            {i < term.relatedTerms!.length - 1 && <span class="text-gray-300">·</span>}
+                          </>
+                        ))}
+                      </span>
+                    )}
+                  </dd>
+                </div>
+              );
+            })}
+          </dl>
+        </section>
       ))
     }
 
     <!-- References -->
-    <References references={references} />
+    {references && references.length > 0 && <References references={references} />}
   </div>
 </Layout>
 
@@ -113,7 +116,19 @@ import References from "../components/References.astro";
     scroll-margin-top: 2rem;
   }
 
-  .term-row.hidden-by-search {
+  .term-entry:target {
+    background: linear-gradient(90deg, #eef2ff 0%, transparent 100%);
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    margin: -0.5rem;
+  }
+
+  .term-entry:target .anchor-link {
+    opacity: 1;
+    color: #6366f1;
+  }
+
+  .term-entry.hidden-by-search {
     display: none;
   }
 
@@ -121,38 +136,27 @@ import References from "../components/References.astro";
     display: none;
   }
 
-  .term-row.search-match {
-    background-color: #eef2ff !important;
+  .term-entry.search-match {
+    background: linear-gradient(90deg, #fef3c7 0%, transparent 100%);
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    margin: -0.5rem;
   }
 </style>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    // Related term search
-    const relatedTerms = document.querySelectorAll(".related-term");
-    relatedTerms.forEach((el) => {
-      el.addEventListener("click", () => {
-        const searchTerm = el.getAttribute("data-search");
-        const searchInput = document.getElementById("search-input") as HTMLInputElement;
-        if (searchInput && searchTerm) {
-          searchInput.value = searchTerm;
-          searchInput.dispatchEvent(new Event("input"));
-          searchInput.scrollIntoView({ behavior: "smooth", block: "center" });
-        }
-      });
-    });
-
     // Search functionality
     const searchInput = document.getElementById("search-input") as HTMLInputElement;
     if (searchInput) {
       searchInput.addEventListener("input", () => {
         const query = searchInput.value.toLowerCase().trim();
         const categories = document.querySelectorAll(".category-section");
-        const termRows = document.querySelectorAll(".term-row");
+        const termEntries = document.querySelectorAll(".term-entry");
 
         if (query === "") {
-          termRows.forEach((row) => {
-            row.classList.remove("hidden-by-search", "search-match");
+          termEntries.forEach((entry) => {
+            entry.classList.remove("hidden-by-search", "search-match");
           });
           categories.forEach((cat) => {
             cat.classList.remove("hidden-by-search");
@@ -161,25 +165,25 @@ import References from "../components/References.astro";
         }
 
         categories.forEach((category) => {
-          const rows = category.querySelectorAll(".term-row");
-          let hasVisibleRow = false;
+          const entries = category.querySelectorAll(".term-entry");
+          let hasVisibleEntry = false;
 
-          rows.forEach((row) => {
-            const term = row.getAttribute("data-term") || "";
-            const abbr = row.getAttribute("data-abbreviation") || "";
-            const def = row.getAttribute("data-definition") || "";
+          entries.forEach((entry) => {
+            const term = entry.getAttribute("data-term") || "";
+            const abbr = entry.getAttribute("data-abbreviation") || "";
+            const def = entry.getAttribute("data-definition") || "";
 
             if (term.includes(query) || abbr.includes(query) || def.includes(query)) {
-              row.classList.remove("hidden-by-search");
-              row.classList.add("search-match");
-              hasVisibleRow = true;
+              entry.classList.remove("hidden-by-search");
+              entry.classList.add("search-match");
+              hasVisibleEntry = true;
             } else {
-              row.classList.add("hidden-by-search");
-              row.classList.remove("search-match");
+              entry.classList.add("hidden-by-search");
+              entry.classList.remove("search-match");
             }
           });
 
-          if (hasVisibleRow) {
+          if (hasVisibleEntry) {
             category.classList.remove("hidden-by-search");
           } else {
             category.classList.add("hidden-by-search");

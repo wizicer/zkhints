@@ -399,22 +399,22 @@ export const glossaryCategories: GlossaryCategory[] = [
 ];
 
 export const references: Reference[] = [
-  {
-    title: "Proofs, Arguments, and Zero-Knowledge",
-    authors: "Justin Thaler",
-    year: "2022",
-    link: "https://people.cs.georgetown.edu/jthaler/ProofsArgsAndZK.pdf",
-  },
-  {
-    title: "The MoonMath Manual to zk-SNARKs",
-    authors: "Least Authority",
-    year: "2023",
-    link: "https://leastauthority.com/community-matters/moonmath-manual/",
-  },
-  {
-    title: "ZKP Science",
-    authors: "Various Contributors",
-    year: "2024",
-    link: "https://zkp.science/",
-  },
+  // {
+  //   title: "Proofs, Arguments, and Zero-Knowledge",
+  //   authors: "Justin Thaler",
+  //   year: "2022",
+  //   link: "https://people.cs.georgetown.edu/jthaler/ProofsArgsAndZK.pdf",
+  // },
+  // {
+  //   title: "The MoonMath Manual to zk-SNARKs",
+  //   authors: "Least Authority",
+  //   year: "2023",
+  //   link: "https://leastauthority.com/community-matters/moonmath-manual/",
+  // },
+  // {
+  //   title: "ZKP Science",
+  //   authors: "Various Contributors",
+  //   year: "2024",
+  //   link: "https://zkp.science/",
+  // },
 ];
