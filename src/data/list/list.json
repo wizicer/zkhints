@@ -956,9 +956,79 @@
         "emoji": "⚙️",
         "subsections": [
           {
-            "id": "proving-schemes",
-            "title": "Proving Schemes",
-            "emoji": "🔍",
+            "id": "folding-schemes",
+            "title": "Folding & IVC",
+            "emoji": "📂",
+            "links": [
+              {
+                "title": "Symphony: Scalable SNARKs from Lattice-Based Folding",
+                "description": "Lattice-based high-arity folding SNARK with post-quantum security.",
+                "link": "https://eprint.iacr.org/2025/1905",
+                "author": "Binyi Chen et al.",
+                "year": "2025"
+              },
+              {
+                "title": "NeutronNova: Folding Everything that Reduces to Zero-Check",
+                "description": "New zero-check folding scheme via two-round protocol with sum-check.",
+                "link": "https://eprint.iacr.org/2024/1606",
+                "author": "Kothapalli et al.",
+                "year": "2024"
+              },
+              {
+                "title": "Nebula: Efficient Read-Write Memory for Folding Schemes",
+                "description": "Optimized IVC read-write memory and circuit design for faster proof generation.",
+                "link": "https://eprint.iacr.org/2024/1605",
+                "author": "Arun et al.",
+                "year": "2024"
+              },
+              {
+                "title": "Mova: Nova Folding Without Committing to Error Terms",
+                "description": "New R1CS folding scheme without error/cross-term commitments, improving proof speed.",
+                "link": "https://eprint.iacr.org/2024/1220",
+                "author": "Dimitriou et al.",
+                "year": "2024"
+              },
+              {
+                "title": "Lova: Lattice-Based Folding Scheme from Unstructured Lattices",
+                "description": "Lattice-based folding for IVC without recursive SNARKs dependency.",
+                "link": "https://eprint.iacr.org/2024/1964",
+                "author": "Pham et al.",
+                "year": "2024"
+              },
+              {
+                "title": "MicroNova: Folding-based arguments with efficient (on-chain) verification",
+                "description": "Folding-based recursive argument for incremental computation with ~2.2M gas verification on Ethereum.",
+                "link": "https://eprint.iacr.org/2024/2099",
+                "author": "Zhao et al.",
+                "year": "2025"
+              },
+              {
+                "title": "LatticeFold+: Faster, Simpler, Shorter Lattice-Based Folding",
+                "description": "Improved lattice-based folding with efficient algebraic range proofs and dual commitments.",
+                "link": "https://eprint.iacr.org/2025/247",
+                "author": "Dan Boneh, Charles Chen",
+                "year": "2025"
+              },
+              {
+                "title": "Neo: Lattice-based folding scheme for CCS over small fields",
+                "description": "Lattice-based folding for CCS adapting HyperNova to lattice setting.",
+                "link": "https://eprint.iacr.org/2025/294",
+                "author": "Wilson Nguyen, Srinath Setty",
+                "year": "2025"
+              },
+              {
+                "title": "FICS and FACS: Fast IOPPs and Accumulation via Code-Switching",
+                "description": "Fast IOPPs and accumulation schemes using code-switching techniques.",
+                "link": "https://eprint.iacr.org/2025/737",
+                "author": "Authors",
+                "year": "2025"
+              }
+            ]
+          },
+          {
+            "id": "snark-constructions",
+            "title": "SNARK Constructions",
+            "emoji": "🏗️",
             "links": [
               {
                 "title": "Hobbit: Space-Efficient zkSNARK with Optimal Prover Time",
@@ -967,6 +1037,132 @@
                 "author": "Christodoulos Pappas, Dimitrios Papadopoulos",
                 "year": "2025"
               },
+              {
+                "title": "Dynark: Making Groth16 Dynamic",
+                "description": "Dynamic zkSNARK updating proofs in sublinear time when witness changes.",
+                "link": "https://eprint.iacr.org/2025/1897",
+                "author": "Tianyu Zhang et al.",
+                "year": "2025"
+              },
+              {
+                "title": "Pairing-Based SNARGs with Two Group Elements",
+                "description": "Publicly verifiable SNARG with minimum proof size of two group elements.",
+                "link": "https://eprint.iacr.org/2025/2160",
+                "author": "Gal Arnon et al.",
+                "year": "2025"
+              },
+              {
+                "title": "Polymath: Groth16 Is Not The Limit",
+                "description": "New zk-SNARK with proof length ~50% smaller than Groth16, KZG-compatible with single trapdoor.",
+                "link": "https://eprint.iacr.org/2024/916",
+                "author": "Helger Lipmaa",
+                "year": "2024"
+              },
+              {
+                "title": "Bulletproofs++: Next Generation Confidential Transactions",
+                "description": "More efficient ZKP system with smaller proofs via reciprocal set membership arguments.",
+                "link": "https://link.springer.com/chapter/10.1007/978-3-031-58740-5_9",
+                "author": "Liam Eagen et al.",
+                "year": "2024"
+              },
+              {
+                "title": "Garuda and Pari: Faster and Smaller SNARKs",
+                "description": "SNARK schemes with custom gates and smaller proofs than Polymath via KZG conversion.",
+                "link": "https://eprint.iacr.org/2024/1245",
+                "author": "Dellepere et al.",
+                "year": "2024"
+              },
+              {
+                "title": "Hekaton: Horizontally-Scalable zkSNARKs via Proof Aggregation",
+                "description": "Distributed prover framework achieving 2^35 gate circuit proofs within one hour.",
+                "link": "https://eprint.iacr.org/2024/1208",
+                "author": "Rosenberg et al.",
+                "year": "2024"
+              },
+              {
+                "title": "Cirrus: Performant and Accountable Distributed SNARK",
+                "description": "First accountable distributed SNARK with linear computation complexity.",
+                "link": "https://eprint.iacr.org/2024/1873",
+                "author": "Wang et al.",
+                "year": "2024"
+              },
+              {
+                "title": "Scribe: Low-memory SNARKs via Read-Write Streaming",
+                "description": "Low-memory SNARK using disk storage for efficient large statement proving.",
+                "link": "https://eprint.iacr.org/2024/1970",
+                "author": "Baweja et al.",
+                "year": "2024"
+              },
+              {
+                "title": "Morgana: A Laconic Circuit Builder",
+                "description": "SNARK with circuit key size proportional to circuit description, not constraints.",
+                "link": "https://eprint.iacr.org/2025/65",
+                "author": "Soukhanov et al.",
+                "year": "2025"
+              },
+              {
+                "title": "Extending Groth16 for Disjunctive Statements",
+                "description": "CompGroth16 variant supporting disjunctive statement proofs with improved expressiveness.",
+                "link": "https://eprint.iacr.org/2025/028",
+                "author": "Zhu et al.",
+                "year": "2025"
+              },
+              {
+                "title": "Bulletproofs for R1CS: Bridging Completeness-Soundness Gap",
+                "description": "Extended Bulletproofs for R1CS with honest-verifier zero-knowledge property.",
+                "link": "https://eprint.iacr.org/2025/327",
+                "author": "Gil Segev",
+                "year": "2025"
+              },
+              {
+                "title": "Split Prover Zero-Knowledge SNARKs",
+                "description": "Split prover architecture for efficient zkSNARK proof generation.",
+                "link": "https://eprint.iacr.org/2025/373",
+                "author": "Authors",
+                "year": "2025"
+              },
+              {
+                "title": "Soloist: Distributed SNARKs for R1CS",
+                "description": "Distributed SNARK system for Rank-One Constraint Systems.",
+                "link": "https://eprint.iacr.org/2025/557",
+                "author": "Authors",
+                "year": "2025"
+              },
+              {
+                "title": "Tangram: Encryption-friendly SNARK framework",
+                "description": "SNARK framework under Pedersen committed engines for encryption-friendly proofs.",
+                "link": "https://eprint.iacr.org/2025/540",
+                "author": "Authors",
+                "year": "2025"
+              },
+              {
+                "title": "Efficient SNARKs for Boolean Circuits via Sumcheck",
+                "description": "Boolean circuit SNARKs using sumcheck over tower fields.",
+                "link": "https://eprint.iacr.org/2025/594",
+                "author": "Authors",
+                "year": "2025"
+              },
+              {
+                "title": "SubLogarithmic Linear Time SNARKs",
+                "description": "SNARKs from compressed sum-check with sublogarithmic linear time.",
+                "link": "https://eprint.iacr.org/2025/908",
+                "author": "Authors",
+                "year": "2025"
+              },
+              {
+                "title": "Khatam: Reducing Communication Complexity of Code-Based SNARKs",
+                "description": "Method reducing code-based SNARK communication using correlated agreement.",
+                "link": "https://eprint.iacr.org/2024/1843",
+                "author": "Hadas Zeilberger",
+                "year": "2025"
+              }
+            ]
+          },
+          {
+            "id": "iop-other",
+            "title": "IOP & Other Techniques",
+            "emoji": "🔍",
+            "links": [
               {
                 "title": "Linear Prover IOPs in Log Star Rounds",
                 "description": "Efficient linear prover IOP for Boolean circuits achieving O(log*(S)) rounds.",
@@ -996,39 +1192,11 @@
                 "year": "2025"
               },
               {
-                "title": "Dynark: Making Groth16 Dynamic",
-                "description": "Dynamic zkSNARK updating proofs in sublinear time when witness changes.",
-                "link": "https://eprint.iacr.org/2025/1897",
-                "author": "Tianyu Zhang et al.",
-                "year": "2025"
-              },
-              {
-                "title": "Symphony: Scalable SNARKs from Lattice-Based Folding",
-                "description": "Lattice-based high-arity folding SNARK with post-quantum security.",
-                "link": "https://eprint.iacr.org/2025/1905",
-                "author": "Binyi Chen et al.",
-                "year": "2025"
-              },
-              {
-                "title": "Pairing-Based SNARGs with Two Group Elements",
-                "description": "Publicly verifiable SNARG with minimum proof size of two group elements.",
-                "link": "https://eprint.iacr.org/2025/2160",
-                "author": "Gal Arnon et al.",
-                "year": "2025"
-              },
-              {
                 "title": "Zinc: Succinct Arguments from IOPs of Proximity to Integers",
                 "description": "Hash-based succinct argument reducing arithmetization overheads.",
                 "link": "https://eprint.iacr.org/2025/316",
                 "author": "Albert Garreta et al.",
                 "year": "2025"
-              },
-              {
-                "title": "Polymath: Groth16 Is Not The Limit",
-                "description": "New zk-SNARK with proof length ~50% smaller than Groth16, KZG-compatible with single trapdoor.",
-                "link": "https://eprint.iacr.org/2024/916",
-                "author": "Helger Lipmaa",
-                "year": "2024"
               },
               {
                 "title": "Polylogarithmic Proofs for Multilinears over Binary Towers",
@@ -1042,20 +1210,6 @@
                 "description": "Lookup-based proof system and zkVM achieving 6x faster than RISC Zero.",
                 "link": "https://link.springer.com/chapter/10.1007/978-3-031-58751-1_7",
                 "author": "Srinath Setty, Justin Thaler et al.",
-                "year": "2024"
-              },
-              {
-                "title": "Bulletproofs++: Next Generation Confidential Transactions",
-                "description": "More efficient ZKP system with smaller proofs via reciprocal set membership arguments.",
-                "link": "https://link.springer.com/chapter/10.1007/978-3-031-58740-5_9",
-                "author": "Liam Eagen et al.",
-                "year": "2024"
-              },
-              {
-                "title": "Hekaton: Horizontally-Scalable zkSNARKs via Proof Aggregation",
-                "description": "Distributed prover framework achieving 2^35 gate circuit proofs within one hour.",
-                "link": "https://eprint.iacr.org/2024/1208",
-                "author": "Rosenberg et al.",
                 "year": "2024"
               },
               {
@@ -1077,55 +1231,6 @@
                 "description": "Multilinear polynomial commitment with better efficiency via code switching and RAA codes.",
                 "link": "https://eprint.iacr.org/2024/1609",
                 "author": "Brehm et al.",
-                "year": "2024"
-              },
-              {
-                "title": "NeutronNova: Folding Everything that Reduces to Zero-Check",
-                "description": "New zero-check folding scheme via two-round protocol with sum-check.",
-                "link": "https://eprint.iacr.org/2024/1606",
-                "author": "Kothapalli et al.",
-                "year": "2024"
-              },
-              {
-                "title": "Nebula: Efficient Read-Write Memory for Folding Schemes",
-                "description": "Optimized IVC read-write memory and circuit design for faster proof generation.",
-                "link": "https://eprint.iacr.org/2024/1605",
-                "author": "Arun et al.",
-                "year": "2024"
-              },
-              {
-                "title": "Mova: Nova Folding Without Committing to Error Terms",
-                "description": "New R1CS folding scheme without error/cross-term commitments, improving proof speed.",
-                "link": "https://eprint.iacr.org/2024/1220",
-                "author": "Dimitriou et al.",
-                "year": "2024"
-              },
-              {
-                "title": "Garuda and Pari: Faster and Smaller SNARKs",
-                "description": "SNARK schemes with custom gates and smaller proofs than Polymath via KZG conversion.",
-                "link": "https://eprint.iacr.org/2024/1245",
-                "author": "Dellepere et al.",
-                "year": "2024"
-              },
-              {
-                "title": "Cirrus: Performant and Accountable Distributed SNARK",
-                "description": "First accountable distributed SNARK with linear computation complexity.",
-                "link": "https://eprint.iacr.org/2024/1873",
-                "author": "Wang et al.",
-                "year": "2024"
-              },
-              {
-                "title": "Lova: Lattice-Based Folding Scheme from Unstructured Lattices",
-                "description": "Lattice-based folding for IVC without recursive SNARKs dependency.",
-                "link": "https://eprint.iacr.org/2024/1964",
-                "author": "Pham et al.",
-                "year": "2024"
-              },
-              {
-                "title": "Scribe: Low-memory SNARKs via Read-Write Streaming",
-                "description": "Low-memory SNARK using disk storage for efficient large statement proving.",
-                "link": "https://eprint.iacr.org/2024/1970",
-                "author": "Baweja et al.",
                 "year": "2024"
               }
             ]
