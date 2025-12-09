@@ -194,9 +194,9 @@ export const sections: Section[] = [
       {
         id: "glossary",
         title: "Terminology Glossary",
-        construction: true,
         description: "Common terms and definitions in zero-knowledge proofs",
         image: glossary,
+        sourceFile: "src/data/glossary.ts",
       },
     ],
   },
