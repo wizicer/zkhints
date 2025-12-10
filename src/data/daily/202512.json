@@ -233,5 +233,44 @@
         }
       }
     ]
+  },
+  {
+    "date": "2025-12-10",
+    "projects": [
+      {
+        "name": "Hash-based Signature Schemes for Bitcoin",
+        "url": "https://eprint.iacr.org/2025/2203",
+        "type": "论文",
+        "tags": [
+          "Mikhail Kudinov",
+          "SPHINCS+"
+        ],
+        "slogan": {
+          "zh": "【ZK论文】\n比特币能用后量子签名了吗？这篇论文把 SPHINCS+ 做得更小更快"
+        },
+        "summary": {
+          "zh": "Kudinov等人在{{name}}论文中全面分析了基于哈希的签名方案在比特币中的应用，通过优化参数和限制签名数量，显著提升了SPHINCS+等方案的性能。",
+          "en": "Kudinov et al. comprehensively analyzed the application of hash-based signature schemes to Bitcoin in the paper {{name}}, significantly improving the performance of schemes like SPHINCS+ by optimizing parameters and limiting the number of signatures."
+        },
+        "notes": {
+          "zh": [
+            "基于哈希的签名方案依赖哈希函数假设，与比特币现有设计兼容，是潜在的后量子替代方案",
+            "通过参数优化和限制每公钥签名数量，显著减小了签名大小，提升了效率",
+            "应用了SPHINCS+C、TL-WOTS-TW、PORS+FP等最新优化技术，优于标准化的SPHINCS+（SLH-DSA）",
+            "讨论了密钥派生、多重签名和阈值签名等应用的局限性",
+            "提供了公开脚本以确保研究的可复现性和透明度",
+            "专注于比特币特定需求，为后量子密码学在区块链中的部署提供实用指导"
+          ],
+          "en": [
+            "Hash-based signature schemes depend on hash function assumptions, compatible with Bitcoin's existing design, making them a potential post-quantum alternative",
+            "By optimizing parameters and limiting the number of signatures per public key, significantly reducing signature size and improving efficiency",
+            "Applied SPHINCS+C, TL-WOTS-TW, PORS+FP, etc., outperforming standardized SPHINCS+ (SLH-DSA)",
+            "Discussed limitations in practical applications such as key derivation, multi-signature, and threshold signature",
+            "Provided public scripts to ensure the reproducibility and transparency of the research",
+            "Focused on Bitcoin, providing practical guidance for post-quantum cryptography deployment in blockchain"
+          ]
+        }
+      }
+    ]
   }
 ]
