@@ -272,5 +272,45 @@
         }
       }
     ]
+  },
+  {
+    "date": "2025-12-11",
+    "projects": [
+      {
+        "name": "Bionetta: Efficient Client-Side Zero-Knowledge Machine Learning Proving",
+        "url": "https://arxiv.org/abs/2510.06784",
+        "type": "论文",
+        "tags": [
+          "Dmytro Zakharov",
+          "UltraGroth",
+          "zkML"
+        ],
+        "slogan": {
+          "zh": "【ZK论文】\nBionetta 让 zkML 真正能在手机上跑起来：基于 UltraGroth 的高性能框架"
+        },
+        "summary": {
+          "zh": "Zakharov等人在{{name}}论文中提出了一种基于UltraGroth的zkML框架Bionetta，显著提升了自定义神经网络的证明效率，支持在移动设备上运行客户端证明。",
+          "en": "Zakharov et al. proposed a zkML framework Bionetta based on UltraGroth, significantly improving the proof efficiency of custom neural networks and supporting client-side proofs on mobile devices."
+        },
+        "notes": {
+          "zh": [
+            "Bionetta基于UltraGroth协议，优化了zkML的证明性能",
+            "支持自定义神经网络在移动设备上进行客户端证明",
+            "证明时间相比EZKL、Lagrange的deep-prove等工具显著缩短",
+            "可部署于原生EVM智能合约，无需过大证明规模和验证开销",
+            "一次性预处理步骤（电路编译、可信设置）成本增加",
+            "适用于需要隐私保护的客户端机器学习应用场景"
+          ],
+          "en": [
+            "Bionetta based on UltraGroth protocol, optimizing zkML proof performance",
+            "Supports custom neural networks on mobile devices for client-side proofs",
+            "Significantly improves proof time compared to EZKL, Lagrange's deep-prove, etc.",
+            "Deployable on native EVM smart contracts, without large proof scale and verification overhead",
+            "One-time preprocessing steps (circuit compilation, trusted setup) cost increase",
+            "Suitable for client-side machine learning applications requiring privacy protection"
+          ]
+        }
+      }
+    ]
   }
 ]
