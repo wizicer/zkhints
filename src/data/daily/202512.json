@@ -312,5 +312,45 @@
         }
       }
     ]
+  },
+  {
+    "date": "2025-12-14",
+    "projects": [
+      {
+        "name": "ZeroOS: A Universal Modular Library OS for zkVMs",
+        "url": "https://eprint.iacr.org/2025/2234",
+        "type": "论文",
+        "tags": [
+          "Guangxian Zou",
+          "LayerZero Labs",
+          "zkVM"
+        ],
+        "slogan": {
+          "zh": "【ZK论文】\nzkVM 也需要 OS？ZeroOS 用模块化 Library OS 解决版本地狱"
+        },
+        "summary": {
+          "zh": "Zou等人在{{name}}论文中提出了一种用于zkVM的通用模块化库操作系统ZeroOS，允许vApp开发者仅链接所需Linux ABI子集，减少可信计算基并统一zkVM生态系统。",
+          "en": "Zou et al. propose ZeroOS, a universal modular library OS for zkVMs, allowing vApp developers to link only the required Linux ABI subset, reducing trusted computing base and unifying the zkVM ecosystem."
+        },
+        "notes": {
+          "zh": [
+            "ZeroOS解决了zkVM中现代程序依赖操作系统和libc的兼容性问题",
+            "传统方法通过特定语言运行时分支创建unikernels，导致版本地狱和过大可信计算基",
+            "ZeroOS允许vApp开发者仅链接所需Linux ABI子集，减少攻击面",
+            "任何zkVM团队可通过编写ZeroOS引导程序轻松集成，降低维护负担",
+            "该方案统一zkVM生态系统，整合开发和审计资源",
+            "ZeroOS已开源，支持现成工具链，提升vApp开发效率"
+          ],
+          "en": [
+            "ZeroOS addresses compatibility issues in zkVMs where modern programs depend on operating systems and libc.",
+            "Traditional approaches create unikernels through language runtime branches, causing version hell and large trusted computing bases.",
+            "ZeroOS allows vApp developers to link only the required Linux ABI subset, reducing attack surface.",
+            "Any zkVM team can easily integrate by writing a ZeroOS bootloader, reducing maintenance burden.",
+            "This approach unifies the zkVM ecosystem, consolidating development and audit resources.",
+            "ZeroOS is open-sourced with ready-to-use toolchains, improving vApp development efficiency."
+          ]
+        }
+      }
+    ]
   }
 ]
