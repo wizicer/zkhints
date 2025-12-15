@@ -352,5 +352,45 @@
         }
       }
     ]
+  },
+  {
+    "date": "2025-12-15",
+    "projects": [
+      {
+        "name": "Architecture-private Zero-knowledge Proof of Neural Networks",
+        "url": "https://eprint.iacr.org/2025/2212",
+        "type": "论文",
+        "tags": [
+          "Yanpei Guo",
+          "NUS",
+          "zkML"
+        ],
+        "slogan": {
+          "zh": "【ZK论文】\n原来 zkML 一直在泄露模型结构？现在有解法了"
+        },
+        "summary": {
+          "zh": "Guo等人在{{name}}论文中提出了一种架构隐私的zkML方案，通过参数化R1CS和功能关系证明来隐藏CNN模型架构，在VGG16上仅比BFG+23慢30%。",
+          "en": "Guo et al. propose a privacy-preserving zkML scheme based on architecture-private zero-knowledge proof, using parameterized R1CS and functional relationship proofs to hide CNN model architecture, achieving 30% slower proof time than BFG+23 on VGG16."
+        },
+        "notes": {
+          "zh": [
+            "现有zkML方案主要隐藏模型参数，但会暴露CNN的完整架构信息",
+            "提出参数化R1CS（pR1CS）作为R1CS的泛化，便于证明者提交模型架构",
+            "引入功能关系证明方案来验证提交的架构是有效的",
+            "在VGG16模型上批量证明64个实例时，证明时间仅比BFG+23慢30%",
+            "使用pR1CS证明矩阵乘法比传统R1CS快至少3倍",
+            "该方案为神经网络零知识证明提供了架构和参数的双重隐私保护"
+          ],
+          "en": [
+            "Existing zkML schemes mainly hide model parameters but expose the complete CNN architecture information.",
+            "Proposes parameterized R1CS (pR1CS) as a generalization of R1CS to allow the prover to submit the model architecture.",
+            "Introduces a functional relationship proof scheme to verify that the submitted architecture is valid.",
+            "When batch proving 64 instances on the VGG16 model, proof time is only 30% slower than BFG+23.",
+            "Using pR1CS to prove matrix multiplication is at least 3 times faster than traditional R1CS.",
+            "This scheme provides dual privacy protection for both the architecture and parameters of neural networks in zero-knowledge proofs."
+          ]
+        }
+      }
+    ]
   }
 ]
