@@ -392,5 +392,42 @@
         }
       }
     ]
+  },
+  {
+    "date": "2025-12-16",
+    "projects": [
+      {
+        "name": "Implements Halo2 from scratch",
+        "url": "https://github.com/rasmus-kirk/halo",
+        "type": "开源",
+        "tags": [
+          "Rasmus Kirk Jakobsen",
+          "Halo2"
+        ],
+        "slogan": {
+          "zh": "【ZK开源】\n从零实现 Halo2：一个把理论、代码和基准都写清楚的开源项目"
+        },
+        "summary": {
+          "zh": "Rasmus Kirk Jakobsen 开源了 Halo2 的完整实现项目，包括理论解释和 Rust 代码，支持单元测试和基准测试。",
+          "en": "Rasmus Kirk Jakobsen open-sourced the complete implementation of Halo2, including theoretical explanation and Rust code, supporting unit testing and benchmark testing."
+        },
+        "notes": {
+          "zh": [
+            "项目完全从零实现 Halo2，提供理论基础和实际代码",
+            "包含单元测试和基准测试，支持代码验证和性能评估",
+            "提供详细报告，解释Halo2的理论、构造和基准结果",
+            "报告包括：基于 IVC 的委员会签名链压缩，实现 light node 快速安全同步。",
+            "报告包括：无需 trusted setup 的 IVC-friendly Plonk 工程实现。"
+          ],
+          "en": [
+            "Complete implementation of Halo2 from scratch, providing both theoretical foundations and practical code.",
+            "Includes unit and benchmark tests for code validation and performance evaluation.",
+            "Offers detailed reports explaining the theory, construction, and benchmark results of Halo2.",
+            "Reports include: committee signature chain compression based on IVC, enabling fast and secure light node synchronization.",
+            "Reports include: IVC-friendly Plonk engineering implementation without trusted setup."
+          ]
+        }
+      }
+    ]
   }
 ]
