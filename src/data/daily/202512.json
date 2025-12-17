@@ -429,5 +429,51 @@
         }
       }
     ]
+  },
+  {
+    "date": "2025-12-17",
+    "projects": [
+      {
+        "name": "STARK Lab: Interactive Tutorial",
+        "url": "https://floatingpragma.io/starklab/",
+        "urls": [
+          {
+            "name": "代码",
+            "url": "https://github.com/muellerberndt/starklab"
+          }
+        ],
+        "type": "教程",
+        "tags": [
+          "Bernhard Mueller",
+          "STARK",
+          "FRI"
+        ],
+        "summary": {
+          "zh": "@muellerberndt 发布了STARK Lab开源项目，包括交互式教程、执行跟踪生成和核心STARK概念可视化，支持用户从零构建ZK证明。",
+          "en": "@muellerberndt released the open-source STARK Lab project, featuring interactive tutorials, execution trace generation, and core STARK concept visualizations, enabling users to build zero-knowledge proofs from scratch."
+        },
+        "notes": {
+          "zh": [
+            "STARK Lab提供交互式教程，帮助用户直观理解STARK证明",
+            "支持编写简单程序并生成执行跟踪，从约束到多项式逐步学习",
+            "当前包含玩具验证器，完整STARK验证功能即将推出",
+            "通过动态可视化使数学概念更生动易懂",
+            "从基础有限域开始，逐步构建到完整ZK证明",
+            "专注于教育目的，降低ZK技术学习门槛"
+          ],
+          "en": [
+            "STARK Lab provides interactive tutorials to help users intuitively understand STARK proofs",
+            "Supports writing simple programs and generating execution traces, learning step by step from constraints to polynomials",
+            "Currently features a toy verifier, with full STARK verification functionality coming soon",
+            "Makes mathematical concepts more vivid and understandable through dynamic visualization",
+            "Starts from basic finite fields and gradually builds up to complete ZK proofs",
+            "Focused on educational purposes, lowering the learning threshold for ZK technology"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK教程】从执行跟踪到 Merkle 树：这个项目把 STARK 一步步画给你看"
+        }
+      }
+    ]
   }
 ]
