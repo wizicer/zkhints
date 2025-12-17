@@ -383,9 +383,50 @@ program
     }
   });
 
+// Convert project fields to multi-language format
+function convertProjectToMultiLang(project) {
+  let modified = false;
+
+  // Add slogan if not exists, based on type field
+  if (!project.slogan && project.type) {
+    project.slogan = {
+      zh: `【ZK${project.type}】`,
+    };
+    modified = true;
+  }
+
+  // Convert summary to multi-language format if it's a string
+  if (typeof project.summary === "string") {
+    const summaryText = project.summary;
+    project.summary = {
+      zh: summaryText,
+      en: summaryText,
+    };
+    modified = true;
+  }
+
+  // Convert notes to multi-language format if it's an array of strings
+  if (
+    Array.isArray(project.notes) &&
+    project.notes.length > 0 &&
+    typeof project.notes[0] === "string"
+  ) {
+    const notesArray = project.notes;
+    project.notes = {
+      zh: notesArray,
+      en: notesArray,
+    };
+    modified = true;
+  }
+
+  return modified;
+}
+
 program
   .command("today")
-  .description("Add today's entry to the corresponding JSON file")
+  .description(
+    "Add today's entry to the corresponding JSON file and convert projects to multi-language format"
+  )
   .action(async () => {
     try {
       const { year, month, day } = getDateParts();
@@ -413,7 +454,22 @@ program
         // Check if entry for today already exists
         const existingEntry = data.find((entry) => entry.date === dateString);
         if (existingEntry) {
-          console.log(`Entry for ${dateString} already exists in ${dataFilePath}`);
+          // Convert projects to multi-language format
+          let convertedCount = 0;
+          for (const project of existingEntry.projects) {
+            if (convertProjectToMultiLang(project)) {
+              convertedCount++;
+            }
+          }
+
+          if (convertedCount > 0) {
+            fs.writeFileSync(dataFilePath, JSON.stringify(data, null, 2) + "\n", "utf-8");
+            console.log(
+              `Converted ${convertedCount} project(s) to multi-language format for ${dateString}`
+            );
+          } else {
+            console.log(`Entry for ${dateString} already exists, no conversion needed`);
+          }
           return;
         }
 
