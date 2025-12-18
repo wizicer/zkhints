@@ -475,5 +475,44 @@
         }
       }
     ]
+  },
+  {
+    "date": "2025-12-18",
+    "projects": [
+      {
+        "name": "SALSAA – Sumcheck-Aided Lattice-based Succinct Arguments and Applications",
+        "url": "https://eprint.iacr.org/2025/2124",
+        "type": "论文",
+        "tags": [
+          "Shuto Kuriyama",
+          "lattices"
+        ],
+        "summary": {
+          "zh": "Kuriyama等人在{{name}}论文中提出SALSAA框架，通过集成sumcheck技术优化了格基简洁论证，实现了线性时间证明者和更小的证明尺寸，并支持R1CS等广泛关系。",
+          "en": "Kuriyama et al. proposed the SALSAA framework in paper {{name}}, which optimizes lattice-based succinct arguments by integrating sumcheck techniques, achieving linear-time proving, smaller proof sizes, and supporting broad relations such as R1CS."
+        },
+        "notes": {
+          "zh": [
+            "SALSAA通过sumcheck集成显著提升格基论证效率，证明尺寸比RPS/RnR减少2-3倍",
+            "框架支持线性时间证明者，解决了之前准线性时间范数检查的性能瓶颈",
+            "首次实现原生支持ℓ₂-范数约束的格基折叠方案，验证效率极高",
+            "提供具体性能数据：验证时间41毫秒，证明大小979KB（2²⁸元素见证）",
+            "模块化Rust实现展示实际可行性，适合大规模应用部署",
+            "扩展了格基论证的应用范围，为后量子安全ZK系统提供新工具"
+          ],
+          "en": [
+            "SALSAA significantly improves lattice-based arguments efficiency via sumcheck integration, reducing proof size by 2-3x compared to RPS/RnR",
+            "The framework supports linear-time provers, overcoming the previous bottleneck of quasi-linear norm checks",
+            "First to natively support ℓ₂-norm constraints in lattice folding schemes, with highly efficient verification",
+            "Provides concrete performance: verification time 41 ms, proof size 979KB (for 2²⁸-element witness)",
+            "Modular Rust implementation demonstrates real-world feasibility, suitable for large-scale deployment",
+            "Expands the scope of lattice-based arguments, offering new tools for post-quantum secure ZK systems"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】SALSAA：用 sumcheck 把格基 SNARK 做到线性时间证明者"
+        }
+      }
+    ]
   }
 ]
