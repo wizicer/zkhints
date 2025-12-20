@@ -514,5 +514,45 @@
         }
       }
     ]
+  },
+  {
+    "date": "2025-12-20",
+    "projects": [
+      {
+        "name": "Mastering Cairo",
+        "url": "https://rareskills.io/cairo-tutorial",
+        "type": "教程",
+        "tags": [
+          "Rareskills",
+          "Cairo",
+          "Starknet"
+        ],
+        "summary": {
+          "zh": "Rareskills分享了{{name}}教程系列，帮助Solidity开发者快速学习Cairo语言和在Starknet上构建智能合约，无需ZK背景知识。",
+          "en": "Rareskills shared the {{name}} tutorial series to help Solidity developers quickly learn the Cairo language and build smart contracts on Starknet—no ZK background required."
+        },
+        "notes": {
+          "zh": [
+            "教程面向Solidity开发者，无需ZK经验即可学习Cairo",
+            "Starknet Foundation提供资金支持，强调ZK-STARK技术的普及",
+            "内容涵盖Cairo语言基础、智能合约开发和Starknet特定功能",
+            "包括实践练习，如ERC-20代币实现，以增强学习效果",
+            "抽象底层密码学，使开发者能专注于应用层开发",
+            "教程结构清晰，从基础到高级，适合快速上手"
+          ],
+          "en": [
+            "The tutorial is aimed at Solidity developers, enabling them to learn Cairo without ZK experience",
+            "Funded by the Starknet Foundation, emphasizing the adoption of ZK-STARK technology",
+            "Covers Cairo language basics, smart contract development, and Starknet-specific features",
+            "Includes practical exercises such as implementing ERC-20 tokens to enhance learning",
+            "Abstracts away underlying cryptography so developers can focus on the application layer",
+            "Well-structured from basic to advanced, suitable for quick onboarding"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK教程】不用懂 ZK，也能学 Cairo？Rareskills 的入门教程很友好"
+        }
+      }
+    ]
   }
 ]
