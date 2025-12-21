@@ -554,5 +554,45 @@
         }
       }
     ]
+  },
+  {
+    "date": "2025-12-21",
+    "projects": [
+      {
+        "name": "Stark from zero",
+        "url": "https://github.com/microbecode/stark-from-zero",
+        "type": "开源",
+        "tags": [
+          "microbecode",
+          "STARK",
+          "Rust"
+        ],
+        "summary": {
+          "zh": "microbecode 开源了Stark from zero，这是一个用Rust实现的STARK证明器和验证器，专注于教育目的，包含斐波那契追踪、LDE和Merkle承诺等核心概念。",
+          "en": "microbecode open-sourced Stark from zero, a Rust implementation of a STARK prover and verifier focused on education, featuring core concepts like Fibonacci trace, LDE, and Merkle commitments."
+        },
+        "notes": {
+          "zh": [
+            "项目为教育用途，不适用于生产环境，缺乏安全性和优化",
+            "省略了ZK隐私属性，专注于STARK核心概念的教学",
+            "使用小型有限域和追踪，简化了实现以便理解",
+            "未实现完整FRI证明，仅提供折叠示例",
+            "依赖非安全哈希函数和简化承诺，存在安全漏洞",
+            "流程包括斐波那契追踪、LDE、Merkle承诺和Fiat-Shamir采样"
+          ],
+          "en": [
+            "The project is for educational purposes and not suitable for production, lacking security and optimizations.",
+            "Omits ZK privacy properties, focusing on teaching STARK core concepts.",
+            "Uses small finite fields and traces to simplify implementation for understanding.",
+            "Does not implement full FRI proof, only provides folding examples.",
+            "Relies on insecure hash functions and simplified commitments, with security vulnerabilities.",
+            "Process includes Fibonacci trace, LDE, Merkle commitments, and Fiat-Shamir sampling."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK开源】Stark from zero：用 Rust 从零把 STARK 证明跑一遍"
+        }
+      }
+    ]
   }
 ]
