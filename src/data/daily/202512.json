@@ -594,5 +594,44 @@
         }
       }
     ]
+  },
+  {
+    "date": "2025-12-22",
+    "projects": [
+      {
+        "name": "ZP1 - RISC-V zkVM",
+        "url": "https://github.com/ZippelLabs/ZP1",
+        "type": "开源",
+        "tags": [
+          "ZippelLabs",
+          "Mersenne31"
+        ],
+        "summary": {
+          "zh": "ZippelLabs 团队开源了ZP1，这是一个基于Circle STARKs和Mersenne31的RISC-V zkVM，支持RV32IM指令集，并集成了FRI、LogUp和并行约束评估等特性。",
+          "en": "ZippelLabs open-sourced ZP1, a RISC-V zkVM based on Circle STARKs and Mersenne31, supporting the RV32IM instruction set and integrating features like FRI, LogUp, and parallel constraint evaluation."
+        },
+        "notes": {
+          "zh": [
+            "ZP1是一个实验性RISC-V zkVM，使用Circle STARKs和Mersenne31字段",
+            "支持RV32IM指令集，集成FRI、LogUp和并行约束评估",
+            "包含预编译电路如Keccak和SHA2，但未经安全审计",
+            "近期修复了DEEP quotient domain points等关键安全漏洞",
+            "性能优化包括位查找表加速，但Circle FFT效率较低",
+            "项目状态：测试覆盖良好，但存在GPU支持有限等限制"
+          ],
+          "en": [
+            "ZP1 is an experimental RISC-V zkVM using Circle STARKs and the Mersenne31 field.",
+            "Supports the RV32IM instruction set, integrating FRI, LogUp, and parallel constraint evaluation.",
+            "Includes precompiled circuits such as Keccak and SHA2, but has not undergone security auditing.",
+            "Recently fixed critical security issues like DEEP quotient domain points.",
+            "Performance optimizations include bit lookup table acceleration, but Circle FFT efficiency is low.",
+            "Project status: good test coverage, but limited GPU support and other constraints."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK开源】RISC-V + STARK 到底难在哪？从 ZP1 的工程取舍看"
+        }
+      }
+    ]
   }
 ]
