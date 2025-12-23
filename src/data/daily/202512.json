@@ -633,5 +633,45 @@
         }
       }
     ]
+  },
+  {
+    "date": "2025-12-23",
+    "projects": [
+      {
+        "name": "ZKDL Camp",
+        "url": "https://zkdl-camp.github.io/",
+        "type": "教程",
+        "tags": [
+          "Distributed Lab",
+          "Groth16",
+          "PlonK"
+        ],
+        "summary": {
+          "zh": "Distributed Lab组织了ZKDL Camp系列讲座，专注于从零讲解现代zkSNARKs如Groth16、PlonK、GKR的工作原理，涵盖数学基础、协议构建和应用实践。",
+          "en": "Distributed Lab organized the ZKDL Camp lecture series, focusing on explaining the working principles of modern zkSNARKs such as Groth16, PlonK, and GKR from scratch, covering mathematical foundations, protocol construction, and practical applications."
+        },
+        "notes": {
+          "zh": [
+            "ZKDL Camp提供从基础数学到高级zkSNARK协议的全面课程，适合深入学习",
+            "讲座涵盖Groth16、PlonK、GKR、Sum-Check、Bulletproofs等关键协议",
+            "包括UltraGroth等前沿协议，优化R1CS电路的查找检查",
+            "提供Circom等实践工具教程，支持zk应用开发",
+            "开源书籍和代码库鼓励社区参与和知识共享",
+            "安全性方面强调协议构建的数学基础和验证方法"
+          ],
+          "en": [
+            "ZKDL Camp offers comprehensive courses from basic mathematics to advanced zkSNARK protocols, suitable for in-depth study.",
+            "The lectures cover key protocols such as Groth16, PlonK, GKR, Sum-Check, and Bulletproofs.",
+            "Includes cutting-edge protocols like UltraGroth, optimizing lookup checks for R1CS circuits.",
+            "Provides practical tutorials on tools like Circom to support zk application development.",
+            "Open-source books and code repositories encourage community participation and knowledge sharing.",
+            "Emphasizes the mathematical foundations and verification methods in protocol construction for security."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK教程】从数学到电路：ZKDL Camp 从零讲清 Groth16、Plonk、GKR 的 zkSNARK 系列课程"
+        }
+      }
+    ]
   }
 ]
