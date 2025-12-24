@@ -673,5 +673,44 @@
         }
       }
     ]
+  },
+  {
+    "date": "2025-12-24",
+    "projects": [
+      {
+        "name": "FRIVail: A Data Availability Scheme based on FRI Binius",
+        "url": "https://eprint.iacr.org/2025/2292",
+        "type": "论文",
+        "tags": [
+          "Rachit Anand Srivastava",
+          "KZG"
+        ],
+        "summary": {
+          "zh": "Srivastava在{{name}}论文中提出了一种基于FRI-Binius的数据可用性方案FRIVail，支持ZK证明、后量子和混合聚合策略，为区块链数据可用性协议提供模块化基础。",
+          "en": "In the paper, Srivastava proposed FRIVail, a data availability scheme based on FRI-Binius, supporting ZK proofs, post-quantum and hybrid aggregation strategies, and providing a modular foundation for blockchain data availability protocols."
+        },
+        "notes": {
+          "zh": [
+            "FRIVail利用FRI的Reed-Solomon结构，每个承诺自然编码一个码字，便于轻客户端直接采样",
+            "方案为每行数据分配独立FRI证明，再通过聚合策略组合成全局可用性证书",
+            "ZK聚合策略生成紧凑的证明之证明(proof-of-proofs)，实现简洁全局验证同时保持行独立性",
+            "后量子聚合递归应用FRI-Binius构建证明之证明，依赖FRI邻近性检查但需重构聚合多项式",
+            "KZG混合聚合支持直接代数开箱但依赖配对假设和可信设置，不具备后量子安全性",
+            "所有变体都使轻客户端能通过少量本地开箱检查验证可用性，无需下载完整数据"
+          ],
+          "en": [
+            "FRIVail uses FRI's Reed-Solomon structure so each commitment is a codeword for easy sampling.",
+            "Each data row gets its own FRI proof, then aggregation combines them into a global certificate.",
+            "ZK aggregation creates short proof-of-proofs, allowing concise global checks and row independence.",
+            "Post-quantum aggregation recursively uses FRI-Binius for proof-of-proofs, relying on proximity checks and new polynomials.",
+            "KZG aggregation enables direct openings but needs pairing and trusted setup, so it's not post-quantum secure.",
+            "All variants let light clients check availability with a few openings, no full data download needed."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】FRIVail：基于 FRI-Binius 的数据可用性采样新方案"
+        }
+      }
+    ]
   }
 ]
