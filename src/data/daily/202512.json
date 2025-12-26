@@ -712,5 +712,45 @@
         }
       }
     ]
+  },
+  {
+    "date": "2025-12-26",
+    "projects": [
+      {
+        "name": "Ethproofs 2025 Review & 2026 Roadmap",
+        "url": "https://ethproofs.org/blog/ethproofs-2025-review-2026-roadmap",
+        "type": "博客",
+        "tags": [
+          "Ethproofs",
+          "zkVM",
+          "Real-Time Proving"
+        ],
+        "summary": {
+          "zh": "Ethproofs团队在博客中回顾了2025年平台进展，包括性能提升和生态协调，并展望2026年将重点转向安全性和标准化，以支持以太坊L1强制证明的过渡。",
+          "en": "Ethproofs recapped 2025 progress: faster provers, broader coordination, and previewed a 2026 shift toward security and standardization for Ethereum L1."
+        },
+        "notes": {
+          "zh": [
+            "2025年Ethproofs验证了约20万个以太坊区块，平均证明延迟降低5倍，成本降低15倍",
+            "多个团队已实现P99延迟<10秒、单GPU证明<1分钟，证明成本降至每区块低于1美分",
+            "平台从性能跟踪演变为协调层，支持7个zkVM和15个证明团队",
+            "2026年重心转向安全性，将标准化指标如运行时间、能效和证明大小",
+            "引入统一指标层和实时区块监控（RTP Cohort），提升生产环境可见性",
+            "目标是通过公开测量和协调，确保以太坊强制证明过渡的可信、去中心化和持久正确性"
+          ],
+          "en": [
+            "2025: Ethproofs verified ~200,000 ETH blocks; proof latency cut 5x, cost 15x.",
+            "P99 latency <10s, single-GPU proving <1min, proof cost <$0.01/block by several teams.",
+            "Platform evolved to a coordination layer, supporting 7 zkVMs and 15 proving teams.",
+            "2026 focus: security, standardizing runtime, energy, and proof size metrics.",
+            "Unified metrics and RTP Cohort for real-time production visibility.",
+            "Goal: ensure trust, decentralization, and correctness in ETH mandatory proofs via public measurement."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK博客】ZK 不止于快：Ethproofs 宣布 2026 年重心转向安全与标准化"
+        }
+      }
+    ]
   }
 ]
