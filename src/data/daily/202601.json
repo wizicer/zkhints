@@ -1,0 +1,42 @@
+[
+  {
+    "date": "2026-01-05",
+    "projects": [
+      {
+        "name": "DNS-Anchored zk-SNARK Proofs: A Stateless Alternative to ACME Challenge-Response for Domain Control Validation",
+        "url": "https://eprint.iacr.org/2025/2332",
+        "type": "论文",
+        "tags": [
+          "Abhinav Vishnu",
+          "DNS",
+          "ACME"
+        ],
+        "summary": {
+          "zh": "Abhinav Vishnu在{{name}}论文中提出了PTX协议，利用zkSNARK实现异步、非交互式域控制验证，无需活动服务器，通过DNS TXT记录锚定证明。",
+          "en": "Abhinav Vishnu proposed the PTX protocol in {{name}}paper, using zkSNARK for asynchronous, non-interactive domain control validation without active servers, anchored via DNS TXT records."
+        },
+        "notes": {
+          "zh": [
+            "PTX协议利用zkSNARK实现异步、非交互式域控制验证，替代传统ACME协议",
+            "通过DNS TXT记录锚定证明，无需活动Web服务器或开放网络端口",
+            "电路设计将临时秘密绑定到范围元数据，支持客户端验证和隐私保护",
+            "使用Groth16和Poseidon实现，仅1,756约束，验证时间低于15ms",
+            "有效缓解重放攻击，适用于无服务器、静态和隔离部署环境",
+            "为去中心化环境中的身份断言提供隐私保护替代方案"
+          ],
+          "en": [
+            "PTX protocol uses zkSNARK for asynchronous, non-interactive domain control validation, replacing traditional ACME",
+            "Anchors proofs via DNS TXT records, eliminating need for active web servers or open ports",
+            "Circuit design binds ephemeral secrets to scoped metadata, enabling client-side verification and privacy",
+            "Implemented with Groth16 and Poseidon, only 1,756 constraints, verification under 15ms",
+            "Mitigates replay attacks, suitable for serverless, static, and air-gapped deployments",
+            "Provides privacy-preserving alternative for identity assertions in decentralized environments"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】告别 ACME 挑战：用 zkSNARK 在 DNS 上完成域名验证"
+        }
+      }
+    ]
+  }
+]
