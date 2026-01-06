@@ -38,5 +38,44 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-01-06",
+    "projects": [
+      {
+        "name": "SUMSIG: Compact Code-Based Signatures from Sum-Check Protocols",
+        "url": "https://eprint.iacr.org/2025/2331",
+        "type": "论文",
+        "tags": [
+          "Debrup Chatterjee",
+          "Syndrome Decoding"
+        ],
+        "summary": {
+          "zh": "Debrup Chatterjee在{{name}}论文中提出了SumSig，一种基于编码的数字签名方案，利用Sum-Check协议减少对重复的依赖，通过单次扩展域验证实现可忽略的误差，签名约5-8KB。",
+          "en": "Debrup Chatterjee proposed SumSig, a code-based digital signature scheme leveraging sum-check protocols to reduce repetition reliance, achieving negligible error via single extension field verification, with signatures ~5-8KB."
+        },
+        "notes": {
+          "zh": [
+            "SumSig利用Sum-Check协议替代重复Σ协议，减少签名生成依赖",
+            "通过扩展域单次验证实现可忽略的误差，无需重复操作",
+            "签名大小约5-8KB，公钥50-100KB，提供不同权衡",
+            "基于Syndrome Decoding问题，在随机预言模型中有准紧规约",
+            "相比Wave和LESS等方案，在签名和公钥大小间提供新选择",
+            "这是首次公开版本，欢迎反馈，关注后量子密码学进展"
+          ],
+          "en": [
+            "SumSig uses sum-check protocols to replace repetitive Σ-protocols, reducing signature generation reliance.",
+            "Achieves negligible error via single extension field verification without repetition.",
+            "Signature size ~5-8KB, public key 50-100KB, offering different trade-offs.",
+            "Based on Syndrome Decoding problem with quasi-tight reduction in random oracle model.",
+            "Provides new choice in signature/public key size compared to Wave and LESS.",
+            "First public version; feedback welcome, focusing on post-quantum cryptography."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】后量子签名新突破：SumSig用Sum-Check协议实现紧凑签名"
+        }
+      }
+    ]
   }
 ]
