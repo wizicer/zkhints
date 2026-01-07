@@ -77,5 +77,45 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-01-07",
+    "projects": [
+      {
+        "name": "The Future of Financial Infrastructure: Ethereum's Layer 2 Landscape - Report",
+        "url": "https://www.nethermind.io/blog/the-future-of-financial-infrastructure-ethereums-layer-2-landscape-report",
+        "type": "博客",
+        "tags": [
+          "Nethermind",
+          "Layer 2",
+          "Compliance"
+        ],
+        "summary": {
+          "zh": "Nethermind联合L2BEAT和Etherealize发布报告，分析以太坊Layer 2网络如何成为机构金融核心基础设施，涵盖可扩展性、安全性、合规性及ZK证明应用。",
+          "en": "Nethermind, L2BEAT, and Etherealize jointly published a report analyzing how Ethereum Layer 2 networks are evolving into core infrastructure for institutional finance, covering scalability, security, compliance, and ZK proof applications."
+        },
+        "notes": {
+          "zh": [
+            "机构正从试点转向生产系统，如摩根大通、贝莱德等使用以太坊基础设施进行支付和资产代币化。",
+            "Layer 2网络通过ZK证明提供隐私和可扩展性，支持自定义执行环境和合规框架。",
+            "Rollup（Op和ZK）提供最高安全性，继承以太坊验证和数据可用性，适合高价值工作流。",
+            "公共和私有Layer 2模型支持不同操作需求，均锚定以太坊结算，保持互操作性。",
+            "合规性通过链上身份、基于规则的传输和ZK证明得到加强，减少对链下流程的依赖。",
+            "案例研究包括摩根大通在Base测试存款代币、Visa实验ZK证明用于私有代币化支付。"
+          ],
+          "en": [
+            "Institutions like JPMorgan and BlackRock are using Ethereum Layer 2 for payments and tokenized assets.",
+            "L2s leverage ZK proofs for privacy, scalability, and compliance.",
+            "Rollups inherit Ethereum security and data availability.",
+            "Both public and private L2s settle on Ethereum, ensuring interoperability.",
+            "Compliance benefits from onchain identity and ZK proofs.",
+            "Examples: JPMorgan testing deposit tokens on Base; Visa piloting ZK proof payments."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK新闻】以太坊Layer 2报告：ZK证明助力机构金融合规与隐私"
+        }
+      }
+    ]
   }
 ]
