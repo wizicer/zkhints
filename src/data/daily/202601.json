@@ -117,5 +117,44 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-01-08",
+    "projects": [
+      {
+        "name": "A SNARK for (Non-)Subsequences with Text-Sub-Linear Proving Time",
+        "url": "https://eprint.iacr.org/2026/008",
+        "type": "论文",
+        "tags": [
+          "Dario Fiore",
+          "cached quotients"
+        ],
+        "summary": {
+          "zh": "Fiore等人在{{name}}论文中提出了一种用于（非）子序列关系的SNARK方案，通过预处理和缓存商技术，将证明时间优化至文本次线性级别。",
+          "en": "Fiore et al. proposed a SNARK scheme for (non-)subsequence relations in their {{name}}paper, achieving text-sub-linear proving time via preprocessing and cached quotients."
+        },
+        "notes": {
+          "zh": [
+            "提出一种SNARK方案，用于验证字符串是否为文本的子序列或非子序列",
+            "方案分为预处理阶段和（非）子序列证明阶段，假设子序列长度远小于文本长度",
+            "预处理仅依赖文本和字母表，可提前计算，无需知道子序列",
+            "采用缓存商技术，预处理运行时间拟线性于文本长度加字母表大小",
+            "证明（非）子序列的运行时间为子序列长度的对数级别，实现文本次线性证明时间",
+            "应用场景包括基因分析、区块链、自然语言处理等领域"
+          ],
+          "en": [
+            "SNARK for verifying (non-)subsequence between strings.",
+            "Has preprocessing and proof phases; assumes short subsequence.",
+            "Preprocessing uses only text and alphabet, no need for subsequence.",
+            "Employs cached quotients for quasilinear preprocessing.",
+            "Proof time is logarithmic in subsequence length.",
+            "Useful for genomics, blockchains, NLP, etc."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】如果区块链需要验证文本或基因数据，这篇 SNARK 方案可能是关键"
+        }
+      }
+    ]
   }
 ]
