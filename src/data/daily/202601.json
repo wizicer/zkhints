@@ -156,5 +156,45 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-01-10",
+    "projects": [
+      {
+        "name": "Predictions for Privacy in 2026",
+        "url": "https://x.com/0xMiden/status/2006412050956800288",
+        "type": "新闻",
+        "tags": [
+          "@0xMiden",
+          "Stablecoins",
+          "Compliance"
+        ],
+        "summary": {
+          "zh": "@0xMiden分享了四位隐私领域专家对2026年隐私发展的预测，包括私有稳定币、隐私工业化、实用性隐私和威胁抵抗隐私等趋势。",
+          "en": "@0xMiden shared predictions from four privacy experts for 2026, covering trends like private stablecoins, privacy industrialization, practical privacy, and threat-resistant privacy."
+        },
+        "notes": {
+          "zh": [
+            "2026年私有稳定币将成为全球支付基础设施核心层，支持**可配置隐私**如选择性披露和匿名性。",
+            "隐私技术将从测试网进入生产阶段，但钱包支持和合规性仍是挑战，规模化需解决这些问题。",
+            "隐私不是非黑即白，需在特定场景下做出权衡，提供**条件隐私**以增强协议威胁抵抗力。",
+            "**威胁抵抗隐私**将成为默认标准，包括限制性隐私和负责任隐私两类解决方案。",
+            "企业需要隐私保护敏感商业关系，而零售用户拒绝完全透明的支付轨道。",
+            "隐私系统将整合政策控制，在合规的同时不牺牲基础隐私，重新定义链上合规支付。"
+          ],
+          "en": [
+            "Private stablecoins will play a central role in global payments, offering **configurable privacy**.",
+            "Privacy tech is moving to production, but wallet support and compliance remain challenges.",
+            "Privacy involves tradeoffs; **conditional privacy** improves threat resistance.",
+            "**Threat-resistant privacy** will become standard, with throttled and responsible options.",
+            "Enterprises need confidentiality; retail users oppose fully transparent payments.",
+            "Privacy systems will add policy controls for compliance while preserving core privacy."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK新闻】2026隐私预测：私有稳定币崛起，威胁抵抗成新常态"
+        }
+      }
+    ]
   }
 ]
