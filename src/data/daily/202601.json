@@ -196,5 +196,44 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-01-11",
+    "projects": [
+      {
+        "name": "OOPS: One-time Oblivious Polynomial Signatures",
+        "url": "https://eprint.iacr.org/2025/2340",
+        "type": "论文",
+        "tags": [
+          "Kobi Gurkan",
+          "Oblivious PRF"
+        ],
+        "summary": {
+          "zh": "Gurkan等人在{{name}}论文中提出了一种基于配对椭圆曲线多项式的一次性遗忘多项式签名方案OOPS，支持最多n个消息的安全签名，并展示了其在可委托签名、1-out-of-n遗忘传输和部分遗忘PRF等协议中的应用。",
+          "en": "Gurkan et al. propose OOPS, a one-time oblivious polynomial signature scheme based on pairing-based elliptic curves, supporting secure signatures for up to n messages, with applications in delegatable signatures, 1-out-of-n oblivious transfer, and partially oblivious PRFs."
+        },
+        "notes": {
+          "zh": [
+            "OOPS基于配对椭圆曲线多项式构建，可安全签名最多n个不同消息",
+            "签名超过n个消息会导致参数下签名可被伪造，需定期重新参数化",
+            "方案支持构建可委托签名，增强签名功能的灵活性",
+            "可用于实现1-out-of-n遗忘传输，提升隐私保护能力",
+            "支持部分遗忘PRF，平衡计算效率与隐私需求",
+            "展示了OOPS在多种高效密码协议中的实际应用潜力"
+          ],
+          "en": [
+            "OOPS is built on polynomials over pairing-based elliptic curves, securely signing up to n different messages.",
+            "Signing more than n messages allows forgery under given parameters, requiring occasional reparameterization.",
+            "Supports delegatable signatures, enhancing signature functionality flexibility.",
+            "Enables 1-out-of-n oblivious transfer, improving privacy protection.",
+            "Supports partially oblivious PRFs, balancing computational efficiency and privacy needs.",
+            "Demonstrates OOPS's potential in various efficient cryptographic protocols."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】OOPS：一次性遗忘多项式签名，开启高效密码协议新篇章"
+        }
+      }
+    ]
   }
 ]
