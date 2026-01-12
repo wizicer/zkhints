@@ -235,5 +235,44 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-01-12",
+    "projects": [
+      {
+        "name": "Fully Secure DKG Protocols for Discrete Logarithm Revisited",
+        "url": "https://eprint.iacr.org/2026/042",
+        "type": "论文",
+        "tags": [
+          "Karim Baghery",
+          "DKG"
+        ],
+        "summary": {
+          "zh": "Baghery在{{name}}论文中重新审视了离散对数场景下的完全安全鲁棒DKG协议，提出了三种更高效的替代方案，均实现O(n)计算复杂度，并在安全性、效率和轮数上提供不同权衡。",
+          "en": "Baghery revisits fully secure robust DKG protocols for discrete logarithm in their {{name}}paper, proposing three more efficient alternatives with O(n) computational complexity and different trade-offs in security, efficiency, and round complexity."
+        },
+        "notes": {
+          "zh": [
+            "传统GJKR协议存在O(n²)计算复杂度问题，影响可扩展性",
+            "新协议一保持完全安全，即使面对计算无界对手也能保证公钥均匀随机",
+            "新协议二在计算效率上更优，公钥分布计算不可区分于均匀分布",
+            "新协议三将协议二简化为3轮，是Atapoor等人偏置构造的安全轮数缩减变体",
+            "相比近期低轮完全安全DKG协议，新3轮协议仅需O(n)指数运算而非O(n²)",
+            "研究为DKG协议提供了更灵活的安全-效率权衡选择"
+          ],
+          "en": [
+            "Traditional GJKR protocol has O(n²) cost, limiting scalability.",
+            "Protocol 1: full security, uniformly random public key.",
+            "Protocol 2: better efficiency, indistinguishable public keys.",
+            "Protocol 3: 3 rounds, secure variant of Atapoor et al.",
+            "New 3-round protocol needs only O(n) exponentiations.",
+            "Enables flexible security-efficiency trade-offs for DKG."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】DKG协议新突破：三种高效方案实现O(n)复杂度，安全与效率兼得"
+        }
+      }
+    ]
   }
 ]
