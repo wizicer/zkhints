@@ -274,5 +274,45 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-01-13",
+    "projects": [
+      {
+        "name": "SNARGs for NP and Non-Signaling PCPs, Revisited",
+        "url": "https://eprint.iacr.org/2026/006",
+        "type": "论文",
+        "tags": [
+          "Lalita Devadas",
+          "LWE",
+          "Gentry-Wichs Barrier"
+        ],
+        "summary": {
+          "zh": "Devadas等人在{{name}}论文中重新探讨了基于非信号PCP构建NP的SNARGs，提出候选方案并证明其在LWE假设和多项式理想成员证明的数学猜想下的安全性，突破了Gentry-Wichs黑盒障碍。",
+          "en": "Devadas et al. revisit building SNARGs for NP using non-signaling PCPs, propose a candidate scheme with security under LWE and a mathematical conjecture, circumventing the Gentry-Wichs black-box barrier."
+        },
+        "notes": {
+          "zh": [
+            "使用指数长度PCP可绕过现有障碍，构建NP的SNARGs",
+            "提出非自适应SNARG候选方案，安全性基于LWE等标准假设",
+            "引入关于实数域上多项式理想的数学猜想（非密码学假设）",
+            "安全性分析非黑盒使用SNARG敌手，突破Gentry-Wichs黑盒障碍",
+            "为不受Gentry-Wichs障碍限制的NP SNARGs构建提供蓝图",
+            "重新评估非信号PCP在SNARGs构建中的潜力"
+          ],
+          "en": [
+            "Exponential-length PCPs circumvent existing barriers for NP SNARGs",
+            "Propose non-adaptive SNARG candidate with security under LWE",
+            "Introduce mathematical conjecture on polynomial ideals (non-cryptographic)",
+            "Non-black-box adversary use breaks Gentry-Wichs black-box barrier",
+            "Blueprint for NP SNARGs not subject to Gentry-Wichs barrier",
+            "Re-evaluate potential of non-signaling PCPs in SNARG construction"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】突破 Gentry-Wichs 障碍：NP SNARG 重新被点亮"
+        }
+      }
+    ]
   }
 ]
