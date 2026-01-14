@@ -314,5 +314,45 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-01-14",
+    "projects": [
+      {
+        "name": "Argo MAC: Garbling with Elliptic Curve MACs",
+        "url": "https://eprint.iacr.org/2026/049",
+        "type": "论文",
+        "tags": [
+          "Liam Eagen",
+          "Bitcoin",
+          "BitVM"
+        ],
+        "summary": {
+          "zh": "Eagen和Lai在{{name}}论文中提出了一种新的混淆原语Argo MAC，可将曲线点的比特分解编码高效转换为同态MAC，使混淆SNARK验证器效率提升超过1000倍。",
+          "en": "Eagen and Lai proposed a new garbling primitive, Argo MAC, in their {{name}}paper, efficiently translating bit decomposition of curve points to homomorphic MACs, enabling over 1000× more efficient garbled SNARK verifiers."
+        },
+        "notes": {
+          "zh": [
+            "Argo MAC是一种新的混淆原语，用于优化比特币等链下密码学应用",
+            "可将曲线点的比特分解编码高效转换为同态MAC，提升混淆效率",
+            "支持构建基于配对的SNARK验证器的混淆版本，效率提升显著",
+            "与BitVM等近期工作结合，扩展比特币智能合约的表达能力",
+            "后续工作将详细描述如何用Argo MAC构建混淆SNARK验证器",
+            "该技术有助于推动比特币链下计算和验证的规模化应用"
+          ],
+          "en": [
+            "Argo MAC is a new garbling primitive for off-chain cryptography like Bitcoin.",
+            "Efficiently translates bit decomposition of curve points to homomorphic MACs.",
+            "Enables construction of garbled SNARK verifiers for pairing-based SNARKs.",
+            "Integrates with recent work like BitVM to enhance Bitcoin smart contracts.",
+            "Subsequent work will detail garbled SNARK verifier construction.",
+            "Facilitates scalable off-chain computation and verification for Bitcoin."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】Argo MAC：椭圆曲线MAC混淆技术，提升SNARK验证效率超1000倍"
+        }
+      }
+    ]
   }
 ]
