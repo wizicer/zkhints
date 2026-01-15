@@ -354,5 +354,44 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-01-15",
+    "projects": [
+      {
+        "name": "zkEVM Security Overview",
+        "url": "https://zkevm.ethereum.foundation/blog/zkevm-security-overview",
+        "type": "博客",
+        "tags": [
+          "Ethereum Foundation",
+          "Multiproofs"
+        ],
+        "summary": {
+          "zh": "Ethereum Foundation在博客中讨论了zkEVM升级的安全问题，重点关注zkVM安全、客户端多样性和形式验证，提出了多证明策略等缓解措施。",
+          "en": "Ethereum Foundation discusses zkEVM upgrade security in a blog, focusing on zkVM security, client diversity, and formal verification, with mitigations like multiproofs strategy."
+        },
+        "notes": {
+          "zh": [
+            "zkEVM升级引入证明者执行EVM并生成证明，降低验证者硬件和网络需求",
+            "安全关注点包括网络组成变化、客户端和zkVM多样性、客程序风险",
+            "多证明策略要求验证多个zkVM+STF组合证明以增强安全性",
+            "形式验证项目旨在验证zkSNARK协议和虚拟机实现，但非必需",
+            "zkVM支持有限ISA和系统调用，编译客程序可能引入新bug",
+            "团队应避免不必要代码更改，加强测试，并分析共享故障点"
+          ],
+          "en": [
+            "zkEVM upgrade introduces provers to execute EVM and generate proofs, reducing verifier hardware and network needs.",
+            "Security concerns include network composition changes, client and zkVM diversity, and guest program risks.",
+            "Multiproofs strategy requires verifying multiple zkVM+STF combination proofs for enhanced security.",
+            "Formal verification project aims to verify zkSNARK protocols and VM implementations, but not mandatory.",
+            "zkVMs support limited ISA and syscalls, compiling guest programs may introduce new bugs.",
+            "Teams should avoid unnecessary code changes, enhance testing, and analyze shared failure points."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK安全】zkEVM安全升级：多证明策略与客户端多样性如何保障以太坊未来？"
+        }
+      }
+    ]
   }
 ]
