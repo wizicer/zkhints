@@ -393,5 +393,45 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-01-17",
+    "projects": [
+      {
+        "name": "BABE: Verifying Proofs on Bitcoin Made 1000x Cheaper",
+        "url": "https://eprint.iacr.org/2026/065",
+        "type": "论文",
+        "tags": [
+          "Sanjam Garg",
+          "Bitcoin",
+          "Witness Encryption"
+        ],
+        "summary": {
+          "zh": "Garg等人在{{name}}论文中提出BABE协议，通过结合见证加密和高效混淆电路，将比特币上的证明验证链下成本降低三个数量级，同时保持链上低成本。",
+          "en": "Garg et al. proposed the BABE protocol in their {{name}}paper, combining witness encryption and efficient garbled circuits to reduce off-chain proof verification costs on Bitcoin by three orders of magnitude while maintaining low on-chain costs."
+        },
+        "notes": {
+          "zh": [
+            "比特币脚本语言表达能力有限且区块空间小，证明验证是长期挑战",
+            "BitVM2链上交易费用极高（不愉快路径超1.4万美元），BitVM3虽降低链上成本但链下存储和设置成本巨大（混淆电路达42GB）",
+            "BABE使用线性配对关系的见证加密方案验证Groth16证明，结合高效混淆电路实现安全两方计算",
+            "设计基于Argo MAC工作，提供椭圆曲线上同态MAC的高效混淆方案",
+            "协议在保持BitVM3链上成本节约的同时，将链下存储和设置成本降低三个数量级",
+            "应用包括扩展比特币和实现比特币资产在其他区块链中的无信任使用"
+          ],
+          "en": [
+            "Bitcoin's limited scripting language and small block space make proof verification challenging",
+            "BitVM2 has high on-chain fees (>$14k in unhappy path), BitVM3 reduces on-chain costs but off-chain storage/setup is huge (42GB garbled circuits)",
+            "BABE uses witness encryption for linear pairings to verify Groth16 proofs, combined with efficient garbled circuits for secure two-party computation",
+            "Design builds on Argo MAC for efficient garbling of homomorphic MACs on elliptic curves",
+            "Protocol reduces off-chain costs by three orders of magnitude while maintaining BitVM3's on-chain savings",
+            "Applications include scaling Bitcoin and enabling trustless use of Bitcoin assets in other blockchains"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】比特币证明验证革命：BABE协议让成本骤降1000倍！"
+        }
+      }
+    ]
   }
 ]
