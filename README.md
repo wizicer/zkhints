@@ -24,16 +24,16 @@ A comprehensive resource hub for Zero-Knowledge Proofs (ZKP) technology, providi
 
 ```bash
 # Install dependencies
-yarn
+npm install
 
 # Start development server
-yarn dev
+npm run dev
 
 # Build for production
-yarn build
+npm run build
 
 # Preview production build
-yarn preview
+npm run preview
 ```
 
 ## Deployment
