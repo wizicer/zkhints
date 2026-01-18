@@ -433,5 +433,44 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-01-18",
+    "projects": [
+      {
+        "name": "Timed Commitments and Timed Encryption: Generic Constructions and Instantiations from Isogenies",
+        "url": "https://eprint.iacr.org/2026/057",
+        "type": "论文",
+        "tags": [
+          "Mingjie Chen",
+          "Isogenies"
+        ],
+        "summary": {
+          "zh": "Chen和Meers在{{name}}论文中提出了基于同源的非交互定时承诺和定时加密通用构造，使用可验证随机函数等高效组件，实现后量子安全。",
+          "en": "Chen and Meers proposed generic constructions for non-interactive timed commitments and timed encryption from isogenies in their {{name}}paper, using efficient building blocks like verifiable random functions for post-quantum security."
+        },
+        "notes": {
+          "zh": [
+            "定时承诺在电子投票、合同签名等场景有广泛应用，但现有方案多依赖非后量子假设或低效组件",
+            "论文提出通用构造LEIBNITC和NYTPKE，仅需可验证随机函数、陷门延迟函数和NIZK等高效组件",
+            "基于同源实例化实现后量子安全，LEIBNITC承诺大小仅2328比特，是目前最高效的定时承诺之一",
+            "解决了传统方案依赖经典假设或全同态加密等低效组件的问题",
+            "为后量子密码学提供了实用的定时密码学原语",
+            "扩展了同源密码学在定时承诺和加密领域的应用"
+          ],
+          "en": [
+            "Timed commitments are crucial for e-voting and contracts, but most schemes lack post-quantum security or are inefficient.",
+            "LEIBNITC and NYTPKE use efficient primitives like verifiable random functions and trapdoor delay functions.",
+            "Isogeny-based designs offer post-quantum security and small commitments (2328 bits).",
+            "Avoids reliance on fully homomorphic encryption and other costly components.",
+            "Enables practical post-quantum timed cryptography.",
+            "Showcases new applications for isogeny cryptography in timed commitments and encryption."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】后量子定时承诺新突破：基于同源的高效构造"
+        }
+      }
+    ]
   }
 ]
