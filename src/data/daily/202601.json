@@ -472,5 +472,44 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-01-20",
+    "projects": [
+      {
+        "name": "Streaming Zero-Knowledge Proofs",
+        "url": "https://arxiv.org/abs/2301.02161",
+        "type": "论文",
+        "tags": [
+          "Graham Cormode",
+          "Sumcheck"
+        ],
+        "summary": {
+          "zh": "Cormode等人在{{name}}论文中提出了流式零知识证明的概念，并构建了适用于数据流的零知识SIP协议，包括sumcheck和多项式评估等核心工具。",
+          "en": "Cormode et al. proposed the concept of streaming zero-knowledge proofs in their {{name}}paper, constructing zero-knowledge SIP protocols for data streams, including core tools like sumcheck and polynomial evaluation."
+        },
+        "notes": {
+          "zh": [
+            "首次定义数据流场景下的零知识证明概念",
+            "构建了基于sumcheck和多项式评估的零知识SIP协议，这两个是流式交互证明的核心基础工具",
+            "协议支持索引查询、点查询、范围查询、中位数、频率矩、内积等关键流式计算问题",
+            "验证者空间复杂度仅为polylog(n)，适合大数据流场景",
+            "开发了代数流式承诺协议和时间承诺等算法工具包，为设计零知识数据流协议提供技术支持",
+            "通过平均情况通信复杂度的归约和精细的代数与信息论论证确保协议安全性"
+          ],
+          "en": [
+            "First to define streaming zero-knowledge proofs, addressing a research gap",
+            "Built SIP protocols using sumcheck and polynomial evaluation as core tools",
+            "Handles streaming queries: index, point/range, median, frequency moments, inner product",
+            "Verifier uses polylog(n) space and efficient communication, ideal for large streams",
+            "Introduced algebraic and temporal streaming commitments",
+            "Security via reductions from average-case communication and algebraic arguments"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】突破数据流验证瓶颈：流式零知识证明让海量数据计算可验证且隐私安全"
+        }
+      }
+    ]
   }
 ]
