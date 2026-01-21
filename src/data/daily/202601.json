@@ -511,5 +511,45 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-01-21",
+    "projects": [
+      {
+        "name": "Scalable Distributed Key Generation for Blockchains",
+        "url": "https://eprint.iacr.org/2026/072",
+        "type": "论文",
+        "tags": [
+          "Aniket Kate",
+          "Asynchronous",
+          "Consensus"
+        ],
+        "summary": {
+          "zh": "Kate等人在{{name}}论文中提出了首个基于离散对数的区块链专用DKG协议，利用链上共识机制提升性能，支持异步网络和高达1/2的拜占庭容错。",
+          "en": "Kate et al. proposed the first discrete-log-based DKG protocol tailored for blockchains in their {{name}}paper, leveraging on-chain consensus for improved performance, supporting asynchronous networks and up to 1/2 Byzantine faults."
+        },
+        "notes": {
+          "zh": [
+            "现有DKG协议未充分利用区块链特性，性能有较大提升空间",
+            "新协议专为区块链设计，利用内置共识机制实现高效DKG",
+            "支持异步网络，容错能力高达1/2拜占庭节点",
+            "采用随机信标选择小委员会，降低通信和计算复杂度",
+            "实验显示协议终止速度快于现有方案，CPU资源利用率高",
+            "在256节点系统中，乐观情况下约6.5秒完成，适合大规模应用"
+          ],
+          "en": [
+            "Existing DKG protocols underutilize blockchain, leaving room for performance improvement.",
+            "New protocol tailored for blockchain, leveraging built-in consensus for efficient DKG.",
+            "Supports asynchronous networks with up to 1/2 Byzantine fault tolerance.",
+            "Uses random beacon for small committees, reducing communication and computation complexity.",
+            "Experiments show faster termination than state-of-the-art protocols with high CPU utilization.",
+            "Completes in ~6.5 seconds in optimistic case for 256-node systems, suitable for large-scale use."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】区块链DKG新突破：异步容错，性能飙升！"
+        }
+      }
+    ]
   }
 ]
