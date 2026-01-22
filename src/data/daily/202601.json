@@ -551,5 +551,45 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-01-22",
+    "projects": [
+      {
+        "name": "zkRNN: Zero-Knowledge Proofs for Recurrent Neural Network Inference",
+        "url": "https://eprint.iacr.org/2026/073",
+        "type": "论文",
+        "tags": [
+          "Fatemeh Zarinjouei",
+          "zkML",
+          "GKR"
+        ],
+        "summary": {
+          "zh": "Zarinjouei等人在{{name}}论文中提出zkRNN系统，基于GKR协议和递归sum-check框架，为RNN推理提供ZK证明，实现序列长度无关的验证。",
+          "en": "Zarinjouei et al. proposed zkRNN in their {{name}}paper, a ZKP system for RNN inference based on GKR protocol and recursive sum-check, enabling sequence-length-independent verification."
+        },
+        "notes": {
+          "zh": [
+            "zkRNN针对RNN架构设计，解决时序依赖和权重共享的ZK证明挑战",
+            "基于GKR协议和递归sum-check框架，适应RNN的循环结构",
+            "电路表示编码隐藏状态转换，跨时间步展开计算并共享权重",
+            "验证器时间和证明大小与最终迭代电路大小呈多对数关系，与序列长度无关",
+            "评估显示秒级证明生成和毫秒级验证，具有实际应用潜力",
+            "支持模型输出正确性验证，同时保护模型参数隐私"
+          ],
+          "en": [
+            "zkRNN addresses ZKP challenges for RNNs due to temporal dependencies and weight sharing",
+            "Built on GKR protocol and recursive sum-check framework, adapted for RNN structure",
+            "Circuit representation encodes hidden-state transitions, unrolls computation across time steps",
+            "Polylogarithmic verifier time and proof size in final iteration circuit, independent of sequence length",
+            "Evaluation shows second-scale proving and millisecond-scale verification",
+            "Enables verifiable inference while preserving model parameter privacy"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】突破RNN验证难题：zkRNN实现高效零知识推理证明"
+        }
+      }
+    ]
   }
 ]
