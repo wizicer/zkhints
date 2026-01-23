@@ -591,5 +591,45 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-01-23",
+    "projects": [
+      {
+        "name": "Lether: Practical Post-Quantum Account-Based Private Blockchain Payments",
+        "url": "https://eprint.iacr.org/2026/076",
+        "type": "论文",
+        "tags": [
+          "Hongxiao Wang",
+          "Lattices",
+          "Private Payments"
+        ],
+        "summary": {
+          "zh": "Wang等人在{{name}}论文中提出了首个基于后量子格假设的实用账户式私有区块链支付协议Lether，通过可验证刷新机制和优化ZK证明系统实现高效交易。",
+          "en": "Wang et al. proposed Lether, the first practical account-based private blockchain payment protocol based on post-quantum lattice assumptions, achieving efficient transactions via verifiable refresh mechanisms and optimized ZK proof systems."
+        },
+        "notes": {
+          "zh": [
+            "首个基于后量子格假设的实用账户式私有区块链支付协议",
+            "解决了格基构造中无界级同态加密和事件导向可链接环签名的核心挑战",
+            "引入轻量级刷新机制，避免依赖FHE中的自举或大模数技术",
+            "优化LNP22 ZK证明系统，单次交易通信成本约68KB",
+            "形式化新定义以更准确捕捉现实区块链环境",
+            "证明生成和验证在标准PC上仅需不到一秒"
+          ],
+          "en": [
+            "Enables practical post-quantum private payments using lattices.",
+            "Solves key challenges in lattice-based homomorphic encryption and linkable ring signatures.",
+            "Uses a lightweight refresh to avoid costly FHE bootstrapping.",
+            "Batch-optimized LNP22 ZK proofs; ~68KB per transaction.",
+            "Introduces definitions for real-world blockchain privacy.",
+            "Proofs generate and verify in under a second on standard PCs."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】后量子时代隐私支付新突破：Lether协议实现高效账户式私有交易"
+        }
+      }
+    ]
   }
 ]
