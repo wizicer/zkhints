@@ -631,5 +631,44 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-01-24",
+    "projects": [
+      {
+        "name": "The Billion Dollar Merkle Tree",
+        "url": "https://eprint.iacr.org/2026/089",
+        "type": "论文",
+        "tags": [
+          "Thomas Coratger",
+          "Plonky3"
+        ],
+        "summary": {
+          "zh": "Coratger等人在{{name}}论文中首次对Plonky3 Merkle树进行了严格的安全分析，证明了其位置绑定和可提取性，尽管其压缩函数存在安全缺陷，但通过预哈希等对策仍能保障约40亿美元资产的安全。",
+          "en": "Coratger et al. conducted the first rigorous security analysis of the Plonky3 Merkle tree in their {{name}}paper, proving its position-binding and extractability, ensuring security for ~$4B in assets despite compression function flaws."
+        },
+        "notes": {
+          "zh": [
+            "Plonky3 Merkle树因其高效性被广泛部署，通过集成到多个简洁论证系统中，目前保障约40亿美元资产",
+            "其底层2对1压缩函数不具备抗碰撞性甚至单向性，初看可能危及整个Merkle树安全",
+            "常用对策是在使用数据作为叶子节点前进行预哈希处理",
+            "本研究首次对该Merkle树设计进行严格安全分析，证明Plonky3方法实际上是安全的",
+            "具体展示了（强）位置绑定和可提取性特性",
+            "研究结果增强了Plonky3在SNARKs和向量承诺等应用中的可信度"
+          ],
+          "en": [
+            "Widely used Plonky3 Merkle tree secures ~$4B in assets",
+            "Its underlying 2-to-1 compression function lacks collision-resistance and one-wayness, potentially undermining security",
+            "Common countermeasure is pre-hashing data before use as leaves",
+            "First rigorous security analysis of this Merkle tree design, showing Plonky3 approach is sound",
+            "Demonstrates (strong) position-binding and extractability",
+            "Enhances confidence in Plonky3 for SNARKs and vector commitments applications"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】Plonky3 Merkle树安全分析：40亿美元资产的守护者"
+        }
+      }
+    ]
   }
 ]
