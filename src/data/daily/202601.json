@@ -670,5 +670,45 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-01-25",
+    "projects": [
+      {
+        "name": "Microchain ZK Signers",
+        "url": "https://github.com/MicrochainLabs/microchain-zk-signers",
+        "type": "开源",
+        "tags": [
+          "MicrochainLabs",
+          "Noir",
+          "ERC-8039"
+        ],
+        "summary": {
+          "zh": "MicrochainLabs开源了Microchain ZK Signers，这是一个基于ZK证明的隐私保护多签智能合约钱包协议，支持可配置的M-of-N签名要求，并通过状态根隐藏签名者信息。",
+          "en": "MicrochainLabs open-sourced Microchain ZK Signers, a privacy-preserving multi-signature smart contract wallet protocol using ZK proofs, supporting configurable M-of-N requirements and hiding signer details via state roots."
+        },
+        "notes": {
+          "zh": [
+            "使用ZK证明实现隐私保护多签，签名者集合完全私有，仅公开状态根",
+            "支持可配置的M-of-N阈值签名，如2-of-3或3-of-5",
+            "协议采用ERC-8039标准，支持多种ZK证明系统如HONK、Groth16、PLONK",
+            "包含两个Noir电路：状态验证电路和交易验证电路，基于UltraHonk系统",
+            "通过盐值防止暴力攻击，确保配置隐私",
+            "适用于隐私DAO、企业钱包等场景，减少攻击面"
+          ],
+          "en": [
+            "Uses ZK proofs for privacy-preserving multi-signatures, keeping signer set private with only state root public",
+            "Supports configurable M-of-N threshold signatures, e.g., 2-of-3 or 3-of-5",
+            "Implements ERC-8039 for proof-system agnostic support, compatible with HONK, Groth16, PLONK",
+            "Includes two Noir circuits: state validation and transaction validation, based on UltraHonk",
+            "Uses salt to prevent brute-force attacks and ensure configuration privacy",
+            "Suitable for privacy DAOs, corporate wallets, reducing attack surface"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK开源】隐私多签新选择：Microchain ZK Signers 用ZK隐藏签名者身份"
+        }
+      }
+    ]
   }
 ]
