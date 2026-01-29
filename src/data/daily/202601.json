@@ -710,5 +710,44 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-01-29",
+    "projects": [
+      {
+        "name": "Permutation Proofs Déjà Vu",
+        "url": "https://blog.nexus.xyz/permutation-proofs-deja-vu/",
+        "type": "博客",
+        "tags": [
+          "Jens Groth",
+          "Shuffle Proofs"
+        ],
+        "summary": {
+          "zh": "Jens Groth在博客中讨论了现代ZKP如何重新审视20年前的置换证明思想，包括交换网络、大乘积多项式恒等式和置换矩阵在zkVM中的应用。",
+          "en": "Jens Groth discusses in a blog how modern ZKPs revisit 20-year-old permutation proof ideas, including switching networks, grand product polynomial identity, and permutation matrices in zkVMs."
+        },
+        "notes": {
+          "zh": [
+            "现代zkVM中的置换和查找参数消耗高达证明者一半计算时间，是成本最高的组件之一。",
+            "2025年研究如ST25、BCD25、CTHK25通过新方法显著提升了证明效率。",
+            "置换证明的核心思想包括交换网络、大乘积多项式恒等式和置换矩阵，这些在20年前的混洗证明中已有应用。",
+            "zkVM中内存一致性问题可通过置换参数解决，类似混洗证明中的技术。",
+            "交换网络方法在zkVM中用于内存一致性，但可能导致对数开销。",
+            "大乘积多项式恒等式和置换矩阵方法提供了线性或更优的效率改进。"
+          ],
+          "en": [
+            "Permutation and lookup arguments consume up to half of prover computation in zkVMs, among costliest components.",
+            "2025 research (ST25, BCD25, CTHK25) significantly improved prover efficiency.",
+            "Core ideas: switching networks, grand product polynomial identity, permutation matrices from 20-year-old shuffle proofs.",
+            "Memory consistency in zkVMs solved via permutation arguments, similar to shuffle proof techniques.",
+            "Switching networks for memory consistency may incur logarithmic overhead.",
+            "Grand product and permutation matrix methods offer linear or better efficiency improvements."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK博客】历史重现：现代ZKP如何借鉴20年前的置换证明思想"
+        }
+      }
+    ]
   }
 ]
