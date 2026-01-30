@@ -749,5 +749,45 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-01-30",
+    "projects": [
+      {
+        "name": "Re2creds: Reusable Anonymous Credentials from Malleable NIZK and Legacy Signatures",
+        "url": "https://eprint.iacr.org/2026/119",
+        "type": "论文",
+        "tags": [
+          "Bin Xie",
+          "Authentication",
+          "Web3"
+        ],
+        "summary": {
+          "zh": "Xie等人在{{name}}论文中提出了Re2creds匿名凭证系统，通过可重用演示和证明组合机制，显著降低计算成本并兼容传统签名，提升了实用性和效率。",
+          "en": "Xie et al. proposed Re2creds, an anonymous credential system in their {{name}}paper, reducing computational costs via reusable presentations and supporting legacy signatures for improved practicality."
+        },
+        "notes": {
+          "zh": [
+            "Re2creds引入可重用凭证演示范式，大幅降低多会话计算开销",
+            "通过证明组合机制，将繁重加密操作移出算术电路，支持传统签名",
+            "兼容NIST推荐曲线，消除实际应用障碍，提升部署可行性",
+            "实验显示凭证生成时间减少超50%，性能优于现有方案",
+            "基于BN254的BLS签名演示时间少于1秒，效率显著",
+            "通过UC理想功能验证安全性，提供严格证明保障"
+          ],
+          "en": [
+            "Re2creds introduces reusable credential presentations, cutting computational costs across sessions.",
+            "Proof combination moves intensive crypto ops outside circuits, enabling legacy signature support.",
+            "Compatible with NIST-recommended curves, removing adoption barriers.",
+            "Experimental results show >50% reduction in credential generation time vs. existing schemes.",
+            "BLS signature presentation on BN254 takes <1s, demonstrating high efficiency.",
+            "Security proven via refined UC ideal functionality with rigorous proofs."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】匿名凭证新突破：Re2creds实现高效可重用与兼容传统签名"
+        }
+      }
+    ]
   }
 ]
