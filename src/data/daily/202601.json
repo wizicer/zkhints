@@ -803,7 +803,7 @@
           "Lattice"
         ],
         "summary": {
-          "zh": "Sotiraki等人在{{name}}论文中提出了首个分布式SNARK系统Dinocchio，针对环算术优化，实现常数级证明大小和验证时间，显著提升证明效率。",
+          "zh": "Sotiraki等人在{{name}}论文中提出了首个针对环算术的分布式SNARK系统Dinocchio，实现常数级证明大小和验证时间，显著提升证明效率。",
           "en": "Sotiraki et al. proposed Dinocchio, the first distributed SNARK for ring arithmetic, achieving constant proof size and verification time with significant prover speedup."
         },
         "notes": {
