@@ -51,7 +51,8 @@ export const generateTextContent = (
   cards: any[],
   language: string = "zh",
   show_details: boolean = true,
-  dig_twitter_handle: boolean = false
+  dig_twitter_handle: boolean = false,
+  show_qas: boolean = false
 ): string => {
   const translations: Record<string, { heading: string; viewWeb: string; collectedBy: string }> = {
     zh: {
@@ -152,6 +153,18 @@ export const generateTextContent = (
         }
 
         text += "\n";
+      });
+    }
+
+    // Add Q&A section if exists
+    if (show_qas && card.qas && card.qas.length > 0) {
+      const qaHeading = language === "zh" ? "💬 今日要点 深入解析" : "💬 Q&A Deep Dive";
+      text += `${qaHeading}\n\n`;
+      card.qas.forEach((qa: any, index: number) => {
+        const question = qa.question[language] || qa.question.en || qa.question.zh;
+        const answer = qa.answer[language] || qa.answer.en || qa.answer.zh;
+        text += `Q${index + 1}: ${question}\n`;
+        text += `A${index + 1}: ${answer}\n\n`;
       });
     }
 

@@ -441,6 +441,7 @@ program
           {
             date: dateString,
             projects: [],
+            qas: [],
           },
         ];
         fs.writeFileSync(dataFilePath, JSON.stringify(newData, null, 2) + "\n", "utf-8");
@@ -462,11 +463,23 @@ program
             }
           }
 
-          if (convertedCount > 0) {
+          // Initialize qas field if not exists
+          let qasInitialized = false;
+          if (!existingEntry.qas) {
+            existingEntry.qas = [];
+            qasInitialized = true;
+          }
+
+          if (convertedCount > 0 || qasInitialized) {
             fs.writeFileSync(dataFilePath, JSON.stringify(data, null, 2) + "\n", "utf-8");
-            console.log(
-              `Converted ${convertedCount} project(s) to multi-language format for ${dateString}`
-            );
+            if (convertedCount > 0) {
+              console.log(
+                `Converted ${convertedCount} project(s) to multi-language format for ${dateString}`
+              );
+            }
+            if (qasInitialized) {
+              console.log(`Initialized qas field for ${dateString}`);
+            }
           } else {
             console.log(`Entry for ${dateString} already exists, no conversion needed`);
           }
@@ -477,6 +490,7 @@ program
         const newEntry = {
           date: dateString,
           projects: [],
+          qas: [],
         };
         data.push(newEntry);
 
