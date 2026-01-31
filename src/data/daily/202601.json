@@ -789,5 +789,80 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-01-31",
+    "projects": [
+      {
+        "name": "Dinocchio: Distributed Prover for Ring Arithmetic",
+        "url": "https://eprint.iacr.org/2026/159",
+        "type": "论文",
+        "tags": [
+          "Katerina Sotiraki",
+          "FHE",
+          "Lattice"
+        ],
+        "summary": {
+          "zh": "Sotiraki等人在{{name}}论文中提出了首个分布式SNARK系统Dinocchio，针对环算术优化，实现常数级证明大小和验证时间，显著提升证明效率。",
+          "en": "Sotiraki et al. proposed Dinocchio, the first distributed SNARK for ring arithmetic, achieving constant proof size and verification time with significant prover speedup."
+        },
+        "notes": {
+          "zh": [
+            "现有SNARK主要针对有限域算术，环算术（如格密码和FHE）应用时开销大",
+            "Dinocchio是首个针对环算术的分布式SNARK，证明大小和验证时间均为常数",
+            "在m个子证明者设置下，相比Rinocchio实现约m倍证明时间加速",
+            "通过矩阵乘法案例验证实用性，处理~2^32约束，超越现有工作能力",
+            "微基准测试：128个子证明者可在约9.23小时生成证明，验证仅需16秒",
+            "填补FHE计算可验证性空白，减少对诚实但好奇假设的依赖"
+          ],
+          "en": [
+            "Existing SNARKs are optimized for finite fields, incurring high overhead for ring arithmetic (e.g., lattice-based crypto and FHE).",
+            "Dinocchio is the first distributed SNARK for rings with constant proof size and verification time.",
+            "Achieves ~m-fold prover time speedup vs. Rinocchio with m sub-provers.",
+            "Demonstrated via matrix multiplication, handling ~2^32 constraints beyond prior works.",
+            "Microbenchmarks: 128 sub-provers generate proof in ~9.23 hours, verified in <16 seconds.",
+            "Addresses verifiability gap in FHE, reducing reliance on honest-but-curious assumptions."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】环算术新突破：Dinocchio实现首个分布式SNARK，验证时间恒定"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "Dinocchio 解决了什么核心问题？",
+          "en": "What core problem does Dinocchio address?"
+        },
+        "answer": {
+          "zh": "Dinocchio 针对环算术上的零知识证明效率问题。现有 SNARK 多为有限域优化，用于环算术时会产生巨大开销，而环算术是格密码与 FHE 的基础。Dinocchio 提供常数大小证明与常数验证时间，使大规模 FHE 计算首次具备实用级可验证性。",
+          "en": "Dinocchio addresses the inefficiency of zero knowledge proofs for ring arithmetic. Most SNARKs are optimized for finite fields, causing large overhead when used for rings that underlie lattice cryptography and FHE. Dinocchio achieves constant proof size and constant verification time, making verifiable large scale FHE computations practical."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "Dinocchio 如何支持大规模矩阵乘法证明？",
+          "en": "How does Dinocchio support proofs for large scale matrix multiplication?"
+        },
+        "answer": {
+          "zh": "Dinocchio 将矩阵乘法表示为环算术电路，并通过分布式 sum-check 与批量评估技术降低单个证明者负担。实验中，2^12 × 2^12 矩阵对应约 2^32 个约束，仍可在数小时内完成证明生成。",
+          "en": "Dinocchio encodes matrix multiplication as a ring arithmetic circuit and reduces prover load using distributed sum check and batch evaluation techniques. In experiments, a 2^12 by 2^12 matrix with about 2^32 constraints can still be proven within several hours."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "Dinocchio 对 zkVM 或可验证 FHE 系统意味着什么？",
+          "en": "What are the implications of Dinocchio for zkVMs or verifiable FHE systems?"
+        },
+        "answer": {
+          "zh": "Dinocchio 表明环算术不再是可验证计算的瓶颈。这为基于格的 zkVM 与可验证 FHE 打开了可扩展路径，使其不必退回诚实但好奇模型，并可处理真实规模的线性代数与批处理任务。",
+          "en": "Dinocchio shows that ring arithmetic is no longer the bottleneck for verifiable computation. This enables scalable lattice based zkVMs and verifiable FHE systems that avoid the honest but curious model and support real world linear algebra and batch workloads."
+        }
+      }
+    ]
   }
 ]
