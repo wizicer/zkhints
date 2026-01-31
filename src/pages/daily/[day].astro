@@ -8,6 +8,7 @@ import {
 import { typeLabels } from "./textGenerator";
 import { Image } from "astro:assets";
 import { marked } from "marked";
+import QACard from "../../components/QACard.astro";
 
 // Configure marked for inline parsing (no <p> wrapper)
 marked.use({
@@ -105,7 +106,7 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
         --color-saturday: #9b59b6;
         --color-sunday: #e91e63;
         --primary-color: var(--primaryColor);
-        --primary-light: #ebf5fb;
+        --primary-light: color-mix(in srgb, var(--primaryColor), white 70%);
         --primary-dark: #2980b9;
         --text-primary: #2c3e50;
         --text-secondary: #7f8c8d;
@@ -288,7 +289,7 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
       }
 
       .card-subtitle {
-        border-bottom: 2px solid var(--primary-light);
+        border-bottom: 2px solid #ebf5fb;
         margin: 12px 0;
       }
 
@@ -770,6 +771,20 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
             )}
           </div>
         ))
+      }
+
+      {
+        dayData.qas && dayData.qas.length > 0 && (
+          <QACard
+            qas={dayData.qas}
+            weekdayColor={weekdayColor}
+            dayKey={dayKey}
+            weekday={dayData.weekday}
+            year={year}
+            month={month}
+            day={day}
+          />
+        )
       }
     </div>
   </body>

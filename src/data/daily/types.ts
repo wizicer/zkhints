@@ -20,11 +20,18 @@ export interface Project {
   icon?: string;
 }
 
+export interface QAItem {
+  level: "beginner" | "intermediate" | "expert";
+  question: BilingualText;
+  answer: BilingualText;
+}
+
 export interface DailyNewsItem {
   date: string;
   projects: Project[];
   languages?: string[];
   insights?: any[];
+  qas?: QAItem[];
 }
 
 export interface ProcessedDailyNewsItem extends DailyNewsItem {

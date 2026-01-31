@@ -23,7 +23,7 @@ import bugImg from "../../assets/hinta/bug.png";
 import gnarkImg from "../../assets/hinta/gnark.png";
 import researchImg from "../../assets/hinta/research.png";
 
-export type { BilingualText, BilingualNotes, Project, DailyNewsItem, ProcessedDailyNewsItem } from './types';
+export type { BilingualText, BilingualNotes, Project, DailyNewsItem, ProcessedDailyNewsItem, QAItem } from './types';
 import { getWeekday, type DailyNewsItem, type ProcessedDailyNewsItem } from './types';
 
 // Category to avatar mapping (deterministic)
