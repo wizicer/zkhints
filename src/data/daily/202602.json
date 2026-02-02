@@ -1,0 +1,76 @@
+[
+  {
+    "date": "2026-02-02",
+    "projects": [
+      {
+        "name": "stark-v: A general purpose zkVM building on top of Stwo",
+        "url": "https://github.com/AntoineFONDEUR/stark-v",
+        "type": "开源",
+        "tags": [
+          "AntoineFONDEUR",
+          "Stwo"
+        ],
+        "summary": {
+          "zh": "@AntoineFONDEUR 开源了stark-v，这是一个基于Stwo构建的通用zkVM，为RISC-V程序执行生成STARK证明，支持快速约束开发。",
+          "en": "@AntoineFONDEUR open-sourced stark-v, a general-purpose zkVM built on Stwo that generates STARK proofs for RISC-V program execution, enabling rapid constraint development."
+        },
+        "notes": {
+          "zh": [
+            "stark-v 是一个RV32IM zkVM，为RISC-V程序执行生成STARK证明。",
+            "使用声明式宏生成Stwo AIR组件，加速新约束的开发过程。",
+            "提供内存布局定义，支持固定地址范围的程序代码、输入输出和堆栈。",
+            "包含基准测试，测量证明吞吐量（kHz），并探索并行化策略。",
+            "项目仍在开发中，暂不建议用于生产环境。",
+            "架构灵感来源于OpenVM，支持多种分配器如jemalloc、mimalloc。"
+          ],
+          "en": [
+            "stark-v is an RV32IM zkVM that generates STARK proofs for RISC-V program execution.",
+            "Uses declarative macros to generate Stwo AIR components for rapid constraint development.",
+            "Defines fixed memory layout for program code, input/output, and stack in guest programs.",
+            "Includes benchmarks measuring proof throughput (kHz) and explores parallelization strategies.",
+            "Project is a work in progress and not yet ready for production use.",
+            "Architecture inspired by OpenVM, supports allocators like jemalloc and mimalloc."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK开源】RISC-V zkVM新星：stark-v 基于Stwo构建，支持快速STARK证明生成"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "stark-v 支持哪种 RISC-V 架构，有什么限制？",
+          "en": "Which RISC-V architecture does stark-v support, and what are its limitations?"
+        },
+        "answer": {
+          "zh": "stark-v 目前支持 RV32IM 指令集，覆盖基础整数运算与乘法扩展。项目仍处于开发阶段，不保证完整生态兼容性，也暂不适合直接用于生产级 zkVM 场景。",
+          "en": "stark-v currently supports the RV32IM instruction set, covering base integer operations and multiplication. The project is still under active development and is not yet suitable for production grade zkVM deployments."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "stark-v 如何加速 AIR 与约束的开发？",
+          "en": "How does stark-v accelerate AIR and constraint development?"
+        },
+        "answer": {
+          "zh": "stark-v 使用声明式宏自动生成 Stwo AIR 组件，将指令语义直接映射为约束结构。这种方式减少了手写 AIR 的复杂度，使新增指令或内存约束更接近常规系统实现逻辑。",
+          "en": "stark-v uses declarative macros to generate Stwo AIR components automatically, mapping instruction semantics directly into constraints. This reduces manual AIR boilerplate and makes adding new instructions or memory constraints closer to normal systems programming."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "stark-v 在 zkVM 设计空间中扮演什么角色？",
+          "en": "What role does stark-v play in the zkVM design space?"
+        },
+        "answer": {
+          "zh": "stark-v 更偏向研究型 zkVM，强调 STARK 友好的架构、可组合 AIR 设计以及快速迭代。它为探索 zkVM 中指令级约束、内存建模和并行证明策略提供了实验平台。",
+          "en": "stark-v serves as a research oriented zkVM, emphasizing STARK friendly architecture, composable AIR design, and rapid iteration. It provides an experimental platform for studying instruction level constraints, memory modeling, and parallel proof strategies."
+        }
+      }
+    ]
+  }
+]
