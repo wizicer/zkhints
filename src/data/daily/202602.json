@@ -72,5 +72,80 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-02-03",
+    "projects": [
+      {
+        "name": "zkCraft: Prompt-Guided LLM as a Zero-Shot Mutation Pattern Oracle for TCCT-Powered ZK Fuzzing",
+        "url": "https://arxiv.org/abs/2602.00667",
+        "type": "论文",
+        "tags": [
+          "Rong Fu",
+          "Fuzzing",
+          "Automated Debugging"
+        ],
+        "summary": {
+          "zh": "Fu等人在{{name}}论文中提出了zkCraft框架，结合确定性定位与证明搜索来检测ZK电路语义不一致，利用LLM引导突变模板提升边缘案例覆盖，减少求解器交互成本。",
+          "en": "Fu et al. proposed the zkCraft framework in their {{name}}paper, combining deterministic localization with proof search to detect semantic inconsistencies in ZK circuits, using LLM-guided mutation templates to improve edge-case coverage and reduce solver interaction costs."
+        },
+        "notes": {
+          "zh": [
+            "ZK电路因见证计算与约束紧密耦合而难以正确实现，易产生语义不一致",
+            "zkCraft框架结合确定性R1CS感知定位与证明承载搜索，检测欠约束和过约束故障",
+            "将候选约束编辑编码为Row-Vortex多项式，用Violation IOP替代重复求解器查询，提供简洁证明",
+            "确定性LLM驱动突变模板偏向探索边缘案例，同时保持可审计的代数验证",
+            "在真实Circom代码评估中，证明承载定位检测多种故障，假阳性低，减少求解器交互成本",
+            "该方法连接形式验证与自动调试，为稳健ZK电路开发提供可扩展路径"
+          ],
+          "en": [
+            "ZK circuits are tricky due to tight witness-constraint coupling, causing subtle bugs.",
+            "zkCraft uses R1CS-aware localization and proof search to catch under/over-constrained issues.",
+            "Row-Vortex polynomials encode edits; Violation IOP replaces repeated solver checks with a proof.",
+            "LLM-guided mutations target edge cases, keeping algebraic verification auditable.",
+            "Tested on Circom, zkCraft finds diverse bugs, lowers false positives and solver costs.",
+            "Links formal verification with automated debugging for scalable ZK circuit development."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】zkCraft：用LLM引导的突变模板，自动检测ZK电路语义错误"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "为什么 ZK 电路中的语义错误很难通过普通测试发现？",
+          "en": "Why are semantic bugs in ZK circuits hard to detect with conventional testing?"
+        },
+        "answer": {
+          "zh": "ZK 电路中见证计算与约束系统高度耦合，很多错误不会直接导致约束不满足，而是悄然放宽或收紧可行解空间。普通测试往往只覆盖少量输入，难以触及这些隐藏的欠约束或过约束情况。",
+          "en": "In ZK circuits, witness computation is tightly coupled with constraints, so many bugs do not immediately violate constraints. Instead, they silently widen or restrict the solution space. Standard testing covers limited inputs and often misses such under- or over-constrained cases."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "Row-Vortex 多项式在 zkCraft 中解决了什么关键瓶颈？",
+          "en": "What key bottleneck does the Row-Vortex polynomial address in zkCraft?"
+        },
+        "answer": {
+          "zh": "Row-Vortex 多项式将候选约束修改统一编码，使大量潜在违规可以被一次性代数化检查。这避免了对每个候选编辑单独调用求解器的问题，显著提升了搜索阶段的效率。",
+          "en": "The Row-Vortex polynomial encodes many candidate constraint edits into a single algebraic object. This allows zkCraft to check many potential violations at once, avoiding per-edit solver calls and greatly improving search efficiency."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "Violation IOP 在 zkCraft 中如何替代多次可满足性检查？",
+          "en": "How does the Violation IOP replace repeated satisfiability checks in zkCraft?"
+        },
+        "answer": {
+          "zh": "Violation IOP 将约束违规转化为可验证的代数证明，使验证者只需检查一个简洁证明即可确认错误存在。这将交互式、反复的可满足性查询转化为一次性证明验证。",
+          "en": "The Violation IOP turns constraint violations into succinct algebraic proofs. A verifier checks a single proof to confirm the existence of a bug, replacing interactive and repeated satisfiability queries with one proof verification."
+        }
+      }
+    ]
   }
 ]
