@@ -147,5 +147,80 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-02-04",
+    "projects": [
+      {
+        "name": "Field-Agnostic SNARKs from Expand-Accumulate Codes",
+        "url": "https://eprint.iacr.org/2024/1871",
+        "type": "论文",
+        "tags": [
+          "Alexander R. Block",
+          "Brakedown"
+        ],
+        "summary": {
+          "zh": "Block等人在{{name}}论文中提出了一种基于扩展累积码的域无关SNARK，解决了现有方案依赖特定有限域的问题，证明生成时间仅需0.23秒，比非域无关方案快两个数量级。",
+          "en": "Block et al. proposed a field-agnostic SNARK based on expand-accumulate codes in their {{name}}paper, addressing the limitation of existing schemes that rely on specific finite fields, with proof generation time as low as 0.23 seconds, two orders of magnitude faster than non-field-agnostic SNARKs."
+        },
+        "notes": {
+          "zh": [
+            "提出基于扩展累积码的域无关SNARK，不依赖特定有限域",
+            "主要技术贡献：证明这些码具有恒定速率和相对距离，解决先前开放问题",
+            "证明者时间为O(M log M)，证明大小为O(√M)，具体效率显著提升",
+            "ECDSA验证在secp256k1曲线上证明生成仅需0.23秒，比非域无关方案快100倍",
+            "相比Brakedown，证明大小减少1.9-2.8倍，证明者时间仅增加1.2倍开销",
+            "具有透明设置和潜在的后量子安全性，适用于多种实际应用场景"
+          ],
+          "en": [
+            "Proposed a field-agnostic SNARK based on expand-accumulate codes, independent of specific finite fields",
+            "Key technical contribution: proved these codes have constant rate and relative distance, solving an open problem",
+            "Prover time O(M log M), proof size O(√M), with significant concrete efficiency improvements",
+            "ECDSA verification on secp256k1 requires only 0.23s proof generation, 100x faster than non-field-agnostic SNARKs",
+            "Compared to Brakedown, proof size reduced by 1.9-2.8x with only 1.2x overhead in prover time",
+            "Features transparent setup and plausible post-quantum security, suitable for various practical applications"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】突破域限制：新型SNARK实现高效通用证明"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "variant": 1,
+        "question": {
+          "zh": "为什么“域无关”对 SNARK 来说是一个重要特性？",
+          "en": "Why is being field-agnostic an important property for SNARKs?"
+        },
+        "answer": {
+          "zh": "许多实际密码算法运行在特定有限域或椭圆曲线标量域上。传统 SNARK 若强制使用特定域，往往需要昂贵的域嵌入。域无关 SNARK 可以直接在原生域上工作，大幅降低证明开销。",
+          "en": "Many real-world cryptographic algorithms operate over specific finite fields or curve scalar fields. Traditional SNARKs often require costly field embeddings. Field-agnostic SNARKs work directly over the native field, significantly reducing overhead."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "证明扩展累积码具有恒定速率和相对距离为何重要？",
+          "en": "Why is proving constant rate and relative distance for expand-accumulate codes important?"
+        },
+        "answer": {
+          "zh": "恒定速率和相对距离是构建高效 SNARK 的关键编码性质。该结果解决了一个长期开放问题，保证了在规模扩展时，证明大小和可靠性不会迅速恶化。",
+          "en": "Constant rate and relative distance are crucial coding properties for efficient SNARKs. This result resolves a long-standing open problem and ensures proof size and soundness do not degrade as the system scales."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "O(M log M) 的证明者复杂度在实践中意味着什么？",
+          "en": "What does an O(M log M) prover complexity imply in practice?"
+        },
+        "answer": {
+          "zh": "该复杂度避免了对域特定 FFT 的依赖，使实现更通用且工程友好。在实际规模下，常数因子较小，使得在复杂电路如 ECDSA 验证中也能实现亚秒级证明。",
+          "en": "This complexity avoids reliance on field-specific FFTs, making implementations more general and engineering-friendly. With small constants, it enables sub-second proofs even for complex circuits like ECDSA verification."
+        }
+      }
+    ]
   }
 ]
