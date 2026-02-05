@@ -222,5 +222,80 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-02-05",
+    "projects": [
+      {
+        "name": "Hachi: Efficient Lattice-Based Multilinear Polynomial Commitments over Extension Fields",
+        "url": "https://eprint.iacr.org/2026/156",
+        "type": "论文",
+        "tags": [
+          "Ngoc Khanh Nguyen",
+          "Lattice",
+          "Sumcheck"
+        ],
+        "summary": {
+          "zh": "Nguyen等人在{{name}}论文中提出了Hachi，一种基于格的多线性多项式承诺方案，通过结合Greyhound与环切换技术，实现了验证时间的平方根复杂度提升和约55KB的紧凑证明。",
+          "en": "Nguyen et al. proposed Hachi, a lattice-based multilinear polynomial commitment scheme in their {{name}}paper, achieving square-root verification time and compact proofs (~55KB) by integrating Greyhound with ring-switching."
+        },
+        "notes": {
+          "zh": [
+            "Hachi基于Module-SIS假设，为ℓ变量多项式提供poly(ℓ,λ)大小的证明和Õ(√2^ℓλ)验证时间",
+            "相比当前最优方案Greyhound，验证时间渐进改进Õ(λ)，实际加速达12.5倍",
+            "采用sumcheck协议优化验证，但标准sumcheck在格构造中存在效率瓶颈",
+            "创新结合Greyhound与环切换技术，使验证器无需在R_q上进行乘法运算",
+            "引入通用归约，将扩展域F_{q^k}上的多项式求值证明转换为分圆环R_q上的等价陈述",
+            "该技术可独立应用于构建基于格的SNARK，特别适用于实现更快验证"
+          ],
+          "en": [
+            "Hachi offers poly(ℓ,λ) proof size and Õ(√2^ℓλ) verifier time for ℓ-variate polynomials under Module-SIS",
+            "Achieves Õ(λ) asymptotic improvement over Greyhound, with 12.5x practical speedup",
+            "Uses sumcheck protocol but addresses bottlenecks in lattice-based constructions",
+            "Novel integration of Greyhound with ring-switching eliminates R_q multiplications for verifier",
+            "Generic reduction converts extension field proofs to cyclotomic ring statements",
+            "Technique applicable to lattice-based SNARKs for faster verification"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】格密码新突破：Hachi实现高效多项式承诺，验证速度提升12.5倍"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "在基于格的多项式承诺方案中，为什么验证时间往往会成为瓶颈？",
+          "en": "Why does verifier time often become a bottleneck in lattice-based polynomial commitment schemes?"
+        },
+        "answer": {
+          "zh": "在基于格的多项式承诺中，验证多线性多项式通常需要大量代数运算。验证过程涉及昂贵的环乘法和规范检查，使验证器成本随问题规模快速增长，从而限制系统的可扩展性。",
+          "en": "In lattice-based polynomial commitment schemes, verifying multilinear polynomials requires substantial algebraic computation. The verifier must perform costly ring operations and norm checks, causing its cost to grow quickly with the problem size and limiting scalability."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "标准 sumcheck 在格基构造中面临哪些效率问题？",
+          "en": "What efficiency issues does standard sumcheck face in lattice-based constructions?"
+        },
+        "answer": {
+          "zh": "标准 sumcheck 假设高效的域运算，但在格构造中，验证者往往需要在环 R_q 上执行多次乘法。这些操作代价高昂，使得直接套用 sumcheck 会显著拖慢验证过程。",
+          "en": "Standard sumcheck assumes cheap field operations, but in lattice settings the verifier must often perform many multiplications over the ring R_q. These operations are expensive, making naive sumcheck inefficient."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "将扩展域证明归约到分圆环在设计上有何深远影响？",
+          "en": "What are the broader design implications of reducing extension-field proofs to cyclotomic rings?"
+        },
+        "answer": {
+          "zh": "这一通用归约表明，复杂扩展域上的多项式验证可以映射到更受控的环结构中。这不仅提升了验证效率，也为构建模块化、可复用的格基 SNARK 组件提供了新范式。",
+          "en": "This generic reduction shows that polynomial verification over extension fields can be mapped to more structured ring settings. It improves verifier efficiency and enables a modular, reusable design paradigm for lattice-based SNARK components."
+        }
+      }
+    ]
   }
 ]
