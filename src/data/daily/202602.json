@@ -297,5 +297,79 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-02-07",
+    "projects": [
+      {
+        "name": "The Verification Theater: When Formal Methods Create False Assurance in Cryptographic Libraries",
+        "url": "https://eprint.iacr.org/2026/192",
+        "type": "论文",
+        "tags": [
+          "Nadim Kobeissi",
+          "Vulnerabilities"
+        ],
+        "summary": {
+          "zh": "Kobeissi在{{name}}论文中分析了Cryspen的libcrux和hpke-rs等宣称形式化验证的密码库，指出其存在验证边界问题，导致多个安全漏洞被忽略。",
+          "en": "Kobeissi analyzes formally verified cryptographic libraries like libcrux and hpke-rs in the {{name}}paper, highlighting verification boundary issues that allowed multiple security vulnerabilities."
+        },
+        "notes": {
+          "zh": [
+            "形式化验证常被宣传为最高安全保证，但实际存在验证边界问题",
+            "案例研究揭示Cryspen的libcrux和hpke-rs库存在五个漏洞",
+            "漏洞包括SHA-3输出失败、X25519验证缺失、nonce重用等",
+            "形式化验证仅针对特定属性，需结合传统工程实践",
+            "营销声称的完整验证与工程现实间的差距构成系统性风险",
+            "建议精确沟通验证范围，避免形式化验证沦为安全剧场"
+          ],
+          "en": [
+            "Formal verification is often marketed as highest assurance but has boundary issues.",
+            "Case study finds five vulnerabilities in Cryspen's libcrux and hpke-rs libraries.",
+            "Vulnerabilities include SHA-3 output failure, missing X25519 validation, nonce reuse.",
+            "Formal verification targets specific properties; needs complementary engineering practices.",
+            "Gap between marketing claims and engineering reality poses systemic risk.",
+            "Recommend precise communication of verification scope to avoid security theater."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】形式化验证的陷阱：当验证边界成为安全漏洞的温床"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "论文标题中的“Verification Theater”指的是什么现象？",
+          "en": "What does “Verification Theater” refer to in the paper’s title?"
+        },
+        "answer": {
+          "zh": "它指的是一种表面上高度安全的假象，即形式化验证被宣传为“最高级别保证”，但实际上只覆盖了系统的一部分。这种宣传与真实工程安全性之间的落差，可能让使用者产生错误的安全信心。",
+          "en": "It refers to a situation where formal verification is marketed as providing the highest assurance, while in reality it only covers part of the system. This gap between claims and actual guarantees can give users a false sense of security."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "“verification boundary problem”具体指什么结构性问题？",
+          "en": "What structural issue does the “verification boundary problem” describe?"
+        },
+        "answer": {
+          "zh": "它指形式化验证只覆盖明确建模的代码与性质，而接口、平台依赖行为或前置条件往往被排除在外。一旦安全假设跨越这些边界，漏洞就可能出现而不违反已验证的性质。",
+          "en": "It describes how formal verification only covers explicitly modeled code and properties, while interfaces, platform behavior, or preconditions are excluded. When security assumptions cross these boundaries, bugs can arise without violating verified properties."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "该论文对“高保证密码库”的威胁模型提出了什么反思？",
+          "en": "How does the paper challenge threat models of “high-assurance” cryptographic libraries?"
+        },
+        "answer": {
+          "zh": "论文指出，威胁模型往往隐含假设验证范围之外的代码是安全的。这种隐式假设未被形式化，却被当作已验证结论的一部分，从而系统性低估真实攻击面。",
+          "en": "The paper argues that threat models often implicitly assume code outside the verified core is safe. These assumptions are not formalized but are treated as verified conclusions, leading to a systematic underestimation of the attack surface."
+        }
+      }
+    ]
   }
 ]
