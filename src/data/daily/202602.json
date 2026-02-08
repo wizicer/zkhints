@@ -371,5 +371,80 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-02-08",
+    "projects": [
+      {
+        "name": "Claiming bounties on small scale Poseidon and Poseidon2 instances using resultant-based algebraic attacks",
+        "url": "https://eprint.iacr.org/2026/150",
+        "type": "论文",
+        "tags": [
+          "Antoine Bak",
+          "Poseidon",
+          "Cryptanalysis"
+        ],
+        "summary": {
+          "zh": "Bak等人在{{name}}论文中分析了Poseidon和Poseidon2哈希函数的简化实例，使用基于结果式（resultant）的新代数攻击方法成功破解多个挑战实例，并获得了以太坊基金会的赏金。",
+          "en": "Bak et al. analyzed reduced instances of Poseidon and Poseidon2 hash functions in their {{name}}paper, using a new resultant-based algebraic attack to successfully break multiple challenge instances and claim Ethereum Foundation bounties."
+        },
+        "notes": {
+          "zh": [
+            "以太坊基金会于2024年11月发布针对Poseidon和Poseidon2哈希函数的赏金挑战",
+            "研究团队成功破解Poseidon2-31m、Poseidon2-31k和Poseidon-256的多个简化实例",
+            "对Poseidon2实例使用了基于结果式的新代数攻击方法",
+            "对Poseidon-256实例使用了已知的单变量求根方法",
+            "除第一个Poseidon-256实例外，其他破解方案均被确认符合赏金条件",
+            "该研究揭示了Poseidon系列哈希函数在简化配置下的潜在安全风险"
+          ],
+          "en": [
+            "Ethereum Foundation issued bounty challenges for Poseidon and Poseidon2 hash functions in Nov 2024",
+            "Team successfully broke multiple reduced instances of Poseidon2-31m, Poseidon2-31k and Poseidon-256",
+            "Used new resultant-based algebraic attack for Poseidon2 instances",
+            "Used known univariate root finding for Poseidon-256 instances",
+            "All solutions except first Poseidon-256 instance confirmed eligible for bounties",
+            "Research reveals potential security risks in reduced configurations of Poseidon hash functions"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK安全】Poseidon哈希函数遭破解！新代数攻击方法成功挑战以太坊基金会赏金"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "为什么这些攻击只针对“小规模”或“轮数减少”的 Poseidon 实例？",
+          "en": "Why do the attacks focus on small-scale or round-reduced Poseidon instances?"
+        },
+        "answer": {
+          "zh": "完整参数下的 Poseidon 设计留有充分安全裕量。赏金挑战刻意选取轮数减少或小素域实例，用于测试分析方法的极限，而不是破坏生产级参数。",
+          "en": "Full-parameter Poseidon includes ample security margins. The bounty challenges intentionally use reduced-round or small-field instances to test cryptanalytic techniques, not to break production settings."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "结果式（resultant）在代数攻击中起到了什么作用？",
+          "en": "What role does the resultant play in these algebraic attacks?"
+        },
+        "answer": {
+          "zh": "结果式用于消除多变量多项式系统中的变量，将问题降维为更易处理的方程。作者利用这一工具将 Poseidon2 的多变量约束转化为可求解的单变量或低维问题。",
+          "en": "Resultants eliminate variables from multivariate polynomial systems, reducing dimensionality. The authors use them to transform Poseidon2 constraints into univariate or low-dimensional equations that are tractable to solve."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "这些结果对 Poseidon 作为 ZK 友好哈希的安全性有何启示？",
+          "en": "What do these results imply about Poseidon's security as a ZK-friendly hash?"
+        },
+        "answer": {
+          "zh": "结果验证了设计中的安全裕量假设：在显著削减轮数后才出现可行攻击。它们更多是对参数选择和分析方法的验证，而非对标准 Poseidon 实例的否定。",
+          "en": "The results confirm the intended security margins: attacks only appear under aggressive round reduction. They validate parameter choices and analysis techniques rather than undermining standard Poseidon instances."
+        }
+      }
+    ]
   }
 ]
