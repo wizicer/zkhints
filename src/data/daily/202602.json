@@ -446,5 +446,82 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-02-10",
+    "projects": [
+      {
+        "name": "Data Matching in Unequal Worlds and Applications to Smart Contracts",
+        "url": "https://cic.iacr.org/p/2/4/33",
+        "type": "论文",
+        "tags": [
+          "Dmitry Khovratovich",
+          "Compression",
+          "Hash"
+        ],
+        "summary": {
+          "zh": "Khovratovich等人在{{name}}论文中提出了一种名为混合压缩的新方法，允许在SNARK证明中使用两种不同的哈希函数，以同时优化链上验证的gas消耗和证明生成时间。",
+          "en": "Khovratovich et al. proposed a novel hybrid compression method in their {{name}}paper, enabling the use of two different hash functions in SNARK proofs to optimize both on-chain gas usage and prover time."
+        },
+        "notes": {
+          "zh": [
+            "Groth16中长 statement 成本高，哈希解决方案在合约或电路中开销大",
+            "混合压缩方法使用两种哈希：一种优化电路，一种优化链上验证",
+            "定义联合UHF硬度安全属性，在随机预言机模型中证明合理性",
+            "基准测试显示gas消耗和证明时间均接近最优",
+            "8KB statement 仅需10秒证明和270K gas，优于SHA-256的290秒或Poseidon的5M gas",
+            "开发两方协议，高效检查使用不同哈希函数时的输入相等性"
+          ],
+          "en": [
+            "Long statements in Groth16 are costly; hashing helps but is expensive in contracts or circuits",
+            "Hybrid compression uses two hashes: one circuit-optimized, one for on-chain verification",
+            "Defined joint UHF hardness and proved it in random oracle model",
+            "Benchmarks show near-optimal gas and prover time",
+            "8KB statement: 10s prover time, 270K gas vs 290s (SHA-256) or 5M gas (Poseidon)",
+            "Two-party protocol for cross-hash input equality with efficient communication"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】突破效率瓶颈：混合压缩技术让SNARK证明更高效"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "variant": 1,
+        "question": {
+          "zh": "这篇工作主要解决了什么问题？为什么在智能合约中是一个痛点？",
+          "en": "What core problem does this work solve, and why is it a pain point in smart contracts?"
+        },
+        "answer": {
+          "zh": "它解决的是 SNARK 验证中“长 statement 太贵”的问题。直接验证会导致 gas 线性增长，而把 statement 哈希进电路又会引入哈希函数两难：SHA-256 对合约友好但电路昂贵，Poseidon 对电路友好但合约昂贵。Hybrid Compression 允许合约和电路使用不同的哈希函数，同时仍保证 statement 一致性。",
+          "en": "It addresses the high cost of verifying long statements in SNARK-based smart contracts. Compressing statements creates a dilemma: SHA-256 is cheap on-chain but expensive in circuits, while Poseidon is the opposite. Hybrid Compression resolves this by letting the contract and circuit use different hash functions while still binding the same statement securely."
+        }
+      },
+      {
+        "level": "intermediate",
+        "variant": 2,
+        "question": {
+          "zh": "Joint UHF Hardness 假设与传统 collision resistance 有何不同？",
+          "en": "How does Joint UHF Hardness differ from standard collision resistance?"
+        },
+        "answer": {
+          "zh": "Joint UHF Hardness 不要求攻击者找到同一哈希函数下的碰撞，而是要求在两个不同哈希函数生成的种子之和下，仍难以构造 UHF 碰撞。它更弱但更贴合应用场景，在 Random Oracle Model 下可以直接证明成立。",
+          "en": "Joint UHF Hardness does not ask for collisions under a single hash function. Instead, it requires that even when the seed is derived from two different hashes, producing a UHF collision remains hard. It is weaker but better aligned with the actual protocol, and holds in the random oracle model."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "为什么 Hybrid Compression 特别适合 rollups 和 zkVMs？",
+          "en": "Why is Hybrid Compression particularly suitable for rollups and zkVMs?"
+        },
+        "answer": {
+          "zh": "Rollups 和 zkVMs 通常有超长 public input，如批量交易或执行 trace。Hybrid Compression 允许链上用 SHA-256 做 batch evaluation 相关校验，而在电路中用 Poseidon 保持 prover 高效。这种解耦在递归证明和 zkVM 架构中尤为关键。",
+          "en": "Rollups and zkVMs often have very large public inputs such as batched transactions or execution traces. Hybrid Compression allows on-chain batch evaluation with SHA-256 while keeping Poseidon inside the circuit for prover efficiency. This decoupling is especially valuable for recursive proofs and zkVM architectures."
+        }
+      }
+    ]
   }
 ]
