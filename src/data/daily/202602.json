@@ -523,5 +523,80 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-02-11",
+    "projects": [
+      {
+        "name": "zkAgent: Verifiable Agent Execution via One-Shot Complete LLM Inference Proof",
+        "url": "https://eprint.iacr.org/2026/199",
+        "type": "论文",
+        "tags": [
+          "Lizheng Wang",
+          "LLM",
+          "Verifiable"
+        ],
+        "summary": {
+          "zh": "Wang等人在{{name}}论文中提出了zkAgent系统，通过一次性完整LLM推理证明实现可验证的智能体执行，显著提升证明效率并支持端到端验证。",
+          "en": "Wang et al. proposed the zkAgent system in their {{name}}paper, enabling verifiable agent execution via one-shot complete LLM inference proofs, significantly improving efficiency and supporting end-to-end verification."
+        },
+        "notes": {
+          "zh": [
+            "zkAgent是首个支持完整LLM推理和工具交互验证的智能体系统",
+            "一次性推理证明替代逐令牌生成，实现高效可扩展证明",
+            "证明时间比zkGPT快294倍（1.05秒/令牌 vs 309秒/令牌）",
+            "验证时间减少9690倍（0.45秒 vs 4361秒）",
+            "端到端智能体执行证明仅需240秒，验证约0.5秒",
+            "42MB证明大小使可验证智能体执行具备实际部署可行性"
+          ],
+          "en": [
+            "First system for verifiable agent execution with full LLM inference and tool interactions",
+            "One-shot inference proof replaces token-by-token generation for scalable proving",
+            "294× proving speedup vs zkGPT (1.05s/token vs 309s/token)",
+            "9690× verification speedup (0.45s vs 4361s)",
+            "End-to-end agent proofs in 240s, verification in ~0.5s",
+            "42MB proof size enables practical real-world deployment"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】zkAgent：首个可验证智能体执行系统，效率提升294倍！"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "为什么仅验证 LLM 推理还不足以保证 Agent 的安全？",
+          "en": "Why is verifying standalone LLM inference insufficient for agent security?"
+        },
+        "answer": {
+          "zh": "Agent 不仅生成文本，还会调用工具、执行多步决策并处理外部数据。若只验证 Transformer 推理，而不覆盖工具调用与交互逻辑，攻击者仍可能在执行流程中插入恶意行为。",
+          "en": "Agents do more than text generation. They call tools, make multi-step decisions, and interact with external data. Verifying only Transformer inference leaves tool usage and execution logic unchecked, enabling malicious behavior."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "zkAgent 相比 zkGPT 的核心改进点在哪里？",
+          "en": "What is the core improvement of zkAgent over zkGPT?"
+        },
+        "answer": {
+          "zh": "zkAgent 将逐步 token 证明替换为完整执行证明，实现推理摊销成本约 1.05 秒每 token，而 zkGPT 需要 309 秒每 token。验证时间也从数千秒降至不到一秒级。",
+          "en": "zkAgent replaces per-token stepwise proofs with a complete execution proof, achieving about 1.05 seconds per token compared to 309 seconds in zkGPT. Verification time drops from thousands of seconds to under a second."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "zkAgent 如何在完整执行证明与可扩展性之间取得平衡？",
+          "en": "How does zkAgent balance full execution proofs with scalability?"
+        },
+        "answer": {
+          "zh": "zkAgent 将完整 LLM 推理与工具交互编码为一次统一 SNARK 证明，通过摊销中间计算避免递归爆炸。这种设计在保证端到端一致性的同时，实现了可扩展证明生成。",
+          "en": "zkAgent encodes full LLM inference and tool interactions into a single SNARK proof, amortizing intermediate computations to avoid recursive blowup. This preserves end-to-end consistency while remaining scalable."
+        }
+      }
+    ]
   }
 ]
