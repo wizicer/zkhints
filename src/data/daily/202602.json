@@ -598,5 +598,79 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-02-12",
+    "projects": [
+      {
+        "name": "Zero: The Decentralized Multi-Core World Computer",
+        "url": "https://x.com/LayerZero_Core/status/2021336132047294898",
+        "type": "新闻",
+        "tags": [
+          "LayerZero_Core",
+          "Real-time proving"
+        ],
+        "summary": {
+          "zh": "@LayerZero_Core 发布了Zero，这是一种去中心化的多核世界计算机，利用ZK证明将执行与验证解耦，实现异构架构，支持轻量级验证器，目标达到每Zone 200万TPS。",
+          "en": "@LayerZero_Core released Zero, a decentralized multi-core world computer using ZK proofs to decouple execution from verification, enabling a heterogeneous architecture with lightweight validators and aiming for 2 million TPS per Zone."
+        },
+        "notes": {
+          "zh": [
+            "据称在30秒内完成了一个月的以太坊区块证明",
+            "Zero利用ZK证明解耦执行与验证，避免所有验证器重复执行交易",
+            "异构架构：轻量验证器+高性能生产者，使用Jolt证明器",
+            "目标每Zone 200万TPS，解决状态存储与并行计算瓶颈",
+            "Atomicity Zones提供水平可扩展的并发执行环境",
+            "旨在提供去中心化基础设施，替代集中式云提供商"
+          ],
+          "en": [
+            "Claimed to have proven one month of Ethereum blocks in 30s",
+            "Zero decouples execution from verification via ZK proofs, eliminating redundant replay.",
+            "Heterogeneous architecture: lightweight validators + high-performance producers using Jolt prover.",
+            "Targets 2M TPS per Zone, addressing state storage and parallel compute bottlenecks.",
+            "Atomicity Zones enable horizontally scalable concurrent execution.",
+            "Aims to replace centralized cloud with decentralized infrastructure."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK新闻】ZK驱动的多核世界计算机Zero发布，挑战传统区块链架构！"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "Zero 所说的“多核世界计算机”与传统区块链有何根本区别？",
+          "en": "How does Zero’s “multi-core world computer” fundamentally differ from traditional blockchains?"
+        },
+        "answer": {
+          "zh": "传统区块链是单线程、同质化架构，每个验证者都重复执行所有交易。Zero 通过 ZK 证明将执行与验证解耦，使不同节点承担不同角色，从单核复制模式转向多核并行模式。",
+          "en": "Traditional blockchains use a single-threaded, homogeneous model where every validator re-executes all transactions. Zero decouples execution from verification via ZK proofs, enabling role specialization and parallel multi-core execution."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "Atomicity Zones 与传统 L2 或分片有何区别？",
+          "en": "How do Atomicity Zones differ from traditional L2s or sharding?"
+        },
+        "answer": {
+          "zh": "Zones 不是独立链或可升级的外部系统，而是同一协议下并行运行的执行环境。它们共享统一治理与安全性，而非依赖外部排序器或中心化控制。",
+          "en": "Zones are not sovereign chains or externally controlled L2s. They are parallel execution environments under a single unified protocol and governance layer, sharing security and avoiding centralized sequencers."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "QMDB、FAFO、Jolt Pro 与 SVID 如何协同实现 200 万 TPS？",
+          "en": "How do QMDB, FAFO, Jolt Pro, and SVID jointly enable 2M TPS?"
+        },
+        "answer": {
+          "zh": "QMDB 提供高吞吐存储，FAFO 实现自动并行调度，Jolt Pro 提供实时高频 ZK 证明，SVID 解决数据可用性与网络扩散。四者分别消除存储、计算、证明与网络瓶颈，形成端到端扩展路径。",
+          "en": "QMDB delivers high-throughput storage, FAFO enables automatic parallel scheduling, Jolt Pro provides real-time high-speed ZK proving, and SVID handles scalable data availability. Together they remove storage, compute, proving, and networking bottlenecks."
+        }
+      }
+    ]
   }
 ]
