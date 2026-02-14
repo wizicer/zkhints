@@ -672,5 +672,83 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-02-14",
+    "projects": [
+      {
+        "name": "Analysis and Vulnerabilities in zkLogin",
+        "url": "https://eprint.iacr.org/2026/227",
+        "type": "论文",
+        "tags": [
+          "Sofia Celi",
+          "Vulnerabilities",
+          "JWT"
+        ],
+        "summary": {
+          "zh": "Celi等人在{{name}}论文中分析了zkLogin系统的安全性和隐私问题，指出其不仅依赖ZKP，还涉及JWT解析、信任策略等非加密假设，并识别了三类漏洞。",
+          "en": "Celi et al. analyzed security and privacy issues in zkLogin in their {{name}}paper, noting it relies on non-cryptographic assumptions like JWT parsing and trust policies, and identified three vulnerability classes."
+        },
+        "notes": {
+          "zh": [
+            "zkLogin安全性不能仅简化为底层ZKP，还依赖非加密假设如JWT解析和信任策略",
+            "漏洞包括：允许畸形JWT的声明提取、短期认证转长期授权时缺乏上下文绑定、集中化和隐私风险",
+            "非加密漏洞可能导致跨应用冒充和用户身份属性泄露",
+            "系统继承了Web认证生态的脆弱性，在某些情况下还放大了风险",
+            "建议加强协议级属性规范和执行，减少对少数发行者和外包证明基础设施的依赖",
+            "研究强调ZKA系统需全面考虑加密和非加密因素以确保安全"
+          ],
+          "en": [
+            "zkLogin security relies not just on ZKP, but also on JWT parsing and trust policies.",
+            "Key vulnerabilities: permissive JWT parsing, missing context binding, and centralization risks.",
+            "Non-cryptographic flaws may lead to impersonation and identity leaks.",
+            "System inherits and may amplify web authentication weaknesses.",
+            "Recommendations: clarify protocol properties, diversify issuers and proving infra.",
+            "Both cryptographic and non-cryptographic factors are vital for ZKA security."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】zkLogin安全警报：非加密漏洞可能威胁用户隐私！"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "variant": 1,
+        "question": {
+          "zh": "zkLogin 的核心目标是什么？",
+          "en": "What is the core goal of zkLogin?"
+        },
+        "answer": {
+          "zh": "zkLogin 旨在让用户通过零知识证明证明自己拥有某个外部颁发的凭证，例如 JWT，而无需公开完整凭证内容，从而实现更隐私友好的授权机制。",
+          "en": "zkLogin aims to let users prove possession of externally issued credentials, such as JWTs, via zero-knowledge proofs without revealing the full credential, enabling privacy-preserving authorization."
+        }
+      },
+      {
+        "level": "intermediate",
+        "variant": 1,
+        "question": {
+          "zh": "为什么“非规范化声明提取”会带来安全风险？",
+          "en": "Why does non-canonical claim extraction create security risks?"
+        },
+        "answer": {
+          "zh": "若系统接受格式不严格或解析歧义的 JWT，攻击者可能构造畸形输入，使验证逻辑与签名语义不一致，从而绕过预期的安全检查。",
+          "en": "If the system accepts loosely parsed or ambiguous JWT structures, attackers may craft malformed inputs where verification logic diverges from signature semantics, bypassing intended checks."
+        }
+      },
+      {
+        "level": "expert",
+        "variant": 2,
+        "question": {
+          "zh": "这项研究对“ZK 授权系统可形式化安全归约”的观点有何启示？",
+          "en": "What does this work imply about formally reducing ZK authorization security?"
+        },
+        "answer": {
+          "zh": "它表明授权系统的安全边界远超密码学原语。即使 ZKP 正确无误，若协议未将解析规则、绑定策略与执行环境纳入形式化模型，系统整体仍可能失效。",
+          "en": "It shows that authorization security extends beyond cryptographic primitives. Even with correct ZKPs, failure to formalize parsing rules, binding policies, and execution assumptions can undermine the entire system."
+        }
+      }
+    ]
   }
 ]
