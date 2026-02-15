@@ -750,5 +750,83 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-02-15",
+    "projects": [
+      {
+        "name": "Anonymous Prediction Market",
+        "url": "https://github.com/wizicer/anonymous_predicting_market",
+        "type": "开源",
+        "tags": [
+          "icerdesgin",
+          "Prediction Market",
+          "DKG"
+        ],
+        "summary": {
+          "zh": "@icerdesign 和 @ChinnellHeish 开发的匿名预测市场项目，利用阈值加密和ZK证明实现加密投注，防止跟单和抢先交易，包括浏览器原生P2P DKG和批量结算等功能，获得Mantle黑客松ZK赛道第一名。",
+          "en": "@icerdesign and @ChinnellHeish developed an anonymous prediction market using threshold encryption and ZK proofs to prevent copy-trading and front-running. Featuring browser-native P2P DKG and batch settlement, it won 1st Place in the Mantle Hackathon ZK Track."
+        },
+        "notes": {
+          "zh": [
+            "获得Mantle黑客松ZK赛道第一名",
+            "解决区块链预测市场透明度问题，通过加密隐藏投注位置，防止跟单和抢先交易",
+            "采用阈值加密和ZK证明，确保投注方向在结算前完全保密",
+            "实现浏览器原生P2P DKG，无需中心化服务器",
+            "使用临时密钥简化解密流程，支持异步解密",
+            "通过批量ZK证明结算，减少Gas成本，提升效率"
+          ],
+          "en": [
+            "Won 1st Place in the Mantle Hackathon ZK Track",
+            "Addresses prediction market transparency by encrypting bets to hide positions and prevent copy-trading and front-running.",
+            "Uses threshold encryption and ZK proofs to keep betting directions private until settlement.",
+            "Implements browser-native P2P DKG without centralized servers for enhanced decentralization and security.",
+            "Employs ephemeral keys to simplify decryption, supporting asynchronous workflows for robustness.",
+            "Reduces gas costs via batch ZK proof settlement, improving efficiency."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK开源】匿名预测市场：用ZK和加密技术保护你的预测隐私（黑客松比赛第一名）"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "variant": 2,
+        "question": {
+          "zh": "该“暗市场”如何在下注阶段隐藏方向信息？",
+          "en": "How does the “dark market” hide betting direction during the betting phase?"
+        },
+        "answer": {
+          "zh": "用户将方向编码为椭圆曲线点的奇偶性，并使用门限 ElGamal 加密，同时提交零知识证明。链上只看到密文与承诺，方向在结算前不可见。",
+          "en": "Users encode the direction in the parity of an elliptic curve point and apply threshold ElGamal encryption with a zero-knowledge proof. On-chain observers see only ciphertext and commitments, keeping direction hidden until settlement."
+        }
+      },
+      {
+        "level": "intermediate",
+        "variant": 2,
+        "question": {
+          "zh": "为何采用链下批量解密而非逐笔链上解密？",
+          "en": "Why use off-chain batch decryption instead of per-bet on-chain decryption?"
+        },
+        "answer": {
+          "zh": "逐笔链上解密成本高昂。系统在链下解密所有投注，并提交单一批量开封 ZK 证明，验证聚合结果，从而显著节省 gas。",
+          "en": "Per-bet on-chain decryption is expensive. The system decrypts all bets off-chain and submits a single batch-opening ZK proof to verify aggregated results, greatly reducing gas costs."
+        }
+      },
+      {
+        "level": "expert",
+        "variant": 1,
+        "question": {
+          "zh": "将方向编码为椭圆曲线点奇偶性如何增强密文不可区分性？",
+          "en": "How does encoding direction in elliptic curve point parity enhance ciphertext indistinguishability?"
+        },
+        "answer": {
+          "zh": "方向嵌入在随机点的奇偶属性中，使密文在统计上与随机噪声无异。攻击者无法通过结构特征区分“是”或“否”下注。",
+          "en": "Embedding direction in the parity of a random elliptic curve point ensures the ciphertext appears statistically indistinguishable from random noise. Attackers cannot infer “yes” or “no” from structural patterns."
+        }
+      }
+    ]
   }
 ]
