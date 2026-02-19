@@ -828,5 +828,79 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-02-19",
+    "projects": [
+      {
+        "name": "Lightning, Field-Agnostic Super-Efficient Polynomial Commitment Scheme",
+        "url": "https://eprint.iacr.org/2026/258",
+        "type": "论文",
+        "tags": [
+          "Wenjie Qu",
+          "Coding-based PCS"
+        ],
+        "summary": {
+          "zh": "Qu等人在{{name}}论文中提出了Lightning，一种基于编码的PCS，通过新线性码族Lightning code显著提升证明者效率，以证明大小增加为代价。",
+          "en": "Qu et al. proposed Lightning, a coding-based PCS in their {{name}}paper, using the Lightning code family to significantly improve prover efficiency at the cost of increased proof size."
+        },
+        "notes": {
+          "zh": [
+            "Lightning是一种基于编码的PCS，适用于zkSNARK等应用",
+            "核心贡献是Lightning code，可从任何具有恒定相对距离的基码实例化",
+            "Lightning code通过牺牲相对距离显著降低编码成本",
+            "集成到Ligero和Brakedown框架，实验显示证明者承诺时间减少达2.7倍",
+            "代价是证明大小增加2.4倍，提供其与效率的权衡机制",
+            "方案具有域无关性，支持灵活应用"
+          ],
+          "en": [
+            "Lightning is a coding-based PCS for applications like zkSNARKs",
+            "Key contribution: Lightning code family, instantiable from any base code with constant relative distance",
+            "Reduces encoding cost vs. base code by trading off relative distance",
+            "Integrated into Ligero and Brakedown frameworks; experiments show up to 2.7x reduction in prover commitment time",
+            "Cost: 2.4x increase in proof size, offering a trade-off mechanism",
+            "Field-agnostic design supports flexible use"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】闪电速度：Lightning PCS 实现编码方案证明者效率新突破"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "这篇论文试图解决多项式承诺方案中的什么核心瓶颈？",
+          "en": "What core bottleneck in polynomial commitment schemes does this paper aim to address?"
+        },
+        "answer": {
+          "zh": "论文聚焦于编码型 PCS 中证明者承诺阶段的高计算成本。作者提出 Lightning 代码，在不依赖特定有限域结构的前提下，通过调整编码结构，大幅降低编码时间，从而提升整体证明效率。",
+          "en": "The paper targets the high computational cost of the commitment phase in coding-based PCS. Lightning introduces a new code structure that significantly reduces encoding time without relying on special field properties, improving overall prover efficiency."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "为什么在某些应用场景下，牺牲相对距离是合理的？",
+          "en": "Why can sacrificing relative distance be reasonable in some applications?"
+        },
+        "answer": {
+          "zh": "在很多场景中，证明生成时间是主要瓶颈，而证明大小对带宽影响有限。适当降低相对距离以提升证明速度，可以带来更优的整体系统性能。",
+          "en": "In many practical settings, prover time is the main bottleneck while bandwidth constraints are moderate. Reducing relative distance to gain faster proving can improve overall system performance."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "Lightning 的设计为编码型 PCS 提供了怎样的新思路？",
+          "en": "What new perspective does Lightning offer for coding-based PCS design?"
+        },
+        "answer": {
+          "zh": "Lightning 表明编码结构本身可以作为性能优化的核心工具，通过调节相对距离与编码复杂度之间的关系，实现可控的性能权衡。这为编码型 PCS 打开了更系统化的优化空间。",
+          "en": "Lightning demonstrates that the code structure itself can serve as a primary optimization lever. By tuning the relationship between relative distance and encoding complexity, designers gain a systematic way to explore performance trade-offs."
+        }
+      }
+    ]
   }
 ]
