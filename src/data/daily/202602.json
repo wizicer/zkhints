@@ -902,5 +902,80 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-02-20",
+    "projects": [
+      {
+        "name": "Skipping Class: Algebraic Attacks exploiting weak matrices and operation modes of Poseidon2(b)",
+        "url": "https://eprint.iacr.org/2026/306",
+        "type": "论文",
+        "tags": [
+          "Simon-Philipp Merz",
+          "Poseidon",
+          "CICO"
+        ],
+        "summary": {
+          "zh": "Merz和García在{{name}}论文中提出了针对Poseidon2(b)的新型代数攻击，利用线性层矩阵结构和操作模式弱点，显著提升了攻击效率。",
+          "en": "Merz and García propose new algebraic attacks on Poseidon2(b) in their {{name}}paper, exploiting weak matrices and operation modes to significantly improve attack efficiency."
+        },
+        "notes": {
+          "zh": [
+            "攻击利用Poseidon2(b)线性层矩阵的特定结构弱点，改进了CICO问题的轮次跳过攻击",
+            "在压缩和海绵模式下直接建模代数原像攻击，攻击效果优于对应CICO问题求解",
+            "首次展示了代数碰撞攻击优于代数原像攻击的实例",
+            "对某些推荐参数（如128位）的攻击效率比现有最佳代数碰撞攻击提升2^106倍",
+            "由于代数安全余量，该攻击未导致原语低于宣称的安全级别",
+            "论文讨论了不影响Poseidon2(b)效率的缓解措施"
+          ],
+          "en": [
+            "Attack exploits specific structure of linear layer matrices in Poseidon2(b), improving round-skipping for CICO problem",
+            "Direct modeling of algebraic preimage attacks in compression and sponge modes outperforms solving corresponding CICO problem",
+            "First example where algebraic collision attack outperforms algebraic preimage attack",
+            "Improves over state-of-the-art algebraic collision attacks by factor of 2^106 for some parameters (e.g., 128-bit)",
+            "Primitive still meets claimed security level due to algebraic security margin",
+            "Discusses mitigation measures without affecting Poseidon2(b) efficiency"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK安全警报】Poseidon2(b)遭遇新型代数攻击，矩阵结构弱点被利用！"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "这篇论文主要攻击 Poseidon2(b) 的什么？是否已经被攻破？",
+          "en": "What does the paper attack in Poseidon2(b), and is it broken?"
+        },
+        "answer": {
+          "zh": "论文主要攻击外部轮的线性层结构 Mε = P ⊗ M4，通过构造子空间实现 round-skipping，降低代数复杂度。但在官方推荐参数下，128-bit 的 preimage 和 collision 安全仍未被破坏。",
+          "en": "The paper targets the external linear layer Mε = P ⊗ M4, using subspaces to enable round-skipping and reduce algebraic complexity. Under recommended parameters, 128-bit preimage and collision security remain intact."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "为什么 sponge 模式下的攻击可能强于 cico 分析？",
+          "en": "Why can sponge-mode attacks be stronger than cico analysis?"
+        },
+        "answer": {
+          "zh": "sponge 模式包含多次 permutation 和 capacity 结构，可分别优化 ideal degree 并增强 round skip。因此直接建模 sponge 可能比单独分析 cico 更容易。",
+          "en": "Sponge mode involves multiple permutations and capacity structure, allowing optimized ideal degree and stronger round-skips. Direct sponge modeling can therefore be easier than standalone cico analysis."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "该攻击对 zkVMs 或 sum-check 中的 Poseidon 有何影响？",
+          "en": "What impact does this attack have on Poseidon in zkVMs or sum-check systems?"
+        },
+        "answer": {
+          "zh": "推荐参数仍安全，但线性层存在代数弱点。若为降低电路成本减少外部轮数，可能削弱安全边际，因此 zk 系统中不应随意调整参数。",
+          "en": "Recommended parameters remain secure, but the linear layer has algebraic weaknesses. Reducing external rounds for circuit savings could weaken the margin, so zk systems should avoid ad hoc parameter changes."
+        }
+      }
+    ]
   }
 ]
