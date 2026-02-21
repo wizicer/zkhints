@@ -977,5 +977,83 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-02-21",
+    "projects": [
+      {
+        "name": "Verifiable Provenance of Software Artifacts with Zero-Knowledge Compilation",
+        "url": "https://arxiv.org/abs/2602.11887",
+        "type": "论文",
+        "tags": [
+          "Javier Ron",
+          "zkVM",
+          "RISC Zero"
+        ],
+        "summary": {
+          "zh": "Javier Ron和Martin Monperrus在{{name}}论文中提出了一种基于zkVM的软件来源验证方法，通过在zkVM中执行编译器，生成编译输出和证明，确保编译过程的安全性和可验证性。",
+          "en": "Javier Ron and Martin Monperrus propose a zkVM-based approach for software provenance verification in their {{name}}paper, generating compiled outputs and proofs to ensure secure and verifiable compilation."
+        },
+        "notes": {
+          "zh": [
+            "传统可复现构建技术依赖工具链和环境匹配，实施困难",
+            "zkVM编译方法通过在zkVM中执行编译器，生成编译输出和密码学证明",
+            "证明能验证编译是否在声明的源代码和编译器上执行",
+            "使用RISC Zero zkVM和ChibiCC C编译器实现概念验证",
+            "在200个合成程序及OpenSSL、libsodium等真实软件上评估",
+            "成功阻止编译器替换、源代码篡改、输出操纵和重放攻击等对抗性测试"
+          ],
+          "en": [
+            "Traditional reproducible builds require matching toolchains and environments, making implementation difficult.",
+            "zkVM compilation executes compilers within zkVMs to produce outputs and cryptographic proofs.",
+            "Proofs verify compilation was performed on claimed source code with claimed compiler.",
+            "Proof-of-concept implemented using RISC Zero zkVM and ChibiCC C compiler.",
+            "Evaluated on 200 synthetic programs and real-world software like OpenSSL and libsodium.",
+            "Successfully blocks adversarial tests including compiler substitution, source tampering, output manipulation, and replay attacks."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】用zkVM验证软件来源：告别不可信的编译过程"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "variant": 2,
+        "question": {
+          "zh": "可重复构建（reproducible builds）为什么难以彻底解决溯源问题？",
+          "en": "Why are reproducible builds insufficient to fully solve provenance?"
+        },
+        "answer": {
+          "zh": "可重复构建要求在完全一致的工具链和环境中重新执行构建流程。环境匹配复杂且脆弱，一旦存在差异就难以验证一致性。",
+          "en": "Reproducible builds require re-executing the build in an identical toolchain and environment. Achieving perfect environment matching is complex and fragile, making verification difficult."
+        }
+      },
+      {
+        "level": "intermediate",
+        "variant": 1,
+        "question": {
+          "zh": "将编译过程放入 zkVM 的核心优势是什么？",
+          "en": "What is the core advantage of running compilation inside a zkVM?"
+        },
+        "answer": {
+          "zh": "zkVM 在执行编译的同时生成加密证明，证明输出确实由指定源代码和编译器产生。验证者无需重新编译即可验证完整执行过程。",
+          "en": "A zkVM generates a cryptographic proof alongside compilation, attesting that the output was produced from the specified source and compiler. Verifiers can validate the execution without re-running the build."
+        }
+      },
+      {
+        "level": "expert",
+        "variant": 2,
+        "question": {
+          "zh": "该方法对未来软件供应链安全生态有何潜在影响？",
+          "en": "What potential impact does this approach have on software supply chain security?"
+        },
+        "answer": {
+          "zh": "它为发布可验证二进制提供了密码学保障，可能改变开源分发与包管理模式，使用户无需信任构建者即可验证产物来源。",
+          "en": "It enables cryptographically verifiable binaries, potentially transforming open-source distribution and package management by allowing users to verify artifact provenance without trusting the builder."
+        }
+      }
+    ]
   }
 ]
