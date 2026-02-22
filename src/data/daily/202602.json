@@ -1055,5 +1055,80 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-02-22",
+    "projects": [
+      {
+        "name": "UltraFold: Efficient Distributed BaseFold from Packed Interleaved Merkle Trees",
+        "url": "https://eprint.iacr.org/2026/266",
+        "type": "论文",
+        "tags": [
+          "Wenhao Wang",
+          "BaseFold",
+          "PCS"
+        ],
+        "summary": {
+          "zh": "Wang和Zhang在{{name}}论文中提出了UltraFold，首个支持通用多项式、可扩展至任意数量工作节点且保持证明简洁性的分布式BaseFold多项式承诺方案。",
+          "en": "Wang and Zhang proposed UltraFold, the first distributed BaseFold PCS supporting general polynomials, scaling to any number of workers while maintaining succinct proof size."
+        },
+        "notes": {
+          "zh": [
+            "BaseFold等透明、基于代码的PCS适合大规模ZKP，但单机处理能力有限",
+            "现有分布式方案存在限制：仅支持特定结构多项式、证明大小随工作节点增加、扩展性不足",
+            "UltraFold通过交错Merkle叶布局实现高效分布式承诺和打开，仅需一次部分编码值的全交换",
+            "采用打包Merkle树减少开销，降低证明者时间和证明大小",
+            "实验显示，256个单核工作节点可在2秒内处理1.34亿系数多项式，证明大小216KB",
+            "方案避免可信设置，基于标准哈希假设，提供后量子安全性"
+          ],
+          "en": [
+            "Transparent, code-based PCS like BaseFold are suitable for large-scale ZKPs but limited by single-machine capacity.",
+            "Existing distributed approaches have limitations: specific polynomial structures, proof size growth with workers, poor scalability.",
+            "UltraFold uses interleaved Merkle leaf layout for efficient distributed commitment/opening with one all-to-all exchange.",
+            "Packed Merkle trees reduce hashing overhead, lowering prover time and proof size.",
+            "Evaluation: 256 single-core workers handle 134M-coefficient polynomial in <2s, proof size 216KB.",
+            "Scheme avoids trusted setup, relies on standard hash assumptions, offers post-quantum security."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】突破单机限制：UltraFold实现高效分布式多项式承诺"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "UltraFold 相比以往分布式尝试解决了哪些核心问题？",
+          "en": "What core limitations of prior distributed attempts does UltraFold address?"
+        },
+        "answer": {
+          "zh": "它支持一般多项式结构，可扩展到任意数量工作节点，并且证明大小不随节点数量增长。这避免了通信或证明膨胀的问题。",
+          "en": "It supports general polynomials, scales to any number of workers, and keeps proof size independent of worker count. This avoids communication blowup or proof inflation."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "为什么使用 packed Merkle trees 能降低哈希开销？",
+          "en": "Why do packed Merkle trees reduce hashing overhead?"
+        },
+        "answer": {
+          "zh": "Packed 结构在单个节点中合并多个叶子值进行批量哈希，减少树层级与哈希次数，从而降低证明时间和证明大小。",
+          "en": "Packed structures batch multiple leaf values per node, reducing tree depth and total hash computations, which lowers prover time and proof size."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "为何证明大小独立于工作节点数量是关键性质？",
+          "en": "Why is proof size independence from worker count a key property?"
+        },
+        "answer": {
+          "zh": "若证明大小随节点数量增长，则横向扩展会导致验证成本上升。UltraFold 保持证明简洁性，使可扩展性不会牺牲验证效率。",
+          "en": "If proof size grew with worker count, horizontal scaling would increase verification cost. UltraFold preserves succinctness, ensuring scalability does not harm verifier efficiency."
+        }
+      }
+    ]
   }
 ]
