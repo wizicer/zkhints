@@ -1130,5 +1130,81 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-02-23",
+    "projects": [
+      {
+        "name": "Jolt Atlas: Verifiable Inference via Lookup Arguments in Zero Knowledge",
+        "url": "https://arxiv.org/abs/2602.17452",
+        "type": "论文",
+        "tags": [
+          "Wyatt Benno",
+          "zkML",
+          "ONNX",
+          "Jolt"
+        ],
+        "summary": {
+          "zh": "Benno等人在{{name}}论文中提出了Jolt Atlas，一种基于Jolt证明系统的zkML框架，通过查找参数和ONNX格式实现高效可验证推理，支持内存受限环境下的流式证明。",
+          "en": "Benno et al. proposed Jolt Atlas, a zkML framework based on the Jolt proving system, enabling efficient verifiable inference via lookup arguments and ONNX format, supporting streaming proofs in memory-constrained environments."
+        },
+        "notes": {
+          "zh": [
+            "Jolt Atlas扩展Jolt证明系统，直接应用于ONNX张量操作，简化内存一致性验证",
+            "采用查找参数和Sumcheck协议，特别适合处理现代ML中的非线性函数",
+            "通过神经传送等技术优化查找表大小，同时保持模型精度",
+            "支持内存受限环境下的流式证明，无需专用硬件即可在设备上运行",
+            "利用BlindFold技术实现零知识属性，增强隐私保护",
+            "在分类、嵌入、自动推理和小型语言模型上展示实际证明时间"
+          ],
+          "en": [
+            "Jolt Atlas extends the Jolt proving system to ONNX tensor operations, simplifying memory consistency verification.",
+            "Uses lookup arguments with Sumcheck protocol, well-suited for non-linear functions in modern ML.",
+            "Optimizes lookup table size via neural teleportation while preserving model accuracy.",
+            "Supports streaming proofs in memory-constrained environments, runnable on-device without specialized hardware.",
+            "Achieves zero-knowledge through BlindFold technique for enhanced privacy.",
+            "Demonstrates practical proving times for classification, embedding, automated reasoning, and small language models."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】Jolt Atlas：用查找参数实现零知识可验证推理"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "Jolt Atlas 与传统 zkVM 在验证思路上有什么根本区别？",
+          "en": "What is the fundamental difference between Jolt Atlas and traditional zkVMs?"
+        },
+        "answer": {
+          "zh": "传统 zkVM 模拟 CPU 指令执行，而 Jolt Atlas 直接针对 ONNX 张量算子构建证明逻辑。它避免寄存器与通用内存一致性开销，更贴近机器学习计算模型。",
+          "en": "Traditional zkVMs emulate CPU instruction execution, whereas Jolt Atlas targets ONNX tensor operations directly. It avoids register and general memory consistency overhead, aligning more closely with ML computation models."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "查表论证（lookup arguments）为何特别适合非线性算子？",
+          "en": "Why are lookup arguments particularly suitable for non-linear functions?"
+        },
+        "answer": {
+          "zh": "非线性函数难以用简单算术表达。查表结合 sumcheck 协议，可以高效验证输入是否属于预定义函数表，从而支持激活函数等复杂运算。",
+          "en": "Non-linear functions are difficult to express with simple arithmetic constraints. Lookup arguments combined with sumcheck efficiently verify membership in predefined function tables, supporting activations and similar operations."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "BlindFold 技术如何为推理过程提供零知识保证？",
+          "en": "How does BlindFold provide zero-knowledge guarantees for inference?"
+        },
+        "answer": {
+          "zh": "BlindFold 在证明生成过程中对中间状态进行随机化与隐藏，使验证者无法恢复模型权重或输入数据，从而实现严格零知识。",
+          "en": "BlindFold randomizes and hides intermediate states during proof generation, preventing the verifier from recovering model weights or inputs, thereby ensuring strict zero-knowledge."
+        }
+      }
+    ]
   }
 ]
