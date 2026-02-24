@@ -1206,5 +1206,80 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-02-24",
+    "projects": [
+      {
+        "name": "SPRINT: New Isogeny Proofs of Knowledge and Isogeny-Based Signatures",
+        "url": "https://eprint.iacr.org/2026/364",
+        "type": "论文",
+        "tags": [
+          "Thomas den Hollander",
+          "Isogeny",
+          "DeepFold"
+        ],
+        "summary": {
+          "zh": "Hollander等人在{{name}}论文中提出了SPRINT，一种基于多项式IOP的同源知识证明系统，结合DeepFold承诺方案显著提升了同源证明的性能，并构建了基于同源路径问题的新签名方案。",
+          "en": "Hollander et al. proposed SPRINT, a polynomial IOP-based isogeny proof of knowledge system in their {{name}}paper, achieving significant performance improvements with DeepFold PCS and constructing a new signature scheme based on the isogeny path problem."
+        },
+        "notes": {
+          "zh": [
+            "SPRINT将2-同源公式编码为多元多项式系统，结合DeepFold PCS实现高效证明",
+            "在NIST安全级别I下，证明和验证仅需几毫秒，证明大小约80kB",
+            "相比现有方案，证明速度提升1.1-8倍，验证速度提升4.4-24倍，证明大小减少1.2-2.3倍",
+            "研究了证明系统的弱模拟可提取性，为模块化签名构建提供基础",
+            "基于SPRINT和wSE结果，构建了仅依赖同源路径问题的新签名方案家族",
+            "原型实现性能与高度优化的SQIsign NIST规范相当，依赖更弱假设且框架灵活"
+          ],
+          "en": [
+            "SPRINT encodes radical 2-isogeny formulas into multivariate polynomials, combined with DeepFold PCS for efficient proofs.",
+            "For NIST security level I, proving and verification take only milliseconds with ~80kB proof sizes.",
+            "Achieves 1.1-8x prover speedup, 4.4-24x verifier speedup, and 1.2-2.3x smaller proofs vs. prior works.",
+            "Studies weak simulation extractability (wSE), enabling modular signature construction.",
+            "Builds new signature family based solely on the isogeny path problem using SPRINT and wSE.",
+            "Prototype performance matches optimized SQIsign NIST spec, relies on weaker assumptions with flexible framework."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】后量子密码新突破：SPRINT同源证明系统性能大幅提升"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "为什么现有的签名方案需要向同源密码学迁移？",
+          "en": "Why do existing signature schemes need to migrate to isogeny-based cryptography?"
+        },
+        "answer": {
+          "zh": "现有的经典密码学容易受到量子计算机的攻击。同源密码学(如基于 l-isogeny path problem 的方案)提供了抗量子的安全性。这类方案在保持相对较小证明体积的同时，不依赖受信任的设置，是后量子时代的理想替代方案。",
+          "en": "Existing classical cryptography is vulnerable to quantum computer attacks. Isogeny-based cryptography, such as schemes relying on the l-isogeny path problem, provides post-quantum security. These schemes maintain a relatively small proof size and do not rely on a trusted setup, making them ideal alternatives in the post-quantum era."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "多元多项式在 SPRINT 的架构中扮演什么具体角色？",
+          "en": "What specific role do multivariate polynomials play in SPRINT's architecture?"
+        },
+        "answer": {
+          "zh": "SPRINT 将根为 2 的同源公式编码为多元多项式系统，从而构建出高效的多项式 IOP。通过利用类似于 sum-check 协议的底层代数技术，这种表示方法允许证明者极其高效地向验证者证明其掌握正确的同源路径，而不会泄露路径的任何细节。",
+          "en": "SPRINT encodes radical 2-isogeny formulas into a system of multivariate polynomials to build an efficient Polynomial IOP. By leveraging underlying algebraic techniques similar to sum-check protocols, this representation allows the prover to efficiently convince the verifier of the correct isogeny path without revealing any details."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "将根为 2 的同源公式算术化为多元多项式系统时，面临的主要工程挑战是什么？",
+          "en": "What is the main engineering challenge when arithmetizing radical 2-isogeny formulas into a multivariate polynomial system?"
+        },
+        "answer": {
+          "zh": "主要挑战在于如何高效表达高度非线性的同源群运算。通过引入类似 sum-check 的协议和精心设计的多项式约束，研究人员能够将庞大的代数计算降维。这使得系统能够在保持极小验证开销的同时，确保 l-isogeny 路径问题的零知识性。",
+          "en": "The main challenge lies in efficiently expressing highly non-linear isogeny group operations. By introducing sum-check-like protocols and carefully designed polynomial constraints, researchers can reduce the dimension of massive algebraic computations. This allows the system to ensure the zero-knowledge property of the l-isogeny path problem while maintaining minimal verification overhead."
+        }
+      }
+    ]
   }
 ]
