@@ -1281,5 +1281,79 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-02-25",
+    "projects": [
+      {
+        "name": "Relaxed Modular PCS from Arbitrary PCS and Applications to SNARKs for Integers",
+        "url": "https://eprint.iacr.org/2026/347",
+        "type": "论文",
+        "tags": [
+          "Alireza Shirzad",
+          "Integer Arithmetic"
+        ],
+        "summary": {
+          "zh": "Shirzad等人在{{name}}论文中提出了一种从任意PCS构建松弛模块化PCS的黑盒转换方法，并应用于整数SNARK，实现了首个完全简洁的整数约束系统证明方案。",
+          "en": "Shirzad et al. proposed a black-box transformation from any PCS to relaxed modular PCS in their {{name}}paper, applied to integer SNARKs, achieving the first fully succinct proof scheme for integer constraint systems."
+        },
+        "notes": {
+          "zh": [
+            "提出从任意PCS构建松弛模块化PCS的黑盒转换方法，扩展了现有技术",
+            "基于张量码PCS实例化，实现O(log(N+B))证明大小和验证时间，透明且后量子安全",
+            "在Garetta等人框架下应用，获得首个完全简洁的整数自定义约束系统SNARK",
+            "证明者时间O(BlogN + NlogNlogB)，验证者时间和证明大小O(log(N+B))",
+            "采用整数多项式承诺切换技术和新的批处理整数承诺方案",
+            "改进整数加法、乘法、数论变换正确性及丢番图关系的论证"
+          ],
+          "en": [
+            "Proposed black-box transformation from any PCS to relaxed modular PCS, extending existing techniques",
+            "Instantiated with tensor-code PCS for O(log(N+B)) proof size and verification time, transparent and post-quantum secure",
+            "Applied in Garetta et al. framework to achieve first fully succinct SNARK for integer customizable constraint systems",
+            "Prover time O(BlogN + NlogNlogB), verifier time and proof size O(log(N+B))",
+            "Used commitment-switching technique for integer polynomials and new batched integer commitment scheme",
+            "Improved arguments for integer addition, multiplication, NTT correctness, and Diophantine relations"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】整数SNARK新纪元：首个完全简洁证明方案诞生！"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "为何直接支持整数运算对 SNARK 很重要？",
+          "en": "Why is direct support for integer arithmetic important for SNARKs?"
+        },
+        "answer": {
+          "zh": "许多应用天然基于大整数，例如密码协议或数论计算。避免在有限域中模拟整数可减少开销与复杂性。",
+          "en": "Many applications natively operate over large integers, such as cryptographic protocols or number-theoretic computations. Avoiding emulation in finite fields reduces overhead and complexity."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "自定义约束系统（Customizable Constraint System）在整数环境下为何更具挑战？",
+          "en": "Why are customizable constraint systems more challenging over integers?"
+        },
+        "answer": {
+          "zh": "整数运算缺乏有限域的良好代数性质，例如逆元存在性与模约简结构，这使得一致性与范围约束更难高效验证。",
+          "en": "Integer arithmetic lacks convenient finite-field properties such as guaranteed inverses and modular structure, making consistency and range enforcement harder to verify efficiently."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "这一结果在整数算术 SNARK 的长期发展中意味着什么？",
+          "en": "What does this result imply for the long-term development of SNARKs over integers?"
+        },
+        "answer": {
+          "zh": "它打破了“整数 SNARK 无法同时简洁与高效”的隐性假设，提供了透明且潜在后量子安全的路径，为大整数密码协议与数论应用奠定理论基础。",
+          "en": "It overturns the implicit belief that integer SNARKs cannot be both succinct and efficient, offering a transparent and plausibly post-quantum-secure path for large-integer cryptographic and number-theoretic applications."
+        }
+      }
+    ]
   }
 ]
