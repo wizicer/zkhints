@@ -1,0 +1,77 @@
+[
+  {
+    "date": "2026-03-01",
+    "projects": [
+      {
+        "name": "The First ZK Exploits Happened, and They Weren't What We Expected",
+        "url": "https://blog.zksecurity.xyz/posts/groth16-setup-exploit/",
+        "type": "博客",
+        "tags": [
+          "zkSecurity",
+          "snarkjs",
+          "Trusted Setup"
+        ],
+        "summary": {
+          "zh": "@zkSecurity 在博客中分析了近期两起针对ZK电路的攻击事件，指出它们源于Groth16验证器设置错误，即缺少第二阶段贡献，导致验证密钥中的γ和δ参数相同，从而允许伪造证明。",
+          "en": "@zkSecurity analyzes recent ZK circuit exploits in a blog post, attributing them to Groth16 verifier setup errors where missing Phase 2 contributions cause identical γ and δ parameters, enabling proof forgery."
+        },
+        "notes": {
+          "zh": [
+            "两起攻击均因snarkjs生成的Groth16验证器设置错误，缺少第二阶段贡献，使γ和δ参数相同",
+            "攻击导致约150万美元和5 ETH损失，由白帽黑客发现",
+            "根源：snarkjs在初始化zkey时设置γ和δ为相同生成点",
+            "需通过第二阶段贡献随机化δ",
+            "开发者常因关注复杂部分而忽略简单错误，",
+            "ZK DSL易误用且缺乏基础工具支持"
+          ],
+          "en": [
+            "Both exploits stem from Groth16 verifier setup errors in snarkjs, where missing Phase 2 contributions leave γ and δ parameters identical.",
+            "Losses: ~$1.5M and 5 ETH, discovered by white-hat hackers to prevent malicious attacks.",
+            "Root cause: snarkjs sets γ and δ to the same generator point when initializing zkey",
+            "Phase 2 contribution is required to randomize δ",
+            "Developers often overlook simple mistakes while focusing on complex parts",
+            "ZK DSLs are easy to misuse and lack foundational tooling support"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK安全】首个ZK攻击事件曝光：Groth16设置错误导致数百万美元损失！"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "为什么 γ 和 δ 必须是相互独立的随机群元素？",
+          "en": "Why must γ and δ be independent random group elements?"
+        },
+        "answer": {
+          "zh": "它们分别随机化公共输入项和证明项 C。如果二者相同，攻击者可以构造抵消关系，使配对验证方程退化为恒成立。",
+          "en": "They randomize the public input term and the proof element C respectively. If they are equal, an attacker can engineer cancellations that collapse the pairing equation into a tautology."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "在跳过 Phase 2 的情况下，snarkjs 在 zkey 初始化时具体做了什么？",
+          "en": "What exactly does snarkjs do during zkey initialization if Phase 2 is skipped?"
+        },
+        "answer": {
+          "zh": "它将 γ₂ 和 δ₂ 都初始化为 BN254 的生成元作为占位符。如果没有后续贡献步骤，这两个值将保持相同。",
+          "en": "It initializes both γ₂ and δ₂ to the BN254 generator as placeholders. Without a contribution step, they remain identical."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "为什么该漏洞并非电路层 underconstrained bug，而是系统级健壮性崩溃？",
+          "en": "Why is this vulnerability not an underconstrained circuit bug but a systemic soundness collapse?"
+        },
+        "answer": {
+          "zh": "电路本身可能完全正确，但验证键参数违反了 Groth16 的核心独立性假设。配对方程因此失去知识绑定能力，系统层面的可信设置假设被破坏。",
+          "en": "The circuit may be perfectly correct, but the verification key violates Groth16’s independence assumptions. The pairing equation loses its knowledge-binding property, breaking the trusted setup soundness at the system level."
+        }
+      }
+    ]
+  }
+]
