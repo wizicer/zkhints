@@ -73,5 +73,82 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-03-04",
+    "projects": [
+      {
+        "name": "Unfaithful Claims: Breaking 6 zkVMs",
+        "url": "https://osec.io/blog/2026-03-03-zkvms-unfaithful-claims/",
+        "type": "博客",
+        "tags": [
+          "Himanshu Sheoran",
+          "Fiat-Shamir"
+        ],
+        "summary": {
+          "zh": "Himanshu Sheoran和Valter Wik在博客中揭示了六个zkVM系统的安全漏洞，这些漏洞源于Fiat-Shamir转录中未绑定声明数据，允许攻击者绕过密码学验证，证明数学上不可能的陈述。",
+          "en": "Himanshu Sheoran and Valter Wik expose security flaws in six zkVM systems due to unbound claim data in Fiat-Shamir transcripts, enabling attackers to bypass cryptographic verification and prove impossible statements."
+        },
+        "notes": {
+          "zh": [
+            "漏洞源于Fiat-Shamir转录中未绑定声明数据，如claimed_sum和opening_claim，导致挑战独立于这些值。",
+            "攻击者可通过线性方程求解调整未绑定值，使验证通过，即使执行无效。",
+            "受影响系统包括Jolt、Nexus、Cairo-M、Ceno、Expander和Binius64。",
+            "在区块链场景中，此漏洞可能导致凭空创造资产。",
+            "修复需确保影响验证的值在挑战生成前被吸收到转录中。",
+            "Jolt已于2025年10月3日修复，其他系统状态未明确。"
+          ],
+          "en": [
+            "Flaws arise from unbound claim data in Fiat-Shamir transcripts, making challenges independent of values like claimed_sum.",
+            "Attackers can solve linear equations to adjust unbound values, passing verification for invalid executions.",
+            "Affected systems: Jolt, Nexus, Cairo-M, Ceno, Expander, Binius64.",
+            "In blockchain, this could create assets out of thin air.",
+            "Fix requires absorbing all verification-affecting values into transcript before challenge generation.",
+            "Jolt fixed via PR #981 on Oct 3, 2025; status of others unclear."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK安全警报】六大zkVM系统惊现致命漏洞，攻击者可伪造证明！"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "variant": 2,
+        "question": {
+          "zh": "为什么 transcript 绑定顺序在 Fiat-Shamir 中至关重要？",
+          "en": "Why is transcript ordering critical in Fiat-Shamir?"
+        },
+        "answer": {
+          "zh": "若某个值影响后续验证方程，却未在相关挑战生成前被哈希进 transcript，攻击者即可先计算挑战，再选择该值以满足方程，从而破坏健壮性。",
+          "en": "If a value influences a later verification equation but is not hashed before the relevant challenge is sampled, the attacker can compute the challenge first and then choose the value to satisfy the equation, breaking soundness."
+        }
+      },
+      {
+        "level": "intermediate",
+        "variant": 1,
+        "question": {
+          "zh": "在基于 sumcheck 的系统如 Jolt 中，未绑定的 input claim 如何转化为可解的线性方程？",
+          "en": "In sumcheck-based systems like Jolt, how does an unbound input claim reduce to a solvable linear equation?"
+        },
+        "answer": {
+          "zh": "由于压缩优化使最终验证等式对初始 claim 呈线性形式 a·H+b=expected，且随机系数独立于 H，攻击者可直接解出 H 使等式成立。",
+          "en": "Because compression makes the final verification equation linear in the initial claim, of the form a·H + b = expected, and the coefficients are independent of H, the attacker can directly solve for H."
+        }
+      },
+      {
+        "level": "expert",
+        "variant": 1,
+        "question": {
+          "zh": "为何这一类漏洞在多个独立实现中重复出现？",
+          "en": "Why does this bug class recur across independent zkVM implementations?"
+        },
+        "answer": {
+          "zh": "论文通常描述交互式协议而非完整的非交互式 Fiat-Shamir 实现细节。模块化架构导致 transcript 责任分散，加之性能优化压力，使实现者易忽略某些语句级绑定。",
+          "en": "Academic descriptions focus on interactive protocols and omit full non-interactive Fiat-Shamir binding details. Modular architectures diffuse transcript responsibility, and optimization pressure encourages omission of seemingly redundant absorptions."
+        }
+      }
+    ]
   }
 ]
