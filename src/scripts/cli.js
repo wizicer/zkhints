@@ -75,7 +75,7 @@ async function takeScreenshots(languages = ["zh"], dateStr = null) {
   );
   fs.writeFileSync(configPath, modifiedConfig, "utf-8");
 
-  const defaultPort = 51234;
+  const defaultPort = 54448;
   let server;
   try {
     server = await dev({
