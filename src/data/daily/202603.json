@@ -150,5 +150,83 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-03-05",
+    "projects": [
+      {
+        "name": "Collaborative Incrementally Verifiable Computation",
+        "url": "https://eprint.iacr.org/2026/410",
+        "type": "论文",
+        "tags": [
+          "Eden Aldema Tshuva",
+          "CoSNARK",
+          "IVC"
+        ],
+        "summary": {
+          "zh": "Tshuva等人在{{name}}论文中提出协作增量可验证计算，允许多方在流式计算中联合更新简洁证明，显著降低内存和通信开销。",
+          "en": "Tshuva et al. proposed collaborative incrementally verifiable computation in their {{name}}paper, enabling multiple parties to jointly update succinct proofs during streaming computations with reduced overhead."
+        },
+        "notes": {
+          "zh": [
+            "现有协作zkSNARK面临内存和通信开销大、缺乏可更新性等瓶颈",
+            "新方案支持多方在流式计算中每一步联合更新证明，避免从头重算",
+            "每步计算仅需常数通信开销和单步内存开销",
+            "适用于隐私医疗数据聚合、隐私审计和联合机器学习等应用",
+            "结合IVC、折叠和MPC技术，提升大规模数据集处理效率",
+            "突破现有协作证明的扩展性限制，支持实际应用部署"
+          ],
+          "en": [
+            "Existing collaborative zkSNARKs suffer from high memory/communication overhead and lack updatability.",
+            "New scheme allows multiple parties to jointly update proofs at each step of streaming computation.",
+            "Constant communication overhead per step (with broadcast) and memory scaling with single step.",
+            "Applicable to privacy-preserving healthcare data aggregation, audits, and joint ML models.",
+            "Integrates IVC, folding, and MPC techniques to improve efficiency for large-scale datasets.",
+            "Breaks scalability barriers of collaborative proofs, enabling practical deployment."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】协作增量可验证计算：让多方安全联合证明流式大数据"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "variant": 1,
+        "question": {
+          "zh": "什么是协作式 zkSNARK，它与传统单证明者 zkSNARK 的核心区别是什么？",
+          "en": "What is a collaborative zkSNARK and how does it differ from a traditional single-prover zkSNARK?"
+        },
+        "answer": {
+          "zh": "协作式 zkSNARK 允许多个互不信任的参与方共同生成一个证明，用来证明某个计算在所有参与者私有输入上的正确执行，而不泄露各自输入。传统 zkSNARK 通常只有单一证明者持有全部 witness 并生成证明。",
+          "en": "A collaborative zkSNARK allows multiple mutually distrustful parties to jointly produce a proof attesting to the correctness of a computation over their private inputs without revealing them. In contrast, traditional zkSNARKs assume a single prover holding the entire witness."
+        }
+      },
+      {
+        "level": "intermediate",
+        "variant": 1,
+        "question": {
+          "zh": "什么是 Incrementally Verifiable Computation (IVC)，它如何帮助处理长时间运行或流式计算？",
+          "en": "What is Incrementally Verifiable Computation (IVC) and how does it help with long-running or streaming computations?"
+        },
+        "answer": {
+          "zh": "IVC 将一个长计算拆分为多个步骤，每一步都会更新一个简洁证明，证明当前步骤正确并继承之前步骤的证明。因此不需要重新证明整个历史计算。",
+          "en": "IVC decomposes a long computation into steps where each step updates a succinct proof that certifies both the current step and all previous steps, avoiding the need to reprove the entire computation history."
+        }
+      },
+      {
+        "level": "expert",
+        "variant": 1,
+        "question": {
+          "zh": "该方案如何在多方环境下保持每个参与方的通信复杂度为常数？",
+          "en": "How does the construction maintain constant communication overhead per party?"
+        },
+        "answer": {
+          "zh": "在广播信道模型下，每个参与方只需要发送与当前步骤相关的少量证明更新信息，这些信息不会随着数据规模或历史计算长度增长，因此通信复杂度保持为常数。",
+          "en": "Under a broadcast channel assumption, each party only sends a small update related to the current computation step. Since this update size does not grow with dataset size or computation history, the per-party communication remains constant."
+        }
+      }
+    ]
   }
 ]
