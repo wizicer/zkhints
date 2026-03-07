@@ -228,5 +228,83 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-03-07",
+    "projects": [
+      {
+        "name": "Lattice HD Wallets: Post-Quantum BIP32 Hierarchical Deterministic Wallets from Lattice Assumptions",
+        "url": "https://eprint.iacr.org/2026/380",
+        "type": "论文",
+        "tags": [
+          "Conor Deegan",
+          "ML-DSA",
+          "Raccoon-G"
+        ],
+        "summary": {
+          "zh": "Deegan等人在{{name}}论文中提出了两种后量子HD钱包构造，基于格假设恢复BIP32的公钥派生功能，包括使用ML-DSA和Raccoon-G的方案。",
+          "en": "Deegan et al. proposed two post-quantum HD wallet constructions in their {{name}}paper, recovering BIP32's public key derivation functionality based on lattice assumptions, including schemes using ML-DSA and Raccoon-G."
+        },
+        "notes": {
+          "zh": [
+            "提出两种后量子HD钱包构造，基于格假设恢复BIP32公钥派生功能",
+            "第一种使用ML-DSA支持硬化派生，证明不可链接性和不可伪造性",
+            "第二种使用Raccoon-G变体，通过高斯分布秘密实现非硬化公钥派生",
+            "修改Raccoon-G以发布完整未舍入公钥，保持线性特性",
+            "证明在标准格假设下的不可链接性和不可伪造性",
+            "引入从固定随机性生成可重随机化Raccoon-G密钥对的方法"
+          ],
+          "en": [
+            "Two post-quantum HD wallet constructions recovering BIP32 public key derivation based on lattice assumptions",
+            "First uses ML-DSA for hardened derivation with proofs of unlinkability and unforgeability",
+            "Second uses Raccoon-G variant enabling non-hardened public key derivation via Gaussian-distributed secrets",
+            "Modified Raccoon-G to publish full unrounded public keys preserving linearity",
+            "Proved unlinkability and unforgeability under standard lattice assumptions",
+            "Introduced method for generating rerandomizable Raccoon-G key pairs from fixed randomness"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】后量子时代钱包安全：格密码实现BIP32完整功能"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "variant": 1,
+        "question": {
+          "zh": "BIP32 分层确定性钱包的核心思想是什么？",
+          "en": "What is the core idea behind BIP32 hierarchical deterministic wallets?"
+        },
+        "answer": {
+          "zh": "BIP32 允许用户从一个主种子生成一整棵密钥树，从而确定性地产生大量公私钥对，方便备份和管理。",
+          "en": "BIP32 allows a user to derive an entire tree of key pairs deterministically from a single master seed, simplifying key management and backups."
+        }
+      },
+      {
+        "level": "intermediate",
+        "variant": 1,
+        "question": {
+          "zh": "为什么在后量子密码体系中实现 BIP32 风格的非 hardened 派生是困难的？",
+          "en": "Why is it difficult to support BIP32-style non-hardened derivation in post-quantum systems?"
+        },
+        "answer": {
+          "zh": "现有 HD 钱包依赖椭圆曲线公钥的线性代数结构，使得子公钥可以通过简单运算从父公钥得到。而大多数后量子签名方案缺乏这种结构。",
+          "en": "Traditional HD wallets rely on the algebraic structure of elliptic curve public keys that allows simple linear operations to derive child keys. Most post-quantum signature schemes do not provide such structure."
+        }
+      },
+      {
+        "level": "expert",
+        "variant": 1,
+        "question": {
+          "zh": "论文如何证明派生密钥之间的不可链接性（unlinkability）？",
+          "en": "How does the paper argue unlinkability between derived keys?"
+        },
+        "answer": {
+          "zh": "作者证明派生密钥的分布与独立生成的密钥在统计上非常接近，因此观察者无法区分两个密钥是否来自同一派生路径。",
+          "en": "The authors show that derived keys are statistically close to independently generated keys, making it infeasible for an observer to determine whether two keys originate from the same derivation path."
+        }
+      }
+    ]
   }
 ]
