@@ -306,5 +306,80 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-03-08",
+    "projects": [
+      {
+        "name": "Icefish: Practical zk-SNARKs for Verifiable Genomics",
+        "url": "https://eprint.iacr.org/2026/463",
+        "type": "论文",
+        "tags": [
+          "Alexander Frolov",
+          "Genomics",
+          "CRISPR"
+        ],
+        "summary": {
+          "zh": "Frolov等人在{{name}}论文中提出了Icefish，首次系统研究zk-SNARK在可验证基因组学中的应用，包括序列比对等基础构建块，并探索了可验证全基因组关联研究和CRISPR资格验证两个端到端应用。",
+          "en": "Frolov et al. proposed Icefish in their {{name}}paper, conducting the first systematic study of zk-SNARKs for verifiable genomics, including building blocks like sequence alignment, and exploring two end-to-end applications: verifiable GWAS and CRISPR eligibility verification."
+        },
+        "notes": {
+          "zh": [
+            "首次系统研究zk-SNARK在可验证基因组学中的应用，填补了该领域空白",
+            "开发了序列比对的零知识证明，速度比现有技术快30倍",
+            "实现了可验证全基因组关联研究，确保数据完整性和计算正确性，证明时间小于20分钟",
+            "提出了zk-SNARK在基因工程（如CRISPR）中的新应用场景，用于验证治疗资格而不泄露DNA序列",
+            "设计了适用于大规模基因组数据的高效存储索引，渐近降低存储成本",
+            "重点关注基因组数据这一高度敏感信息的隐私保护需求"
+          ],
+          "en": [
+            "First systematic study of zk-SNARKs for verifiable genomics, addressing a gap in the field",
+            "Developed zero-knowledge proofs for sequence alignment, 30x faster than prior art",
+            "Implemented verifiable GWAS ensuring data integrity and computational correctness with <20 min proving time",
+            "Proposed new zk-SNARK use case in gene engineering (e.g., CRISPR) for therapy eligibility verification without revealing DNA",
+            "Designed storage-efficient indexes for large-scale genomic data, asymptotically reducing costs",
+            "Focuses on privacy and verification needs for highly sensitive genomic data"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】基因隐私新突破：Icefish用zk-SNARKs实现可验证基因组学，保护敏感数据安全"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "为什么仅使用 MPC 或 FHE 还不足以解决基因组研究中的可信问题？",
+          "en": "Why are MPC or FHE alone insufficient for ensuring trust in genomic studies?"
+        },
+        "answer": {
+          "zh": "MPC 和 FHE 可以在不泄露数据的情况下进行计算，但它们通常不提供公开可验证的计算证明，因此第三方无法确认研究者是否正确执行了计算。",
+          "en": "MPC and FHE allow private computation but typically do not produce publicly verifiable proofs of correct execution, meaning third parties cannot independently verify that computations were performed honestly."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "论文提出的第一个端到端应用是什么？",
+          "en": "What is the first end-to-end application proposed in the paper?"
+        },
+        "answer": {
+          "zh": "第一个应用是可验证的 Genome-Wide Association Study（GWAS），允许第三方验证研究是否在未篡改的数据集上正确执行。",
+          "en": "The first application is verifiable Genome-Wide Association Studies (GWAS), enabling third parties to verify that the study was correctly computed over an authenticated dataset."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "Icefish 如何减少大规模基因组数据库在证明系统中的存储成本？",
+          "en": "How does Icefish reduce storage costs for large genomic datasets in proof systems?"
+        },
+        "answer": {
+          "zh": "论文设计了更高效的 Merkle 树索引结构，使得在验证大规模基因组数据库时所需存储空间在渐近意义上显著减少。",
+          "en": "The system introduces storage-efficient indexing structures for Merkle trees, which asymptotically reduce the storage overhead required to authenticate large genomic datasets."
+        }
+      }
+    ]
   }
 ]
