@@ -381,5 +381,80 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-03-10",
+    "projects": [
+      {
+        "name": "Zolt",
+        "url": "https://github.com/MatteoMer/zolt",
+        "type": "开源",
+        "tags": [
+          "MatteoMer",
+          "Zig",
+          "Jolt"
+        ],
+        "summary": {
+          "zh": "@MatteoMer 发布了Zolt开源项目，这是一个用Zig语言实现的zkVM证明器，生成可被a16z/jolt验证器验证的证明，无需依赖外部库，所有密码学操作均从零实现。",
+          "en": "@MatteoMer released Zolt, a Zig-based zkVM prover generating proofs verifiable by the a16z/jolt verifier, with zero dependencies and all cryptography implemented from scratch."
+        },
+        "notes": {
+          "zh": [
+            "Zolt是一个实验性项目，未经审计，不建议用于生产环境",
+            "支持生成RISC-V ELF二进制文件的ZK证明，验证兼容上游Jolt验证器",
+            "零依赖和零FFI，所有密码学（如域运算、配对、MSM、多项式承诺）均用Zig标准库实现",
+            "提供CLI工具，包括证明生成、模拟运行和示例程序（如斐波那契、素数计算）",
+            "性能基准显示，在部分程序上比Jolt（Rust）更快，但复杂程序如素数计算较慢",
+            "项目结构清晰，包含字段运算、多项式承诺、Sumcheck协议等模块，便于扩展和审计"
+          ],
+          "en": [
+            "Zolt is experimental and unaudited; not for production use.",
+            "Generates ZK proofs for RISC-V ELF binaries, verifiable by upstream Jolt verifier.",
+            "Zero dependencies and FFI; all cryptography implemented from scratch using Zig stdlib.",
+            "CLI includes proof generation, emulator run, and examples (e.g., Fibonacci, prime counting).",
+            "Benchmarks show faster than Jolt (Rust) on some programs, slower on complex ones like prime counting.",
+            "Clear project structure with modules for field arithmetic, polynomial commitments, Sumcheck, etc., aiding extensibility and audit."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK开源】Zig语言打造零依赖zkVM：Zolt实现全栈密码学，兼容Jolt验证器"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "Zolt 为什么强调“零依赖”？",
+          "en": "Why does Zolt emphasize zero dependencies?"
+        },
+        "answer": {
+          "zh": "Zolt 不依赖外部密码学库，所有组件如有限域运算、MSM 和多项式承诺都用 Zig 自己实现。这让代码更简单透明，也方便研究者理解 zkVM 和证明系统的完整实现。",
+          "en": "Zolt avoids external cryptographic libraries and implements components such as field arithmetic, MSM, and polynomial commitments directly in Zig. This makes the system simpler and easier to study, especially for researchers learning how zkVM proving systems work."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "Zolt 如何把程序执行变成可证明的形式？",
+          "en": "How does Zolt turn program execution into something provable?"
+        },
+        "answer": {
+          "zh": "Zolt 先运行 RISC-V 程序并生成 execution trace，包括寄存器和内存状态。然后把这些信息转成 R1CS 约束系统，再通过 sum-check 和多项式承诺证明这些约束在整个 trace 上成立。",
+          "en": "Zolt runs a RISC-V program and records an execution trace including registers and memory states. The trace is converted into an R1CS constraint system. The prover then uses sum-check and polynomial commitments to prove that the constraints hold for the entire trace."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "为什么 Zolt 要输出 Jolt 兼容的 preprocessing 数据？",
+          "en": "Why does Zolt export Jolt compatible preprocessing data?"
+        },
+        "answer": {
+          "zh": "Jolt 使用 preprocessing SNARK 架构，需要提前生成约束承诺和多项式元数据。Zolt 输出相同格式的数据，这样原版 verifier 就可以直接验证证明，而不需要修改代码。",
+          "en": "Jolt uses a preprocessing SNARK design where constraint commitments and metadata are prepared in advance. Zolt exports preprocessing data in the same format so that the original verifier can validate proofs without any modification."
+        }
+      }
+    ]
   }
 ]
