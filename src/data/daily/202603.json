@@ -456,5 +456,80 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-03-11",
+    "projects": [
+      {
+        "name": "New Plonky3 release just dropped",
+        "url": "https://x.com/RobinSalen/status/2031388330412355997",
+        "type": "新闻",
+        "tags": [
+          "Robin Salen",
+          "Plonky3",
+          "STARK"
+        ],
+        "summary": {
+          "zh": "Robin Salen宣布Plonky3发布新版本，包含更快的查找、高元折叠、N元Merkle树和Merkle caps、Poseidon2优化及Poseidon1支持等多项改进。",
+          "en": "Robin Salen announced a new Plonky3 release with faster lookups, high-arity folding, N-ary Merkle trees and caps, Poseidon2 optimizations, and Poseidon1 support."
+        },
+        "notes": {
+          "zh": [
+            "Plonky3新版本发布，号称最具影响力和雄心勃勃的版本",
+            "包含更快的查找功能，提升整体性能",
+            "引入高元折叠技术，优化证明生成",
+            "支持N元Merkle树和Merkle caps，增强数据结构",
+            "对Poseidon2进行重大优化，并支持Poseidon1",
+            "还包括其他多项改进，具体细节待进一步分解"
+          ],
+          "en": [
+            "New Plonky3 release, described as the most impactful and ambitious so far",
+            "Includes much faster lookups for improved performance",
+            "Introduces high-arity folding to optimize proof generation",
+            "Supports N-ary Merkle trees and Merkle caps for enhanced data structures",
+            "Major optimizations for Poseidon2 and adds Poseidon1 support",
+            "Additional improvements included, with details to be broken down"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK新闻】Plonky3重磅更新：性能大提升，支持更多优化特性！"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "Plonky3 是什么？",
+          "en": "What is Plonky3?"
+        },
+        "answer": {
+          "zh": "Plonky3 是一个用于构建零知识证明系统的框架，常用于 zkVM 和可扩展证明。它专注于高性能证明和递归证明能力，使复杂计算可以被快速验证。",
+          "en": "Plonky3 is a framework for building zero knowledge proof systems. It is often used for zkVMs and scalable proofs, focusing on fast proving and recursion."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "N-ary Merkle 树相比二叉 Merkle 树有什么优势？",
+          "en": "What is the advantage of an N-ary Merkle tree over a binary Merkle tree?"
+        },
+        "answer": {
+          "zh": "N-ary Merkle 树允许每个节点有多个子节点，因此树的高度更低。这样 Merkle path 更短，可以减少证明大小和哈希计算。",
+          "en": "An N-ary Merkle tree allows each node to have multiple children, which reduces the tree height. This leads to shorter Merkle paths and smaller proofs."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "Merkle cap 在证明系统中有什么用途？",
+          "en": "What is the purpose of a Merkle cap in proof systems?"
+        },
+        "answer": {
+          "zh": "Merkle cap 是 Merkle 树顶层的一小组节点。在递归证明或批量验证中，可以只验证到 cap 层，从而减少证明数据和验证成本。",
+          "en": "A Merkle cap is a small set of nodes near the top of a Merkle tree. In recursive proofs or batch verification, verifying up to the cap reduces proof size and verification cost."
+        }
+      }
+    ]
   }
 ]
