@@ -531,5 +531,79 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-03-12",
+    "projects": [
+      {
+        "name": "Lookup Arguments over Rings and Applications to Batch-Verification of RAM Programs",
+        "url": "https://eprint.iacr.org/2026/471",
+        "type": "论文",
+        "tags": [
+          "Jonathan Bootle",
+          "Rings"
+        ],
+        "summary": {
+          "zh": "Bootle等人在{{name}}论文中提出了基于环的查找参数，扩展了Plookup和LogUp协议，并应用于RAM程序的批量验证，解决了后量子方案中的兼容性问题。",
+          "en": "Bootle et al. proposed ring-based lookup arguments in their {{name}}paper, extending Plookup and LogUp protocols for batch verification of RAM programs, addressing compatibility in post-quantum schemes."
+        },
+        "notes": {
+          "zh": [
+            "现有查找参数基于域设计，与基于环的后量子格方案不兼容",
+            "将域技术迁移到环时存在系统性安全问题，部分已知参数易受攻击",
+            "扩展Plookup和LogUp多项式IOP到环R=Zq[X]/(Xd+1)",
+            "结合基于格假设的多项式承诺，构建简洁的格基查找参数",
+            "应用环查找参数实现RAM更新的批量验证，支持任意环元素",
+            "为后量子ZK证明系统提供关键组件，提升算术不友好操作效率"
+          ],
+          "en": [
+            "Existing lookup arguments are field-based, incompatible with ring-based post-quantum lattice schemes.",
+            "Systematic security issues arise when translating field techniques to rings; some known arguments are vulnerable.",
+            "Extend Plookup and LogUp polynomial IOPs to ring R=Zq[X]/(Xd+1).",
+            "Combine with lattice-based polynomial commitments for succinct lattice-based lookup arguments.",
+            "Apply ring lookups for batch verification of RAM updates with arbitrary ring elements.",
+            "Provides key components for post-quantum ZK systems, improving efficiency for arithmetization-unfriendly operations."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】后量子时代新突破：环上查找参数助力RAM批量验证"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "为什么要研究“ring 上的 lookup argument”？",
+          "en": "Why study lookup arguments over rings?"
+        },
+        "answer": {
+          "zh": "大多数现有 lookup 方案是在有限域上设计的，而一些后量子密码系统，特别是基于格的方案，是在环上运行的。因此需要新的 lookup 结构，使 SNARK 能与这些基于环的密码系统兼容。",
+          "en": "Most existing lookup arguments are designed over finite fields. However, many post quantum cryptographic systems, especially lattice based ones, operate over rings. Studying lookup arguments over rings allows SNARK systems to work with these post quantum constructions."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "为什么把 field 上的 lookup 直接搬到 ring 上会出现问题？",
+          "en": "Why can translating lookup arguments from fields to rings cause problems?"
+        },
+        "answer": {
+          "zh": "在有限域中，一些代数性质保证了多项式关系的唯一性。但在环中可能存在零因子或不同的代数结构，导致某些证明技术不再安全。论文指出一些已有 lookup 构造在环环境下会受到攻击，因此需要重新设计协议。",
+          "en": "In fields, algebraic properties ensure certain polynomial identities behave predictably. Rings may contain different structures, such as zero divisors, which break assumptions used in field based protocols. The paper shows that some known lookup constructions become insecure when directly applied to rings."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "环上的 lookup argument 如何与基于格的多项式承诺结合？",
+          "en": "How are ring based lookup arguments combined with lattice polynomial commitments?"
+        },
+        "answer": {
+          "zh": "协议首先在环上构造 PIOP lookup 关系，然后使用基于格假设的多项式承诺对相关多项式进行承诺和验证。这样可以得到简洁证明，同时保持后量子安全性。",
+          "en": "The protocol first constructs lookup relations as a polynomial IOP over the ring. Polynomial commitments based on lattice assumptions are then used to commit to and verify the polynomials. This produces succinct proofs while maintaining post quantum security."
+        }
+      }
+    ]
   }
 ]
