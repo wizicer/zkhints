@@ -605,5 +605,77 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-03-13",
+    "projects": [
+      {
+        "name": "ZK API Usage Credits: LLMs and Beyond",
+        "url": "https://ethresear.ch/t/zk-api-usage-credits-llms-and-beyond/24104",
+        "type": "博客",
+        "tags": [
+          "Davide Crapis",
+          "RLN"
+        ],
+        "summary": {
+          "zh": "Davide Crapis 和 Vitalik Buterin 在博客中讨论了ZK API使用信用协议，旨在解决API计量中的隐私、安全和效率问题，特别适用于LLM推理等场景。",
+          "en": "Davide Crapis and Vitalik Buterin discuss a ZK API usage credit protocol in their blog, addressing privacy, security, and efficiency in API metering, especially for LLM inference."
+        },
+        "notes": {
+          "zh": [
+            "API计量在隐私、安全和效率间难以平衡，传统Web2认证和链上支付各有不足。",
+            "提出用RLN实现匿名充值和反滥用，防止垃圾请求和双花。",
+            "支持可变费用API，用户通过退款票据和ZK证明展示余额，同时保护隐私。",
+            "引入双重质押，违反政策时服务器可惩罚但无法获利，提升透明度。",
+            "探讨同态加密优化退款累积，简化客户端数据和ZK电路。"
+          ],
+          "en": [
+            "API metering struggles to balance privacy, security, and efficiency; Web2 auth and on-chain payments fall short.",
+            "Uses RLN for anonymous deposits and anti-abuse, preventing spam and double-spending.",
+            "Enables variable-cost APIs; users prove solvency and privacy via refund tickets and ZK proofs.",
+            "Dual staking enforces policy: servers can penalize but not profit, ensuring transparency.",
+            "Considers homomorphic encryption to optimize refunds and simplify client/ZK logic."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK博客】ZK API信用协议：匿名支付与隐私保护的未来"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "ZK API Usage Credits 想解决什么问题？",
+          "en": "What problem does ZK API Usage Credits try to solve?"
+        },
+        "answer": {
+          "zh": "它试图解决 API 计费中的隐私问题。当前 API 通常要么需要身份认证，要么需要每次调用都进行链上支付。该方案允许用户一次存入资金，然后匿名地多次调用 API，同时服务器仍能确保每次调用都已经支付。",
+          "en": "It aims to solve privacy issues in API metering. Today APIs usually require identity authentication or a payment for every request. This proposal lets users deposit funds once and make many anonymous API calls while the provider is still guaranteed payment."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "Rate-Limit Nullifier（RLN）在协议中有什么作用？",
+          "en": "What role does the Rate Limit Nullifier (RLN) play in the protocol?"
+        },
+        "answer": {
+          "zh": "RLN 用于防止用户重复使用同一个请求额度。如果用户尝试双重使用同一个 ticket，协议可以通过两个不同的信号恢复用户的秘密密钥，并触发惩罚。这保证了匿名用户仍然受到速率限制。",
+          "en": "RLN prevents users from reusing the same request allowance. If a user double spends a ticket, the protocol can recover the user’s secret key from two signals and trigger slashing. This enforces rate limits even for anonymous users."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "ZK 证明在这个协议中证明了什么？",
+          "en": "What does the ZK proof guarantee in this protocol?"
+        },
+        "answer": {
+          "zh": "ZK-STARK 证明三件事：用户身份承诺在 Merkle 树中、退款票据签名有效并正确求和、以及当前请求的最大花费不超过存款和退款之和。这保证用户有足够余额，同时保持匿名。",
+          "en": "The ZK-STARK proves three things: the user identity commitment exists in a Merkle tree, refund tickets are valid and correctly summed, and the total potential spending does not exceed the deposit plus refunds. This ensures solvency while keeping the user anonymous."
+        }
+      }
+    ]
   }
 ]
