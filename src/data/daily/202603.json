@@ -677,5 +677,80 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-03-18",
+    "projects": [
+      {
+        "name": "powdr-wasm",
+        "url": "https://x.com/powdr_labs/status/2033937297314402504",
+        "type": "开源",
+        "tags": [
+          "powdr labs",
+          "crush ISA",
+          "WASI"
+        ],
+        "summary": {
+          "zh": "@powdr_labs 团队开源了powdr-wasm，这是一个基于@openvm_org和crush ISA优化的zkVM，早期基准测试显示相比RISC-V（OpenVM）减少1.5倍追踪单元并提升证明速度，同时支持通过WASI运行Go程序。",
+          "en": "@powdr_labs has open-sourced powdr-wasm, an optimized zkVM for WASM built on @openvm_org and the crush ISA, with early benchmarks showing 1.5x fewer trace cells and faster proof times compared to RISC-V (OpenVM), and support for Go guests via WASI."
+        },
+        "notes": {
+          "zh": [
+            "powdr-wasm是基于OpenVM和crush ISA构建的zkVM，专为WASM优化",
+            "早期基准测试显示，相比RISC-V（OpenVM），追踪单元减少1.5倍，证明时间更快",
+            "支持通过WASI运行Go程序，扩展了zkVM的应用场景",
+            "该项目旨在提升zkVM在WASM环境下的性能和效率",
+            "开源发布有助于社区参与和进一步优化",
+            "结合WASM和ZKP技术，推动零知识证明在WebAssembly生态系统中的应用"
+          ],
+          "en": [
+            "powdr-wasm is a zkVM optimized for WASM, built on OpenVM and the crush ISA",
+            "Early benchmarks show 1.5x fewer trace cells and faster proof times vs. RISC-V (OpenVM)",
+            "Supports Go guests via WASI, expanding zkVM use cases",
+            "Aims to improve performance and efficiency of zkVM in WASM environments",
+            "Open-source release facilitates community involvement and further optimization",
+            "Combines WASM and ZKP technologies to advance zero-knowledge proofs in WebAssembly ecosystems"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK开源】性能飞跃：powdr-wasm zkVM 为WASM优化，支持Go语言，证明速度更快！"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "为什么选择 WASM 而不是 RISC-V？",
+          "en": "Why use WASM instead of RISC-V?"
+        },
+        "answer": {
+          "zh": "WASM 是一种更高层的执行格式，广泛用于浏览器和后端。相比 RISC-V，它更接近实际应用代码，因此更容易接入现有语言和工具链，例如 Go 和 WASI。",
+          "en": "WASM is a higher level execution format widely used in browsers and backend systems. Compared to RISC-V, it is closer to real applications and integrates more easily with languages and toolchains such as Go and WASI."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "crush ISA 如何提升 zkVM 性能？",
+          "en": "How does the crush ISA improve zkVM performance?"
+        },
+        "answer": {
+          "zh": "crush ISA 是为可证明性设计的指令集，可以减少复杂操作的约束成本。例如它可以更高效地表达算术和内存操作，从而减少 trace 和 lookup 开销。",
+          "en": "The crush ISA is designed for provability. It reduces the constraint cost of complex operations by expressing arithmetic and memory actions more efficiently, which lowers trace size and lookup overhead."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "powdr-wasm 相比 RISC-V zkVM 的主要性能来源是什么？",
+          "en": "Where do the main performance gains of powdr-wasm over RISC-V zkVMs come from?"
+        },
+        "answer": {
+          "zh": "主要来自更紧凑的执行语义和 ISA 设计。crush ISA 减少无关指令开销，同时降低 trace cells 数量。这直接减少多项式约束、sum-check 成本和整体 proving 时间。",
+          "en": "The gains come from a more compact execution model and ISA design. The crush ISA reduces unnecessary instruction overhead and lowers trace cells. This directly reduces polynomial constraints, sum-check cost, and overall proving time."
+        }
+      }
+    ]
   }
 ]
