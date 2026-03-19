@@ -752,5 +752,80 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-03-19",
+    "projects": [
+      {
+        "name": "Human-Extractable ZK Proofs of Knowledge: A Solution to Dark DAOs",
+        "url": "https://eprint.iacr.org/2026/511",
+        "type": "论文",
+        "tags": [
+          "Zeyuan Yin",
+          "Dark DAO",
+          "CAPTCHA"
+        ],
+        "summary": {
+          "zh": "Yin等人在{{name}}论文中提出了一种人类可提取的ZK知识证明（HE-ZKPoK）协议，通过结合CAPTCHA谜题来防御Dark DAO的投票购买攻击，无需依赖专用硬件。",
+          "en": "Yin et al. proposed a human-extractable ZK proof of knowledge (HE-ZKPoK) protocol in their {{name}}paper, using CAPTCHA puzzles to defend against Dark DAO vote-buying attacks without specialized hardware."
+        },
+        "notes": {
+          "zh": [
+            "Dark DAO利用MPC或TEE进行密钥约束，实现自动化投票购买，攻击远程电子投票系统的不可剥夺认证",
+            "现有防御方案依赖TEE或ASIC，难以在区块链上部署",
+            "HE-ZKPoK协议要求证明者解决人类可提取的CAPTCHA谜题并完成标准ZK知识证明",
+            "任何人类实体仅通过查看证明者的CAPTCHA查询和关联谜题即可提取见证",
+            "假设人类无法约束秘密，如果选民出售选票，其私钥将完全暴露，从而阻止投票购买",
+            "该方案为Dark DAO提供了一种无需专用硬件的替代解决方案"
+          ],
+          "en": [
+            "Dark DAO uses MPC or TEE for key encumbrance to enable automated vote-buying, attacking inalienable authentication in remote e-voting",
+            "Existing defenses rely on TEE or ASIC, difficult to deploy on blockchain",
+            "HE-ZKPoK protocol forces prover to solve human-extractable CAPTCHA puzzles and complete standard ZKPoK",
+            "Any human can extract witness by looking at prover's CAPTCHA queries and puzzles",
+            "Assuming humans cannot encumber secrets, vote-selling exposes private key, deterring vote-buying",
+            "Provides hardware-free alternative solution to Dark DAO"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】人类可提取ZK证明：用CAPTCHA防御Dark DAO投票购买攻击"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "什么是 Dark DAO，为什么它是问题？",
+          "en": "What is a Dark DAO and why is it a problem?"
+        },
+        "answer": {
+          "zh": "Dark DAO 是一种自动化买票系统，允许用户出售投票权而不泄露私钥。它破坏了投票系统中“必须真正持有密钥”的假设，从而威胁 DAO 治理的公平性。",
+          "en": "A Dark DAO is an automated vote buying system that lets users sell voting power without revealing their secret keys. It breaks the assumption that voters truly control their keys, undermining fair DAO governance."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "为什么传统 ZK proof 无法防止投票权出售？",
+          "en": "Why can’t standard ZK proofs prevent vote selling?"
+        },
+        "answer": {
+          "zh": "传统 ZK proof 只证明“存在一个 witness”，但不保证证明者本人真正掌握该 witness。通过 MPC 或 TEE，可以让他人代替完成证明，从而实现投票权出售。",
+          "en": "Standard ZK proofs only show that a witness exists, not that the prover personally knows it. Using MPC or TEEs, others can generate proofs on behalf of the user, enabling vote selling."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "HE-ZKPoK 如何实现“可提取性”？",
+          "en": "How does HE-ZKPoK achieve extractability?"
+        },
+        "answer": {
+          "zh": "通过让证明者查询并解答 CAPTCHA，任何观察者可以从这些查询中推导出对应的秘密信息。即 witness 可以被“人类读取”，从而保证知识是未被封装的。",
+          "en": "By requiring CAPTCHA queries and responses, observers can derive the underlying secret from these interactions. The witness becomes human extractable, ensuring the knowledge is not hidden behind delegation."
+        }
+      }
+    ]
   }
 ]
