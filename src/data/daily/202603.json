@@ -827,5 +827,80 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-03-20",
+    "projects": [
+      {
+        "name": "SoK: Understanding zkVM: From Research to Practice",
+        "url": "https://eprint.iacr.org/2026/525",
+        "type": "论文",
+        "tags": [
+          "Yunbo Yang",
+          "zkVM",
+          "zkML"
+        ],
+        "summary": {
+          "zh": "Yang等人在{{name}}论文中对zkVM进行了系统化研究，将其分解为ISA、VM和证明三层，并评估了代表性系统的性能、可扩展性和可用性。",
+          "en": "Yang et al. conducted a systematization of knowledge on zkVMs in their {{name}}paper, decomposing them into ISA, VM, and proving layers, and evaluated representative systems for performance, scalability, and usability."
+        },
+        "notes": {
+          "zh": [
+            "zkVM作为证明程序执行正确性的基础设施，在区块链Rollup、隐私保护机器学习和链下计算中广泛应用",
+            "现有zkVM在指令格式、执行轨迹布局和证明后端上存在异构设计，导致系统关系难以理解",
+            "论文提出三层分解框架：ISA层定义指令语义，VM层捕获程序执行，证明层生成最终证明",
+            "通过分层框架对代表性zkVM进行了全面的实验评估，分析设计选择对性能、可扩展性和可用性的影响",
+            "总结了主要观察结果，并展望了zkVM设计和实现的潜在发展方向",
+            "研究有助于弥合理论与实践的差距，为zkVM的标准化和优化提供参考"
+          ],
+          "en": [
+            "zkVM is a key infrastructure for proving program execution correctness, widely used in blockchain rollups, privacy-preserving ML, and off-chain computation.",
+            "Existing zkVMs have heterogeneous designs in instruction formats, trace layouts, and proving backends, making system relationships hard to understand.",
+            "Proposes a three-layer decomposition: ISA layer for instruction semantics, VM layer for program execution, and proving layer for final proof generation.",
+            "Conducted comprehensive experimental evaluation of representative zkVMs using this framework to analyze design impacts on performance, scalability, and usability.",
+            "Summarized key observations and outlined potential directions for zkVM design and implementation.",
+            "Bridges the gap between theory and practice, offering insights for standardization and optimization of zkVMs."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】zkVM全景解析：从理论到实践的深度拆解与性能评估"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "zkVM 的三层架构分别做什么？",
+          "en": "What are the roles of the three zkVM layers?"
+        },
+        "answer": {
+          "zh": "ISA 层定义指令与 trace 结构；VM 层执行程序并组织约束；Proving 层将 trace 转为代数约束并用 sum-check 等生成证明。分层设计便于优化。",
+          "en": "ISA defines instructions and trace structure; VM executes and organizes constraints; Proving converts traces into algebraic constraints and uses sum-check to generate proofs. This separation enables optimization."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "trace 布局如何影响 zkVM 性能？",
+          "en": "How does trace layout impact zkVM performance?"
+        },
+        "answer": {
+          "zh": "trace 布局影响多项式表示与约束数量，从而影响 sum-check 和 batch evaluation 的效率。好的布局可减少开销并提升并行性。",
+          "en": "Trace layout affects polynomial representation and constraint count, impacting sum-check and batch evaluation efficiency. Good layouts reduce cost and improve parallelism."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "proving layer 如何形式化执行正确性？",
+          "en": "How does the proving layer formalize execution correctness?"
+        },
+        "answer": {
+          "zh": "它将 trace 编码为多项式，并构造状态转移约束（如 AIR/R1CS）。通过 sum-check 和多项式承诺验证，并用 batch evaluation 降低成本。",
+          "en": "It encodes traces as polynomials and enforces state transitions via AIR or R1CS. Sum-check and polynomial commitments verify them, while batch evaluation reduces cost."
+        }
+      }
+    ]
   }
 ]
