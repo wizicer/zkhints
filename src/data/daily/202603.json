@@ -902,5 +902,80 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-03-21",
+    "projects": [
+      {
+        "name": "S-two Whitepaper",
+        "url": "https://eprint.iacr.org/2026/532",
+        "type": "论文",
+        "tags": [
+          "Dan Carmon",
+          "Circle STARK",
+          "Flat AIR"
+        ],
+        "summary": {
+          "zh": "Carmon等人在{{name}}论文中提出了S-two，一种基于梅森素数域的circle STARK，形式化了flat AIR电路模型并深入分析了其邻近证明的安全性，强调了跨域相关协议的重要性。",
+          "en": "Carmon et al. proposed S-two, a circle STARK over the Mersenne prime field, formalizing the flat AIR circuit model and providing in-depth security analysis of proof of proximity, highlighting cross-domain correlated agreement."
+        },
+        "notes": {
+          "zh": [
+            "S-two是基于梅森素数域（模数p=2^31-1）的circle STARK实现",
+            "形式化了flat AIR电路模型，这是现代零知识虚拟机常用的算术化范式",
+            "深入分析了flat AIR邻近证明的安全性，特别关注多表证明的可靠性误差控制",
+            "强调了跨域相关协议概念对多表证明的重要性",
+            "展示了多表circle FRI满足Johnson界内的相关协议要求",
+            "讨论了Reed-Solomon码列表可解码性和线可解码性的两个合理猜想"
+          ],
+          "en": [
+            "S-two is a circle STARK implementation over the Mersenne prime field (modulus p=2^31-1)",
+            "Formalizes the flat AIR circuit model used by modern ZK virtual machines",
+            "Provides in-depth security analysis of proof of proximity for flat AIRs",
+            "Highlights importance of cross-domain correlated agreement for multi-table proofs",
+            "Shows multi-table circle FRI satisfies this notion up to Johnson bound",
+            "Discusses conjectures on list-decodability and line-decodability of Reed-Solomon codes"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】STARK新突破：S-two论文深入分析flat AIR模型与邻近证明安全性"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "S-two 是什么？它与传统 STARK 有什么区别？",
+          "en": "What is S-two and how does it differ from traditional STARKs?"
+        },
+        "answer": {
+          "zh": "S-two 是一种基于 circle STARK 的证明系统，工作在 Mersenne 素数域上。相比传统 STARK，它采用 flat AIR 和多表结构，并优化了 proof of proximity，使 zkVM 中的证明更高效。",
+          "en": "S-two is a circle STARK-based proof system over a Mersenne prime field. Compared to traditional STARKs, it uses flat AIR and multi-table structures, improving proof of proximity efficiency for zkVMs."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "多表（multi-table）设计为什么会带来 soundness 挑战？",
+          "en": "Why do multi-table designs introduce soundness challenges?"
+        },
+        "answer": {
+          "zh": "多表将约束拆分到多个 trace 中，可能导致跨表不一致，从而增加 soundness error。S-two 引入 cross-domain correlated agreement 来约束这些关系，并结合 batch evaluation 保持正确性。",
+          "en": "Multi-table designs split constraints across traces, risking inconsistency and increasing soundness error. S-two introduces cross-domain correlated agreement to enforce consistency, combined with batch evaluation to maintain correctness."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "cross-domain correlated agreement 如何降低 soundness error？",
+          "en": "How does cross-domain correlated agreement reduce soundness error?"
+        },
+        "answer": {
+          "zh": "该性质确保不同表或域上的函数在重叠点上保持一致，从而限制伪造解空间。结合 circle FRI，其安全性接近 Reed-Solomon 码的 Johnson bound，有效控制 multi-table proof 的误差。",
+          "en": "It enforces consistency across functions over different domains, restricting adversarial solutions. Combined with circle FRI, it achieves soundness close to the Johnson bound of Reed-Solomon codes, controlling errors in multi-table proofs."
+        }
+      }
+    ]
   }
 ]
