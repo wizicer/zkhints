@@ -977,5 +977,79 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-03-23",
+    "projects": [
+      {
+        "name": "Earpicks: Tightly Secure Two-Round Multi- and Threshold Signatures",
+        "url": "https://eprint.iacr.org/2026/572",
+        "type": "论文",
+        "tags": [
+          "Renas Bacho",
+          "Multi-Signatures"
+        ],
+        "summary": {
+          "zh": "Bacho和Chen在{{name}}论文中提出了Earpick-MS、Earpick-TS和Earpick-muMS三种签名方案，实现了无配对循环群上的紧致安全两轮多重签名和阈值签名，显著提升了签名紧凑性。",
+          "en": "Bacho and Chen proposed Earpick-MS, Earpick-TS, and Earpick-muMS in their {{name}}paper, achieving tightly secure two-round multi- and threshold signatures over pairing-free cyclic groups with improved compactness."
+        },
+        "notes": {
+          "zh": [
+            "Earpick-MS将签名大小缩减至三个域元素和一个比特，比T-Spoon缩小约3.5倍",
+            "Earpick-TS是首个无配对两轮阈值签名方案，具备紧致安全性证明",
+            "方案支持密钥聚合，允许多个公钥合并为单个聚合公钥",
+            "在无配对循环群上实现，提升了实际部署效率和适用性",
+            "Earpick-muMS变体在多用户设置中保持紧致安全性和紧凑签名大小",
+            "解决了现有紧致安全方案签名过大或交互轮次过多的问题"
+          ],
+          "en": [
+            "Earpick-MS reduces signature size to three field elements and one bit, ~3.5x smaller than T-Spoon.",
+            "Earpick-TS is the first pairing-free two-round threshold signature scheme with tight security proof.",
+            "Supports key aggregation, enabling multiple public keys to combine into a single aggregate key.",
+            "Implemented over pairing-free cyclic groups for improved efficiency and deployability.",
+            "Earpick-muMS variant maintains tight security in multi-user setting with compact signatures.",
+            "Addresses limitations of existing tightly secure schemes with large signatures or more rounds."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】签名效率大突破：Earpicks实现紧致安全两轮多重签名"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "什么是 threshold signature？与 multi-signature 有何不同？",
+          "en": "What is a threshold signature and how is it different from a multi-signature?"
+        },
+        "answer": {
+          "zh": "threshold signature 允许任意 t 个参与者（而不是全部）生成签名，而 multi-signature 通常需要所有人参与。它提高了容错性，适合分布式密钥管理。",
+          "en": "A threshold signature allows any t participants to sign, rather than requiring all parties as in multi-signatures. It improves fault tolerance and is useful in distributed key management."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "Earpick-MS 的核心改进是什么？",
+          "en": "What is the main improvement of Earpick-MS?"
+        },
+        "answer": {
+          "zh": "Earpick-MS 在保持两轮交互、pairing-free 和紧安全性的同时，大幅压缩签名大小，仅需 3 个域元素和 1 bit，比之前方案减少约 3.5 倍。",
+          "en": "Earpick-MS achieves tight security, two-round signing, and pairing-free design while drastically reducing signature size to three field elements and one bit, about 3.5× smaller than prior work."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "为什么两轮协议在实践中重要？",
+          "en": "Why are two-round protocols important in practice?"
+        },
+        "answer": {
+          "zh": "两轮协议减少交互延迟和通信成本，更适合网络环境。相比三轮或更多轮次，它更高效，特别是在区块链和分布式签名场景中。",
+          "en": "Two-round protocols reduce latency and communication overhead, making them more practical in networks. They are more efficient than three or more rounds, especially in blockchain and distributed signing."
+        }
+      }
+    ]
   }
 ]
