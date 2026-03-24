@@ -1051,5 +1051,80 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-03-24",
+    "projects": [
+      {
+        "name": "NI-DKG: Non-Interactive Distributed Key Generation Using Blockchain and Zero-Knowledge Proofs",
+        "url": "https://eprint.iacr.org/2026/552",
+        "type": "论文",
+        "tags": [
+          "Alex Kampa",
+          "DKG",
+          "Smart Contract"
+        ],
+        "summary": {
+          "zh": "Kampa等人在{{name}}论文中提出了一种非交互式DKG协议NI-DKG，通过ZK证明消除争议阶段，利用区块链作为协调层，简化了密钥生成流程。",
+          "en": "Kampa et al. proposed a non-interactive DKG protocol, NI-DKG, in their {{name}}paper, using ZK proofs to eliminate dispute phases and leveraging blockchain as a coordination layer, simplifying key generation."
+        },
+        "notes": {
+          "zh": [
+            "NI-DKG通过ZK证明确保贡献正确性，消除传统DKG中的争议阶段，提升安全性",
+            "协议依赖标准原语：Shamir秘密共享、Feldman承诺、哈希ElGamal加密和Chaum-Pedersen证明",
+            "利用智能合约区块链作为定时公共公告板，实现非交互式协调，简化协议流程",
+            "提供EVM兼容链的实现框架，包括密钥生成、阈值解密和可选密钥披露的电路规范",
+            "讨论EVM验证器对公共输入数量的限制，并概述应对方法",
+            "通过zk-SNARK链上验证，增强协议的可信度和抗攻击能力"
+          ],
+          "en": [
+            "NI-DKG uses ZK proofs to ensure contribution correctness, eliminating dispute phases in traditional DKG",
+            "Relies on Shamir secret sharing, Feldman commitments, hashed ElGamal, and Chaum-Pedersen proofs",
+            "Uses smart-contract blockchains as timed public bulletin boards for non-interactive coordination",
+            "Provides EVM-compatible implementation with circuit specs for key generation and threshold decryption",
+            "Discusses EVM verifier constraints on public inputs and solutions",
+            "On-chain zk-SNARK verification improves trustworthiness and attack resistance"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】告别争议：NI-DKG 用 ZK 证明实现非交互式分布式密钥生成"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "为什么 NI-DKG 不需要 commit-reveal 两轮？",
+          "en": "Why does NI-DKG not require commit-reveal?"
+        },
+        "answer": {
+          "zh": "NI-DKG 用 zk-SNARK 一次性证明多项式、commitment 和加密 shares 的一致性，把 commit、reveal 和验证压缩成一步，避免多轮交互。",
+          "en": "NI-DKG uses a zk-SNARK to prove consistency of polynomial, commitments, and encrypted shares in one step, compressing commit, reveal, and verification into a single interaction."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "没有 commit 会导致 adaptive 攻击吗？",
+          "en": "Does removing commit enable adaptive attacks?"
+        },
+        "answer": {
+          "zh": "会。攻击者可以根据他人提交再选择输入，类似 batch evaluation 的自适应输入。但只要存在 honest 随机贡献，最终结果仍不可预测。",
+          "en": "Yes. An adversary can adapt inputs after observing others, similar to batch evaluation. However, as long as one honest contribution is random, the final result remains unpredictable."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "NI-DKG 在 threat model 上放弃了什么？",
+          "en": "What does NI-DKG give up in its threat model?"
+        },
+        "answer": {
+          "zh": "它放弃了对 last-mover bias 的防护，不再限制自适应选择，因此不保证无偏随机性，但仍保证正确性和密钥安全。",
+          "en": "It drops protection against last-mover bias and allows adaptive choice, so it does not ensure unbiased randomness but still guarantees correctness and key security."
+        }
+      }
+    ]
   }
 ]
