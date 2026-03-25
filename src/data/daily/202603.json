@@ -1126,5 +1126,80 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-03-25",
+    "projects": [
+      {
+        "name": "A Universal Blinder: One-round Blind Signatures from FHE",
+        "url": "https://eprint.iacr.org/2026/574",
+        "type": "论文",
+        "tags": [
+          "Dan Boneh",
+          "Blind Signature",
+          "FHE"
+        ],
+        "summary": {
+          "zh": "Boneh和Kim在{{name}}论文中提出了一种通用编译器，可将任何签名方案转化为单轮盲签名方案，利用FHE和ZKP确保不可伪造性和盲性，并保持向后兼容性。",
+          "en": "Boneh and Kim propose a universal compiler in their {{name}}paper, converting any signature scheme into a one-round blind signature scheme using FHE and ZKP to ensure unforgeability and blindness while maintaining backward compatibility."
+        },
+        "notes": {
+          "zh": [
+            "提出通用编译器，将任意签名方案转化为单轮盲签名方案",
+            "利用FHE和ZKP确保方案的不可伪造性和盲性",
+            "盲签名格式与底层签名方案相同，实现向后兼容性",
+            "提供三种编译器变体，主要区别在于客户端、签名方或双方的工作量分配",
+            "引入新概念“承诺可验证FHE”，验证者无需明文查看电路",
+            "该方案在公共密钥密码学领域具有重要应用潜力"
+          ],
+          "en": [
+            "Proposes a universal compiler converting any signature scheme to a one-round blind signature scheme",
+            "Uses FHE and ZKP to ensure unforgeability and blindness",
+            "Blind signature format matches underlying scheme for backward compatibility",
+            "Offers three compiler variants based on workload distribution between client and signer",
+            "Introduces new concept of committed verifiable FHE where verifier doesn't see circuit in clear",
+            "Has significant potential in public-key cryptography applications"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】通用盲签名编译器：FHE+ZKP实现单轮安全签名"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "这篇论文的核心贡献是什么？",
+          "en": "What is the main contribution of this paper?"
+        },
+        "answer": {
+          "zh": "论文提出一种通用编译器，可以把任何签名方案转换为单轮盲签名方案。生成的签名格式与原方案完全相同，实现向后兼容。",
+          "en": "The paper introduces a compiler that converts any signature scheme into a one-round blind signature scheme. The resulting signature has the exact same format as the original, ensuring backward compatibility."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "为什么可以实现单轮交互？",
+          "en": "Why can this scheme achieve one-round interaction?"
+        },
+        "answer": {
+          "zh": "传统盲签名需要多轮交互来隐藏和验证数据。这里通过 FHE 和 zk 证明一次性完成计算与正确性验证，从而消除额外轮次。",
+          "en": "Traditional blind signatures require multiple rounds for hiding and verification. Here, FHE and zero-knowledge proofs combine computation and correctness checks in one step, removing extra rounds."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "什么是 committed verifiable FHE？为什么重要？",
+          "en": "What is committed verifiable FHE and why is it important?"
+        },
+        "answer": {
+          "zh": "它是一种可验证 FHE，验证者无需看到电路本身，只验证承诺的一致性。这增强隐私性，同时保证计算正确性，是实现盲性与不可伪造性的关键。",
+          "en": "It is a form of verifiable FHE where the verifier does not see the circuit, only commitments to it. This improves privacy while ensuring correctness, which is crucial for blindness and unforgeability."
+        }
+      }
+    ]
   }
 ]
