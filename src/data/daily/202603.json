@@ -1201,5 +1201,79 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-03-26",
+    "projects": [
+      {
+        "name": "Two-Party BBS+ Signature in Two Passes",
+        "url": "https://eprint.iacr.org/2026/573",
+        "type": "论文",
+        "tags": [
+          "Xiaofei Wu",
+          "anonymous credentials"
+        ],
+        "summary": {
+          "zh": "Wu等人在{{name}}论文中提出了一种两轮两方BBS+签名协议，将通信开销降至0.85KB，比现有最优方案减少约73%，同时保持高效计算性能，适用于轻量级匿名凭证系统。",
+          "en": "Wu et al. proposed a two-pass two-party BBS+ signing protocol in their {{name}}paper, reducing communication to 0.85KB (about 27% of prior work) while maintaining efficient computation, making it suitable for lightweight anonymous credential systems."
+        },
+        "notes": {
+          "zh": [
+            "BBS+/BBS签名是匿名凭证和隐私认证的关键组件，正被标准化和广泛应用",
+            "现有阈值方案在两方设置中至少需要三轮交互和数千字节通信",
+            "新协议仅需两轮交互，每签名通信0.85KB，比S&P'25方案减少约73%",
+            "签名时间高效（一方约62ms，另一方约46ms），支持大消息向量（如500条）",
+            "基于标准实理想范式的模拟安全证明，确保协议安全性",
+            "可自然扩展至2-out-of-n阈值设置，增强系统灵活性和部署吸引力"
+          ],
+          "en": [
+            "BBS+/BBS signatures are key for anonymous credentials and privacy-preserving authentication, with increasing standardization and deployment.",
+            "Existing threshold designs require at least three rounds and multi-kilobyte communication in two-party settings.",
+            "New protocol uses only two passes with 0.85KB per signature, about 27% of the most bandwidth-efficient prior work (S&P'25).",
+            "Competitive signing times (~62ms for one party, ~46ms for the other), efficient even for large message vectors (e.g., ℓ=500).",
+            "Full simulation-based security proof in the standard real-ideal paradigm ensures protocol security.",
+            "Naturally generalizable to 2-out-of-n threshold settings, enhancing flexibility and practical deployment appeal."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】两轮搞定！BBS+签名协议通信开销大降73%，匿名凭证更轻更快"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "什么是 BBS+ 签名？它有什么用途？",
+          "en": "What is a BBS+ signature and what is it used for?"
+        },
+        "answer": {
+          "zh": "BBS+ 是一种支持选择性披露的签名方案，常用于匿名凭证和隐私认证。用户可以证明某些属性而不泄露全部信息。",
+          "en": "BBS+ is a signature scheme supporting selective disclosure. It is widely used in anonymous credentials, allowing users to prove certain attributes without revealing all data."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "为什么需要 two-party BBS+ 签名？",
+          "en": "Why do we need two-party BBS+ signatures?"
+        },
+        "answer": {
+          "zh": "two-party 方案将私钥分布在两个实体（如服务器和手机）之间，避免单点失效，同时保持系统轻量和实用。",
+          "en": "A two-party scheme splits the secret key between two entities, such as a server and a device, avoiding single points of failure while remaining lightweight."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "该方案如何在降低通信的同时保持安全性？",
+          "en": "How does the scheme reduce communication while preserving security?"
+        },
+        "answer": {
+          "zh": "通过优化协议结构和消息压缩，减少中间数据交换，同时使用标准模型下的模拟安全证明确保正确性和抗攻击能力。",
+          "en": "It optimizes protocol structure and compresses exchanged data to reduce communication, while using simulation-based security proofs in the standard model to ensure correctness and robustness."
+        }
+      }
+    ]
   }
 ]
