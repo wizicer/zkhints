@@ -1275,5 +1275,81 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-03-27",
+    "projects": [
+      {
+        "name": "zk-autoresearch implementation on Plonky3",
+        "url": "https://x.com/realbarnakiss/status/2037120329131147430",
+        "type": "开源",
+        "tags": [
+          "@realbarnakiss",
+          "AI",
+          "Rust",
+          "NTT"
+        ],
+        "summary": {
+          "zh": "@realbarnakiss 基于Karpathy的autoresearch循环，在Plonky3 ZK证明器上实现了zk-autoresearch，通过AI代理优化NTT实现，提升性能约3%。",
+          "en": "@realbarnakiss implemented zk-autoresearch on the Plonky3 ZK prover, using AI agents to optimize NTT implementation, achieving ~3% speedup."
+        },
+        "notes": {
+          "zh": [
+            "基于Karpathy的autoresearch模式，首次应用于生产级ZK证明器Plonky3",
+            "AI代理通过分析Rust和Montgomery算术，在专家优化代码中发现冗余操作",
+            "优化聚焦于NTT实现的内循环，包括预计算乘积、提升广播和跳过乘1操作",
+            "实验运行74次迭代，产生6次改进和57次回归，所有更改经数学等效验证",
+            "安全性通过端到端ZK证明生成和验证确保，Plonky3工程师的健全性审核待定",
+            "计划第二轮实验修复已知问题，完整代码和结果将开源"
+          ],
+          "en": [
+            "First application of autoresearch pattern to a production ZK prover, Plonky3",
+            "AI agents analyzed Rust and Montgomery arithmetic to find redundancies in expert-optimized code",
+            "Optimizations targeted NTT inner loop: precomputing products, hoisting broadcasts, skipping multiplications by 1",
+            "74 iterations yielded 6 improvements and 57 regressions, all changes verified as mathematically equivalent",
+            "Safety ensured via end-to-end ZK proof generation and verification, soundness review pending",
+            "Round 2 planned to fix issues, full code and findings to be open-sourced"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK开源】AI助力ZK优化：zk-autoresearch在Plonky3上实现性能提升"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "zk-autoresearch 是什么？它在这个实验中做了什么？",
+          "en": "What is zk-autoresearch and what did it do in this experiment?"
+        },
+        "answer": {
+          "zh": "zk-autoresearch 是一种自动迭代优化方法，类似 autoresearch loop。它让 AI 反复修改代码、测试性能并保留改进。在该实验中，它优化了 Plonky3 中 NTT 的实现，在保证正确性的前提下提升约 3% 性能。",
+          "en": "zk-autoresearch is an automated iterative optimization loop. It lets an AI repeatedly modify code, test performance, and keep improvements. In this experiment, it optimized the NTT in Plonky3 and achieved about a 3% speedup while preserving correctness."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "该方法如何避免破坏零知识证明的 soundness？",
+          "en": "How does the approach avoid breaking proof soundness?"
+        },
+        "answer": {
+          "zh": "实验限制 AI 只能修改实现层代码（如 NTT），不能触碰 FRI 等关键证明组件。同时每次迭代都运行 correctness 测试，并通过端到端证明验证，确保等价变换。",
+          "en": "The agent was restricted to implementation-level code like NTT and could not modify soundness-critical parts like FRI. Each iteration ran correctness tests and full end-to-end proof verification to ensure equivalence."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "为什么 NTT 的优化会对 zk 证明系统产生全局影响？",
+          "en": "Why do NTT optimizations have system-wide impact in ZK provers?"
+        },
+        "answer": {
+          "zh": "NTT 是多项式运算的核心，广泛用于约束编码、sum-check 相关计算和 FRI 预处理。其性能直接决定 prover 的瓶颈，因此微小优化会被放大到整体系统。",
+          "en": "NTT underpins polynomial operations used in constraint encoding, sum-check-related computations, and FRI preprocessing. Since it dominates runtime, even small optimizations propagate to system-wide speedups."
+        }
+      }
+    ]
   }
 ]
