@@ -1351,5 +1351,81 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-03-28",
+    "projects": [
+      {
+        "name": "CatCrypt: From Rust to Cryptographic Security in Lean",
+        "url": "https://eprint.iacr.org/2026/604",
+        "type": "论文",
+        "tags": [
+          "Bas Spitters",
+          "Lean",
+          "Rust",
+          "AI"
+        ],
+        "summary": {
+          "zh": "Bas Spitters在{{name}}论文中提出CatCrypt库，提供从Rust参考实现到Lean计算模型安全证明的端到端管道，涵盖172个密码协议并利用AI加速开发。",
+          "en": "Bas Spitters proposed the CatCrypt library in their {{name}}paper, offering an end-to-end pipeline from Rust reference implementations to security proofs in Lean's computational model, covering 172 cryptographic protocols with AI-accelerated development."
+        },
+        "notes": {
+          "zh": [
+            "CatCrypt提供机器检查的密码安全证明库，覆盖172个协议，其中110个有完整Rust到Lean管道",
+            "使用Hax工具实现Rust到Lean的翻译，确保实现与证明的一致性",
+            "所有安全界限均与IETF RFCs、NIST标准和学术论文等来源系统交叉引用",
+            "部分证明从SSProve、EasyCrypt等工具移植，多数为独立形式化无先前机器检查",
+            "开发仅用两个月，相比传统数月专家工作大幅提速，得益于GenAI辅助",
+            "针对AI黑客能力提升、AI生成软件爆炸和后量子过渡等安全挑战，推动形式化方法应用"
+          ],
+          "en": [
+            "Offers machine-checked security proofs, covering 172 protocols with 110 having full Rust-to-Lean pipelines.",
+            "Uses Hax tool for Rust-to-Lean translation, ensuring consistency between implementation and proofs.",
+            "All bounds systematically cross-referenced against sources like IETF RFCs, NIST standards, and academic papers.",
+            "Some proofs ported from SSProve and EasyCrypt; most are independent formalizations without prior machine-checking.",
+            "Developed in two months vs. traditional months of expert effort, accelerated by GenAI assistance.",
+            "Addresses AI hacking, AI-generated software, and post-quantum security challenges via formal methods."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】AI赋能密码学：CatCrypt实现Rust到Lean的端到端安全证明"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "为什么需要从 Rust 到 Lean 的转换？",
+          "en": "Why is translating from Rust to Lean important?"
+        },
+        "answer": {
+          "zh": "Rust 用于实际实现，而 Lean 用于形式化证明。通过转换，可以确保实现与证明一致，避免“实现正确但证明无关”的问题。",
+          "en": "Rust is used for implementation, while Lean is used for formal proofs. Translating ensures that the implementation matches the proof, avoiding mismatches between code and security guarantees."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "CatCrypt 如何实现端到端验证？",
+          "en": "How does CatCrypt achieve end-to-end verification?"
+        },
+        "answer": {
+          "zh": "它使用 Hax 工具将 Rust 代码转换为 Lean 表达，然后在 Lean 中构造计算安全模型下的证明。这样可以直接对实际实现进行验证，而不是抽象模型。",
+          "en": "It uses the Hax tool to translate Rust code into Lean, then proves security in the computational model. This allows verification of real implementations rather than abstract models."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "AI 在 CatCrypt 方法论中的关键作用是什么？",
+          "en": "What is the key role of AI in CatCrypt’s methodology?"
+        },
+        "answer": {
+          "zh": "AI 用于快速生成形式化证明和代码转换，大幅缩短开发时间。但同时引入新的风险，因此需要交叉验证、引用标准文档等方法确保正确性。",
+          "en": "AI accelerates proof generation and translation, drastically reducing development time. However, it introduces risks, so cross-referencing and validation against standards are used to ensure correctness."
+        }
+      }
+    ]
   }
 ]
