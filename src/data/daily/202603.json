@@ -1427,5 +1427,46 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-03-31",
+    "projects": [
+      {
+        "name": "PSE Vibecoding Hackathon",
+        "url": "https://github.com/privacy-ethereum/pse-vibecoding-hackathon",
+        "type": "活动",
+        "tags": [
+          "PSE",
+          "Hackathon",
+          "ZK"
+        ],
+        "summary": {
+          "zh": "PSE于2026年3月9日至10日举办了首届Vibecoding黑客松，探索AI辅助开发在密码学工程中的应用，共提交10个项目，涵盖ZK电路工具、后量子密码学等领域。",
+          "en": "PSE held its first Vibecoding hackathon on March 9-10, 2026, exploring AI-assisted development in cryptographic engineering, with 10 projects submitted covering ZK circuit tooling, post-quantum cryptography, and more."
+        },
+        "notes": {
+          "zh": [
+            "Vibecoding黑客松聚焦AI辅助开发在密码学工程的应用，为期2天，完全远程异步进行",
+            "共18人注册，提交10个项目，包括ZK电路工具、后量子密码学、匿名社交网络等",
+            "获奖项目：Vibe Circuit（Claude Code插件）、Seal（内容寻址Web应用）、Noir Circuit Auditor（Claude Code插件）",
+            "项目范围广泛，从ZK证明生成到后量子安全传输，展示AI在复杂密码学任务中的潜力",
+            "PSE作为以太坊基金会研发实验室，专注于隐私保护技术基础设施",
+            "活动旨在验证AI辅助开发在严肃密码学工程中的有效性，超越传统Web应用"
+          ],
+          "en": [
+            "Vibecoding hackathon focused on AI-assisted development in cryptographic engineering, 2-day fully remote async format",
+            "10 projects submitted including ZK circuit tooling, post-quantum cryptography, anonymous social networks",
+            "Winners: Vibe Circuit (Claude Code plugin), Seal (content-addressed web app), Noir Circuit Auditor (Claude Code plugin)",
+            "Projects ranged from ZK proof generation to post-quantum secure transfers, showing AI potential in complex crypto tasks",
+            "PSE is an Ethereum Foundation R&D lab focused on privacy-preserving tech infrastructure",
+            "Goal: explore AI-assisted development effectiveness in serious cryptographic engineering beyond web apps"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK活动】AI+密码学新玩法：PSE Vibecoding黑客松探索ZK与AI融合"
+        }
+      }
+    ],
+    "qas": []
   }
 ]
