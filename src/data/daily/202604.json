@@ -1,0 +1,78 @@
+[
+  {
+    "date": "2026-04-01",
+    "projects": [
+      {
+        "name": "Post-Quantum Blockchains with Agility in Mind",
+        "url": "https://eprint.iacr.org/2026/609",
+        "type": "论文",
+        "authors": "Manuel B. Santos, Danno Ferrin, Ron Kahat, Michael Lodder",
+        "tags": [
+          "Manuel B. Santos",
+          "EVM",
+          "Signature"
+        ],
+        "summary": {
+          "zh": "Santos等人在{{name}}论文中提出了一种支持密码学敏捷性的EVM兼容区块链设计，包括CATX交易格式和共识层密钥注册机制，以应对量子计算威胁。",
+          "en": "Santos et al. proposed an EVM-compatible blockchain design with cryptographic agility in their {{name}}paper, featuring CATX transaction format and consensus-layer key registration to address quantum threats."
+        },
+        "notes": {
+          "zh": [
+            "区块链需长期完整性保障，但密码学原语可能因量子计算等进步而失效",
+            "现有系统缺乏全面的密码学敏捷性支持，难以在不中断运行下切换算法",
+            "提出灵活性框架，将算法选择分布到区块链各组件",
+            "设计CATX交易格式，分离交易体与签名，支持用户自选签名方案",
+            "共识层密钥注册机制允许验证者在签名方案间迁移，无需硬分叉",
+            "实验评估显示CATX格式在ECDSA、Falcon-512、ML-DSA签名下无显著开销"
+          ],
+          "en": [
+            "Blockchains need long-term integrity, but cryptographic primitives may fail due to quantum advances.",
+            "Existing systems lack comprehensive cryptographic agility support for seamless algorithm transitions.",
+            "Proposed flexibility framework distributes algorithm choice across blockchain components.",
+            "Designed CATX transaction format decouples body and signature for user-selected schemes.",
+            "Consensus-layer key registration enables validator migration between schemes without hard forks.",
+            "Experimental evaluation shows CATX format introduces no measurable overhead with various signatures."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】量子时代区块链安全新方案：密码学敏捷性设计"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "什么是密码学敏捷性（cryptographic agility）？为什么区块链需要它？",
+          "en": "What is cryptographic agility and why do blockchains need it?"
+        },
+        "answer": {
+          "zh": "密码学敏捷性指系统可以在不中断运行的情况下切换加密算法。区块链需要它，因为当前签名方案（如 ECDSA）未来可能被量子计算或新攻击方法削弱。",
+          "en": "Cryptographic agility means a system can switch cryptographic algorithms without disrupting operation. Blockchains need it because current schemes such as ECDSA may be weakened by quantum computing or future attacks."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "什么是 CATX？它解决了什么问题？",
+          "en": "What is CATX and what problem does it solve?"
+        },
+        "answer": {
+          "zh": "CATX 是一种新交易格式，将交易主体和签名解耦。这样用户可以自由选择签名算法，而不影响交易执行逻辑，提高算法迁移灵活性。",
+          "en": "CATX is a new transaction format that decouples the transaction body from the signature. This lets users choose their preferred signature scheme without affecting execution logic, improving migration flexibility."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "CATX 的设计为什么几乎没有性能开销？",
+          "en": "Why does CATX introduce almost no performance overhead?"
+        },
+        "answer": {
+          "zh": "因为它主要改变签名封装层，而不改变 EVM 执行路径。交易主体仍按原方式处理，仅签名验证模块可插拔，因此在 1100 万交易测试中无明显开销。",
+          "en": "Because it mainly changes the signature encapsulation layer without altering the EVM execution path. The transaction body is processed as usual, while signature verification becomes pluggable, leading to no measurable overhead across 11 million transactions."
+        }
+      }
+    ]
+  }
+]
