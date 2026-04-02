@@ -74,5 +74,77 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-04-02",
+    "projects": [
+      {
+        "name": "SHRIMPS: 2.5 KB post-quantum signatures across multiple stateful devices",
+        "url": "https://delvingbitcoin.org/t/shrimps-2-5-kb-post-quantum-signatures-across-multiple-stateful-devices/2355",
+        "type": "博客",
+        "tags": [
+          "jonasnick",
+          "SPHINCS+",
+          "Signatures"
+        ],
+        "summary": {
+          "zh": "jonasnick在{{name}}博客中提出了SHRIMPS协议，通过结合紧凑和回退SPHINCS+实例，实现跨多设备的小型后量子签名，在比特币等场景下显著减小签名大小。",
+          "en": "jonasnick proposed the SHRIMPS protocol in the {{name}}blog, combining compact and fallback SPHINCS+ instances to enable small post-quantum signatures across multiple devices, reducing size in contexts like Bitcoin."
+        },
+        "slogan": {
+          "zh": "【ZK博客】后量子签名新突破：SHRIMPS实现跨设备2.5KB签名"
+        }
+      },
+      {
+        "name": "pq-provable-shrimps",
+        "url": "https://github.com/AbdelStark/pq-provable-shrimps",
+        "type": "开源",
+        "tags": [
+          "AbdelStark",
+          "STARK",
+          "Cairo",
+          "SHRIMPS"
+        ],
+        "summary": {
+          "zh": "AbdelStark发布了开源项目，结合Rust签名、Cairo验证和Stwo STARK证明，支持后量子签名SHRIMPS的验证，提供772字节紧凑签名和ZK证明生成。",
+          "en": "AbdelStark released the open-source project, integrating Rust signing, Cairo verification, and Stwo STARK proving for post-quantum signature verification with 772-byte compact signatures and ZK proof generation."
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "SHRIMPS 是什么？它解决了什么问题？",
+          "en": "What is SHRIMPS and what problem does it solve?"
+        },
+        "answer": {
+          "zh": "SHRIMPS 是一种面向后量子场景的哈希签名设计，重点解决“同一个种子在多个设备上使用”的问题。相比传统 SLH-DSA 约 7.9KB 的签名，它可以把常见签名压缩到约 2.5KB，同时支持备份设备和多设备恢复。",
+          "en": "SHRIMPS is a post-quantum hash-based signature design that solves the problem of using the same seed across multiple devices. Compared with SLH-DSA’s roughly 7.9KB signatures, it reduces common signatures to about 2.5KB while supporting backup and restored devices."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "SHRIMPS 为什么能显著缩小签名大小？",
+          "en": "Why can SHRIMPS significantly reduce signature size?"
+        },
+        "answer": {
+          "zh": "它利用一个小 q_s 的紧凑 SPHINCS+ 实例处理大多数常见签名。由于 Bitcoin 钱包通常每个 key 只签很少次数，这种假设非常实际，因此可用更小参数集获得约 2564B 的签名。",
+          "en": "It uses a compact SPHINCS+ instance with a small q_s for most signatures. Since Bitcoin wallets typically use each key only a few times, this assumption is practical and allows much smaller parameter sets, giving signatures around 2564 bytes."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "SHRIMPS 与 SHRINCS 结合的意义是什么？",
+          "en": "What is the significance of combining SHRIMPS with SHRINCS?"
+        },
+        "answer": {
+          "zh": "组合后主设备可使用约 324B 的极小签名，而备份设备仍保持低于 3KB，而不是退化到完整 stateless 路径。这特别适合 Bitcoin 这类低频签名、多设备备份的钱包场景。",
+          "en": "When combined, the primary device can use extremely small signatures of around 324 bytes, while backup devices remain under 3KB instead of reverting to full stateless signatures. This is especially suitable for low-frequency, multi-device Bitcoin wallet use cases."
+        }
+      }
+    ]
   }
 ]
