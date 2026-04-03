@@ -146,5 +146,80 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-04-03",
+    "projects": [
+      {
+        "name": "Securing Elliptic Curve Cryptocurrencies against Quantum Vulnerabilities: Resource Estimates and Mitigations",
+        "url": "https://eprint.iacr.org/2026/625",
+        "type": "论文",
+        "authors": "Ryan Babbush, Adam Zalcman, Craig Gidney, Michael Broughton, Tanuj Khattar, Hartmut Neven, Thiago Bergamaschi, Justin Drake, Dan Boneh",
+        "tags": [
+          "Ryan Babbush",
+          "Post-Quantum Cryptography"
+        ],
+        "summary": {
+          "zh": "Babbush等人在{{name}}论文中分析了量子计算机对区块链的威胁，提供了secp256k1曲线破解的资源估计，并利用ZK证明验证结果，同时探讨了缓解策略和迁移到后量子密码学的紧迫性。",
+          "en": "Babbush et al. analyze quantum threats to blockchains in their {{name}}paper, providing resource estimates for breaking secp256k1 and validating results with ZK proof, while discussing mitigations and the urgency of migrating to Post-Quantum Cryptography."
+        },
+        "notes": {
+          "zh": [
+            "量子计算机可破解secp256k1曲线，使用Shor算法需≤1200逻辑量子比特和≤9000万Toffoli门",
+            "在超导架构上，电路可在几分钟内用不到50万物理量子比特执行",
+            "区分“快时钟”和“慢时钟”架构，快时钟CRQC可能对公链交易发起“即时花费”攻击",
+            "分析了智能合约、PoS共识、数据可用性采样等区块链高级功能的系统性风险",
+            "提出“数字抢救”框架，以监管休眠资产的恢复或销毁，防止恶意夺取",
+            "强调所有易受攻击的加密货币社区应尽快迁移到后量子密码学"
+          ],
+          "en": [
+            "Quantum computers can break secp256k1 using Shor's algorithm with ≤1200 logical qubits and ≤90M Toffoli gates.",
+            "On superconducting architectures, circuits can execute in minutes with <500k physical qubits.",
+            "Distinguish fast-clock vs. slow-clock architectures; fast-clock CRQCs may enable on-spend attacks.",
+            "Analyze systemic risks in blockchain features like smart contracts, PoS, and Data Availability Sampling.",
+            "Propose digital salvage frameworks to regulate dormant assets and prevent adversarial seizure.",
+            "Urge vulnerable cryptocurrency communities to migrate to Post-Quantum Cryptography immediately."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】量子威胁来袭：Google团队用ZK证明验证secp256k1破解资源，呼吁区块链紧急迁移后量子密码"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "为什么区块链比普通系统更容易受到量子攻击？",
+          "en": "Why are blockchains more exposed to quantum attacks than ordinary systems?"
+        },
+        "answer": {
+          "zh": "因为链上交易和公钥通常是公开的，攻击者可以长期保存数据，等待量子计算机成熟后进行攻击，尤其是已经暴露公钥的钱包和历史资产。",
+          "en": "Because blockchain transactions and public keys are usually public, attackers can store the data and wait until quantum computers mature, especially targeting wallets and historical assets whose public keys are already exposed."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "什么是 on-spend attack？为什么它很危险？",
+          "en": "What is an on-spend attack and why is it dangerous?"
+        },
+        "answer": {
+          "zh": "on-spend attack 指用户广播交易后、区块确认前，攻击者在 mempool 时间窗口内利用量子计算恢复私钥并抢先花费资产。对于公开 mempool 的链，这种风险尤其高。",
+          "en": "An on-spend attack means that after a user broadcasts a transaction but before confirmation, an attacker uses quantum computation to recover the private key and front-run the spend. This is especially dangerous for public mempool chains."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "为什么这篇论文的资源估计如此重要？",
+          "en": "Why are the resource estimates in this paper so important?"
+        },
+        "answer": {
+          "zh": "它将破解 256 位 ECDLP 的成本具体化为约 1200 至 1450 个逻辑 qubits 和数千万 Toffoli gates，显著降低了过去估计的不确定性，并直接影响区块链 PQ 迁移时间表。 ",
+          "en": "It concretizes the cost of breaking 256-bit ECDLP into roughly 1200 to 1450 logical qubits and tens of millions of Toffoli gates, sharply reducing uncertainty from prior estimates and directly impacting PQ migration timelines. "
+        }
+      }
+    ]
   }
 ]
