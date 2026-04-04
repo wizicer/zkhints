@@ -221,5 +221,80 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-04-04",
+    "projects": [
+      {
+        "name": "VeriRAG: Efficient Zero-Knowledge Proofs for Verifiable Retrieval-Augmented Generation",
+        "url": "https://eprint.iacr.org/2026/637",
+        "type": "论文",
+        "authors": "Chenqi Lin, Yubo Cui, Zhelei Zhou, Cheng Hong, Yufei Wang, Zhaohui Chen, Meng Li",
+        "tags": [
+          "Chenqi Lin",
+          "RAG"
+        ],
+        "summary": {
+          "zh": "Lin等人在{{name}}论文中提出VeriRAG框架，利用ZKP为RAG系统提供高效完整性保证，支持近似最近邻搜索并优化验证开销，实验显示可在37GB数据集上实现96秒证明时间和3秒验证时间。",
+          "en": "Lin et al. proposed VeriRAG framework in their {{name}}paper, using ZKP for efficient integrity guarantees in RAG systems, supporting ANNS and optimizing verification overhead, achieving 96s prover time and 3s verifier time on 37GB dataset."
+        },
+        "notes": {
+          "zh": [
+            "RAG系统存在幻觉问题，恶意提供者可能绕过检索或伪造数据质量",
+            "VeriRAG利用ZKP提供完整性保证，同时保护数据集隐私",
+            "支持近似最近邻搜索，避免全量搜索带来的计算负担",
+            "协议绕过排序过程的复杂验证，优化top-k排序验证",
+            "采用向量查找和块合并联合优化策略，降低验证开销",
+            "实验证明框架可扩展到37GB数据集，证明时间96秒，验证时间仅3秒"
+          ],
+          "en": [
+            "RAG systems suffer from hallucination, allowing malicious providers to bypass retrieval or claim false data quality",
+            "VeriRAG uses ZKP for integrity guarantees while preserving dataset privacy",
+            "Supports Approximate Nearest Neighbor Search to avoid exhaustive searches",
+            "Proposes innovative protocol bypassing complex verification of sorting processes",
+            "Uses joint optimization with vector lookup and chunk-merging strategies to reduce verification overhead",
+            "Experimental results show scalability to 37GB dataset with 96s prover time and 3s verifier time"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】AI防幻觉新突破：VeriRAG用ZKP确保RAG系统数据真实性"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "VeriRAG 为什么支持 ANNS，而不是穷举搜索？",
+          "en": "Why does VeriRAG support ANNS instead of exhaustive search?"
+        },
+        "answer": {
+          "zh": "实际 RAG 系统通常使用近似最近邻搜索（ANNS）以提高速度。VeriRAG 兼容这种工业级流程，使证明系统能在真实大规模向量数据库中落地。",
+          "en": "Real-world RAG systems usually rely on Approximate Nearest Neighbor Search (ANNS) for speed. VeriRAG supports this industrial workflow so the proof system can scale to realistic vector databases."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "top-k 验证为什么是一个难点？",
+          "en": "Why is top-k verification a difficult part?"
+        },
+        "answer": {
+          "zh": "因为直接证明排序过程成本很高。VeriRAG 设计了绕过完整排序证明的协议，只验证关键正确性条件，从而显著降低 prover 开销。",
+          "en": "Because directly proving the full sorting process is expensive. VeriRAG introduces a protocol that avoids proving the entire sort and instead verifies key correctness conditions, greatly reducing prover overhead."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "VeriRAG 的性能优化核心是什么？",
+          "en": "What is the core performance optimization in VeriRAG?"
+        },
+        "answer": {
+          "zh": "核心在于联合优化，包括 vector lookup 和 chunk merging。前者降低向量访问证明成本，后者减少约束规模，类似 batch evaluation 的思路，用更少证明步骤覆盖更多数据。",
+          "en": "The core lies in joint optimization through vector lookup and chunk merging. The former reduces proof cost for vector access, while the latter shrinks constraint size, similar in spirit to batch evaluation by covering more data with fewer proof steps."
+        }
+      }
+    ]
   }
 ]
