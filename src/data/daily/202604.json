@@ -296,5 +296,80 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-04-07",
+    "projects": [
+      {
+        "name": "PlasmaBlind: A Private Layer 2 With Instant Client-Side Proving",
+        "url": "https://eprint.iacr.org/2026/634",
+        "type": "论文",
+        "authors": "Pierre Daix-Moreux, Chengru Zhang",
+        "tags": [
+          "Pierre Daix-Moreux",
+          "Folding"
+        ],
+        "summary": {
+          "zh": "Daix-Moreux和Zhang在{{name}}论文中提出PlasmaBlind，一种隐私保护且可扩展的Layer-2协议，利用折叠方案实现客户端快速证明和高效区块聚合。",
+          "en": "Daix-Moreux and Zhang proposed PlasmaBlind in their {{name}}paper, a privacy-preserving and scalable Layer-2 protocol using folding schemes for fast client-side proving and efficient block aggregation."
+        },
+        "notes": {
+          "zh": [
+            "PlasmaBlind利用折叠方案的盲化特性保护交易数据，无需昂贵ZK证明",
+            "客户端证明时间低于100毫秒，聚合器每交易处理时间低于300毫秒",
+            "优化技术链接不同验证任务，避免非均匀电路证明组合",
+            "折叠方案的低累积成本支持高效区块聚合为恒定大小证明",
+            "初步基准测试验证了协议在消费级硬件上的实用性",
+            "专注于隐私保护与可扩展性平衡，为Layer-2设计提供新方向"
+          ],
+          "en": [
+            "PlasmaBlind uses folding schemes' blinding property to protect transaction data without expensive ZK proofs",
+            "Client-side proving time under 100ms, aggregator per-transaction time under 300ms",
+            "Optimization links verification tasks, avoiding non-uniform circuit proof composition",
+            "Low accumulation cost of folding schemes enables efficient block aggregation to constant-size proof",
+            "Preliminary benchmarks validate practicality on consumer hardware",
+            "Focuses on balancing privacy and scalability, offering new direction for Layer-2 design"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】隐私Layer-2新突破：PlasmaBlind实现客户端毫秒级证明"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "PlasmaBlind 主要解决什么问题？",
+          "en": "What main problem does PlasmaBlind solve?"
+        },
+        "answer": {
+          "zh": "PlasmaBlind 主要解决隐私型 Layer 2 中用户证明成本过高的问题。它让用户在本地设备上用不到 100ms 就能完成交易证明，同时保持交易隐私和区块可验证性。",
+          "en": "PlasmaBlind mainly solves the high proving cost problem in privacy-preserving Layer 2 systems. It lets users generate transaction proofs locally in under 100ms while preserving privacy and block verifiability."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "folding scheme 在 PlasmaBlind 中起什么作用？",
+          "en": "What role does the folding scheme play in PlasmaBlind?"
+        },
+        "answer": {
+          "zh": "folding scheme 同时承担两件事：用户侧利用 blinding property 隐藏交易细节，聚合器侧高效递归折叠多个用户实例，生成常数大小的区块有效性证明。",
+          "en": "The folding scheme serves two roles: on the client side it uses the blinding property to hide transaction details, and on the aggregator side it efficiently folds many user instances into a constant-size block validity proof."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "为什么 proof aggregation 是核心设计点？",
+          "en": "Why is proof aggregation a core design point?"
+        },
+        "answer": {
+          "zh": "因为 L2 的吞吐量取决于能否高效把大量用户交易压缩成一个小证明。PlasmaBlind 利用 folding 降低 accumulation cost，使 block proving 更适合高频交易场景。",
+          "en": "Because L2 throughput depends on compressing many user transactions into one small proof efficiently. PlasmaBlind uses folding to reduce accumulation cost, making block proving suitable for high-frequency transaction settings."
+        }
+      }
+    ]
   }
 ]
