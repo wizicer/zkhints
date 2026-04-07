@@ -1,4 +1,17 @@
 {
-    "prettier.printWidth": 100,
-    "editor.formatOnSave": true
+  "prettier.printWidth": 100,
+  "editor.formatOnSave": true,
+  "actionButtons": {
+    "loadNpmCommands": false,
+    "reloadButton": null,
+    "inheritGlobalCommands": false,
+    "commands": [
+      {
+        "name": "$(dashboard) Today",
+        "color": "grey",
+        "singleInstance": true,
+        "command": "npm run dev:today"
+      }
+    ]
+  }
 }
