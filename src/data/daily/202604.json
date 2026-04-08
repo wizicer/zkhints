@@ -371,5 +371,81 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-04-08",
+    "projects": [
+      {
+        "name": "Efficient Batch Threshold Encryption Using Partial Fraction Techniques",
+        "url": "https://eprint.iacr.org/2026/674",
+        "type": "论文",
+        "authors": "Dan Boneh, Rohit Nema, Arnab Roy, Ertem Nusret Tas",
+        "tags": [
+          "Dan Boneh",
+          "Threshold",
+          "Pairing"
+        ],
+        "summary": {
+          "zh": "Boneh等人在{{name}}论文中提出了一种高效的批处理阈值加密方案，利用部分分数技术实现线性大小的公共参数、恒定大小的预解密密钥和密文，并支持高效的批处理解密。",
+          "en": "Boneh et al. proposed an efficient batch threshold encryption scheme in their {{name}}paper, using partial fraction techniques to achieve linear-sized public parameters, constant-sized pre-decryption keys and ciphertexts, and efficient batch decryption."
+        },
+        "notes": {
+          "zh": [
+            "现有批处理加密方案依赖时段或存在公共参数过大（二次方增长）和审查脆弱性问题",
+            "新方案无时段依赖，具有线性大小的公共参数和恒定大小的预解密密钥与密文",
+            "利用部分分数分解技术，单个群元素作为预解密密钥即可解密批次内所有密文",
+            "证明了方案的CCA安全性，并展示了如何实现阈值化",
+            "直接适用于加密内存池（MEV缓解）和时间锁定加密存储等应用",
+            "基于Jutla、Nema和Roy的阈值加密方案中的部分分数技术进行扩展"
+          ],
+          "en": [
+            "Existing batch encryption schemes rely on epochs or suffer from large public parameters (quadratic) and censorship vulnerability.",
+            "New scheme is epochless with linear-sized public parameters and constant-sized pre-decryption keys and ciphertexts.",
+            "Uses partial fraction decomposition: a single group element as pre-decryption key decrypts all batch ciphertexts.",
+            "Proves CCA security and shows how to thresholdize the scheme.",
+            "Directly benefits applications like encrypted mempools for MEV mitigation and time-lock encrypted storage.",
+            "Extends partial fraction techniques from Jutla, Nema, and Roy's threshold encryption scheme."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】突破加密效率瓶颈：新型批处理阈值加密方案问世"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "什么是 batch threshold encryption？",
+          "en": "What is batch threshold encryption?"
+        },
+        "answer": {
+          "zh": "它是一种加密机制，允许解密方一次性发布一个简短的 pre-decryption key，使一批指定密文都能被解密，而其他密文仍保持机密。threshold 版本则由多个参与方共同控制解密权限。",
+          "en": "It is an encryption mechanism where the decryptor publishes one short pre-decryption key that enables decryption of a specific batch of ciphertexts, while all other ciphertexts remain secret. The threshold version distributes decryption control across multiple parties."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "partial fraction technique 在这里起什么作用？",
+          "en": "What role does the partial fraction technique play here?"
+        },
+        "answer": {
+          "zh": "它利用部分分式分解，把原本需要多个解密辅助值的结构压缩成一个 group element。这样一次发布就能解锁整个 batch。",
+          "en": "It uses partial fraction decomposition to compress what would normally require multiple decryption helper values into a single group element, allowing one publication to unlock the entire batch."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "为什么 epochless 设计在抗审查方面更优？",
+          "en": "Why is an epochless design better for censorship resistance?"
+        },
+        "answer": {
+          "zh": "epoch-based 方案通常要求交易进入固定时间窗口，攻击者可以针对 epoch 边界实施延迟或过滤。epochless 设计消除了这种同步依赖，减少审查攻击面。",
+          "en": "Epoch-based schemes require transactions to fit into fixed time windows, which lets attackers exploit epoch boundaries for delay or filtering attacks. An epochless design removes this synchronization dependency and reduces censorship surface."
+        }
+      }
+    ]
   }
 ]
