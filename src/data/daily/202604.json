@@ -447,5 +447,80 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-04-09",
+    "projects": [
+      {
+        "name": "Open-Sourcing Venus: A New Foundation for High-Performance zkVMs",
+        "url": "https://medium.com/@cysic/open-sourcing-venus-a-new-foundation-for-high-performance-zkvms-b08fbb270ab7",
+        "type": "开源",
+        "tags": [
+          "Cysic",
+          "zkVM",
+          "GPU"
+        ],
+        "summary": {
+          "zh": "@Cysic 团队开源了Venus项目，这是一个基于图架构的高性能zkVM基础框架，代码基于ZisK，旨在通过全局优化和硬件原生执行提升证明性能。",
+          "en": "@Cysic open-sourced Venus, a graph-based foundation for high-performance zkVMs, based on ZisK, designed to improve proving performance through global optimization and hardware-native execution."
+        },
+        "notes": {
+          "zh": [
+            "Venus采用图优先架构，将证明流程编码为计算图，替代传统的HAL方法",
+            "支持全局优化，可跨整个证明管道进行性能提升，而非孤立内核",
+            "硬件原生执行，直接映射到GPU执行模型如CUDA Graphs",
+            "提升审计性，使证明流程结构化且可检查，增强透明度",
+            "性能实测显示，相比ZisK 0.16.1，吞吐量提升约6%以上",
+            "为硬件-软件协同设计奠定基础，支持GPU、FPGA和ASIC等硬件"
+          ],
+          "en": [
+            "Venus uses a graph-first architecture, encoding proving as a computational graph instead of traditional HAL.",
+            "Enables global optimization across the full proving pipeline, not isolated kernels.",
+            "Hardware-native execution maps directly to GPU models like CUDA Graphs.",
+            "Improves auditability with structured and inspectable proving flows.",
+            "Performance tests show ~6%+ throughput improvement over ZisK 0.16.1.",
+            "Provides a foundation for hardware-software co-design across GPU, FPGA, and ASIC."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK开源】Venus开源：图架构zkVM，性能提升新标杆"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "为什么用图结构？",
+          "en": "Why use a graph-based design?"
+        },
+        "answer": {
+          "zh": "图结构可以把整个证明流程统一表示，支持全局优化，减少 CPU 和 GPU 同步开销，特别适合 zkVMs 的重复计算任务。",
+          "en": "A graph-based design represents the full proving pipeline uniformly, enabling global optimization and reducing CPU-GPU synchronization overhead, especially for repetitive zkVM workloads."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "Venus 如何优化 sum-check？",
+          "en": "How does Venus optimize sum-check?"
+        },
+        "answer": {
+          "zh": "Venus 将多轮 sum-check 编码进统一计算图，支持批量调度和状态复用，降低 kernel launch 成本。",
+          "en": "Venus encodes multiple sum-check rounds into one computation graph, enabling batched scheduling and state reuse while lowering kernel launch cost."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "Venus 为什么更适合高吞吐 zkVMs？",
+          "en": "Why is Venus better for high-throughput zkVMs?"
+        },
+        "answer": {
+          "zh": "它支持跨阶段 memory reuse、kernel fusion 和 batch evaluation 全局优化，降低延迟和带宽压力。",
+          "en": "It supports cross-stage memory reuse, kernel fusion, and global batch evaluation optimization, reducing latency and bandwidth pressure."
+        }
+      }
+    ]
   }
 ]
