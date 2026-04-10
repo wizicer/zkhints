@@ -522,5 +522,81 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-04-10",
+    "projects": [
+      {
+        "name": "VEIL: Lightweight Zero-Knowledge for Hash-Based Multilinear Proof Systems",
+        "url": "https://eprint.iacr.org/2026/683",
+        "type": "论文",
+        "authors": "Rahul Dalal, Tamir Hemo, Eugene Rabinovich, Ron Rothblum",
+        "tags": [
+          "Rahul Dalal",
+          "Multilinear",
+          "Compiler"
+        ],
+        "summary": {
+          "zh": "Dalal等人在{{name}}论文中提出了VEIL，一种轻量级非侵入式编译器，用于为基于哈希的多线性证明系统添加ZK，通过解耦代数交互与哈希实现最小证明者开销。",
+          "en": "Dalal et al. proposed VEIL, a lightweight non-intrusive compiler for adding ZK to hash-based multilinear proof systems, achieving minimal prover overhead by decoupling algebraic interactions from hashing."
+        },
+        "notes": {
+          "zh": [
+            "VEIL是一种轻量级非侵入式编译器，专为基于哈希的多线性证明系统设计",
+            "通过解耦协议中的代数交互与密码学哈希，仅对代数组件应用ZK包装",
+            "避免了传统方法中与昂贵ZK系统组合或紧密耦合修改的缺点",
+            "实现简单且可能具有后量子安全性，证明者开销最小化至(1+o(1))",
+            "概念验证显示：在31位基素数域上，对于2^29个域元素轨迹，证明者开销约3%",
+            "验证者开销22%，证明大小开销12%，保持基础证明系统的架构完整性"
+          ],
+          "en": [
+            "VEIL is a lightweight non-intrusive compiler for hash-based multilinear proof systems",
+            "Decouples algebraic interactions from cryptographic hashing, applying ZK wrapper only to algebraic components",
+            "Avoids drawbacks of composing with expensive ZK systems or tightly coupled modifications",
+            "Simple and plausibly post-quantum protocol with minimal prover overhead of (1+o(1))",
+            "Proof-of-concept: 3% prover overhead, 22% verifier overhead, 12% proof-size overhead for 2^29 field elements",
+            "Maintains architectural integrity of the base proof system"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】VEIL：轻量级零知识编译器，为哈希多线性证明系统带来最小开销"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "VEIL 为什么重要？",
+          "en": "Why is VEIL important?"
+        },
+        "answer": {
+          "zh": "传统做法通常需要额外证明 verifier 中的哈希计算，成本很高。VEIL 将哈希和代数部分解耦，以极低开销实现 zero-knowledge，更适合实际系统。",
+          "en": "Traditional approaches often require proving the verifier’s hash computations, which is expensive. VEIL decouples hashing from algebraic interactions, enabling zero-knowledge with very low overhead for practical systems."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "VEIL 如何实现低开销 ZK？",
+          "en": "How does VEIL achieve low-overhead zero-knowledge?"
+        },
+        "answer": {
+          "zh": "VEIL 只对 algebraic components 做零知识包装，而不触碰 hash-based verification 部分，因此 prover overhead 接近 1+o(1)，实验中约为 3%。",
+          "en": "VEIL wraps only the algebraic components with zero-knowledge while leaving the hash-based verification untouched, keeping prover overhead close to 1+o(1), about 3% in experiments."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "VEIL 为什么适合 hash-based multilinear proof systems？",
+          "en": "Why is VEIL well-suited for hash-based multilinear proof systems?"
+        },
+        "answer": {
+          "zh": "这类系统的主要结构分为 algebraic interactions 和 cryptographic hashing。VEIL 精准作用于前者，保持后者架构不变，因此兼顾 modularity、低 overhead 和 post-quantum 潜力。",
+          "en": "Such systems naturally separate into algebraic interactions and cryptographic hashing. VEIL targets only the former, preserving the latter’s architecture, which provides modularity, low overhead, and plausible post-quantum security."
+        }
+      }
+    ]
   }
 ]
