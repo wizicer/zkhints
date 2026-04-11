@@ -598,5 +598,80 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-04-11",
+    "projects": [
+      {
+        "name": "Game Theory Does Not Always Help: The Case of Statistical Multi-Party Coin Tossing",
+        "url": "https://eprint.iacr.org/2026/657",
+        "type": "论文",
+        "authors": "Chen-Da Liu-Zhang, Elisaweta Masserova, João Ribeiro, Sri AravindaKrishnan Thyagarajan",
+        "tags": [
+          "Chen-Da Liu-Zhang",
+          "Game Theory"
+        ],
+        "summary": {
+          "zh": "Liu-Zhang等人在{{name}}论文中分析了多方掷币协议，证明了在统计安全设置下，一旦失去诚实多数，博弈论方法无法克服密码学不可能性。",
+          "en": "Liu-Zhang et al. analyzed multi-party coin-tossing protocols in their {{name}}paper, proving that game-theoretic approaches cannot overcome cryptographic impossibility in the statistical setting once an honest majority is lost."
+        },
+        "notes": {
+          "zh": [
+            "多方掷币协议研究结合了密码学和博弈论，旨在生成无偏随机比特",
+            "经典密码学结果：统计设置下，诚实多数可实现强公平性，不诚实多数则不可能",
+            "博弈论方法有时能通过弱均衡保证规避密码学下界，但在统计设置中优势有限",
+            "主要结论：对于n方且t≥n/2腐败，不存在统计安全的博弈论掷币协议（除n=4特殊情况）",
+            "无广播设置下，对于t≥n/3且多项式轮复杂度，不存在计算安全的博弈论协议（除n=6特殊情况）",
+            "研究完善了统计可行性图景，明确了博弈论公平性在多方掷币中的边界"
+          ],
+          "en": [
+            "Multi-party coin-tossing protocols combine cryptography and game theory to generate unbiased random bits.",
+            "Classical cryptography: strong fairness achievable with honest majority in statistical setting, impossible with dishonest majority.",
+            "Game-theoretic approaches can sometimes circumvent cryptographic lower bounds via weak equilibrium guarantees.",
+            "Main finding: no statistically secure game-theoretic protocol for n parties with t≥n/2 corruptions (except n=4 special case).",
+            "Without broadcast, no computationally secure game-theoretic protocol for t≥n/3 and polynomial rounds (except n=6 special case).",
+            "Work completes the statistical feasibility landscape, defining boundaries of game-theoretic fairness in coin tossing."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】博弈论并非万能：统计安全下的多方掷币协议仍受制于诚实多数"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "这篇论文主要研究什么？",
+          "en": "What is this paper mainly about?"
+        },
+        "answer": {
+          "zh": "论文研究多方 coin tossing 协议，重点分析 game theory 是否能在统计安全（statistical setting）下突破传统公平性下界。结论是：当诚实多数丢失时，game theory 并不能帮助恢复公平性。",
+          "en": "The paper studies multi-party coin-tossing protocols and asks whether game theory can overcome traditional fairness impossibility results in the statistical setting. The answer is no: once honest majority is lost, game theory does not restore fairness."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "论文的核心结论是什么？",
+          "en": "What is the paper’s core result?"
+        },
+        "answer": {
+          "zh": "当 n 方协议中腐败方数量满足 t ≥ n/2 时，不存在统计安全的 game-theoretic coin tossing 协议（除极少数特殊 corner cases）。这补全了 statistical feasibility 的边界。",
+          "en": "When the number of corrupt parties satisfies t ≥ n/2, there is no statistically secure game-theoretic coin-tossing protocol, except for rare corner cases. This completes the statistical feasibility landscape."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "这项工作如何影响 game-theoretic fairness 的理论边界？",
+          "en": "How does this work affect the theoretical boundary of game-theoretic fairness?"
+        },
+        "answer": {
+          "zh": "它明确说明 game-theoretic 方法只能在 computational setting 扩展可行性，无法突破 statistical setting 的 honest-majority 下界，因此 game theory 并非通用绕过 impossibility 的工具。",
+          "en": "It clearly shows that game-theoretic methods can extend feasibility only in the computational setting and cannot break honest-majority lower bounds in the statistical setting, so game theory is not a universal way around impossibility."
+        }
+      }
+    ]
   }
 ]
