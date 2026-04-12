@@ -673,5 +673,81 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-04-12",
+    "projects": [
+      {
+        "name": "Boolean Arithmetic over $\\mathbb{F}_2$ from Group Commutators",
+        "url": "https://eprint.iacr.org/2026/701",
+        "type": "论文",
+        "authors": "Marc Joye",
+        "tags": [
+          "Marc Joye",
+          "Boolean",
+          "Group"
+        ],
+        "summary": {
+          "zh": "Marc Joye在{{name}}论文中提出利用非阿贝尔群的群运算实现二进制域算术的方法，通过交换子实现布尔计算，在交替群A5和A6中提供具体实现，达到最优效率。",
+          "en": "Marc Joye proposes methods for binary field arithmetic using nonabelian group operations in the {{name}}paper, implementing Boolean computation via commutators with explicit realizations in alternating groups A5 and A6, achieving state-of-the-art efficiency."
+        },
+        "notes": {
+          "zh": [
+            "研究利用非阿贝尔群的乘法与逆运算实现二进制域算术",
+            "通过交换子在群结构中实现布尔计算，提出两种互补方法",
+            "实现通用布尔门（NAND）及直接实现XOR和AND运算",
+            "适用于有限非阿贝尔单群，如交替群A5和A6",
+            "在最小非阿贝尔单群A5中实现群运算数量的最优效率",
+            "方法可用于全同态编码等密码学应用"
+          ],
+          "en": [
+            "Implements binary field arithmetic using only group operations (multiplication and inversion) in nonabelian groups",
+            "Uses commutators for Boolean computation within group structure with two complementary approaches",
+            "Realizes universal Boolean gate (NAND) and direct XOR/AND operations",
+            "Applies to finite nonabelian simple groups like alternating groups A5 and A6",
+            "Achieves state-of-the-art efficiency in number of group operations for A5",
+            "Potential applications in fully homomorphic encodings and cryptography"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】群运算新突破：用交换子实现高效布尔计算"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "什么是 commutator？",
+          "en": "What is a commutator?"
+        },
+        "answer": {
+          "zh": "commutator 是群论中的基本操作，通常写作 [a,b] = a⁻¹b⁻¹ab，用来衡量两个元素是否可交换。论文利用它来编码 NAND、XOR 和 AND。",
+          "en": "A commutator is a basic group-theoretic operation, usually written as [a,b] = a⁻¹b⁻¹ab, measuring whether two elements commute. The paper uses it to encode NAND, XOR, and AND."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "论文提出了哪两种实现思路？",
+          "en": "What two construction approaches does the paper propose?"
+        },
+        "answer": {
+          "zh": "第一种是实现通用布尔门 NAND；第二种是直接实现 \uD835\uDD3D₂ 的基本运算 XOR 和 AND。两者都只依赖群内在运算。",
+          "en": "The first approach realizes the universal Boolean gate NAND. The second directly realizes the field operations XOR and AND over \uD835\uDD3D₂. Both rely only on intrinsic group operations."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "为什么只用乘法和求逆值得关注？",
+          "en": "Why is using only multiplication and inversion significant?"
+        },
+        "answer": {
+          "zh": "这意味着所有计算都内生于群结构，无需额外算术电路，有助于降低实现复杂度并提升理论优雅性与可组合性。",
+          "en": "It means all computation is internal to the group structure, without requiring extra arithmetic circuits, reducing implementation complexity and improving elegance and composability."
+        }
+      }
+    ]
   }
 ]
