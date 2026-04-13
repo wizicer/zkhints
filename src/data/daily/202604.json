@@ -733,8 +733,8 @@
           "en": "What two construction approaches does the paper propose?"
         },
         "answer": {
-          "zh": "第一种是实现通用布尔门 NAND；第二种是直接实现 \uD835\uDD3D₂ 的基本运算 XOR 和 AND。两者都只依赖群内在运算。",
-          "en": "The first approach realizes the universal Boolean gate NAND. The second directly realizes the field operations XOR and AND over \uD835\uDD3D₂. Both rely only on intrinsic group operations."
+          "zh": "第一种是实现通用布尔门 NAND；第二种是直接实现 𝔽₂ 的基本运算 XOR 和 AND。两者都只依赖群内在运算。",
+          "en": "The first approach realizes the universal Boolean gate NAND. The second directly realizes the field operations XOR and AND over 𝔽₂. Both rely only on intrinsic group operations."
         }
       },
       {
@@ -746,6 +746,82 @@
         "answer": {
           "zh": "这意味着所有计算都内生于群结构，无需额外算术电路，有助于降低实现复杂度并提升理论优雅性与可组合性。",
           "en": "It means all computation is internal to the group structure, without requiring extra arithmetic circuits, reducing implementation complexity and improving elegance and composability."
+        }
+      }
+    ]
+  },
+  {
+    "date": "2026-04-13",
+    "projects": [
+      {
+        "name": "zkRAG: Efficiently Proving RAG Retrieval in Zero Knowledge",
+        "url": "https://eprint.iacr.org/2026/709",
+        "type": "论文",
+        "authors": "Xinyang Yang, Xuanming Liu, Yanpei Guo, Jiaheng Zhang",
+        "tags": [
+          "Xinyang Yang",
+          "HNSW",
+          "ANNS"
+        ],
+        "summary": {
+          "zh": "Yang等人在{{name}}论文中提出了zkRAG，一种针对HNSW算法的ZK证明系统，用于验证RAG检索的忠实执行，实现线性证明时间的高效验证。",
+          "en": "Yang et al. proposed zkRAG in their {{name}}paper, a ZK proof system for HNSW algorithm to verify faithful RAG retrieval execution with linear prover time."
+        },
+        "notes": {
+          "zh": [
+            "RAG系统依赖向量检索，但服务端黑盒操作可能导致执行偏差，需验证一致性",
+            "zkRAG针对HNSW算法设计PIOP，实现ZK证明，确保检索忠实于承诺的数据库和索引",
+            "证明时间与HNSW搜索轨迹长度线性相关，达到渐进最优在线证明效率",
+            "引入混合查找参数、优先级队列更新检查器等新技术，提升效率",
+            "单线程下证明典型查询仅需数秒，比现有基线快数百倍，验证轻量",
+            "安全性突出：保护服务端嵌入和索引隐私，仅输出结果可见，防止任意偏差"
+          ],
+          "en": [
+            "RAG systems rely on vector retrieval, but server-side black-box operations can cause deviations, requiring consistency verification.",
+            "zkRAG designs a PIOP for HNSW algorithm to enable ZK proofs, ensuring retrieval faithfulness to committed database and index.",
+            "Prover time is linear in HNSW search trace length, achieving asymptotically optimal online efficiency.",
+            "Introduces new techniques like hybrid lookup argument and priority-queue update checker for improved efficiency.",
+            "Single-threaded proof for typical queries takes seconds, hundreds of times faster than baselines, with lightweight verification.",
+            "Security highlighted: protects server embeddings and index privacy, only outputs revealed, preventing arbitrary deviations."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】zkRAG：零知识证明助力RAG检索，高效验证服务一致性"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "为什么 RAG 检索需要零知识证明？",
+          "en": "Why does RAG retrieval need zero-knowledge proofs?"
+        },
+        "answer": {
+          "zh": "在 RAG-as-a-Service 场景中，客户端看不到服务端的 embedding 数据库和 HNSW 索引，无法确认检索结果是否真实。zkRAG 可以证明服务一致性。",
+          "en": "In RAG-as-a-Service, clients cannot see the server’s embedding database or HNSW index, so they cannot verify whether retrieval results are genuine. zkRAG provides service consistency proofs."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "zkRAG 主要证明什么？",
+          "en": "What does zkRAG mainly prove?"
+        },
+        "answer": {
+          "zh": "它证明返回结果与在固定、已承诺数据库上运行 HNSW approximate nearest neighbor search 的结果一致，同时保持 zero-knowledge。",
+          "en": "It proves that the returned results are consistent with running HNSW approximate nearest neighbor search on a fixed committed database, while preserving zero-knowledge."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "zkRAG 为什么高效？",
+          "en": "Why is zkRAG efficient?"
+        },
+        "answer": {
+          "zh": "其 prover 时间与 HNSW search trace 长度线性相关，达到渐近最优 online prover efficiency，同时 verifier 保持 succinct。",
+          "en": "Its prover time is linear in the HNSW search trace length, achieving asymptotically optimal online prover efficiency while keeping verification succinct."
         }
       }
     ]
