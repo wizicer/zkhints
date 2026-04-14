@@ -825,5 +825,81 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-04-14",
+    "projects": [
+      {
+        "name": "2G2T: Constant-Size, Statistically Sound MSM Outsourcing",
+        "url": "https://eprint.iacr.org/2026/695",
+        "type": "论文",
+        "authors": "Majid Khabbazian",
+        "tags": [
+          "Majid Khabbazian",
+          "MSM",
+          "Outsourcing"
+        ],
+        "summary": {
+          "zh": "Majid Khabbazian在{{name}}论文中提出了2G2T协议，用于将MSM外包给不可信服务器，具有常数大小证明和统计可靠性，验证速度比本地计算快约300倍。",
+          "en": "Majid Khabbazian proposed the 2G2T protocol in the {{name}}paper for outsourcing MSM to untrusted servers, featuring constant-size proofs and statistical soundness, with verification up to ~300x faster than local computation."
+        },
+        "notes": {
+          "zh": [
+            "2G2T协议允许资源受限客户端将MSM外包给不可信服务器，提升效率",
+            "服务器仅需执行两次MSM计算并返回两个群元素，证明大小恒定",
+            "客户端验证仅需一次长度-n的域内积和三次群操作，验证速度快",
+            "在Ristretto255实现中，验证速度比本地优化MSM快约300倍（n≤2^18）",
+            "支持延迟隐藏验证：大部分验证工作可在等待服务器响应时完成",
+            "协议具有统计可靠性：接受错误结果的概率≤1/q，安全性高"
+          ],
+          "en": [
+            "2G2T enables resource-constrained clients to outsource MSM to untrusted servers for efficiency",
+            "Server performs only two MSM computations and returns two group elements (constant-size proof)",
+            "Client verification requires one length-n field inner product and three group operations, fast verification",
+            "In Ristretto255 implementation, verification is ~300x faster than local optimized MSM (n≤2^18)",
+            "Supports latency-hiding verification: most verifier work done while waiting for server response",
+            "Achieves statistical soundness: probability of accepting incorrect result ≤1/q, high security"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】外包MSM新突破：2G2T协议实现常数大小证明与统计可靠性"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "为什么 MSM 很重要？",
+          "en": "Why is MSM important?"
+        },
+        "answer": {
+          "zh": "MSM 是很多离散对数密码系统和 ZK proof verifier 的核心计算，通常是性能瓶颈，尤其对轻客户端影响很大。",
+          "en": "MSM is a core computation in many discrete-log cryptographic systems and ZK proof verifiers, often becoming a major bottleneck, especially for lightweight clients."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "2G2T 的通信成本是多少？",
+          "en": "What is the communication cost of 2G2T?"
+        },
+        "answer": {
+          "zh": "协议只需要服务器返回两个群元素：结果 A 和辅助值 B，因此 proof size 是 constant-size，与向量长度 n 无关。",
+          "en": "The server only returns two group elements: the result A and an auxiliary value B, so the proof size is constant and independent of vector length n."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "什么是 statistical soundness？",
+          "en": "What is statistical soundness?"
+        },
+        "answer": {
+          "zh": "即使服务器是无限算力的恶意方，返回错误结果被接受的概率也最多是 1/q，体现了信息论级别的安全性。",
+          "en": "Even against an unbounded malicious server, the probability of accepting an incorrect result is at most 1/q, giving information-theoretic security."
+        }
+      }
+    ]
   }
 ]
