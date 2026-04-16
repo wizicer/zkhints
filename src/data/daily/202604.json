@@ -901,5 +901,80 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-04-16",
+    "projects": [
+      {
+        "name": "Veloz: Efficient and Flexible Distribution Framework for Code-Based Polynomial Commitment Scheme",
+        "url": "https://eprint.iacr.org/2026/714",
+        "type": "论文",
+        "authors": "Yuanzhuo Yu, Shi-Feng Sun, Yuncong Zhang, Chenhua Fan, Tianyi Ma, Dawu Gu",
+        "tags": [
+          "Yuanzhuo Yu",
+          "Polynomial Commitment"
+        ],
+        "summary": {
+          "zh": "Yu等人在{{name}}论文中提出了一种基于代码的多线性多项式承诺分布框架Veloz，首次实现通信成本亚线性于子证明者数量，并消除证明大小对子证明者数量的依赖。",
+          "en": "Yu et al. proposed Veloz, a distribution framework for code-based multilinear PCS, achieving sublinear communication cost and eliminating proof size dependence on sub-provers."
+        },
+        "notes": {
+          "zh": [
+            "现有基于代码的PCS分布方案存在通信成本高或证明大小开销大的问题",
+            "Veloz通过定制化的交错码证明聚合方法，高效组合子证明",
+            "提供两种实例化：基于Reed-Solomon码的Veloz-RS和基于Brakedown快速线性码的Veloz-Fast",
+            "Veloz-RS实现O(n)证明时间、O(√n)通信和O(1)证明大小",
+            "Veloz-Fast实现O(n log n)证明时间、O(√n)通信和O(1)证明大小，且具有域无关性",
+            "实验显示线性可扩展性，Veloz-Fast在n=2²⁰时证明生成26.9秒，加速比达7.02倍"
+          ],
+          "en": [
+            "Existing code-based PCS distribution schemes suffer from high communication or proof size overhead.",
+            "Veloz uses a customized proof aggregation method from interleaved code to efficiently combine sub-proofs.",
+            "Two instantiations: Veloz-RS based on Reed-Solomon code and Veloz-Fast based on Brakedown's fast linear code.",
+            "Veloz-RS achieves O(n) proving time, O(√n) communication, and O(1) proof size.",
+            "Veloz-Fast achieves O(n log n) proving time, O(√n) communication, O(1) proof size, and field agnosticity.",
+            "Experiments show linear scalability; Veloz-Fast achieves 26.9s proof generation and 7.02× speedup for n=2²⁰."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】突破分布式证明瓶颈：Veloz框架实现亚线性通信与证明大小无关性"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "为什么需要分布式 PCS？",
+          "en": "Why do we need distributed PCS?"
+        },
+        "answer": {
+          "zh": "大规模多项式证明计算成本很高。分布式 PCS 可以并行生成 proof，提高速度，同时保持 transparent setup 和抗量子潜力。",
+          "en": "Large-scale polynomial proof generation is computationally expensive. Distributed PCS enables parallel proof generation, improving speed while preserving transparent setup and plausible quantum resilience."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "Veloz 的核心创新是什么？",
+          "en": "What is the core innovation of Veloz?"
+        },
+        "answer": {
+          "zh": "核心是基于 interleaved code 的 proof aggregation 方法，以极低通信成本聚合多个 sub-proofs，并首次实现 sublinear communication。",
+          "en": "Its core innovation is a proof aggregation method based on interleaved codes, which combines multiple sub-proofs with minimal communication and achieves sublinear communication cost for the first time."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "Veloz 相比已有方案好在哪里？",
+          "en": "How does Veloz improve over prior work?"
+        },
+        "answer": {
+          "zh": "它避免了 sub-provers 间的全量通信，并且 proof size 不再随 sub-prover 数量增长，兼顾 proving speed 和 security。",
+          "en": "It avoids total communication among sub-provers, and the proof size no longer grows with the number of sub-provers, while maintaining proving speed and security."
+        }
+      }
+    ]
   }
 ]
