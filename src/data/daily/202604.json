@@ -976,5 +976,82 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-04-18",
+    "projects": [
+      {
+        "name": "Mergeable SNARGs for Trapdoor Languages and Their Applications",
+        "url": "https://eprint.iacr.org/2026/678",
+        "type": "论文",
+        "authors": "Zvika Brakerski, Maya Farber Brodsky, Omer Paneth, Tomer Solomon",
+        "tags": [
+          "Zvika Brakerski",
+          "SNARG",
+          "iO",
+          "LWE"
+        ],
+        "summary": {
+          "zh": "Brakerski等人在{{name}}论文中提出了一种可合并SNARG的新方法，支持无限递归合并且安全归约时间仅与合并深度相关，并应用于构建首个CCA1安全的多跳全同态加密方案。",
+          "en": "Brakerski et al. propose a new method for mergeable SNARGs in their {{name}}paper, supporting unbounded recursive merges with security reduction time scaling only with depth, and apply it to construct the first CCA1-secure multi-hop FHE scheme."
+        },
+        "notes": {
+          "zh": [
+            "提出首个支持无限多项式递归合并的SNARG方法，合并拓扑可任意",
+            "安全归约时间仅与合并深度相关，不随树大小指数增长",
+            "方法适用于陷门语言，陷门仅用于安全归约，不影响证明生成或验证",
+            "基于亚指数iO构建完全紧凑证明，基于LWE构建证明大小与深度相关",
+            "应用：构建首个CCA1安全的多跳全同态加密方案",
+            "应用：构建首个基于LWE的自适应多跳聚合签名方案"
+          ],
+          "en": [
+            "First SNARG method supporting unbounded polynomial recursive merges with arbitrary topology",
+            "Security reduction time scales only with merge depth, not tree size (potentially exponential)",
+            "Method applicable to trapdoor languages; trapdoor used only in security reduction, not proof generation/verification",
+            "Constructions from sub-exponential iO yield fully compact proofs; from LWE yield proofs scaling with depth",
+            "Application: first CCA1-secure multi-hop fully homomorphic encryption scheme",
+            "Application: first adaptive multi-hop aggregate signature scheme from LWE"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】突破性进展：可合并SNARG实现无限递归，构建首个CCA1安全多跳FHE"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "为什么需要“合并证明”？",
+          "en": "Why do we need proof merging?"
+        },
+        "answer": {
+          "zh": "在递归证明或复杂计算中，多个证明可以被压缩为一个，从而减少验证成本并提升系统可扩展性。",
+          "en": "In recursive proofs or complex computations, multiple proofs can be compressed into one, reducing verification cost and improving scalability."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "什么是 trapdoor languages？",
+          "en": "What are trapdoor languages?"
+        },
+        "answer": {
+          "zh": "指存在隐藏 trapdoor 时可高效判定的语言。该 trapdoor 仅用于安全性证明，不参与 SNARG 的生成或验证。",
+          "en": "Trapdoor languages are languages where validity can be efficiently decided given a hidden trapdoor. This trapdoor is used only in the security proof, not in proving or verification."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "论文基于哪些假设构造方案？",
+          "en": "What assumptions are used for constructions?"
+        },
+        "answer": {
+          "zh": "基于 sub-exponential iO 可获得 fully compact SNARG，而基于 LWE 的构造中 proof size 随 merge 深度增长。",
+          "en": "Using sub-exponential iO yields fully compact SNARGs, while LWE-based constructions have proof size growing with merge depth."
+        }
+      }
+    ]
   }
 ]
