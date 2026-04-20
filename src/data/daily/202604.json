@@ -1053,5 +1053,81 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-04-20",
+    "projects": [
+      {
+        "name": "Hint-Free Multi-Signatures",
+        "url": "https://eprint.iacr.org/2026/723",
+        "type": "论文",
+        "authors": "Michael Reichle, Benedikt Wagner, Dennis Hofheinz",
+        "tags": [
+          "Michael Reichle",
+          "Aggregation",
+          "BLS"
+        ],
+        "summary": {
+          "zh": "Reichle等人在{{name}}论文中提出了无提示多签名方案，支持多跳聚合且验证仅需公钥集，解决了现有方案在可扩展性和验证依赖上的限制。",
+          "en": "Reichle et al. proposed a hint-free multi-signature scheme in their {{name}}paper, enabling multi-hop aggregation with verification relying solely on public key sets, addressing scalability and verification dependencies in existing schemes."
+        },
+        "notes": {
+          "zh": [
+            "现有多签名方案存在聚合不可再聚合或验证需额外信息的问题，限制其在PoS区块链等大规模系统中的应用",
+            "无提示多签名支持多跳聚合，验证仅依赖公钥集，无需聚合拓扑等辅助信息",
+            "先前唯一已知方案依赖递归zkSNARK，存在安全启发式问题或聚合深度限制",
+            "新方案在标准模型中实现，无需证明递归，通过公开标准化BLS多签名来消除多集依赖",
+            "方案基于不可区分混淆，虽不实用但证明了原语可行性，为未来实用构造奠定基础",
+            "安全性问题突出：解决了聚合验证的信任简化，但当前实现依赖强密码学假设"
+          ],
+          "en": [
+            "Existing multi-signature schemes have limitations: either no further aggregation or verification requires auxiliary info, hindering use in large-scale systems like PoS blockchains.",
+            "Hint-free multi-signatures support multi-hop aggregation with verification using only public key sets, no extra info needed.",
+            "Previous known construction relied on recursive zkSNARKs, introducing security heuristics or limiting aggregation depth.",
+            "New scheme achieves this without proof recursion in the standard model, normalizing BLS multi-signatures publicly.",
+            "Scheme uses indistinguishability obfuscation, not practical but establishes feasibility for future work.",
+            "Security highlighted: simplifies trust in verification, though current implementation depends on strong cryptographic assumptions."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】突破聚合限制：无提示多签名方案助力区块链大规模应用"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "为什么“hint-free”很重要？",
+          "en": "Why is being hint-free important?"
+        },
+        "answer": {
+          "zh": "传统方案验证时需要额外信息，比如聚合顺序或结构，这限制了扩展性。hint-free 设计更适合大规模系统如区块链。",
+          "en": "Traditional schemes require extra information like aggregation order or structure, limiting scalability. Hint-free designs are better suited for large systems like blockchains."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "论文的核心思路是什么？",
+          "en": "What is the core idea of the paper?"
+        },
+        "answer": {
+          "zh": "通过对 BLS multi-signatures 进行“标准化”，使验证只依赖公钥集合而不是多重集合，从而实现 hint-free 属性。",
+          "en": "It normalizes BLS multi-signatures so that verification depends only on the set of public keys rather than a multiset, enabling the hint-free property."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "该方案的主要技术代价是什么？",
+          "en": "What is the main technical cost of the scheme?"
+        },
+        "answer": {
+          "zh": "构造依赖 indistinguishability obfuscation（iO），因此目前不具备实际可用性，但证明了该原语的可行性。",
+          "en": "The construction relies on indistinguishability obfuscation (iO), making it impractical, but it demonstrates the feasibility of the primitive."
+        }
+      }
+    ]
   }
 ]
