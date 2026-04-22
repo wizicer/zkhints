@@ -1129,5 +1129,80 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-04-22",
+    "projects": [
+      {
+        "name": "ACTS: Attestations of Contents in TLS Sessions",
+        "url": "https://eprint.iacr.org/2026/755",
+        "type": "论文",
+        "authors": "Pierpaolo Della Monica, Ivan Visconti, Andrea Vitaletti, Marco Zecchini",
+        "tags": [
+          "Pierpaolo Della Monica",
+          "TLS"
+        ],
+        "summary": {
+          "zh": "Della Monica等人在{{name}}论文中提出了ACTS分布式架构，基于谓词盲签名技术，允许用户证明从TLS服务器获取的数据，验证者仅需检查标准签名，无需运行zkSNARK等复杂密码方案。",
+          "en": "Della Monica et al. proposed ACTS, a distributed architecture in their {{name}}paper, using predicate blind signatures to enable users to prove data retrieved from TLS servers with verifiers only checking standard signatures, avoiding complex schemes like zkSNARK."
+        },
+        "notes": {
+          "zh": [
+            "现有技术如DECO依赖zkSNARK等非标准化密码方案，限制大规模应用",
+            "ACTS基于谓词盲签名，验证者仅需检查标准RSA-PSS签名，简化部署",
+            "架构兼容DECO及其后继方案，不修改TLS服务器，保护数据机密性",
+            "优化构造支持实际硬件上的高效运行，适用于公证人实施的政策",
+            "实验验证基于PDF文档用例，通过标准PADES签名实现透明验证",
+            "推动Web3数据互操作性，提升现有系统对用户数据的利用能力"
+          ],
+          "en": [
+            "Existing tech like DECO relies on non-standardized schemes like zkSNARK, limiting adoption.",
+            "ACTS uses predicate blind signatures, requiring verifiers to check only standard RSA-PSS signatures.",
+            "Architecture is compatible with DECO and successors, leaving TLS servers untouched for data confidentiality.",
+            "Optimized for practical deployment on commodity hardware with notary policies.",
+            "Experimental validation uses PDF documents with standard PADES signatures for transparent verification.",
+            "Enhances Web3 data interoperability and usability in existing systems."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】告别复杂验证：ACTS用标准签名实现TLS数据认证"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "ACTS 是什么？",
+          "en": "What is ACTS?"
+        },
+        "answer": {
+          "zh": "ACTS 是一种用于证明用户确实从 TLS 会话中获取了特定数据的系统，同时不需要修改 TLS 服务器。",
+          "en": "ACTS is a system that allows users to prove they retrieved specific data from a TLS session, without modifying the TLS server."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "为什么需要 ACTS？",
+          "en": "Why do we need ACTS?"
+        },
+        "answer": {
+          "zh": "现有方案通常需要 ZK-SNARK 等复杂验证机制，限制了实际应用。ACTS 让验证只需检查标准签名，更易部署。",
+          "en": "Existing solutions often require complex schemes like ZK-SNARKs, limiting adoption. ACTS enables verification using only standard signatures, making deployment easier."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "ACTS 的核心技术是什么？",
+          "en": "What is the core technique behind ACTS?"
+        },
+        "answer": {
+          "zh": "它基于 predicate blind signatures，实现用户在不泄露数据内容的情况下获得对 TLS 数据的认证。",
+          "en": "It is based on predicate blind signatures, allowing users to obtain attestations for TLS data without revealing the content."
+        }
+      }
+    ]
   }
 ]
