@@ -1204,5 +1204,79 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-04-23",
+    "projects": [
+      {
+        "name": "ZK-VSA: Zero-Knowledge Verifiable Speaker Anonymization Leveraging Phase Vocoder with Time-Scale Modification",
+        "url": "https://ieeexplore.ieee.org/document/11462079",
+        "type": "论文",
+        "tags": [
+          "Shuang Liang",
+          "Speaker Anonymization"
+        ],
+        "summary": {
+          "zh": "@icerdesign 等人在{{name}}论文中提出了一种零知识可验证说话人匿名化方法ZK-VSA，利用zkSNARKs和相位声码器实现公开验证，保护原始语音隐私。",
+          "en": "@icerdesign et al. proposed ZK-VSA, a zero-knowledge verifiable speaker anonymization method using zkSNARKs and phase vocoder for public verification while preserving privacy."
+        },
+        "notes": {
+          "zh": [
+            "提出VSA范式，首次实现说话人匿名化的公开验证，防止原始语音泄露",
+            "基于zkSNARKs设计算术约束，优化相位声码器与时间尺度修改，降低精度损失",
+            "集成密码学承诺和数字签名，增强认证安全性，抵抗反转和重识别攻击",
+            "在LibriSpeech数据集上评估，证明开销小，验证时间仅毫秒级",
+            "适用于司法鉴定等需审计和隐私的场景，确保证据完整性",
+            "为更广泛的语音变换提供基于证明的保证，推动隐私保护技术发展"
+          ],
+          "en": [
+            "Introduced VSA paradigm for publicly verifiable speaker anonymization, preventing original speech exposure.",
+            "Designed arithmetic constraints with zkSNARKs for PV-TSM, minimizing accuracy loss.",
+            "Integrated cryptographic commitments and signatures for authentication, resisting inversion and re-identification attacks.",
+            "Evaluated on LibriSpeech with minimal proof overhead and millisecond verification.",
+            "Suitable for forensic applications requiring auditability and privacy, ensuring evidence integrity.",
+            "Opens path for proof-based guarantees in broader speech transformations, advancing privacy tech."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】语音隐私新突破：ZK-VSA 实现可验证匿名化"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "PV-TSM在ZK-VSA中起什么作用？",
+          "en": "What role does PV-TSM play in ZK-VSA?"
+        },
+        "answer": {
+          "zh": "PV-TSM是核心匿名化函数，通过调整语音相位实现去身份化。它结构简单，易转为算术电路，适合ZK证明。",
+          "en": "PV-TSM is the core anonymization function. It modifies speech phase to hide identity and is simple enough to be encoded into arithmetic circuits for ZK proofs."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "为什么需要对PV-TSM进行电路级改写？",
+          "en": "Why must PV-TSM be redesigned for arithmetic circuits?"
+        },
+        "answer": {
+          "zh": "原始PV-TSM依赖浮点、取模和除法，这些操作在有限域电路中成本很高或难以表达。ZK-VSA通过缩放、位分解和余数约束，将这些操作转化为加法和乘法约束，从而降低证明复杂度。",
+          "en": "Original PV-TSM relies on floating-point, modulo, and division, which are costly in finite-field circuits. ZK-VSA converts them into additions and multiplications using scaling, bit decomposition, and remainder constraints, reducing proof complexity."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "“减少约束爆炸”在ZK-VSA中具体指什么？",
+          "en": "What does “reducing constraint explosion” mean in ZK-VSA?"
+        },
+        "answer": {
+          "zh": "约束爆炸指的是将复杂运算直接编码为电路时，约束数量急剧增加。例如直接实现浮点或除法会引入大量约束。ZK-VSA通过整数缩放、模运算的位截断以及商余关系验证，将复杂操作转化为少量低成本约束，从而控制电路规模。",
+          "en": "Constraint explosion refers to the rapid growth of constraints when complex operations are directly encoded. For example, floating-point or division introduces many constraints. ZK-VSA avoids this by using integer scaling, bit-based modulo, and quotient-remainder checks to keep constraints small."
+        }
+      }
+    ]
   }
 ]
