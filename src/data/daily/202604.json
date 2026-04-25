@@ -1278,5 +1278,80 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-04-25",
+    "projects": [
+      {
+        "name": "Secret-Carrying Puzzles and Garbled Circuits Optimized for Zero-knowledge Proofs",
+        "url": "https://eprint.iacr.org/2026/788",
+        "type": "论文",
+        "authors": "Debasish Ray Chawdhuri and Manoj Prabhakaran",
+        "tags": [
+          "Debasish Ray Chawdhuri",
+          "Garbled Circuits"
+        ],
+        "summary": {
+          "zh": "Chawdhuri和Prabhakaran在{{name}}论文中提出Obliviously Checkable Secret-Carrying Puzzles (OxSP)，并设计了一种对ZK友好的混淆电路(GC)构造，将正确性的证明成本降低了近三分之二。",
+          "en": "Chawdhuri and Prabhakaran introduce OxSP and a proof-friendly Garbled Circuit construction in {{name}}, reducing the cost of proving correct garbling by nearly two-thirds."
+        },
+        "notes": {
+          "zh": [
+            "OxSP允许公开发布谜题并验证解，同时隐藏谜题和响应的关键部分",
+            "基于GC构建OxSP需要ZK证明，但现有GC+ZK组合成本高昂",
+            "新构造将证明正确混淆的成本降低近三分之二，无需非标准假设",
+            "该GC构造对可审计安全两方计算具有独立意义",
+            "实验表明：新GC在证明开销上显著优于传统方法",
+            "OxSP潜在应用包括可验证计算、隐私拍卖等场景"
+          ],
+          "en": [
+            "OxSP enables public puzzle posting and solution verification with hidden content.",
+            "Building OxSP on GC requires ZK proofs, but existing combinations are costly.",
+            "New GC construction reduces cost of correct garbling proof by nearly two-thirds without non-standard assumptions.",
+            "The proof-friendly GC is independently useful for auditable secure 2PC.",
+            "Experiments show significant improvement in proving overhead.",
+            "OxSP potential applications include verifiable computing and private auctions."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】GC与ZK-SNARK强强联合：OxSP让谜题携带秘密且可验证"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "什么是Secret-Carrying Puzzle（带秘密的谜题）？",
+          "en": "What is a Secret-Carrying Puzzle?"
+        },
+        "answer": {
+          "zh": "带秘密的谜题是一种机制：发布者公开一个谜题，求解者提交答案，同时答案中包含某些隐藏信息。验证者可以检查答案是否正确，但无法看到这些隐藏内容。",
+          "en": "A Secret-Carrying Puzzle lets a publisher pose a puzzle publicly while solvers return answers that contain hidden information. Verifiers can check correctness without seeing the hidden parts."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "为什么OxSP需要Garbled Circuits？",
+          "en": "Why do OxSPs use Garbled Circuits?"
+        },
+        "answer": {
+          "zh": "Garbled Circuits用于在隐藏输入的情况下执行计算。OxSP利用GC来编码谜题逻辑，使求解过程在加密状态下完成，同时保证输出可以被验证。",
+          "en": "Garbled Circuits enable computation on hidden inputs. OxSP uses GCs to encode puzzle logic so that solving happens on encrypted data while still allowing verifiable outputs."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "论文的proof-friendly GC优化了什么？",
+          "en": "What does the proof-friendly GC improve?"
+        },
+        "answer": {
+          "zh": "该方案重新设计GC结构，使其更适合ZK电路验证，减少约束数量，从而将garbling正确性证明成本降低到约三分之一，同时保持标准安全假设。",
+          "en": "The design restructures GCs to be more compatible with ZK circuits, reducing constraint count and lowering the cost of proving correct garbling to about one-third, without new assumptions."
+        }
+      }
+    ]
   }
 ]
