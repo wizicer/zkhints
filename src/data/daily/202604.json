@@ -1353,5 +1353,81 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-04-27",
+    "projects": [
+      {
+        "name": "The Sum-Check Protocol over the Monomial Basis, and Other Optimizations",
+        "url": "https://eprint.iacr.org/2026/762",
+        "type": "论文",
+        "authors": "Ari Biswas, Liam Eagen, Andrew Milson, Shahar Papini, Justin Thaler",
+        "tags": [
+          "Ari Biswas",
+          "Sum-Check",
+          "Monomial Basis"
+        ],
+        "summary": {
+          "zh": "Biswas等人在{{name}}论文中提出了一种基于单项式基的Sum-Check协议变体，通过将插值集从布尔超立方改为无穷超立方，优化了证明者性能，并针对素数域乘法进行了额外优化。",
+          "en": "Biswas et al. proposed a projective variant of the Sum-Check protocol in their {{name}}paper, changing the interpolating set from Boolean hypercube to infinity hypercube to optimize prover performance, with additional optimizations for prime field multiplication."
+        },
+        "notes": {
+          "zh": [
+            "提出基于无穷超立方的Sum-Check协议变体，替代标准布尔超立方插值集",
+            "该变体在BN254和128位伪梅森素数域上实现端到端证明者加速",
+            "消除绑定多项式时的所有域减法操作，简化计算过程",
+            "针对结构化多项式（如等式和小于比较）提供更少域操作的评估过程",
+            "单项式系数形式与WHIR等多项式承诺方案自然对齐，消除基不匹配问题",
+            "针对素数域乘法提出优化，通过选择挑战子集实现乘法加速"
+          ],
+          "en": [
+            "Proposed a projective Sum-Check variant using infinity hypercube instead of Boolean hypercube",
+            "Achieves end-to-end prover speedup on BN254 and 128-bit pseudo-Mersenne prime fields",
+            "Eliminates all field subtractions when binding multilinear polynomials",
+            "Provides evaluation procedures with fewer field operations for structured polynomials",
+            "Monomial-coefficient form aligns naturally with polynomial commitment schemes like WHIR",
+            "Optimized prime field multiplication by sampling challenges from specific subsets"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】Sum-Check协议新突破：单项式基优化带来显著性能提升"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "传统sum-check通常在哪个集合上运行？",
+          "en": "On what domain does standard sum-check typically operate?"
+        },
+        "answer": {
+          "zh": "传统sum-check通常在布尔超立方体上运行，即所有变量取0或1的集合。这适合多线性多项式的表示。",
+          "en": "Standard sum-check typically runs over the Boolean hypercube, where each variable is 0 or 1. This fits naturally with multilinear polynomials."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "这篇论文的“monomial basis”改进核心是什么？",
+          "en": "What is the key idea of the monomial basis optimization?"
+        },
+        "answer": {
+          "zh": "论文将插值集合从布尔超立方体改为“无穷超立方体”，使得在某些点的求值可以直接提取单项式系数，从而改变sum-check的表示方式。",
+          "en": "The paper replaces the Boolean hypercube with an “infinity hypercube,” allowing evaluations at certain points to directly extract monomial coefficients, changing the representation used in sum-check."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "monomial系数形式为何更适配某些多项式承诺？",
+          "en": "Why does the monomial coefficient form align better with some polynomial commitments?"
+        },
+        "answer": {
+          "zh": "一些承诺方案（如WHIR）天然以单项式系数表示多项式，而传统sum-check使用多线性基会产生基不匹配问题。该方法统一表示，减少转换成本。",
+          "en": "Some commitment schemes like WHIR naturally use monomial coefficients, while standard sum-check uses multilinear basis. This mismatch requires conversions, which the new approach avoids."
+        }
+      }
+    ]
   }
 ]
