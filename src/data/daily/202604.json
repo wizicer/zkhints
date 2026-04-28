@@ -1429,5 +1429,81 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-04-28",
+    "projects": [
+      {
+        "name": "Verifying Provenance of Digital Media: Security Analysis of C2PA and its Implementation",
+        "url": "https://eprint.iacr.org/2026/804",
+        "type": "论文",
+        "authors": "Neal Krawetz, Alan T. Sherman, Edward Zieglar, et al.",
+        "tags": [
+          "Neal Krawetz",
+          "C2PA",
+          "security analysis"
+        ],
+        "summary": {
+          "zh": "Krawetz等人对C2PA数字溯源系统进行了安全分析，指出其规范和实现未能达到声称的安全目标，包括时间戳不一致、证书撤销漏洞、验证器不一致等问题，并提出了改进建议。",
+          "en": "Krawetz et al. conducted a security analysis of the C2PA digital provenance system, finding that its specifications and implementations fail to achieve claimed security goals, including timestamp disagreement, certificate revocation vulnerabilities, and validator inconsistencies."
+        },
+        "notes": {
+          "zh": [
+            "C2PA规范未实现声称的防篡改和弱文件完整性目标",
+            "形式化分析显示声明生成器和验证器在时间戳上不一致",
+            "证书撤销政策不足，已验证含漏洞的尼康证书仍有效",
+            "验证器实现间存在不一致，同一资产产生不同结果",
+            "规定中的排除范围允许对媒体内容的未检测修改",
+            "符合性项目缺乏技术审查，建议加强核心协议时间戳"
+          ],
+          "en": [
+            "C2PA specs fail to meet claimed tamper-evidence and weak file integrity goals.",
+            "Formal analysis shows disagreement on trusted timestamps between claim generators and validators.",
+            "Inadequate certificate revocation allows known compromised Nikon certificates to be accepted.",
+            "Validator inconsistencies lead to contradictory conclusions for the same asset.",
+            "Exclusion ranges in spec permit undetectable alterations.",
+            "Conformance program lacks technical review; improvements suggested for timestamping."
+          ]
+        },
+        "slogan": {
+          "zh": "【论文】C2PA安全性被证伪：数字媒体溯源标准存在根本缺陷"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "C2PA的核心目标是什么？",
+          "en": "What is the main goal of C2PA?"
+        },
+        "answer": {
+          "zh": "C2PA旨在为数字媒体提供来源证明，通过签名和元数据记录内容的生成和编辑历史，帮助用户判断其真实性。",
+          "en": "C2PA aims to provide provenance for digital media by attaching signed metadata that records how content was created and modified, helping users assess authenticity."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "论文发现C2PA在时间戳方面有什么问题？",
+          "en": "What issue does the paper find with timestamps in C2PA?"
+        },
+        "answer": {
+          "zh": "生成者和验证者可能无法就时间戳达成一致，导致同一内容可能存在多个冲突的时间戳，从而削弱来源可信度。",
+          "en": "Generators and validators may disagree on timestamps, allowing conflicting timestamps for the same content, which undermines trust in provenance."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "为什么论文认为当前C2PA系统尚不适合可靠部署？",
+          "en": "Why does the paper argue that C2PA is not ready for reliable deployment?"
+        },
+        "answer": {
+          "zh": "因为存在时间戳不一致、证书吊销失效、验证器结果不一致以及未保护区域等问题，这些都会破坏来源验证的可信性。",
+          "en": "Because of issues like timestamp inconsistency, weak revocation, inconsistent validator behavior, and unprotected regions, all of which undermine reliable provenance verification."
+        }
+      }
+    ]
   }
 ]
