@@ -1505,5 +1505,80 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-04-29",
+    "projects": [
+      {
+        "name": "Code-based Scalable Collaborative SNARKs",
+        "url": "https://eprint.iacr.org/2026/729",
+        "type": "论文",
+        "authors": "Christodoulos Pappas, Dimitrios Papadopoulos, Charalampos Papamanthou",
+        "tags": [
+          "Christodoulos Pappas",
+          "CoSNARK"
+        ],
+        "summary": {
+          "zh": "Pappas等人在{{name}}论文中提出首个基于纠错码的可扩展协作SNARK，通过分布式证明计算和零知识协作码实现高效、透明且后量子安全的证明系统。",
+          "en": "Pappas et al. proposed the first scalable collaborative SNARK based on error-correcting codes in their {{name}}paper, enabling efficient, transparent, and post-quantum secure proof systems through distributed computation and zero-knowledge collaborative codes."
+        },
+        "notes": {
+          "zh": [
+            "提出首个基于纠错码的可扩展协作SNARK，支持分布式证明计算",
+            "引入零知识协作码概念，确保分布式计算中的消息隐私安全",
+            "利用张量码（两个Reed-Solomon码组合）满足定义并支持折叠",
+            "构建协作交互式预言证明，实现对数级随机性零知识IOPP",
+            "扩展编译器在协作设置中保持抗量子攻击的逐轮可靠性",
+            "实验显示在证明时间和通信开销上优于现有非后量子安全方案"
+          ],
+          "en": [
+            "First scalable collaborative SNARK based on error-correcting codes with distributed proof computation",
+            "Introduces zero-knowledge collaborative codes for message privacy in distributed settings",
+            "Uses tensor codes (composition of two Reed-Solomon codes) that are foldable",
+            "Builds collaborative IOPP with logarithmic randomness for zero-knowledge",
+            "Extends compiler to preserve round-by-round soundness against quantum adversaries",
+            "Experimental results show outperformance in prover time and communication over existing schemes"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】突破协作瓶颈：首个基于纠错码的可扩展协作SNARK问世"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "什么是“协作编码（collaborative codes）”？",
+          "en": "What are collaborative codes?"
+        },
+        "answer": {
+          "zh": "协作编码是一种分布式编码方式，多个参与方共同生成码字，并保证即使部分参与方被攻击，也无法泄露原始消息信息。",
+          "en": "Collaborative codes are distributed encoding schemes where multiple parties jointly compute a codeword while ensuring that corrupted subsets learn nothing about the original message."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "coIOPP在系统中起什么作用？",
+          "en": "What is the role of coIOPP in the system?"
+        },
+        "answer": {
+          "zh": "coIOPP用于验证一个分布式生成的码字是否接近合法编码，并扩展到多项式求值证明，是构建SNARK的关键中间协议。",
+          "en": "coIOPP verifies that a distributed codeword is close to a valid encoding and extends to polynomial evaluation proofs, serving as a core building block for the SNARK."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "该方案如何实现后量子安全？",
+          "en": "How does the scheme achieve post-quantum security?"
+        },
+        "answer": {
+          "zh": "它基于纠错码（如Reed-Solomon张量码）而非椭圆曲线或配对，避免依赖易受量子攻击的假设，从而实现后量子安全。",
+          "en": "It relies on error-correcting codes like tensor Reed-Solomon codes instead of elliptic curves or pairings, avoiding assumptions vulnerable to quantum attacks."
+        }
+      }
+    ]
   }
 ]
