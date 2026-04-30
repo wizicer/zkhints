@@ -1580,5 +1580,81 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-04-30",
+    "projects": [
+      {
+        "name": "Pairing-Based Verifiable Shuffles with Logarithmic-Size Proofs",
+        "url": "https://eprint.iacr.org/2026/805",
+        "type": "论文",
+        "authors": "Xingye Lu",
+        "tags": [
+          "Xingye Lu",
+          "Verifiable Shuffle",
+          "Mix-net"
+        ],
+        "summary": {
+          "zh": "Lu等人在{{name}}论文中提出一种基于配对的ElGamal密文可验证混洗协议，证明规模为对数级（O(log N)），比现有O(N)方案大幅降低带宽消耗，并首次实现了对数级证明的基准测试。",
+          "en": "Lu et al. propose a pairing-based verifiable shuffle for ElGamal ciphertexts with O(log N) proof size, significantly reducing bandwidth compared to prior O(N) schemes, and provide the first benchmarks for logarithmic-size shuffle proofs."
+        },
+        "notes": {
+          "zh": [
+            "证明规模仅O(log N)个群元素，远优于传统O(N)方案",
+            "基于配对的公币协议，通过Fiat-Shamir转化为非交互式",
+            "支持可更新参考字符串，通过power-of-tau仪式生成",
+            "百万级密文时证明仅约1.6MB，同规模Shuffle方案需数百KB至数百MB",
+            "实现并提供了首个对数级可验证混洗的基准测试",
+            "适用于电子投票和区块链匿名化协议"
+          ],
+          "en": [
+            "Proof size is O(log N) group elements, far better than traditional O(N) schemes.",
+            "Public-coin protocol with Fiat-Shamir transform, non-interactive.",
+            "Supports updatable SRS from powers-of-tau ceremony.",
+            "Proof is only ~1.6 MB for 1M ciphertexts, vs. hundreds of KB to MB for others.",
+            "First benchmark for logarithmic-size verifiable shuffle.",
+            "Applicable to e-voting and blockchain anonymization."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】对数级证明：混洗协议告别带宽噩梦"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "什么是verifiable shuffle？",
+          "en": "What is a verifiable shuffle?"
+        },
+        "answer": {
+          "zh": "verifiable shuffle用于证明一组密文是另一组密文的重随机排列结果，同时不泄露具体排列或随机性。",
+          "en": "A verifiable shuffle proves that a set of ciphertexts is a rerandomized permutation of another set, without revealing the permutation or randomness."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "这篇论文的主要优化是什么？",
+          "en": "What is the main optimization in this paper?"
+        },
+        "answer": {
+          "zh": "论文提出对数大小的证明，使proof大小从线性或平方级降低到log级，大幅减少带宽开销。",
+          "en": "The paper achieves logarithmic-size proofs, reducing proof size from linear or quadratic to logarithmic, significantly lowering bandwidth costs."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "该方案如何降低证明和验证成本？",
+          "en": "How does the scheme reduce prover and verifier costs?"
+        },
+        "answer": {
+          "zh": "通过优化代数结构和证明表达，将指数运算数量降低，同时减少证明中群元素数量，从而整体提升效率。",
+          "en": "It optimizes algebraic structure and proof representation, reducing exponentiations and the number of group elements, improving efficiency."
+        }
+      }
+    ]
   }
 ]
