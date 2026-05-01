@@ -1,0 +1,78 @@
+[
+  {
+    "date": "2026-05-01",
+    "projects": [
+      {
+        "name": "LigeSIS: Distribution-friendly Polynomial Commitment Based on Error-correcting Code",
+        "url": "https://eprint.iacr.org/2026/751",
+        "type": "论文",
+        "authors": "Yanpei Guo, Hancheng Lou, Wenjie Qu, Zhuoyuan Xu, Jiaheng Zhang",
+        "tags": [
+          "Yanpei Guo",
+          "PCS",
+          "Error-correcting Code"
+        ],
+        "summary": {
+          "zh": "Guo等人在{{name}}论文中提出了首个分布友好的基于纠错码的多线性多项式承诺方案LigeSIS，通过同态子集和哈希实现亚线性跨节点通信，证明大小与机器数量无关。",
+          "en": "Guo et al. proposed LigeSIS, the first distribution-friendly code-based multilinear PCS, achieving sublinear cross-node communication with proof size independent of machine count."
+        },
+        "notes": {
+          "zh": [
+            "LigeSIS是首个分布友好的基于纠错码的多线性多项式承诺方案",
+            "用Goldilocks64上的同态子集和哈希替代Merkle树哈希，实现代数聚合",
+            "引入预处理加速的子集和哈希，降低哈希开销",
+            "单节点性能媲美最先进的RS-based PCS WHIR",
+            "分布式环境下证明时间呈现近线性扩展性",
+            "相比分布式MKZG，证明时间提升显著；相比PIP，跨节点通信减少"
+          ],
+          "en": [
+            "LigeSIS is the first distribution-friendly code-based multilinear PCS",
+            "Replaces Merkle-tree hashing with homomorphic subset-sum hash over Goldilocks64",
+            "Introduces preprocessing-accelerated subset-sum hash to reduce overhead",
+            "Single-node performance comparable to state-of-the-art RS-based PCS WHIR",
+            "Near-linear scalability in prover time in distributed settings",
+            "Improves prover time over distributed MKZG and reduces cross-node communication vs PIP"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】突破分布式瓶颈：LigeSIS实现高效纠错码多项式承诺"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "为什么需要分布式PCS？",
+          "en": "Why do we need distributed PCS?"
+        },
+        "answer": {
+          "zh": "随着计算规模增大，单机难以处理证明生成。分布式PCS可以将计算分散到多个节点，降低时间和内存压力。",
+          "en": "As workloads grow, a single machine struggles with proving. Distributed PCS spreads computation across nodes, reducing time and memory pressure."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "LigeSIS的核心改进是什么？",
+          "en": "What is the key idea behind LigeSIS?"
+        },
+        "answer": {
+          "zh": "LigeSIS用同态subset-sum哈希替代Merkle树，使不同节点的承诺可以代数聚合，从而减少通信并支持分布式计算。",
+          "en": "LigeSIS replaces Merkle trees with a homomorphic subset-sum hash, enabling algebraic aggregation of commitments from different nodes and reducing communication."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "LigeSIS如何实现低通信开销？",
+          "en": "How does LigeSIS achieve low communication overhead?"
+        },
+        "answer": {
+          "zh": "通过同态哈希，各节点只需发送部分结果即可被聚合，避免传输完整Merkle路径，实现亚线性通信复杂度。",
+          "en": "Using homomorphic hashing, nodes send partial results that can be aggregated, avoiding full Merkle paths and achieving sublinear communication."
+        }
+      }
+    ]
+  }
+]
