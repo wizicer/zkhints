@@ -74,5 +74,81 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-05-02",
+    "projects": [
+      {
+        "name": "ZEE200: Zero Knowledge for Everything and Everyone @ 200 KHz",
+        "url": "https://eprint.iacr.org/2026/828",
+        "type": "论文",
+        "authors": "Sunghyeon Jo, Vladimir Kolesnikov, Yibin Yang",
+        "tags": [
+          "Sunghyeon Jo",
+          "zkVM",
+          "Constant-Round"
+        ],
+        "summary": {
+          "zh": "Jo等人在论文中提出了ZEE200，一个恒定轮次ZK系统，在普通笔记本上实现200 KHz的CPU速度，支持更丰富的指令集，比ZEE快约4000%，并成功证明Linux程序CVE漏洞。",
+          "en": "Jo et al. proposed ZEE200, a constant-round ZK system achieving 200 KHz CPU speed on a commodity laptop, supporting a richer ISA and improving over ZEE by ~4000%, demonstrated by proving CVE vulnerabilities in Linux programs."
+        },
+        "notes": {
+          "zh": [
+            "ZEE200是ZEE的改进版，性能提升约4000%，从ZEE的50 KHz提高到200 KHz。",
+            "ZEE200在普通笔记本（2021 ThinkPad X1 Carbon Gen 9）和模拟LAN环境下运行。",
+            "支持更丰富的指令集，包括算术编码优化和大量低级优化。",
+            "集成Tight ZK CPU（CCS'24）和快速ZK RAM（USENIX Security'24）等最新成果。",
+            "基准测试：证明Linux工具CVE漏洞时间从ZEE的几秒缩短到亚秒级。",
+            "ZEE200为通用程序提供了高效、实用的零知识证明工具链。"
+          ],
+          "en": [
+            "ZEE200's performance boosted by about 4000%, increasing from ZEE's 50 KHz to 200 KHz.",
+            "ZEE200 runs on a standard laptop (2021 ThinkPad X1 Carbon Gen 9) and in a simulated LAN environment.",
+            "Supports a richer instruction set, with arithmetic encoding optimizations and extensive low-level improvements.",
+            "Integrates the latest advances such as Tight ZK CPU (CCS'24) and fast ZK RAM (USENIX Security'24).",
+            "Benchmark: proving Linux tool CVE vulnerabilities drops from several seconds (ZEE) to sub-second (ZEE200).",
+            "ZEE200 provides an efficient and practical zero-knowledge proving toolchain for general-purpose programs."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】ZEE200：普通笔记本跑ZK @ 200 KHz，提速4000%！"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "ZEE200的核心目标是什么？",
+          "en": "What is the main goal of ZEE200?"
+        },
+        "answer": {
+          "zh": "ZEE200旨在为通用程序提供高效的零知识执行，使任意程序都可以被证明正确执行，同时保持输入隐私。",
+          "en": "ZEE200 aims to enable efficient zero-knowledge execution of general programs, allowing arbitrary computations to be proven correct while preserving input privacy."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "ZEE200依赖哪些关键技术？",
+          "en": "What key techniques does ZEE200 build on?"
+        },
+        "answer": {
+          "zh": "它结合了Tight ZK CPU和高效ZK RAM等技术，用于高效表示指令执行和内存访问，从而支持通用程序证明。",
+          "en": "It builds on techniques like Tight ZK CPU and fast ZK RAM to efficiently represent instruction execution and memory access for general-purpose proofs."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "ZEE200为何能实现显著性能提升？",
+          "en": "Why does ZEE200 achieve significant performance gains?"
+        },
+        "answer": {
+          "zh": "通过改进算术编码、优化CPU执行模型以及整合高效ZK组件，减少每一步的证明开销，从而整体提升吞吐量。",
+          "en": "It improves arithmetic encodings, optimizes the CPU execution model, and integrates efficient ZK components, reducing per-step proof cost and increasing throughput."
+        }
+      }
+    ]
   }
 ]
