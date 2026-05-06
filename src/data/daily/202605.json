@@ -150,5 +150,81 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-05-06",
+    "projects": [
+      {
+        "name": "Fault Injection Attacks Against zkSTARKs",
+        "url": "https://eprint.iacr.org/2026/835",
+        "type": "论文",
+        "authors": "Alexander Dalton, Markus Schofnegger, Daniel Page",
+        "tags": [
+          "Alexander Dalton",
+          "zkSTARKs",
+          "Fault Injection"
+        ],
+        "summary": {
+          "zh": "Dalton等人在{{name}}论文中首次系统探索了针对zkSTARK证明者的故障注入攻击，旨在破坏其零知识特性，填补了通用ZK证明系统故障注入研究的空白。",
+          "en": "Dalton et al. present the first systematic exploration of fault injection attacks against zkSTARK provers, aiming to violate zero-knowledge properties, filling a gap in fault injection research for general-purpose ZK proving systems."
+        },
+        "notes": {
+          "zh": [
+            "针对zkSTARK证明者的故障注入攻击可破坏其零知识特性",
+            "这是首次对通用ZK证明系统进行故障注入攻击的探索",
+            "zkSTARK的实现多样性导致攻击面广泛",
+            "研究提出了针对不同算法原语的多种故障注入方法",
+            "漏洞可能影响零知识证明的隐私保护能力",
+            "建议开发者加强证明者实现中的抗故障注入防护"
+          ],
+          "en": [
+            "Fault injection attacks on zkSTARK provers can compromise zero-knowledge properties.",
+            "First exploration of fault injection in general-purpose ZK proving systems.",
+            "Implementation diversity of zkSTARKs broadens the attack surface.",
+            "Proposed multiple attack methods targeting different algorithmic primitives.",
+            "Vulnerabilities could undermine privacy guarantees of ZK proofs.",
+            "Developers should incorporate fault injection countermeasures in prover implementations."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK安全】致命漏洞？故障注入攻击首次针对zkSTARK，零知识特性告急！"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "什么是fault injection攻击？",
+          "en": "What is a fault injection attack?"
+        },
+        "answer": {
+          "zh": "fault injection攻击通过人为引入计算错误（如电压、时序干扰）来破坏系统正常执行，从而泄露敏感信息或破坏安全性质。",
+          "en": "A fault injection attack introduces errors into computation (e.g., via voltage or timing glitches) to break correct execution and potentially leak sensitive information."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "fault injection如何影响zkSTARK的零知识性？",
+          "en": "How can fault injection affect the zero-knowledge property of zkSTARKs?"
+        },
+        "answer": {
+          "zh": "攻击者通过干扰证明生成过程，使某些中间值异常，从而可能泄露本应隐藏的信息，破坏零知识性。",
+          "en": "By disrupting the proving process, attackers can cause abnormal intermediate values that may leak information intended to remain hidden, breaking zero-knowledge."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "为什么zkSTARK特别容易受到此类攻击？",
+          "en": "Why are zkSTARKs particularly exposed to such attacks?"
+        },
+        "answer": {
+          "zh": "zkSTARK实现复杂，包含多种算法组件（如FFT、承诺、低度测试），攻击者可针对不同环节注入错误，扩大攻击面。",
+          "en": "zkSTARKs are complex, involving components like FFTs, commitments, and low-degree tests. Faults can be injected at different stages, increasing the attack surface."
+        }
+      }
+    ]
   }
 ]
