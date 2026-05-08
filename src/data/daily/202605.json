@@ -226,5 +226,79 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-05-08",
+    "projects": [
+      {
+        "name": "Field-Agnostic SNARKs with Small Proofs via Encode-Repeat-Accumulate (ERA) Codes",
+        "url": "https://eprint.iacr.org/2026/864",
+        "type": "论文",
+        "authors": "Anubhav Baweja, Giacomo Fenzi, Pratyush Mishra, Tushar Mopuri",
+        "tags": [
+          "Anubhav Baweja",
+          "field-agnostic",
+          "IOPP"
+        ],
+        "summary": {
+          "zh": "Baweja等人在{{name}}论文中提出了一种新型线性时间可编码的场无关纠错码ERA，并基于此设计了高效的IOPP，实现了哈希基SNARK的小证明尺寸和良好的证明者效率。",
+          "en": "Baweja et al. proposed a new family of linear-time encodable field-agnostic codes, ERA, and an efficient IOPP for them, achieving small proof sizes in hash-based SNARKs."
+        },
+        "notes": {
+          "zh": [
+            "ERA码在编码时间与相对距离之间取得良好权衡",
+            "ERA码具有高效的码切换能力，可降低逼近检验任务",
+            "基于ERA的IOPP实现了具体小的查询复杂度",
+            "哈希基SNARK是广泛部署的透明SNARK，具有抗量子安全性",
+            "场无关性使得SNARK能在任意足够大的域上证明"
+          ],
+          "en": [
+            "ERA codes achieve a strong trade-off between encoding time and relative distance.",
+            "ERA codes are efficiently codeswitchable, reducing proximity checking to another code.",
+            "The IOPP for ERA codes yields concretely small query complexity.",
+            "Hash-based SNARKs are transparent and post-quantum secure.",
+            "Field-agnosticism enables proofs over arbitrary fields."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】ERA编码让哈希基SNARK证明更小更高效"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "ERA codes是什么？",
+          "en": "What are ERA codes?"
+        },
+        "answer": {
+          "zh": "ERA（Encode-Repeat-Accumulate）codes是一类新的纠错码，强调快速编码和较强纠错能力，用于提升hash-based SNARK性能。",
+          "en": "ERA (Encode-Repeat-Accumulate) codes are a new family of error-correcting codes designed for fast encoding and strong error-correction properties in hash-based SNARKs."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "为什么纠错码对SNARK很重要？",
+          "en": "Why are error-correcting codes important for SNARKs?"
+        },
+        "answer": {
+          "zh": "许多transparent SNARK依赖纠错码和IOPP进行低度测试与一致性验证，纠错码质量会直接影响证明大小和证明速度。",
+          "en": "Many transparent SNARKs use error-correcting codes and IOPPs for low-degree testing and consistency checks, so code quality directly affects proof size and proving speed."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "ERA codes相比传统方案有什么优势？",
+          "en": "What advantages do ERA codes provide over prior approaches?"
+        },
+        "answer": {
+          "zh": "ERA codes兼顾线性时间编码和较强距离性质，在减少proof大小的同时保持较高prover效率。",
+          "en": "ERA codes combine linear-time encoding with strong distance properties, reducing proof size while maintaining efficient proving."
+        }
+      }
+    ]
   }
 ]
