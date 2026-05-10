@@ -300,5 +300,79 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-05-10",
+    "projects": [
+      {
+        "name": "Zinc+: SNARKs for Polynomial Rings",
+        "url": "https://eprint.iacr.org/2026/855",
+        "type": "论文",
+        "tags": [
+          "Alexander Abdugafarov",
+          "Polynomial Rings"
+        ],
+        "summary": {
+          "zh": "Garreta等人在{{name}}论文中提出Universal Constraint Systems (UCS)通用约束系统和Zinc框架，支持同时处理多个多项式环（如Z、Z₂₅₆）的代数约束与理想成员谓词，通过PIOP编译器与新型整数伪Reed-Solomon（IPRS）码实现高效SNARK，证明ECDSA中SHA-256压缩与MSM仅需40.6ms。",
+          "en": "Garreta et al. propose UCS and Zinc in {{name}}, enabling SNARKs for multiple polynomial rings with algebraic constraints and ideal membership, using a PIOP compiler and new IPRS codes, achieving 40.6ms for SHA-256+MSM in ECDSA."
+        },
+        "notes": {
+          "zh": [
+            "UCS可同时表达有限域、整数环、多项式环上的约束，消除多种非原生操作的开销。",
+            "Zinc框架通过PIOP编译器将标准有限域PIOP转化为多环PIOP，支持灵活的证明系统构建。",
+            "新提出的IPRS码在Z和Z₂₅₆上具有最优MDS相对最小距离，支持FFT编码且范数增长有界。",
+            "基准测试显示，ECDSA验证中SHA-256压缩和MSM部分，证明时间仅40.6ms，验证时间7.0ms。",
+            "Zinc可作为轻量扩展集成到现有哈希基SNARK中，使用开源实现。",
+            "该工作显著降低了格运算、模算术等非原生操作的证明开销。"
+          ],
+          "en": [
+            "UCS expresses constraints over finite fields, integer rings, and polynomial rings simultaneously, minimizing overhead for non-native operations.",
+            "Zinc provides a PIOP compiler that lifts standard finite-field PIOPs to support multiple rings.",
+            "New IPRS codes achieve optimal MDS distance over Z and Z₂₅₆ with FFT-friendly encoding and bounded norm growth.",
+            "Benchmarks: 40.6ms prover, 7.0ms verifier, 198KB proof for ECDSA verification core.",
+            "Can be integrated as lightweight extension to existing hash-based SNARKs.",
+            "Reduces overhead for lattice operations, modular arithmetic, etc."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】Zinc+：破解多项式环上的SNARK效率难题"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "为什么传统SNARK难以处理多项式环运算？",
+          "en": "Why are traditional SNARKs inefficient for polynomial ring operations?"
+        },
+        "answer": {
+          "zh": "传统SNARK主要基于有限域约束，而位运算、模运算和格密码中的多项式环运算并不天然属于该域，因此需要复杂转换，导致证明规模和见证大幅增加。",
+          "en": "Traditional SNARKs are built over finite fields, while bitwise, modular, and lattice-ring operations are not native to those fields. Converting them into field constraints greatly increases witness and proof complexity."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "Zinc+的核心目标是什么？",
+          "en": "What is the main goal of Zinc+?"
+        },
+        "answer": {
+          "zh": "Zinc+旨在让SNARK能够直接高效处理多项式环上的计算，减少传统算术化带来的额外开销。",
+          "en": "Zinc+ aims to make SNARKs efficiently support computations over polynomial rings directly, reducing the overhead caused by traditional arithmetization."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "Zinc+如何降低非原生运算的证明成本？",
+          "en": "How does Zinc+ reduce the proving cost of non-native operations?"
+        },
+        "answer": {
+          "zh": "它通过Universal Constraint Systems（UCS）直接在多项式环中表达约束，而不是先展开为大量有限域约束，从而减少见证膨胀和电路规模。",
+          "en": "It directly expresses constraints inside polynomial rings through Universal Constraint Systems（UCS） instead of expanding them into many finite-field constraints, reducing witness blowup and circuit size."
+        }
+      }
+    ]
   }
 ]
