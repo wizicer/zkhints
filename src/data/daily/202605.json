@@ -374,5 +374,81 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-05-11",
+    "projects": [
+      {
+        "name": "Adaptive Distributed Key Generation for Discrete-Log Cryptosystems",
+        "url": "https://eprint.iacr.org/2026/892",
+        "type": "论文",
+        "authors": "Ruben Baecker, Paul Gerhart, Stanislaw Jarecki, Phillip Nazarian, Daniel Rausch, Dominique Schröder",
+        "tags": [
+          "Ruben Baecker",
+          "DKG",
+          "Threshold"
+        ],
+        "summary": {
+          "zh": "Baecker等人在论文中提出两种适应不安全通信环境且支持可识别中止和主动密钥刷新的分布式密钥生成协议，弥补了现有方案在自适应安全性与密钥结构兼容性方面的空白。",
+          "en": "Baecker et al. propose two DKG protocols with identifiable abort, proactive key refresh, and adaptive security under UC framework, bridging the gap in adaptive security and key structure compatibility."
+        },
+        "notes": {
+          "zh": [
+            "现有DKG协议与特定密钥结构不兼容，无法满足自适应安全性要求。",
+            "首个方案通过一轮广播实现最优轮数，但允许敌手偏置。",
+            "第二个方案在两轮内消除偏置，提供完全无偏的密钥生成。",
+            "协议支持主动密钥刷新，允许长期网络恢复节点临时沦陷。",
+            "评估表明，通信与计算开销在现代化架构中可接受。",
+            "该工作基于UC框架，避免了非标准假设。"
+          ],
+          "en": [
+            "Existing DKG protocols are incompatible with specific key structures and lack adaptive security.",
+            "First protocol achieves optimal round complexity (one broadcast round) with adversarial bias.",
+            "Second protocol eliminates bias in two rounds.",
+            "Supports proactive key refresh for recovery from transient compromises.",
+            "Evaluation shows practical efficiency for modern architectures.",
+            "UC-based security without non-falsifiable assumptions."
+          ]
+        },
+        "slogan": {
+          "zh": "【论文】DKG也有自适应安全方案了：无需可信设置、支持主动刷新"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "什么是Distributed Key Generation（DKG）？",
+          "en": "What is Distributed Key Generation (DKG)?"
+        },
+        "answer": {
+          "zh": "DKG是一种多方协议，可以让参与者共同生成公钥和私钥份额，而不需要可信第三方。",
+          "en": "DKG is a multiparty protocol that lets participants jointly generate a public key and secret shares without relying on a trusted dealer."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "论文中的key-share hiding有什么意义？",
+          "en": "Why is key-share hiding important in this work?"
+        },
+        "answer": {
+          "zh": "它保证攻击者无法从协议过程推断密钥份额，从而避免依赖非标准假设，实现更强的自适应安全。",
+          "en": "It prevents adversaries from learning key shares during the protocol, enabling stronger adaptive security without relying on non-standard assumptions."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "论文提出的两个DKG方案有什么区别？",
+          "en": "What is the difference between the two proposed DKG protocols?"
+        },
+        "answer": {
+          "zh": "第一个方案只需一轮广播但允许一定偏差，第二个方案使用两轮通信来消除偏差，获得更强安全性。",
+          "en": "The first protocol uses a single broadcast round but allows some adversarial bias, while the second uses two rounds to eliminate the bias."
+        }
+      }
+    ]
   }
 ]
