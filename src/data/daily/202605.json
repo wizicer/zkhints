@@ -450,5 +450,81 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-05-12",
+    "projects": [
+      {
+        "name": "Zero-Knowledge Proofs for Gradient Boosted Decision Trees",
+        "url": "https://eprint.iacr.org/2026/907",
+        "type": "论文",
+        "tags": [
+          "Jiacheng Gao",
+          "GBDT",
+          "KZG",
+          "ML"
+        ],
+        "summary": {
+          "zh": "Gao等人在{{name}}论文中提出了Terrae，一种基于KZG承诺的用于量化GBDT训练和推理的零知识证明系统，通过域提升批处理等新技术高效约束，显著减少证明生成时间。",
+          "en": "Gao et al. proposed Terrae in their {{name}}paper, a ZK proof system for quantized GBDT training and inference based on KZG commitments, leveraging domain-lifting and interleaving batching to reduce prover time."
+        },
+        "notes": {
+          "zh": [
+            "GBDT广泛应用于金融、医疗等领域，需要可审计性及隐私保护",
+            "现有方法依赖通用ZK编译器或大量独立约束，导致证明者开销高",
+            "Terrae通过域提升批处理线性约束和交错批处理非线性约束，减少承诺数量",
+            "提出直方图证明，将样本数据转换为频率表示的正确性可证明",
+            "相比先前方法，Terrae显著降低证明生成时间，仅增加少量证明大小开销",
+            "基于KZG多项式承诺，适用于量化模型"
+          ],
+          "en": [
+            "GBDT widely used in finance, healthcare, requiring auditability and privacy.",
+            "Existing methods rely on generic ZK compilers or many independent constraints, leading to high prover cost.",
+            "Terrae introduces domain-lifting and interleaving batching to reduce commitments.",
+            "Novel histogram proof for converting sample data to frequency representation.",
+            "Significantly reduces proof generation time with small proof size overhead.",
+            "Based on KZG polynomial commitments, suitable for quantized models."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】Terrae：带你零知识证明GBDT训练和推理"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "什么是GBDT，为什么它需要零知识证明？",
+          "en": "What is GBDT and why do GBDT systems need zero-knowledge proofs?"
+        },
+        "answer": {
+          "zh": "GBDT（Gradient Boosted Decision Trees）是一种基于多棵决策树逐步提升效果的机器学习模型，广泛应用于金融风控、医疗和推荐系统。由于模型通常由第三方训练和部署，用户希望在不暴露训练数据和模型参数的情况下，验证预测或训练过程的正确性，因此需要零知识证明来保证隐私和可信性。",
+          "en": "GBDT (Gradient Boosted Decision Trees) is a machine learning model that combines many decision trees in a boosting process, widely used in finance, healthcare, and recommendation systems. Since models are often trained and served by external providers, users want to verify predictions or training correctness without revealing private data or model parameters, making zero-knowledge proofs essential for privacy and trust."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "Terrae的核心优化是什么？",
+          "en": "What is the main optimization introduced by Terrae?"
+        },
+        "answer": {
+          "zh": "Terrae利用GBDT训练结构进行batching，通过domain-lifting和interleaving batching，将大量约束合并为单个证明声明。",
+          "en": "Terrae leverages the structure of GBDT training and introduces domain-lifting and interleaving batching to combine many constraints into a single proof claim."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "什么是domain-lifting batching？",
+          "en": "What is domain-lifting batching?"
+        },
+        "answer": {
+          "zh": "它是一种针对线性约束的batching技术，可以把不同定义域上的约束统一到更大的域中验证，从而减少独立承诺数量。",
+          "en": "It is a batching technique for linear constraints that lifts constraints from different domains into a larger shared domain, reducing separate commitments."
+        }
+      }
+    ]
   }
 ]
