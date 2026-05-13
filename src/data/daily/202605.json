@@ -526,5 +526,81 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-05-13",
+    "projects": [
+      {
+        "name": "Titan: Efficient Polynomial Commitments from IOPs over Groups",
+        "url": "https://eprint.iacr.org/2026/908",
+        "type": "论文",
+        "authors": "Ravi Prakash, Samipa Samanta, Sruthi Sekar, Nitin Singh",
+        "tags": [
+          "Ravi Prakash",
+          "IOPP",
+          "Spartan"
+        ],
+        "summary": {
+          "zh": "Prakash等人在{{name}}论文中提出了Titan，一种高效的透明设置多项式承诺方案，结合基于群上IOPP的承诺与Pedersen内部承诺，平衡了证明大小和验证效率，并基于此构建了TitanSnark，相比Spartan协议，证明大小和验证复杂度从O(n)降至O(√n)。",
+          "en": "Prakash et al. propose Titan, an efficient transparent polynomial commitment scheme in their paper {{name}}, combining IOP-based outer commitments with Pedersen inner commitments, achieving sublinear proof size and verification. They build TitanSnark, a SNARK with O(√n) proof size and verification, improving over Spartan's O(n)."
+        },
+        "notes": {
+          "zh": [
+            "Titan承诺方案具有透明设置，无需可信初始化。",
+            "证明大小比基于哈希的PCS小一个数量级。",
+            "相比Dory和Hyrax，证明者和验证者效率显著提升。",
+            "可在普通离散对数曲线上实例化，无需配对友好曲线。",
+            "TitanSnark将Spartan的证明大小和验证复杂度从O(n)降低到O(√n)。",
+            "结合IOPP与Pedersen承诺的方法具有独立研究价值。"
+          ],
+          "en": [
+            "Titan achieves transparent setup without trusted initialization.",
+            "Proof sizes are an order of magnitude smaller than hash-based PCS.",
+            "More efficient prover and verifier than Dory and Hyrax.",
+            "Supports general discrete-log hard curves like Pasta, no pairing needed.",
+            "TitanSnark reduces proof size and verification from O(n) to O(√n) compared to Spartan.",
+            "The IOPP+Pedersen combination is of independent interest."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】Titan：基于IOP的高效多项式承诺，透明设置，证明大小缩小一个数量级！"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "TitanSnark 有什么改进？",
+          "en": "What improvements does TitanSnark bring?"
+        },
+        "answer": {
+          "zh": "TitanSnark 将 Titan PCS 集成进 Spartan。它保留高效 prover，同时降低 proof size 和 verification complexity，适合大规模 zkVM 电路。",
+          "en": "TitanSnark integrates Titan PCS into Spartan. It keeps the prover efficient while reducing proof size and verification complexity, making it useful for large zkVM circuits."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "Titan 为什么不需要 pairing？",
+          "en": "Why does Titan avoid pairings?"
+        },
+        "answer": {
+          "zh": "Titan 使用基于群的 IOPP 和 WHIR 来替代 bilinear pairings，因此可以运行在 Pasta Curves 等普通离散对数曲线上。",
+          "en": "Titan replaces bilinear pairings with group-based IOPP techniques such as WHIR, allowing it to work on ordinary discrete-log curves like Pasta Curves."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "Titan 的双层承诺有什么作用？",
+          "en": "What is the role of Titan’s two-tier commitment design?"
+        },
+        "answer": {
+          "zh": "内部使用 Pedersen-style commitments，外部结合 WHIR IOPP。这样同时优化了 prover efficiency、batch evaluation 和 proof size。",
+          "en": "The inner layer uses Pedersen-style commitments, while the outer layer uses WHIR IOPP. This improves prover efficiency, batch evaluation, and proof size together."
+        }
+      }
+    ]
   }
 ]
