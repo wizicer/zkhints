@@ -602,5 +602,81 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-05-14",
+    "projects": [
+      {
+        "name": "Privacy-Preserving Aggregate-Signatures: Generic Constructions and Practical Instantiations",
+        "url": "https://eprint.iacr.org/2026/836",
+        "type": "论文",
+        "authors": "Xiaoyang Wei, Shuai Han, Shengli Liu",
+        "tags": [
+          "Xiaoyang Wei",
+          "BLS",
+          "unforgeability"
+        ],
+        "summary": {
+          "zh": "Wei等人提出了带可验证密钥聚合的隐私保护聚合签名ASvKA，给出从多重签名到聚合签名的通用转化，并实例化出两种高效方案PP-SpeedyASvKA和PP-BAS，支持签名压缩与隐私保护。",
+          "en": "Wei et al. propose aggregate signatures with verifiable key aggregation (ASvKA) and privacy, a generic transformation from multi-signatures, and two instantiations: PP-SpeedyASvKA and PP-BAS."
+        },
+        "notes": {
+          "zh": [
+            "首次形式化定义了带可验证密钥聚合的隐私保护聚合签名ASvKA",
+            "提出从多重签名到聚合签名的通用转化，提升不可伪造性",
+            "PP-SpeedyASvKA基于SpeedyMuSig，无需配对，两轮交互",
+            "PP-BAS基于BLS多重签名，提供不可伪造性与隐私的不同权衡",
+            "解决了现有聚合签名不支持密钥聚合和隐私保护的缺陷",
+            "实例化方案保持常数大小签名，验证效率高"
+          ],
+          "en": [
+            "First formal definition of ASvKA with privacy and verifiable key aggregation",
+            "Generic transformation from multi-signatures to aggregate signatures with stronger unforgeability",
+            "PP-SpeedyASvKA is pairing-free, two-round from SpeedyMuSig",
+            "PP-BAS from BLS offers trade-offs between unforgeability and privacy",
+            "Addresses lack of key aggregation and privacy in current aggregate signatures",
+            "Constant-size signatures and efficient verification"
+          ]
+        },
+        "slogan": {
+          "zh": "【论文速递】隐私保护聚合签名新突破：通用构造与高效实例化"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "什么是 ASvKA？",
+          "en": "What is ASvKA?"
+        },
+        "answer": {
+          "zh": "ASvKA 是“带可验证密钥聚合的聚合签名”。它不仅聚合 signatures，还能验证聚合公钥正确性，并保护 signer identity。",
+          "en": "ASvKA stands for aggregate signatures with verifiable key aggregation. It aggregates signatures, verifies aggregated public keys, and protects signer identities."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "PP-SpeedyASvKA 有什么特点？",
+          "en": "What are the features of PP-SpeedyASvKA?"
+        },
+        "answer": {
+          "zh": "PP-SpeedyASvKA 基于 pairing-free 的 SpeedyMuSig，支持两轮协议，并实现强 unforgeability 与 signer privacy，同时保持高效 verification。",
+          "en": "PP-SpeedyASvKA is built from the pairing-free SpeedyMuSig scheme. It uses a two-round protocol and achieves strong unforgeability and signer privacy with efficient verification."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "论文中的 generic transformation 有什么意义？",
+          "en": "Why is the generic transformation important?"
+        },
+        "answer": {
+          "zh": "该 transformation 能把任意 multi-signature 转换为支持 privacy 与 verifiable key aggregation 的 aggregate signature，并提升 unforgeability。",
+          "en": "The transformation converts any multi-signature scheme into an aggregate signature system with privacy and verifiable key aggregation while strengthening unforgeability guarantees."
+        }
+      }
+    ]
   }
 ]
