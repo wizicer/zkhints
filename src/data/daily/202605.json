@@ -678,5 +678,79 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-05-16",
+    "projects": [
+      {
+        "name": "Jagged Polynomial Commitments (or: How to Stack Multilinears)",
+        "url": "https://eprint.iacr.org/2025/917",
+        "type": "论文",
+        "authors": "Kevin Jue, Eugene Rabinovich, Gyumin Roh, Ron D. Rothblum (Succinct)",
+        "tags": [
+          "Kevin Jue",
+          "PCS",
+          "zkVM"
+        ],
+        "summary": {
+          "zh": "Succinct团队（Kevin Jue等人）在论文中提出了一种新型的Jagged PCS，允许将整个计算迹作为一个多项式承诺，同时支持对单个列进行求值证明，极大降低了zkVM递归验证开销。该方案仅需5个有限域乘法/元素，无需额外预言机。",
+          "en": "The Succinct team (Kevin Jue et al.) introduced a Jagged PCS that commits the entire computation trace as a single polynomial while enabling per-column evaluation proofs, drastically reducing zkVM recursion overhead. It requires only 5 finite field multiplications per element with no additional oracles."
+        },
+        "notes": {
+          "zh": [
+            "Jagged PCS 专为 zkVM 中不同高度列的多项式承诺设计",
+            "相比通用稀疏 PCS，无需额外预言机，证明者成本仅 5 次域乘法/元素",
+            "验证者电路仅依赖总迹面积，避免 zkVM 递归中的“组合爆炸”",
+            "支持将整个计算迹作为单一多项式承诺，同时允许按列访问",
+            "实际性能优异，特别适用于哈希基 SNARK 系统"
+          ],
+          "en": [
+            "Jagged PCS is designed for polynomial commitments with columns of varying heights in zkVM.",
+            "No extra oracles required compared to general sparse PCS; prover cost is 5 field multiplications per element.",
+            "Verifier circuit depends only on total trace area, avoiding combinatorial explosion in zkVM recursion.",
+            "Commits entire trace as a single polynomial while allowing per-column queries.",
+            "Highly performant, especially for hash-based SNARKs."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】Succinct 提出 Jagged PCS：一根多项式搞定整个计算迹，zkVM 递归验证再提速！"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "为什么 zkVM 需要 Jagged PCS？",
+          "en": "Why do zkVMs need Jagged PCS?"
+        },
+        "answer": {
+          "zh": "传统 zkVM 会为每个 instruction table 或 column 单独 commit，多次 verification 成本很高。Jagged PCS 能统一处理这些 multilinears。",
+          "en": "Traditional zkVMs commit separately to each instruction table or column, causing high verification costs. Jagged PCS combines these multilinears into one structure."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "Jagged PCS 如何降低 prover 成本？",
+          "en": "How does Jagged PCS reduce prover cost?"
+        },
+        "answer": {
+          "zh": "它不需要额外 sparse polynomial oracles，prover 主要只需有限域乘法运算，因此性能比通用 sparse PCS 更高。",
+          "en": "It avoids additional sparse polynomial oracles, so the prover mainly performs finite field multiplications, making it faster than general sparse PCS systems."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "Jagged PCS 为什么适合 zkVM recursion？",
+          "en": "Why is Jagged PCS suitable for zkVM recursion?"
+        },
+        "answer": {
+          "zh": "其 verifier circuit 只依赖总 trace area，而不是大量独立 tables，因此能减少 recursion 中的 combinatorial explosion。",
+          "en": "Its verifier circuit depends only on the total trace area instead of many separate tables, reducing combinatorial explosion in recursive zkVM proofs."
+        }
+      }
+    ]
   }
 ]
