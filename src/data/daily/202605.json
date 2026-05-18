@@ -752,5 +752,80 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-05-18",
+    "projects": [
+      {
+        "name": "Device Binding for Anonymous Credentials on Legacy Phones",
+        "url": "https://eprint.iacr.org/2026/965",
+        "type": "论文",
+        "authors": "Anja Lehmann and Alexandros Zacharakis",
+        "tags": [
+          "Anja Lehmann",
+          "Anonymous Credentials"
+        ],
+        "summary": {
+          "zh": "Lehmann等人在{{name}}论文中提出了三种将匿名凭证绑定到传统手机硬件的方法，通过标准ECDSA签名实现证明，解决了配对友好曲线与P256兼容性问题。",
+          "en": "Lehmann et al. propose three constructions for device binding of anonymous credentials on legacy phones, using standard ECDSA signatures for proof-of-possession, bridging pairing-friendly curves with P256."
+        },
+        "notes": {
+          "zh": [
+            "匿名凭证虽保护隐私但缺乏设备绑定，易被克隆或分享",
+            "现有高效设备绑定方案依赖配对友好曲线，与旧手机P256硬件不兼容",
+            "本文提出三种方案桥接P256与配对曲线，性能各异",
+            "最快方案证明大小约1.5KB，耗时<500ms，依赖简单算术电路",
+            "无电路方案同样约500ms但证明大小175KB",
+            "采用知识归约框架设计，便于模块化安全分析和实现"
+          ],
+          "en": [
+            "Anonymous credentials lack device binding, risking credential cloning.",
+            "Existing efficient binding uses pairing-friendly curves, incompatible with legacy phone P256 hardware.",
+            "Three constructions bridge P256 to pairing curves with different trade-offs.",
+            "Fastest: ~1.5KB proof, <500ms, using simple arithmetic circuit.",
+            "Circuit-free: ~500ms but ~175KB proof.",
+            "Designed with reductions of knowledge framework for modular security analysis."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】旧手机也能用！匿名凭证设备绑定新方案"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "什么是 device binding？",
+          "en": "What is device binding?"
+        },
+        "answer": {
+          "zh": "Device binding 是把凭证绑定到手机安全硬件，防止 credential cloning 或共享。",
+          "en": "Device binding ties credentials to secure phone hardware to prevent credential cloning or sharing."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "为什么 legacy phones 会带来兼容性问题？",
+          "en": "Why do legacy phones create compatibility issues?"
+        },
+        "answer": {
+          "zh": "高效匿名凭证通常依赖 pairing-friendly curves，而传统手机安全硬件只支持 ECDSA 与 P256 curves。",
+          "en": "Efficient anonymous credentials usually rely on pairing-friendly curves, while legacy phone hardware mainly supports ECDSA and P256 curves."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "论文如何解决曲线不兼容问题？",
+          "en": "How does the paper solve the curve compatibility problem?"
+        },
+        "answer": {
+          "zh": "论文提出 bridging proofs，让 pairing-based credentials 能通过标准 ECDSA proof-of-possession 完成 device binding。",
+          "en": "The paper introduces bridging proofs that allow pairing-based credentials to use standard ECDSA proof-of-possession for device binding."
+        }
+      }
+    ]
   }
 ]
