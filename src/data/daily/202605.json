@@ -827,5 +827,78 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-05-19",
+    "projects": [
+      {
+        "name": "Attribute-Based Threshold Issuance Anonymous Counting Tokens and Its Application to Sybil-Resistant Self-Sovereign Identity",
+        "url": "https://cic.iacr.org/p/3/1/19",
+        "type": "论文",
+        "authors": "Behzad Abdolmaleki, Antonis Michalas, Reyhaneh Rabaninejad, Sebastian Ramacher, Daniel Slamanig",
+        "tags": [
+          "Behzad Abdolmaleki",
+          "Unlinkability"
+        ],
+        "summary": {
+          "zh": "Abdolmaleki等人提出tACT，一种在分布式信任环境下的可公开验证阈值匿名计数代币，并用于构建抗女巫攻击的自主主权身份系统，支持阈值发行、不可链接多显示选择性披露等特性，相比CanDID提升了效率并减少交互轮数。",
+          "en": "Abdolmaleki et al. propose tACT, a publicly verifiable threshold anonymous counting token in a distributed-trust setting, and use it to build a Sybil-resistant SSI system with threshold issuance, unlinkable multi-show selective disclosure, improving over CanDID."
+        },
+        "notes": {
+          "zh": [
+            "tACT首次在分布式信任环境中实现可公开验证的阈值匿名计数代币",
+            "提出的SSI系统支持非交互式、不可转移的凭证，减少用户与发行方交互",
+            "形式化强不可链接性安全模型，证明即使发行者与验证者勾结也能保护隐私",
+            "基准测试显示效率优于CanDID，且支持更多发行者",
+            "技术结合了双线性映射、零知识证明和阈值密码学"
+          ],
+          "en": [
+            "tACT is the first publicly verifiable threshold anonymous counting token in a distributed-trust setting.",
+            "The proposed SSI system features non-interactive, non-transferable credentials with minimal user-issuer interaction.",
+            "Formalizes strong unlinkability security model, ensuring privacy even under issuer-verifier collusion.",
+            "Benchmark results show improved efficiency over CanDID while supporting more issuers.",
+            "Techniques involve bilinear maps, zero-knowledge proofs, and threshold cryptography."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】阈值匿名代币tACT：让SSI更抗女巫攻击且更高效"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "什么是 Self-Sovereign Identity（SSI）和 Sybil-resistant SSI？",
+          "en": "What are Self-Sovereign Identity (SSI) and Sybil-resistant SSI systems?"
+        },
+        "answer": {
+          "zh": "SSI 是用户自主控制身份数据的数字身份系统，强调隐私保护与选择性披露。Sybil-resistant SSI 则在此基础上防止用户创建大量虚假身份，同时保持匿名性与不可链接性。",
+          "en": "SSI is a digital identity system where users control their own identity data, supporting privacy and selective disclosure. A Sybil-resistant SSI system further prevents users from creating many fake identities while preserving anonymity and unlinkability."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "论文相比 CanDID 有哪些改进？",
+          "en": "How does this work improve over CanDID?"
+        },
+        "answer": {
+          "zh": "该方案实现 strong unlinkability，并减少用户与 issuer 的频繁交互，同时支持一轮并行 threshold issuance。",
+          "en": "The scheme achieves strong unlinkability, reduces repeated user-issuer interactions, and supports one-round parallel threshold issuance."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "什么是 strong unlinkability？",
+          "en": "What is strong unlinkability?"
+        },
+        "answer": {
+          "zh": "Strong unlinkability 指即使 issuer 与 verifier collusion，也无法关联同一用户的多次 credential usage。",
+          "en": "Strong unlinkability means that even if issuers and verifiers collude, they still cannot link multiple credential uses to the same user."
+        }
+      }
+    ]
   }
 ]
