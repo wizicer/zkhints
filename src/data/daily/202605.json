@@ -534,15 +534,14 @@
         "name": "Titan: Efficient Polynomial Commitments from IOPs over Groups",
         "url": "https://eprint.iacr.org/2026/908",
         "type": "论文",
-        "authors": "Ravi Prakash, Samipa Samanta, Sruthi Sekar, Nitin Singh",
         "tags": [
-          "Ravi Prakash",
+          "Chethan Kamath",
           "IOPP",
           "Spartan"
         ],
         "summary": {
-          "zh": "Prakash等人在{{name}}论文中提出了Titan，一种高效的透明设置多项式承诺方案，结合基于群上IOPP的承诺与Pedersen内部承诺，平衡了证明大小和验证效率，并基于此构建了TitanSnark，相比Spartan协议，证明大小和验证复杂度从O(n)降至O(√n)。",
-          "en": "Prakash et al. propose Titan, an efficient transparent polynomial commitment scheme in their paper {{name}}, combining IOP-based outer commitments with Pedersen inner commitments, achieving sublinear proof size and verification. They build TitanSnark, a SNARK with O(√n) proof size and verification, improving over Spartan's O(n)."
+          "zh": "Kamath等人在{{name}}论文中提出了Titan，一种高效的透明设置多项式承诺方案，结合基于群上IOPP的承诺与Pedersen内部承诺，平衡了证明大小和验证效率，并基于此构建了TitanSnark，相比Spartan协议，证明大小和验证复杂度从O(n)降至O(√n)。",
+          "en": "Kamath et al. propose Titan, an efficient transparent polynomial commitment scheme in their paper {{name}}, combining IOP-based outer commitments with Pedersen inner commitments, achieving sublinear proof size and verification. They build TitanSnark, a SNARK with O(√n) proof size and verification, improving over Spartan's O(n)."
         },
         "notes": {
           "zh": [
@@ -686,15 +685,14 @@
         "name": "Jagged Polynomial Commitments (or: How to Stack Multilinears)",
         "url": "https://eprint.iacr.org/2025/917",
         "type": "论文",
-        "authors": "Kevin Jue, Eugene Rabinovich, Gyumin Roh, Ron D. Rothblum (Succinct)",
         "tags": [
-          "Kevin Jue",
+          "Tamir Hemo",
           "PCS",
           "zkVM"
         ],
         "summary": {
-          "zh": "Succinct团队（Kevin Jue等人）在论文中提出了一种新型的Jagged PCS，允许将整个计算迹作为一个多项式承诺，同时支持对单个列进行求值证明，极大降低了zkVM递归验证开销。该方案仅需5个有限域乘法/元素，无需额外预言机。",
-          "en": "The Succinct team (Kevin Jue et al.) introduced a Jagged PCS that commits the entire computation trace as a single polynomial while enabling per-column evaluation proofs, drastically reducing zkVM recursion overhead. It requires only 5 finite field multiplications per element with no additional oracles."
+          "zh": "Succinct团队（Hemo等人）在论文中提出了一种新型的Jagged PCS，允许将整个计算迹作为一个多项式承诺，同时支持对单个列进行求值证明，极大降低了zkVM递归验证开销。该方案仅需5个有限域乘法/元素，无需额外预言机。",
+          "en": "The Succinct team (Hemo et al.) introduced a Jagged PCS that commits the entire computation trace as a single polynomial while enabling per-column evaluation proofs, drastically reducing zkVM recursion overhead. It requires only 5 finite field multiplications per element with no additional oracles."
         },
         "notes": {
           "zh": [
@@ -897,6 +895,81 @@
         "answer": {
           "zh": "Strong unlinkability 指即使 issuer 与 verifier collusion，也无法关联同一用户的多次 credential usage。",
           "en": "Strong unlinkability means that even if issuers and verifiers collude, they still cannot link multiple credential uses to the same user."
+        }
+      }
+    ]
+  },
+  {
+    "date": "2026-05-21",
+    "projects": [
+      {
+        "type": "论文",
+        "name": "Miraidon: MinRank Identification",
+        "authors": "Ryann Cartor, Freeman Slaughter",
+        "url": "https://eprint.iacr.org/2026/997",
+        "tags": [
+          "Ryann Cartor",
+          "Linkable Ring Signature"
+        ],
+        "summary": {
+          "zh": "Cartor等人在{{name}}论文中提出了一类基于MinRank问题的后量子签名方案，结合新型ZK证明系统，实现了更优健壮性的数字签名、环签名及首个基于MinRank的可链接环签名。",
+          "en": "Cartor et al. proposed a MinRank-based post-quantum signature family in {{name}}, introducing a new ZK proof system supporting digital signatures, ring signatures, and the first linkable ring signature based on MinRank."
+        },
+        "slogan": {
+          "zh": "【ZK论文】MinRank也能做可链接环签名：Miraidon探索后量子ZK新方向"
+        },
+        "notes": {
+          "zh": [
+            "论文提出新型基于MinRank问题的身份识别与签名框架",
+            "核心构造结合了新的ZK证明系统以提升健壮性参数",
+            "支持数字签名、环签名与可链接环签名等高级原语",
+            "Miraidon-LRS是首个基于MinRank的可链接环签名方案",
+            "方案在公钥与签名尺寸上对比格基和码基方案具有竞争力",
+            "安全性依赖MinRank困难性，目标面向后量子密码场景"
+          ],
+          "en": [
+            "Introduces a MinRank-based identification and signature framework.",
+            "Builds on a novel ZK proof system with improved soundness.",
+            "Supports digital signatures, ring signatures, and linkable ring signatures.",
+            "First linkable ring signature construction based on MinRank.",
+            "Provides competitive key and signature sizes versus lattice/code-based schemes.",
+            "Security relies on the hardness of the MinRank problem for PQ settings."
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "Miraidon 与传统签名方案有什么不同？",
+          "en": "How is Miraidon different from traditional signature schemes?"
+        },
+        "answer": {
+          "zh": "Miraidon 基于 MinRank 而不是 lattice 或 code assumptions，并使用零知识 identification protocol 构造签名。",
+          "en": "Miraidon is based on the MinRank assumption instead of lattice or code assumptions, and derives signatures from a zero-knowledge identification protocol."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "论文中的 ring signature 有什么作用？",
+          "en": "What is the role of the ring signature in this paper?"
+        },
+        "answer": {
+          "zh": "Ring signature 允许用户匿名代表一个群体签名，而无需暴露真实 signer identity。",
+          "en": "Ring signatures allow a user to sign anonymously on behalf of a group without revealing the real signer identity."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "什么是 linkable ring signature？",
+          "en": "What is a linkable ring signature?"
+        },
+        "answer": {
+          "zh": "Linkable ring signature 能检测同一 signer 是否重复签名，同时保持匿名性。论文提出首个基于 MinRank 的方案。",
+          "en": "A linkable ring signature detects whether the same signer produced multiple signatures while preserving anonymity. This paper presents the first MinRank-based construction."
         }
       }
     ]
