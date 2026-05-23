@@ -973,5 +973,79 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-05-23",
+    "projects": [
+      {
+        "name": "Super-intelligence Survival Guide: Verification via Proof-Carrying Output",
+        "url": "https://eprint.iacr.org/2026/994",
+        "type": "论文",
+        "tags": [
+          "Hillel Avni",
+          "Proof-Carrying Output"
+        ],
+        "summary": {
+          "zh": "Avni等人在{{name}}论文中提出Proof-Carrying Output（PCO）框架，通过机器可验证证明、时间戳与追加式账本，为AI输出建立不可抵赖与可审计的合规验证机制。",
+          "en": "Avni et al. introduced the Proof-Carrying Output (PCO) framework in {{name}}, combining formal proofs, timestamps, and append-only ledgers to provide verifiable and auditable AI outputs."
+        },
+        "slogan": {
+          "zh": "【ZK论文】不给AI“盲目信任”：PCO让LLM输出自带可验证证明"
+        },
+        "notes": {
+          "zh": [
+            "论文提出PCO框架，要求AI输出附带机器可验证证明",
+            "系统通过加密承诺与追加式账本实现AI行为不可抵赖",
+            "核心安全属性包括绑定性、隐藏性、时间顺序与审计正确性",
+            "采用Rocq（Coq）与LTL/STL等形式化工具验证输出合规性",
+            "展示了税务计算、自动驾驶与推荐透明度三个案例实现",
+            "论文强调输入真实性与规范正确性不在PCO安全范围内"
+          ],
+          "en": [
+            "Introduces PCO for machine-verifiable AI outputs.",
+            "Uses cryptographic commitments and append-only ledgers for accountability.",
+            "Provides binding, hiding, temporal ordering, and audit correctness.",
+            "Builds on Rocq (Coq), LTL, and STL formal verification tools.",
+            "Demonstrates tax, autonomous driving, and recommendation case studies.",
+            "Input authenticity and specification correctness are out of scope."
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "什么是 Proof-Carrying Output（PCO）？",
+          "en": "What is Proof-Carrying Output (PCO)?"
+        },
+        "answer": {
+          "zh": "PCO 是一种 AI 输出机制，LLM 在返回答案时同时提供 machine-checkable proof，用于验证结果是否符合规则。",
+          "en": "PCO is an AI output framework where an LLM returns an answer together with a machine-checkable proof verifying compliance with rules."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "什么是 φ-compliance？",
+          "en": "What is φ-compliance?"
+        },
+        "answer": {
+          "zh": "φ-compliance 表示输入与 AI 输出满足一个 machine-checkable predicate φ，可用于自动验证合规性。",
+          "en": "φ-compliance means the input and AI output satisfy a machine-checkable predicate φ for automated compliance verification."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "Rocq（Coq）与 STL 在 PCO 中有什么作用？",
+          "en": "What roles do Rocq (Coq) and STL play in PCO?"
+        },
+        "answer": {
+          "zh": "Rocq 用于形式化证明，STL/LTL 用于验证时间逻辑与动态行为，例如 autonomous vehicle compliance。",
+          "en": "Rocq is used for formal proofs, while STL/LTL verifies temporal logic and dynamic behavior such as autonomous vehicle compliance."
+        }
+      }
+    ]
   }
 ]
