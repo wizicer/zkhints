@@ -1047,5 +1047,77 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-05-24",
+    "projects": [
+      {
+        "name": "Quantum and Post-Quantum Blockchain: A Systematic Survey",
+        "url": "https://eprint.iacr.org/2026/1017",
+        "type": "论文",
+        "tags": [
+          "Ruwanga Konara",
+          "Quantum Blockchain"
+        ],
+        "summary": {
+          "zh": "Konara等人在{{name}}论文中系统综述了量子与后量子区块链，分析了后量子密码集成与量子区块链的研究现状。",
+          "en": "Konara et al. systematically reviewed quantum and post-quantum blockchains, analyzing the integration of post-quantum cryptography and the state of quantum blockchains in their {{name}}paper."
+        },
+        "notes": {
+          "zh": [
+            "量子计算对区块链底层密码学构成根本威胁",
+            "学术研究广泛探索将后量子密码系统融入区块链以实现抗量子性",
+            "已有多种后量子区块链方案，但标准化和实用性仍在发展",
+            "量子区块链利用量子技术实现量子安全，为未来量子互联网做准备",
+            "本综述全面梳理了后量子区块链与量子区块链两个方向的研究进展"
+          ],
+          "en": [
+            "Quantum computing poses a fundamental threat to blockchain’s classical cryptography.",
+            "Extensive research integrates post-quantum cryptosystems into blockchain for quantum resistance.",
+            "Various post-quantum blockchain solutions exist, but standardization and practicality are evolving.",
+            "Quantum blockchains leverage quantum technologies for forward compatibility with the quantum internet.",
+            "This survey comprehensively reviews both post-quantum and quantum blockchain research."
+          ]
+        },
+        "slogan": {
+          "zh": "【区块链】量子与后量子区块链综述：抗量子攻击路线图？"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "为什么量子计算会威胁区块链？",
+          "en": "Why does quantum computing threaten blockchains?"
+        },
+        "answer": {
+          "zh": "量子算法可能破解当前区块链依赖的 ECC 与 RSA，因此会影响 wallet security 与 transaction signatures。",
+          "en": "Quantum algorithms may break ECC and RSA, threatening wallet security and transaction signatures used in blockchains."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "Quantum Blockchain 与 Post-Quantum Blockchain 有什么区别？",
+          "en": "What is the difference between quantum blockchains and post-quantum blockchains?"
+        },
+        "answer": {
+          "zh": "Post-Quantum Blockchain 仍运行在经典计算机上，只是使用抗量子密码；Quantum Blockchain 则直接结合量子网络与量子密码技术。",
+          "en": "Post-quantum blockchains still run on classical computers but use quantum-resistant cryptography, while quantum blockchains directly integrate quantum networks and quantum cryptography."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "为什么 forward compatibility 对未来区块链重要？",
+          "en": "Why is forward compatibility important for future blockchains?"
+        },
+        "answer": {
+          "zh": "未来 quantum internet 可能需要区块链直接支持量子通信与 quantum cryptography，因此需要提前设计兼容架构。",
+          "en": "Future quantum internet infrastructure may require blockchains to support quantum communication and quantum cryptography directly, so compatible architectures are needed early."
+        }
+      }
+    ]
   }
 ]
