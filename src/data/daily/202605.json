@@ -1080,7 +1080,7 @@
           ]
         },
         "slogan": {
-          "zh": "【区块链】量子与后量子区块链综述：抗量子攻击路线图？"
+          "zh": "【ZK论文】量子与后量子区块链综述：抗量子攻击路线图？"
         }
       }
     ],
@@ -1116,6 +1116,83 @@
         "answer": {
           "zh": "未来 quantum internet 可能需要区块链直接支持量子通信与 quantum cryptography，因此需要提前设计兼容架构。",
           "en": "Future quantum internet infrastructure may require blockchains to support quantum communication and quantum cryptography directly, so compatible architectures are needed early."
+        }
+      }
+    ]
+  },
+  {
+    "date": "2026-05-25",
+    "projects": [
+      {
+        "name": "zkExp: Zero-Knowledge Succinct Exponentiation Proofs",
+        "url": "https://cic.iacr.org/p/3/1/2",
+        "type": "论文",
+        "authors": "Biniyam Deressa, M. Anwar Hasan",
+        "tags": [
+          "Biniyam Deressa",
+          "KZG",
+          "Sumcheck",
+          "FFT"
+        ],
+        "summary": {
+          "zh": "Deressa等人在{{name}}中提出首个实现渐进最优批量幂次证明的ZK系统，创新包括基于轨迹的平方乘编码、惰性sumcheck等。验证恒定时间3.5ms，证明大小160-256B，内存低于1.1MB，适用于zkRollup、匿名凭证等场景。",
+          "en": "Deressa et al. propose the first ZK proof system achieving asymptotically optimal batched exponentiation proofs with innovations including trace-based square-and-multiply encoding, lazy sumcheck, etc. Constant verification (3.5ms), proof size 160-256B, memory <1.1MB, suitable for zkRollups, anonymous credentials."
+        },
+        "notes": {
+          "zh": [
+            "首次实现批量指数证明的渐近最优效率：证明者时间O(λN/log N)，验证恒定时间。",
+            "四项创新：基于轨迹的平方乘编码、惰性sumcheck、混合FFT分解、滑动窗口批处理。",
+            "证明大小恒定160-256B，与参数规模无关。",
+            "验证时间3.5ms，内存低于1.1MB，以太坊验证1000次指数需500K gas。",
+            "基于GDHE假设，在随机预言机模型下达到计算零知识。",
+            "应用场景：zkRollup、匿名凭证、链上门限密码学。"
+          ],
+          "en": [
+            "First to achieve asymptotically optimal batched exponentiation proofs: prover time O(λN/log N), constant verification.",
+            "Four innovations: trace-based square-and-multiply, lazy sumcheck, hybrid FFT, sliding-window batching.",
+            "Constant proof size 160-256B independent of parameter sizes.",
+            "Verification time 3.5ms, memory <1.1MB, 500K gas for 1000 exponentiations on Ethereum.",
+            "Sound under GDHE assumption, computational ZK in random oracle model.",
+            "Applications: zkRollups, anonymous credentials, on-chain threshold cryptography."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】zkExp：首个渐进最优批量幂次证明系统，160B证明搞定4096位指数！"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "zkExp 是什么？",
+          "en": "What is zkExp?"
+        },
+        "answer": {
+          "zh": "zkExp 是一种用于指数运算的零知识证明系统，可以证明 g^x = y 而不泄露私有指数 x。它支持常数大小证明和快速验证，适合 zkRollup、匿名凭证等场景。",
+          "en": "zkExp is a zero-knowledge proof system for exponentiation statements like proving g^x = y without revealing the secret exponent x. It provides constant-size proofs and fast verification, making it useful for zkRollups and anonymous credentials."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "zkExp 为什么适合区块链？",
+          "en": "Why is zkExp useful for blockchains?"
+        },
+        "answer": {
+          "zh": "zkExp 的证明只有 160–256B，并且验证时间固定，因此能降低链上 gas 和数据传输成本。即使批量证明很多 exponentiation，验证依然高效。",
+          "en": "zkExp keeps proofs at only 160–256B with constant verification time, reducing on-chain gas and bandwidth costs. Verification remains efficient even for large batches of exponentiations."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "zkExp 如何利用 sum-check？",
+          "en": "How does zkExp use sum-check?"
+        },
+        "answer": {
+          "zh": "zkExp 使用 lazy sum-check 来验证 exponentiation 约束，只在需要时展开计算，从而减少 prover 的计算和内存开销。",
+          "en": "zkExp uses lazy sum-check to verify exponentiation constraints, expanding computations only when necessary. This reduces prover computation and memory costs."
         }
       }
     ]
