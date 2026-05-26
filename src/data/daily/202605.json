@@ -1196,5 +1196,80 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-05-26",
+    "projects": [
+      {
+        "name": "Resettable Non-Interactive Zero-Knowledge: Attacks and Defenses",
+        "url": "https://eprint.iacr.org/2026/1036",
+        "type": "论文",
+        "tags": [
+          "Behzad Abdolmaleki",
+          "Fiat-Shamir",
+          "NIZK"
+        ],
+        "summary": {
+          "zh": "Abdolmaleki等人在{{name}}论文中首次系统研究了NIZK的可重置安全性，形式化了强可重置零知识定义，展示了对Fiat-Shamir编译的PIOP SNARKs等攻击，并提出基于PRF的通用编译器防御方案。",
+          "en": "Abdolmaleki et al. present the first systematic study of resettable security for NIZKs in their {{name}}paper, formalizing strong resettable ZK, demonstrating attacks on Fiat-Shamir PIOP SNARKs, and proposing a PRF-based generic compiler defense."
+        },
+        "notes": {
+          "zh": [
+            "首次针对NIZK进行可重置安全性系统研究",
+            "形式化强可重置零知识(srZK)，能捕捉部分随机数重置等实际攻击",
+            "展示对Fiat-Shamir编译的Σ协议、PIOP SNARKs（如PlonK）等的重置攻击",
+            "提出通用编译器：使用PRF从公共参数、陈述、证据和种子派生所有随机数",
+            "防御开销极小，不增加证明大小",
+            "实际应用：防止侧信道/故障注入导致证明者随机性被操纵"
+          ],
+          "en": [
+            "First systematic study of resettable security for NIZK",
+            "Formalized strong resettable ZK (srZK) covering partial randomness reset attacks",
+            "Demonstrated attacks on Fiat-Shamir compiled Σ-protocols, PIOP SNARKs like PlonK",
+            "Proposed generic compiler: derive all randomness via PRF from pp, statement, witness, and secret seed",
+            "Defense has negligible overhead and proof size unchanged",
+            "Practical relevance: prevents randomness manipulation via side-channel/fault injection"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】NIZK面临重置攻击？强可重置零知识定义与PRF防御来了"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "什么是 strong resettable zero-knowledge（srZK）？",
+          "en": "What is strong resettable zero-knowledge (srZK)?"
+        },
+        "answer": {
+          "zh": "srZK 是论文提出的新安全定义，允许攻击者只重置 prover 随机性的部分状态，而不是完全重置。这更贴近真实世界中的部分状态损坏和硬件故障场景。",
+          "en": "srZK is a new security definition introduced in the paper. It models attackers who can reset only parts of the prover’s randomness instead of the full state, matching realistic hardware fault and partial corruption scenarios."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "哪些协议容易受到 resetting attacks？",
+          "en": "Which protocols are vulnerable to resetting attacks?"
+        },
+        "answer": {
+          "zh": "论文展示了 Fiat-Shamir 编译后的 Σ-protocol、PlonK 等 PIOP-based SNARK，以及 salted Fiat-Shamir 协议都可能遭受 witness-recovery attack。",
+          "en": "The paper shows that Fiat-Shamir compiled Σ-protocols, PIOP-based SNARKs such as PlonK, and salted Fiat-Shamir protocols can all suffer from witness-recovery attacks under resetting conditions."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "论文提出的防御方案如何工作？",
+          "en": "How does the proposed defense work?"
+        },
+        "answer": {
+          "zh": "论文使用 PRF 来生成 prover 所需随机性。随机数由 public parameters、statement 和 witness 共同导出，而 PRF key 是短 secret seed，因此攻击者无法通过 reset 操纵 randomness。",
+          "en": "The defense derives prover randomness using a PRF over the public parameters, statement, and witness, keyed by a short secret seed. This prevents attackers from manipulating randomness through resets."
+        }
+      }
+    ]
   }
 ]
