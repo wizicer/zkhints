@@ -1271,5 +1271,79 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-05-29",
+    "projects": [
+      {
+        "name": "Doubly Aggregatable Signatures",
+        "url": "https://eprint.iacr.org/2026/1042",
+        "type": "论文",
+        "tags": [
+          "Georg Fuchsbauer",
+          "Multi-signatures"
+        ],
+        "summary": {
+          "zh": "Fuchsbauer等人在{{name}}论文中提出双重聚合签名原语，允许两层签名者高效聚合，并利用SNARKs实现位图谓词验证，应用于共识协议中的激励投票传播。",
+          "en": "Fuchsbauer et al. proposed doubly aggregatable signatures in their {{name}}paper, enabling efficient two-layer aggregation with SNARKs for bitmap predicates, applied to incentivizing vote dissemination in consensus."
+        },
+        "notes": {
+          "zh": [
+            "提出双重聚合签名：第一层签名聚合成第二层证明，最后合并为简洁证书",
+            "安全模型涵盖不可伪造性和抗模棱两可攻击（即防止对未观察到的签名作证）",
+            "方案一：线性大小公钥，验证仅需群加法和两次配对；方案二：常数大小公钥，但验证需线性配对",
+            "基于随机模子集和（RMSS），实现纯代数验证，便于SNARK证明位图上的简洁谓词",
+            "主要应用：激励共识协议中及时的全对全投票传播，确保验证者快速收到所有投票",
+            "通过原型实现验证了方案的具体效率"
+          ],
+          "en": [
+            "Introduced doubly aggregatable signatures: layer-0 signatures aggregated into layer-1 attestations, then aggregated into a succinct certificate.",
+            "Security model covers unforgeability and equivocation resistance.",
+            "Two constructions: one with linear-size public keys & efficient verification (2 pairings), another with constant-size keys but linear pairings.",
+            "Based on RMSS, enabling algebraic verification and SNARK-friendly predicates on bitmaps.",
+            "Key application: incentivizing timely all-to-all vote dissemination in consensus protocols.",
+            "Prototype implementation demonstrates concrete efficiency."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】双层聚合签名：SNARK加持下的共识投票激励引擎"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "什么是 Doubly Aggregatable Signatures？",
+          "en": "What are Doubly Aggregatable Signatures?"
+        },
+        "answer": {
+          "zh": "Doubly Aggregatable Signatures 是一种双层聚合签名方案。第一层 signer 对消息签名，第二层 signer 对“观察到的签名集合”再签名，最终可以聚合成一个简洁 certificate。",
+          "en": "Doubly Aggregatable Signatures are a two-layer signature aggregation scheme. Layer-0 signers sign a message, while layer-1 signers attest to the signatures they observed, producing a compact aggregated certificate."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "论文中的“who observed whom” bitmap 是什么？",
+          "en": "What is the “who observed whom” bitmap in the paper?"
+        },
+        "answer": {
+          "zh": "bitmap 用来记录哪些 layer-1 signer 观察到了哪些 layer-0 signatures。验证者可以检查签名传播和投票关系，避免伪造观察记录。",
+          "en": "The bitmap records which layer-1 signers observed which layer-0 signatures. Verifiers can use it to check vote dissemination and prevent fake observation claims."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "论文如何防止 equivocation attacks？",
+          "en": "How does the scheme prevent equivocation attacks?"
+        },
+        "answer": {
+          "zh": "安全模型要求 layer-1 signer 只能为真正观察到的 layer-0 signatures 生成 attestation，否则会被视为 forgery。协议通过密码学绑定和聚合验证来保证这一点。",
+          "en": "The security model ensures that a layer-1 signer can only attest to layer-0 signatures it actually observed. Otherwise, the attestation is treated as a forgery. Cryptographic binding and aggregation checks enforce this property."
+        }
+      }
+    ]
   }
 ]
