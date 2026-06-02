@@ -1,0 +1,77 @@
+[
+  {
+    "date": "2026-06-02",
+    "projects": [
+      {
+        "name": "Toward zkSNARK-assisted Isogeny-based Cryptography",
+        "url": "https://eprint.iacr.org/2026/1096",
+        "type": "论文",
+        "authors": "Yi-Fu Lai and Luciano Maino",
+        "tags": [
+          "Yi-Fu Lai",
+          "Isogeny-based Cryptography"
+        ],
+        "summary": {
+          "zh": "Lai和Maino在{{name}}论文中提出了面向同源密码的高效zkSNARK方案，通过优化Vélu公式和theta模型为多种同源关系提供R1CS编码，并展示了在DeuringVRF签名、SQISign和POKÉ密钥验证中的应用，移除了额外安全假设。",
+          "en": "Lai and Maino, in their {{name}}paper, propose efficient zkSNARK for isogeny-based cryptography using optimized Vélu formulas and theta model to encode various isogeny relations in R1CS, with applications to DeuringVRF signatures, SQISign, and POKÉ key validation, removing extra assumptions."
+        },
+        "notes": {
+          "zh": [
+            "现有同源密码的ZKP局限于小次数同源链，效率低",
+            "利用优化的Vélu公式为 - 和 -同源及其掩码求值提供高效 R1CS 编码",
+            "基于theta模型为特殊度数非光滑同源设计R1CS",
+            "构建编译器消除DeuringVRF签名中的“one-more”求值假设",
+            "移除SQISign的提示假设，并概念性设计POKÉ密钥验证机制",
+            "实验显示在NIST-1素数下证明大小约400 KB"
+          ],
+          "en": [
+            "Existing ZKP for isogenies limited to small-degree chains, inefficient.",
+            "Provide efficient R1CS for - and -isogenies and masked evaluations via optimized Vélu formulas.",
+            "Design R1CS for non-smooth isogenies of special degrees using theta model.",
+            "Compiler removes 'one-more' evaluation assumption in DeuringVRF signatures.",
+            "Eliminate hint-based assumption in SQISign; conceptual key validation for POKÉ.",
+            "Experimental proof sizes around 400 KB under NIST-1 primes."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】zkSNARK 遇上同源密码：让高级证明更实用"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "这篇论文研究什么问题？",
+          "en": "What problem does this paper address?"
+        },
+        "answer": {
+          "zh": "论文研究如何将 zkSNARKs 应用于同源密码学（isogeny-based cryptography）。许多同源关系难以直接放入通用证明系统中，作者提出新的 R1CS 编码来提高证明效率。",
+          "en": "The paper studies how to apply zkSNARKs to isogeny-based cryptography. Many isogeny relations are difficult to express in generic proof systems, so the authors introduce new R1CS encodings to make proofs more practical."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "论文的核心技术贡献是什么？",
+          "en": "What is the main technical contribution of the paper?"
+        },
+        "answer": {
+          "zh": "作者基于优化后的 Vélu-style formulas，为多种 isogenies 及其评估过程构建了高效的 R1CS 表达，使 zkSNARKs 能支持更多同源关系。",
+          "en": "Using optimized Vélu-style formulas, the authors develop efficient R1CS encodings for several classes of isogenies and their evaluations, enabling zkSNARKs to support a broader range of isogeny relations."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "这项工作对 SQISign 和 DeuringVRF 有什么意义？",
+          "en": "What is the significance of this work for SQISign and DeuringVRF?"
+        },
+        "answer": {
+          "zh": "论文展示了如何利用 zkSNARKs 消除 DeuringVRF 中的 one-more evaluation assumption，并讨论了减少 SQISign 对 hint-based assumption 的依赖。",
+          "en": "The paper shows how zkSNARKs can remove the one-more evaluation assumption in DeuringVRF and discusses reducing reliance on hint-based assumptions in SQISign."
+        }
+      }
+    ]
+  }
+]
