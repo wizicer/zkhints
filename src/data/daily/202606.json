@@ -73,5 +73,79 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-06-04",
+    "projects": [
+      {
+        "name": "Cryptographic Collateralized Loan without Smart Contracts",
+        "url": "https://eprint.iacr.org/2026/1123",
+        "type": "论文",
+        "tags": [
+          "Diego Castejon-Molina",
+          "Bitcoin"
+        ],
+        "summary": {
+          "zh": "Castejon-Molina等人在{{name}}论文中提出无需智能合约的加密抵押贷款协议，引入新原语VGES，用于图加密签名，确保只有在完成图中路径对应的还款后才能解密签名，支持比特币等有限脚本区块链。",
+          "en": "Castejon-Molina et al. proposed a cryptographic collateralized loan protocol without smart contracts in their {{name}}paper, introducing VGES to encrypt signatures on a graph, ensuring decryption only after repayments along valid paths, compatible with Bitcoin."
+        },
+        "notes": {
+          "zh": [
+            "提出面向有限脚本区块链（如比特币）的抵押贷款密码协议，无需智能合约。",
+            "引入新原语VGES（可验证图加密签名），确保签名仅在图路径还款完成后解密。",
+            "协议依赖预言机，但利用链上基本交易实现逻辑，兼容性广。",
+            "给出两种构造，提供链上交易数量与链下计算开销的权衡。",
+            "实现评估显示在普通硬件上均高效，可部署于比特币等链。",
+            "纯密码学方法扩展了跨链无合约借贷的可能性。"
+          ],
+          "en": [
+            "Proposes a cryptographic collateralized loan protocol for limited‑scripting blockchains (e.g., Bitcoin) without smart contracts.",
+            "Introduces VGES, a new primitive to encrypt signatures on a graph, ensuring decryption only after valid repayment paths.",
+            "Relies on oracles but uses only basic on‑chain transactions, enabling wide compatibility.",
+            "Provides two constructions with trade‑off between on‑chain transaction count and off‑chain computation.",
+            "Implementation shows efficiency on commodity hardware, deployable on Bitcoin‑like chains.",
+            "Extends the possibility of contract‑free, cross‑chain cryptographic lending."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】无需智能合约也能抵押贷款？比特币上的新范式"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "这篇论文解决了什么问题？",
+          "en": "What problem does this paper solve?"
+        },
+        "answer": {
+          "zh": "论文提出一种无需智能合约的抵押贷款协议。借贷双方只需使用区块链的基础交易功能，因此也能在 Bitcoin 等有限脚本链上实现加密贷款。",
+          "en": "The paper proposes a collateralized loan protocol that works without smart contracts. It only requires basic blockchain transactions, making it compatible with limited-scripting chains such as Bitcoin."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "什么是 VGES？",
+          "en": "What is VGES?"
+        },
+        "answer": {
+          "zh": "VGES（Verifiable Graph Encryption for Signatures）是论文提出的新密码学原语。它将抵押品分配和贷款偿还关系表示为图，并对相关签名进行加密控制。",
+          "en": "VGES (Verifiable Graph Encryption for Signatures) is a new cryptographic primitive introduced in the paper. It models collateral distribution and loan repayment relationships as a graph and controls access to signatures through encryption."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "VGES 如何保证贷款按规则执行？",
+          "en": "How does VGES enforce loan rules?"
+        },
+        "answer": {
+          "zh": "只有当借款人完成图中规定路径上的还款后，相关签名才能被解密并使用。因此抵押品释放过程与还款进度严格绑定。",
+          "en": "A signature can only be decrypted after the borrower completes repayments corresponding to a valid path in the graph. This tightly binds collateral release to repayment progress."
+        }
+      }
+    ]
   }
 ]
