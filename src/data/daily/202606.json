@@ -147,5 +147,79 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-06-08",
+    "projects": [
+      {
+        "name": "Private Information Retrieval: A Tutorial and Survey",
+        "url": "https://eprint.iacr.org/2026/1135",
+        "type": "论文",
+        "tags": [
+          "Pranav Shriram Arunachalaramanan",
+          "PIR"
+        ],
+        "summary": {
+          "zh": "Arunachalaramanan等人在{{name}}论文中撰写了关于私有信息检索（PIR）的教程与综述，介绍了多种PIR方案及其扩展，并比较了不同范式的实际效率，为选择方案和探索高级主题提供指导。",
+          "en": "Arunachalaramanan et al. present a tutorial and survey on private information retrieval (PIR) in their {{name}}paper, covering various PIR schemes, their extensions, efficiency comparisons, and guidance for practical deployment."
+        },
+        "notes": {
+          "zh": [
+            "PIR允许用户从公开数据库检索条目而不泄露检索目标",
+            "综述覆盖了信息论安全、计算安全、单服务器及多服务器等不同设定",
+            "介绍了支持关键词查询和批量查询的PIR扩展",
+            "分析了不同PIR范式的具体效率，帮助读者根据需求选择方案",
+            "讨论了PIR的实际应用场景",
+            "旨在帮助初学者理解当前研究格局并迈向更高级话题"
+          ],
+          "en": [
+            "PIR enables private database retrieval without revealing which entry is accessed.",
+            "Covers IT-secure, computational, single-/multi-server, and preprocessing models.",
+            "Extensions for keyword and batch queries are introduced.",
+            "Efficiency comparisons and selection guidance provided for different paradigms.",
+            "Discusses practical applications of PIR.",
+            "Serves as an introduction for readers new to the field and a springboard for advanced topics."
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】隐私检索全攻略：一篇搞懂PIR各类方案与实战选择"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "什么是 PIR（Private Information Retrieval）？",
+          "en": "What is Private Information Retrieval (PIR)?"
+        },
+        "answer": {
+          "zh": "PIR 是一种隐私保护技术，允许用户从数据库中获取数据，而不会让服务器知道用户查询的是哪条记录。",
+          "en": "PIR is a privacy-preserving technique that allows a user to retrieve data from a database without revealing which record is being queried."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "论文提到的 keyword query PIR 是什么？",
+          "en": "What is keyword-query PIR?"
+        },
+        "answer": {
+          "zh": "传统 PIR 查询固定索引，而 keyword-query PIR 支持按关键词检索数据，同时隐藏用户搜索的关键词。",
+          "en": "Traditional PIR retrieves data by index, while keyword-query PIR allows users to search by keywords without revealing the queried keyword."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "PIR 与零知识证明有什么联系？",
+          "en": "How is PIR related to zero-knowledge proofs?"
+        },
+        "answer": {
+          "zh": "PIR 关注隐藏用户查询内容，而零知识证明用于证明计算正确性。现代隐私系统常将 PIR 与 zkSNARKs 结合，实现既私密又可验证的数据访问。",
+          "en": "PIR focuses on hiding user queries, while zero-knowledge proofs verify computation correctness. Modern privacy systems often combine PIR with zkSNARKs to achieve both private and verifiable data access."
+        }
+      }
+    ]
   }
 ]
