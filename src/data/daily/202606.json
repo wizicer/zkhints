@@ -221,5 +221,78 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-06-09",
+    "projects": [
+      {
+        "name": "SoK: PIOP-based SNARKs for General Computation",
+        "url": "https://eprint.iacr.org/2026/1133",
+        "type": "论文",
+        "tags": [
+          "Yonghui Guan",
+          "PIOP",
+          "PCS"
+        ],
+        "summary": {
+          "zh": "Zhang等人在{{name}}论文中系统化分析了基于PIOP的SNARKs通用计算方案，提出统一框架，细化前端后端分解，并整合查找参数与递归证明组合。",
+          "en": "Zhang et al. systematized PIOP-based SNARKs for general computation in {{name}}, proposing a unified framework that refines frontend-backend decomposition and integrates lookup arguments and recursive composition."
+        },
+        "notes": {
+          "zh": [
+            "PIOP结合多项式承诺方案（PCS）是主流SNARK范式",
+            "提出统一框架，细化Thaler的前后端分解为更细粒度组件",
+            "将查找参数（lookup arguments）作为核心组件整合入框架",
+            "纳入递归证明组合，提升效率和适用性",
+            "系统梳理组件间交互，助于理解现代SNARK构造与分析"
+          ],
+          "en": [
+            "PIOP combined with PCS is the dominant SNARK paradigm",
+            "Proposes a unified framework refining Thaler's frontend-backend decomposition at finer granularity",
+            "Incorporates lookup arguments as core components",
+            "Integrates recursive proof composition for improved efficiency and applicability",
+            "Systematically analyzes component interactions to clarify modern SNARK construction"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】系统梳理PIOP-SNARK：统一框架、查找参数与递归组合一网打尽！"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "什么是 PIOP-based SNARK？",
+          "en": "What is a PIOP-based SNARK?"
+        },
+        "answer": {
+          "zh": "PIOP-based SNARK 是现代 zkSNARK 的主流设计范式。它结合 PIOP（Polynomial Interactive Oracle Proof）和 PCS（Polynomial Commitment Scheme），实现简洁证明和高效验证。",
+          "en": "A PIOP-based SNARK is a mainstream zkSNARK design paradigm that combines a Polynomial Interactive Oracle Proof (PIOP) with a Polynomial Commitment Scheme (PCS) to achieve compact proofs and efficient verification."
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "PIOP 和 PCS 分别负责什么？",
+          "en": "What are the roles of PIOP and PCS?"
+        },
+        "answer": {
+          "zh": "PIOP 负责将计算正确性转化为多项式约束检查，而 PCS 负责对多项式进行承诺并证明求值正确。两者结合形成完整的 SNARK 系统。",
+          "en": "PIOP translates computation correctness into polynomial constraints, while PCS provides commitments and proofs for polynomial evaluations. Together they form a complete SNARK system."
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "论文中的 frontend 和 backend 分层是什么意思？",
+          "en": "What does the frontend/backend decomposition mean?"
+        },
+        "answer": {
+          "zh": "Frontend 负责将计算转换为多项式约束，Backend 则负责利用 PCS 和密码学机制生成简洁证明。该框架帮助统一分析不同 SNARK 设计。",
+          "en": "The frontend converts computations into polynomial constraints, while the backend uses PCS and cryptographic techniques to produce succinct proofs. This separation helps unify the analysis of different SNARK designs."
+        }
+      }
+    ]
   }
 ]
