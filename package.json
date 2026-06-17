@@ -14,10 +14,10 @@
     "notify": "tsx src/scripts/cli.js notify"
   },
   "dependencies": {
-    "@astrojs/react": "4.4.2",
+    "@astrojs/react": "^5.0.6",
     "@tailwindcss/vite": "^4.1.3",
     "@types/react": "^19.0.12",
-    "astro": "5.16.3",
+    "astro": "^6.4.2",
     "highlight.js": "^11.11.1",
     "katex": "^0.16.22",
     "react": "^19.0.0",
