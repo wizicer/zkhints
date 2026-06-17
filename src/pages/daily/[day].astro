@@ -624,6 +624,7 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
   </head>
   <body>
     <div class="app-controls">
+      <button class="copy-button" id="shot-btn">SHOT</button>
       <button class="copy-button" id="copy-btn">Copy Text</button>
       <button class="lang-button" id="lang-btn">中文</button>
     </div>
@@ -892,6 +893,46 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
     }
   };
 
+  // Screenshot and download all cards for the current language
+  const initShotButton = () => {
+    const shotBtn = document.getElementById("shot-btn");
+    if (!shotBtn) return;
+
+    shotBtn.addEventListener("click", async () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const lang = urlParams.get("lang") || "zh";
+      const dayKey = document.title.replace("DeML OS - ", "").trim();
+      const cards = document.querySelectorAll(".news-card, .insight-card");
+
+      if (cards.length === 0) return;
+
+      shotBtn.textContent = "...";
+      shotBtn.setAttribute("disabled", "");
+
+      try {
+        const { toPng } = await import("html-to-image");
+
+        for (let i = 0; i < cards.length; i++) {
+          const card = cards[i] as HTMLElement;
+          const dataUrl = await toPng(card, { pixelRatio: 2 });
+          const filename = `${dayKey}-${i + 1}-${lang}.png`;
+          const link = document.createElement("a");
+
+          link.download = filename;
+          link.href = dataUrl;
+          link.click();
+
+          await new Promise((resolve) => setTimeout(resolve, 300));
+        }
+      } catch (err) {
+        console.error("Screenshot failed:", err);
+      } finally {
+        shotBtn.textContent = "SHOT";
+        shotBtn.removeAttribute("disabled");
+      }
+    });
+  };
+
   // Copy functionality using generateTextContent
   const initCopyButton = () => {
     const copyBtn = document.getElementById("copy-btn");
@@ -918,6 +959,7 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
     convertTwitterHandles();
     initLanguageToggle();
     initCopyButton();
+    initShotButton();
     generateQRCodes();
   };
 

@@ -19,6 +19,7 @@
     "@types/react": "^19.0.12",
     "astro": "^6.4.2",
     "highlight.js": "^11.11.1",
+    "html-to-image": "^1.11.13",
     "katex": "^0.16.22",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
