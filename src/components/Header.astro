@@ -4,6 +4,22 @@ import hintaIcon from "../assets/hinta_icon.png";
 import githubIcon from "../assets/icons/github.svg";
 import twitterIcon from "../assets/icons/twitter.svg";
 import hatIcon from "../assets/icons/hat.svg";
+import {
+  defaultLanguage,
+  languageLabels,
+  languages,
+  localizedPath,
+  t,
+  withLanguagePrefix,
+  type Language,
+} from "../i18n";
+
+interface Props {
+  lang?: Language;
+}
+
+const lang = Astro.props.lang || defaultLanguage;
+const currentPath = Astro.url.pathname;
 
 const socialLinks = [
   {
@@ -21,10 +37,10 @@ const socialLinks = [
     external: true,
   },
   {
-    href: "/about",
+    href: withLanguagePrefix("/about", lang),
     icon: hatIcon,
     alt: "ZKHints",
-    title: "About",
+    title: t("about", lang),
     external: false,
   },
 ];
@@ -34,7 +50,7 @@ const socialLinks = [
   <div class="container mx-auto px-4 flex justify-between items-center">
     <div class="flex items-center space-x-4">
       <a
-        href="/"
+        href={localizedPath("/", lang)}
         class="text-lg font-bold text-gray-900 hover:text-blue-600 transition-colors flex items-center gap-2"
       >
         <Image src={hintaIcon} alt="ZK Hints Icon" width={24} height={24} />
@@ -42,21 +58,35 @@ const socialLinks = [
       </a>
       <nav class="hidden md:flex space-x-1">
         <a
-          href="/"
+          href={localizedPath("/", lang)}
           class="hidden px-3 py-2 text-sm text-gray-600 hover:text-blue-600 transition-colors"
         >
-          Home
+          {t("home", lang)}
         </a>
         <a
-          href="/about"
+          href={localizedPath("/about", lang)}
           class="hidden px-3 py-2 text-sm text-gray-600 hover:text-blue-600 transition-colors"
         >
-          About
+          {t("about", lang)}
         </a>
       </nav>
     </div>
 
     <div class="flex items-center space-x-4">
+      <label class="sr-only" for="language-switcher">{t("language", lang)}</label>
+      <select
+        id="language-switcher"
+        class="text-sm border border-gray-200 rounded-md bg-white px-2 py-1 text-gray-700"
+        aria-label={t("language", lang)}
+      >
+        {
+          languages.map((language) => (
+            <option value={localizedPath(currentPath, language)} selected={language === lang}>
+              {languageLabels[language]}
+            </option>
+          ))
+        }
+      </select>
       {
         socialLinks.map((link) => (
           <a
@@ -79,3 +109,13 @@ const socialLinks = [
     </div>
   </div>
 </header>
+
+<script>
+  const switcher = document.getElementById("language-switcher") as HTMLSelectElement | null;
+  switcher?.addEventListener("change", () => {
+    const selected = switcher.options[switcher.selectedIndex];
+    const nextUrl = selected.value;
+    localStorage.setItem("zkHintsLanguage", selected.text.includes("日本語") ? "ja" : "en");
+    window.location.href = nextUrl;
+  });
+</script>

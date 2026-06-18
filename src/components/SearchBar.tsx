@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { sections } from "../data/index";
+import { getSections } from "../data/index";
 import searchIcon from "../assets/icons/search.svg";
 import closeIcon from "../assets/icons/close.svg";
+import { defaultLanguage, localizedPath, t, type Language } from "../i18n";
 
 interface SearchResult {
   id: string;
@@ -11,10 +12,15 @@ interface SearchResult {
   url: string;
 }
 
-const SearchBar: React.FC = () => {
+interface Props {
+  lang?: Language;
+}
+
+const SearchBar: React.FC<Props> = ({ lang = defaultLanguage }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
   const [showResults, setShowResults] = useState(false);
+  const sections = getSections(lang);
 
   // Perform search whenever searchTerm changes
   useEffect(() => {
@@ -43,7 +49,7 @@ const SearchBar: React.FC = () => {
             title: item.title,
             description: item.description,
             category: section.title,
-            url: `/${item.id}`,
+            url: localizedPath(item.path || item.id, lang),
           });
         }
       });
@@ -74,7 +80,7 @@ const SearchBar: React.FC = () => {
             onChange={(e) => {
               setSearchTerm(e.target.value);
             }}
-            placeholder="Search..."
+            placeholder={t("search", lang)}
             className="w-full py-3 pl-10 pr-12 text-gray-700 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -113,7 +119,7 @@ const SearchBar: React.FC = () => {
               ))}
             </ul>
           ) : (
-            <div className="px-4 py-3 text-sm text-gray-500">No results found</div>
+            <div className="px-4 py-3 text-sm text-gray-500">{t("noResults", lang)}</div>
           )}
         </div>
       )}

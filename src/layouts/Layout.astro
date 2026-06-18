@@ -1,13 +1,14 @@
 ---
 import Header from "../components/Header.astro";
 import "../styles/global.css";
-import { sections } from "../data/index";
+import { getSections } from "../data/index";
 import CheatsheetHeader from "../components/CheatsheetHeader.astro";
 import { Image } from "astro:assets";
 import reportErrorIcon from "../assets/icons/report-error.svg";
 import editPageIcon from "../assets/icons/edit-page.svg";
 import DuplicateDetector from "../components/DuplicateDetector.astro";
 import GoogleAnalytics from "../components/GoogleAnalytics.astro";
+import { getLanguageFromPath, t } from "../i18n";
 
 interface Props {
   title?: string;
@@ -15,6 +16,8 @@ interface Props {
 }
 
 const { title: propTitle, id } = Astro.props;
+const lang = getLanguageFromPath(Astro.url.pathname);
+const sections = getSections(lang);
 
 const {
   title: itemTitle,
@@ -31,6 +34,7 @@ const getSourceFilePath = () => {
   if (id) return `src/pages/${id}.astro`;
 
   const path = Astro.url.pathname.replace(/^\/|\/$/g, "") || "index";
+  if (path === "ja") return "src/pages/ja/index.astro";
   if (path === "index") return "src/data/index.ts";
   return `src/pages/${path}.astro`;
 };
@@ -43,7 +47,7 @@ const sectionTitle = sections
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -84,7 +88,7 @@ const sectionTitle = sections
     <GoogleAnalytics />
   </head>
   <body class="font-sans text-gray-800 leading-relaxed bg-gray-50">
-    <Header />
+    <Header lang={lang} />
     <DuplicateDetector />
 
     <main class="w-full max-w-7xl mx-auto px-4">
@@ -103,7 +107,7 @@ const sectionTitle = sections
 
     <footer class="py-8 bg-gray-50 mt-12">
       <div class="container mx-auto px-4 text-center text-gray-500 text-sm">
-        <p>Built with <span class="beating-heart">❤</span> by @icerdesign</p>
+        <p>{t("builtWith", lang)} <span class="beating-heart">❤</span> {t("by", lang)}</p>
         <div class="mt-4 flex justify-center space-x-6">
           <a
             href={`https://github.com/wizicer/zkhints/issues/new?title=Error on ${title}${id ? ` [${id}]` : ""} page&body=I found an error on the ${title} page.&labels=content`}
@@ -111,8 +115,8 @@ const sectionTitle = sections
             rel="noopener noreferrer"
             class="text-gray-600 hover:text-blue-600 transition-colors flex items-center"
           >
-            <Image src={reportErrorIcon} alt="Report error" width={16} height={16} class="mr-1" />
-            Report an issue
+            <Image src={reportErrorIcon} alt={t("reportIssue", lang)} width={16} height={16} class="mr-1" />
+            {t("reportIssue", lang)}
           </a>
           <a
             href={`https://github.com/wizicer/zkhints/edit/main/${sourceFilePath}`}
@@ -120,8 +124,8 @@ const sectionTitle = sections
             rel="noopener noreferrer"
             class="text-gray-600 hover:text-blue-600 transition-colors flex items-center"
           >
-            <Image src={editPageIcon} alt="Edit page" width={16} height={16} class="mr-1" />
-            Edit this page
+            <Image src={editPageIcon} alt={t("editPage", lang)} width={16} height={16} class="mr-1" />
+            {t("editPage", lang)}
           </a>
         </div>
       </div>

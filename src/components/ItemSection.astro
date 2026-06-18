@@ -3,14 +3,16 @@ import { Image } from "astro:assets";
 import constructionIcon from "../assets/icons/construction.svg";
 import favoriteIcon from "../assets/icons/star.svg";
 import favoriteFilledIcon from "../assets/icons/star-filled.svg";
-import type { Item } from "../data/index";
+import type { LocalizedItem } from "../data/index";
+import { defaultLanguage, localizedPath, t, type Language } from "../i18n";
 
 interface Props {
   title: string;
-  items: Item[];
+  items: LocalizedItem[];
+  lang?: Language;
 }
 
-const { title, items } = Astro.props;
+const { title, items, lang = defaultLanguage } = Astro.props;
 ---
 
 <div class="mb-8">
@@ -21,14 +23,14 @@ const { title, items } = Astro.props;
     {
       items.map((item) => (
         <a
-          href={`/${item.path || item.id}`}
+          href={localizedPath(item.path || item.id, lang)}
           class="favorite-item-container overflow-hidden block p-4 hover:text-blue-600 transition-colors text-gray-700 bg-white rounded-md shadow-sm border border-gray-100 hover:shadow-md hover:border-gray-200 transition-all relative"
         >
           {item.construction && (
             <div class="absolute top-2 right-5 transform translate-x-1/3 -translate-y-1/3 z-10">
               <div class="bg-yellow-400 text-xs font-bold px-2 py-1 rounded-full shadow-md flex items-center">
                 <Image src={constructionIcon} alt="Construction" width="16" height="16" />
-                <span class="ml-1">WIP</span>
+                <span class="ml-1">{t("wip", lang)}</span>
               </div>
             </div>
           )}

@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { eips } from "../data/eip/index";
+import { getEips } from "../data/eip/index";
 import { Image } from "astro:assets";
 import externalLinkIcon from "../assets/icons/external-link.svg";
 import githubIcon from "../assets/icons/github.svg";
@@ -19,9 +19,11 @@ import Eip7007 from "../components/eip/Eip7007.astro";
 import Eip7734 from "../components/eip/Eip7734.astro";
 import Eip7913 from "../components/eip/Eip7913.astro";
 import Eip7812 from "../components/eip/Eip7812.astro";
+import { defaultLanguage } from "../i18n";
 
 // Group EIPs by status
 const statusOrder = ["Final", "Last Call", "Review", "Draft", "Stagnant", "Withdrawn"];
+const eips = getEips(defaultLanguage);
 const eipsByStatus: Record<string, EIP[]> = eips.reduce(
   (acc, eip) => {
     if (!acc[eip.status]) {

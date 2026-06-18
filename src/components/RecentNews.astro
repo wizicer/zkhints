@@ -7,6 +7,13 @@ import {
   defaultAvatar,
 } from "../data/daily/index";
 import { Image } from "astro:assets";
+import { defaultLanguage, localizedPath, t, type Language } from "../i18n";
+
+interface Props {
+  lang?: Language;
+}
+
+const { lang = defaultLanguage } = Astro.props;
 
 // Get the 5 most recent news items with their first project
 const recentNews = newsData
@@ -21,20 +28,23 @@ const recentNews = newsData
   }));
 
 // Helper to get bilingual text
-const getText = (text: string | BilingualText, lang: "en" | "zh"): string => {
+const getText = (text: string | BilingualText, lang: Language | "zh"): string => {
   if (typeof text === "string") {
     return lang === "zh" ? text : "";
   }
-  return text[lang];
+  return text[lang] || text.en;
 };
 
 // Format date
-const formatDate = (dateStr: string, lang: "en" | "zh"): string => {
+const formatDate = (dateStr: string, lang: Language | "zh"): string => {
   const date = new Date(dateStr);
   const month = date.getMonth() + 1;
   const day = date.getDate();
 
   if (lang === "zh") {
+    return `${month}月${day}日`;
+  }
+  if (lang === "ja") {
     return `${month}月${day}日`;
   }
   const monthNames = [
@@ -62,19 +72,18 @@ const getAvatar = (type: string) => {
 
 <div class="mb-8">
   <h2 class="category item mt-8 font-medium text-lg border-b pb-1">
-    <span data-lang-en>Recent News</span>
-    <span data-lang-zh class="hidden">最近新闻</span>
+    {t("recentNews", lang)}
   </h2>
 
   <div class="mt-4 bg-white rounded-md shadow-sm border border-gray-100 overflow-hidden">
-    <a id="news-ticker-link" href={`/daily/${recentNews[0].year}-${recentNews[0].month}#date-${recentNews[0].date}`} class="block">
+    <a id="news-ticker-link" href={`${localizedPath(`/daily/${recentNews[0].year}-${recentNews[0].month}`, lang)}#date-${recentNews[0].date}`} class="block">
       <div class="news-ticker-container relative h-14 hover:bg-gray-50 transition-colors cursor-pointer">
         {
           recentNews.map((item, index) => (
             <div
               class="news-ticker-item absolute inset-0 flex items-center gap-3 px-3 opacity-0 pointer-events-none"
               data-index={index}
-              data-url={`/daily/${item.year}-${item.month}#date-${item.date}`}
+              data-url={`${localizedPath(`/daily/${item.year}-${item.month}`, lang)}#date-${item.date}`}
               style={index === 0 ? "opacity: 1;" : ""}
             >
               <Image
@@ -85,7 +94,7 @@ const getAvatar = (type: string) => {
                 class="w-8 h-8 rounded-full flex-shrink-0"
               />
               <div class="text-xs text-gray-500 flex-shrink-0 w-16">
-                <span data-lang-en>{formatDate(item.date, "en")}</span>
+                <span data-lang-en>{formatDate(item.date, lang)}</span>
                 <span data-lang-zh class="hidden">
                   {formatDate(item.date, "zh")}
                 </span>

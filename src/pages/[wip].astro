@@ -1,20 +1,22 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import CheatsheetHeader from "../components/CheatsheetHeader.astro";
-import { sections } from "../data/index";
-import type { Item } from "../data/index";
+import { getSections } from "../data/index";
+import type { LocalizedItem } from "../data/index";
 import { Image } from "astro:assets";
 import constructionCat1 from "../assets/construction/construction_cat_1.png";
+import { defaultLanguage, t } from "../i18n";
 
 interface PathItem {
   params: { wip: string };
   props: {
-    item: Item;
+    item: LocalizedItem;
     sectionTitle: string;
   };
 }
 
 export function getStaticPaths() {
+  const sections = getSections(defaultLanguage);
   // Get all items marked as construction: true
   const paths: PathItem[] = [];
 
@@ -38,9 +40,9 @@ export function getStaticPaths() {
 const { item, sectionTitle } = Astro.props;
 ---
 
-<Layout title={`${item.title} (WIP)`}>
+<Layout title={`${item.title} (${t("wip", defaultLanguage)})`}>
   <CheatsheetHeader
-    title={`${item.title} (Work in Progress)`}
+    title={`${item.title} (${t("workInProgress", defaultLanguage)})`}
     description={item.description}
     category={sectionTitle}
   />
@@ -55,9 +57,9 @@ const { item, sectionTitle } = Astro.props;
         class="h-32 w-32 mr-4 object-contain md:absolute md:-top-12"
       />
       <div class="ml-0 md:ml-40">
-        <p class="text-yellow-700 font-bold">This page is under construction</p>
+        <p class="text-yellow-700 font-bold">{t("underConstruction", defaultLanguage)}</p>
         <p class="text-yellow-600">
-          Content for this section is being developed and will be available soon.
+          {t("underConstructionBody", defaultLanguage)}
         </p>
       </div>
     </div>
@@ -101,7 +103,7 @@ const { item, sectionTitle } = Astro.props;
             stroke-width="2"
             d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
         </svg>
-        Back to Cheatsheets
+        {t("backToCheatsheets", defaultLanguage)}
       </a>
     </div>
   </div>
