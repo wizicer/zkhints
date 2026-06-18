@@ -217,6 +217,29 @@ const translations = {
     "toggle-language": "Switch to English",
     reset: "重置",
   },
+  ja: {
+    title: "インタラクティブな Zero-Knowledge 3-Colorability デモ",
+    intro1:
+      'これは 3-colorable graphs のための <a href="http://en.wikipedia.org/wiki/Zero-knowledge_proof" target="_blank" class="hover:underline">zero-knowledge proof protocol</a> のインタラクティブデモです。Zero-knowledge proofs により、graph の実際の 3-coloring を明かさずに、その graph が 3-colorable であることを <em>verifier</em> に納得させられます。',
+    intro2:
+      "この application では verifier として protocol を体験できます。application (prover) は coloring を隠した graph を提示し、verifier は edge を選んで、その両端の coloring だけを reveal できます。graph を選び、いくつかの edge をクリックしてみてください。",
+    pickGraph: "graph を選択",
+    reveal: "Reveal",
+    "turbo-label": "自動:",
+    confidence: "信頼度:",
+    graph1: "Graph 1",
+    graph2: "Graph 2",
+    explanation1:
+      "game の round ごとに colors が変わることに気づくかもしれません。prover は一度 choice を提示した後に答えを変えることはできませんが、choice ごとに coloring を shuffle することはできます。そうしないと full coloring を reverse engineer できてしまい、zero-knowledge proof ではなくなります。<em>Reveal</em> button を押すと、application が約束を破っていないか確認できます。ただし true coloring を見せてしまうので、これは当然 zero-knowledge protocol の一部ではありません。",
+    explanation2:
+      "edge を手動でクリックするのに飽きたら、自動を選ぶと speed up できます。protocol の round を重ねるほど、prover が嘘をついている (graph が 3-colorable ではない) のに、あなたが選んだ edge で偶然逃げ切る確率は下がります。この値が信頼度 metric に反映されます。",
+    exercise1:
+      "<em>Exercise 1:</em> 現在は adjacent な node pairs だけを選んで確認できます。任意の node pairs を選べる場合でも、この proof は zero knowledge のままでしょうか？",
+    exercise2:
+      "<em>Exercise 2:</em> 現在 confidence に使われている equation は <code>1-(1/E)^n</code> です。ここで <code>E</code> は graph の edges 数、<code>n</code> は trial 数です。この equation は正しいでしょうか？prior がないのはなぜでしょうか？",
+    "toggle-language": "Switch to English",
+    reset: "リセット",
+  },
 };
 
 // Global state
@@ -226,7 +249,7 @@ let globalDot: Edge[] | null = null;
 let globalAuto = false;
 let globalTricky = false;
 let globalTrials = 0;
-let globalLanguage: "en" | "zh" = "en"; // Default language is English
+let globalLanguage: "en" | "zh" | "ja" = "en"; // Default language is English
 let rescheduleTimer = -1;
 
 // Utility functions
@@ -653,6 +676,10 @@ function init(): void {
         globalLanguage = globalLanguage === "en" ? "zh" : "en";
         updateLanguage();
       });
+    }
+
+    if (document.documentElement.lang === "ja") {
+      globalLanguage = "ja";
     }
 
     updateLanguage();

@@ -1,0 +1,224 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getEips } from "../../data/eip/index";
+import { Image } from "astro:assets";
+import externalLinkIcon from "../../assets/icons/external-link.svg";
+import githubIcon from "../../assets/icons/github.svg";
+import type { EIP } from "../../data/model";
+import Eip196 from "../../components/eip/Eip196.astro";
+import Eip197 from "../../components/eip/Eip197.astro";
+import Eip1108 from "../../components/eip/Eip1108.astro";
+import Eip2537 from "../../components/eip/Eip2537.astro";
+import Eip2565 from "../../components/eip/Eip2565.astro";
+import Eip7951 from "../../components/eip/Eip7951.astro";
+import Eip1271 from "../../components/eip/Eip1271.astro";
+import Eip2098 from "../../components/eip/Eip2098.astro";
+import Eip5732 from "../../components/eip/Eip5732.astro";
+import Eip6492 from "../../components/eip/Eip6492.astro";
+import Eip7007 from "../../components/eip/Eip7007.astro";
+import Eip7734 from "../../components/eip/Eip7734.astro";
+import Eip7913 from "../../components/eip/Eip7913.astro";
+import Eip7812 from "../../components/eip/Eip7812.astro";
+
+// Group EIPs by status
+const statusOrder = ["Final", "Last Call", "Review", "Draft", "Stagnant", "Withdrawn"];
+const eips = getEips("ja");
+const eipsByStatus: Record<string, EIP[]> = eips.reduce(
+  (acc, eip) => {
+    if (!acc[eip.status]) {
+      acc[eip.status] = [];
+    }
+    acc[eip.status].push(eip);
+    return acc;
+  },
+  {} as Record<string, EIP[]>
+);
+
+// Sort EIPs by ID within each status group
+Object.keys(eipsByStatus).forEach((status) => {
+  eipsByStatus[status].sort((a, b) => a.id - b.id);
+});
+
+// Define colors for each status
+const statusColors: Record<string, string> = {
+  Final: "bg-green-50 border-green-500 text-green-800",
+  "Last Call": "bg-blue-50 border-blue-500 text-blue-800",
+  Review: "bg-purple-50 border-purple-500 text-purple-800",
+  Draft: "bg-yellow-50 border-yellow-500 text-yellow-800",
+  Stagnant: "bg-gray-50 border-gray-500 text-gray-800",
+  Withdrawn: "bg-red-50 border-red-500 text-red-800",
+};
+---
+
+<Layout id="eip">
+  <div class="container mx-auto px-4 py-8">
+    {
+      statusOrder.map((status) => {
+        if (!eipsByStatus[status] || eipsByStatus[status].length === 0) return null;
+
+        return (
+          <section class={`mb-12 p-4 rounded-lg ${statusColors[status]}`}>
+            <h2 class="text-2xl font-semibold mb-4 pb-2 border-b border-current">
+              {status} <span class="text-sm font-normal">({eipsByStatus[status].length})</span>
+            </h2>
+
+            <div class="space-y-2">
+              {eipsByStatus[status].map((eip) => (
+                <details
+                  class={`bg-white rounded shadow-sm ${eip.star ? "ring-2 ring-yellow-300" : ""}`}
+                >
+                  <summary class="p-3 cursor-pointer hover:bg-gray-50 flex justify-between items-center">
+                    <span class="font-medium flex items-center">
+                      {eip.star && <span class="text-yellow-500 mr-2">⭐</span>}
+                      {eip.erc ? `ERC-${eip.id}` : `EIP-${eip.id}`}: {eip.title}
+                      {eip.flag === "new" && (
+                        <span class="ml-2 px-2 py-0.5 text-xs font-semibold text-green-800 bg-green-100 rounded-full">
+                          New
+                        </span>
+                      )}
+                      {eip.flag === "update" && (
+                        <span class="ml-2 px-2 py-0.5 text-xs font-semibold text-blue-800 bg-blue-100 rounded-full">
+                          Updated
+                        </span>
+                      )}
+                    </span>
+                    <a
+                      href={`https://eips.ethereum.org/EIPS/eip-${eip.id}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="ml-2 text-gray-500 hover:text-blue-600"
+                      title="View on ethereum.org"
+                      onclick="event.stopPropagation()"
+                    >
+                      <Image src={externalLinkIcon} alt="外部リンク" class="h-4 w-4 inline" />
+                    </a>
+                  </summary>
+
+                  {eip.authors && eip.authors.length > 0 && (
+                    <div class="p-3 pt-0 border-t border-gray-100">
+                      <div class="flex flex-wrap gap-2 mt-1">
+                        <div class="inline-block">
+                          <span class="text-sm font-medium text-gray-700">Authors:</span>
+                        </div>
+                        {eip.authors.map((author) => (
+                          <div class="inline-block">
+                            {author.url || author.email ? (
+                              <a
+                                href={author.url || `mailto:${author.email}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="inline-block px-2 py-1 text-xs font-medium text-gray-700 hover:text-blue-600 bg-gray-100 rounded-full hover:bg-blue-50 transition-colors"
+                                title={`${author.name}${author.email ? ` (${author.email})` : ""}`}
+                              >
+                                {author.name}
+                                {author.nick && ` (${author.nick})`}
+                              </a>
+                            ) : (
+                              <span
+                                class="inline-block px-2 py-1 text-xs font-medium text-gray-700 bg-gray-100 rounded-full"
+                                title={`${author.name}${author.email ? ` (${author.email})` : ""}`}
+                              >
+                                {author.name}
+                                {author.nick && ` (${author.nick})`}
+                              </span>
+                            )}
+                          </div>
+                        ))}
+                        <div class="inline-block">
+                          <span class="text-sm font-medium text-gray-700">Links:</span>
+                        </div>
+                        <div class="inline-block">
+                          <a
+                            href={
+                              eip.erc
+                                ? `https://github.com/ethereum/ercs/blob/master/ERCS/erc-${eip.id}.md`
+                                : `https://github.com/ethereum/EIPs/blob/master/EIPS/eip-${eip.id}.md`
+                            }
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-block px-2 py-1 text-xs font-medium text-gray-700 hover:text-blue-600 bg-gray-100 rounded-full hover:bg-blue-50 transition-colors"
+                            title="View on ethereum.org"
+                            onclick="event.stopPropagation()"
+                          >
+                            <Image src={githubIcon} alt="Github" class="h-4 w-4 inline" />
+                          </a>
+                        </div>
+                      </div>
+
+                      {eip.star && (
+                        <div class="mt-3 text-sm text-yellow-700 bg-yellow-50 p-2 rounded">
+                          <span class="font-medium">⭐</span> This EIP is particularly important for
+                          understanding ZK cryptography in Ethereum.
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {(eip.id === 196 ||
+                    eip.id === 197 ||
+                    eip.id === 1108 ||
+                    eip.id === 2537 ||
+                    eip.id === 2565 ||
+                    eip.id === 7951 ||
+                    eip.id === 1271 ||
+                    eip.id === 2098 ||
+                    eip.id === 5732 ||
+                    eip.id === 6492 ||
+                    eip.id === 7007 ||
+                    eip.id === 7734 ||
+                    eip.id === 7913 ||
+                    eip.id === 7812) && (
+                    <div class="p-3 border-t border-gray-100">
+                      {eip.id === 196 && <Eip196 />}
+                      {eip.id === 197 && <Eip197 />}
+                      {eip.id === 1108 && <Eip1108 />}
+                      {eip.id === 2537 && <Eip2537 />}
+                      {eip.id === 2565 && <Eip2565 />}
+                      {eip.id === 7951 && <Eip7951 />}
+                      {eip.id === 1271 && <Eip1271 />}
+                      {eip.id === 2098 && <Eip2098 />}
+                      {eip.id === 5732 && <Eip5732 />}
+                      {eip.id === 6492 && <Eip6492 />}
+                      {eip.id === 7007 && <Eip7007 />}
+                      {eip.id === 7734 && <Eip7734 />}
+                      {eip.id === 7913 && <Eip7913 />}
+                      {eip.id === 7812 && <Eip7812 />}
+                    </div>
+                  )}
+                </details>
+              ))}
+            </div>
+          </section>
+        );
+      })
+    }
+
+    <div class="mt-8">
+      <a href="/ja" class="inline-flex items-center text-blue-600 hover:underline">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5 mr-1"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+        </svg>
+        Back to Cheatsheets
+      </a>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  details > summary {
+    list-style: none;
+  }
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

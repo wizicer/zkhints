@@ -1,0 +1,4 @@
+- ✨ Custom gates は複数の cells に制約をかける expressions です
+- 🔘 Selectors は本質的には固定された constant columns です。boolean として扱われ、gates を有効化/無効化するために使います
+- 🔄 前の row や次の row の cells を参照できます。ただし halo2 では最大 7 までです
+- 📝 この例では `b[1]` を次の row として表します

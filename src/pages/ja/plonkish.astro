@@ -1,0 +1,223 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import SectionHeading from "../../components/SectionHeading.astro";
+import SubsectionHeading from "../../components/SubsectionHeading.astro";
+import { Image } from "astro:assets";
+import Prose from "../../components/Prose.astro";
+import constructionCat1 from "../../assets/construction/construction_cat_1.png";
+import circuitCompilePlonkScript from "../../assets/circuit/cicuit-compile-plonk-script.png";
+import plonkishConstraintsOverview from "../../assets/circuit/plonkish-constraints-overview.png";
+import plonkishConstraintsGate from "../../assets/circuit/plonkish-constraints-gate.png";
+import plonkishConstraintsPermutation from "../../assets/circuit/plonkish-constraints-permutation.png";
+import plonkishConstraintsLookup from "../../assets/circuit/plonkish-constraints-lookup.png";
+import plonkishTricksLimitingValue from "../../assets/circuit/plonkish-tricks-limiting-value.png";
+import plonkishTricksIfElse from "../../assets/circuit/plonkish-tricks-if-else.png";
+import plonkishTricksIfEqual from "../../assets/circuit/plonkish-tricks-if-equal.png";
+
+import { Content as ArithmeticCircuits } from "./plonkish/arithmetic-circuits.md";
+import { Content as PlonkishCircuits } from "./plonkish/plonkish-circuits.md";
+import { Content as CustomGates } from "./plonkish/custom-gates.md";
+import { Content as CopyConstraints } from "./plonkish/copy-constraints.md";
+import { Content as LookupTables } from "./plonkish/lookup-tables.md";
+import { Content as GateTricks } from "./plonkish/gate-tricks.md";
+import { Content as LimitingValues } from "./plonkish/limiting-values.md";
+import { Content as IfElseCondition } from "./plonkish/if-else-condition.md";
+import { Content as IsZeroCheck } from "./plonkish/is-zero-check.md";
+import { Content as IsZeroSide } from "./plonkish/is-zero-side.md";
+import { Content as IfEqualCondition } from "./plonkish/if-equal-condition.md";
+---
+
+<Layout id="plonkish">
+  <main class="container mx-auto px-4 py-8">
+    <section class="mb-10">
+      <SectionHeading title="算術回路を書く" gradientPart="算術回路" />
+      <div class="flex flex-col md:flex-row gap-6 items-center">
+        <div class="prose max-w-none md:w-3/8">
+          <div class="mt-4">
+            <Prose>
+              <ArithmeticCircuits />
+            </Prose>
+          </div>
+        </div>
+        <div class="md:w-5/8 flex justify-center">
+          <Image
+            src={circuitCompilePlonkScript}
+            alt="Plonk Script への回路コンパイル"
+            class="max-w-full md:max-w-md"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <SectionHeading title="Plonkish 算術回路" gradientPart="算術回路" />
+      <p class="mb-4">
+        Plonkish arithmetic circuits are different from R1CS-like circuits in that they are designed
+        to resemble a table, rather than a simple list of computations. This design makes the
+        circuit more complex to reason about, but also provides some advantages in terms of
+        computational efficiency.
+      </p>
+      <div class="flex flex-col md:flex-row gap-6 items-center">
+        <div class="prose max-w-none md:w-1/2">
+          <Prose>
+            <PlonkishCircuits />
+          </Prose>
+        </div>
+        <div class="md:w-1/2 flex justify-center">
+          <Image
+            src={plonkishConstraintsOverview}
+            alt="Plonkish 制約の概要"
+            class="max-w-full md:max-w-md"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <SubsectionHeading title="Custom Gates" />
+      <div class="flex flex-col md:flex-row gap-6 items-center">
+        <div class="prose max-w-none md:w-1/2">
+          <Prose>
+            <CustomGates />
+          </Prose>
+        </div>
+        <div class="md:w-1/2 flex justify-center">
+          <Image
+            src={plonkishConstraintsGate}
+            alt="Custom Gate 制約"
+            class="max-w-full md:max-w-md md:w-76"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <SubsectionHeading title="Copy Constraints" />
+      <div class="flex flex-col md:flex-row gap-6 items-center">
+        <div class="prose max-w-none md:w-1/2">
+          <Prose>
+            <CopyConstraints />
+          </Prose>
+        </div>
+        <div class="md:w-1/2 flex justify-center">
+          <Image
+            src={plonkishConstraintsPermutation}
+            alt="Copy Constraints"
+            class="max-w-full md:max-w-md md:w-76"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <SubsectionHeading title="Lookup Tables" />
+      <div class="flex flex-col md:flex-row gap-6 items-center">
+        <div class="prose max-w-none md:w-1/2">
+          <Prose>
+            <LookupTables />
+          </Prose>
+        </div>
+        <div class="md:w-1/2 flex justify-center">
+          <Image
+            src={plonkishConstraintsLookup}
+            alt="Lookup Tables"
+            class="max-w-full md:max-w-md md:w-76"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <SectionHeading title="Gate Tricks" gradientPart="Gate" />
+      <div class="flex flex-col md:flex-row gap-6 items-center">
+        <div class="mt-4">
+          <Prose>
+            <GateTricks />
+          </Prose>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <SubsectionHeading title="値の制限" />
+      <div class="flex flex-col md:flex-row gap-6 items-center">
+        <div class="prose max-w-none md:w-1/2">
+          <Prose>
+            <LimitingValues />
+          </Prose>
+        </div>
+        <div class="md:w-1/2 flex justify-center">
+          <Image
+            src={plonkishTricksLimitingValue}
+            alt="値制限 Gate"
+            class="max-w-full md:max-w-md md:w-116"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <SubsectionHeading title="If-Else 条件" />
+      <div class="flex flex-col md:flex-row gap-6 items-center">
+        <div class="prose max-w-none md:w-1/2">
+          <Prose>
+            <IfElseCondition />
+          </Prose>
+        </div>
+        <div class="md:w-1/2 flex justify-center">
+          <Image
+            src={plonkishTricksIfElse}
+            alt="If-Else 条件"
+            class="max-w-full md:max-w-md md:w-76"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <SubsectionHeading title="Is-Zero Check" />
+      <div class="flex flex-col md:flex-row gap-6 items-center">
+        <div class="prose max-w-none md:w-1/2">
+          <Prose>
+            <IsZeroCheck />
+          </Prose>
+        </div>
+        <div class="md:w-1/2 flex justify-center">
+          <IsZeroSide />
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <SubsectionHeading title="If-Equal 条件" />
+      <div class="flex flex-col md:flex-row gap-6 items-center">
+        <div class="prose max-w-none md:w-1/2">
+          <Prose>
+            <IfEqualCondition />
+          </Prose>
+        </div>
+        <div class="md:w-1/2 flex justify-center">
+          <Image
+            src={plonkishTricksIfEqual}
+            alt="If-Equal 条件"
+            class="max-w-full md:max-w-md md:w-128"
+          />
+        </div>
+      </div>
+    </section>
+
+    <div
+      class="mt-40 bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-8 flex items-start relative flex-col md:flex-row"
+    >
+      <Image
+        src={constructionCat1}
+        alt="作成中"
+        class="h-32 w-32 mr-4 object-contain md:absolute md:-top-12"
+      />
+      <div class="ml-0 md:ml-40">
+        <p class="text-yellow-700 font-bold">さらに tricks を追加予定</p>
+        <p class="text-yellow-600">回路の tricks やテクニックを今後追加していきます。</p>
+      </div>
+    </div>
+  </main>
+</Layout>

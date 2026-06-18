@@ -117,6 +117,61 @@ export const experts: Expert[] = [
   },
 ];
 
+const localizedExperts: Record<string, Record<string, Partial<Expert>>> = {
+  ja: {
+    "Robin Linus": {
+      contribution: "BitVM 関連 work の著者。",
+      background: "Stanford 出身とみられます。",
+    },
+    "Super Testnet": {
+      role: "独立開発者",
+      contribution:
+        "[supertestnet/tapleaf-circuits](https://github.com/supertestnet/tapleaf-circuits) (BitVM 0.1) の著者。BitVM code の最初期実装と考えられています。",
+      background:
+        "Bitcoin、Lightning、Nostr の独立開発者で、Pleb Lab FOSS の chairman でもあります。[インタビューを見る](https://www.youtube.com/watch?v=dsOjDvHONdM)",
+    },
+    "Carter Feldman": {
+      contribution: "Bitcoin script 上で Groth16 verification computation を実装したと主張しています。",
+      background:
+        "University of Illinois Urbana-Champaign (UIUC) 卒。香港拠点で、中国語も話します。[CV](https://www.linkedin.com/in/carter-feldman-b4a13568/)",
+    },
+    "Weikeng Chen": {
+      contribution: "Bitcoin script 上で M31 と BabyBear domain calculation を実装しました。",
+      background: "Berkeley PhD。著名な ZKP project である arkworks の主要参加者の一人でもあります。",
+    },
+    "Andrew Wang": {
+      role: "開発者",
+      contribution:
+        "[u30_add](https://github.com/BitVM/BitVM/pull/33) を最適化し、sha256 challenge で最初の [PR](https://github.com/BitVM/BitVM/pull/54) を提出しました。",
+      background: "詳細不明。北京にいるとみられ、Twitter account には \"binance\" が含まれています。",
+    },
+    "Comcat Li": {
+      contribution:
+        "sha256 challenge で [u32_shr](https://github.com/BitVM/BitVM/pull/59) を最適化しました。",
+      background: "OKX 所属。",
+    },
+    "Martin Jonas": {
+      contribution: "blake3 を最適化しました。",
+      background: "BitVMX 所属。",
+    },
+    "Shinobi (SHI256)": {
+      contribution:
+        "Bitcoin Magazine で記事を公開し、TG group では技術初心者としての質問を投げています。",
+      background: "narrative を動かしているとして Robin から批判されたことがあります。",
+    },
+    "Björn Tackmann": {
+      contribution: "threshold Schnorr signatures について議論しました。",
+      background: "DFINITY の head of research。",
+    },
+  },
+};
+
+export const getExperts = (lang: "en" | "ja" = "en"): Expert[] =>
+  experts.map((expert) => ({
+    ...expert,
+    ...(localizedExperts[lang]?.[expert.name] || {}),
+  }));
+
 export const resources: ResourceSection[] = [
   {
     id: "Links",
@@ -178,6 +233,55 @@ export const resources: ResourceSection[] = [
     ],
   },
 ];
+
+const localizedResources: Record<string, Record<string, { title?: string; description?: string }>> = {
+  ja: {
+    Links: { title: "リンク" },
+    Tools: { title: "ツール" },
+    "Official website for BitVM with documentation and resources": {
+      description: "BitVM の documentation と resources を掲載する公式サイト。",
+    },
+    "Official GitHub repository for BitVM implementation": {
+      description: "BitVM implementation の公式 GitHub repository。",
+    },
+    "Official Telegram group for BitVM discussions": {
+      description: "BitVM に関する議論のための公式 Telegram group。",
+    },
+    "Technical paper on BitVM2 bridge implementation": {
+      description: "BitVM2 bridge implementation に関する technical paper。",
+    },
+    "Video introduction to BitVM concepts and implementation": {
+      description: "BitVM の concepts と implementation を紹介する video。",
+    },
+    "Bitcoin Script IDE for development and testing": {
+      description: "開発とテストに使える Bitcoin Script IDE。",
+    },
+    "Interactive development environment for Bitcoin Script": {
+      description: "Bitcoin Script の interactive development environment。",
+    },
+    "Tool for decoding Bitcoin transactions": {
+      description: "Bitcoin transactions を decode するための tool。",
+    },
+    "Optimized debugging experience for Bitcoin Script": {
+      description: "Bitcoin Script 向けに最適化された debugging experience。",
+    },
+  },
+};
+
+const translateResourceText = (lang: "en" | "ja", text: string | undefined) =>
+  text ? localizedResources[lang]?.[text]?.title || localizedResources[lang]?.[text]?.description || text : text;
+
+export const getResources = (lang: "en" | "ja" = "en"): ResourceSection[] =>
+  resources.map((section) => ({
+    ...section,
+    title: translateResourceText(lang, section.title) || section.title,
+    description: translateResourceText(lang, section.description),
+    links: section.links.map((link) => ({
+      ...link,
+      description:
+        "description" in link ? translateResourceText(lang, link.description) || link.description : link.description,
+    })),
+  }));
 
 export const references: Reference[] = [
   {

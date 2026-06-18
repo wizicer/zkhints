@@ -1,0 +1,259 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import SectionHeading from "../../components/SectionHeading.astro";
+import { Content as CommitmentScheme } from "./commitment/commitment-scheme.md";
+import { Content as PedersenCommitment } from "./commitment/pedersen-commitment.md";
+import { Content as VectorCommitment } from "./commitment/vector-commitment.md";
+import { Content as VectorPedersenCommitment } from "./commitment/vector-pedersen-commitment.md";
+import { Content as KZGCommitment } from "./commitment/kzg-commitment.md";
+import { Content as CommitmentSchemeSide } from "./commitment/commitment-scheme-side.md";
+import { Content as PolynomialCommitment } from "./commitment/polynomial-commitment.md";
+import { Content as PolynomialCommitmentSide } from "./commitment/polynomial-commitment-side.md";
+import Prose from "../../components/Prose.astro";
+import References from "../../components/References.astro";
+import constructionCat1 from "../../assets/construction/construction_cat_1.png";
+import { Image } from "astro:assets";
+import SubsectionHeading from "../../components/SubsectionHeading.astro";
+import { references, getResources } from "../../data/commitment";
+import ResourceLink from "../../components/ResourceLink.astro";
+
+const resources = getResources("ja");
+---
+
+<Layout id="commitment">
+  <div
+    class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-8 flex items-start relative flex-col md:flex-row"
+  >
+    <Image
+      src={constructionCat1}
+      alt="作成中"
+      class="h-32 w-32 mr-4 object-contain md:absolute md:-top-12"
+    />
+    <div class="ml-0 md:ml-40">
+      <p class="text-yellow-700 font-bold">このページは作成中です</p>
+      <p class="text-yellow-600">既存コンテンツは更新中で、近日中に変更されます。</p>
+    </div>
+  </div>
+
+  <main class="container mx-auto px-4 py-8">
+    <section class="mb-10">
+      <SectionHeading title="Commitment Schemes" gradientPart="Commitment" />
+      <div class="flex flex-col md:flex-row gap-6">
+        <div class="md:w-3/5 max-w-none">
+          <Prose>
+            <CommitmentScheme />
+          </Prose>
+        </div>
+        <div class="md:w-2/5">
+          <div class="bg-white border border-gray-300 rounded-md p-4 my-4 sticky top-4">
+            <Prose className="prose-sm">
+              <CommitmentSchemeSide />
+            </Prose>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <SectionHeading title="Vector Commitment" gradientPart="Vector" />
+      <VectorCommitment />
+    </section>
+
+    <section class="mb-10">
+      <SubsectionHeading title="Pedersen Commitment" />
+      <div class="flex flex-col md:flex-row gap-6">
+        <div class="md:w-3/5 max-w-none">
+          <Prose>
+            <PedersenCommitment />
+          </Prose>
+        </div>
+        <div class="md:w-2/5">
+          <div class="bg-white border border-gray-300 rounded-md p-4 my-4 sticky top-4">
+            <h3 class="text-lg font-semibold mb-4">インタラクティブ Pedersen Calculator</h3>
+            <div class="grid grid-cols-1 gap-4">
+              <div>
+                <label for="pedersen-message" class="block text-sm font-medium text-gray-700"
+                  >メッセージ (m):</label
+                >
+                <input
+                  type="number"
+                  id="pedersen-message"
+                  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                  value="42"
+                />
+              </div>
+              <div>
+                <label for="pedersen-random" class="block text-sm font-medium text-gray-700"
+                  >ランダム値 (r):</label
+                >
+                <input
+                  type="number"
+                  id="pedersen-random"
+                  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                  value="123"
+                />
+              </div>
+            </div>
+            <button
+              id="pedersen-calculate"
+              class="mt-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              >Commitment を計算</button
+            >
+            <div class="mt-4">
+              <p class="text-sm font-medium text-gray-700">Commitment 結果:</p>
+              <div id="pedersen-result" class="mt-1 p-2 bg-gray-100 rounded-md overflow-x-auto">
+              </div>
+            </div>
+            <div class="mt-4 text-sm text-gray-600">
+              <p>これは次を使った簡略実装です:</p>
+              <ul class="list-disc pl-5 mt-1">
+                <li>Generator g = 7</li>
+                <li>Generator h = 11</li>
+                <li>Prime modulus p = 2147483647</li>
+              </ul>
+              <p class="mt-2">
+                実際の application では、これらは慎重に選ばれた cryptographic parameters になります。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <SubsectionHeading title="Vector Pedersen Commitment" />
+      <div class="flex flex-col md:flex-row gap-6">
+        <div class="md:w-3/5 max-w-none">
+          <Prose>
+            <VectorPedersenCommitment />
+          </Prose>
+        </div>
+        <div class="md:w-2/5">
+          <div class="bg-gray-50 p-4 rounded-lg">
+            <h3 class="text-lg font-semibold mb-2">Vector Commitment の例</h3>
+            <p class="text-sm">3 つの値からなる vector [5, 12, 7] を考えます</p>
+            <div class="mt-4 bg-white p-3 rounded border">
+              <p class="font-mono text-sm">
+                g₁ = 3, g₂ = 5, g₃ = 7<br />
+                h = 11<br />
+                r = 9<br /><br />
+                Commit([5, 12, 7], 9) = 11⁹ · 3⁵ · 5¹² · 7⁷<br />
+                = 2,357,947,691 (mod p)
+              </p>
+            </div>
+            <p class="mt-4 text-sm">
+              2 番目の位置 (値 12) だけを open する場合、prover は値 12 と、その値が committed vector
+              の位置 2 に本当に含まれていることを示す proof を提示します。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <SectionHeading title="Polynomial Commitment" gradientPart="Polynomial" />
+      <div class="flex flex-col md:flex-row gap-6">
+        <div class="md:w-3/5 max-w-none">
+          <Prose>
+            <PolynomialCommitment />
+          </Prose>
+        </div>
+        <div class="md:w-2/5">
+          <div class="bg-white border border-gray-300 rounded-md p-4 my-4 sticky top-4">
+            <Prose className="prose-sm">
+              <PolynomialCommitmentSide />
+            </Prose>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <SubsectionHeading title="KZG Polynomial Commitment" />
+      <div class="flex flex-col md:flex-row gap-6">
+        <div class="md:w-3/5 max-w-none">
+          <Prose>
+            <KZGCommitment />
+          </Prose>
+        </div>
+        <div class="md:w-2/5">
+          <div class="bg-white border border-gray-300 rounded-md p-4 my-4 sticky top-4">
+            <h3 class="text-lg font-semibold mb-4">インタラクティブ KZG Example</h3>
+            <p class="text-sm text-gray-600 mb-4">
+              係数を入力して多項式を定義します (定数項から最高次の項まで)
+            </p>
+            <div>
+              <label for="kzg-poly" class="block text-sm font-medium text-gray-700"
+                >多項式係数 (カンマ区切り):</label
+              >
+              <input
+                type="text"
+                id="kzg-poly"
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                value="8,0,-2,5"
+              />
+            </div>
+            <div class="mt-4">
+              <label for="kzg-point" class="block text-sm font-medium text-gray-700"
+                >評価点 (z):</label
+              >
+              <input
+                type="number"
+                id="kzg-point"
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                value="2"
+              />
+            </div>
+            <button
+              id="kzg-calculate"
+              class="mt-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              >KZG Proof を計算</button
+            >
+            <div class="mt-4">
+              <p class="text-sm font-medium text-gray-700">多項式:</p>
+              <div id="kzg-polynomial" class="mt-1 p-2 bg-gray-100 rounded-md overflow-x-auto">
+              </div>
+            </div>
+            <div class="mt-4">
+              <p class="text-sm font-medium text-gray-700">多項式評価:</p>
+              <div id="kzg-eval" class="mt-1 p-2 bg-gray-100 rounded-md overflow-x-auto"></div>
+            </div>
+            <div class="mt-4">
+              <p class="text-sm font-medium text-gray-700">Quotient 多項式:</p>
+              <div id="kzg-quotient" class="mt-1 p-2 bg-gray-100 rounded-md overflow-x-auto"></div>
+            </div>
+            <div class="mt-4 text-sm text-gray-600">
+              <p>
+                この例では、KZG proofs の基礎になる多項式除算を示しています。実際の KZG implementation では:
+              </p>
+              <ul class="list-disc pl-5 mt-1">
+                <li>
+                  多項式と quotient は elliptic curve operations を使って commit されます
+                </li>
+                <li>検証では bilinear pairings を使用します</li>
+                <li>proof は単一の group element になります</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <SectionHeading title="Commitment リソース" gradientPart="Resources" />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {resources.map((link) => <ResourceLink link={link} lang="ja" />)}
+      </div>
+    </section>
+  </main>
+
+  <div class="container mx-auto px-4 py-8 max-w-6xl">
+    <References references={references} />
+  </div>
+</Layout>
+
+<script>
+  import { init } from "../../scripts/commitment.js";
+  init();
+</script>

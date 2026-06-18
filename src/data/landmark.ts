@@ -399,6 +399,138 @@ export const contributions: Contribution[] = [
   },
 ];
 
+const localizedContributions: Record<string, Omit<Contribution, "id">> = {
+  GMR85: {
+    contribution: "zero-knowledge proofs の起源",
+    summary:
+      "この foundational paper は interactive proof systems における knowledge complexity の概念を導入し、prover と verifier の関係を定義しました。また quadratic residuosity を例に zero-knowledge proofs を形式化しました。",
+  },
+  FS86: {
+    contribution: "最初の実用的応用",
+    summary:
+      "Fiat と Shamir は zero-knowledge proofs の最初の実用例として identification scheme と signature scheme を導入し、Fiat-Shamir heuristic により interactive proofs を non-interactive に変換しました。",
+  },
+  GMW87: {
+    contribution: "NP statements を zero-knowledge で証明",
+    summary:
+      "この paper はすべての NP language が zero-knowledge proof system を持つことを示し、追加情報を明かさずに証明できる graph 3-colorability problem を具体例として提示しました。",
+  },
+  BGGHKMR90: {
+    contribution: "すべての languages に対する zero-knowledge",
+    summary:
+      "この work は NP のすべての language が zero-knowledge proof system を持つことを証明し、zero-knowledge proofs の理論的範囲を大きく広げました。",
+  },
+  Shamir92: {
+    contribution: "IP = PSPACE",
+    summary:
+      "Shamir は complexity class IP (Interactive Polynomial time) が PSPACE と等しいことを示し、interactive proof systems の computational power への理解を深めました。",
+  },
+  Micali00: {
+    contribution: "最初の SNARK construction",
+    summary:
+      "Micali の paper は最初の succinct non-interactive proof (SNARK) construction を導入し、probabilistically checkable proofs (PCPs) を Merkle trees により efficient non-interactive proofs へ変換しました。",
+  },
+  ALMSS92: {
+    contribution: "Proof verification と approximation hardness",
+    summary:
+      "この paper は proof verification のための algebraic methods を導入し、approximation problems の hardness に関する重要な insight を提供しました。PCPs と interactive proof systems の発展に貢献しています。",
+  },
+  Kilian92: {
+    contribution: "効率的な zero-knowledge arguments",
+    summary:
+      "Kilian は効率的な zero-knowledge argument system を提案し、cryptographic protocols における practical zero-knowledge proofs の実現可能性を示しました。",
+  },
+  GKR08: {
+    contribution: "効率的な computation delegation",
+    summary:
+      "GKR protocol は arithmetic circuits による computation delegation の interactive proof system を導入し、prover と verifier の双方が polynomial time で動く doubly-efficient proofs を実現しました。",
+  },
+  LFK92: {
+    contribution: "proofs のための algebraic methods",
+    summary:
+      "Lund、Fortnow、Karloff は interactive proof systems に algebraic methods を導入し、algebraic structures を verification に使う efficient proof systems の発展に貢献しました。",
+  },
+  Thaler15: {
+    contribution: "GKR protocol overview",
+    summary:
+      "Thaler の note は GKR protocol の詳細な overview を提供し、arithmetic circuits による computations の verification にどう使えるかを説明しました。",
+  },
+  GGPR13: {
+    contribution: "実用的な SNARK construction",
+    summary:
+      "この paper は quadratic span programs に基づく practical SNARK construction を提示し、従来の theoretical SNARKs より大きな efficiency 改善を示し、Groth16 など後続 systems の土台を作りました。",
+  },
+  Groth10: {
+    contribution: "短い pairing-based SNARKs",
+    summary:
+      "Groth は短い pairing-based non-interactive zero-knowledge argument を導入しました。これは広く使われた最初期の SNARK systems の一つで、blockchain などの practical applications に適しています。",
+  },
+  PHGR16: {
+    contribution: "Pinocchio による verifiable computation",
+    summary:
+      "Pinocchio protocol は SNARKs を使う practical verifiable computation framework を提供し、cryptographic guarantees を持つ secure かつ efficient な computation delegation を可能にしました。",
+  },
+  Groth16: {
+    contribution: "効率的な pairing-based SNARK",
+    summary:
+      "Groth の 2016 年 paper は pairing-based SNARKs を効率化し、proof size と verification time の改善により、この分野の標準の一つになりました。",
+  },
+  BCGGMTV14: {
+    contribution: "分散型 anonymous payment system",
+    summary:
+      "Zerocash は zk-SNARKs に基づく decentralized anonymous payment system を導入し、blockchain systems における privacy-preserving transactions を可能にしました。",
+  },
+  GWC19: {
+    contribution: "universal SNARK の導入",
+    summary:
+      "PlonK SNARK は polynomial interactive oracle proofs に基づく universal SNARK を導入し、general applications 向け zk-SNARKs の scalability と flexibility を大きく高めました。",
+  },
+  KZG10: {
+    contribution: "Polynomial commitment scheme",
+    summary:
+      "KZG commitment scheme は polynomials への constant-size commitments を導入しました。これは PlonK など polynomial-based proof systems と他の zk-SNARKs の基礎になっています。",
+  },
+  BBHR18: {
+    contribution: "post-quantum secure な integrity",
+    summary:
+      "この paper は zero-knowledge proofs を使う scalable、transparent、post-quantum secure な computational integrity systems を提案し、quantum-resistant cryptographic protocols を前進させました。",
+  },
+  BBHR18b: {
+    contribution: "Reed-Solomon IOPs",
+    summary:
+      "fast Reed-Solomon interactive oracle proofs (IOPs) の導入により verifiable computation protocols の efficiency が向上し、zero-knowledge systems の performance が改善されました。",
+  },
+  Valiant08: {
+    contribution: "Incrementally verifiable computation",
+    summary:
+      "Valiant は incrementally verifiable computation の概念を提案し、長い computations の proofs を step by step に verify できるようにして proof efficiency と scalability を高めました。",
+  },
+  KST22: {
+    contribution: "Recursive ZK arguments",
+    summary:
+      "Nova paper は recursive zero-knowledge arguments を導入し、ますます複雑になる computations に対する efficient かつ scalable な proofs の実現へ大きく前進しました。",
+  },
+  BCTV14: {
+    contribution: "zkVM architecture",
+    summary:
+      "この paper は zkVMs の概念を導入し、arbitrary programs の execution とその correctness の verifiable proofs 生成を可能にしました。これは blockchain systems における zk-rollups の基礎になりました。",
+  },
+  GPR21: {
+    contribution: "STARK-friendly CPU",
+    summary:
+      "STARK-based proof systems 向けに最適化された Cairo CPU architecture は、zero-knowledge proofs で効率よく証明できる Turing-complete architecture を提供しました。",
+  },
+};
+
+export const getContributions = (lang: "en" | "ja" = "en"): Contribution[] => {
+  if (lang !== "ja") return contributions;
+
+  return contributions.map((contribution) => ({
+    ...contribution,
+    ...(localizedContributions[contribution.id] || {}),
+  }));
+};
+
 export const references = [
   {
     title: "Bilinear Pairings-based Zero-Knowledge Proofs",

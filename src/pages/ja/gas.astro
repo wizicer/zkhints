@@ -1,0 +1,101 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "highlight.js/styles/atom-one-dark.css";
+import { gasData, formatGas, getGasLevel, getGasColorClass } from "../../data/gas";
+---
+
+<Layout id="gas">
+  <div class="container mx-auto px-4 py-8">
+    <div class="mb-8">
+      <h2 class="text-xl font-bold mb-4">⛽ フレームワークとスキーマ別の Gas 消費量</h2>
+
+      <div class="mb-4 text-sm text-gray-600">
+        <p>
+          この表は、さまざまな ZK framework と schema の gas 消費量を比較しています。gas
+          消費量が低いほど緑に近い色で表示されます。
+        </p>
+      </div>
+
+      <div class="overflow-x-auto shadow-md rounded-lg">
+        <table class="min-w-full bg-white">
+          <thead>
+            <tr class="bg-gray-100 text-gray-700 uppercase text-sm leading-normal">
+              <th class="py-3 px-4 text-left">フレームワーク</th>
+              <th class="py-3 px-4 text-left">曲線</th>
+              <th class="py-3 px-4 text-left">スキーマ</th>
+              <th class="py-3 px-4 text-left">公開入力</th>
+              <th class="py-3 px-4 text-left">Sepolia デプロイ Gas</th>
+              <th class="py-3 px-4 text-left">Sepolia 関数 Gas</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-600 text-sm">
+            {
+              gasData.map((item) => (
+                <tr class="border-b border-gray-200 hover:bg-gray-50">
+                  <td class="py-3 px-4 font-medium">{item.framework}</td>
+                  <td class="py-3 px-4">
+                    {item.curve == "bls12_381" ? "BLS12-381" : item.curve.toUpperCase()}
+                  </td>
+                  <td class="py-3 px-4">{item.schema}</td>
+                  <td class="py-3 px-4">{item.publicInputs}</td>
+
+                  {/* Sepolia デプロイ Gas with color coding */}
+                  <td
+                    class={`py-3 px-4 ${getGasColorClass(
+                      getGasLevel(item.sepoliaDeploymentGas, "deployment")
+                    )}`}
+                  >
+                    {formatGas(item.sepoliaDeploymentGas)}
+                  </td>
+
+                  {/* Sepolia 関数 Gas with color coding */}
+                  <td
+                    class={`py-3 px-4 ${getGasColorClass(
+                      getGasLevel(item.sepoliaFunctionGas, "function")
+                    )}`}
+                  >
+                    {formatGas(item.sepoliaFunctionGas)}
+                  </td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-5 gap-2">
+        <div class="flex items-center">
+          <span class="inline-block w-4 h-4 bg-green-100 mr-2 rounded"></span>
+          <span class="text-sm">非常に優秀</span>
+        </div>
+        <div class="flex items-center">
+          <span class="inline-block w-4 h-4 bg-emerald-100 mr-2 rounded"></span>
+          <span class="text-sm">とても良い</span>
+        </div>
+        <div class="flex items-center">
+          <span class="inline-block w-4 h-4 bg-blue-100 mr-2 rounded"></span>
+          <span class="text-sm">良い</span>
+        </div>
+        <div class="flex items-center">
+          <span class="inline-block w-4 h-4 bg-amber-100 mr-2 rounded"></span>
+          <span class="text-sm">中程度</span>
+        </div>
+        <div class="flex items-center">
+          <span class="inline-block w-4 h-4 bg-red-100 mr-2 rounded"></span>
+          <span class="text-sm">高い</span>
+        </div>
+      </div>
+
+      <div class="mt-4 text-sm text-gray-600">
+        <p>
+          <strong>データソース:</strong>
+          <a
+            href="https://github.com/wizicer/zkp-solidity-gas"
+            target="_blank"
+            class="text-blue-600 hover:underline">https://github.com/wizicer/zkp-solidity-gas</a
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+</Layout>

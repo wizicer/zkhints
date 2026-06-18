@@ -451,3 +451,304 @@ export const sections: Section[] = [
     applications: scalabilityApplications,
   },
 ];
+
+const applicationJa: Record<string, Partial<Application>> = {
+  zklogin: {
+    application: "ZK Login",
+    description: "OAuth providers (Google, Apple) で認証しつつ、chain に identity を明かさない",
+    constructs: "JWT verification、OAuth signature check",
+    primitives: "zk-SNARKs、RSA/ECDSA in-circuit",
+    notes: "Sui zkLogin、zkLogin on Base で利用",
+  },
+  identity: {
+    application: "Identity Proof",
+    description: "full identity を明かさずに identity attributes を証明する",
+    constructs: "Hash preimages、Merkle proofs、selective disclosure",
+    primitives: "Poseidon hash、Hash preimage check",
+    notes: "ZK login、age verification、KYC の基盤",
+  },
+  credential: {
+    application: "ZK Credential / Anonymous Credentials",
+    description: "issuer や full credential を明かさずに資格を示す",
+    constructs: "Signature verification、range proof、selective disclosure",
+    primitives: "zk-SNARKs、BBS+ signatures、Hyrax commitments",
+    notes: "DID、Verifiable Credentials、SD-JWT、mDL と併用",
+  },
+  "group-membership": {
+    application: "Group Membership",
+    description: "どの member かを明かさずに group に属していることを証明する",
+    constructs: "Merkle tree inclusion proof",
+    primitives: "Poseidon hash、Merkle inclusion",
+    notes: "Semaphore protocol の中核。anonymous signaling に利用",
+  },
+  "zk-cookies": {
+    application: "ZK Cookies / Continuous Auth",
+    description: "behavior signals を使った anonymous continuous authentication",
+    constructs: "Behavior signal analysis、differential privacy",
+    primitives: "zkSNARKs、commitment schemes",
+    notes: "privacy を保ちながら credential sharing/theft を防ぐ",
+  },
+  mixer: {
+    application: "ZK Mixer",
+    description: "transaction の sender / receiver を隠し、on-chain linkability を切る",
+    constructs: "Merkle proofs、nullifiers、commitments",
+    primitives: "Poseidon、Pedersen、ElGamal",
+    notes: "Tornado Cash-style privacy pools",
+  },
+  "private-tx": {
+    application: "Private Transactions",
+    description: "amount や participants を隠す confidential transfers",
+    constructs: "Pedersen commitments、range proofs、nullifiers",
+    primitives: "Bulletproofs、zk-SNARKs",
+    notes: "Zcash、Aztec、Aleo で利用",
+  },
+  por: {
+    application: "Proof of Reserves",
+    description: "individual balances を明かさずに solvency を証明する",
+    constructs: "Merkle sum trees、range proofs",
+    primitives: "zk-SNARKs、recursive proofs",
+    notes: "exchange solvency verification",
+  },
+  auction: {
+    application: "ZK Auction",
+    description: "bid を秘匿しつつ winner の公平性を証明する",
+    constructs: "Commitment & reveal、range proofs",
+    primitives: "Commit-reveal、range proof",
+    notes: "fairness guarantees を持つ sealed-bid auctions",
+  },
+  p2p: {
+    application: "ZK P2P Payments",
+    description: "privacy-preserving verification を持つ peer-to-peer payments",
+    constructs: "Email verification、payment proofs",
+    primitives: "zkEmail、zk-SNARKs",
+    notes: "ZK verification 付きの Venmo/PayPal-style payments",
+  },
+  voting: {
+    application: "Anonymous Voting",
+    description: "identity を明かさず投票し、one-person-one-vote を保証する",
+    constructs: "Nullifier、commitment、Merkle proof",
+    primitives: "Hash、Commitment scheme、Nullifier",
+    notes: "uniqueness と unlinkability が必要",
+  },
+  reputation: {
+    application: "Reputation System",
+    description: "underlying actions を明かさずに reputation score を証明する",
+    constructs: "Range proof、selective disclosure",
+    primitives: "Range proof、Merkle trees",
+    notes: "ZK reputation points、sybil resistance",
+  },
+  personas: {
+    application: "Cryptographic Personas",
+    description: "rule violation 時に anonymity を revoke できる responsible pseudonyms",
+    constructs: "zk-promises、proof folding",
+    primitives: "Privacy Pass、zkSNARKs",
+    notes: "anonymity と community accountability の balance",
+  },
+  zkemail: {
+    application: "ZK Email",
+    description: "full email を明かさずに email contents/sender を証明する",
+    constructs: "DKIM signature verification、regex matching",
+    primitives: "zk-SNARKs、RSA in-circuit",
+    notes: "email-based identity と payment verification",
+  },
+  zktls: {
+    application: "ZK TLS",
+    description: "full content を明かさずに web data authenticity を証明する",
+    constructs: "TLS handshake verification、selective disclosure",
+    primitives: "zk-SNARKs、MPC",
+    notes: "DeFi や identity のための verifiable web data",
+  },
+  "witness-encryption": {
+    application: "Witness Encryption",
+    description: "computation statement に encrypt し、valid witness で decrypt する",
+    constructs: "Circuit-based decryption conditions",
+    primitives: "R1CS、Circom circuits",
+    notes: "key exchange 不要の computation-based access control",
+  },
+  games: {
+    application: "Private Games",
+    description: "hidden state games (poker, battleship) を provable fairness 付きで遊ぶ",
+    constructs: "Commitment、reveal、proof of action",
+    primitives: "Commitments、ZK verifications",
+    notes: "zkBattleship、zkPoker、zkChess",
+  },
+  "dark-forest": {
+    application: "Fog of War Games",
+    description: "hidden map exploration と private moves を持つ game",
+    constructs: "Location commitments、move proofs",
+    primitives: "Poseidon hash、zk-SNARKs",
+    notes: "Dark Forest がこの category を開拓",
+  },
+  zkml: {
+    application: "ZK ML Inference",
+    description: "input、model、またはその両方を明かさずに ML model inference を証明する",
+    constructs: "ML model の arithmetic circuit",
+    primitives: "zkML、polynomial constraints",
+    notes: "AI verification で use case が増加中",
+  },
+  image: {
+    application: "Private Image Processing",
+    description: "original を明かさずに image manipulation を証明する",
+    constructs: "Matrix calculation、Transformation proofs",
+    primitives: "zk-SNARKs、Commitment",
+    notes: "provenance verification、content authenticity",
+  },
+  zkdb: {
+    application: "ZK Database Queries",
+    description: "full database を明かさずに SQL query results を証明する",
+    constructs: "Query verification、result proofs",
+    primitives: "NIZKs、Merkle trees",
+    notes: "verifiable queries 付き confidential data",
+  },
+  rollup: {
+    application: "ZK Rollup",
+    description: "Ethereum scalability のために L2 state transitions を batch 化して証明する",
+    constructs: "State diff proof、Merkle root updates",
+    primitives: "zk-SNARKs/zk-STARKs",
+    notes: "L2 scaling の中核: zkSync、Scroll、Linea、Polygon zkEVM",
+  },
+  zkvm: {
+    application: "ZK Virtual Machine",
+    description: "validity proofs を持つ general-purpose computation",
+    constructs: "RISC-V/custom ISA circuits、memory checks",
+    primitives: "Lasso lookups、sum-check、folding",
+    notes: "SP1、RISC Zero、Jolt、Valida",
+  },
+  zkevm: {
+    application: "ZK EVM",
+    description: "ZK validity proofs を持つ EVM-compatible execution",
+    constructs: "EVM opcode circuits、state proofs",
+    primitives: "zk-SNARKs、Plonkish arithmetization",
+    notes: "compatibility level が異なる Type 1-4 zkEVMs",
+  },
+  bridge: {
+    application: "ZK Bridge",
+    description: "trusted intermediaries なしで chain 間の state/receipt を証明する",
+    constructs: "SNARK-verifiable state、light client proofs",
+    primitives: "zk-SNARKs、consensus verification",
+    notes: "trustless cross-chain messaging",
+  },
+  "light-client": {
+    application: "ZK Light Client",
+    description: "最小限の data と computation で blockchain state を検証する",
+    constructs: "Header chain proofs、consensus verification",
+    primitives: "Recursive SNARKs、BLS aggregation",
+    notes: "mobile-friendly blockchain verification",
+  },
+  "recursive-proofs": {
+    application: "Recursive Proofs",
+    description: "複数 proofs を 1 つに aggregate し、constant verification を可能にする",
+    constructs: "Proof composition、folding schemes",
+    primitives: "Nova、Hypernova、proof folding",
+    notes: "scalable proof systems の鍵",
+  },
+  "proof-aggregation": {
+    application: "Proof Aggregation",
+    description: "batch verification のために複数 proofs を combine する",
+    constructs: "Proof batching、aggregation circuits",
+    primitives: "Recursive SNARKs、accumulation",
+    notes: "on-chain verification cost を削減",
+  },
+  coprocessor: {
+    application: "ZK Coprocessor",
+    description: "heavy computation を off-chain に移し、validity proofs で検証する",
+    constructs: "Computation proofs、state access",
+    primitives: "zkVM、storage proofs",
+    notes: "Axiom、Brevis、Lagrange",
+  },
+  zcash: {
+    application: "Zcash",
+    description: "shielded transactions を持つ privacy-focused cryptocurrency",
+    constructs: "Sapling/Orchard circuits、nullifiers",
+    primitives: "Groth16、Halo 2",
+    notes: "blockchain における ZK の先駆け",
+  },
+  mina: {
+    application: "Mina Protocol",
+    description: "constant-size state proof を持つ succinct blockchain",
+    constructs: "Recursive proofs、Pickles",
+    primitives: "Kimchi、Pasta curves",
+    notes: "22KB blockchain、zkApps platform",
+  },
+  aleo: {
+    application: "Aleo",
+    description: "privacy-by-default smart contract platform",
+    constructs: "Leo language、Marlin proofs",
+    primitives: "zk-SNARKs、record model",
+    notes: "private programmable money",
+  },
+  aztec: {
+    application: "Aztec",
+    description: "Ethereum 上の private smart contracts",
+    constructs: "Noir circuits、private state",
+    primitives: "Plonk、UltraPlonk",
+    notes: "Ethereum の programmable privacy",
+  },
+};
+
+const typeJa: Record<string, { type: string; notes: string }> = {
+  "Identity & Authentication": {
+    type: "Identity & Authentication",
+    notes: "sensitive details を明かさずに identity、membership、credentials を証明する",
+  },
+  "Private Transactions & Finance": {
+    type: "Private Transactions & Finance",
+    notes: "confidential transfers、proof of reserves、private financial operations",
+  },
+  "Voting & Governance": {
+    type: "Voting & Governance",
+    notes: "anonymous voting、reputation systems、accountable pseudonymity",
+  },
+  "Communication & Data": {
+    type: "Communication & Data",
+    notes: "email/web data authenticity や computation-based encryption を証明する",
+  },
+  "Games & Entertainment": {
+    type: "Games & Entertainment",
+    notes: "provable fairness を持つ hidden state games",
+  },
+  "ML & Computation": {
+    type: "ML & Computation",
+    notes: "private ML inference、image processing、database queries",
+  },
+  "Private L1 Blockchains": {
+    type: "Private L1 Blockchains",
+    notes: "built-in proving systems を持つ native privacy",
+  },
+  "L2 Rollups": {
+    type: "L2 Rollups",
+    notes: "Ethereum scalability のために transactions を batch 化し state transitions を証明する",
+  },
+  "Cross-chain & Interoperability": {
+    type: "Cross-chain & Interoperability",
+    notes: "trustless cross-chain messaging と lightweight state verification",
+  },
+  "Proof Compression & Aggregation": {
+    type: "Proof Compression & Aggregation",
+    notes: "proofs を aggregate し、verification cost を削減し、computation を offload する",
+  },
+};
+
+export const getApplications = (lang: "en" | "ja" = "en"): Application[] =>
+  lang === "ja"
+    ? applications.map((application) => ({
+        ...application,
+        ...applicationJa[application.id],
+      }))
+    : applications;
+
+export const getApplicationSections = (lang: "en" | "ja" = "en"): Section[] =>
+  lang === "ja"
+    ? sections.map((section) => ({
+        ...section,
+        title: section.id === "privacy" ? "プライバシー応用" : "スケーラビリティ応用",
+        description:
+          section.id === "privacy"
+            ? "zero-knowledge systems における privacy と confidentiality に関する応用。"
+            : "zero-knowledge systems における scalability と performance に関する応用。",
+        applications: section.applications.map((applicationType) => ({
+          ...applicationType,
+          ...(typeJa[applicationType.type] || {}),
+        })),
+      }))
+    : sections;

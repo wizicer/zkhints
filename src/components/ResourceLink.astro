@@ -4,12 +4,15 @@ import externalLinkIcon from "../assets/icons/external-link.svg";
 import locationIcon from "../assets/icons/location.svg";
 import calendarIcon from "../assets/icons/calendar.svg";
 import type { EventLink, ResourceLink } from "../data/list";
+import type { Language } from "../i18n";
+import { localize } from "../i18n";
 
 export interface Props {
   link: ResourceLink | EventLink;
+  lang?: Language;
 }
 
-const { link } = Astro.props;
+const { link, lang = "en" } = Astro.props;
 
 // Function to check if an event is outdated
 function isOutdated(outdatedDate: string | undefined): boolean {
@@ -39,10 +42,10 @@ function isOutdated(outdatedDate: string | undefined): boolean {
         <h3 class={`font-bold mb-2`}>
           <a href={link.link} target="_blank" rel="noopener noreferrer" class="ml-1">
             {link.title}
-            <Image src={externalLinkIcon} alt="External Link" class="h-4 w-4 inline mb-1" />
+            <Image src={externalLinkIcon} alt={localize({ en: "External Link", ja: "外部リンク" }, lang)} class="h-4 w-4 inline mb-1" />
           </a>
           {link.recommended && (
-            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Recommended</span>
+            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">{localize({ en: "Recommended", ja: "おすすめ" }, lang)}</span>
           )}
         </h3>
         <p class="text-sm text-gray-600">{link.description}</p>
@@ -95,15 +98,15 @@ function isOutdated(outdatedDate: string | undefined): boolean {
           <h3 class={`font-bold mb-2 ${outdated ? "text-gray-500" : "text-gray-800"}`}>
             {link.title}
             <a href={link.link} target="_blank" rel="noopener noreferrer" class="ml-1">
-              <Image src={externalLinkIcon} alt="External Link" class="h-4 w-4 inline mb-1" />
+              <Image src={externalLinkIcon} alt={localize({ en: "External Link", ja: "外部リンク" }, lang)} class="h-4 w-4 inline mb-1" />
             </a>
           </h3>
           <div>
             {link.recommended && !outdated && (
-              <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Recommended</span>
+              <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">{localize({ en: "Recommended", ja: "おすすめ" }, lang)}</span>
             )}
             {outdated && (
-              <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">Past event</span>
+              <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">{localize({ en: "Past event", ja: "終了済み" }, lang)}</span>
             )}
           </div>
         </div>
@@ -114,12 +117,12 @@ function isOutdated(outdatedDate: string | undefined): boolean {
             rel="noopener noreferrer"
             class="flex items-center inline"
           >
-            <Image src={locationIcon} alt="Location" class="h-4 w-4 inline" />
+            <Image src={locationIcon} alt={localize({ en: "Location", ja: "場所" }, lang)} class="h-4 w-4 inline" />
             {link.location}
           </a>
 
           <br />
-          <Image src={calendarIcon} alt="Calendar" class="h-4 w-4 inline" />
+          <Image src={calendarIcon} alt={localize({ en: "Calendar", ja: "日程" }, lang)} class="h-4 w-4 inline" />
           {link.dateDescription}
         </p>
       </div>

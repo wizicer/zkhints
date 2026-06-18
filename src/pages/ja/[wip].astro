@@ -1,0 +1,109 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import CheatsheetHeader from "../../components/CheatsheetHeader.astro";
+import { getSections } from "../../data/index";
+import type { LocalizedItem } from "../../data/index";
+import { Image } from "astro:assets";
+import constructionCat1 from "../../assets/construction/construction_cat_1.png";
+import { localizedPath, t } from "../../i18n";
+
+interface PathItem {
+  params: { wip: string };
+  props: {
+    item: LocalizedItem;
+    sectionTitle: string;
+  };
+}
+
+export function getStaticPaths() {
+  const paths: PathItem[] = [];
+  const sections = getSections("ja");
+
+  sections.forEach((section) => {
+    section.items.forEach((item) => {
+      if (item.construction) {
+        paths.push({
+          params: { wip: item.id },
+          props: {
+            item,
+            sectionTitle: section.title,
+          },
+        });
+      }
+    });
+  });
+
+  return paths;
+}
+
+const { item, sectionTitle } = Astro.props;
+---
+
+<Layout title={`${item.title} (${t("wip", "ja")})`}>
+  <CheatsheetHeader
+    title={`${item.title} (${t("workInProgress", "ja")})`}
+    description={item.description}
+    category={sectionTitle}
+  />
+
+  <div class="container mx-auto px-4 py-8">
+    <div
+      class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-8 flex items-start relative flex-col md:flex-row"
+    >
+      <Image
+        src={constructionCat1}
+        alt={t("underConstruction", "ja")}
+        class="h-32 w-32 mr-4 object-contain md:absolute md:-top-12"
+      />
+      <div class="ml-0 md:ml-40">
+        <p class="text-yellow-700 font-bold">{t("underConstruction", "ja")}</p>
+        <p class="text-yellow-600">
+          {t("underConstructionBody", "ja")}
+        </p>
+      </div>
+    </div>
+
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <div class="flex items-start mb-6">
+        {
+          item.image && (
+            <Image src={item.image} alt={item.title} class="w-32 h-32 object-contain mr-6" />
+          )
+        }
+        <div>
+          <h1 class="text-2xl font-bold text-gray-800 mb-2">{item.title}</h1>
+          <p class="text-gray-600">{item.description}</p>
+        </div>
+      </div>
+
+      <div class="prose max-w-none">
+        <p>このコンテンツは現在作成中です。今後、次の内容を追加する予定です。</p>
+        <ul class="list-disc pl-5 mt-2">
+          <li>詳細な説明と例</li>
+          <li>Best practices と実装ガイド</li>
+          <li>コードサンプルと参考資料</li>
+          <li>関連リソースとツール</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-8">
+      <a href={localizedPath("/", "ja")} class="inline-flex items-center text-blue-600 hover:underline">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5 mr-1"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+        </svg>
+        {t("backToCheatsheets", "ja")}
+      </a>
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,595 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { resourceList } from "../../data/list";
+import type { Resource, ResourceSection } from "../../data/list";
+import SectionHeading from "../../components/SectionHeading.astro";
+import SubsectionHeading from "../../components/SubsectionHeading.astro";
+import ResourceLink from "../../components/ResourceLink.astro";
+import { localizedPath, t } from "../../i18n";
+
+interface PathItem {
+  params: { list: string };
+  props: {
+    resource: Resource;
+  };
+}
+
+export function getStaticPaths() {
+  const paths: PathItem[] = [];
+
+  resourceList.forEach((resource) => {
+    paths.push({
+      params: { list: resource.id },
+      props: {
+        resource,
+      },
+    });
+  });
+
+  return paths;
+}
+
+const { resource } = Astro.props;
+
+const localizedTitles: Record<string, string> = {
+  Events: "イベント",
+  "Awesome List": "Awesome List",
+  News: "ニュース",
+  "ZK Meetings & Conferences": "ZK ミーティング・カンファレンス",
+  "Hackathons & Developer Events": "ハッカソン・開発者イベント",
+  "Newsletters & Weekly Updates": "ニュースレター・週次アップデート",
+  "Realtime Updates & Blogs": "リアルタイム更新・ブログ",
+  "What is Zero-Knowledge?": "Zero-Knowledge とは？",
+  "Mathematical & Cryptography": "数学と暗号",
+  "Online Playgrounds": "オンライン Playgrounds",
+  "Visionary Insights": "将来像と洞察",
+  "Understanding Proof Systems": "Proof Systems を理解する",
+  "Knowledge Base": "Knowledge Base",
+  Cheatsheets: "Cheatsheets",
+  STARK: "STARK",
+  PLONK: "PLONK",
+  "SNARK Frontend & Protocol": "SNARK フロントエンドとプロトコル",
+  "Domain-Specific Languages": "ドメイン固有言語",
+  "SNARK Primitives": "SNARK 基本部品",
+  "Privacy Applications": "プライバシー応用",
+  "Scaling Applications": "スケーリング応用",
+  "Backend & Proving System": "Backend と Proving System",
+  "Folding & IVC": "Folding と IVC",
+  "SNARK Constructions": "SNARK 構成",
+  "IOP & Other Techniques": "IOP とその他の技術",
+  "Proof Optimization Techniques": "Proof 最適化技術",
+  "zkVM & zkML": "zkVM と zkML",
+  Primitives: "Primitives",
+  "Cryptography & Theory": "暗号と理論",
+  "Pairing-Based Cryptography": "Pairing-based cryptography",
+  "Algebraic Foundations": "代数的基礎",
+  "Indistinguishability Obfuscation": "識別不能難読化",
+  "MPC & FHE": "MPC と FHE",
+  "Analysis & Literature": "分析と文献",
+  "Survey & SoK": "Survey と SoK",
+  Benchmark: "Benchmark",
+  Security: "Security",
+};
+
+const localizedDescriptions: Record<string, string> = {
+  "Upcoming zero-knowledge proof conferences, summits, hackathons and community meetups.":
+    "今後開催される zero-knowledge proof 関連の conference、summit、hackathon、community meetup。",
+  "Curated lists of ZK resources, libraries, tools and more.":
+    "ZK resources、libraries、tools などをまとめた curated list。",
+  "Trusted sources for staying up to date on ZK-related developments.":
+    "ZK 関連の動向を追うための信頼できる情報源。",
+  "Basic explanations and intuitive overviews of Zero-Knowledge Proofs.":
+    "Zero-Knowledge Proofs の基本説明と直感的な overview。",
+  "Essential mathematics and cryptography resources for understanding ZK proofs.":
+    "ZK proofs を理解するために必要な mathematics と cryptography の資料。",
+  "Interactive online environments to experiment with ZK circuits without installation.":
+    "install なしで ZK circuits を試せる interactive online environments。",
+  "Insights about the future of ZK.": "ZK の将来に関する insight。",
+  "Dive deeper into SNARKs, STARKs, and other proving systems.":
+    "SNARKs、STARKs、その他の proving systems をより深く学ぶ資料。",
+  "A collective of resources for learning ZK thoroughly.":
+    "ZK を体系的に学ぶための resources 集。",
+  "Cheatsheets for ZK related works.": "ZK 関連 work の cheatsheets。",
+  "A curated list of awesome ZK resources, libraries, tools and more.":
+    "ZK resources、libraries、tools などをまとめた curated list。",
+  "A curated list of awesome ZKP resources, libraries, tools and more.":
+    "ZKP resources、libraries、tools などをまとめた curated list。",
+  "A curated list of awesome things related to learning zero knowledge proofs.":
+    "zero knowledge proofs の学習に役立つ資料をまとめた curated list。",
+  "A curated list of awesome PLONK resources, libraries, tools and more.":
+    "PLONK resources、libraries、tools などをまとめた curated list。",
+  "A curated list of resources for learning and programming in Noir.":
+    "Noir の学習と programming に役立つ resources をまとめた list。",
+  "A collection of Circom examples and useful links.":
+    "Circom examples と useful links の collection。",
+  "A curated list of zkVM, zero-knowledge virtual machine.":
+    "zkVM、zero-knowledge virtual machine に関する curated list。",
+  "A curated list of awesome SP1 resources, tutorials, tools and libraries.":
+    "SP1 resources、tutorials、tools、libraries をまとめた curated list。",
+  "A curated list of awesome risc0 resources.": "Risc0 resources をまとめた curated list。",
+  "A curated list of cryptography and maths resources for Starknet.":
+    "Starknet 向け cryptography と maths resources の curated list。",
+  "A curated list of awesome miden resources.": "Miden resources をまとめた curated list。",
+  "A curated list of awesome plonky3 resources.": "Plonky3 resources をまとめた curated list。",
+  "A curated list of awesome stwo resources.": "Stwo resources をまとめた curated list。",
+  "A curated list of awesome zero-knowledge proofs security resources.":
+    "zero-knowledge proofs security resources をまとめた curated list。",
+  "Hacker news-style news about ZK.": "ZK に関する Hacker News 風のニュースサイト。",
+  "Weekly zk-focused newsletter curated by Geometry and friends.":
+    "Geometry と collaborators が curated する ZK focused weekly newsletter。",
+  "Weekly zkNews about ZK.": "ZK に関する weekly zkNews。",
+  "Quarterly insights on ZK developments.": "ZK development に関する quarterly insight。",
+  "Weekly podcast exploring ZK research and applications.":
+    "ZK research と applications を扱う weekly podcast。",
+  "Coset (a.k.a Antalpha Labs) is a Web3 developer community dedicated to push the boundaries of crypto space.":
+    "Coset (a.k.a Antalpha Labs) は、crypto space の frontier を広げる Web3 developer community。",
+  "Cysic team's blog: ZK Proof Layer.": "Cysic team の blog: ZK Proof Layer。",
+  "A online MOOC from University of California, Berkeley.":
+    "University of California, Berkeley による online MOOC。",
+  "This article will cover what a zero-knowledge proof is, how it is used from a developer's perspective, and go through a few languages for writing them.":
+    "zero-knowledge proof とは何か、developer の視点でどう使うか、そして proof を書くためのいくつかの language を解説する記事。",
+  "A comprehensive overview of zero-knowledge proofs with interactive visualizations.":
+    "interactive visualization 付きで zero-knowledge proofs を包括的に overview する資料。",
+  "A set of questions to test your understanding of zero-knowledge proofs prerequisites.":
+    "zero-knowledge proofs の prerequisite 理解度を確認するための質問集。",
+  "Visual explanations of zero-knowledge proofs using everyday examples.":
+    "身近な例を使った zero-knowledge proofs の visual explanation。",
+  "A guide to understanding ZKPs without requiring deep cryptography knowledge.":
+    "深い cryptography knowledge がなくても ZKPs を理解するための guide。",
+  "An accessible introduction to ZKPs without heavy mathematics.":
+    "重い mathematics なしで読める ZKPs の accessible introduction。",
+  "A visual introduction to the concepts behind zero-knowledge proofs.":
+    "zero-knowledge proofs の背後にある concepts の visual introduction。",
+  "An explanation of zk-SNARKs from the Zcash team.": "Zcash team による zk-SNARKs の解説。",
+  "A technical but accessible introduction to ZKPs for engineers.":
+    "engineer 向けの technical かつ accessible な ZKPs introduction。",
+  "A concise explanation of zkSNARKs from the Ethereum blog.":
+    "Ethereum blog による zkSNARKs の concise explanation。",
+  "A comprehensive book on zero-knowledge proofs.": "zero-knowledge proofs に関する comprehensive book。",
+  "Vitalik Buterin's explanation of the underlying concepts that make zk-SNARKs possible.":
+    "zk-SNARKs を可能にする underlying concepts についての Vitalik Buterin による解説。",
+  "An overview of privacy technologies in cryptocurrencies, including ZKPs.":
+    "ZKPs を含む cryptocurrency privacy technologies の overview。",
+  "A step-by-step guide to understanding zero-knowledge virtual machines.":
+    "zero-knowledge virtual machines を step-by-step で理解するための guide。",
+  "Detailed comments and explanations on a key zkSNARK paper.":
+    "重要な zkSNARK paper への detailed comments と explanation。",
+  "The intersection of ZK and PCP theorems: every NP statement has a polynomial-size proof that is both locally checkable and zero-knowledge.":
+    "ZK と PCP theorem の交点。すべての NP statement には、locally checkable かつ zero-knowledge な polynomial-size proof が存在する。",
+  "A simple explanation of zero-knowledge proofs in 3 examples.":
+    "3 つの例で zero-knowledge proofs を簡潔に説明する資料。",
+  "Comprehensive textbook covering the mathematical foundations of cryptography.":
+    "cryptography の mathematical foundations を扱う comprehensive textbook。",
+  "Textbook on computer algebra, essential for understanding ZK implementations.":
+    "ZK implementations の理解に重要な computer algebra の textbook。",
+  "Collection of formulas for efficient implementation of elliptic curve operations.":
+    "elliptic curve operations の効率的な実装に使う formulas の collection。",
+  "Textbook covering group theory, rings, and fields - fundamental to cryptography.":
+    "cryptography の基礎である group theory、rings、fields を扱う textbook。",
+  "Accessible introduction to number theory and algebra with computational focus.":
+    "computational focus の number theory と algebra の accessible introduction。",
+  "Comprehensive cryptography textbook from Stanford professors.":
+    "Stanford professors による comprehensive cryptography textbook。",
+  "Deep dive into elliptic curves and their applications in cryptography.":
+    "elliptic curves と cryptography における applications の deep dive。",
+  "Introduction to pairing-based cryptography, essential for many ZK systems.":
+    "多くの ZK systems に重要な pairing-based cryptography の introduction。",
+  "Accessible introduction to the mathematics behind zk-SNARKs.":
+    "zk-SNARKs の背後にある mathematics の accessible introduction。",
+  "Step-by-step explanation of how SNARKs work from Electric Coin Company.":
+    "Electric Coin Company による、SNARKs の仕組みの step-by-step explanation。",
+  "Comprehensive textbook on interactive proofs and zero-knowledge.":
+    "interactive proofs と zero-knowledge に関する comprehensive textbook。",
+  "Research paper connecting linear algebra to succinct proof systems.":
+    "linear algebra と succinct proof systems をつなぐ research paper。",
+  "Season 1 of zkMarek aimed at intuitively explaining topics like elliptic curves, ECDSA, trusted setup, KZG and Vector commitments, Blobs, Merkle and Verkle Trees.":
+    "elliptic curves、ECDSA、trusted setup、KZG、Vector commitments、Blobs、Merkle / Verkle Trees などを直感的に説明する zkMarek season 1。",
+  "An online REPL for Circom circuits.": "Circom circuits の online REPL。",
+  "Interactive environment for Halo2 circuit development.":
+    "Halo2 circuit development のための interactive environment。",
+  "Online playground for PLONKish ZK circuits (halo2/plonky3).":
+    "PLONKish ZK circuits (halo2/plonky3) の online playground。",
+  "Interactive environment for Gnark circuit development.":
+    "Gnark circuit development のための interactive environment。",
+  "Interactive playground for ZK circuit development.":
+    "ZK circuit development のための interactive playground。",
+  "Where are we going and what should we be optimizing for?":
+    "私たちはどこへ向かい、何を optimize すべきかを考える資料。",
+  "In-depth but accessible explanation of zkSNARKs by Vitalik.":
+    "Vitalik による zkSNARKs の in-depth かつ accessible な解説。",
+  "Detailed explanation of STARKs from basic principles to implementation details.":
+    "basic principles から implementation details まで STARKs を詳しく説明する資料。",
+  "Comprehensive breakdown of STARK components and implementation.":
+    "STARK components と implementation の comprehensive breakdown。",
+  "Hands-on tutorial implementing a STARK prover for the Brainfuck language.":
+    "Brainfuck language 向け STARK prover を実装する hands-on tutorial。",
+  "Explains the motivation and construction of STARKs.":
+    "STARKs の motivation と construction を説明する資料。",
+  "STARK 101 is a hands-on tutorial on how to write a STARK prover from scratch (in Python).":
+    "STARK prover を Python で scratch から書く hands-on tutorial。",
+  "Explains the misconception that FRI is a low-degree test and clarifies its true role as a proof of proximity.":
+    "FRI が low-degree test だという誤解を解き、その本当の役割が proof of proximity であることを説明します。",
+  "A two-part explanation of the PLONK proving system.":
+    "PLONK proving system を 2 部構成で説明する資料。",
+  "Explanation of how PLONK can be implemented on Bitcoin.":
+    "PLONK を Bitcoin 上でどう実装できるかの説明。",
+  "A detailed walkthrough of PLONK calculations by hand from MetaState.":
+    "MetaState による PLONK calculation の detailed walkthrough。",
+  "Vitalik Buterin's explanation of the PLONK proving system.":
+    "Vitalik Buterin による PLONK proving system の解説。",
+  "A clear explanation of PLONK from cryptography expert David Wong.":
+    "cryptography expert David Wong による PLONK の clear explanation。",
+  "A Python implementation tutorial based on the original PLONK paper.":
+    "original PLONK paper に基づく Python implementation tutorial。",
+  "Zac Williamson explains the PLONK proving system in detail.":
+    "Zac Williamson が PLONK proving system を詳しく説明します。",
+  "Comprehensive 12-part video series explaining PLONK.":
+    "PLONK を説明する comprehensive な 12-part video series。",
+  "Conference talk by Zac Williamson on PLONK applications.":
+    "Zac Williamson による PLONK applications に関する conference talk。",
+  "Technical overview of PLONK by Protocol Labs researcher.":
+    "Protocol Labs researcher による PLONK の technical overview。",
+  "A collective of resources for learning ZK on the academic aspect.":
+    "academic aspect から ZK を学ぶための resources 集。",
+  "A knowledge base for ZK.": "ZK の knowledge base。",
+  "Official Noir language documentation and guides.": "Noir language の official documentation と guides。",
+  "A cheatsheet for ZK basics.": "ZK basics の cheatsheet。",
+  "A ZK-focused programming language designed for writing private applications.":
+    "private applications を書くために設計された ZK-focused programming language。",
+  "Comprehensive, up-to-date reports and benchmarks for zkVM.":
+    "zkVM に関する comprehensive かつ up-to-date な reports と benchmarks。",
+  "User-facing protocols, semantic design, privacy features and client-side logic":
+    "user-facing protocols、semantic design、privacy features、client-side logic。",
+  "Proving systems, structural optimizations, and reusable backend modules":
+    "proving systems、structural optimizations、再利用可能な backend modules。",
+  "Mathematical constructions, cryptographic primitives, and security definitions":
+    "mathematical constructions、cryptographic primitives、security definitions。",
+  "Surveys, standards, system evaluations, and security research":
+    "surveys、standards、system evaluations、security research。",
+  "ZK-Eval framework and ZK-Coder for evaluating and improving LLM capabilities in Circom and Noir code generation.":
+    "Circom と Noir code generation における LLM capabilities を評価・改善する ZK-Eval framework と ZK-Coder。",
+  "A modular framework with Presto language for automated trace-driven ZK-backend selection.":
+    "trace-driven な ZK-backend selection を自動化する Presto language 付き modular framework。",
+  "A range proof mechanism using Merkle trees avoiding ZK verification and pairings.":
+    "ZK verification と pairings を避け、Merkle trees を使う range proof mechanism。",
+  "A CAA scheme using zkSNARKs for behavior signal analysis preventing credential sharing.":
+    "credential sharing を防ぐ behavior signal analysis のために zkSNARKs を使う CAA scheme。",
+  "Unlinkable anonymous identities with revocable publishing via zk-promises.":
+    "zk-promises による revocable publishing を備えた unlinkable anonymous identities。",
+  "Technique allowing validators to permanently trim nullifiers without affecting privacy.":
+    "privacy に影響せず validators が nullifiers を恒久的に trim できる technique。",
+  "Folding reuse and lookup-centric arithmetization for low-latency ZKP.":
+    "low-latency ZKP のための folding reuse と lookup-centric arithmetization。",
+  "Decentralized identity with ~100ms mobile proving, no trusted setup.":
+    "trusted setup 不要で、mobile proving 約 100ms の decentralized identity。",
+  "PCD-based efficient privacy transactions requiring only 64 bytes on blockchain.":
+    "blockchain 上で 64 bytes だけを必要とする、PCD-based efficient privacy transactions。",
+  "ZKP-based voting system with revocable commitment scheme ensuring anonymity and verifiability.":
+    "anonymity と verifiability を保証する revocable commitment scheme 付き ZKP-based voting system。",
+  "Remote voting system with ZKP ensuring ballot verifiability and privacy against collusion.":
+    "collusion に対する privacy と ballot verifiability を ZKP で保証する remote voting system。",
+  "Framework for private state updates and maintenance without revealing personal information.":
+    "personal information を明かさず private state updates と maintenance を行う framework。",
+  "ECDSA-based anonymous credential scheme with efficient zk proofs for digital identity.":
+    "digital identity 向け efficient zk proofs を備えた ECDSA-based anonymous credential scheme。",
+  "Privacy delegation framework allowing proof generation without revealing witness.":
+    "witness を明かさず proof generation を可能にする privacy delegation framework。",
+  "A novel L2 design using hybrid architecture for efficiency and scalability.":
+    "efficiency と scalability のために hybrid architecture を使う新しい L2 design。",
+  "Polynomial aggregation and scalar decomposition reducing on-chain verification costs.":
+    "on-chain verification costs を削減する polynomial aggregation と scalar decomposition。",
+  "Hybrid compression optimizing Groth16 proof costs using different hash functions.":
+    "異なる hash functions を使い Groth16 proof costs を最適化する hybrid compression。",
+  "Formal analysis and design of Rollup L2 using Alloy specification language.":
+    "Alloy specification language を使う Rollup L2 の formal analysis と design。",
+  "Deep theoretical and empirical study of ZK-Rollups focusing on ZK-EVM trade-offs.":
+    "ZK-EVM trade-offs に焦点を当てた ZK-Rollups の theoretical / empirical study。",
+  "New FLIP folding scheme reducing SNARK proof generation time and communication complexity.":
+    "SNARK proof generation time と communication complexity を削減する新しい FLIP folding scheme。",
+  "Method for arbitrary program execution on Bitcoin with SNARK proofs in three transactions.":
+    "3 transactions の SNARK proofs で Bitcoin 上の arbitrary program execution を行う method。",
+  "Lattice-based high-arity folding SNARK with post-quantum security.":
+    "post-quantum security を持つ lattice-based high-arity folding SNARK。",
+  "New zero-check folding scheme via two-round protocol with sum-check.":
+    "sum-check を伴う two-round protocol による新しい zero-check folding scheme。",
+  "Optimized IVC read-write memory and circuit design for faster proof generation.":
+    "faster proof generation のために最適化された IVC read-write memory と circuit design。",
+  "New R1CS folding scheme without error/cross-term commitments, improving proof speed.":
+    "error/cross-term commitments を使わず proof speed を改善する新しい R1CS folding scheme。",
+  "Lattice-based folding for IVC without recursive SNARKs dependency.":
+    "recursive SNARKs に依存しない IVC 向け lattice-based folding。",
+  "Folding-based recursive argument for incremental computation with ~2.2M gas verification on Ethereum.":
+    "Ethereum 上で約 2.2M gas verification を行う incremental computation 向け folding-based recursive argument。",
+  "Improved lattice-based folding with efficient algebraic range proofs and dual commitments.":
+    "efficient algebraic range proofs と dual commitments を備えた improved lattice-based folding。",
+  "Lattice-based folding for CCS adapting HyperNova to lattice setting.":
+    "HyperNova を lattice setting に適用する CCS 向け lattice-based folding。",
+  "Fast IOPPs and accumulation schemes using code-switching techniques.":
+    "code-switching techniques を使う fast IOPPs と accumulation schemes。",
+  "A space-efficient zkSNARK achieving O(|C|) prover time with transparency and post-quantum security.":
+    "transparency と post-quantum security を持ち、O(|C|) prover time を実現する space-efficient zkSNARK。",
+  "Dynamic zkSNARK updating proofs in sublinear time when witness changes.":
+    "witness 変更時に sublinear time で proofs を update する dynamic zkSNARK。",
+  "Publicly verifiable SNARG with minimum proof size of two group elements.":
+    "minimum proof size が 2 group elements の publicly verifiable SNARG。",
+  "New zk-SNARK with proof length ~50% smaller than Groth16, KZG-compatible with single trapdoor.":
+    "proof length が Groth16 より約 50% 小さく、single trapdoor で KZG-compatible な新しい zk-SNARK。",
+  "More efficient ZKP system with smaller proofs via reciprocal set membership arguments.":
+    "reciprocal set membership arguments により smaller proofs を実現する、より efficient な ZKP system。",
+  "SNARK schemes with custom gates and smaller proofs than Polymath via KZG conversion.":
+    "KZG conversion により Polymath より小さい proofs を実現する custom gates 付き SNARK schemes。",
+  "Distributed prover framework achieving 2^35 gate circuit proofs within one hour.":
+    "2^35 gate circuit proofs を 1 時間以内に生成する distributed prover framework。",
+  "First accountable distributed SNARK with linear computation complexity.":
+    "linear computation complexity を持つ最初の accountable distributed SNARK。",
+  "Low-memory SNARK using disk storage for efficient large statement proving.":
+    "disk storage を使い large statement proving を効率化する low-memory SNARK。",
+  "SNARK with circuit key size proportional to circuit description, not constraints.":
+    "circuit key size が constraints ではなく circuit description に比例する SNARK。",
+  "CompGroth16 variant supporting disjunctive statement proofs with improved expressiveness.":
+    "disjunctive statement proofs を support し expressiveness を高める CompGroth16 variant。",
+  "Extended Bulletproofs for R1CS with honest-verifier zero-knowledge property.":
+    "honest-verifier zero-knowledge property を持つ R1CS 向け extended Bulletproofs。",
+  "Split prover architecture for efficient zkSNARK proof generation.":
+    "efficient zkSNARK proof generation のための split prover architecture。",
+  "Distributed SNARK system for Rank-One Constraint Systems.":
+    "Rank-One Constraint Systems 向け distributed SNARK system。",
+  "SNARK framework under Pedersen committed engines for encryption-friendly proofs.":
+    "encryption-friendly proofs のための Pedersen committed engines 下の SNARK framework。",
+  "Boolean circuit SNARKs using sumcheck over tower fields.":
+    "tower fields 上の sumcheck を使う Boolean circuit SNARKs。",
+  "SNARKs from compressed sum-check with sublogarithmic linear time.":
+    "sublogarithmic linear time の compressed sum-check から作る SNARKs。",
+  "Method reducing code-based SNARK communication using correlated agreement.":
+    "correlated agreement を使い code-based SNARK communication を削減する method。",
+  "Efficient linear prover IOP for Boolean circuits achieving O(log*(S)) rounds.":
+    "O(log*(S)) rounds を実現する Boolean circuits 向け efficient linear prover IOP。",
+  "Interaction-free, setup-free ZKP with perfect soundness breaking classic impossibility results.":
+    "classic impossibility results を破る、perfect soundness を持つ interaction-free / setup-free ZKP。",
+  "Fiat-Shamir transformations using duplex sponge paradigms to minimize permutation calls.":
+    "permutation calls を最小化する duplex sponge paradigms を使った Fiat-Shamir transformations。",
+  "Improved multilinear polynomial commitment with simplified Halo-style accumulation.":
+    "simplified Halo-style accumulation を備えた improved multilinear polynomial commitment。",
+  "Hash-based succinct argument reducing arithmetization overheads.":
+    "arithmetization overheads を削減する hash-based succinct argument。",
+  "FRI-Binius combining binary tower fields with FRI for significantly smaller proofs.":
+    "binary tower fields と FRI を組み合わせ、proofs を大幅に小さくする FRI-Binius。",
+  "Lookup-based proof system and zkVM achieving 6x faster than RISC Zero.":
+    "RISC Zero より 6x faster な lookup-based proof system と zkVM。",
+  "Optimized zkVM with Basefold commitment reducing verification to O(log²N).":
+    "Basefold commitment により verification を O(log²N) へ削減する optimized zkVM。",
+  "IOP protocol with verification in hundreds of microseconds, far faster than existing FRI.":
+    "existing FRI より大幅に速く、hundreds of microseconds で verification できる IOP protocol。",
+  "Multilinear polynomial commitment with better efficiency via code switching and RAA codes.":
+    "code switching と RAA codes により efficiency を改善した multilinear polynomial commitment。",
+  "Time-space trade-offs for sumcheck protocol provers in the stream model.":
+    "stream model における sumcheck protocol provers の time-space trade-offs。",
+  "First transparent and post-quantum secure horizontally scalable SNARK system.":
+    "最初の transparent かつ post-quantum secure な horizontally scalable SNARK system。",
+  "Collaborative zkSNARK with O(C/n log C/n) prover time and O(1) proof size.":
+    "O(C/n log C/n) prover time と O(1) proof size を持つ collaborative zkSNARK。",
+  "EMSM primitive reducing client computation by 20x while protecting witness privacy.":
+    "witness privacy を保護しつつ client computation を 20x 削減する EMSM primitive。",
+  "Survey on sum-check protocol applications in fast SNARK design.":
+    "fast SNARK design における sum-check protocol applications の survey。",
+  "Linear-time logarithmically-sound permutation SNARKs via linear-algebraic perspective.":
+    "linear-algebraic perspective による linear-time logarithmically-sound permutation SNARKs。",
+  "Hash-based multilinear PCS with O(log log n) proof size.":
+    "O(log log n) proof size を持つ hash-based multilinear PCS。",
+  "Sum-check extension supporting adjustable error parameters for approximate computations.":
+    "approximate computations 向け adjustable error parameters を support する sum-check extension。",
+  "New prover algorithm optimizing time and space efficiency for multilinear polynomials.":
+    "multilinear polynomials の time / space efficiency を最適化する新しい prover algorithm。",
+  "Significant reduction in computation costs related to equality factors in sumcheck.":
+    "sumcheck の equality factors に関連する computation costs を大幅に削減。",
+  "GPU preprocessing technique improving MSM algorithm efficiency for ZKP systems.":
+    "ZKP systems 向け MSM algorithm efficiency を改善する GPU preprocessing technique。",
+  "GKR protocol-based folding scheme reducing vector commitment size per fold step.":
+    "fold step ごとの vector commitment size を削減する GKR protocol-based folding scheme。",
+  "Scalable system verifying machine learning model fairness through ZK technology.":
+    "ZK technology により machine learning model fairness を verify する scalable system。",
+  "Dynamic constraint generation improving proof generation efficiency and flexibility.":
+    "proof generation efficiency と flexibility を改善する dynamic constraint generation。",
+  "Generic framework for verifiable deep learning with linear proving time.":
+    "linear proving time を持つ verifiable deep learning の generic framework。",
+  "Verifying LLM output authenticity using sumcheck, proving 1.3B parameter models in 15 minutes.":
+    "sumcheck を使って LLM output authenticity を verify し、1.3B parameter models を 15 分で prove します。",
+  "Image transformation verification supporting various operations with folding zkSNARK.":
+    "folding zkSNARK でさまざまな operations を support する image transformation verification。",
+  "WARP: The first linear-time accumulator with logarithmic verifier time.":
+    "logarithmic verifier time を持つ最初の linear-time accumulator、WARP。",
+  "Unified framework covering standard, projection, index, vector and decomposable lookups.":
+    "standard、projection、index、vector、decomposable lookups を扱う unified framework。",
+  "Hash function for binary extension fields compatible with Binius proof systems.":
+    "Binius proof systems と compatible な binary extension fields 向け hash function。",
+  "Constraint-friendly mapping achieving 23x constraint reduction and 50-100x proof speedup.":
+    "23x constraint reduction と 50-100x proof speedup を実現する constraint-friendly mapping。",
+  "DAS repair framework based on locally repairable codes optimizing storage overhead.":
+    "storage overhead を最適化する locally repairable codes based DAS repair framework。",
+  "Disproved multiple RS proximity gap conjectures affecting FRI and DEEP-FRI security.":
+    "FRI と DEEP-FRI security に影響する複数の RS proximity gap conjectures を反証。",
+  "General attack method showing small-field hash SNARGs have lower security than expected.":
+    "small-field hash SNARGs の security が想定より低いことを示す general attack method。",
+  "A new approach to iO.": "iO への新しい approach。",
+  "Practical MPC preprocessing model with one-time setup for efficient online computation.":
+    "efficient online computation のための one-time setup を持つ practical MPC preprocessing model。",
+  "Efficient threshold FHE decryption with 20,000x online throughput improvement.":
+    "online throughput を 20,000x 改善する efficient threshold FHE decryption。",
+  "Optimistic smart contract protocol using garbled circuits for fraud proofs.":
+    "fraud proofs に garbled circuits を使う optimistic smart contract protocol。",
+  "Survey of 25 ZKP frameworks including performance testing and Docker support.":
+    "performance testing と Docker support を含む 25 個の ZKP frameworks の survey。",
+  "Systematic survey of privacy protocols in blockchain with design recommendations.":
+    "design recommendations を含む blockchain privacy protocols の systematic survey。",
+  "Comprehensive analysis of code-based cryptography for post-quantum security.":
+    "post-quantum security 向け code-based cryptography の comprehensive analysis。",
+  "Overview of ZKP applications across multiple domains.":
+    "複数 domain にまたがる ZKP applications の overview。",
+  "Comprehensive book on SNARGs construction using ideal hash functions, featuring STARK.":
+    "ideal hash functions を使う SNARGs construction の comprehensive book。STARK を扱います。",
+  "Systematic study of ZKP recursion and composition techniques in Chinese.":
+    "ZKP recursion と composition techniques を扱う中国語の systematic study。",
+  "Discovery and fix of PLONK security vulnerability, proving statistical zero-knowledge.":
+    "PLONK security vulnerability の発見と修正。statistical zero-knowledge を証明します。",
+  "Security analysis showing FRI parameters have 21-63 bits less security than assumed.":
+    "FRI parameters の security が想定より 21-63 bits 低いことを示す security analysis。",
+  "Analysis of ZKP system vulnerabilities to CPU cache attacks with defense measures.":
+    "CPU cache attacks に対する ZKP system vulnerabilities と defense measures の analysis。",
+  "Tool detecting finalization failure vulnerabilities, found 12 zero-day bugs.":
+    "finalization failure vulnerabilities を検出する tool。12 件の zero-day bugs を発見。",
+  "Formal verification tool for BitVM with register-based DSL and CEGIS process.":
+    "register-based DSL と CEGIS process を持つ BitVM 向け formal verification tool。",
+};
+
+const translateText = (text: string | undefined) =>
+  text ? localizedTitles[text] || localizedDescriptions[text] || text : text;
+const localizeSection = (section: ResourceSection): ResourceSection => ({
+  ...section,
+  title: translateText(section.title) || section.title,
+  description: translateText(section.description),
+  links: section.links.map((link) => ({
+    ...link,
+    description: "description" in link ? translateText(link.description) || link.description : link.description,
+  })),
+  subsections: section.subsections?.map(localizeSection),
+});
+const localizedResource: Resource = {
+  ...resource,
+  sections: resource.sections.map(localizeSection),
+};
+---
+
+<Layout id={resource.id}>
+  <div class="container mx-auto px-4 py-8">
+    <div
+      class="mb-8 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg shadow-lg overflow-hidden"
+    >
+      <div class="bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-4">
+        <h2 class="text-xl font-bold text-white flex items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 mr-2"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h7"></path>
+          </svg>
+          {t("tableOfContents", "ja")}
+        </h2>
+      </div>
+
+      <div class="p-6">
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          {
+            localizedResource.sections.map((section: ResourceSection) => (
+              <li class="transform transition duration-200 hover:translate-x-1">
+                <a
+                  href={`#${section.id}`}
+                  class="flex items-center p-3 rounded-md hover:bg-white group transition-all duration-200 hover:shadow-md"
+                >
+                  <span class="flex items-center justify-center w-8 h-8 mr-3 rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 text-white text-lg">
+                    {section.emoji}
+                  </span>
+                  <div class="flex flex-col">
+                    <span class="font-medium text-gray-800 group-hover:text-blue-600">
+                      {section.title}
+                    </span>
+                    {section.description && (
+                      <span class="text-xs text-gray-500 truncate max-w-xs">
+                        {section.description}
+                      </span>
+                    )}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4 ml-auto text-gray-400 group-hover:text-blue-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+
+    {
+      localizedResource.sections.map((section: ResourceSection) => (
+        <div class="mb-12" id={section.id}>
+          <SectionHeading title={section.emoji + section.title} gradientPart={section.title} />
+
+          {section.description && <p class="text-gray-600 mb-4">{section.description}</p>}
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {section.links.map((link) => (
+              <ResourceLink link={link} lang="ja" />
+            ))}
+          </div>
+
+          {section.subsections && section.subsections.length > 0 && (
+            <div class="mt-8">
+              {section.subsections.map((subsection) => (
+                <div class="mb-8">
+                  <SubsectionHeading title={subsection.emoji + " " + subsection.title} />
+
+                  {subsection.description && (
+                    <p class="text-gray-600 mb-4">{subsection.description}</p>
+                  )}
+
+                  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {subsection.links.map((link) => (
+                      <ResourceLink link={link} lang="ja" />
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      ))
+    }
+
+    <div class="mt-8">
+      <a href={localizedPath("/", "ja")} class="inline-flex items-center text-blue-600 hover:underline">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5 mr-1"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+        </svg>
+        {t("backToCheatsheets", "ja")}
+      </a>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  :target {
+    scroll-margin-top: 2rem;
+  }
+</style>

@@ -244,6 +244,44 @@ export const cases = [
   },
 ];
 
+const localizedCases: Record<string, Record<string, { title: string; description: string }>> = {
+  ja: {
+    ethereum_compat: {
+      title: "Ethereum 上で使える曲線を選びたい",
+      description:
+        "Ethereum precompiles が対応している曲線だけを使えます (例: alt_bn128)。",
+    },
+    use_groth16: {
+      title: "Groth16 を使いたい",
+      description: "Groth16 support と tooling が整った pairing-friendly curve が必要です。",
+    },
+    long_term_security: {
+      title: "長期的な暗号安全性を重視したい",
+      description: "少なくとも 128-bit 以上の security margin を持つ曲線を優先します。",
+    },
+    non_pairing: {
+      title: "non-pairing curve を使いたい",
+      description:
+        "Pairing-free curves は Halo2、STARK-like designs、recursive circuits などで使われます。",
+    },
+    in_circuit_curve: {
+      title: "circuit 内で曲線を使いたい (例: recursive proof)",
+      description:
+        "効率的な in-circuit arithmetic を持つ曲線が必要です。多くの場合、non-pairing かつ cycle-friendly です。",
+    },
+    recursion_outer_curve: {
+      title: "recursion の outer wrapper として曲線を使いたい",
+      description: "inner SNARK proofs を検証できる pairing-friendly curve が必要です。",
+    },
+  },
+};
+
+export const getCases = (lang: "en" | "ja" = "en") =>
+  cases.map((useCase) => ({
+    ...useCase,
+    ...(localizedCases[lang]?.[useCase.id] || {}),
+  }));
+
 export const recommendations = [
   {
     use_case: "ethereum_compat",
@@ -325,3 +363,44 @@ export const recommendations = [
     ],
   },
 ];
+
+const localizedRecommendationComments: Record<string, Record<string, Record<string, string>>> = {
+  ja: {
+    ethereum_compat: {
+      bn254:
+        "BN254 (alt_bn128) は、現在 Ethereum 上で precompile として対応している唯一の pairing curve です。",
+    },
+    use_groth16: {
+      bn254: "SnarkJS や ZoKrates などの tools で広く support されています。",
+      bls12_381: "より高い security と良好な library support を持つ modern default です。",
+      bls12_377: "constraint 効率が高く、Aleo などの Zexe-style designs で使われています。",
+    },
+    long_term_security: {
+      bls12_381: "128-bit security を持ち、広く support され、security と performance の balance が良いです。",
+      bls12_377: "BLS12-381 と同等の security level で、field arithmetic が最適化されています。",
+      bw6_761: "180-bit security を持ち、recursive proof systems で使われます。",
+      cp6_782: "非常に高い 256-bit security を持ちます。future-proof applications 向けですが低速です。",
+    },
+    non_pairing: {
+      pasta: "non-pairing かつ cycle-friendly で、Halo2、Mina、recursive SNARKs に適しています。",
+    },
+    in_circuit_curve: {
+      pasta: "Cycle-paired (Pallas/Vesta) により、効率的な in-circuit verification が可能です。",
+    },
+    recursion_outer_curve: {
+      bls12_381: "recursive proof systems の outer curve として使われ、ecosystem support も良好です。",
+      bw6_761: "Pasta と組み合わせて outer recursive verifier として使われることが多く、より強い security を持ちます。",
+    },
+  },
+};
+
+export const getRecommendations = (lang: "en" | "ja" = "en") =>
+  recommendations.map((recommendation) => ({
+    ...recommendation,
+    recommended: recommendation.recommended.map((rec) => ({
+      ...rec,
+      comment:
+        localizedRecommendationComments[lang]?.[recommendation.use_case]?.[rec.curve] ||
+        rec.comment,
+    })),
+  }));
