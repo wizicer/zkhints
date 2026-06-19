@@ -20,6 +20,7 @@ interface Props {
 
 const lang = Astro.props.lang || defaultLanguage;
 const currentPath = Astro.url.pathname;
+const socialAccount = lang === "ja" ? "trainbit_jp" : "icerdesign";
 
 const socialLinks = [
   {
@@ -30,7 +31,7 @@ const socialLinks = [
     external: true,
   },
   {
-    href: "https://twitter.com/icerdesign",
+    href: `https://twitter.com/${socialAccount}`,
     icon: twitterIcon,
     alt: "Twitter",
     title: "Twitter",

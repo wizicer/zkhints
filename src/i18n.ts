@@ -22,7 +22,7 @@ export const ui = {
   tableOfContents: { en: "Table of Contents", ja: "目次" },
   backToCheatsheets: { en: "Back to Cheatsheets", ja: "チートシート一覧へ戻る" },
   builtWith: { en: "Built with", ja: "Built with" },
-  by: { en: "by @icerdesign", ja: "by @icerdesign" },
+  by: { en: "by @icerdesign", ja: "by @trainbit_jp" },
   reportIssue: { en: "Report an issue", ja: "問題を報告" },
   editPage: { en: "Edit this page", ja: "このページを編集" },
   wip: { en: "WIP", ja: "作成中" },
