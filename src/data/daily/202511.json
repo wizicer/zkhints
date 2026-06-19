@@ -13,7 +13,8 @@
         ],
         "summary": {
           "zh": "@billwu1999 发布了zkEnc开源项目，包括基于Circom定义解密条件、支持R1CS等特性，允许在终端、Node.js和浏览器中实现高性能加密。",
-          "en": "@billwu1999 released zkEnc open source project, including based on Circom defining decryption conditions, supporting R1CS, allowing high-performance encryption in terminal, Node.js and browser."
+          "en": "@billwu1999 released zkEnc open source project, including based on Circom defining decryption conditions, supporting R1CS, allowing high-performance encryption in terminal, Node.js and browser.",
+          "ja": "@billwu1999 が、Circom に基づき、復号条件を定義し、R1CS をサポートし、ターミナル、Node.js、ブラウザでの高性能暗号化を可能にする zkEnc オープンソースプロジェクトをリリースしました。"
         },
         "notes": {
           "zh": [
@@ -33,6 +34,15 @@
             "No key exchange or trusted third party required",
             "Emphasizing verifiable computation and privacy security",
             "Author clarified the work's security remains unproven. [Link](https://x.com/billwu1999/status/1985375556226224252)"
+          ],
+          "ja": [
+            "Witness encryptionは、鍵ではなく計算ステートメントの暗号化を可能にする",
+            "R1CSをサポートし、復号条件を定義するためにCircom回路を使用",
+            "ターミナル、Node.js、ブラウザでデプロイが可能",
+            "高性能のためにRustとWASMに基づいている",
+            "鍵交換や信頼できる第三者を必要としない",
+            "検証可能な計算とプライバシーセキュリティを重視",
+            "著者による補足：本研究のセキュリティは未証明であること。[Link](https://x.com/billwu1999/status/1985375556226224252)"
           ]
         }
       }
@@ -51,7 +61,8 @@
         ],
         "summary": {
           "zh": "来自Intmax的Leona Hioki在{{name}}论文中提出了一种基于Merkle树的Pedersen承诺范围证明机制，通过锚定和轻量级验证避免ZK验证和配对运算，降低交易成本。",
-          "en": "Leona Hioki from Intmax proposed a range proof mechanism for Pedersen commitments based on Merkle trees, avoiding ZK verification and pairings, reducing transaction costs."
+          "en": "Leona Hioki from Intmax proposed a range proof mechanism for Pedersen commitments based on Merkle trees, avoiding ZK verification and pairings, reducing transaction costs.",
+          "ja": "IntmaxのHioki Leona氏は、Merkleツリーに基づいたPedersen commitmentのためのレンジプルーフ機構を提案し、ZK検証やペアリングを回避することでトランザクションコストを削減しました。"
         },
         "notes": {
           "zh": [
@@ -69,6 +80,14 @@
             "Verification cost is low, requiring only Merkle proofs, DLEQ, and Schnorr proofs",
             "Suitable for EVM environment, optimizing gas usage",
             "Preprint form, not yet peer-reviewed"
+          ],
+          "ja": [
+            "トランザクションごとの冗長なZK検証とペアリングを回避し、計算オーバーヘッドを削減します。",
+            "レンジ証明のプライバシーを保証するためにMerkleツリーとアンカー機構を使用しています。",
+            "セキュリティ強化のためDLEQとSchnorr証明を組み合わせています。",
+            "検証コストは低く、Merkle証明、DLEQ、およびSchnorr証明のみを必要とします。",
+            "EVM環境に適しており、ガス使用量を最適化します。",
+            "プレプリント形式であり、まだ査読されていません。"
           ]
         }
       }
@@ -87,7 +106,8 @@
         ],
         "summary": {
           "zh": "Frolov等人在{{name}}论文中提出了一种连续匿名认证方案(CAA) zk-Cookies，使用zkSNARKs实现高效行为信号分析，防止凭证共享和盗窃，并支持差分隐私。",
-          "en": "Frolov et al. proposed a continuous anonymous authentication (CAA) scheme named zk-Cookies in their paper {{name}}, which utilizes zkSNARKs for efficient behavior signal analysis to prevent credential sharing and theft, and supports differential privacy."
+          "en": "Frolov et al. proposed a continuous anonymous authentication (CAA) scheme named zk-Cookies in their paper {{name}}, which utilizes zkSNARKs for efficient behavior signal analysis to prevent credential sharing and theft, and supports differential privacy.",
+          "ja": "Frolovらは論文{{name}}で、zkSNARKsを利用して行動シグナル分析を効率的に行い、クレデンシャル（資格情報）の共有や盗難を防ぎ、差分プライバシーをサポートする継続的匿名認証（CAA）スキームであるzk-Cookiesを提案しています。"
         },
         "notes": {
           "zh": [
@@ -105,6 +125,14 @@
             "Prototype application for age verification based on traditional credentials",
             "Integrates differential privacy analysis to enhance data security",
             "Performance optimization, updating operations completed in 200 milliseconds"
+          ],
+          "ja": [
+            "サーバーによるデータ収集を削減し、クライアント側で行動シグナルの処理を行う",
+            "zkSNARKsを利用して効率的な計算とプライバシー保護を実現",
+            "IPアドレス、ジオロケーション、ブラウザフィンガープリントなどの一般的な行動シグナルをサポート",
+            "従来の資格情報に基づく年齢認証のプロトタイプアプリケーション",
+            "データセキュリティ強化のための差分プライバシー分析の統合",
+            "パフォーマンス最適化により、操作完了時間を200ミリ秒に短縮"
           ]
         }
       }
@@ -126,7 +154,8 @@
         ],
         "summary": {
           "zh": "Thomas等人在{{name}}论文中提出了加密角色系统，支持用户在社区中创建不可链接的匿名身份，并在违反规范时撤销匿名发布能力，通过离线证明生成和证明折叠技术优化实时应用性能。",
-          "en": "Thomas et al. proposed a cryptographic personas system in their paper {{name}}, which supports users in creating unlinkable anonymous identities in communities and revoking anonymous publishing capabilities when users violate rules, optimizing real-time application performance through offline proof generation and proof folding."
+          "en": "Thomas et al. proposed a cryptographic personas system in their paper {{name}}, which supports users in creating unlinkable anonymous identities in communities and revoking anonymous publishing capabilities when users violate rules, optimizing real-time application performance through offline proof generation and proof folding.",
+          "ja": "Thomasらによる論文{{name}}では、クリプトグラフィックなペルソナシステムが提案されており、これはユーザーがコミュニティ内でリンク不可能な匿名IDを作成し、ルール違反時に匿名での公開能力を失効させることをサポートします。さらに、オフラインでの証明生成とプルーフフォールディングを通じてリアルタイムアプリケーションのパフォーマンスを最適化しています。"
         },
         "notes": {
           "zh": [
@@ -144,6 +173,14 @@
             "Applies Proof Folding to boost server efficiency.",
             "Implements a prototype in Signal group chats.",
             "Balances anonymity and community accountability cryptographically."
+          ],
+          "ja": [
+            "取り消し可能で責任のある匿名性を提供するための「暗号学的ペルソナ（Cryptographic Personas）」を提案。",
+            "zk-promises上にステートフルな匿名クレデンシャルシステムを構築。",
+            "Privacy Passを使用してオフラインでの証明書生成を実現し、レイテンシを削減。",
+            "Proof Foldingを適用してサーバー効率を向上させる。",
+            "Signalグループチャットでプロトタイプを実装。",
+            "匿名性とコミュニティのアカウンタビリティ（説明責任）を暗号学的に両立させる。"
           ]
         }
       }
@@ -166,7 +203,8 @@
         },
         "summary": {
           "zh": "Justin Thaler在{{name}}论文中分析了sum-check协议在快速SNARK设计中的应用，强调其通过批处理评估、内存检查等技术最小化证明者工作。",
-          "en": "Justin Thaler in {{name}} paper analyzed the application of sum-check protocol in fast SNARK design, emphasizing its minimization of prover work through batch evaluation and memory checks."
+          "en": "Justin Thaler in {{name}} paper analyzed the application of sum-check protocol in fast SNARK design, emphasizing its minimization of prover work through batch evaluation and memory checks.",
+          "ja": "{{name}} の論文における Justin Thaler は、バッチ評価とメモリチェックによる証明者（prover）の作業最小化に焦点を当て、sum-checkプロトコルを高速SNARK設計に応用したことを分析しました。"
         },
         "notes": {
           "zh": [
@@ -184,6 +222,14 @@
             "Small-value preservation optimizes computational structure utilization",
             "The survey emphasizes the potential of sum-check in zkVMs and other applications",
             "The paper provides practical guidance for SNARK design, focusing on performance improvements"
+          ],
+          "ja": [
+            "sum-check protocolは、commitmentとproofのコストを最小限に抑える高速SNARK設計の核となる。",
+            "バッチ評価とメモリチェックにより、proverのワークロードが大幅に削減される。",
+            "Virtual polynomialsとsparse sum-checksがプロトコルの効率を向上させる。",
+            "Small-value preservationは計算構造の利用率を最適化する。",
+            "本調査では、zkVMsやその他のアプリケーションにおけるsum-checkの可能性について強調している。",
+            "本論文は、パフォーマンス改善に焦点を当てたSNARK設計のための実践的な指針を提供する。"
           ]
         }
       }
@@ -205,7 +251,8 @@
         },
         "summary": {
           "zh": "Crites和Stewart在{{name}}论文中证伪了多个Reed-Solomon邻近间隙猜想，这些猜想支撑FRI、DEEP-FRI等SNARK系统的安全性与效率，并提出最小修改方案。",
-          "en": "Crites and Stewart in {{name}} paper disproved multiple Reed-Solomon proximity gap conjectures, supporting the security and efficiency of FRI, DEEP-FRI, and other SNARK systems, and proposed minimal modifications to meet list decoding capacity bounds."
+          "en": "Crites and Stewart in {{name}} paper disproved multiple Reed-Solomon proximity gap conjectures, supporting the security and efficiency of FRI, DEEP-FRI, and other SNARK systems, and proposed minimal modifications to meet list decoding capacity bounds.",
+          "ja": "CritesとStewartは{{name}}の論文において、複数のReed-Solomon近接ギャップ予想を反証し、FRI、DEEP-FRI、その他のSNARKシステムのセキュリティと効率性を支持するとともに、リスト復号能力の境界を満たすための最小限の修正案を提案した。"
         },
         "notes": {
           "zh": [
@@ -223,6 +270,14 @@
             "May weaken the security of ZK proof systems relying on these conjectures",
             "Need to re-evaluate the theoretical foundations of existing proof systems",
             "Provides new research directions for coding theory and ZK"
+          ],
+          "ja": [
+            "FRI、DEEP-FRI、その他のSNARKシステムに影響を与える複数のReed-Solomon近接ギャップの予想を反証したこと",
+            "リストデコーディング容量限界を満たすための最小限の修正案を提案したこと",
+            "関連プロトコルとリストデコーディングとの関係性を証明し、未解決の問題を解決したこと",
+            "これらの予想に依存するZK証明システムのセキュリティを弱める可能性があること",
+            "既存の証明システムの理論的基盤を再評価する必要があること",
+            "符号理論とZKのための新しい研究方向性を提供するもの"
           ]
         }
       }
@@ -244,7 +299,8 @@
         },
         "summary": {
           "zh": "Chen等人在{{name}}论文中提出了一种线性时间且对数可靠的置换和多重集SNARK，通过线性代数视角消除二次证明开销，无需辅助承诺即可实现高效验证。",
-          "en": "Chen et al. proposed a linear-time and logarithmically-sound permutation and multiset SNARK in their {{name}} paper, eliminating quadratic proof overhead through a linear-algebraic perspective, avoiding auxiliary commitments for efficient verification."
+          "en": "Chen et al. proposed a linear-time and logarithmically-sound permutation and multiset SNARK in their {{name}} paper, eliminating quadratic proof overhead through a linear-algebraic perspective, avoiding auxiliary commitments for efficient verification.",
+          "ja": "Chenらは、{{name}} の論文において、線形時間かつ対数的に健全な順列およびマルチセットSNARKを提案しました。これは、線形代数的な視点を通じて二次的な証明オーバーヘッドを排除し、効率的な検証のために補助的なコミットメントを不要にすることによるものです。"
         },
         "notes": {
           "zh": [
@@ -262,6 +318,14 @@
             "Verifiers can evaluate permutations in O(polylog(n)) time, reducing dependency on provers",
             "Matches optimal prover bounds, ensuring theoretical efficiency",
             "Field-independent design extends application scope, improving universality"
+          ],
+          "ja": [
+            "新しい手法により、補助的なコミットメントが不要となり、健全性エラーを低減しセキュリティを向上させる",
+            "線形代数的な視点により、追加の代数的コストなしに部分評価が可能となりパフォーマンスを最適化する",
+            "プリプロセッシングなしでプロバーからの順列証明をサポートし柔軟性を高める",
+            "ベリファイアはO(polylog(n))の時間で順列を評価でき、プロバーへの依存度を低減する",
+            "最適なプロバーのバウンドに一致し、理論的な効率性を保証する",
+            "フィールド非依存設計により適用範囲が拡張され汎用性が向上する"
           ]
         }
       }
@@ -283,7 +347,8 @@
         },
         "summary": {
           "zh": "Lauri Peltonen在{{name}}博客中分享了Lagrange插值方法的基础知识，包括其定义、步骤和应用，并提及了在ZKP中多项式插值的重要性。",
-          "en": "Lauri Peltonen in {{name}} blog shared the basic knowledge of Lagrange interpolation, including its definition, steps, and applications, and mentioned the importance of polynomial interpolation in ZKP."
+          "en": "Lauri Peltonen in {{name}} blog shared the basic knowledge of Lagrange interpolation, including its definition, steps, and applications, and mentioned the importance of polynomial interpolation in ZKP.",
+          "ja": "{{name}}のブログでLauri Peltonen氏は、ラグランジュ補間の基礎知識（定義、手順、応用）を共有し、ZKPにおける多項式補間の重要性に言及しました。"
         },
         "notes": {
           "zh": [
@@ -301,6 +366,14 @@
             "Schwartz-Zippel lemma allows verification of polynomials through a few points",
             "Lagrange method is simple and easy to understand, suitable for teaching and basic implementation",
             "In practical applications, other methods such as FFT may be more efficient"
+          ],
+          "ja": [
+            "ラグランジュ補間は、与えられたすべての点を通る一意の最低次多項式を生成する",
+            "補間は、音声データ復旧などのデータリカバリに使用できる",
+            "ZKPにおいて、多項式の補間は効率的な検証と比較をサポートする",
+            "シュワルツ＝ジッペル補題により、少数の点を通る多項式の検証が可能になる",
+            "ラグランジュ法は単純で理解しやすく、教育や基本的な実装に適している",
+            "実際のアプリケーションでは、FFTなどの他の方法の方が効率的である場合がある"
           ]
         }
       }
@@ -322,7 +395,8 @@
         },
         "summary": {
           "zh": "Bowe和Miers在{{name}}论文中提出了一种通过演化无效器和遗忘同步实现可扩展匿名支付的新技术，允许验证者永久修剪无效器而不影响隐私或用户开销。",
-          "en": "Bowe and Miers in {{name}}paper proposed a new technique for scalable anonymous payments via evolving nullifiers and oblivious synchronization, allowing validators to permanently trim nullifiers without affecting privacy or user costs."
+          "en": "Bowe and Miers in {{name}}paper proposed a new technique for scalable anonymous payments via evolving nullifiers and oblivious synchronization, allowing validators to permanently trim nullifiers without affecting privacy or user costs.",
+          "ja": "BoweとMiersは{{name}}の論文で、進化するnullifierとoblivious synchronizationを用いたスケーラブルな匿名支払いに関する新しい技術を提案しました。これにより、バリデーターはプライバシーやユーザーコストに影響を与えることなく、nullifierを恒久的にトリミングすることが可能になります。"
         },
         "notes": {
           "zh": [
@@ -340,6 +414,14 @@
             "Services maintain temporary states, users can freely switch services",
             "This technology does not increase user computation, bandwidth, or latency costs",
             "Enhances privacy protection, preventing service linking users with transactions"
+          ],
+          "ja": [
+            "匿名支払いプロトコルはnullifierの線形的な増加によりスケーラビリティに限界がある",
+            "進化型nullifierにより、未使用資金を破壊することなくnullifierの恒久的なトリミングが可能になる",
+            "Oblivious synchronization modelはリモートサービスを利用して簡潔な証明書を生成し、サービス側はトランザクションの詳細を知らない",
+            "サービスは一時的な状態を維持するため、ユーザーは自由にサービスを切り替えることができる",
+            "この技術は、ユーザーの計算量、帯域幅、またはレイテンシコストを増加させない",
+            "プライバシー保護を強化し、サービスがトランザクションとユーザーを結びつけることを防ぐ"
           ]
         }
       }
@@ -362,7 +444,8 @@
         },
         "summary": {
           "zh": "@zksecurityXYZ 在{{name}}博客中讨论了Circom电路设计中的常见陷阱，包括输出约束缺失、输入假设未验证和比较运算的符号问题，强调了安全性漏洞的预防措施。",
-          "en": "@zksecurityXYZ in {{name}} blog discussed common traps in Circom, including missing output constraints, unverified input assumptions, and signed comparison operators."
+          "en": "@zksecurityXYZ in {{name}} blog discussed common traps in Circom, including missing output constraints, unverified input assumptions, and signed comparison operators.",
+          "ja": "@zkSNARKの{{name}}ブログでは、Circomにおける一般的な落とし穴について議論されています。これには、出力制約の欠落、未検証の入力仮定、および署名付き比較演算子などが含まれます。"
         },
         "notes": {
           "zh": [
@@ -380,6 +463,14 @@
             "Large integer templates like BigLessThan output without constraints can allow out-of-bound inputs, need to explicitly check outputs",
             "Security best practices: always explicitly constrain component outputs and inputs, avoid relying on implicit assumptions",
             "Comparison operators' signed semantics may cause p/2 > p/2+1 etc. counterintuitive results, need to pay attention to witness generation"
+          ],
+          "ja": [
+            "出力制約は、IsEqualの出力を1に強制しない場合など、悪意のあるユーザーによって悪用される可能性のある一般的な脆弱性です。",
+            "入力の仮定はANDゲートの出力エラーを引き起こす可能性があるため、flag*(flag-1)=0のようなブーリアン制約を追加する必要があります。",
+            "Circomの比較演算子は符号付き整数に基づいています。val関数は要素を(-p/2, p/2]の区間にマッピングします。",
+            "BigLessThanのような大きな整数のテンプレートは、制約なしで出力されると範囲外の入力を許す可能性があるため、出力を明示的にチェックする必要があります。",
+            "セキュリティのベストプラクティスとして、コンポーネントの出力と入力を常に明示的に制約し、暗黙的な仮定に頼ることを避けるべきです。",
+            "比較演算子の符号付きセマンティクスは、p/2 > p/2+1などの直感に反する結果を引き起こす可能性があるため、ウィットネスの生成に注意を払う必要があります。"
           ]
         }
       }
@@ -401,7 +492,8 @@
         },
         "summary": {
           "zh": "Bünz等人在{{name}}论文中提出了TensorSwitch，一种基于哈希的多线性多项式承诺方案，显著优化了证明者时间和证明大小，适用于SNARG设计。",
-          "en": "Bünz et al. proposed TensorSwitch, a hash-based multi-linear polynomial commitment scheme in paper{{name}}, which significantly optimizes prover time and proof size, suitable for SNARG designs."
+          "en": "Bünz et al. proposed TensorSwitch, a hash-based multi-linear polynomial commitment scheme in paper{{name}}, which significantly optimizes prover time and proof size, suitable for SNARG designs.",
+          "ja": "Bünzらは論文{{name}}で、SNARG設計に適したプロバー時間と証明サイズを大幅に最適化するハッシュベースの多線形多項式コミットメント方式であるTensorSwitchを提案しています。"
         },
         "notes": {
           "zh": [
@@ -419,6 +511,14 @@
             "Verification time grows logarithmically, suitable for large-scale polynomial processing",
             "Proof size is minimal, only O(log log n) witnesses",
             "Built on hashing for increased security and reduced dependence on complex cryptographic assumptions"
+          ],
+          "ja": [
+            "TensorSwitchは、ZK proofのオーバーヘッドを削減するために、PCs（Polynomial Commitment Schemes）のプロバー時間と証明サイズを最適化します。",
+            "これは線形符号とインタラクティブな予測モデルを使用しており、標準的な暗号学的PCにコンパイルできます。",
+            "Commitment timeはコーディングレートρとエンコーディング時間τに依存し、効率的なゲート操作をサポートします。",
+            "Verification timeは対数的に増加するため、大規模な多項式処理に適しています。",
+            "Proof sizeは最小限であり、O(log log n)のwitnessのみが必要です。",
+            "ハッシュに基づいているため、セキュリティが向上し、複雑な暗号学的仮定への依存度が低減します。"
           ]
         }
       }
@@ -441,7 +541,8 @@
         },
         "summary": {
           "zh": "Kaviani和Setty在{{name}}论文中提出Vega系统，利用折叠重用和查找中心化算术化技术，实现低延迟ZKP，无需可信设置，显著提升数字身份验证效率。",
-          "en": "Kaviani and Setty proposed Vega system in {{name}} paper, which uses folding reuse and lookup centralized arithmetization to achieve low-latency ZKP, without trusted setup, significantly improving digital identity authentication efficiency."
+          "en": "Kaviani and Setty proposed Vega system in {{name}} paper, which uses folding reuse and lookup centralized arithmetization to achieve low-latency ZKP, without trusted setup, significantly improving digital identity authentication efficiency.",
+          "ja": "KavianiとSettyは、{{name}}の論文でVegaシステムを提案しました。これは、フォールディング再利用（folding reuse）とルックアップ集中型算術化（lookup centralized arithmetization）を利用して、トラステッドセットアップなしで低レイテンシなZKPを実現し、デジタルID認証の効率を大幅に向上させます。"
         },
         "notes": {
           "zh": [
@@ -457,6 +558,13 @@
             "Lookup centralized arithmetization optimizes field extraction and hashing",
             "Proof size and latency are better than existing technologies",
             "Supports digital identity privacy protection"
+          ],
+          "ja": [
+            "Vegaはトラステッドセットアップを必要とせず、セキュリティへの依存性を低減します。",
+            "Folding reuse technologyにより計算の繰り返しが削減され、効率が向上します。",
+            "Lookup centralized arithmetizationはフィールド抽出とハッシュ化を最適化します。",
+            "Proofサイズとレイテンシは既存技術よりも優れています。",
+            "デジタルアイデンティティのプライバシー保護をサポートします。"
           ]
         }
       }
@@ -479,7 +587,8 @@
         },
         "summary": {
           "zh": "Remco Bloemen在{{name}}博客中分析了Merkle多证明在哈希证明系统中的性能，推导了证明大小和验证者工作量的精确分布，包括期望值、方差和概率质量函数。",
-          "en": "Remco Bloemen analyzed the performance of Merkle multi-proofs in hash-based proofs, deriving the exact distribution of proof size and verifier work, including expected values, variances, and probability mass functions."
+          "en": "Remco Bloemen analyzed the performance of Merkle multi-proofs in hash-based proofs, deriving the exact distribution of proof size and verifier work, including expected values, variances, and probability mass functions.",
+          "ja": "Remco Bloemenは、ハッシュベースの証明におけるMerkleマルチプルーフのパフォーマンスを分析し、期待値、分散、確率質量関数を含めた証明サイズと検証作業の正確な分布を導出しました。"
         },
         "notes": {
           "zh": [
@@ -497,6 +606,14 @@
             "Supports compressed multi-proofs and pure verifier-end implementation, improving efficiency",
             "Analysis extends to imperfect trees and mixed branch trees, adapting to different vector lengths",
             "Provides efficient calculation methods and approximate formulas, suitable for practical applications"
+          ],
+          "ja": [
+            "Merkle proofsはハッシュベースの証明の中核であり、証明サイズとverifierの作業量に影響を与える。",
+            "インデックス分布は復元抽出による一様乱数サンプリングであり、正確なパフォーマンス分析を可能にする。",
+            "期待値、分散、確率質量関数を含め、証明サイズとverifierの作業量の正確な分布を導出した。",
+            "圧縮されたマルチプルーフと純粋なverifier-end実装をサポートし、効率を向上させる。",
+            "この解析は不完全ツリーや混合ブランチツリーにも拡張され、異なるベクタ長への適応を提供する。",
+            "実用的なアプリケーションに適した効率的な計算方法と近似式を提供する。"
           ]
         }
       }
@@ -519,7 +636,8 @@
         },
         "summary": {
           "zh": "Ztarknet 团队开源了Ztarknet项目，提出基于Starknet的L2解决方案，使用Circle STARK证明在Zcash L1上验证状态转换，支持Cairo程序执行和透明Zcash扩展。",
-          "en": "Ztarknet team open-sourced Ztarknet project, proposing a Starknet-based L2 solution for Zcash, using Circle STARK proofs to validate state transitions on Zcash L1, supporting Cairo program execution and transparent Zcash extensions."
+          "en": "Ztarknet team open-sourced Ztarknet project, proposing a Starknet-based L2 solution for Zcash, using Circle STARK proofs to validate state transitions on Zcash L1, supporting Cairo program execution and transparent Zcash extensions.",
+          "ja": "Ztarknetチームは、Zcash向けのStarknetベースのL2ソリューションを提案するプロジェクトをオープンソース化しました。これは、Circle STARK証明書を使用してZcash L1上での状態遷移を検証し、Cairoプログラムの実行と透明なZcash拡張機能をサポートするものです。"
         },
         "notes": {
           "zh": [
@@ -537,6 +655,14 @@
             "Data availability is minimized during PoC stage, and further evaluation is needed",
             "Anchor the UTXO chain mode to ensure L2 progress synchronizes with L1",
             "The project is in concept stage, providing development resources and testing guidelines"
+          ],
+          "ja": [
+            "Circle STARK proofsを使用してL2の状態遷移を検証し、セキュリティを強化する",
+            "スクリプトの変更を避けるため、TZEフレームワークを用いてZcash L1上で直接検証する",
+            "Rustエコシステムの開発を最適化するためにMadaraとStwo/Cairoを統合する",
+            "PoC段階ではデータ可用性を最小限に抑えており、さらなる評価が必要である",
+            "L2の進捗がL1と同期することを保証するため、UTXOチェーンモードをアンカーする",
+            "本プロジェクトは概念段階にあり、開発リソースとテストガイドラインを提供する"
           ]
         }
       }
@@ -559,7 +685,8 @@
         },
         "summary": {
           "zh": "Abbaszadeh等人在论文中提出了一种单服务器私有外包zkSNARK框架，通过EMSM原语实现客户端计算降低20倍，并保护见证和证明隐私。",
-          "en": "Abbaszadeh et al. proposed a single-server private outsourcing zkSNARK framework, which utilizes EMSM primitives to reduce client computation by 20 times, and protect witness and proof privacy."
+          "en": "Abbaszadeh et al. proposed a single-server private outsourcing zkSNARK framework, which utilizes EMSM primitives to reduce client computation by 20 times, and protect witness and proof privacy.",
+          "ja": "Abbaszadehらは、EMSMプリミティブを利用してクライアントの計算量を20分の1に削減し、ウィットネスと証明書のプライバシーを保護する単一サーバー型のprivate outsourcing zkSNARKフレームワークを提案しました。"
         },
         "notes": {
           "zh": [
@@ -576,6 +703,13 @@
             "Reduces client computation by 20 times and decreases proof latency by 9 times",
             "Implemented and evaluated the construction, verifying practicality and performance improvements",
             "Security depends on LPN variants, ensuring information leak during outsourcing"
+          ],
+          "ja": [
+            "EMSMプリミティブを利用してクライアントの計算量を20倍削減し、ウィットネスと証明書のプライバシーを保護する、単一サーバーによるzkSNARKアウトソーシングフレームワークを提案。",
+            "Nova、Groth16、Plonkなどの主流なzkSNARKをサポート。",
+            "クライアントの計算量を20倍削減し、証明書レイテンシを9倍低減。",
+            "構築の実装と評価を実施し、実用性とパフォーマンスの改善を確認。",
+            "セキュリティはLPNバリアントに依存し、アウトソーシング中の情報漏洩を防ぐ。"
           ]
         }
       }
@@ -597,7 +731,8 @@
         },
         "summary": {
           "zh": "Ethereum Foundation在博客{{name}}中分享了其对隐私的承诺，包括隐私的重要性、EF隐私集群的组成以及关键项目如PSE和IPTF，旨在将隐私融入以太坊生态核心。",
-          "en": "Ethereum Foundation in blog{{name}} shared its commitment to privacy, including the importance of privacy, the composition of EF privacy cluster, and key projects such as PSE and IPTF, aiming to integrate privacy into the core of the Ethereum ecosystem."
+          "en": "Ethereum Foundation in blog{{name}} shared its commitment to privacy, including the importance of privacy, the composition of EF privacy cluster, and key projects such as PSE and IPTF, aiming to integrate privacy into the core of the Ethereum ecosystem.",
+          "ja": "Ethereum Foundationはブログ{{name}}にて、プライバシーの重要性、EFプライバシークラスターの構成、PSEやIPTFなどの主要プロジェクトについて言及し、Ethereumエコシステムの中核にプライバシーを統合することへのコミットメントを共有しました。"
         },
         "notes": {
           "zh": [
@@ -615,6 +750,14 @@
             "IPTF connects regulators with privacy technology to address real-world cases",
             "Open-source tools like Semaphore and Kohaku are widely used in privacy research in the ecosystem",
             "EF commits to working with the ecosystem to make privacy an equal attribute of Ethereum"
+          ],
+          "ja": [
+            "プライバシーはデジタルな信頼の核であり、個人、開発者、機関にとって重要です。",
+            "EFプライバシークラスターにはPSEチームが含まれ、ZKPなどの最先端暗号研究に注力しています。",
+            "主なプロジェクトには、ユーザーエクスペリエンスを向上させるプライベート読み書き、プライベートプルーフ、プライベートアイデンティティなどがあります。",
+            "IPTFは規制当局とプライバシー技術を結びつけ、実世界のケースに対処します。",
+            "SemaphoreやKohakuのようなオープンソースツールは、エコシステム内のプライバシー研究で広く利用されています。",
+            "EFは、Ethereumの属性としてプライバシーを確立するためにエコシステムと協力することに尽力しています。"
           ]
         }
       }
@@ -637,7 +780,8 @@
         },
         "summary": {
           "zh": "@zksecurityXYZ 分享了Sumcheck教程，通过SageMath交互式教程掌握Sumcheck协议和MLEs，包括从基础到高级ZKP协议的完整实现和练习。",
-          "en": "@zksecurityXYZ shared a Sumcheck tutorial, teaching Sumcheck protocol and MLEs through interactive SageMath tutorials, including a complete implementation and exercises from basic to advanced ZKP protocols."
+          "en": "@zksecurityXYZ shared a Sumcheck tutorial, teaching Sumcheck protocol and MLEs through interactive SageMath tutorials, including a complete implementation and exercises from basic to advanced ZKP protocols.",
+          "ja": "@zkSNARK が、インタラクティブなSageMathチュートリアルを通じてSumcheckプロトコルとMLEsを教えるチュートリアルを共有しました。これには、基本的なものから高度なZKPプロトコルまでの完全な実装と演習が含まれています。"
         },
         "notes": {
           "zh": [
@@ -655,6 +799,14 @@
             "Sumcheck protocol is thoroughly explained as a core component of modern ZK systems",
             "Fiat-Shamir conversion is used to convert interactive protocols into non-interactive proofs",
             "The tutorial is modular, allowing users to learn by interest"
+          ],
+          "ja": [
+            "このチュートリアルでは、SumcheckとMLEsをゼロから構築するためにSageMathを使用します。",
+            "基本的な概念からHyperPlonkのような高度なプロトコルに至るまでの完全な学習パスを網羅しています。",
+            "学習効果を高めるためのインタラクティブなコードと演習を含んでいます。",
+            "Sumcheckプロトコルは、最新のZKシステムにおけるコアコンポーネントとして徹底的に解説されています。",
+            "Fiat-Shamir変換を使用して、インタラクティブなプロトコルを非対話型証明書に変換します。",
+            "このチュートリアルはモジュール式であり、ユーザーが興味のある部分から学習できるように設計されています。"
           ]
         }
       }
@@ -677,7 +829,8 @@
         },
         "summary": {
           "zh": "@zksecurityXYZ 分享了与 @StarkWareLtd 合作开发的S-two书籍，内容包括学习如何编写AIR、Cairo AIR实现以及Circle STARKs技术细节。",
-          "en": "@zksecurityXYZ shared a S-two book, teaching how to write AIR, Cairo AIR implementation, and Circle STARKs details."
+          "en": "@zksecurityXYZ shared a S-two book, teaching how to write AIR, Cairo AIR implementation, and Circle STARKs details.",
+          "ja": "@zkSNARK が、AIR の書き方、Cairo AIR の実装、Circle STARKs の詳細を解説した S-two ブックを共有しました。"
         },
         "notes": {
           "zh": [
@@ -695,6 +848,14 @@
             "The book covers writing AIR, implementing Cairo AIR, and details of Circle STARKs",
             "zkSecurity provides audit, research, and development services for ZK systems",
             "Encourages readers to refer to related blog series to deepen their understanding of Circle STARKs"
+          ],
+          "ja": [
+            "S-twoは、Circle STARKs技術を採用したStarkwareの次世代verifierです。",
+            "Mersenne31素数体上で実装されており、高性能な証明書生成を提供します。",
+            "仮想マシン（VM）や機械学習（ML）推論を含むカスタムサーキットをサポートします。",
+            "本書では、AIRの記述方法、Cairo AIRの実装、およびCircle STARKsの詳細について解説しています。",
+            "zkSecurityは、ZKシステムに対する監査、リサーチ、開発サービスを提供します。",
+            "読者がCircle STARKsへの理解を深めるために、関連するブログシリーズを参照することを推奨します。"
           ]
         }
       }
@@ -717,7 +878,8 @@
         },
         "summary": {
           "zh": "TACEO团队在{{name}}博客中分享了Private Shared State（PSS）解决方案，结合MPC和ZK技术实现去中心化、隐私和可验证性，并介绍了OPRF、OMap和Proof三大核心服务。",
-          "en": "TACEO team shared a PSS solution, combining MPC and ZK technology to achieve decentralized, privacy, and verifiability, and introduced OPRF, OMap, and Proof three core services."
+          "en": "TACEO team shared a PSS solution, combining MPC and ZK technology to achieve decentralized, privacy, and verifiability, and introduced OPRF, OMap, and Proof three core services.",
+          "ja": "TACEOチームは、MPCとZK技術を組み合わせたPSSソリューションを共有し、分散性、プライバシー、検証可能性を実現しました。また、OPRF、OMap、Proofという3つのコアサービスを紹介しました。"
         },
         "notes": {
           "zh": [
@@ -735,6 +897,14 @@
             "TACEO:Proof allows generating coSNARK proofs by delegating computation burden to users",
             "The network architecture includes a coordinator layer, MPC nodes, and coSNARK engines, ensuring efficient security",
             "Performance indicators: Payment throughput reaches 200 TPS, identity proof generation is about 1 second"
+          ],
+          "ja": [
+            "PSSはMPCとZKを統合し、分散性、プライバシー、検証可能性を実現します。",
+            "TACEO:OPRFは、ユーザー情報を開示することなくシビル攻撃を防ぎ、匿名でのID認識を提供します。",
+            "TACEO:OMapはORAM技術を利用してアクセスパターン攻撃を回避し、データプライバシーを保護します。",
+            "TACEO:Proofは、計算負荷をユーザーに委任することでcoSNARK証明書の生成を可能にします。",
+            "ネットワークアーキテクチャには、コーディネーターレイヤー、MPCノード、coSNARKエンジンが含まれており、効率的なセキュリティを保証します。",
+            "パフォーマンス指標：支払いスループットは200 TPSに達し、ID証明書生成は約1秒です。"
           ]
         }
       }
@@ -756,7 +926,8 @@
         },
         "summary": {
           "zh": "Vitalik Buterin 在博客{{name}}中讨论了私有信息检索协议 Plinko，包括其如何实现高效隐私读取、降低通信和计算开销，并应用于区块链数据查询等场景。",
-          "en": "Vitalik Buterin in blog {{name}} discussed the private information retrieval protocol Plinko, including how it achieves efficient privacy reading, reduces communication and computational overhead, and applies to blockchain data queries."
+          "en": "Vitalik Buterin in blog {{name}} discussed the private information retrieval protocol Plinko, including how it achieves efficient privacy reading, reduces communication and computational overhead, and applies to blockchain data queries.",
+          "ja": "Vitalik Buterinはブログ{{name}}で、プライベート情報検索プロトコルであるPlinkoについて論じており、それがいかに効率的なプライバシー読み取りを実現し、通信および計算オーバーヘッドを削減し、ブロックチェーンデータクエリに応用できるかを説明しています。"
         },
         "notes": {
           "zh": [
@@ -774,6 +945,14 @@
             "Can be further optimized with FHE, but current efficiency issues remain unresolved",
             "Suitable for privacy-protected database queries, blockchain data reading, etc.",
             "Actual deployment requires considering storage and bandwidth costs, such as Ethereum state tree queries"
+          ],
+          "ja": [
+            "Plinkoプロトコルは、プリプロセスと可逆的なPRFにより効率的なPIRを実現し、通信および計算オーバーヘッドを削減します。",
+            "このプロトコルはシングルサーバー設定をサポートしており、トラストアサンプションなしでプライバシーセキュリティを強化します。",
+            "ランダマイゼーション技術はクエリフェーズ中のクライアントインデックスのプライバシーを保護し、サーバーによる推論を防ぎます。",
+            "FHE（Fully Homomorphic Encryption）とのさらなる最適化が可能ですが、現在の効率性の問題は未解決のままです。",
+            "プライバシー保護されたデータベースクエリ、ブロックチェーンデータの読み取りなどに適しています。",
+            "実際のデプロイメントでは、Ethereumステートツリークエリのようなストレージと帯域幅のコストを考慮する必要があります。"
           ]
         }
       }
@@ -795,7 +974,8 @@
         },
         "summary": {
           "zh": "@zksecurityXYZ 在{{name}}博客中讨论了近期多项研究证伪邻近间隙猜想的影响，分析了其对基于哈希的SNARKs安全性和性能的后果，包括参数调整的必要性。",
-          "en": "@zksecurityXYZ discussed the recent multi-project refutation of the proximity conjecture in the blog, analyzing the impact on the security and performance of hash-based SNARKs, including the necessity of parameter adjustment."
+          "en": "@zksecurityXYZ discussed the recent multi-project refutation of the proximity conjecture in the blog, analyzing the impact on the security and performance of hash-based SNARKs, including the necessity of parameter adjustment.",
+          "ja": "@zkSNARK はブログで、近接性予想（proximity conjecture）の最近のマルチプロジェクトによる反駁について議論し、ハッシュベースのSNARKのセキュリティとパフォーマンスへの影響を分析した。これにはパラメータ調整の必要性も含まれる。"
         },
         "notes": {
           "zh": [
@@ -813,6 +993,14 @@
             "From speculative security to new speculative security, performance decreases by 2-3%, prover time impact is small",
             "The problem is related to list decoding, and the remaining unknown regions' security remains unresolved",
             "It is recommended to prioritize parameter security in audits and development to avoid performance and security trade-offs"
+          ],
+          "ja": [
+            "近接性仮説が反証され、ハッシュベースSNARKのパラメータ設定に影響を与えています",
+            "安全でないパラメータ領域が特定されたため、セキュリティリスクを回避するためにδ値の調整が必要です",
+            "推測的なセキュリティから証明されたセキュリティへの移行に伴い、証明サイズと検証時間が倍増し、プロバー時間は維持されています",
+            "推測的なセキュリティから新たな推測的セキュリティへの移行に伴い、パフォーマンスが2〜3%低下し、プロバー時間への影響は小さいです",
+            "この問題はリストデコーディングに関連しており、残りの未知領域のセキュリティは未解決のままです",
+            "パフォーマンスとセキュリティのトレードオフを避けるため、監査および開発においてパラメータセキュリティを優先することを推奨します"
           ]
         }
       }
@@ -834,7 +1022,8 @@
         },
         "summary": {
           "zh": "cryptography101.ca 发布了关于LLL格基约简算法的视频讲座，详细介绍了格理论、LLL算法及其在密码分析中的应用，包括数学背景和实际示例。",
-          "en": "cryptography101.ca has released a video lecture on LLL lattice basis reduction algorithm, providing a detailed introduction to lattice theory, LLL algorithm, and its applications in cryptanalysis, including mathematical background and practical examples."
+          "en": "cryptography101.ca has released a video lecture on LLL lattice basis reduction algorithm, providing a detailed introduction to lattice theory, LLL algorithm, and its applications in cryptanalysis, including mathematical background and practical examples.",
+          "ja": "cryptography101.ca は、格子理論、LLLアルゴリズム、および暗号解析におけるその応用（数学的背景と実践的な例を含む）について詳細に解説した、LLL格子基底削減アルゴリズムに関するビデオ講義を公開しました。"
         },
         "notes": {
           "zh": [
@@ -852,6 +1041,14 @@
             "Error correction and additional materials are provided to ensure content accuracy",
             "Emphasizes the practical application of LLL in cryptography, such as solving the shortest vector problem",
             "Supports educators in integrating resources to promote cryptography education"
+          ],
+          "ja": [
+            "LLLアルゴリズムは、様々な攻撃シナリオに適用可能な強力な暗号解析ツールです。",
+            "本コースでは線形代数と格子理論を扱うため、初心者の方でも理解しやすい内容となっています。",
+            "ビデオ講義には、ガウスのアルゴリズムやグラム・シュミット直交化などの基礎から応用までの完全なシリーズが含まれています。",
+            "コンテンツの正確性を保証するため、エラー訂正および補足資料が提供されます。",
+            "最短ベクトル問題（shortest vector problem）の解決など、暗号学におけるLLLの実践的な応用を重視しています。",
+            "教育者がリソースを統合し、暗号学教育を促進するためのサポートを提供します。"
           ]
         }
       }

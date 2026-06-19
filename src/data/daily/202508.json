@@ -12,7 +12,8 @@
         ],
         "summary": {
           "zh": "zkMonk组织的zkForge Bootcamp 2025现已开放申请，这是一个为期8周的密集ZK应用开发训练营，由顶级导师指导，内容包括ZK基础、证明者与验证者网络、以及真实世界应用开发。",
-          "en": "zkMonk organized the zkForge Bootcamp 2025, which is now open for applications. It is an 8-week intensive ZK application development training camp, led by top mentors, covering ZK fundamentals, prover and verifier networks, and real-world application development."
+          "en": "zkMonk organized the zkForge Bootcamp 2025, which is now open for applications. It is an 8-week intensive ZK application development training camp, led by top mentors, covering ZK fundamentals, prover and verifier networks, and real-world application development.",
+          "ja": "zkMonkが主催するzkForge Bootcamp 2025の申し込み受付を開始しました。これは、ZKの基礎、proverとverifierネットワーク、実世界でのアプリケーション開発を網羅する、トップメンターによる8週間の集中的なZKアプリケーション開発トレーニングキャンプです。"
         }
       },
       {
@@ -29,7 +30,8 @@
         ],
         "summary": {
           "zh": "ZK Hack 发布 ZK Mesh 7月刊，回顾了最近在隐私加密、分布式协议和零知识证明领域的最新研究进展。",
-          "en": "ZK Hack published ZK Mesh July 2025 Recap, reviewing recent research progress in advanced privacy-enhancing cryptography, distributed protocol development, and zero-knowledge systems research."
+          "en": "ZK Hack published ZK Mesh July 2025 Recap, reviewing recent research progress in advanced privacy-enhancing cryptography, distributed protocol development, and zero-knowledge systems research.",
+          "ja": "ZK Hackは、高度なプライバシー強化暗号、分散プロトコル開発、ゼロ知識システム研究における最近の進捗を概説した「ZK Mesh 2025年7月レキャップ」を公開しました。"
         }
       }
     ]
@@ -48,7 +50,8 @@
         ],
         "summary": {
           "zh": "Zhang等人在{{name}}论文中提出了FairZK系统，旨在通过ZK技术验证机器学习模型的公平性，为大规模应用提供了可扩展的解决方案。",
-          "en": "Zhang et al. proposed FairZK in the paper{{name}}, a scalable system to prove machine learning fairness in zero-knowledge, aiming to verify the fairness of machine learning models through ZK technology, providing scalable solutions for large-scale applications."
+          "en": "Zhang et al. proposed FairZK in the paper{{name}}, a scalable system to prove machine learning fairness in zero-knowledge, aiming to verify the fairness of machine learning models through ZK technology, providing scalable solutions for large-scale applications.",
+          "ja": "Zhangらは論文{{name}}でFairZKを提案しました。これは、機械学習の公平性をゼロ知識証明によって検証するためのスケーラブルなシステムであり、ZK技術を通じて機械学習モデルの公平性を検証し、大規模アプリケーションのためのスケーラブルなソリューションを提供します。"
         }
       },
       {
@@ -61,7 +64,8 @@
         ],
         "summary": {
           "zh": "Jiang等人在{{name}}论文中提出了CoBBL，一种为SNARKs动态生成约束的方法，旨在提高证明生成的效率和灵活性。",
-          "en": "Jiang et al. proposed CoBBL in the paper{{name}}, a dynamic constraint generation method for SNARKs, aiming to improve the efficiency and flexibility of proof generation."
+          "en": "Jiang et al. proposed CoBBL in the paper{{name}}, a dynamic constraint generation method for SNARKs, aiming to improve the efficiency and flexibility of proof generation.",
+          "ja": "Jiangらは論文{{name}}で、SNARKの動的制約生成手法であるCoBBLを提案し、証明生成の効率と柔軟性の向上を目指した。"
         }
       }
     ]
@@ -79,7 +83,8 @@
         ],
         "summary": {
           "zh": "SBC'25将于2025年8月4日至6日（正在直播）在加州大学伯克利分校Martin Luther King Jr.学生联合会大楼举行，聚焦区块链生态系统的技术创新，汇集该领域的研究人员和实践者。",
-          "en": "SBC'25 will take place from August 4 to 6, 2025, (live-streaming) at the Martin Luther King Jr. Student Union Building of the University of California, Berkeley, focusing on blockchain ecosystem innovation and gathering researchers and practitioners in the field."
+          "en": "SBC'25 will take place from August 4 to 6, 2025, (live-streaming) at the Martin Luther King Jr. Student Union Building of the University of California, Berkeley, focusing on blockchain ecosystem innovation and gathering researchers and practitioners in the field.",
+          "ja": "SBC'25は、2025年8月4日から6日までカリフォルニア大学バークレー校のマーティン・ルーサー・キング・ジュニア学生会館にて（ライブストリーミング形式で）開催され、ブロックチェーンエコシステムにおけるイノベーションに焦点を当て、研究者と実務家を集めます。"
         },
         "notes": {
           "zh": [
@@ -95,6 +100,13 @@
             "Pre-conference workshops cover topics like DAOs, decentralization and AI, blockchain applications.",
             "Organizing committee consists of renowned scholars from Stanford, Cornell, and other institutions.",
             "SBC'25 is a important conference in the blockchain technology field."
+          ],
+          "ja": [
+            "ブロックチェーン、暗号理論、分散システムに関する研究を含みます。",
+            "SBC'25では、リモート参加者のためのライブストリーミングとイベント後の録画を提供します。",
+            "カンファレンス前のワークショップでは、DAO、分散化とAI、ブロックチェーンアプリケーションなどのトピックを扱います。",
+            "組織委員会は、スタンフォード大学やコーネル大学など著名な学術関係者で構成されています。",
+            "SBC'25はブロックチェーン技術分野における重要なカンファレンスです。"
           ]
         }
       }
@@ -117,7 +129,8 @@
         ],
         "summary": {
           "zh": "@zksecurityXYZ 在{{name}}博客中分享了关于𝒫𝔩𝔬𝔫𝒦零知识证明的密码学数学深度解析，包括交互式示例、完整协议实现以及复杂密码学概念的可视化学习。",
-          "en": "@zksecurityXYZ shared a deep dive into the cryptographic math behind 𝒫𝔩𝔬𝔫𝒦 zero-knowledge proofs in blog{{name}}, including interactive examples, complete protocol implementation, and visualization of complex cryptographic concepts."
+          "en": "@zksecurityXYZ shared a deep dive into the cryptographic math behind 𝒫𝔩𝔬𝔫𝒦 zero-knowledge proofs in blog{{name}}, including interactive examples, complete protocol implementation, and visualization of complex cryptographic concepts.",
+          "ja": "@zkSNARK がブログ記事 {{name}} で、Plonkゼロ知識証明の背後にある暗号学的数学について深く掘り下げて解説しました。これには、インタラクティブな例、完全なプロトコル実装、複雑な暗号概念の可視化が含まれています。"
         },
         "notes": {
           "zh": [
@@ -133,6 +146,13 @@
             "Visualizes complex cryptographic concepts through charts and visualizations",
             "Focuses on the mathematical foundation of 𝒫𝔩𝔬𝔫𝒦 zero-knowledge proofs",
             "Aims to deepen understanding of ZK proofs through interactive learning"
+          ],
+          "ja": [
+            "Sage/Pythonのコード例と演習を提供します",
+            "回路制約から検証までのプロトコル実装を含みます",
+            "チャートと視覚化を通じて複雑な暗号学的概念を可視化します",
+            "𝒫𝔩𝔬𝔫𝒦 zero-knowledge proofsの数学的基盤に焦点を当てています",
+            "インタラクティブな学習を通じたZK証明の理解深化を目指します"
           ]
         }
       }
@@ -151,7 +171,8 @@
         ],
         "summary": {
           "zh": "美国贝鲁特大学将于2025年8月25日至12月13日举办应用密码学课程，专注于现代密码学核心理论及其在安全系统中的应用，包括零知识证明等专题。",
-          "en": "The American University of Beirut will host the Applied Cryptography course from August 25 to December 13, 2025, focusing on modern cryptography core theory and its application in secure systems, including zero-knowledge proofs."
+          "en": "The American University of Beirut will host the Applied Cryptography course from August 25 to December 13, 2025, focusing on modern cryptography core theory and its application in secure systems, including zero-knowledge proofs.",
+          "ja": "ベイルートアメリカ大学が、2025年8月25日から12月13日まで、「応用暗号学」コースを開催します。本コースでは、ゼロ知識証明を含むセキュアシステムへの現代暗号理論とその応用について重点的に学びます。"
         }
       },
       {
@@ -164,7 +185,8 @@
         ],
         "summary": {
           "zh": "EAS团队分享了关于Ethereum Attestation Service的信息，讨论了EAS作为一个基础设施公共产品，支持在链上或链下进行任何事物的证明。",
-          "en": "EAS team shared information about Ethereum Attestation Service, discussing EAS as an infrastructure public product, supporting any thing to be proven on or off-chain."
+          "en": "EAS team shared information about Ethereum Attestation Service, discussing EAS as an infrastructure public product, supporting any thing to be proven on or off-chain.",
+          "ja": "EASチームはEthereum Attestation Service（EAS）に関する情報を共有し、EASをオンチェーンおよびオフチェーンで証明可能なあらゆるものをサポートするインフラストラクチャのパブリックプロダクトとして議論しました。"
         }
       }
     ]
@@ -185,7 +207,8 @@
         ],
         "summary": {
           "zh": "Boneh等人在{{name}}论文中提出了数据可用性采样（DAS）的修复框架，基于局部可纠正多重性码设计新方案，优化了存储开销和修复带宽。",
-          "en": "Boneh et al. proposed a repair framework for data availability sampling (DAS) in paper{{name}}, based on locally repairable codes, optimizing storage overhead and repair bandwidth."
+          "en": "Boneh et al. proposed a repair framework for data availability sampling (DAS) in paper{{name}}, based on locally repairable codes, optimizing storage overhead and repair bandwidth.",
+          "ja": "Bonehらによる論文{{name}}では、局所的に修復可能なコードに基づいたデータ可用性サンプリング（DAS）の修復フレームワークが提案されており、ストレージオーバーヘッドと修復帯域幅を最適化しています。"
         }
       },
       {
@@ -199,7 +222,8 @@
         ],
         "summary": {
           "zh": "David Seroy发布了一段关于比特币的新白板视频，讨论了比特币桥接和ZK验证、对Rollups的批评回应、乐观ZK验证、BitVM的不同版本比较、混淆电路以及比特币桥接的未来Glock等内容。",
-          "en": "David Seroy released a new video about Bitcoin, discussing Bitcoin bridge and ZK verification, criticism of Rollups, optimistic ZK verification, different versions of BitVM, garbled circuits, and the future of Bitcoin bridge Glock."
+          "en": "David Seroy released a new video about Bitcoin, discussing Bitcoin bridge and ZK verification, criticism of Rollups, optimistic ZK verification, different versions of BitVM, garbled circuits, and the future of Bitcoin bridge Glock.",
+          "ja": "David Seroyがビットコインに関する新しい動画を公開しました。この動画では、Bitcoin bridgeとZK検証、Rollupsへの批判、オプティミスティックなZK検証、BitVMの異なるバージョン、garbled circuits（ガーブルドサーキット）、そしてBitcoin bridge Glockの未来について議論しています。"
         }
       }
     ]
@@ -218,7 +242,8 @@
         ],
         "summary": {
           "zh": "Baweja等人在{{name}}论文中研究了sumcheck协议证明者在流模型中的时间空间权衡，提出了上下界，紧密刻画了证明者可实现的效率。",
-          "en": "Baweja et al. studied the time-space trade-offs for sumcheck protocol provers in the stream model, proposing upper and lower bounds, tightly characterizing the efficiency of provers."
+          "en": "Baweja et al. studied the time-space trade-offs for sumcheck protocol provers in the stream model, proposing upper and lower bounds, tightly characterizing the efficiency of provers.",
+          "ja": "Bawejaらは、ストリームモデルにおけるsumcheckプロトコルのプロバーについて時間空間トレードオフを研究し、上限と下限を提案することで、プロバーの効率を厳密に特徴づけた。"
         }
       },
       {
@@ -233,7 +258,8 @@
         ],
         "summary": {
           "zh": "Jieyi Long在{{name}}论文中提出了Interstellar，一种基于GKR协议的低证明者成本折叠方案，专为电路可满足性设计。通过电路插值技术，该方案显著减少了每步折叠中需要承诺的向量大小，降低了证明者开销。",
-          "en": "Jieyi Long proposed Interstellar, a low-prover-cost folding scheme based on GKR protocol for circuit satisfiability in paper{{name}}, significantly reducing the vector size needed for commitment in each step of folding, lowering prover overhead."
+          "en": "Jieyi Long proposed Interstellar, a low-prover-cost folding scheme based on GKR protocol for circuit satisfiability in paper{{name}}, significantly reducing the vector size needed for commitment in each step of folding, lowering prover overhead.",
+          "ja": "Jieyi Longは、論文{{name}}において、GKRプロトコルに基づいた回路充足可能性のための低proverコストなfoldingスキームであるInterstellarを提案し、各ステップでのcommitmentに必要なベクトルサイズを大幅に削減し、proverのオーバーヘッドを低減しました。"
         }
       }
     ]
@@ -252,7 +278,8 @@
         ],
         "summary": {
           "zh": "@a16zcrypto 团队宣布Jolt项目整合了Twist和Shout内存检查参数，实现了显著的性能提升，包括在32核CPU上每秒超过100万RISC-V周期，证明大小约为50KB，代码库更加简洁。",
-          "en": "@a16zcrypto team announced that the Jolt project integrated Twist and Shout memory check parameters, achieving significant performance improvements, including over 1 million RISC-V cycles per second on a 32-core CPU, proof size of about 50KB, and a more concise codebase."
+          "en": "@a16zcrypto team announced that the Jolt project integrated Twist and Shout memory check parameters, achieving significant performance improvements, including over 1 million RISC-V cycles per second on a 32-core CPU, proof size of about 50KB, and a more concise codebase.",
+          "ja": "@a16zcryptoチームは、JoltプロジェクトがTwistとShoutのメモリチェックパラメータを統合し、32コアCPUで毎秒100万サイクル以上という大幅なパフォーマンス向上、約50KBの証明サイズ、より簡潔なコードベースを実現したことを発表しました。"
         }
       },
       {
@@ -266,7 +293,8 @@
         ],
         "summary": {
           "zh": "@class_lambda 团队在博客{{name}}中深入探讨了GKR协议的实现细节，包括算术电路的描述与验证、证明者与验证者的实际操作，以及如何应用Fiat-Shamir变换使协议非交互式。",
-          "en": "@class_lambda team in blog{{name}} delved into the details of GKR protocol implementation, including arithmetic circuit description and verification, prover and verifier actual operations, and how to apply Fiat-Shamir transformation to make the protocol non-interactive."
+          "en": "@class_lambda team in blog{{name}} delved into the details of GKR protocol implementation, including arithmetic circuit description and verification, prover and verifier actual operations, and how to apply Fiat-Shamir transformation to make the protocol non-interactive.",
+          "ja": "team には、blog{{name}} でGKRプロトコルの実装の詳細、算術回路の説明と検証、prover および verifier の実際の操作、そしてFiat-Shamir変換を適用してプロトコルを非対話的にする方法について掘り下げて解説しました。"
         }
       }
     ]
@@ -288,7 +316,8 @@
         ],
         "summary": {
           "zh": "Xu等人在{{name}}论文中提出了FRIttata，首个既透明又后量子安全的水平可扩展SNARK系统，通过基于FRI的双变量多项式承诺方案，实现了分布式证明生成。",
-          "en": "Xu et al. proposed FRIttata, the first transparent and post-quantum secure horizontally scalable SNARK system, using a double-variable polynomial commitment scheme based on FRI, achieving distributed proof generation."
+          "en": "Xu et al. proposed FRIttata, the first transparent and post-quantum secure horizontally scalable SNARK system, using a double-variable polynomial commitment scheme based on FRI, achieving distributed proof generation.",
+          "ja": "Xuらは、FRIに基づく二変数多項式コミットメント方式を利用し、分散的な証明生成を達成した、最初の透過的かつポスト量子安全な水平スケーラブルSNARKシステムであるFRIttataを提案しました。"
         }
       },
       {
@@ -319,7 +348,8 @@
         ],
         "summary": {
           "zh": "Coratger 等人在{{name}}博客中介绍了WHIR，一种递归的、基于哈希的接近性测试协议，并讨论由其支撑的以太坊高效证明系统。",
-          "en": "Coratger et al. introduced WHIR, a recursive, hash-based proximity testing protocol, and discussed the Ethereum efficient proof system supported by it in the{{name}} blog."
+          "en": "Coratger et al. introduced WHIR, a recursive, hash-based proximity testing protocol, and discussed the Ethereum efficient proof system supported by it in the{{name}} blog.",
+          "ja": "Coratgerらは、再帰的ハッシュベースの近接性テストプロトコルであるWHIRを導入し、それによってサポートされるEthereum効率的な証明システムについて{{name}}ブログで論じています。"
         }
       },
       {
@@ -333,7 +363,8 @@
         ],
         "summary": {
           "zh": "@tcoratger 发布了whir-p3开源项目，基于Plonky3库构建WHIR，支持ZK证明生成和验证，使用Rust语言实现。",
-          "en": "@tcoratger released whir-p3 open source project, based on Plonky3 library to build WHIR, supporting ZK proof generation and verification, using Rust language."
+          "en": "@tcoratger released whir-p3 open source project, based on Plonky3 library to build WHIR, supporting ZK proof generation and verification, using Rust language.",
+          "ja": "@tcoratger が、Rust 言語を使用して、Plonky3 ライブラリ―に基づき、ZK proof の生成と検証をサポートする WHIR を構築するためのオープンソースプロジェクト whir-p3 をリリースしました。"
         }
       }
     ]
@@ -352,7 +383,8 @@
         ],
         "summary": {
           "zh": "Guillermo Angeris在{{name}}博客中讨论了在ZK证明中使用不同有限域的线性代数操作，包括基础域和扩展域之间的矩阵向量乘法优化。",
-          "en": "Guillermo Angeris discussed linear algebra over field extensions in blog{{name}}, including matrix vector multiplication between base and extension fields in ZK proofs."
+          "en": "Guillermo Angeris discussed linear algebra over field extensions in blog{{name}}, including matrix vector multiplication between base and extension fields in ZK proofs.",
+          "ja": "Guillermo Angerisは、ブログ{{name}}で、ZK証明における基底体と拡張体間の行列ベクトル積を含む、拡大体上の線形代数について論じた。"
         }
       },
       {
@@ -365,7 +397,8 @@
         ],
         "summary": {
           "zh": "L2BEAT分享了ZK Catalog，展示了使用ZK的区块链项目的ZK特性，及其技术栈、曲线选择以及风险分析等。",
-          "en": "L2BEAT shared the ZK Catalog, showcasing the ZK features of blockchain projects, their technology stack, curve selection, and risk analysis."
+          "en": "L2BEAT shared the ZK Catalog, showcasing the ZK features of blockchain projects, their technology stack, curve selection, and risk analysis.",
+          "ja": "L2BEATはZK Catalogを共有し、ブロックチェーンプロジェクトのZK機能、技術スタック、曲線選択、リスク分析を紹介しました。"
         }
       }
     ]
@@ -385,7 +418,8 @@
         ],
         "summary": {
           "zh": "ICME团队分享了zkML-JOLT（Atlas）如何通过sumcheck协议和查找表优化，将zkML速度提升3-7倍，专注于神经网络推理中的稀疏性和非线性的高效处理。",
-          "en": "ICME team shared how zkML-JOLT (Atlas) achieves a 3-7x speedup in zkML by using sumcheck protocol and lookup arguments, focusing on efficient processing of sparsity and non-linearity in neural network inference."
+          "en": "ICME team shared how zkML-JOLT (Atlas) achieves a 3-7x speedup in zkML by using sumcheck protocol and lookup arguments, focusing on efficient processing of sparsity and non-linearity in neural network inference.",
+          "ja": "ICMEチームは、sumcheckプロトコルとlookup引数を利用してzkMLにおける3〜7倍の高速化を達成する方法について共有しました。これは、ニューラルネットワーク推論におけるスパース性（sparsity）と非線形性（non-linearity）の効率的な処理に焦点を当てたものです。"
         }
       },
       {
@@ -400,7 +434,8 @@
         ],
         "summary": {
           "zh": "ICME-Lab团队开源了JOLT Atlas，这是一个基于JOLT证明系统的zkML框架，支持从ONNX模型进行ML推理验证，通过查找参数简化证明过程。",
-          "en": "ICME-Lab team released JOLT Atlas, a zkML framework based on JOLT proof system, supporting ML inference verification from ONNX models, simplifying proof process through lookup arguments."
+          "en": "ICME-Lab team released JOLT Atlas, a zkML framework based on JOLT proof system, supporting ML inference verification from ONNX models, simplifying proof process through lookup arguments.",
+          "ja": "ICME-Labチームは、JOLT証明システムに基づくzkMLフレームワークであるJOLT Atlasをリリースしました。これは、lookup引数による証明プロセスの簡素化を通じて、ONNXモデルからのML推論検証をサポートします。"
         }
       }
     ]
@@ -418,7 +453,8 @@
         ],
         "summary": {
           "zh": "Groth等人在{{name}}论文中提出了一种约束友好的映射到椭圆曲线群关系，绕过加密哈希函数需求，在ZKP中实现高效证明，减少约束和加速证明时间。",
-          "en": "Groth et al. proposed a constraint-friendly mapping to elliptic curve group relations in paper{{name}}, avoiding encryption hash functions, achieving efficient proofs in ZKP, reducing constraints and accelerating proof time."
+          "en": "Groth et al. proposed a constraint-friendly mapping to elliptic curve group relations in paper{{name}}, avoiding encryption hash functions, achieving efficient proofs in ZKP, reducing constraints and accelerating proof time.",
+          "ja": "Grothらによる論文{{name}}では、暗号化ハッシュ関数を回避し、ZKPにおける効率的な証明を実現し、制約を削減し、証明時間を短縮する楕円曲線群関係への制約に優しいマッピングが提案されています。"
         },
         "notes": {
           "zh": [
@@ -436,6 +472,14 @@
             "Suitable for zkVM memory checks and BLS signature ZKP scenarios",
             "Open-source implementation based on Noir/Barretenberg, enhancing practical application efficiency",
             "Provide better cryptographic primitives for ZKP and constraint programming"
+          ],
+          "ja": [
+            "従来のハッシュから曲線へのマッピングを置き換え、楕円曲線群の関係に対する制約に優しいマッピングを提案",
+            "EC-GGMのセキュリティ分析と非決定論的マッピングのサポート",
+            "23倍の制約削減と50〜100倍の証明時間加速を実現",
+            "zkVMメモリチェックおよびBLS署名ZKPシナリオに適している",
+            "Noir/Barretenbergに基づくオープンソース実装により、実用的なアプリケーション効率を向上",
+            "ZKPおよび制約プログラミングのためのより良い暗号プリミティブの提供"
           ]
         }
       }

@@ -13,7 +13,8 @@
         ],
         "summary": {
           "zh": "Khovratovich等人在{{name}}论文中提出了一种混合压缩方法，用于优化Groth16框架中长语句的证明成本，结合不同哈希函数以提高智能合约和证明电路的效率。",
-          "en": "Khovratovich et al. proposed a hybrid compression method in the paper{{name}}, optimizing Groth16 framework proof costs for long statements by combining different hash functions to improve smart contract and proof circuit efficiency."
+          "en": "Khovratovich et al. proposed a hybrid compression method in the paper{{name}}, optimizing Groth16 framework proof costs for long statements by combining different hash functions to improve smart contract and proof circuit efficiency.",
+          "ja": "Khovratovichらは論文{{name}}でハイブリッド圧縮手法を提案しており、異なるハッシュ関数を組み合わせることでスマートコントラクトと証明回路の効率を向上させ、長いステートメントに対するGroth16フレームワークの証明コストを最適化しています。"
         },
         "notes": {
           "zh": [
@@ -31,6 +32,14 @@
             "Models problem as 'Data Matching in Unequal Worlds' protocol.",
             "Benchmarks show near-optimal gas and proving time.",
             "Resolves hash dilemma for efficient on-chain verification."
+          ],
+          "ja": [
+            "回路とコントラクトで異なるハッシュを許容するハイブリッド圧縮を提案。",
+            "コントラクトはSHA-256を使用し、回路はPoseidonを使用し、UHFによる一貫性を確保。",
+            "セキュリティのための共同のUHF困難性仮定を導入。",
+            "問題を「不均質な世界におけるデータマッチング」プロトコルとしてモデル化。",
+            "ベンチマークにより、ほぼ最適なガスおよび証明時間を確認。",
+            "効率的なオンチェーン検証のためのハッシュジレンマを解決。"
           ]
         }
       }
@@ -50,7 +59,8 @@
         ],
         "summary": {
           "zh": "@ZamDimon 在博客{{name}}中讨论了UltraGroth协议，包括如何通过修改Groth16来支持查找检查，从而优化非本地操作和减少约束数量。",
-          "en": "@ZamDimon discussed the UltraGroth protocol in the blog{{name}}, explaining how to modify Groth16 to support lookup checks, optimizing non-local operations and reducing constraint numbers."
+          "en": "@ZamDimon discussed the UltraGroth protocol in the blog{{name}}, explaining how to modify Groth16 to support lookup checks, optimizing non-local operations and reducing constraint numbers.",
+          "ja": "@ZamDimon はブログ記事 {{name}} でUltraGrothプロトコルについて議論し、lookupチェックをサポートするようにGroth16をどのように修正するか、非ローカル操作の最適化、制約数の削減方法を説明しました。"
         },
         "notes": {
           "zh": [
@@ -68,6 +78,14 @@
             "Significantly reduces circuit constraints (e.g., ReLU from linear to sublinear)",
             "Proven in production with Bionetta, secure and reliable",
             "Provides efficient proving for complex ZK circuits"
+          ],
+          "ja": [
+            "UltraGrothは、ルックアップテーブルサポートをGroth16に強化します",
+            "Groth16の効率的な検証（3点、3つのペアリング）を維持しつつ、G1ポイントと1つのペアリングのみを追加します",
+            "セキュアなランダムサンプリングを通じて、非ネイティブ操作の効率的な実行を可能にします",
+            "サーキット制約を大幅に削減します（例：ReLUを線形から準線形へ）",
+            "Bionettaでの実運用で証明されており、安全かつ信頼性が高いです",
+            "複雑なZKサーキットに対する効率的な証明を提供します"
           ]
         }
       }
@@ -90,7 +108,8 @@
         ],
         "summary": {
           "zh": "Eagen等人在{{name}}论文中提出了一种基于混淆电路的乐观智能合约协议Glock，用于比特币，通过泄露秘密和生成签名作为欺诈证明，并减少对Grug技术的依赖。",
-          "en": "Eagen et al. proposed a novel optimistic smart contract protocol Glock for Bitcoin in their paper{{name}}, using Garbled Circuits to leak secrets and generate signatures as fraud proofs, reducing dependency on Grug technology."
+          "en": "Eagen et al. proposed a novel optimistic smart contract protocol Glock for Bitcoin in their paper{{name}}, using Garbled Circuits to leak secrets and generate signatures as fraud proofs, reducing dependency on Grug technology.",
+          "ja": "Eagenらは論文{{name}}において、Garbled Circuitsを用いて秘密を漏洩させ、詐欺証明（fraud proofs）として署名を生成する斬新なオプティミスティックスマートコントラクトプロトコルGlockをBitcoin向けに提案し、Grug技術への依存度を低減させた。"
         },
         "notes": {
           "zh": [
@@ -108,6 +127,14 @@
             "Optimizes SNARK pari to reduce proof size and lower on-chain verification costs",
             "Works independently and in parallel with Delbrag and BitVM3, providing alternatives",
             "Reduces communication and computational complexity, suitable for the Bitcoin network"
+          ],
+          "ja": [
+            "Glockは、fraud proofとして秘密を漏洩させ署名を生成するためにgarbled circuitsを使用する。",
+            "Grug技術を必要としない最初の実用的な構成であり、セキュリティを強化する。",
+            "Cut-and-Choose、VSS、およびAdaptor Signaturesを組み合わせることにより、悪意のあるセキュリティを実現する。",
+            "SNARKのpariを最適化し、証明サイズを削減し、オンチェーン検証コストを下げる。",
+            "DelbragやBitVM3と独立して並行して動作し、代替手段を提供する。",
+            "通信および計算の複雑さを低減し、Bitcoinネットワークに適している。"
           ]
         }
       }
@@ -126,7 +153,8 @@
         ],
         "summary": {
           "zh": "Sheybani等人在{{name}}论文中对25个通用ZKP框架进行了系统调查和评估，包括性能测试和Docker容器支持，旨在降低开发者入门门槛。",
-          "en": "Sheybani et al. surveyed 25 ZKP frameworks in their paper{{name}}, including performance testing and Docker container support, aimed at reducing developer entry barriers."
+          "en": "Sheybani et al. surveyed 25 ZKP frameworks in their paper{{name}}, including performance testing and Docker container support, aimed at reducing developer entry barriers.",
+          "ja": "Sheybaniらは論文{{name}}において、開発者の参入障壁を下げることを目的として、性能テストやDockerコンテナサポートを含む25のZKPフレームワークを調査した。"
         },
         "notes": {
           "zh": [
@@ -144,6 +172,14 @@
             "STARKs for post-quantum apps, RISC Zero recommended.",
             "VOLE-ZK fits IoT/distributed learning; MPCitH limited options.",
             "Future: high-level APIs, interoperability, hardware acceleration."
+          ],
+          "ja": [
+            "25のZKPフレームワーク（SNARK、STARK、MPCitH、VOLE）を調査。",
+            "評価指標：パフォーマンス、ユーザビリティ、アクセシビリティ。再現性のためにDockerを使用。",
+            "SNARKは最も成熟している：Arkworks, Gnark。PLONKについてはGnark-KZG, Noir。",
+            "STARKsはポスト量子アプリ向け。RISC Zeroを推奨。",
+            "VOLE-ZKはIoT/分散学習に適している。MPCitHは選択肢が限定的。",
+            "今後の展望：ハイレベルAPI、相互運用性、ハードウェアアクセラレーション。"
           ]
         }
       }
@@ -162,7 +198,8 @@
         ],
         "summary": {
           "zh": "@class_lambda 团队在博客{{name}}中分享了多线性多项式的基本性质，包括定义、插值方法和张量积操作，为理解Sum-Check协议优化提供基础。",
-          "en": "@class_lambda team shared the basic properties of multilinear polynomials in blog{{name}}, including definitions, interpolation methods, and tensor product operations, providing a foundation for understanding Sum-Check protocol optimization."
+          "en": "@class_lambda team shared the basic properties of multilinear polynomials in blog{{name}}, including definitions, interpolation methods, and tensor product operations, providing a foundation for understanding Sum-Check protocol optimization.",
+          "ja": "@class_lambda チームは、ブログ記事{{name}}で多重線形多項式の基本的な性質（定義、補間方法、テンソル積演算など）を共有し、Sum-Checkプロトコルの最適化を理解するための基盤を提供しました。"
         },
         "notes": {
           "zh": [
@@ -180,6 +217,14 @@
             "Coordinate calculations based on Lagrange basis, directly through function evaluation, improving efficiency",
             "These properties help accelerate Sum-Check proofs, reducing ZKP system overhead",
             "The article provides a mathematical foundation for understanding more complex ZKP protocols (e.g., GKR)"
+          ],
+          "ja": [
+            "Multilinear polynomialsは、ZKPにおけるSum-Checkプロトコルの重要な構成要素であり、効率的な計算と検証に使用されます。",
+            "補間法により、任意の関数をブーリアン超立方体上のmultilinear polynomialで表現することが可能になり、計算が簡素化されます。",
+            "Tensor product演算は、多項式の乗算に対するベクトル空間の抽象を提供し、メモリと時間の使用量を最適化します。",
+            "ラグランジュ基に基づく座標計算は、関数評価を介して直接行われ、効率を向上させます。",
+            "これらの特性はSum-Check証明の高速化に役立ち、ZKPシステムのオーバーヘッドを削減します。",
+            "本記事は、より複雑なZKPプロトコル（例：GKR）を理解するための数学的基盤を提供します。"
           ]
         }
       }
@@ -198,7 +243,8 @@
         ],
         "summary": {
           "zh": "@a16zcrypto 团队分享了Jolt zkVM的设计，包括基于sumcheck和查找参数的高性能RISC-V实现，以及其简单性和速度优势。",
-          "en": "@a16zcrypto team shared the design of Jolt zkVM, including a high-performance RISC-V implementation based on sumcheck and lookup arguments, as well as its simplicity and speed advantages."
+          "en": "@a16zcrypto team shared the design of Jolt zkVM, including a high-performance RISC-V implementation based on sumcheck and lookup arguments, as well as its simplicity and speed advantages.",
+          "ja": "@a16zcrypto チームは、sumcheck および lookup argument に基づいた高性能なRISC-V実装、ならびにそのシンプルさと速度の利点を含むJolt zkVMの設計を共有しました。"
         },
         "notes": {
           "zh": [
@@ -216,6 +262,14 @@
             "Open-source project including related papers and blog articles, providing detailed documentation",
             "Performance reaches state-of-the-art levels, particularly outstanding on CPU",
             "Design centered around the Just One Lookup Table concept, simplifying implementation complexity"
+          ],
+          "ja": [
+            "Jolt zkVMは、パフォーマンスとシンプルさを重視し、sumcheckおよびlookup引数に基づいて設計されています。",
+            "R1CS制約の最適化のために、SpartanとDoryを基盤となる証明システムとして使用しています。",
+            "効率的な仮想マシン証明のためのRISC-Vアーキテクチャをサポートしています。",
+            "関連論文やブログ記事を含むオープンソースプロジェクトであり、詳細なドキュメントを提供します。",
+            "特にCPU上でのパフォーマンスが際立っており、最先端レベルに達しています。",
+            "Just One Lookup Tableの概念を中心に設計されており、実装の複雑さを簡素化しています。"
           ]
         }
       }
@@ -234,7 +288,8 @@
         ],
         "summary": {
           "zh": "Beriane 等人在{{name}}论文中提出了一种优化zk-Rollup架构后端验证的方法，通过多项式聚合和标量分解等技术显著降低了链上验证成本。",
-          "en": "Beriane et al. proposed an optimization method for zk-Rollup architecture backend verification in their paper{{name}}, using polynomial aggregation and scalar decomposition techniques to significantly reduce on-chain verification costs."
+          "en": "Beriane et al. proposed an optimization method for zk-Rollup architecture backend verification in their paper{{name}}, using polynomial aggregation and scalar decomposition techniques to significantly reduce on-chain verification costs.",
+          "ja": "Berianeらは論文{{name}}において、多項式集約とスカラー分解技術を用いてzk-Rollupアーキテクチャのバックエンド検証を最適化する手法を提案し、オンチェーンでの検証コストを大幅に削減しました。"
         },
         "notes": {
           "zh": [
@@ -252,6 +307,14 @@
             "Introduces proof aggregation to minimize precompile calls while maintaining 128-bit security",
             "Experimental results: Total verification cost reduced from 857.2k to 748.45k Gas",
             "Optimizations are compatible with Pectra upgrade and provide blueprint for efficient on-chain verification"
+          ],
+          "ja": [
+            "zk-Rollupにおける高いオンチェーン検証コストに対する最適化案の提案",
+            "主要な最適化：G1べき乗算を40回から31回に削減し、検証あたりのGasを108k節約",
+            "FFTを動的重心補間（dynamic barycentric interpolation）に置き換え、疎な多項式に対するGasを92-95%削減",
+            "証明集約（proof aggregation）を導入し、128ビットのセキュリティを維持しつつプリコンパイル呼び出し回数を最小化",
+            "実験結果：総検証コストが857.2kから748.45k Gasに削減",
+            "これらの最適化はPectraアップグレードと互換性があり、効率的なオンチェーン検証のための設計図を提供するものとなる"
           ]
         }
       }
@@ -274,7 +337,8 @@
         ],
         "summary": {
           "zh": "@IrreducibleHW 团队在{{name}}博客中讨论了公司转型，从硬件转向软件，专注于Binius证明系统和本地证明，以推动可验证互联网的发展。",
-          "en": "@IrreducibleHW discussed company transformation in their blog{{name}}, moving from hardware to software, focusing on Binius proof system and local proofs, to drive the development of verifiable internet."
+          "en": "@IrreducibleHW discussed company transformation in their blog{{name}}, moving from hardware to software, focusing on Binius proof system and local proofs, to drive the development of verifiable internet.",
+          "ja": "@IrreducibleHW は、ブログ記事 {{name}} で企業の変革について論じており、ハードウェアからソフトウェアへの移行に焦点を当て、Binius proof system およびローカルプルーフを活用して検証可能なインターネットの発展を推進しています。"
         },
         "notes": {
           "zh": [
@@ -292,6 +356,14 @@
             "Privacy focus: Local verification for privacy applications",
             "Licensing: Prover AGPL, verifier Apache",
             "Vision: Building verifiable internet with ZK proofs"
+          ],
+          "ja": [
+            "戦略的転換：ハードウェアからソフトウェアへ、証明システムに注力",
+            "技術的焦点：CPU最適化されたBinius64証明システム",
+            "ハードウェアの断念：需要の弱さとGPUエコシステムの優位性による",
+            "プライバシーへの注力：プライバシーアプリケーションのためのローカル検証",
+            "ライセンス：Prover AGPL、Verifier Apache",
+            "ビジョン：ZK証明による検証可能なインターネットの構築"
           ]
         }
       }
@@ -310,7 +382,8 @@
         ],
         "summary": {
           "zh": "@IrreducibleHW 在博客{{name}}中分享了Binius64的发布，讨论了其针对CPU性能的优化、与Binius V0的区别以及性能基准测试结果。",
-          "en": "@IrreducibleHW shared the release of Binius64 in their blog{{name}}, discussing CPU performance optimization, differences from Binius V0, and performance benchmark results."
+          "en": "@IrreducibleHW shared the release of Binius64 in their blog{{name}}, discussing CPU performance optimization, differences from Binius V0, and performance benchmark results.",
+          "ja": "@IrreducibleHW は、ブログ記事 {{name}} で Binius64 のリリースを発表し、CPU パフォーマンスの最適化、Binius V0 との違い、およびパフォーマンスベンチマークの結果について論じています。"
         },
         "notes": {
           "zh": [
@@ -328,6 +401,14 @@
             "Zero-knowledge coming by end-2025",
             "Focus: private payments, anonymous credentials",
             "Open-sourced, improving verification & developer experience"
+          ],
+          "ja": [
+            "Binius64のローンチ：CPUに最適化されたZK証明システム",
+            "ハードウェアフレンドリーな制約を備えたネイティブ64ビットサポート",
+            "GPU zkVMs（マルチスレッドCPU）と比較して5倍高速",
+            "2025年末までにゼロ知識機能の実装予定",
+            "焦点：プライベート決済、匿名クレデンシャル",
+            "オープンソース化による検証と開発者体験の向上"
           ]
         }
       }
@@ -347,7 +428,8 @@
         ],
         "summary": {
           "zh": "PSE团队 (@PrivacyEthereum) 分享了{{name}}博文，讨论了Ethereum隐私路线图，包括私有写入、读取和证明等关键领域，以推动隐私成为应用层的一等公民。",
-          "en": "PSE team (@PrivacyEthereum) shared their blog{{name}}, discussing the Ethereum privacy roadmap, including private writes, reads, and proving, to drive privacy as a first-class citizen in the application layer."
+          "en": "PSE team (@PrivacyEthereum) shared their blog{{name}}, discussing the Ethereum privacy roadmap, including private writes, reads, and proving, to drive privacy as a first-class citizen in the application layer.",
+          "ja": "PSEチーム（@PrivacyEthereum）は、アプリケーション層におけるプライバシーを第一級市民として推進するための、プライベートな書き込み、読み取り、証明を含むEthereumのプライバシーロードマップについて論じたブログ{{name}}を共有しました。"
         },
         "notes": {
           "zh": [
@@ -365,6 +447,14 @@
             "Short-term: Private transfers, voting protocols, institutional solutions",
             "Build ecosystem through collaboration for privacy solutions",
             "Vision: Enable global digital commerce and value internet"
+          ],
+          "ja": [
+            "PSEは、プライバシーをデフォルトにするためEthereumのPrivacy Stewardsに移行します。",
+            "3つの領域に注力します：プライベートな書き込み、読み取り、証明（proving）。",
+            "目標：プライベートな操作をパブリックな操作と同等の安価なものにすること。",
+            "短期的な目標：プライベートな送金、投票プロトコル、機関向けソリューション。",
+            "プライバシーソリューションのためのコラボレーションを通じたエコシステムの構築。",
+            "ビジョン：グローバルなデジタルコマースと価値インターネットを可能にすること。"
           ]
         }
       }
@@ -384,7 +474,8 @@
         ],
         "summary": {
           "zh": "Xue等人在{{name}}论文中提出了ZK-Eval评估框架和ZK-Coder增强框架，用于评估和改进LLM在ZK代码生成中的能力，显著提升Circom和Noir程序的正确率。",
-          "en": "In the paper{{name}}, Xue et al. propose the ZK-Eval evaluation framework and the ZK-Coder enhancement framework to assess and improve LLM capabilities in ZK code generation, significantly boosting the correctness of Circom and Noir programs."
+          "en": "In the paper{{name}}, Xue et al. propose the ZK-Eval evaluation framework and the ZK-Coder enhancement framework to assess and improve LLM capabilities in ZK code generation, significantly boosting the correctness of Circom and Noir programs.",
+          "ja": "論文{{name}}において、XueらはZK-Eval評価フレームワークとZK-Coder強化フレームワークを提案し、これらがCircomおよびNoirプログラムの正しさを大幅に向上させるLLMのZKコード生成能力の評価と改善に貢献しています。"
         },
         "notes": {
           "zh": [
@@ -402,6 +493,14 @@
             "ZK-Coder uses sketching, retrieval, and repair to improve reliability.",
             "Success rates on Circom/Noir rise from <30% to 80–90%.",
             "Repair loop is crucial; challenges remain in efficiency and data scarcity."
+          ],
+          "ja": [
+            "ZKPプログラミングは難しくエラーが発生しやすく、LLMには体系的な評価が欠けている。",
+            "ZK-Evalベンチマークは言語、ガジェット、エンドツーエンドの生成を網羅している。",
+            "LLMは構文はうまく処理するが、ガジェットやセマンティクスで失敗するため、Circomの方が難しい。",
+            "ZK-Coderは信頼性向上のためにスケッチング、検索、修復を利用している。",
+            "Circom/Noirでの成功率は30%未満から80～90%に向上した。",
+            "修復ループが極めて重要であり、効率性とデータ不足という課題が残っている。"
           ]
         }
       }
@@ -420,7 +519,8 @@
         ],
         "summary": {
           "zh": "来自 @NethermindEth 的 Garreta等人在{{name}}论文中提出了一种基于哈希的简洁论证方案Zinc，通过整数上的IOPs减少算术化开销，支持任意模数的环运算。",
-          "en": "@NethermindEth's Garreta et al. proposed Zinc, a hash-based succinct argument scheme that reduces arithmetization overheads using IOPs of proximity to integers, supporting ring operations with arbitrary moduli."
+          "en": "@NethermindEth's Garreta et al. proposed Zinc, a hash-based succinct argument scheme that reduces arithmetization overheads using IOPs of proximity to integers, supporting ring operations with arbitrary moduli.",
+          "ja": "@GarretaらのZincは、IOPs (Interactive Oracle Proofs) を整数への近さ（proximity to integers）を利用して算術化のオーバーヘッドを削減し、任意の法を持つリング演算をサポートするハッシュベースの簡潔な証明スキームです。"
         },
         "notes": {
           "zh": [
@@ -438,6 +538,14 @@
             "Core components include the Zinc-PIOP framework and Zip polynomial commitments.",
             "Utilizes rational number-based lookup arguments to ensure proof integrity.",
             "Suitable for integer arithmetic applications, improving the practical efficiency of ZK proofs."
+          ],
+          "ja": [
+            "Zincは、ZK証明における算術化のオーバーヘッドを削減し、コストを桁違いに低減することを目指しています。",
+            "非素数やマルチモジュラスシナリオを含む、任意のモジュラスでのリング演算をサポートします。",
+            "ハッシュとコードに基づいており、隠れた順序（hidden order）を必要としないため、セキュリティが向上しています。",
+            "コアコンポーネントにはZinc-PIOPフレームワークとZip polynomial commitmentsが含まれます。",
+            "証明の完全性を保証するために、有理数ベースのlookup argumentsを利用します。",
+            "整数演算アプリケーションに適しており、ZK証明の実用的な効率を向上させます。"
           ]
         }
       }
@@ -457,7 +565,8 @@
         ],
         "summary": {
           "zh": "@0xPARC 团队发布了可编程密码学教材{{name}}的v2.0.0版本，包括更新内容和错误修复，支持ZK等密码学技术的学习。",
-          "en": "@0xPARC team released the v2.0.0 version of the programmable cryptography textbook{{name}}, including updates and bug fixes, supporting learning of ZK and other cryptographic technologies."
+          "en": "@0xPARC team released the v2.0.0 version of the programmable cryptography textbook{{name}}, including updates and bug fixes, supporting learning of ZK and other cryptographic technologies.",
+          "ja": "@0xPARC チームは、ZK やその他の暗号技術の学習をサポートする更新とバグ修正を含む、プログラマブル暗号教科書 {{name}} の v2.0.0 バージョンをリリースしました。"
         },
         "notes": {
           "zh": [
@@ -475,6 +584,14 @@
             "SNARK example: PLONK with arithmetization and constraints.",
             "FHE: LWE-based homomorphic encryption and bootstrapping.",
             "ORAM: Path ORAM to hide access patterns."
+          ],
+          "ja": [
+            "2PC、SNARK、FHE、ORAMを備えたプログラマブルな暗号技術の定義。",
+            "2PC：Yao's circuitsとOTによる安全な計算。",
+            "SNARKの基礎：楕円曲線と多項式コミットメント。",
+            "SNARKの例：算術化（arithmetization）と制約（constraints）を用いたPLONK。",
+            "FHE：LWEベースの準同型暗号とブートストラップ。",
+            "ORAM：アクセスパターンを隠蔽するためのPath ORAM。"
           ]
         }
       }
@@ -493,7 +610,8 @@
         ],
         "summary": {
           "zh": "Cong等人在{{name}}论文中提出了一种可扩展的zkSNARK框架，用于矩阵计算，实现线性证明时间、对数级证明大小和验证时间，同时保护架构隐私。",
-          "en": "Cong et al. proposed a scalable zkSNARK framework for matrix computations, achieving linear proving time, logarithmic proof size, and verification time, while preserving architecture privacy."
+          "en": "Cong et al. proposed a scalable zkSNARK framework for matrix computations, achieving linear proving time, logarithmic proof size, and verification time, while preserving architecture privacy.",
+          "ja": "Congらは、行列計算のためのスケーラブルなzkSNARKフレームワークを提案し、アーキテクチャプライバシーを維持しつつ、線形時間での証明生成、対数的な証明サイズ、および検証時間を達成しました。"
         },
         "notes": {
           "zh": [
@@ -511,6 +629,14 @@
             "The Evalyn interface unifies diverse matrix and nonlinear operations, supporting heterogeneous NNs.",
             "Batching and lookup tables improve efficiency for nonlinear functions and matrix commitments.",
             "Achieves O(Mn²) prover and O(log(Mn)) proof/verification complexity, with an open-source implementation."
+          ],
+          "ja": [
+            "ニューラルネットワークを行列計算DAGとしてモデル化する汎用的なzkSNARKフレームワークを提案。",
+            "デュアルレイヤー設計を導入：LiteBulletは線形証明を保証し、PoP（Proof of Proof）が証明書を圧縮し構造を隠蔽する。",
+            "LiteBulletは折り畳みベースの内積引数を使用し、多項式展開とsumcheckを回避する。",
+            "Evalynインターフェースは多様な行列および非線形演算を統一的に扱い、異種（heterogeneous）NNをサポートする。",
+            "バッチ処理とルックアップテーブルにより、非線形関数および行列コミットメントの効率が向上する。",
+            "O(Mn²)のプロバー計算量とO(log(Mn))の証明書/検証複雑度を達成し、オープンソース実装を提供する。"
           ]
         }
       }
@@ -533,7 +659,8 @@
         ],
         "summary": {
           "zh": "Sigma Prime在{{name}}博客中分享了SP1 zkVM的安全审计指南，包括架构概述、输入验证、主机与客机代码分离以及常见漏洞缓解策略等内容。",
-          "en": "Sigma Prime shared a security audit guide for SP1 zkVM on their blog{{name}}, covering architecture overview, input validation, host-guest code separation, and common vulnerability mitigation strategies."
+          "en": "Sigma Prime shared a security audit guide for SP1 zkVM on their blog{{name}}, covering architecture overview, input validation, host-guest code separation, and common vulnerability mitigation strategies.",
+          "ja": "Sigma Primeは、アーキテクチャ概要、入力検証、ホストとゲストのコード分離、一般的な脆弱性緩和戦略を網羅した、SP1 zkVMに関するセキュリティ監査ガイドをブログ{{name}}で公開しました。"
         },
         "notes": {
           "zh": [
@@ -551,6 +678,14 @@
             "Third-party dependencies may introduce OS calls or 64-bit assumptions, requiring review and adaptation.",
             "Security audits should focus on input validation and logic separation to prevent malicious inputs.",
             "Uses standard Rust toolchain, but attention needed for zkVM environment constraints."
+          ],
+          "ja": [
+            "すべての入力データは信頼できないため、ゲストプログラム内で検証する必要があります。",
+            "証明されるのはゲストコードの実行のみであり、ホストコードの動作は暗号化によって保証されません。",
+            "SP1 は 32-bit RISC-V を使用しており、整数オーバーフローとポインタ演算に注意が必要です。",
+            "サードパーティの依存関係が OS コールや64ビットの仮定を導入する可能性があり、レビューと適応が必要です。",
+            "セキュリティ監査は、悪意のある入力を防ぐための入力検証とロジック分離に焦点を当てるべきです。",
+            "標準の Rust ツールチェーンを使用していますが、zkVM 環境の制約に注意が必要です。"
           ]
         }
       }

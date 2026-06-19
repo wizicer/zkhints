@@ -11,7 +11,11 @@
           "BBS+",
           "CL2003"
         ],
-        "summary": "Cybersecurity-LINKS团队发布了ZKryptium开源库，实现了BBS+、Blind BBS和CL2003签名方案，支持创建零知识证明。"
+        "summary": {
+          "zh": "Cybersecurity-LINKS团队发布了ZKryptium开源库，实现了BBS+、Blind BBS和CL2003签名方案，支持创建零知识证明。",
+          "en": "The Cybersecurity-LINKS team has released the ZKryptium open-source library, which implements BBS+, Blind BBS, and CL2003 signature schemes to support zero-knowledge proof creation.",
+          "ja": "Cybersecurity-LINKSチームは、ゼロ知識証明の作成をサポートするBBS+、Blind BBS、およびCL2003署名スキームを実装したZKryptiumオープンソースライブラリをリリースしました。"
+        }
       },
       {
         "name": "Proof.Fun",
@@ -20,7 +24,11 @@
         "tags": [
           "nebrazkp"
         ],
-        "summary": "@nebrazkp 孵化了一个发币项目，基于公共项目或论文等，重要特点是原主可通过zk证明验证身份并获得10%代币奖励。"
+        "summary": {
+          "zh": "@nebrazkp 孵化了一个发币项目，基于公共项目或论文等，重要特点是原主可通过zk证明验证身份并获得10%代币奖励。",
+          "en": "@nebrazkp incubated a token issuance project based on public projects or papers, with the key feature that the original creator can prove their identity via zk and receive a 10% token reward.",
+          "ja": "@nebrazkp は、公開プロジェクトや論文などを基にしたトークン発行プロジェクトを孵化しました。重要な特徴として、元の所有者はzk証明によってアイデンティティを検証し、10%のトークン報酬を獲得できます。"
+        }
       }
     ]
   },
@@ -35,7 +43,11 @@
           "ANON.WORLD",
           "匿名社交"
         ],
-        "summary": "@Slokh 发布了匿名社交网络 @anondotworld，使用ZKP生成匿名凭证，用户发帖时可附加多个凭证，社区由共享凭证的用户组成，成员可代表社区进行匿名操作。"
+        "summary": {
+          "zh": "@Slokh 发布了匿名社交网络 @anondotworld，使用ZKP生成匿名凭证，用户发帖时可附加多个凭证，社区由共享凭证的用户组成，成员可代表社区进行匿名操作。",
+          "en": "@Slokh released the anonymous social network @anondotworld, which uses ZKPs to generate anonymous credentials. When a user posts, they can attach multiple credentials, and the community is formed by users who share these credentials. Members can then perform anonymous operations on behalf of the community.",
+          "ja": "@Slokh は、ZKP（ゼロ知識証明）を使用して匿名クレデンシャルを生成する匿名ソーシャルネットワーク @anondotworld をリリースしました。ユーザーが投稿する際に複数のクレデンシャルを添付でき、コミュニティは共有されたクレデンシャルを持つユーザーで構成されます。メンバーはコミュニティを代表して匿名操作を行うことができます。"
+        }
       },
       {
         "name": "If you want to learn ZK in 2025",
@@ -45,7 +57,11 @@
           "Jeffrey Scholz",
           "RareSkills"
         ],
-        "summary": "@Jeyffre 分享了RareSkills ZK Book的学习方法，强调通过按顺序学习ZK，提高学习效率。"
+        "summary": {
+          "zh": "@Jeyffre 分享了RareSkills ZK Book的学习方法，强调通过按顺序学习ZK，提高学习效率。",
+          "en": "@Jeyffre shared his study methods for the RareSkills ZK Book, emphasizing that learning ZK in sequence can improve learning efficiency.",
+          "ja": "JeyffreさんがRareSkills ZK Bookの学習方法を共有し、ZKを順番に学べるようにすることで学習効率を高めることの重要性を強調しました。"
+        }
       }
     ]
   },
@@ -60,7 +76,11 @@
           "Justin Martin",
           "Quadratic Residues"
         ],
-        "summary": "@thefrozenfire 分享了利用二次剩余问题学习ZKP的核心思想的方法。"
+        "summary": {
+          "zh": "@thefrozenfire 分享了利用二次剩余问题学习ZKP的核心思想的方法。",
+          "en": "@thefrozenfire shared the core idea of learning ZKPs using quadratic residues.",
+          "ja": "@thefrozenfire さんが、二次剰余問題を利用してZKPの核心的なアイデアを学ぶ方法を共有しました。"
+        }
       },
       {
         "name": "MicroNova: Folding-based arguments with efficient (on-chain) verification",
@@ -71,7 +91,11 @@
           "Srinath Setty",
           "Weidong Cui"
         ],
-        "summary": "Zhao等人在{{name}}论文中提出了一种基于折叠的递归论证MicroNova，用于生成增量计算的证明，在以太坊上的验证约消耗2.2M gas（Groth16约220k gas）。"
+        "summary": {
+          "zh": "Zhao等人在{{name}}论文中提出了一种基于折叠的递归论证MicroNova，用于生成增量计算的证明，在以太坊上的验证约消耗2.2M gas（Groth16约220k gas）。",
+          "en": "Zhao et al. proposed MicroNova in their paper on {{name}}, a folding-based recursive argument for generating proofs of incremental computations, which consumes approximately 2.2M gas on Ethereum (compared to about 220k gas for Groth16).",
+          "ja": "Zhaoらは{{name}}の論文で、差分計算の証明を生成するための折りたたみベースの再帰的証明であるMicroNovaを提案しています。これはイーサリアム上での検証に約2.2Mガス（Groth16では約220kガス）を消費します。"
+        }
       }
     ]
   },
@@ -86,7 +110,11 @@
           "zkv.xyz",
           "Celestia"
         ],
-        "summary": "@zkv_xyz 分享了关于2024年Celestia中ZK技术的应用调查，包括ZK IDs、隐私保护、新兴ZK用例以及ZK安全漏洞等方面的内容。"
+        "summary": {
+          "zh": "@zkv_xyz 分享了关于2024年Celestia中ZK技术的应用调查，包括ZK IDs、隐私保护、新兴ZK用例以及ZK安全漏洞等方面的内容。",
+          "en": "@zkv_xyz shared a survey on the application of ZK technology in Celestia for 2024, covering topics such as ZK IDs, privacy protection, emerging ZK use cases, and ZK security vulnerabilities.",
+          "ja": "@zkv_xyz が、ZK ID、プライバシー保護、新しいZKユースケース、ZKセキュリティ脆弱性などに関する2024年のCelestiaにおけるZK技術の応用調査を共有しました。"
+        }
       },
       {
         "name": "Privacy-First CBDCs: Leveraging Cryptography and Ethereum for Next-Gen Digital Currencies",
@@ -97,7 +125,11 @@
           "CBDC",
           "合规"
         ],
-        "summary": "@aztecnetwork 讨论了隐私优先的CBDCs（央行数字货币），强调利用ZKPs和以太坊技术平衡创新、隐私、合规和用户信任。"
+        "summary": {
+          "zh": "@aztecnetwork 讨论了隐私优先的CBDCs（央行数字货币），强调利用ZKPs和以太坊技术平衡创新、隐私、合规和用户信任。",
+          "en": "@aztecnetwork discussed privacy-preserving CBDCs (Central Bank Digital Currencies), emphasizing the balance of innovation, privacy, compliance, and user trust through the use of ZKPs and Ethereum technology.",
+          "ja": "@aztecnetwork は、プライバシーを重視した CBDC（中央銀行デジタル通貨）について議論し、ZKPs とイーサリアム技術を活用することで、イノベーション、プライバシー、コンプライアンス、ユーザーの信頼性のバランスを取ることを強調しています。"
+        }
       }
     ]
   },
@@ -112,7 +144,11 @@
           "o1Labs",
           "Mina"
         ],
-        "summary": "@o1_labs 团队分享了关于Mina和o1js的zkApps平台的最新进展，包括o1js v2.0的发布、动态数组和运行时表的引入、权限前提条件的设置、zkProgram的改进以及EdDSA的支持等内容。"
+        "summary": {
+          "zh": "@o1_labs 团队分享了关于Mina和o1js的zkApps平台的最新进展，包括o1js v2.0的发布、动态数组和运行时表的引入、权限前提条件的设置、zkProgram的改进以及EdDSA的支持等内容。",
+          "en": "The @o1_labs team shared the latest updates on their zkApps platform for Mina and o1js, including the release of o1js v2.0, the introduction of dynamic arrays and runtime tables, permission prerequisites setup, improvements to zkPrograms, and EdDSA support.",
+          "ja": "@o1_labs チームは、Minaとo1jsのzkAppsプラットフォームに関する最新の進捗を共有しました。これには、o1js v2.0のリリース、動的配列とランタイムテーブルの導入、権限前提条件の設定、zkProgramの改善、EdDSAサポートなどが含まれます。"
+        }
       },
       {
         "name": "Ingonyama Research Grants 2025",
@@ -124,7 +160,11 @@
           "ICICLE",
           "研究"
         ],
-        "summary": "@Ingo_zk 宣布2025年研究资助计划，提供10万美元支持使用ICICLE库进行的研究，旨在通过重新实现现有文献中的算法来超越现有研究基准。"
+        "summary": {
+          "zh": "@Ingo_zk 宣布2025年研究资助计划，提供10万美元支持使用ICICLE库进行的研究，旨在通过重新实现现有文献中的算法来超越现有研究基准。",
+          "en": "@Ingo_zk announced a 2025 research grant program, offering $100,000 to support research utilizing the ICICLE library, aiming to surpass existing research baselines by re-implementing algorithms from prior literature.",
+          "ja": "@Ingo_zk は、既存の研究ベンチマークを超えることを目的として、既存の文献にあるアルゴリズムを再実装することを目指す研究に対し、ICICLEライブラリを使用した研究に10万ドルの助成金を提供する2025年の研究資金計画を発表しました。"
+        }
       }
     ]
   },
@@ -141,7 +181,11 @@
           "cryptography",
           "bug"
         ],
-        "summary": "@vdWijden 发现iden3的Poseidon哈希函数实现存在哈希碰撞漏洞，该实现被许多知名项目使用。"
+        "summary": {
+          "zh": "@vdWijden 发现iden3的Poseidon哈希函数实现存在哈希碰撞漏洞，该实现被许多知名项目使用。",
+          "en": "@vdWijden discovered a hash collision vulnerability in the Poseidon hash function implementation used by ident3, which is utilized by many well-known projects.",
+          "ja": "@vdWijden が、多くの著名なプロジェクトで使用されている inden3 の Poseidon ハッシュ関数実装にハッシュ衝突の脆弱性があることを発見しました。"
+        }
       },
       {
         "name": "zkPi: Proving Lean Theorems in Zero-Knowledge",
@@ -152,7 +196,11 @@
           "Dan Boneh",
           "Lean"
         ],
-        "summary": "Laufer等人在{{name}}论文中提出了zkPi，首个用于Lean证明的zkSNARK，允许证明者在零知识下验证Lean定理的正确性。"
+        "summary": {
+          "zh": "Laufer等人在{{name}}论文中提出了zkPi，首个用于Lean证明的zkSNARK，允许证明者在零知识下验证Lean定理的正确性。",
+          "en": "Laufer et al. introduced zkPi in their paper on {{name}}, the first zkSNARK for Lean proofs, which allows a prover to verify the correctness of Lean theorems in zero knowledge.",
+          "ja": "Lauferらは{{name}}の論文でzkPiを提案しました。これは、証明者がゼロ知識の下でLean定理の正しさを検証できる、最初のzkSNARKです。"
+        }
       }
     ]
   },
@@ -168,7 +216,11 @@
           "Provable Software",
           "Cryptography"
         ],
-        "summary": "@SuccinctLabs 在博客{{name}}中讨论了可证明软件时代，强调了ZK密码学的进步使得通过通用zkVM验证任意程序执行成为可能，这将推动区块链和计算领域的新应用。"
+        "summary": {
+          "zh": "@SuccinctLabs 在博客{{name}}中讨论了可证明软件时代，强调了ZK密码学的进步使得通过通用zkVM验证任意程序执行成为可能，这将推动区块链和计算领域的新应用。",
+          "en": "@SuccinctLabs discussed the era of verifiable software in their blog post {{name}}, emphasizing that advancements in ZK cryptography enable the verification of arbitrary program executions via universal zkVMs, which will drive new applications in blockchain and computation.",
+          "ja": "SuccinctLabs はブログ {{name}} で証明可能なソフトウェアの時代について議論し、ZK暗号学の進歩により任意のプログラム実行を汎用的な zkVM で検証することが可能になり、これがブロックチェーンと計算分野における新たなアプリケーションを推進すると強調しています。"
+        }
       },
       {
         "name": "Try NoirLang quest at NodeGuardians",
@@ -179,7 +231,11 @@
           "NodeGuardians",
           "编程游戏"
         ],
-        "summary": "@cryptobuilder_ 推荐尝试 @nodeguardians 的 @NoirLang 任务，通过游戏学习ZK的概念，无需了解ZK工作原理，即可学习如何证明程序并验证证据。"
+        "summary": {
+          "zh": "@cryptobuilder_ 推荐尝试 @nodeguardians 的 @NoirLang 任务，通过游戏学习ZK的概念，无需了解ZK工作原理，即可学习如何证明程序并验证证据。",
+          "en": "@cryptobuilder_ recommends trying the @nodeguardians' @NoirLang tasks. By learning ZK concepts through games, users can learn how to write proving programs and verify proofs without needing to understand the underlying mechanics of ZK.",
+          "ja": "@cryptobuilder_ は、ゲームを通じてZKの概念を学ぶことで、ZKの仕組みを理解しなくても証明プログラムの作成とエビデンスの検証方法を学べる @nodeguardians の @NoirLang タスクを試すことをお勧めします。"
+        }
       }
     ]
   },
@@ -194,7 +250,11 @@
           "Madhavan Malolan",
           "Reclaim Protocol"
         ],
-        "summary": "Madhavan Malolan在博客{{name}}中讨论了zkTLS的概念，澄清了zkTLS并非主要用于隐私保护，而是为了用户安全和数据完整性。"
+        "summary": {
+          "zh": "Madhavan Malolan在博客{{name}}中讨论了zkTLS的概念，澄清了zkTLS并非主要用于隐私保护，而是为了用户安全和数据完整性。",
+          "en": "Madhavan Malolan discussed the concept of zkTLS in his blog post {{name}}, clarifying that zkTLS is not primarily for privacy protection, but rather for user security and data integrity.",
+          "ja": "Madhavan Malolanはブログ{{name}}でzkTLSの概念について議論し、zkTLSが主にプライバシー保護のためではなく、ユーザーのセキュリティとデータ完全性のためにあることを明確にしました。"
+        }
       },
       {
         "name": "zkVMs and Privacy: Challenges and Opportunities",
@@ -205,7 +265,11 @@
           "zkVMs",
           "zkDSL"
         ],
-        "summary": "@luhelminger 讨论了zkVMs在2024年的主导地位及其在可扩展性用例中的应用，同时探讨了zkVMs在隐私保护方面面临的挑战和未来展望。"
+        "summary": {
+          "zh": "@luhelminger 讨论了zkVMs在2024年的主导地位及其在可扩展性用例中的应用，同时探讨了zkVMs在隐私保护方面面临的挑战和未来展望。",
+          "en": "@luhelminger discussed the dominance of zkVMs in 2024 and their applications in scalability use cases, while also exploring the challenges and future prospects of zkVMs regarding privacy preservation.",
+          "ja": "@luhelminger は、2024年におけるzkVMの優位性とスケーラビリティユースケースへの応用について議論しつつ、プライバシー保護に関してzkVMが直面する課題と将来の見通しについても考察しました。"
+        }
       }
     ]
   },
@@ -221,7 +285,11 @@
           "Cairo",
           "WASM"
         ],
-        "summary": "开源项目stwo-web-stark，提供使用stwo证明器证明Cairo程序的Web演示，可以在网页中完成证明、验证等操作。"
+        "summary": {
+          "zh": "开源项目stwo-web-stark，提供使用stwo证明器证明Cairo程序的Web演示，可以在网页中完成证明、验证等操作。",
+          "en": "stwo-web-stark is an open-source project that provides a web demonstration for proving Cairo programs using the stwo prover, allowing proof generation and verification to be performed in a browser.",
+          "ja": "オープンソースプロジェクトであるstwo-web-starkは、Cairoプログラムをstwoプロバーで証明するためのWebデモを提供します。これにより、ウェブページ上で証明や検証などの操作を行うことができます。"
+        }
       },
       {
         "name": "A Survey of Interactive Verifiable Computing: Utilizing Randomness in Low-Degree Polynomials",
@@ -232,7 +300,11 @@
           "低度多项式",
           "GKR"
         ],
-        "summary": "Angold Wang在{{name}}综述中审视了可验证计算，从基础复杂性理论到现代ZK-SNARKs，探讨了交互式证明系统、知识复杂性及低次多项式在错误检测和验证协议中的应用，最终落脚在GKR协议。"
+        "summary": {
+          "zh": "Angold Wang在{{name}}综述中审视了可验证计算，从基础复杂性理论到现代ZK-SNARKs，探讨了交互式证明系统、知识复杂性及低次多项式在错误检测和验证协议中的应用，最终落脚在GKR协议。",
+          "en": "Angold Wang reviews verifiable computation in {{name}}, covering topics from foundational complexity theory to modern zkSNARKs, discussing interactive proof systems, knowledge complexity, and the application of low-degree polynomials in error detection and verification protocols, ultimately focusing on the GKR protocol.",
+          "ja": "Angold Wangは{{name}}のレビューで検証可能な計算について概説しており、基礎的な計算量理論から現代のZK-SNARKsまでを扱い、インタラクティブ証明システム、知識複雑性、およびエラー検出と検証プロトコルにおける低次多項式の応用を探求し、最終的にGKRプロトコルに焦点を当てています。"
+        }
       }
     ]
   },
@@ -249,7 +321,11 @@
           "FHE",
           "iO"
         ],
-        "summary": "PSE研究员Enrico Bottazzi探讨了为何目前无法构建完全安全的多方应用程序，分析了多方计算和全同态加密等技术在安全性和活性之间的权衡。"
+        "summary": {
+          "zh": "PSE研究员Enrico Bottazzi探讨了为何目前无法构建完全安全的多方应用程序，分析了多方计算和全同态加密等技术在安全性和活性之间的权衡。",
+          "en": "Researcher Enrico Bottazzi discussed why it is currently impossible to build fully secure multi-party applications, analyzing the trade-offs between security and liveness in technologies such as MPC (Multi-Party Computation) and FHE (Fully Homomorphic Encryption).",
+          "ja": "PSEの研究員であるEnrico Bottazziは、なぜ現時点では完全に安全なマルチパーティアプリケーションを構築できないのかを探り、セキュアリティとアクティビティ（活性）のトレードオフについて、MPC（Multi-Party Computation）やFHE（Fully Homomorphic Encryption）などの技術を分析した。"
+        }
       },
       {
         "name": "FRI and Proximity Proofs (Part.1)",
@@ -260,7 +336,11 @@
           "FRI",
           "Reed-Solomon"
         ],
-        "summary": "Dan Boneh在ZK Whiteboard Sessions中分享了FRI及其在密码学中的基础，包括线性代码、IOPs背景，以及如何将Polynomial-IOP编译为SNARK。"
+        "summary": {
+          "zh": "Dan Boneh在ZK Whiteboard Sessions中分享了FRI及其在密码学中的基础，包括线性代码、IOPs背景，以及如何将Polynomial-IOP编译为SNARK。",
+          "en": "Dan Boneh shared FRI and its foundations in cryptography during ZK Whiteboard Sessions, covering linear codes, IOP background, and how to compile Polynomial-IOP into a SNARK.",
+          "ja": "Dan BonehはZK Whiteboard Sessionsにおいて、線形コードやIOPsの背景を含め、FRIとその暗号学的な基礎、そしてPolynomial-IOPをSNARKにコンパイルする方法について解説しました。"
+        }
       }
     ]
   },
@@ -282,7 +362,11 @@
           "Binius",
           "Ethereum"
         ],
-        "summary": "@IrreducibleHW 团队宣布了Binius库及其首个应用——以太坊状态证明服务。该服务利用Reth以太坊节点，生成以太坊MPT状态树的压缩证明，支持无状态客户端解决方案。"
+        "summary": {
+          "zh": "@IrreducibleHW 团队宣布了Binius库及其首个应用——以太坊状态证明服务。该服务利用Reth以太坊节点，生成以太坊MPT状态树的压缩证明，支持无状态客户端解决方案。",
+          "en": "The @IrreducibleHW team announced the Binius library and its first application—an Ethereum state proof service. This service utilizes Reth Ethereum nodes to generate compressed proofs of the Ethereum MPT state tree, supporting stateless client solutions.",
+          "ja": "@IrreducibleHW チームは、Biniusライブラリとその最初のアプリケーションであるEthereumステート証明サービスを発表しました。このサービスは、Reth Ethereumノードを利用してEthereum MPTステートツリーの圧縮証明を生成し、ステートレスクライアントソリューションをサポートします。"
+        }
       },
       {
         "name": "Pick, Prove, Profit: The NIVC Singularity",
@@ -293,7 +377,11 @@
           "NIVC",
           "zkVM"
         ],
-        "summary": "NovaNet团队分享了NIVC（非均匀增量可验证计算）技术，探讨了其在zkVM设计中的应用及如何通过Nebula方案提升性能，同时展望了使用NIVC替代现在GROTH16做链上验证的潜力。"
+        "summary": {
+          "zh": "NovaNet团队分享了NIVC（非均匀增量可验证计算）技术，探讨了其在zkVM设计中的应用及如何通过Nebula方案提升性能，同时展望了使用NIVC替代现在GROTH16做链上验证的潜力。",
+          "en": "The NovaNet team shared Non-Uniform Incremental Verifiable Computation (NIVC) technology, discussed its application in zkVM design, and how the Nebula solution can enhance performance. They also explored the potential of using NIVC to replace GROTH16 for on-chain verification.",
+          "ja": "NovaNetチームは、NIVC（Non-Uniform Incremental Verifiable Computation）技術について共有し、zkVM設計への応用方法、Nebulaソリューションによるパフォーマンス向上策を議論しました。さらに、現在のチェーン上検証におけるGROTH16の代替としてのNIVCの可能性についても展望しました。"
+        }
       }
     ]
   },
@@ -309,7 +397,11 @@
           "Poseidon",
           "延展性攻击"
         ],
-        "summary": "慢雾团队深入揭示了Iden3密码学库中Poseidon哈希函数的延展性问题，即由于代码实现问题导致哈希碰撞及其安全性影响。"
+        "summary": {
+          "zh": "慢雾团队深入揭示了Iden3密码学库中Poseidon哈希函数的延展性问题，即由于代码实现问题导致哈希碰撞及其安全性影响。",
+          "en": "The Slow Mist team deeply investigated the extensibility issues of the Poseidon hash function in the Iden3 cryptographic library, specifically addressing hash collisions and their security implications caused by implementation flaws.",
+          "ja": "慢霧チームは、Iden3暗号ライブラリにおけるPoseidonハッシュ関数の拡張性（extensibility）の問題、すなわちコード実装上の問題に起因するハッシュ衝突とそのセキュリティへの影響について深く掘り下げて解説しました。"
+        }
       },
       {
         "name": "Morgana: a laconic circuit builder",
@@ -319,7 +411,11 @@
           "Lev Soukhanov",
           "sumcheck"
         ],
-        "summary": "Soukhanov等人在{{name}}论文中提出了一种新型SNARK证明系统Morgana，其主要特点是电路key大小与电路描述成正比，而非约束数量，相比现有技术Spartan有直接加速效果。"
+        "summary": {
+          "zh": "Soukhanov等人在{{name}}论文中提出了一种新型SNARK证明系统Morgana，其主要特点是电路key大小与电路描述成正比，而非约束数量，相比现有技术Spartan有直接加速效果。",
+          "en": "Soukhanov et al. proposed a novel SNARK proof system, Morgana, in their paper on {{name}}. Its main feature is that the circuit key size is proportional to the circuit description rather than the number of constraints, offering a direct acceleration advantage over existing technologies like Spartan.",
+          "ja": "Soukhanovらは{{name}}の論文で、回路のサイズが制約数ではなく回路記述に比例するという特徴を持つ新しいSNARK証明システムMorganaを提案しています。これは既存技術であるSpartanと比較して直接的な高速化効果があります。"
+        }
       }
     ]
   },
@@ -336,7 +432,11 @@
           "RISC0",
           "Zirgen"
         ],
-        "summary": "Star Li 分享了RISC0 zkVM的源代码结构，包括Bonsai证明服务、Groth16证明实现、电路接口等，展示了zkVM如何通过Rust语言实现复杂的业务逻辑。"
+        "summary": {
+          "zh": "Star Li 分享了RISC0 zkVM的源代码结构，包括Bonsai证明服务、Groth16证明实现、电路接口等，展示了zkVM如何通过Rust语言实现复杂的业务逻辑。",
+          "en": "Star Li shared the source code structure of RISC0 zkVM, including the Bonsai proving service, Groth16 proof implementation, and circuit interfaces, demonstrating how the zkVM implements complex business logic using Rust.",
+          "ja": "Star Li氏は、Bonsai証明サービス、Groth16証明の実装、回路インターフェースなどを含むRISC0 zkVMのソースコード構造を共有し、zkVMがRust言語を用いて複雑なビジネスロジックをどのように実現しているかを示しました。"
+        }
       },
       {
         "name": "Extending Groth16 for Disjunctive Statements",
@@ -347,7 +447,11 @@
           "析取表达",
           "逻辑组合"
         ],
-        "summary": "Zhu等人在{{name}}论文中提出了CompGroth16，一个Groth16的变体，旨在支持包含代数和算术组件的析取语句证明，提高了表达能力和证明效率，但验证成本变高了。"
+        "summary": {
+          "zh": "Zhu等人在{{name}}论文中提出了CompGroth16，一个Groth16的变体，旨在支持包含代数和算术组件的析取语句证明，提高了表达能力和证明效率，但验证成本变高了。",
+          "en": "Zhu et al. introduced CompGroth16 in their paper on {{name}}, a variant of Groth16 designed to support disjunctive statements that include both algebraic and arithmetic components, which improves expressiveness and proof efficiency but increases verification cost.",
+          "ja": "Zhuらは{{name}}の論文で、代数的および算術的なコンポーネントを含む析取文（disjunctive statements）の証明をサポートするように設計されたGroth16のバリアントであるCompGroth16を提案しました。これにより表現力と証明効率は向上しましたが、検証コストが増加しました。"
+        }
       }
     ]
   },
@@ -363,7 +467,11 @@
           "τ",
           "可信设置"
         ],
-        "summary": "Wang等人在{{name}}论文中系统化地分析了可信设置，区分了设置协议和仪式，并评估了不同方法的特点、优势和弱点。"
+        "summary": {
+          "zh": "Wang等人在{{name}}论文中系统化地分析了可信设置，区分了设置协议和仪式，并评估了不同方法的特点、优势和弱点。",
+          "en": "Wang et al. systematically analyzed trusted setups in their paper on {{name}}, distinguishing between setup protocols and ceremonies, and evaluating the characteristics, advantages, and weaknesses of different methods.",
+          "ja": "Wangらは{{name}}の論文において、トラステッドセットアップを体系的に分析し、セットアッププロトコルと儀式を区別し、様々な手法の特徴、利点、欠点を評価した。"
+        }
       },
       {
         "name": "Founding Zero-Knowledge Proofs of Training on Optimum Vicinity",
@@ -374,7 +482,11 @@
           "机器学习",
           "Proof of Training"
         ],
-        "summary": "Tan等人在{{name}}论文中提出了一种新的zkPoT方法，通过引入optimum vicinity概念，直接证明训练模型的正确性，而非整个训练过程，显著提高了性能。"
+        "summary": {
+          "zh": "Tan等人在{{name}}论文中提出了一种新的zkPoT方法，通过引入optimum vicinity概念，直接证明训练模型的正确性，而非整个训练过程，显著提高了性能。",
+          "en": "Tan et al. proposed a novel zkPoT method in their paper on {{name}}, which significantly improves performance by directly proving the correctness of the trained model, rather than the entire training process, through the introduction of an optimum vicinity concept.",
+          "ja": "Tanらは{{name}}の論文で、optimum vicinityという概念を導入し、トレーニングプロセス全体ではなくモデル自体の正しさを直接証明する新しいzkPoT方法を提案しており、これにより性能が大幅に向上しています。"
+        }
       }
     ]
   },
@@ -389,7 +501,11 @@
           "Koukyosyumei",
           "Rust"
         ],
-        "summary": "@Koukyosyumei 发布了MyZKP开源项目，这是一个用Rust从头开始构建的零知识协议实现，旨在作为理解和应用零知识证明的教育资源。"
+        "summary": {
+          "zh": "@Koukyosyumei 发布了MyZKP开源项目，这是一个用Rust从头开始构建的零知识协议实现，旨在作为理解和应用零知识证明的教育资源。",
+          "en": "@Koukyosyumei released MyZKP, an open-source project that implements zero-knowledge protocols from scratch in Rust, intended as an educational resource for understanding and applying zero-knowledge proofs.",
+          "ja": "@Koukyosyumei が MyZKP オープンソースプロジェクトをリリースしました。これは、ゼロ知識証明の理解と応用を目的とした教育リソースとして設計された、Rust からゼロから構築されたゼロ知識プロトコルの実装です。"
+        }
       },
       {
         "name": "Hylé 关于链上去中心化游戏的观点",
@@ -400,7 +516,11 @@
           "GameFi",
           "DevCon 2024"
         ],
-        "summary": "在DevCon 2024的边会New Games. New Worlds.上，@sylvechv 提出需要停止在链上运行去中心化游戏的观点，并探讨了其原因。"
+        "summary": {
+          "zh": "在DevCon 2024的边会New Games. New Worlds.上，@sylvechv 提出需要停止在链上运行去中心化游戏的观点，并探讨了其原因。",
+          "en": "At the DevCon 2024 side event, 'New Games. New Worlds.,' @sylvechv proposed the view that decentralized games should stop running on-chain and discussed the reasons for this.",
+          "ja": "DevCon 2024のサイドイベント「New Games. New Worlds.」において、@sylvechv は、分散型ゲームをチェーン上で実行し続ける必要性はないという見解を提示し、その理由について議論しました。"
+        }
       }
     ]
   },
@@ -416,7 +536,11 @@
           "LoRA",
           "机器学习"
         ],
-        "summary": "bagel-org团队发布了ZKLoRA开源项目，专注于为LoRA验证提供高效的零知识证明，支持在保护LoRA权重隐私的同时验证其与基础模型的兼容性。"
+        "summary": {
+          "zh": "bagel-org团队发布了ZKLoRA开源项目，专注于为LoRA验证提供高效的零知识证明，支持在保护LoRA权重隐私的同时验证其与基础模型的兼容性。",
+          "en": "The bagel-org team has released the ZKLoRA open-source project, which focuses on providing efficient zero-knowledge proofs for LoRA verification. This allows verifying compatibility with a base model while preserving the privacy of the LoRA weights.",
+          "ja": "bagel-orgチームがZKLoRAというオープンソースプロジェクトをリリースしました。これは、LoRAの検証に特化しており、LoRAウェイトのプライバシーを保護しつつ、ベースモデルとの互換性を検証することを可能にします。"
+        }
       },
       {
         "name": "Aleo Specifications Now Publicly Available",
@@ -427,7 +551,11 @@
           "Aleo",
           "Varuna"
         ],
-        "summary": "@ProvableHQ 分享了Aleo网络的技术规格，包括Varuna证明系统（基于Marlin）、AleoVM虚拟机和AleoBFT共识算法。"
+        "summary": {
+          "zh": "@ProvableHQ 分享了Aleo网络的技术规格，包括Varuna证明系统（基于Marlin）、AleoVM虚拟机和AleoBFT共识算法。",
+          "en": "@ProvableHQ shared the technical specifications of the Aleo network, including the Varuna proof system (based on Marlin), the AleoVM virtual machine, and the AleoBFT consensus algorithm.",
+          "ja": "@ProvableHQ が Aleo ネットワークの技術仕様、具体的には Varuna 証明システム（Marlin ベース）、AleoVM 仮想マシン、および AleoBFT コンセンサスアルゴリズムについて共有しました。"
+        }
       }
     ]
   },
@@ -443,7 +571,11 @@
           "zkVM",
           "电路优化"
         ],
-        "summary": "@powdr_labs 在{{name}}博客中介绍了powdrVM的最新实验性功能：自动生成加速电路以优化Rust程序的性能，展示了如何通过静态和运行时分析选择加速块，并自动生成优化电路。"
+        "summary": {
+          "zh": "@powdr_labs 在{{name}}博客中介绍了powdrVM的最新实验性功能：自动生成加速电路以优化Rust程序的性能，展示了如何通过静态和运行时分析选择加速块，并自动生成优化电路。",
+          "en": "@powdr_labs introduced the latest experimental feature of powdrVM in their blog: automatically generating acceleration circuits to optimize Rust program performance, demonstrating how to select acceleration blocks through static and runtime analysis and automatically generate optimized circuits.",
+          "ja": "@powdr_labs は {{name}} のブログで、Rust プログラムのパフォーマンスを最適化するためのアクセラレーション回路の自動生成という、powdrVM の最新の実験的な機能を紹介しています。これは、静的および実行時解析を通じてアクセラレーションブロックを選択し、最適化された回路を自動生成する方法を示しています。"
+        }
       },
       {
         "name": "FRI and Proximity Proofs (Part.2)",
@@ -454,7 +586,11 @@
           "ZK Hack",
           "FRI"
         ],
-        "summary": "@danboneh 教授在 @__zkhack__ Whiteboard Sessions 中详细讲解了FRI协议及其分析，包括两阶段协议（提交和查询）和多种验证方法，以及FRI的变体和未来SNARK发展的潜在替代方案。"
+        "summary": {
+          "zh": "@danboneh 教授在 @__zkhack__ Whiteboard Sessions 中详细讲解了FRI协议及其分析，包括两阶段协议（提交和查询）和多种验证方法，以及FRI的变体和未来SNARK发展的潜在替代方案。",
+          "en": "Professor Dan Boneh provided a detailed explanation of the FRI protocol and its analysis during the @__zkhack__ Whiteboard Sessions, covering the two-stage protocol (commitment and query), various verification methods, as well as variants of FRI and potential future alternatives for SNARK development.",
+          "ja": "@danboneh 教授は、@__zkhack__ のホワイトボードセッションで、FRIプロトコルとその解析について詳細に解説しました。これには、2段階プロトコル（コミットメントとクエリ）、様々な検証方法、FRIのバリアント、そして将来のSNARK開発における代替案の可能性が含まれます。"
+        }
       }
     ]
   },
@@ -470,7 +606,11 @@
           "TEE",
           "区块链钱包"
         ],
-        "summary": "Austgen等人在{{name}}论文中提出了Liquefaction，一种利用TEE技术对私钥进行约束的钱包平台，展示了加密货币资产所有权模型的脆弱性及其广泛影响。"
+        "summary": {
+          "zh": "Austgen等人在{{name}}论文中提出了Liquefaction，一种利用TEE技术对私钥进行约束的钱包平台，展示了加密货币资产所有权模型的脆弱性及其广泛影响。",
+          "en": "Austgen et al. proposed Liquefaction in their paper on {{name}}, a wallet platform that constrains private keys using TEE technology, demonstrating the fragility of cryptocurrency asset ownership models and its wide-ranging implications.",
+          "ja": "Austgenらは{{name}}の論文で、TEE技術を利用して秘密鍵を制約するウォレットプラットフォームであるLiquefactionを提案し、暗号資産の所有権モデルの脆弱性とその広範な影響を示した。"
+        }
       },
       {
         "name": "Introducing Twist and Shout",
@@ -487,7 +627,11 @@
           "zkVM",
           "Jolt"
         ],
-        "summary": "Justin Thaler和Srinath Setty在博客{{name}}中介绍了新发表论文中的重要概念：Twist和Shout，两种新的内存检查参数，旨在确保证明者正确处理VM内存的每次读写，预计将显著提升Jolt zkVM的证明速度。"
+        "summary": {
+          "zh": "Justin Thaler和Srinath Setty在博客{{name}}中介绍了新发表论文中的重要概念：Twist和Shout，两种新的内存检查参数，旨在确保证明者正确处理VM内存的每次读写，预计将显著提升Jolt zkVM的证明速度。",
+          "en": "Justin Thaler and Srinath Setty introduced key concepts from their new paper, Twist and Shout, in the blog {{name}}. These are two new memory checking parameters designed to ensure that the prover correctly handles every read and write operation of VM memory, and they are expected to significantly improve the proving speed of Jolt zkVM.",
+          "ja": "Justin ThalerとSrinath Settyは、ブログ{{name}}にて、新たに発表された論文における重要な概念であるTwistとShoutを紹介しました。これらは2つの新しいメモリチェックパラメータであり、ProverがVMメモリの読み書きを正しく処理することを保証するように設計されており、Jolt zkVMの証明速度を大幅に向上させることが期待されます。"
+        }
       }
     ]
   },
@@ -502,7 +646,11 @@
           "Horizen Labs",
           "zkEVM"
         ],
-        "summary": "@HorizenLabs 在{{name}}论文中提出了一种专为零知识应用设计的EVM链Horizen 2.0，通过预编译扩展支持多种ZK证明机制，显著提升了验证效率并降低了成本，为开发者提供了更灵活的ZK工具。"
+        "summary": {
+          "zh": "@HorizenLabs 在{{name}}论文中提出了一种专为零知识应用设计的EVM链Horizen 2.0，通过预编译扩展支持多种ZK证明机制，显著提升了验证效率并降低了成本，为开发者提供了更灵活的ZK工具。",
+          "en": "Horizen Labs introduced Horizen 2.0, an EVM chain designed for zero-knowledge applications in the {{name}} paper. By supporting various ZK proof mechanisms through precompiled extensions, it significantly improves verification efficiency and reduces costs, offering developers more flexible ZK tools.",
+          "ja": "@HorizenLabs は、{{name}} の論文で、ゼロ知識アプリケーション向けに設計された EVM チェーン Horizen 2.0 を提案しています。これはプリコンパイル拡張を通じて多様なZK証明メカニズムをサポートし、検証効率の大幅な向上とコスト削減を実現し、開発者により柔軟なZKツールを提供します。"
+        }
       },
       {
         "name": "SP1 Turbo benchmark",
@@ -514,7 +662,11 @@
           "R0",
           "benchmark"
         ],
-        "summary": "@jtguibas 分享了SP1 Turbo在证明rollup工作负载方面的性能，与R0的最新1.2.1版本相比，SP1 Turbo在各种以太坊区块上的速度提高了6-7倍。"
+        "summary": {
+          "zh": "@jtguibas 分享了SP1 Turbo在证明rollup工作负载方面的性能，与R0的最新1.2.1版本相比，SP1 Turbo在各种以太坊区块上的速度提高了6-7倍。",
+          "en": "@jtguibas shared the performance of SP1 Turbo in proving rollup workloads, which is 6-7 times faster than R0's latest 1.2.1 version across various Ethereum blocks.",
+          "ja": "@jtguibas さんが、SP1 Turbo がロールアップの証明書ワークロードにおいてどのようなパフォーマンスを発揮するかを共有してくれました。R0 の最新バージョン 1.2.1 と比較して、SP1 Turbo は様々なイーサリアムブロック上で6〜7倍の速度向上を実現しています。"
+        }
       }
     ]
   },
@@ -530,7 +682,11 @@
           "Fiat-Shamir",
           "GKR"
         ],
-        "summary": "Khovratovich等人在{{name}}论文中揭示了Fiat-Shamir变换在实际应用中的安全漏洞，特别是针对基于GKR协议的交互式简洁论证，展示了如何为错误陈述生成接受证明。"
+        "summary": {
+          "zh": "Khovratovich等人在{{name}}论文中揭示了Fiat-Shamir变换在实际应用中的安全漏洞，特别是针对基于GKR协议的交互式简洁论证，展示了如何为错误陈述生成接受证明。",
+          "en": "Khovratovich et al. revealed security vulnerabilities of the Fiat-Shamir transformation in practical applications in their paper on {{name}}, specifically targeting interactive succinct arguments based on the GKR protocol, demonstrating how to generate accepting proofs for false statements.",
+          "ja": "Khovratovichらは{{name}}の論文において、Fiat-Shamir変換が実際の応用において持つセキュリティ上の脆弱性を明らかにしました。特に、GKRプロトコルに基づくインタラクティブな簡潔証明（interactive succinct proof）を対象とし、誤った主張に対して受理される証明書を生成する方法を示しています。"
+        }
       },
       {
         "name": "Missing verifier checks and fiat-shamir observations",
@@ -541,7 +697,11 @@
           "Fiat-Shamir",
           "Plonky3"
         ],
-        "summary": "Succinct Labs发布了关于SP1 STARK验证器的安全公告，指出在v4.0.0之前版本中存在验证器检查缺失和Fiat-Shamir观察问题，已通过v4.0.0修复。"
+        "summary": {
+          "zh": "Succinct Labs发布了关于SP1 STARK验证器的安全公告，指出在v4.0.0之前版本中存在验证器检查缺失和Fiat-Shamir观察问题，已通过v4.0.0修复。",
+          "en": "Succinct Labs has released a security advisory for the SP1 STARK verifier, noting that missing verifier checks and Fiat-Shamir observation issues existed in versions prior to v4.0.0, which have been fixed in v4.0.0.",
+          "ja": "Succinct Labsは、SP1 STARK検証器に関するセキュリティアドバイザリを発表しました。これによると、v4.0.0以前のバージョンには、検証者のチェック漏れとFiat-Shamir観察の問題が存在しましたが、v4.0.0で修正されています。"
+        }
       }
     ]
   }

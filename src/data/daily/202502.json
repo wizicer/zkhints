@@ -11,7 +11,11 @@
           "Layer 1",
           "Testnet"
         ],
-        "summary": "@NexusLabs 宣布推出Nexus Layer 1，一个行星级超级计算机，并宣布Testnet II将于2025年2月18日北京时间 13:00 开始。"
+        "summary": {
+          "zh": "@NexusLabs 宣布推出Nexus Layer 1，一个行星级超级计算机，并宣布Testnet II将于2025年2月18日北京时间 13:00 开始。",
+          "en": "@NexusLabs announced the launch of Nexus Layer 1, a planetary-scale supercomputer, and announced that Testnet II will begin on February 18, 2025, at 13:00 Beijing time.",
+          "ja": "@NexusLabs は、惑星規模のスーパーコンピューターである Nexus Layer 1 のローンチを発表し、Testnet II が2025年2月18日（北京時間）13:00 に開始されることを発表しました。"
+        }
       },
       {
         "name": "Introducing Pico: A Modular and Performant zkVM",
@@ -28,7 +32,11 @@
             "url": "https://github.com/brevis-network/pico"
           }
         ],
-        "summary": "@brevis_zk 团队在博客{{name}}中介绍了Pico，一个提供模块化和高效率的zkVM，基于RISC-V架构。性能测试显示其运行速度比RISC0、OpenVM和SP1都高出一倍以上。"
+        "summary": {
+          "zh": "@brevis_zk 团队在博客{{name}}中介绍了Pico，一个提供模块化和高效率的zkVM，基于RISC-V架构。性能测试显示其运行速度比RISC0、OpenVM和SP1都高出一倍以上。",
+          "en": "The @brevis_zk team introduced Pico in the blog post {{name}}, a zkVM based on the RISC-V architecture that offers modularity and high efficiency. Performance tests show that its execution speed is more than double that of RISC0, OpenVM, and SP1.",
+          "ja": "@brevis_zk チームはブログ{{name}}で、RISC-Vアーキテクチャに基づき、モジュール性と高効率を提供するzkVMであるPicoを紹介しました。性能テストでは、その実行速度がRISC0、OpenVM、SP1のいずれよりも1倍以上高いことが示されています。"
+        }
       }
     ],
     "insights": [
@@ -55,7 +63,11 @@
           "Binyi Chen",
           "格密码"
         ],
-        "summary": "@danboneh 和 @Charles_Chen533 在{{name}}论文中提出了LatticeFold+，通过两种新技术进行改进：1）开发了更高效的代数范围证明；2）利用双承诺和基于sumcheck的转换简化验证电路。这些改进使证明者速度提升五到十倍，验证电路更简单，证明更短。"
+        "summary": {
+          "zh": "@danboneh 和 @Charles_Chen533 在{{name}}论文中提出了LatticeFold+，通过两种新技术进行改进：1）开发了更高效的代数范围证明；2）利用双承诺和基于sumcheck的转换简化验证电路。这些改进使证明者速度提升五到十倍，验证电路更简单，证明更短。",
+          "en": "@brevis_Chen and @Charles_Chen533 introduced LatticeFold+ in the {{name}} paper, improving it with two new techniques: 1) developing a more efficient algebraic range proof; and 2) simplifying the verification circuit through dual commitments and sumcheck-based transformation. These improvements result in a five to ten-fold speedup for the prover, simpler verification circuits, and shorter proofs.",
+          "ja": "@brevis_Chen533 と @Charles_Chen533 は {{name}} の論文で LatticeFold+ を提案しました。これは2つの新技術による改善に基づいています。1) より効率的な代数的範囲証明を開発したこと、2) ダブルコミットメントとsumcheckベースの変換を利用して検証回路を簡素化したことです。これらの改善により、プロバーの速度が5倍から10倍向上し、検証回路はより単純になり、証明の長さも短縮されました。"
+        }
       },
       {
         "name": "AIR-ICICLE : Plonky3 on ICICLE, part 1",
@@ -66,7 +78,11 @@
           "Plonky3",
           "ICICLE"
         ],
-        "summary": "@Ingo_zk 团队开源了AIR-ICICLE项目，集成了Plonky3框架与ICICLE库，支持用户编写AIR电路并生成踪迹数据，优化了STARK证明生成流程。"
+        "summary": {
+          "zh": "@Ingo_zk 团队开源了AIR-ICICLE项目，集成了Plonky3框架与ICICLE库，支持用户编写AIR电路并生成踪迹数据，优化了STARK证明生成流程。",
+          "en": "@brevis_zk has open-sourced the AIR-ICICLE project, which integrates the Plonky3 framework with the ICICLE library. This allows users to write AIR circuits and generate trace data, optimizing the STARK proof generation process.",
+          "ja": "@brevis_zk チームがAIR-ICICLEプロジェクトをオープンソース化しました。これはPlonky3フレームワークとICICLEライブラリを統合しており、ユーザーがAIR回路を記述しトレースデータ（踪迹数据）を生成することを可能にし、STARK証明書生成プロセスを最適化します。"
+        }
       }
     ],
     "insights": [
@@ -106,7 +122,11 @@
           "zksecurity.xyz",
           "Vulnerabilities"
         ],
-        "summary": "@zksecurityXYZ 团队在博客{{name}}中分享了zkBugs网站的启动，该网站致力于记录和分析ZK电路中的历史漏洞，包括漏洞目录、复现报告、安全工具列表和工具评估等内容。"
+        "summary": {
+          "zh": "@zksecurityXYZ 团队在博客{{name}}中分享了zkBugs网站的启动，该网站致力于记录和分析ZK电路中的历史漏洞，包括漏洞目录、复现报告、安全工具列表和工具评估等内容。",
+          "en": "The @zksecurityXYZ team announced the launch of the zkBugs website in their blog post {{name}}. This site is dedicated to documenting and analyzing historical vulnerabilities found in ZK circuits, including a vulnerability directory, reproduction reports, a list of security tools, and tool evaluations.",
+          "ja": "@zksecurityXYZ チームはブログ記事{{name}}でzkBugsウェブサイトのローンチを発表しました。このサイトは、脆弱性カタログ、再現レポート、セキュリティツールリスト、ツール評価など、ZK回路における過去の脆弱性を記録・分析することに注力しています。"
+        }
       }
     ],
     "insights": [
@@ -143,7 +163,11 @@
           "Blockchain Efficiency",
           "Cost Reduction"
         ],
-        "summary": "zkVerify ( @ZKVProtocol ) 是 @HorizenLabs 开发的一个高性能、公开、去中心化的区块链，专注于零知识证明的验证。它提供模块化和可组合的方式，供 ZK 应用验证证明。"
+        "summary": {
+          "zh": "zkVerify ( @ZKVProtocol ) 是 @HorizenLabs 开发的一个高性能、公开、去中心化的区块链，专注于零知识证明的验证。它提供模块化和可组合的方式，供 ZK 应用验证证明。",
+          "en": "zkVerify (@ZKVProtocol) is a high-performance, public, and decentralized blockchain developed by @HorizenLabs, focusing on zero-knowledge proof verification. It provides modular and composable ways for ZK applications to verify proofs.",
+          "ja": "zkVerify（@ZKVProtocol）は、@HorizenLabs が開発した、ゼロ知識証明の検証に特化した高性能で公開された分散型ブロックチェーンです。ZKアプリケーションが証明を検証するためのモジュール化された組み合わせ可能な方法を提供します。"
+        }
       }
     ],
     "insights": [
@@ -169,7 +193,11 @@
           "Aleo",
           "Bug Fix"
         ],
-        "summary": "@zksecurityXYZ 团队通过博客{{name}}分享了在Aleo主网中发现的一个通胀漏洞，详细描述了漏洞的背景、可能的利用方式以及修复过程。"
+        "summary": {
+          "zh": "@zksecurityXYZ 团队通过博客{{name}}分享了在Aleo主网中发现的一个通胀漏洞，详细描述了漏洞的背景、可能的利用方式以及修复过程。",
+          "en": "@zksecurityXYZ shared an inflation vulnerability discovered in the Aleo mainnet through their blog post {{name}}, detailing the background of the vulnerability, potential exploitation methods, and the remediation process.",
+          "ja": "@zksecurityXYZ チームはブログ{{name}}にて、Aleoメインネットで発見されたインフレの脆弱性について共有しました。この投稿では、脆弱性の背景、潜在的な悪用方法、および修正プロセスが詳細に記述されています。"
+        }
       },
       {
         "name": "You should not build Tornado Cash with FHE",
@@ -180,7 +208,11 @@
           "Tornado Cash",
           "FHE"
         ],
-        "summary": "Leku在{{name}}博客中讨论了使用FHE构建Tornado Cash的可行性，比较了ZK和FHE在隐私保护应用中的差异，并指出FHE在匿名性、金额隐私和安全性方面表现不如ZK版本。"
+        "summary": {
+          "zh": "Leku在{{name}}博客中讨论了使用FHE构建Tornado Cash的可行性，比较了ZK和FHE在隐私保护应用中的差异，并指出FHE在匿名性、金额隐私和安全性方面表现不如ZK版本。",
+          "en": "Leku discussed the feasibility of building Tornado Cash using FHE in the {{name}} blog, comparing the differences between ZK and FHE in privacy-preserving applications, and pointed out that FHE is inferior to the ZK version in terms of anonymity, amount privacy, and security.",
+          "ja": "Lekuは{{name}}のブログで、FHE（Fully Homomorphic Encryption）を使用してTornado Cashを構築する可能性について議論し、プライバシー保護アプリケーションにおけるZKとFHEの違いを比較しました。また、匿名性、金額プライバシー、セキュリティの面でFHEがZKバージョンに及ばないことを指摘しています。"
+        }
       },
       {
         "name": "Sindri: A Platform for Zero-Knowledge Proof Development",
@@ -191,7 +223,11 @@
           "开发平台",
           "zkSNARK"
         ],
-        "summary": "@SindriLabs 为开发者提供了一个云平台，专注于零知识证明的开发，支持zkSNARK等技术，旨在简化ZKP应用的创建和部署过程。"
+        "summary": {
+          "zh": "@SindriLabs 为开发者提供了一个云平台，专注于零知识证明的开发，支持zkSNARK等技术，旨在简化ZKP应用的创建和部署过程。",
+          "en": "@SindriLabs provides a cloud platform for developers, focusing on zero-knowledge proof development, supporting technologies like zkSNARKs, aiming to simplify the creation and deployment process of ZKP applications.",
+          "ja": "SindriLabsは、zkSNARKなどの技術に特化し、ZKP（ゼロ知識証明）アプリケーションの作成とデプロイメントを簡素化することを目的とした開発者向けのクラウドプラットフォームを提供しています。"
+        }
       },
       {
         "name": "SuiOverflow 2025 Hackathon",
@@ -201,7 +237,11 @@
           "SuiNetwork",
           "Hackathon"
         ],
-        "summary": "@SuiNetwork 宣布了SuiOverflow 2025黑客马拉松，提供超过$500,000的奖金，涵盖DeFi、AI、密码学技术等8个赛道，鼓励开发者基于Sui平台进行创新。ZK相关的项目也可以参与。"
+        "summary": {
+          "zh": "@SuiNetwork 宣布了SuiOverflow 2025黑客马拉松，提供超过$500,000的奖金，涵盖DeFi、AI、密码学技术等8个赛道，鼓励开发者基于Sui平台进行创新。ZK相关的项目也可以参与。",
+          "en": "@SuiNetwork has announced the SuiOverflow 2025 hackathon, offering over $500,000 in prizes across eight tracks, including DeFi, AI, and cryptography. This encourages developers to innovate on the Sui platform. ZK-related projects are also welcome to participate.",
+          "ja": "@SuiNetwork は SuiOverflow 2025 ハッカソンを発表しました。このハッカソンでは、$500,000以上の賞金が提供され、DeFi、AI、暗号技術など8つのトラックをカバーし、開発者が Sui プラットフォーム上で革新を起こすことを奨励します。ZK に関連するプロジェクトも参加可能です。"
+        }
       }
     ],
     "insights": []
@@ -230,7 +270,11 @@
           "格",
           "折叠"
         ],
-        "summary": "Wilson Nguyen和Srinath Setty在{{name}}论文中提出了Neo，一种新的基于格的折叠方案，适用于CCS。Neo通过适应HyperNova的折叠方案到格设置，解决了LatticeFold的局限性，提供了后量子安全性，并引入了按位付费的承诺成本。"
+        "summary": {
+          "zh": "Wilson Nguyen和Srinath Setty在{{name}}论文中提出了Neo，一种新的基于格的折叠方案，适用于CCS。Neo通过适应HyperNova的折叠方案到格设置，解决了LatticeFold的局限性，提供了后量子安全性，并引入了按位付费的承诺成本。",
+          "en": "Wilson Nguyen and Srinath Setty introduced Neo in the {{name}} paper, a novel lattice-based folding scheme for CCS. By adapting the HyperNova folding scheme to lattice settings, Neo addresses the limitations of LatticeFold, provides post-quantum security, and introduces bit-costed commitments.",
+          "ja": "Wilson NguyenとSrinath Settyは、{{name}}の論文で、CCSに適した新しい格子ベースの折り畳みスキームであるNeoを提案しました。Neoは、HyperNovaの折り畳みスキームを格子設定に適合させることでLatticeFoldの限界点を克服し、耐量子性を提供するとともに、ビット単位でのコミットメントコストを導入しています。"
+        }
       }
     ],
     "insights": []
@@ -252,7 +296,11 @@
             "url": "https://github.com/ethproofs/ethproofs"
           }
         ],
-        "summary": "ethproofs.org 是以太坊区块证明浏览器，汇总各 zkVM 团队数据（目前包括 @succinctlabs 和 @snarkify_zkp 的数据），提供区块证明的全面概览。"
+        "summary": {
+          "zh": "ethproofs.org 是以太坊区块证明浏览器，汇总各 zkVM 团队数据（目前包括 @succinctlabs 和 @snarkify_zkp 的数据），提供区块证明的全面概览。",
+          "en": "ethproofs.org is a Ethereum block proof browser that aggregates data from various zkVM teams (currently including data from @succinctlabs and @snarkify_zkp), providing a comprehensive overview of block proofs.",
+          "ja": "ethproofs.org は、Ethereumブロック証明書ブラウザであり、各zkVMチーム（現在@succinctlabsと@snarkify_zkpのデータを含む）のデータを集約し、ブロック証明書の包括的な概要を提供します。"
+        }
       },
       {
         "name": "MPC-in-the-Head: A Novel Approach to Zero-Knowledge Proofs",
@@ -263,7 +311,11 @@
           "ZK",
           "MPC"
         ],
-        "summary": "@zksecurityXYZ 在博客{{name}}中探讨了MPC-in-the-Head转换，这是一种从任何MPC协议构建零知识证明系统的方法，并讨论了其在开发后量子签名方案中的应用。"
+        "summary": {
+          "zh": "@zksecurityXYZ 在博客{{name}}中探讨了MPC-in-the-Head转换，这是一种从任何MPC协议构建零知识证明系统的方法，并讨论了其在开发后量子签名方案中的应用。",
+          "en": "@zksecurityXYZ discussed MPC-in-the-Head conversion in the blog post {{name}}, a method for constructing zero-knowledge proof systems from any MPC protocol, and discussed its application in developing post-quantum signature schemes.",
+          "ja": "@zksecurityXYZ はブログ {{name}} で MPC-in-the-Head 変換について論じています。これは、任意の MPC プロトコルからゼロ知識証明システムを構築する方法であり、後量子署名スキームの開発におけるその応用についても議論されています。"
+        }
       }
     ],
     "insights": []
@@ -281,7 +333,11 @@
           "AI",
           "Denver"
         ],
-        "summary": "@NoirLang 主办的 NoirCon 1 将于 Denver 举行，包括AI与隐私应用的技术深度探讨和隐私优先开发的真实案例研究。"
+        "summary": {
+          "zh": "@NoirLang 主办的 NoirCon 1 将于 Denver 举行，包括AI与隐私应用的技术深度探讨和隐私优先开发的真实案例研究。",
+          "en": "NoirCon 1, hosted by NoirLang, will be held in Denver and will feature in-depth technical discussions on AI and privacy applications, as well as real-world case studies of privacy-preserving development.",
+          "ja": "@NoirLang が主催する NoirCon 1 はデンバーで開催され、AIとプライバシー技術に関する深い議論や、プライバシーを重視した開発の実際のケーススタディを取り上げます。"
+        }
       },
       {
         "name": "Understanding the Math Behind ZKPs",
@@ -291,7 +347,11 @@
           "zkintro.com",
           "数学基础"
         ],
-        "summary": "zkintro 分享了关于ZKP数学基础的博客{{name}}，旨在为高中学生或STEM毕业生提供直观理解，包括电路、功能完备性、承诺、秘密共享和sigma协议等关键概念。"
+        "summary": {
+          "zh": "zkintro 分享了关于ZKP数学基础的博客{{name}}，旨在为高中学生或STEM毕业生提供直观理解，包括电路、功能完备性、承诺、秘密共享和sigma协议等关键概念。",
+          "en": "zkintro shared a blog post on the mathematical foundations of ZKPs, aiming to provide an intuitive understanding for high school students or STEM graduates, covering key concepts such as circuits, functional completeness, commitments, secret sharing, and sigma protocols.",
+          "ja": "zkintro は、回路、機能完備性、コミットメント、秘密共有、シグマプロトコルなどの重要な概念を含め、高校生やSTEM分野の卒業生に対してZKP（ゼロ知識証明）の数学的基礎を直感的に理解させることを目的としたブログです。"
+        }
       }
     ],
     "insights": [
@@ -317,7 +377,11 @@
           "TEE",
           "远程认证"
         ],
-        "summary": "@tiktok_us 团队的开源项目{{name}}，旨在解决TEE环境需要信任远程认证(RA)服务，他们利用ZKP创建无需信任第三方的认证系统，电路用Circom编写， 支持Groth16。"
+        "summary": {
+          "zh": "@tiktok_us 团队的开源项目{{name}}，旨在解决TEE环境需要信任远程认证(RA)服务，他们利用ZKP创建无需信任第三方的认证系统，电路用Circom编写， 支持Groth16。",
+          "en": "The open-source project {{name}} from the @tiktok_us team aims to solve the problem where Trusted Execution Environment (TEE) requires a Remote Attestation (RA) service. They utilize ZKP to create an authentication system that does not require a trusted third party. The circuit is written in Circom and supports Groth16.",
+          "ja": "@tiktok_us チームのオープンソースプロジェクト{{name}}は、TEE環境においてリモート認証（RA）サービスを信頼する必要があるという問題を解決することを目的としています。彼らはZKPを利用して、第三者を信頼する必要のない認証システムを作成しました。回路はCircomで記述され、Groth16をサポートしています。"
+        }
       },
       {
         "name": "2024，从零知识证明到AI！",
@@ -328,7 +392,11 @@
           "AI",
           "zkHack V"
         ],
-        "summary": "Star Li在博客{{name}}中分享了从零知识证明到AI的转变，包括他们的成绩回顾，以及转向AI的心路和方式。"
+        "summary": {
+          "zh": "Star Li在博客{{name}}中分享了从零知识证明到AI的转变，包括他们的成绩回顾，以及转向AI的心路和方式。",
+          "en": "Star Li shared the transition from zero-knowledge proofs to AI in the blog post {{name}}, including a review of their achievements and the journey and methods behind the shift to AI.",
+          "ja": "Star Liはブログ{{name}}で、ゼロ知識証明からAIへの移行について、その成果の振り返り、そしてAIへ転向した経緯と方法を共有しました。"
+        }
       }
     ],
     "insights": [
@@ -355,7 +423,11 @@
           "Lean",
           "Haskell"
         ],
-        "summary": "@NethermindEth 团队开源了Surveyor项目，支持将R1CS二进制格式转换为Lean提取器，依赖Haskell，用于对R1CS进行形式化证明。"
+        "summary": {
+          "zh": "@NethermindEth 团队开源了Surveyor项目，支持将R1CS二进制格式转换为Lean提取器，依赖Haskell，用于对R1CS进行形式化证明。",
+          "en": "@NethermindEth has open-sourced the Surveyor project, which supports converting R1CS binary format to a Lean extractor and is written in Haskell for formal verification of R1CS.",
+          "ja": "@NethermindEth チームがSurveyorプロジェクトをオープンソース化しました。これは、R1CSバイナリ形式をLeanエクストラクターに変換し、R1CSに対する形式的証明を行うためのものであり、Haskellに依存しています。"
+        }
       },
       {
         "name": "Tornado Anonymity Revoker Design",
@@ -365,7 +437,11 @@
           "Antonio Mejías Gil",
           "Tornado Cash"
         ],
-        "summary": "Antonio Mejías Gil在博客{{name}}中讨论了Tornado Cash协议的匿名撤销设计，提出了一种允许特定实体撤销用户匿名性的修改方案。"
+        "summary": {
+          "zh": "Antonio Mejías Gil在博客{{name}}中讨论了Tornado Cash协议的匿名撤销设计，提出了一种允许特定实体撤销用户匿名性的修改方案。",
+          "en": "Antonio Mejías Gil discussed the anonymous revocation design of the Tornado Cash protocol in his blog post {{name}}, proposing a modification that allows specific entities to revoke user anonymity.",
+          "ja": "Antonio Mejías Gilはブログ{{name}}で、Tornado Cashプロトコルの匿名撤廃設計について議論し、特定のエンティティがユーザーの匿名性を撤回することを可能にする修正案を提案しました。"
+        }
       }
     ],
     "insights": [
@@ -393,7 +469,11 @@
           "Jolt",
           "Lasso"
         ],
-        "summary": "@zksecurityXYZ 在博客{{name}}中讨论了zkVM的概念及其在区块链中的应用，包括Cairo、RISC Zero和Jolt/Lasso等项目的发展历程和技术特点。"
+        "summary": {
+          "zh": "@zksecurityXYZ 在博客{{name}}中讨论了zkVM的概念及其在区块链中的应用，包括Cairo、RISC Zero和Jolt/Lasso等项目的发展历程和技术特点。",
+          "en": "@zksecurityXYZ discussed the concept of zkVM and its applications in blockchain in their blog post {{name}}, covering the development history and technical features of projects such as Cairo, RISC Zero, and Jolt/Lasso.",
+          "ja": "NoirLangは、zkVMの概念とそのブロックチェーンへの応用について議論しており、これにはCairo、RISC Zero、Jolt/Lassoなどのプロジェクトの発展経緯と技術的特徴が含まれます。"
+        }
       },
       {
         "name": "Context-Dependent Threshold Decryption and its Applications",
@@ -404,7 +484,11 @@
           "门限解密",
           "上下文依赖"
         ],
-        "summary": "@danboneh 等人在{{name}}论文中提出了上下文高门限解密的研究，包括定义、构建、安全证明和应用，特别是引入了上下文依赖解密的新安全特性。感兴趣的可以先查看今天的每日ZKP见解。"
+        "summary": {
+          "zh": "@danboneh 等人在{{name}}论文中提出了上下文高门限解密的研究，包括定义、构建、安全证明和应用，特别是引入了上下文依赖解密的新安全特性。感兴趣的可以先查看今天的每日ZKP见解。",
+          "en": "Danboneh et al. proposed research on context-aware threshold decryption in the {{name}} paper, covering definitions, construction, security proofs, and applications, notably introducing a new security feature: context-dependent decryption. Those interested can check out today's daily ZKP insights.",
+          "ja": "@danboneh らが {{name}} の論文で文脈依存性の高い解密に関する研究を提案しており、これには定義、構築、セキュリティ証明、および応用が含まれます。特に、文脈依存の解密という新しいセキュリティ特性を導入しています。ご興味のある方は、まず本日のデイリーZKPインサイトをご覧ください。"
+        }
       }
     ],
     "insights": [
@@ -430,7 +514,11 @@
           "Plonky3",
           "Python"
         ],
-        "summary": "coset-io发布了Plonky3 Python Notebook，这是一个教育资源，旨在通过交互式Python笔记本揭示Plonky3证明系统的内部工作原理，使高级ZK技术更易于开发者理解。"
+        "summary": {
+          "zh": "coset-io发布了Plonky3 Python Notebook，这是一个教育资源，旨在通过交互式Python笔记本揭示Plonky3证明系统的内部工作原理，使高级ZK技术更易于开发者理解。",
+          "en": "coset-io has released the Plonky3 Python Notebook, an educational resource designed to demystify the internal workings of the Plonky3 proof system through interactive Python notebooks, making advanced ZK technologies more accessible to developers.",
+          "ja": "coset-ioがPlonky3のPythonノートブックをリリースしました。これは教育リソースであり、インタラクティブなPythonノートブックを通じてPlonky3証明システムの内部動作原理を明らかにし、上級ZK技術を開発者にとってより分かりやすくすることを目的としています。"
+        }
       },
       {
         "name": "Noir Research Grant Request (NRG) #2 on Private Shared States",
@@ -442,7 +530,11 @@
           "Noir",
           "co-noir"
         ],
-        "summary": "Hashcloak分享了他们在Noir研究资助请求（NRG）#2上的工作和经验，实现了在MPC和ZK结合的环境下的机器学习功能，特别是在Noir中实现逻辑回归并通过co-noir执行。"
+        "summary": {
+          "zh": "Hashcloak分享了他们在Noir研究资助请求（NRG）#2上的工作和经验，实现了在MPC和ZK结合的环境下的机器学习功能，特别是在Noir中实现逻辑回归并通过co-noir执行。",
+          "en": "Hashcloak shared their work and experience on Noir Research Grant (NRG) #2, implementing machine learning functionalities in an MPC and ZK combined environment, specifically logistic regression implemented in Noir and executed via co-noir.",
+          "ja": "Hashcloakは、Noir研究助成金（NRG）#2における彼らの作業と経験を共有しました。これは、MPCとZKを組み合わせた環境下での機械学習機能を実現したものであり、特にNoir上でのロジスティック回帰の実装とco-noirによる実行を含みます。"
+        }
       }
     ],
     "insights": [

@@ -15,7 +15,8 @@
         },
         "summary": {
           "zh": "Arnon等人提出了一种公开可验证SNARG，证明仅含两个群元素且无额外比特，在GGM + ROM中实现最小证明尺寸，并建立了单群元素SNARG的下界。",
-          "en": "Arnon et al. proposed a publicly verifiable SNARG, which only contains two group elements and no additional bits, achieving the minimum proof size in GGM + ROM, and establishing a lower bound for single group element SNARGs."
+          "en": "Arnon et al. proposed a publicly verifiable SNARG, which only contains two group elements and no additional bits, achieving the minimum proof size in GGM + ROM, and establishing a lower bound for single group element SNARGs.",
+          "ja": "Arnonらは、公開検証可能なSNARGを提案しました。これは2つのグループ要素のみを含み、追加のビットは一切持たず、GGM + ROMにおける最小証明サイズを達成し、単一グループ要素SNARGに対する下限を確立しています。"
         },
         "notes": {
           "zh": [
@@ -33,6 +34,14 @@
             "Establishes a new lower bound: single group element SNARGs are impossible in GGM + ROM",
             "Proof size is nearly twice that of existing schemes, but not yet specifically efficient",
             "Paves the way for future practical instantiation, reinforcing Groth's lower bound"
+          ],
+          "ja": [
+            "2つのグループ要素と追加のビットを含まない最初の公開検証可能なSNARGを提案し、GGM + ROMにおける最小証明サイズを達成し、単一グループ要素SNARGの下限値を確立した。",
+            "BLS12-381インスタンスサイズが768ビットであり、GGM + ROMにおける最小証明サイズを達成する。",
+            "隠れたセキュリティ損失のないタイトなセキュリティ解析。",
+            "新たな下限値の確立：GGM + ROMにおいて単一グループ要素SNARGは不可能である。",
+            "証明サイズは既存のスキームのほぼ2倍であるが、まだ特定の効率性は持たない。",
+            "Grothの下限値を補強し、将来の実用的なインスタンス化への道を開く。"
           ]
         }
       }
@@ -54,7 +63,8 @@
         },
         "summary": {
           "zh": "Bitan等人在{{name}}论文中提出了一种近似计算的sum-check协议扩展，利用低度多项式的度量结构，支持可调误差参数，并分析了Fiat-Shamir变换下的安全性。",
-          "en": "Bitan et al. proposed an extension of the sum-check protocol for approximate computations, using the metric structure of low-degree polynomials, supporting adjustable error parameters, and analyzing the security under Fiat-Shamir transformation."
+          "en": "Bitan et al. proposed an extension of the sum-check protocol for approximate computations, using the metric structure of low-degree polynomials, supporting adjustable error parameters, and analyzing the security under Fiat-Shamir transformation.",
+          "ja": "Bitanらは、低次数多項式のメトリック構造を利用し、調整可能なエラーパラメータをサポートし、Fiat-Shamir変換の下でのセキュリティを解析した、近似計算のための和チェックプロトコルの拡張を提案しました。"
         },
         "notes": {
           "zh": [
@@ -72,6 +82,14 @@
             "Natural instantiation over complex numbers, analysis based on polynomial behavior on the unit circle",
             "New intermediate security phenomena appear under Fiat-Shamir transformation, related to approximation",
             "Achieves black-box feasibility, compiler independent of arithmetic operations, only needing to satisfy error bounds"
+          ],
+          "ja": [
+            "本プロトコルは、近似計算のための和チェックを拡張し、調整可能な誤差パラメータ $\\delta$ をサポートする。",
+            "健全性エラーは $\\delta/\\Delta$ に従って滑らかに減少し、バリデーターは初期誤差 $\\Delta$ が大きい場合に拒否する可能性がある。",
+            "古典的な代数的手法とは異なる、低次多項式のメトリック構造を利用している。",
+            "複素数上での自然なインスタンス化であり、単位円上での多項式挙動に基づいた分析を行う。",
+            "Fiat-Shamir変換の下で、近似に関連する新しい中間セキュリティ現象が出現する。",
+            "ブラックボックスの実現性を達成し、算術演算に依存せず、誤差境界を満たすことのみを必要とするコンパイラ。"
           ]
         }
       }
@@ -93,7 +111,8 @@
         },
         "summary": {
           "zh": "PSE的zkID团队在{{name}}论文中提出了基于ZKP的去中心化身份方案OpenAC，旨在增强用户隐私保护和身份验证安全性。",
-          "en": "PSE's zkID team proposed OpenAC, a decentralized identity scheme based on ZKP, to enhance user privacy protection and identity authentication security."
+          "en": "PSE's zkID team proposed OpenAC, a decentralized identity scheme based on ZKP, to enhance user privacy protection and identity authentication security.",
+          "ja": "PSEのzkIDチームは、ユーザープライバシー保護とアイデンティティ認証セキュリティを強化するためのZKP（ゼロ知識証明）に基づく分散型アイデンティティスキームであるOpenACを提案しました。"
         },
         "notes": {
           "zh": [
@@ -111,6 +130,14 @@
             "Built on transparent zk-Spartan with no trusted setup.",
             "Show proofs run ~100 ms and ~40 KB on mobile.",
             "Compatible with SD-JWT/mDL and EUDI ARF, with room for PQ upgrades."
+          ],
+          "ja": [
+            "OpenACは、発行者を変更することなく匿名性と選択的開示を追加します。",
+            "Prepare–Showの分離により、オンラインコストを削減するために重い作業をオフラインに移動させます。",
+            "Hyrax commitmentsは、再ランダマイゼーションを介して隠蔽性、結合性、非関連性を可能にします。",
+            "トラステッドセットアップなしで透明なzk-Spartan上に構築されています。",
+            "Show proofsはモバイルで約100ms、約40KBで動作します。",
+            "SD-JWT/mDLおよびEUDI ARFと互換性があり、PQアップグレードの余地があります。"
           ]
         }
       }
@@ -134,7 +161,8 @@
         },
         "summary": {
           "zh": "@class_lambda 团队在博客{{name}}中分享了Sumcheck协议的优化实现，详细介绍了基于BDDT论文的SVO和Eq-Poly优化策略及其在Whir-P3代码库中的应用。",
-          "en": "@class_lambda team shared the optimization implementation of the Sumcheck protocol in blog{{name}}, introducing the SVO and Eq-Poly optimization strategies based on the BDDT paper and their application in the Whir-P3 code library."
+          "en": "@class_lambda team shared the optimization implementation of the Sumcheck protocol in blog{{name}}, introducing the SVO and Eq-Poly optimization strategies based on the BDDT paper and their application in the Whir-P3 code library.",
+          "ja": "@class_lambda チームは、BDDT の論文に基づいた SVO および Eq-Poly 最適化戦略を紹介し、Sumcheck プロトコルの最適化実装をブログ{{name}}で共有しました。これは Whir-P3 コードライブラリにおけるその応用例です。"
         },
         "notes": {
           "zh": [
@@ -172,7 +200,8 @@
         },
         "summary": {
           "zh": "Fenzi和Sanso在{{name}}论文中分析了小域哈希SNARG的安全性，提出通用攻击方法，指出其实际安全性低于预期，影响现有部署系统。",
-          "en": "Fenzi and Sanso analyzed the security of small-field hash-based SNARGs, proposing a general attack method, indicating that their actual security is lower than expected, affecting existing deployment systems."
+          "en": "Fenzi and Sanso analyzed the security of small-field hash-based SNARGs, proposing a general attack method, indicating that their actual security is lower than expected, affecting existing deployment systems.",
+          "ja": "FenziとSansoは、小フィールドハッシュベースのSNARGのセキュリティを分析し、一般的な攻撃手法を提案しました。これにより、それらの実際のセキュリティが予想よりも低いことが示され、既存のデプロイメントシステムに影響を与えています。"
         },
         "notes": {
           "zh": [
@@ -190,6 +219,14 @@
             "Analysis of extension codes in small fields shows that combining lower bounds leads to strong attacks.",
             "This challenges the optimistic assumption of the near-gap conjecture, affecting actual deployment systems.",
             "The research provides important references for Ethereum Proximity Prize and security evaluation."
+          ],
+          "ja": [
+            "小フィールドハッシュベースSNARGのセキュリティは、線形符号の近接誤差とリストサイズパラメータの組み合わせに依存する。",
+            "既存のデプロイメントシステムは容量メカニズムに基づいて動作しているが、セキュリティは過大評価されている可能性がある。",
+            "本研究では一般的な攻撃手法を提案し、その成功確率はリストサイズパラメータに依存する。",
+            "小フィールドにおける拡張符号の解析により、下限値を組み合わせることで強力な攻撃につながることが示された。",
+            "これはニアギャップ予想という楽観的な仮定に異議を唱え、実際のデプロイメントシステムに影響を与える。",
+            "本研究はEthereum Proximity Prizeおよびセキュリティ評価のための重要なリファレンスを提供する。"
           ]
         }
       }
@@ -211,7 +248,8 @@
         },
         "summary": {
           "zh": "Justin Thaler在{{name}}博文中分析了量子计算对区块链的威胁，澄清了加密和签名在HNDL攻击下的不同风险，并讨论了zkSNARKs的量子安全性。",
-          "en": "Justin Thaler analyzed the threat of quantum computing to blockchains in {{name}} blog, clarifying the different risks of encryption and signatures under HNDL attacks, and discussing the quantum security of zkSNARKs."
+          "en": "Justin Thaler analyzed the threat of quantum computing to blockchains in {{name}} blog, clarifying the different risks of encryption and signatures under HNDL attacks, and discussing the quantum security of zkSNARKs.",
+          "ja": "Justin Thalerは、{{name}}のブログ記事で、量子コンピューティングがブロックチェーンにもたらす脅威を分析し、HNDL攻撃下での暗号と署名の異なるリスクを明確にし、zkSNARKsの量子セキュリティについて論じています。"
         },
         "notes": {
           "zh": [
@@ -229,6 +267,14 @@
             "Post-quantum signatures have high performance overhead and implementation risks, requiring careful migration",
             "Enterprises should prioritize solving more urgent security issues, such as code vulnerabilities",
             "Hybrid encryption schemes (e.g., ML-KEM+X25519) can balance security and performance"
+          ],
+          "ja": [
+            "HNDL攻撃はポスト量子暗号の導入を緊急のものにしているが、署名には影響がなく、移行を遅らせることが可能である",
+            "zkSNARKsのゼロ知識特性はポスト量子セキュアであり、HNDL攻撃の脅威はない",
+            "量子コンピュータは短期的には暗号を破れないため、CRQC（耐量子計算機）の実現には数十年かかる可能性がある",
+            "ポスト量子署名には高いパフォーマンスオーバーヘッドと実装リスクがあり、慎重な移行が必要である",
+            "企業はコードの脆弱性などのより緊急性の高いセキュリティ問題の解決を優先すべきである",
+            "ハイブリッド暗号方式（例：ML-KEM+X25519）により、セキュリティとパフォーマンスのバランスを取ることができる"
           ]
         }
       }
@@ -250,7 +296,8 @@
         },
         "summary": {
           "zh": "Kudinov等人在{{name}}论文中全面分析了基于哈希的签名方案在比特币中的应用，通过优化参数和限制签名数量，显著提升了SPHINCS+等方案的性能。",
-          "en": "Kudinov et al. comprehensively analyzed the application of hash-based signature schemes to Bitcoin in the paper {{name}}, significantly improving the performance of schemes like SPHINCS+ by optimizing parameters and limiting the number of signatures."
+          "en": "Kudinov et al. comprehensively analyzed the application of hash-based signature schemes to Bitcoin in the paper {{name}}, significantly improving the performance of schemes like SPHINCS+ by optimizing parameters and limiting the number of signatures.",
+          "ja": "Kudinovらは論文{{name}}において、ハッシュベース署名方式のBitcoinへの応用について包括的に分析し、パラメータの最適化と署名数の制限を行うことで、SPHINCS+のようなスキームのパフォーマンスを大幅に向上させています。"
         },
         "notes": {
           "zh": [
@@ -268,6 +315,14 @@
             "Discussed limitations in practical applications such as key derivation, multi-signature, and threshold signature",
             "Provided public scripts to ensure the reproducibility and transparency of the research",
             "Focused on Bitcoin, providing practical guidance for post-quantum cryptography deployment in blockchain"
+          ],
+          "ja": [
+            "ハッシュベースの署名スキームは、ハッシュ関数の仮定に基づいており、Bitcoinの既存設計と互換性があるため、潜在的なポスト量子代替手段となる。",
+            "パラメータを最適化し、公開鍵あたりの署名数を制限することで、署名サイズを大幅に削減し効率を向上させる。",
+            "SPHINCS+C、TL-WOTS-TW、PORS+FPなどを適用し、標準化されたSPHINCS+ (SLH-DSA) を上回る性能を発揮する。",
+            "鍵導出、マルチシグネチャ、しきい値署名などの実用的なアプリケーションにおける限界について議論した。",
+            "研究の再現性と透明性を確保するためのパブリックスクリプトを提供した。",
+            "Bitcoinに焦点を当て、ブロックチェーンにおけるポスト量子暗号の実装に関する実践的なガイダンスを提供する。"
           ]
         }
       }
@@ -290,7 +345,8 @@
         },
         "summary": {
           "zh": "Zakharov等人在{{name}}论文中提出了一种基于UltraGroth的zkML框架Bionetta，显著提升了自定义神经网络的证明效率，支持在移动设备上运行客户端证明。",
-          "en": "Zakharov et al. proposed a zkML framework Bionetta based on UltraGroth, significantly improving the proof efficiency of custom neural networks and supporting client-side proofs on mobile devices."
+          "en": "Zakharov et al. proposed a zkML framework Bionetta based on UltraGroth, significantly improving the proof efficiency of custom neural networks and supporting client-side proofs on mobile devices.",
+          "ja": "Zakharovらは、UltraGrothに基づいたzkMLフレームワークであるBionettaを提案し、カスタムニューラルネットワークの証明効率を大幅に向上させ、モバイルデバイス上でのクライアントサイドプルーフをサポートしています。"
         },
         "notes": {
           "zh": [
@@ -308,6 +364,14 @@
             "Deployable on native EVM smart contracts, without large proof scale and verification overhead",
             "One-time preprocessing steps (circuit compilation, trusted setup) cost increase",
             "Suitable for client-side machine learning applications requiring privacy protection"
+          ],
+          "ja": [
+            "UltraGrothプロトコルに基づくBionetta。zkML証明のパフォーマンスを最適化。",
+            "クライアントサイドの証明のために、モバイルデバイス上でのカスタムニューラルネットワークをサポート。",
+            "EZKLやLagrange's deep-proveなどと比較して、証明時間を大幅に短縮。",
+            "大きな証明スケールや検証オーバーヘッドなしでネイティブEVMスマートコントラクトへのデプロイが可能。",
+            "一度限りのプリプロセスステップ（回路コンパイル、トラステッドセットアップ）によるコスト増加。",
+            "プライバシー保護を必要とするクライアントサイドの機械学習アプリケーションに適している。"
           ]
         }
       }
@@ -330,7 +394,8 @@
         },
         "summary": {
           "zh": "Zou等人在{{name}}论文中提出了一种用于zkVM的通用模块化库操作系统ZeroOS，允许vApp开发者仅链接所需Linux ABI子集，减少可信计算基并统一zkVM生态系统。",
-          "en": "Zou et al. propose ZeroOS, a universal modular library OS for zkVMs, allowing vApp developers to link only the required Linux ABI subset, reducing trusted computing base and unifying the zkVM ecosystem."
+          "en": "Zou et al. propose ZeroOS, a universal modular library OS for zkVMs, allowing vApp developers to link only the required Linux ABI subset, reducing trusted computing base and unifying the zkVM ecosystem.",
+          "ja": "Zouらは、zkVMのためのユニバーサルなモジュラーライブラリOSであるZeroOSを提案しています。これにより、vApp開発者は必要なLinux ABIのサブセットのみをリンクすることができ、トラステッドコンピューティングベースを削減し、zkVMエコシステムを統一します。"
         },
         "notes": {
           "zh": [
@@ -348,6 +413,14 @@
             "Any zkVM team can easily integrate by writing a ZeroOS bootloader, reducing maintenance burden.",
             "This approach unifies the zkVM ecosystem, consolidating development and audit resources.",
             "ZeroOS is open-sourced with ready-to-use toolchains, improving vApp development efficiency."
+          ],
+          "ja": [
+            "ZeroOSは、最新のプログラムがオペレーティングシステムやlibcに依存するzkVMにおける互換性の問題を解決します。",
+            "従来の方式では、言語ランタイムの分岐を通じてユニカーネルを作成するため、バージョン地獄と大きなトラステッドコンピューティングベース（TCB）を引き起こします。",
+            "ZeroOSにより、vApp開発者は必要なLinux ABIサブセットのみをリンクでき、攻撃対象領域を削減できます。",
+            "どのzkVMチームでも、ZeroOSブートローダーを作成することで容易に統合でき、保守の負担を軽減できます。",
+            "このアプローチはzkVMエコシステムを統一し、開発および監査リソースを集約します。",
+            "ZeroOSはすぐに使えるツールチェーンとともにオープンソース化されており、vApp開発効率を向上させます。"
           ]
         }
       }
@@ -370,7 +443,8 @@
         },
         "summary": {
           "zh": "Guo等人在{{name}}论文中提出了一种架构隐私的zkML方案，通过参数化R1CS和功能关系证明来隐藏CNN模型架构，在VGG16上仅比BFG+23慢30%。",
-          "en": "Guo et al. propose a privacy-preserving zkML scheme based on architecture-private zero-knowledge proof, using parameterized R1CS and functional relationship proofs to hide CNN model architecture, achieving 30% slower proof time than BFG+23 on VGG16."
+          "en": "Guo et al. propose a privacy-preserving zkML scheme based on architecture-private zero-knowledge proof, using parameterized R1CS and functional relationship proofs to hide CNN model architecture, achieving 30% slower proof time than BFG+23 on VGG16.",
+          "ja": "Guoらは、アーキテクチャプライベートゼロ知識証明に基づいたzkMLスキームを提案しています。これは、パラメータ化されたR1CSと関数的関係証明を用いてCNNモデルのアーキテクチャを隠蔽し、VGG16上でのBFG+23と比較して30%遅い証明時間で実現されています。"
         },
         "notes": {
           "zh": [
@@ -388,6 +462,14 @@
             "When batch proving 64 instances on the VGG16 model, proof time is only 30% slower than BFG+23.",
             "Using pR1CS to prove matrix multiplication is at least 3 times faster than traditional R1CS.",
             "This scheme provides dual privacy protection for both the architecture and parameters of neural networks in zero-knowledge proofs."
+          ],
+          "ja": [
+            "既存のzkMLスキームは、モデルパラメータを隠蔽するものの、完全なCNNアーキテクチャ情報は公開している。",
+            "プロバーがモデルアーキテクチャを提出できるようにするためのR1CSの一般化であるパラメーター付きR1CS (pR1CS) を提案する。",
+            "提出されたアーキテクチャが有効であることを検証するための関数的関係証明スキームを導入する。",
+            "VGG16モデルで64インスタンスをバッチプロビングした場合、証明時間はBFG+23よりもわずか30%遅い。",
+            "pR1CSを使用して行列積を証明することは、従来のR1CSよりも少なくとも3倍高速である。",
+            "このスキームは、ゼロ知識証明におけるニューラルネットワークのアーキテクチャとパラメータの両方に対して二重のプライバシー保護を提供する。"
           ]
         }
       }
@@ -409,7 +491,8 @@
         },
         "summary": {
           "zh": "Rasmus Kirk Jakobsen 开源了 Halo2 的完整实现项目，包括理论解释和 Rust 代码，支持单元测试和基准测试。",
-          "en": "Rasmus Kirk Jakobsen open-sourced the complete implementation of Halo2, including theoretical explanation and Rust code, supporting unit testing and benchmark testing."
+          "en": "Rasmus Kirk Jakobsen open-sourced the complete implementation of Halo2, including theoretical explanation and Rust code, supporting unit testing and benchmark testing.",
+          "ja": "Rasmus Kirk Jakobsen は、理論的な説明とRustコードを含むHalo2の完全な実装をオープンソース化しました。これには、単体テストおよびベンチマークテストのサポートが含まれます。"
         },
         "notes": {
           "zh": [
@@ -425,6 +508,13 @@
             "Offers detailed reports explaining the theory, construction, and benchmark results of Halo2.",
             "Reports include: committee signature chain compression based on IVC, enabling fast and secure light node synchronization.",
             "Reports include: IVC-friendly Plonk engineering implementation without trusted setup."
+          ],
+          "ja": [
+            "Halo2のゼロからの完全実装。理論的基盤と実践的なコードの両方を提供します。",
+            "コード検証およびパフォーマンス評価のための単体テストとベンチマークテストを含みます。",
+            "Halo2の理論、構築、ベンチマーク結果を説明する詳細なレポートを提供します。",
+            "レポートには：IVCに基づくコミットティ署名チェーン圧縮が含まれ、高速で安全なライトノード同期を可能にします。",
+            "レポートには：トラステッドセットアップ不要のIVCフレンドリーなPlonkエンジニアリング実装が含まれます。"
           ]
         }
       }
@@ -450,7 +540,8 @@
         ],
         "summary": {
           "zh": "@muellerberndt 发布了STARK Lab开源项目，包括交互式教程、执行跟踪生成和核心STARK概念可视化，支持用户从零构建ZK证明。",
-          "en": "@muellerberndt released the open-source STARK Lab project, featuring interactive tutorials, execution trace generation, and core STARK concept visualizations, enabling users to build zero-knowledge proofs from scratch."
+          "en": "@muellerberndt released the open-source STARK Lab project, featuring interactive tutorials, execution trace generation, and core STARK concept visualizations, enabling users to build zero-knowledge proofs from scratch.",
+          "ja": "@muellerberndt は、インタラクティブなチュートリアル、実行トレースの生成、コアSTARK概念の可視化機能を備えたオープンソースプロジェクトであるSTARK Labをリリースしました。これにより、ユーザーはゼロからゼロ知識証明（zero-knowledge proofs）を構築することができます。"
         },
         "notes": {
           "zh": [
@@ -468,6 +559,14 @@
             "Makes mathematical concepts more vivid and understandable through dynamic visualization",
             "Starts from basic finite fields and gradually builds up to complete ZK proofs",
             "Focused on educational purposes, lowering the learning threshold for ZK technology"
+          ],
+          "ja": [
+            "STARK Labは、ユーザーがSTARK証明を直感的に理解するのを助けるインタラクティブなチュートリアルを提供します。",
+            "簡単なプログラムの記述と実行トレースの生成をサポートし、制約から多項式へと段階的に学習できます。",
+            "現在はトイ（toy）なverifier機能を備えており、完全なSTARK検証機能は近日公開予定です。",
+            "動的な可視化を通じて、数学的概念をより鮮明で理解しやすいものにします。",
+            "基本的な有限体から始め、徐々に完全なZK証明へと構築していきます。",
+            "教育目的に焦点を当て、ZK技術の学習障壁を下げることを目指しています。"
           ]
         },
         "slogan": {
@@ -489,7 +588,8 @@
         ],
         "summary": {
           "zh": "Kuriyama等人在{{name}}论文中提出SALSAA框架，通过集成sumcheck技术优化了格基简洁论证，实现了线性时间证明者和更小的证明尺寸，并支持R1CS等广泛关系。",
-          "en": "Kuriyama et al. proposed the SALSAA framework in paper {{name}}, which optimizes lattice-based succinct arguments by integrating sumcheck techniques, achieving linear-time proving, smaller proof sizes, and supporting broad relations such as R1CS."
+          "en": "Kuriyama et al. proposed the SALSAA framework in paper {{name}}, which optimizes lattice-based succinct arguments by integrating sumcheck techniques, achieving linear-time proving, smaller proof sizes, and supporting broad relations such as R1CS.",
+          "ja": "Kuriyamaらは論文{{name}}でSALSAAフレームワークを提案しました。これは、sumcheck技術を統合することにより格子ベースの簡潔な証明（succinct arguments）を最適化するものであり、線形時間での証明生成、より小さい証明サイズ、R1CSのような幅広いリレーションのサポートを実現しています。"
         },
         "notes": {
           "zh": [
@@ -529,7 +629,8 @@
         ],
         "summary": {
           "zh": "Rareskills分享了{{name}}教程系列，帮助Solidity开发者快速学习Cairo语言和在Starknet上构建智能合约，无需ZK背景知识。",
-          "en": "Rareskills shared the {{name}} tutorial series to help Solidity developers quickly learn the Cairo language and build smart contracts on Starknet—no ZK background required."
+          "en": "Rareskills shared the {{name}} tutorial series to help Solidity developers quickly learn the Cairo language and build smart contracts on Starknet—no ZK background required.",
+          "ja": "Rareskillsは、Solidity開発者がCairo言語を迅速に習得しStarknet上でスマートコントラクトを構築できるよう支援する{{name}}チュートリアルシリーズを公開しました。ZKの知識は必要ありません。"
         },
         "notes": {
           "zh": [
@@ -547,6 +648,14 @@
             "Includes practical exercises such as implementing ERC-20 tokens to enhance learning",
             "Abstracts away underlying cryptography so developers can focus on the application layer",
             "Well-structured from basic to advanced, suitable for quick onboarding"
+          ],
+          "ja": [
+            "本チュートリアルは、ZKの経験がないSolidity開発者がCairoを学ぶことを目的としています。",
+            "Starknet Foundationによって資金提供されており、ZK-STARK技術の採用を重視しています。",
+            "Cairo言語の基礎、スマートコントラクト開発、およびStarknet固有の機能について解説します。",
+            "学習を深めるためのERC-20トークンの実装などの実践的な演習を含みます。",
+            "基盤となる暗号学は抽象化されており、開発者がアプリケーション層に集中できるようにしています。",
+            "基礎から上級レベルまで構成がしっかりしており、迅速なオンボーディングに適しています。"
           ]
         },
         "slogan": {
@@ -569,7 +678,8 @@
         ],
         "summary": {
           "zh": "microbecode 开源了Stark from zero，这是一个用Rust实现的STARK证明器和验证器，专注于教育目的，包含斐波那契追踪、LDE和Merkle承诺等核心概念。",
-          "en": "microbecode open-sourced Stark from zero, a Rust implementation of a STARK prover and verifier focused on education, featuring core concepts like Fibonacci trace, LDE, and Merkle commitments."
+          "en": "microbecode open-sourced Stark from zero, a Rust implementation of a STARK prover and verifier focused on education, featuring core concepts like Fibonacci trace, LDE, and Merkle commitments.",
+          "ja": "microbecodeは、Fibonacci trace、LDE、Merkle commitmentなどのコアコンセプトを特徴とする、教育に焦点を当てたSTARKプロバーおよびベリファイアのRust実装である、ゼロからのオープンソースStarkです。"
         },
         "notes": {
           "zh": [
@@ -587,6 +697,14 @@
             "Does not implement full FRI proof, only provides folding examples.",
             "Relies on insecure hash functions and simplified commitments, with security vulnerabilities.",
             "Process includes Fibonacci trace, LDE, Merkle commitments, and Fiat-Shamir sampling."
+          ],
+          "ja": [
+            "本プロジェクトは教育目的であり、セキュリティや最適化が欠けているため、本番環境での利用には適していません。",
+            "ZKプライバシー特性を省略し、STARKのコアコンセプトの教授に焦点を当てています。",
+            "理解を容易にするために、小さな有限体とトレースを使用しています。",
+            "完全なFRI証明の実装は行わず、折りたたみ（folding）の例のみを提供します。",
+            "安全性の脆弱性がある、不安全なハッシュ関数と簡略化されたコミットメントに依存しています。",
+            "プロセスには、フィボナッチトレース、LDE、Merkleコミットメント、Fiat-Shamirサンプリングが含まれます。"
           ]
         },
         "slogan": {
@@ -608,7 +726,8 @@
         ],
         "summary": {
           "zh": "ZippelLabs 团队开源了ZP1，这是一个基于Circle STARKs和Mersenne31的RISC-V zkVM，支持RV32IM指令集，并集成了FRI、LogUp和并行约束评估等特性。",
-          "en": "ZippelLabs open-sourced ZP1, a RISC-V zkVM based on Circle STARKs and Mersenne31, supporting the RV32IM instruction set and integrating features like FRI, LogUp, and parallel constraint evaluation."
+          "en": "ZippelLabs open-sourced ZP1, a RISC-V zkVM based on Circle STARKs and Mersenne31, supporting the RV32IM instruction set and integrating features like FRI, LogUp, and parallel constraint evaluation.",
+          "ja": "ZippelLabsのオープンソースプロジェクトであるZP1は、Circle STARKsとMersenne31に基づいたRISC-V zkVMであり、RV32IM命令セットをサポートし、FRI、LogUp、並列制約評価などの機能を統合しています。"
         },
         "notes": {
           "zh": [
@@ -626,6 +745,14 @@
             "Recently fixed critical security issues like DEEP quotient domain points.",
             "Performance optimizations include bit lookup table acceleration, but Circle FFT efficiency is low.",
             "Project status: good test coverage, but limited GPU support and other constraints."
+          ],
+          "ja": [
+            "ZP1は、Circle STARKsとMersenne31フィールドを使用した実験的なRISC-V zkVMです。",
+            "RV32IM命令セットをサポートし、FRI、LogUp、並列制約評価を統合しています。",
+            "KeccakやSHA2などのプリコンパイル済みサーキットを含みますが、セキュリティ監査は実施されていません。",
+            "最近では、DEEP quotient domain pointsのような重大なセキュリティ問題が修正されました。",
+            "パフォーマンス最適化にはビットルックアップテーブルのアクセラレーションが含まれますが、Circle FFTの効率は低いです。",
+            "プロジェクトの状態：テストカバレッジは良好ですが、GPUサポートやその他の制約があります。"
           ]
         },
         "slogan": {
@@ -648,7 +775,8 @@
         ],
         "summary": {
           "zh": "Distributed Lab组织了ZKDL Camp系列讲座，专注于从零讲解现代zkSNARKs如Groth16、PlonK、GKR的工作原理，涵盖数学基础、协议构建和应用实践。",
-          "en": "Distributed Lab organized the ZKDL Camp lecture series, focusing on explaining the working principles of modern zkSNARKs such as Groth16, PlonK, and GKR from scratch, covering mathematical foundations, protocol construction, and practical applications."
+          "en": "Distributed Lab organized the ZKDL Camp lecture series, focusing on explaining the working principles of modern zkSNARKs such as Groth16, PlonK, and GKR from scratch, covering mathematical foundations, protocol construction, and practical applications.",
+          "ja": "Distributed Labは、Groth16、PlonK、GKRなどの最新のzkSNARKsの動作原理を数学的基礎から実践的な応用まで網羅的に解説するZKDL Campの講義シリーズを企画しました。"
         },
         "notes": {
           "zh": [
@@ -666,6 +794,14 @@
             "Provides practical tutorials on tools like Circom to support zk application development.",
             "Open-source books and code repositories encourage community participation and knowledge sharing.",
             "Emphasizes the mathematical foundations and verification methods in protocol construction for security."
+          ],
+          "ja": [
+            "ZKDL Campでは、基礎数学から高度なzkSNARKプロトコルまでを網羅した包括的なコースを提供し、深い学習をサポートします。",
+            "講義では、Groth16、PlonK、GKR、Sum-Check、Bulletproofsなどの主要なプロトコルを扱います。",
+            "UltraGrothのような最先端のプロトコルや、R1CSサーキットのためのlookupチェックの最適化を含みます。",
+            "zkアプリケーション開発を支援するためのCircomなどのツールに関する実践的なチュートリアルを提供します。",
+            "オープンソースの書籍とコードリポジトリにより、コミュニティへの参加と知識共有を促進します。",
+            "セキュリティのため、プロトコル構築における数学的基礎と検証方法に重点を置いています。"
           ]
         },
         "slogan": {
@@ -687,7 +823,8 @@
         ],
         "summary": {
           "zh": "Srivastava在{{name}}论文中提出了一种基于FRI-Binius的数据可用性方案FRIVail，支持ZK证明、后量子和混合聚合策略，为区块链数据可用性协议提供模块化基础。",
-          "en": "In the paper, Srivastava proposed FRIVail, a data availability scheme based on FRI-Binius, supporting ZK proofs, post-quantum and hybrid aggregation strategies, and providing a modular foundation for blockchain data availability protocols."
+          "en": "In the paper, Srivastava proposed FRIVail, a data availability scheme based on FRI-Binius, supporting ZK proofs, post-quantum and hybrid aggregation strategies, and providing a modular foundation for blockchain data availability protocols.",
+          "ja": "本論文では、SrivastavaがFRI-Biniusに基づいたデータ可用性スキームであるFRIVailを提案しています。これはZK証明、ポスト量子暗号、ハイブリッド集約戦略をサポートし、ブロックチェーンのデータ可用性プロトコルに対するモジュール式の基盤を提供します。"
         },
         "notes": {
           "zh": [
@@ -705,6 +842,14 @@
             "Post-quantum aggregation recursively uses FRI-Binius for proof-of-proofs, relying on proximity checks and new polynomials.",
             "KZG aggregation enables direct openings but needs pairing and trusted setup, so it's not post-quantum secure.",
             "All variants let light clients check availability with a few openings, no full data download needed."
+          ],
+          "ja": [
+            "FRIVailは、各コミットメントがサンプリングを容易にするためのコードワードとなるFRIのReed-Solomon構造を利用しています。",
+            "各データ行が独自のFRI証明を持ち、その後アグリゲーションによってそれらがグローバルな証明書に統合されます。",
+            "ZK aggregationは短いproof-of-proofsを作成し、簡潔なグローバルチェックと行間の独立性を可能にします。",
+            "Post-quantum aggregationは、proximity checksと新しい多項式に依存して、proof-of-proofsのために再帰的にFRI-Biniusを使用します。",
+            "KZG aggregationは直接的なopeningを可能にしますが、ペアリングとトラステッドセットアップが必要なため、ポスト量子安全ではありません。",
+            "すべてのバリアントは、完全なデータダウンロードを必要とせず、少数のopeningでライトクライアントが可用性を確認できるようにします。"
           ]
         },
         "slogan": {
@@ -727,7 +872,8 @@
         ],
         "summary": {
           "zh": "Ethproofs团队在博客中回顾了2025年平台进展，包括性能提升和生态协调，并展望2026年将重点转向安全性和标准化，以支持以太坊L1强制证明的过渡。",
-          "en": "Ethproofs recapped 2025 progress: faster provers, broader coordination, and previewed a 2026 shift toward security and standardization for Ethereum L1."
+          "en": "Ethproofs recapped 2025 progress: faster provers, broader coordination, and previewed a 2026 shift toward security and standardization for Ethereum L1.",
+          "ja": "Ethproofsが2025年の進捗を振り返る：より高速なprover、広範な調整、そしてEthereum L1のセキュリティと標準化に向けた2026年の移行プレビュー"
         },
         "notes": {
           "zh": [
@@ -745,6 +891,14 @@
             "2026 focus: security, standardizing runtime, energy, and proof size metrics.",
             "Unified metrics and RTP Cohort for real-time production visibility.",
             "Goal: ensure trust, decentralization, and correctness in ETH mandatory proofs via public measurement."
+          ],
+          "ja": [
+            "2025年：Ethproofsによる約20万ETHブロックの検証を実施。証明レイテンシを5倍に短縮、コストを15分の1に削減。",
+            "複数のチームにより、P99レイテンシ<10秒、単一GPUでの証明生成時間<1分、証明コスト<$0.01/ブロックを達成。",
+            "プラットフォームは調整レイヤーへと進化し、7つのzkVMと15の証明チームをサポート。",
+            "2026年の焦点：セキュリティ、ランタイムの標準化、エネルギー効率、および証明サイズメトリクスの確立。",
+            "リアルタイムなプロダクション可視性向上のための統一メトリクスとRTP Cohort（評価グループ）。",
+            "目標：公開測定を通じて、ETH必須証明における信頼性、分散性、正確性を保証すること。"
           ]
         },
         "slogan": {

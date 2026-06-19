@@ -12,7 +12,11 @@
           "空投",
           "Github"
         ],
-        "summary": "Aligned Foundation感谢Ethereum和ZK领域的工程师和研究人员，并邀请他们通过其网站检查空投资格。"
+        "summary": {
+          "zh": "Aligned Foundation感谢Ethereum和ZK领域的工程师和研究人员，并邀请他们通过其网站检查空投资格。",
+          "en": "The Aligned Foundation thanks engineers and researchers in the Ethereum and ZK fields, and invites them to check available investment slots on its website.",
+          "ja": "アラインド財団は、EthereumおよびZK分野のエンジニアおよび研究者の皆様に感謝を申し上げます。また、ウェブサイトにて投資機会をご確認いただくようご案内いたします。"
+        }
       },
       {
         "name": "Scribe: Low-memory SNARKs via Read-Write Streaming",
@@ -22,7 +26,11 @@
           "University of Pennsylvania",
           "低内存"
         ],
-        "summary": "Baweja等人在论文{{name}}中提出了Scribe，一种低内存SNARK，通过利用磁盘存储在廉价设备上高效证明大称述，显著减少内存需求并优化I/O成本。"
+        "summary": {
+          "zh": "Baweja等人在论文{{name}}中提出了Scribe，一种低内存SNARK，通过利用磁盘存储在廉价设备上高效证明大称述，显著减少内存需求并优化I/O成本。",
+          "en": "Baweja et al. introduced Scribe in their paper {{name}}, a low-memory SNARK that efficiently proves statements by leveraging disk storage on inexpensive devices, thereby significantly reducing memory requirements and optimizing I/O costs.",
+          "ja": "Bawejaらは論文{{name}}において、Scribeという低メモリSNARKを提案した。これは、安価なデバイス上のディスクストレージを利用して主張（ステートメント）を効率的に証明することにより、メモリ要件を大幅に削減し、I/Oコストを最適化するものである。"
+        }
       }
     ]
   },
@@ -38,7 +46,11 @@
           "Ethereum",
           "Github"
         ],
-        "summary": "Blockblaz团队发布了Zeam开源项目，这是Zig实现的Beam客户端的生产级实现，旨在通过ZK-VMs大规模扩展和去中心化以太坊共识协议。"
+        "summary": {
+          "zh": "Blockblaz团队发布了Zeam开源项目，这是Zig实现的Beam客户端的生产级实现，旨在通过ZK-VMs大规模扩展和去中心化以太坊共识协议。",
+          "en": "The Blockblaz team has released Zeam, an open-source project that is a production-grade implementation of the Beam client written in Zig. It is designed to scale and decentralize the Ethereum consensus protocol through ZK-VMs.",
+          "ja": "Blockblazチームは、Zeamというオープンソースプロジェクトをリリースしました。これはZigで実装されたBeamクライアントの本番レベル（production-grade）な実装であり、ZK-VMsを通じてEthereumのコンセンサスプロトコルを大規模に拡張し、分散化することを目指しています。"
+        }
       },
       {
         "name": "Play-by-email provable games",
@@ -50,7 +62,11 @@
           "zkEmail",
           "RISC0"
         ],
-        "summary": "Hylé博客{{name}}讨论了zkChess，一个使用zkEmail和RISC0构建的邮件可验证游戏引擎，探讨了zkEmail的酷炫之处及其在加密领域的应用。"
+        "summary": {
+          "zh": "Hylé博客{{name}}讨论了zkChess，一个使用zkEmail和RISC0构建的邮件可验证游戏引擎，探讨了zkEmail的酷炫之处及其在加密领域的应用。",
+          "en": "The Hylé blog post {{name}} discusses zkChess, an email verifiable game engine built using zkEmail and RISC0, exploring the coolness of zkEmail and its applications in the crypto space.",
+          "ja": "Hyléブログ{{name}}では、zkEmailとRISC0を使用して構築されたメール検証可能なゲームエンジンであるzkChessについて議論し、zkEmailの素晴らしい点とその暗号分野での応用可能性を探りました。"
+        }
       }
     ]
   },
@@ -66,7 +82,11 @@
           "Circom",
           "Garaga"
         ],
-        "summary": "Tekkac在博客中介绍了如何在Starknet上使用零知识证明，并详细说明了使用Circom和Garaga进行证明生成和验证的过程。"
+        "summary": {
+          "zh": "Tekkac在博客中介绍了如何在Starknet上使用零知识证明，并详细说明了使用Circom和Garaga进行证明生成和验证的过程。",
+          "en": "Tekkac introduced how to use zero-knowledge proofs on Starknet in a blog post, detailing the process of proof generation and verification using Circom and Garaga.",
+          "ja": "Tekkacのブログでは、Starknet上での零知識証明（ZK Proof）の使用方法が紹介されており、CircomとGaragaを使用した証明の生成および検証プロセスについて詳細に解説されています。"
+        }
       },
       {
         "name": "Will ZK Eat The Modular Stack?",
@@ -77,7 +97,11 @@
           "模块化",
           "应用"
         ],
-        "summary": "Hannes在博客中探讨了ZK与模块化堆栈的关系，讨论了区块链如何扩展当前计算范式，并分析了ZK和模块化在提高效率和扩展性方面的潜力。"
+        "summary": {
+          "zh": "Hannes在博客中探讨了ZK与模块化堆栈的关系，讨论了区块链如何扩展当前计算范式，并分析了ZK和模块化在提高效率和扩展性方面的潜力。",
+          "en": "In his blog post, Hannes explored the relationship between ZK and modular stacks, discussing how blockchain extends current computational paradigms and analyzing the potential of ZK and modularity to enhance efficiency and scalability.",
+          "ja": "Hannesはブログ記事で、ZKとモジュラースタックの関係について論じ、ブロックチェーンが現在の計算パラダイムをどのように拡張するかを議論し、効率性とスケーラビリティの向上におけるZKとモジュール化の可能性を分析しました。"
+        }
       }
     ]
   },
@@ -92,7 +116,11 @@
           "fanka",
           "zkP2P"
         ],
-        "summary": "fanka在视频分享了zkP2P协议解析，并提供了相关资料链接。"
+        "summary": {
+          "zh": "fanka在视频分享了zkP2P协议解析，并提供了相关资料链接。",
+          "en": "Fanka shared an analysis of the zkP2P protocol in a video and provided related resources.",
+          "ja": "fanka氏が、zkP2Pプロトコルの解析を動画で共有し、関連資料のリンクを提供しました。"
+        }
       },
       {
         "name": "Range Checks using Polygon Plonky3 + Puzzle V-3",
@@ -104,7 +132,11 @@
           "Plonky3",
           "Puzzle V-3"
         ],
-        "summary": "ZK Hack举办了一场关于使用Plonky3进行范围检查的工作坊，由Polygon Miden的Dominik Schmidt主讲，介绍了ZK概念和工具，并启动了Puzzle V-3竞赛。"
+        "summary": {
+          "zh": "ZK Hack举办了一场关于使用Plonky3进行范围检查的工作坊，由Polygon Miden的Dominik Schmidt主讲，介绍了ZK概念和工具，并启动了Puzzle V-3竞赛。",
+          "en": "ZK Hack hosted a workshop on performing range checks using Plonky3, led by Dominik Schmidt from Polygon Miden. He introduced ZK concepts and tools and launched the Puzzle V-3 competition.",
+          "ja": "ZK Hackでは、Plonky3を用いた範囲チェックに関するワークショップが開催されました。Polygon MidenのDominik Schmidt氏が登壇し、ZKの概念とツールを紹介するとともに、Puzzle V-3コンテストを立ち上げました。"
+        }
       }
     ]
   },
@@ -120,7 +152,11 @@
           "awesome",
           "zkVM"
         ],
-        "summary": "rkdud007发布了awesome-zkvm开源zkVM列表，涵盖了多个项目和资源，支持并行证明和GPU证明的横向对比等功能。"
+        "summary": {
+          "zh": "rkdud007发布了awesome-zkvm开源zkVM列表，涵盖了多个项目和资源，支持并行证明和GPU证明的横向对比等功能。",
+          "en": "rkdud007 has released the awesome-zkvm open-source zkVM list, which covers various projects and resources, offering features such as cross-comparison for parallel proofs and GPU proving.",
+          "ja": "rkdud007が、複数のプロジェクトやリソースを網羅したオープンソースのzkVMリスト「awesome-zkvm」を公開しました。このリストには、並列証明（parallel proving）やGPU証明（GPU proving）などの横断的な比較機能が含まれています。"
+        }
       },
       {
         "name": "An Update on Folding",
@@ -131,7 +167,11 @@
           "Albert Garreta",
           "Folding"
         ],
-        "summary": "视频详细介绍了折叠方案的定义、特性、应用及其在Nova方案后的进展，特别是Hypernova的定义和协议。"
+        "summary": {
+          "zh": "视频详细介绍了折叠方案的定义、特性、应用及其在Nova方案后的进展，特别是Hypernova的定义和协议。",
+          "en": "The video provides a detailed overview of the definition, properties, and applications of the folding scheme, including its advancements after the Nova scheme, particularly focusing on the definition and protocol of Hypernova.",
+          "ja": "本動画では、folding schemeの定義、特性、応用について詳細に解説し、特にNovaスキーム以降の進捗、とりわけHypernovaの定義とプロトコルについて説明します。"
+        }
       }
     ]
   },
@@ -146,7 +186,11 @@
           "Lagrange",
           "ZK Rollups"
         ],
-        "summary": "Lagrange推出了Infinite Proving Layer，扩展了其ZK Prover Network，为ZK rollups提供证明生成。"
+        "summary": {
+          "zh": "Lagrange推出了Infinite Proving Layer，扩展了其ZK Prover Network，为ZK rollups提供证明生成。",
+          "en": "Lagrange has introduced the Infinite Proving Layer, expanding its ZK Prover Network to provide proof generation for ZK rollups.",
+          "ja": "LagrangeはInfinite Proving Layerを発表し、これによりZK Prover Networkが拡張され、ZK rollups向けの証明生成を提供します。"
+        }
       },
       {
         "name": "ZK in Sui",
@@ -158,7 +202,11 @@
           "zkLogin",
           "Kelp"
         ],
-        "summary": "ZKV分享了{{name}}关于Sui上的ZK技术应用，讨论了隐私保护和安全漏洞等关键问题。涉及到zkLogin登录和Kelp账户恢复等应用。"
+        "summary": {
+          "zh": "ZKV分享了{{name}}关于Sui上的ZK技术应用，讨论了隐私保护和安全漏洞等关键问题。涉及到zkLogin登录和Kelp账户恢复等应用。",
+          "en": "ZKV presented {{name}}'s work on ZK technology applications on Sui, discussing critical issues such as privacy protection and security vulnerabilities. This includes use cases like zkLogin authentication and Kelp account recovery.",
+          "ja": "ZKVが、Sui上でのZK技術の応用について{{name}}氏から共有し、プライバシー保護やセキュリティ脆弱性といった重要な課題について議論しました。zkLoginログインやKelpアカウント復旧などのアプリケーションに関連する内容です。"
+        }
       }
     ]
   },
@@ -173,7 +221,11 @@
           "Succinct",
           "zkVM"
         ],
-        "summary": "Succinct团队在ZK-Residency项目中分享了{{name}}关于zkVM的详细指南，比较了SP1、RISC0、Jolt、Nexus、Delphinus和Powdr等zkVM在多种加密算法上的表现。"
+        "summary": {
+          "zh": "Succinct团队在ZK-Residency项目中分享了{{name}}关于zkVM的详细指南，比较了SP1、RISC0、Jolt、Nexus、Delphinus和Powdr等zkVM在多种加密算法上的表现。",
+          "en": "The Succinct team shared a detailed guide on zkVMs by {{name}} in their ZK-Residency project, comparing the performance of various zkVMs—such as SP1, RISC0, Jolt, Nexus, Delphinus, and Powdr—across multiple cryptographic algorithms.",
+          "ja": "Succinctチームは、ZK-Residencyプロジェクトにおいて、{{name}}によるzkVMに関する詳細なガイドを共有しました。このガイドでは、SP1、RISC0、Jolt、Nexus、Delphinus、PowdrなどのzkVMが複数の暗号アルゴリズムにおけるパフォーマンスをどのように示すかを比較しています。"
+        }
       },
       {
         "name": "Joining Tools For Humanity to Build a Better World",
@@ -183,7 +235,11 @@
           "Daniel Shorr",
           "Humanity"
         ],
-        "summary": "Daniel Shorr宣布加入Tools for Humanity，致力于构建全球最大的真实人类网络，通过zkAI技术实现隐私和安全的认证。"
+        "summary": {
+          "zh": "Daniel Shorr宣布加入Tools for Humanity，致力于构建全球最大的真实人类网络，通过zkAI技术实现隐私和安全的认证。",
+          "en": "Daniel Shorr has joined Tools for Humanity, dedicating himself to building the world's largest real human network by enabling private and secure authentication through zkAI technology.",
+          "ja": "Daniel ShorrがTools for Humanityへの参加を発表。同氏は、zkAI技術を活用し、プライバシーとセキュリティを備えた認証を実現する、世界最大級のリアルヒューマンネットワーク構築に注力しています。"
+        }
       }
     ]
   },
@@ -198,7 +254,11 @@
           "Crypblizz",
           "PETs"
         ],
-        "summary": "Crypblizz分享了{{name}}对隐私增强技术（PETs）的深入探讨，涵盖了MPC、FHE、TEE和ZK等技术的历史、演变及其在Web3行业中的重要性。"
+        "summary": {
+          "zh": "Crypblizz分享了{{name}}对隐私增强技术（PETs）的深入探讨，涵盖了MPC、FHE、TEE和ZK等技术的历史、演变及其在Web3行业中的重要性。",
+          "en": "Crypblizz featured {{name}} providing an in-depth discussion on Privacy-Enhancing Technologies (PETs), covering the history, evolution, and significance of technologies such as MPC, FHE, TEE, and ZK within the Web3 industry.",
+          "ja": "Crypblizzにて、{{name}}がプライバシー強化技術（PETs）について深く掘り下げた内容を共有しました。これには、MPC、FHE、TEE、ZKなどの技術の歴史、進化、およびWeb3業界における重要性が含まれています。"
+        }
       },
       {
         "name": "zkLogin for Base blockchain",
@@ -209,7 +269,11 @@
           "zkLogin",
           "Base"
         ],
-        "summary": "shield-labs团队发布了zkLogin开源项目，允许用户在Base(兼容EVM)上使用Google/Apple账户进行自托管登录。"
+        "summary": {
+          "zh": "shield-labs团队发布了zkLogin开源项目，允许用户在Base(兼容EVM)上使用Google/Apple账户进行自托管登录。",
+          "en": "The Shield Labs team has released the zkLogin open-source project, which allows users to perform self-hosted logins using Google/Apple accounts on Base (an EVM-compatible chain).",
+          "ja": "shield-labsチームは、zkLoginというオープンソースプロジェクトをリリースしました。これにより、ユーザーはBase（EVM互換）上でGoogleまたはAppleアカウントを使用して自己ホストでのログインを行うことが可能になります。"
+        }
       }
     ]
   },
@@ -225,7 +289,11 @@
           "Merkle Trees",
           "Plonky3"
         ],
-        "summary": "NPLabs团队分享了{{name}}关于hybrid Merkle Trees的技术介绍，探讨了其在plonky3和递归证明中的应用，提供了详细的技术入门指南。"
+        "summary": {
+          "zh": "NPLabs团队分享了{{name}}关于hybrid Merkle Trees的技术介绍，探讨了其在plonky3和递归证明中的应用，提供了详细的技术入门指南。",
+          "en": "The NPLabs team presented a technical introduction by {{name}} on hybrid Merkle Trees, discussing their applications in plonky3 and recursive proofs, and provided a detailed getting started guide.",
+          "ja": "NPLabsチームは、{{name}}によるhybrid Merkle Treesの技術解説を共有しました。これには、plonky3や再帰的証明（recursive proofs）におけるその応用についての議論が含まれており、詳細な入門ガイドを提供しています。"
+        }
       },
       {
         "name": "Anonymous credentials from ECDSA",
@@ -235,7 +303,11 @@
           "Google",
           "ECDSA"
         ],
-        "summary": "Frigo和shelat在论文{{name}}中提出了一种基于ECDSA的新匿名凭证方案，通过高效的zk证明解决了SHA256和文档解析问题，无需更改现有发行者流程或设备，适用于隐私保护的数字身份应用。"
+        "summary": {
+          "zh": "Frigo和shelat在论文{{name}}中提出了一种基于ECDSA的新匿名凭证方案，通过高效的zk证明解决了SHA256和文档解析问题，无需更改现有发行者流程或设备，适用于隐私保护的数字身份应用。",
+          "en": "Frigo and shelat proposed a new anonymous credential scheme based on ECDSA in the paper {{name}}, which solves SHA256 and document parsing issues using efficient zk proofs. This scheme is applicable to privacy-preserving digital identity applications without requiring changes to existing issuer workflows or devices.",
+          "ja": "Frigoとshelatは論文{{name}}において、ECDSAに基づく新しい匿名クレデンシャルスキームを提案しています。これは、効率的なZK証明を通じてSHA256およびドキュメント解析の問題を解決するものであり、既存の発行者ワークフローやデバイスを変更する必要がなく、プライバシー保護型のデジタルIDアプリケーションに適しています。"
+        }
       }
     ]
   },
@@ -251,7 +323,11 @@
           "Scroll",
           "zkVM"
         ],
-        "summary": "Axiom, Scroll等团队发布了OpenVM开源项目，这是一个优先考虑模块化和可扩展性的zkVM框架，支持开发者添加自定义操作码、电路和证明系统。"
+        "summary": {
+          "zh": "Axiom, Scroll等团队发布了OpenVM开源项目，这是一个优先考虑模块化和可扩展性的zkVM框架，支持开发者添加自定义操作码、电路和证明系统。",
+          "en": "Teams such as Axiom and Scroll have released OpenVM, an open-source zkVM framework that prioritizes modularity and scalability, allowing developers to add custom opcodes, circuits, and proving systems.",
+          "ja": "AxiomやScrollなどのチームがOpenVMというオープンソースプロジェクトをリリースしました。これは、モジュール性とスケーラビリティを最優先に設計されたzkVMフレームワークであり、開発者がカスタムオペコード、回路、証明システムを追加することをサポートします。"
+        }
       },
       {
         "name": "PoneglyphDB: Efficient Non-interactive Zero-Knowledge Proofs for Arbitrary SQL-Query Verification",
@@ -262,7 +338,11 @@
           "Unversity of California",
           "SQL"
         ],
-        "summary": "Gu等人在{{name}}论文中提出了PoneglyphDB，通过非交互式零知识证明（ZKP）支持数据保密性和查询处理的可验证性。"
+        "summary": {
+          "zh": "Gu等人在{{name}}论文中提出了PoneglyphDB，通过非交互式零知识证明（ZKP）支持数据保密性和查询处理的可验证性。",
+          "en": "Gu et al. introduced PoneglyphDB in their paper {{name}}, which utilizes Non-interactive Zero-Knowledge Proofs (ZKPs) to ensure data confidentiality and the verifiability of query processing.",
+          "ja": "Guらは{{name}}論文においてPoneglyphDBを提案しており、これは非対話型ゼロ知識証明（ZKP）を通じてデータ保密性とクエリ処理の検証可能性をサポートします。"
+        }
       }
     ]
   },
@@ -278,7 +358,11 @@
           "WASM",
           "zkVM"
         ],
-        "summary": "Lita团队发布了Valida 0.7.0更新，首次支持WASM编译器工具链，并增强了zkVM堆栈的开发体验。"
+        "summary": {
+          "zh": "Lita团队发布了Valida 0.7.0更新，首次支持WASM编译器工具链，并增强了zkVM堆栈的开发体验。",
+          "en": "The Lita team has released Valida 0.7.0, which for the first time supports the WASM compiler toolchain and enhances the development experience of the zkVM stack.",
+          "ja": "LitaチームはValida 0.7.0のアップデートをリリースしました。本バージョンでは、WASMコンパイラツールチェーンへの対応を初めてサポートし、zkVMスタックの開発体験が向上しています。"
+        }
       },
       {
         "name": "Mira: Generic Accumulation Scheme for Special-Sound Protocols",
@@ -289,7 +373,11 @@
           "accumulation",
           "Folding"
         ],
-        "summary": "Josh Beal在博客{{name}}中提出了一种通用的累积方案，适用于特殊可靠性的协议（类Protostar），显著提高了配对基论证的折叠效率。"
+        "summary": {
+          "zh": "Josh Beal在博客{{name}}中提出了一种通用的累积方案，适用于特殊可靠性的协议（类Protostar），显著提高了配对基论证的折叠效率。",
+          "en": "Josh Beal introduced a general accumulation scheme in the blog {{name}}, applicable to protocols with special reliability (such as Protostar), which significantly improves the folding efficiency of pairing-based proofs.",
+          "ja": "Josh Bealはブログ{{name}}で、特殊な信頼性を持つプロトコル（Protostarに類するもの）に適した汎用的な蓄積スキームを提案しており、ペアリングベースの証明の折りたたみ効率を大幅に向上させています。"
+        }
       }
     ]
   },
@@ -304,7 +392,11 @@
           "Antalpha Lab",
           "zkVM"
         ],
-        "summary": "Antalpha Lab发布zkVM的课程安排，从2024年12月30日开始的4周时间，欢迎感兴趣的同学报名。"
+        "summary": {
+          "zh": "Antalpha Lab发布zkVM的课程安排，从2024年12月30日开始的4周时间，欢迎感兴趣的同学报名。",
+          "en": "Antalpha Lab has released the curriculum for zkVM. This 4-week course begins on December 30, 2024. Interested participants are welcome to register.",
+          "ja": "Antalpha Labより、zkVMに関するコーススケジュールが発表されました。2024年12月30日より4週間実施予定です。ご興味のある方はぜひお申し込みください。"
+        }
       },
       {
         "name": "On the gas efficiency of the WHIR polynomial commitment scheme",
@@ -321,7 +413,11 @@
           "PSE",
           "WHIR"
         ],
-        "summary": "Pierre等人在博客{{name}}中分析了WHIR多项式承诺方案的gas效率，开源了EVM验证器原型，展示了其在不同参数设置下的gas成本优化。TLDR，现在可做到1.3M gas。"
+        "summary": {
+          "zh": "Pierre等人在博客{{name}}中分析了WHIR多项式承诺方案的gas效率，开源了EVM验证器原型，展示了其在不同参数设置下的gas成本优化。TLDR，现在可做到1.3M gas。",
+          "en": "Pierre et al. analyzed the gas efficiency of the WHIR polynomial commitment scheme in their blog post {{name}}, open-sourcing an EVM verifier prototype that demonstrates gas cost optimization across various parameter settings. TLDR, the current gas cost is 1.3M.",
+          "ja": "Pierreら（et al.）はブログ{{name}}にて、WHIR多項式コミットメント方式のガス効率について分析を行い、EVM検証器プロトタイプのオープンソース化を発表しました。これにより、様々なパラメータ設定におけるガスコストの最適化が示されています。要約すると、現在1.3Mガスの達成が可能となっています。"
+        }
       }
     ]
   },
@@ -336,7 +432,11 @@
           "Community Privacy",
           "Taipei"
         ],
-        "summary": "Community Privacy组织了一个为期2-4周的驻地项目，专注于研究、共同设计、原型设计和构建社区隐私的开源应用。项目将于2025年2月22日至3月22日在台北举行。"
+        "summary": {
+          "zh": "Community Privacy组织了一个为期2-4周的驻地项目，专注于研究、共同设计、原型设计和构建社区隐私的开源应用。项目将于2025年2月22日至3月22日在台北举行。",
+          "en": "Community Privacy is hosting a 2-4 week residency project focused on researching, co-designing, prototyping, and building open-source applications for community privacy. The project will take place in Taipei from February 22 to March 22, 2025.",
+          "ja": "Community Privacyが、コミュニティプライバシーに特化したオープンソースアプリケーションの研究、共同設計、プロトタイピング、および構築を行う2〜4週間のレジデンシープロジェクトを開催します。本プロジェクトは2025年2月22日から3月22日まで台北にて実施されます。"
+        }
       },
       {
         "name": "Hash-based PCD from the BOIL accumulator",
@@ -353,7 +453,11 @@
           "BOIL",
           "accumulation"
         ],
-        "summary": "nil-research在{{name}}博客中对他们的论文BOIL进行解读，是一种用Reed-Solomon码实现了高效的累积方案，适用于任意基于哈希的SNARK。"
+        "summary": {
+          "zh": "nil-research在{{name}}博客中对他们的论文BOIL进行解读，是一种用Reed-Solomon码实现了高效的累积方案，适用于任意基于哈希的SNARK。",
+          "en": "nil-research explains their BOIL paper on the {{name}} blog. It is an efficient aggregation scheme implemented using Reed-Solomon codes, applicable to any hash-based SNARK.",
+          "ja": "nil-researchは{{name}}のブログにて、彼らの論文BOILについて解説しています。これは、Reed-Solomonコードを用いて実装された効率的な集約（aggregation）スキームであり、任意のハッシュベースSNARKに適用可能です。"
+        }
       }
     ]
   },
@@ -371,7 +475,11 @@
           "Decentralization",
           "Double-Spending"
         ],
-        "summary": "POD.NETWORK讨论了区块链中共识的必要性，指出共识并非构建去中心化支付的必需，通过无共识协议可以实现更快的交易确认。"
+        "summary": {
+          "zh": "POD.NETWORK讨论了区块链中共识的必要性，指出共识并非构建去中心化支付的必需，通过无共识协议可以实现更快的交易确认。",
+          "en": "POD.NETWORK discussed the necessity of consensus in blockchain, noting that consensus is not a requirement for building decentralized payments, as faster transaction finality can be achieved through consensusless protocols.",
+          "ja": "POD.NETWORKは、ブロックチェーンにおけるコンセンサスの必要性について議論し、コンセンサスが分散型決済を構築するための必須要件ではないと指摘。非コンセンサスプロトコルを用いることで、より高速なトランザクション確認を実現できるとしています。"
+        }
       }
     ]
   },
@@ -388,7 +496,11 @@
           "Polygon Lab",
           "GKR"
         ],
-        "summary": "Liam Eagen和Ulrich Haböck在{{name}}学术笔记中提出了一种方法，通过抽象极点多重性的概念，绕过了logUp中的特征界限，并适用于Papini和Haböck的GKR变体，解锁了二进制域上的分数分解查找。"
+        "summary": {
+          "zh": "Liam Eagen和Ulrich Haböck在{{name}}学术笔记中提出了一种方法，通过抽象极点多重性的概念，绕过了logUp中的特征界限，并适用于Papini和Haböck的GKR变体，解锁了二进制域上的分数分解查找。",
+          "en": "Liam Eagen and Ulrich Haböck proposed a method in their academic notes on {{name}}, which bypasses the feature boundaries in logUp by abstracting the concept of pole multiplicity, making it applicable to Papini and Haböck's GKR variant and unlocking fractional decomposition lookup on the binary domain.",
+          "ja": "Liam EagenとUlrich Haböckは、{{name}}の学術ノートにおいて、極点多重性の抽象化という概念を用いることでlogUpにおける特徴境界を回避し、PapiniおよびHaböckのGKRバリアントに適用可能な方法を提案しました。これにより、バイナリドメイン上での分数分解ルックアップが実現されました。"
+        }
       },
       {
         "name": "Zero Knowledge Podcast Episodes 346",
@@ -401,7 +513,11 @@
           "TEE",
           "ZKML"
         ],
-        "summary": "Zero Knowledge Podcast发布了346集，Anna与Dan Boneh讨论了最新的ZK研究，包括基于格的SNARKs、ZK在内容来源证明中的应用、ZK在FHE环境中的更新以及ZK在ML中的进展。"
+        "summary": {
+          "zh": "Zero Knowledge Podcast发布了346集，Anna与Dan Boneh讨论了最新的ZK研究，包括基于格的SNARKs、ZK在内容来源证明中的应用、ZK在FHE环境中的更新以及ZK在ML中的进展。",
+          "en": "The Zero Knowledge Podcast has released 346 episodes, featuring Anna and Dan Boneh discussing the latest ZK research, including lattice-based SNARKs, applications of ZK in content provenance proofs, updates on ZK within FHE environments, and advancements in ZK for ML.",
+          "ja": "Zero Knowledge Podcastは346エピソードを公開しており、AnnaとDan Bonehが最新のZK研究について議論しました。トピックには、格子ベースのSNARKs（lattice-based SNARKs）、コンテンツの出所証明（content provenance）へのZKの応用、FHE環境におけるZKの最新動向、およびML（機械学習）におけるZKの進展などが含まれます。"
+        }
       }
     ]
   },
@@ -417,7 +533,11 @@
           "zk101",
           "Tutorial"
         ],
-        "summary": "Box等人发布了ZK101开源教育平台，旨在使零知识证明技术易于理解和学习，包括从基础到高级的课程、实践案例和代码示例。"
+        "summary": {
+          "zh": "Box等人发布了ZK101开源教育平台，旨在使零知识证明技术易于理解和学习，包括从基础到高级的课程、实践案例和代码示例。",
+          "en": "Box et al. have released ZK101, an open-source educational platform designed to make zero-knowledge proof technology easy to understand and learn, offering courses ranging from basic to advanced levels, along with practical case studies and code examples.",
+          "ja": "Box氏らは、ゼロ知識証明（ZK Proof）技術を容易に理解し学習できるように設計されたオープンソース教育プラットフォーム「ZK101」をリリースしました。本プラットフォームには、基礎から上級レベルまでのコース、実践的な事例、およびコードサンプルが含まれています。"
+        }
       },
       {
         "name": "LatticeFold: A Lattice-based Folding Scheme and its Applications to Succinct Proof Systems",
@@ -428,7 +548,11 @@
           "Lattice-based",
           "Rust"
         ],
-        "summary": "Nethermind开源了LatticeFold，这是一个基于LatticeFold方案概念验证实现，包含非交互式折叠方案实现、Ajtai承诺方案、R1CS/CCS结构等。"
+        "summary": {
+          "zh": "Nethermind开源了LatticeFold，这是一个基于LatticeFold方案概念验证实现，包含非交互式折叠方案实现、Ajtai承诺方案、R1CS/CCS结构等。",
+          "en": "Nethermind has open-sourced LatticeFold. This is a Proof-of-Concept (PoC) implementation based on the LatticeFold scheme, which includes non-interactive folding scheme implementations, Ajtai commitment schemes, and R1CS/CCS structures.",
+          "ja": "NethermindがLatticeFoldをオープンソース化しました。これは、非対話型フォールディングスキームの実装、Ajtaiコミットメントスキーム、R1CS/CCS構造などを含む、LatticeFoldのコンセプトに基づいた検証実装です。"
+        }
       }
     ]
   },
@@ -443,7 +567,11 @@
           "Alexander Frolov",
           "Memory Checking"
         ],
-        "summary": "Alexander Frolov在{{name}}论文中提出了针对栈和队列的零知识内存检查技术，优化了RAM方案，减少了乘法门和辅助值的需求。"
+        "summary": {
+          "zh": "Alexander Frolov在{{name}}论文中提出了针对栈和队列的零知识内存检查技术，优化了RAM方案，减少了乘法门和辅助值的需求。",
+          "en": "Alexander Frolov proposed a zero-knowledge memory checking technique for stacks and queues in the paper {{name}}, optimizing the RAM scheme and reducing the requirement for multiplication gates and auxiliary values.",
+          "ja": "Alexander Frolovは{{name}}論文において、スタックおよびキューに対する零知識メモリチェック技術を提案し、RAMスキームを最適化することで、乘法門（multiplicative gates）と補助値の要求量を削減した。"
+        }
       },
       {
         "name": "MyZKP: Building Zero Knowledge Proof from Scratch in Rust",
@@ -453,7 +581,11 @@
           "koukyosyumei",
           "Rust"
         ],
-        "summary": "koukyosyumei发布了MyZKP开源项目，这是一个用Rust从头开始构建的零知识证明库，旨在作为理解和应用零知识证明的教育资源。"
+        "summary": {
+          "zh": "koukyosyumei发布了MyZKP开源项目，这是一个用Rust从头开始构建的零知识证明库，旨在作为理解和应用零知识证明的教育资源。",
+          "en": "koukyosyumei has released MyZKP, an open-source zero-knowledge proof library built from scratch in Rust, intended as an educational resource for understanding and applying zero-knowledge proofs.",
+          "ja": "koukyosyumeiは、MyZKPというオープンソースプロジェクトをリリースしました。これは、Rustを用いてゼロから構築された零知識証明（ZK）ライブラリであり、零知識証明の理解と応用のための教育的リソースとなることを目的としています。"
+        }
       }
     ]
   }

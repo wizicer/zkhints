@@ -13,7 +13,8 @@
         ],
         "summary": {
           "zh": "@zkSecurity 在博客中分析了近期两起针对ZK电路的攻击事件，指出它们源于Groth16验证器设置错误，即缺少第二阶段贡献，导致验证密钥中的γ和δ参数相同，从而允许伪造证明。",
-          "en": "@zkSecurity analyzes recent ZK circuit exploits in a blog post, attributing them to Groth16 verifier setup errors where missing Phase 2 contributions cause identical γ and δ parameters, enabling proof forgery."
+          "en": "@zkSecurity analyzes recent ZK circuit exploits in a blog post, attributing them to Groth16 verifier setup errors where missing Phase 2 contributions cause identical γ and δ parameters, enabling proof forgery.",
+          "ja": "@zkSecurity はブログ記事で最近のZK回路のエクスプロイトを分析し、それらがGroth16のverifierセットアップエラーに起因することを示唆しています。このエラーでは、Phase 2の貢献が欠けているためにγとδのパラメータが同一となり、証明書の偽造を可能にします。"
         },
         "notes": {
           "zh": [
@@ -31,6 +32,14 @@
             "Phase 2 contribution is required to randomize δ",
             "Developers often overlook simple mistakes while focusing on complex parts",
             "ZK DSLs are easy to misuse and lack foundational tooling support"
+          ],
+          "ja": [
+            "両方のエクスプロイトは、snarkjsにおけるGroth16 verifierのセットアップエラーに起因しており、Phase 2の貢献が欠けているためにγとδパラメータが同一になっていた。",
+            "損失額：約150万ドルおよび5 ETH。悪意のある攻撃を防ぐためのホワイトハットハッカーによって発見された。",
+            "根本原因：snarkjsはzkeyを初期化する際にγとδを同じジェネレータポイントに設定している。",
+            "δをランダム化するためにはPhase 2の貢献が必要である。",
+            "開発者は、複雑な部分に集中しすぎるあまり、単純なミスを見落としがちである。",
+            "ZK DSLは誤用されやすく、基盤となるツールのサポートが不足している。"
           ]
         },
         "slogan": {
@@ -47,29 +56,34 @@
         },
         "answer": {
           "zh": "它们分别随机化公共输入项和证明项 C。如果二者相同，攻击者可以构造抵消关系，使配对验证方程退化为恒成立。",
-          "en": "They randomize the public input term and the proof element C respectively. If they are equal, an attacker can engineer cancellations that collapse the pairing equation into a tautology."
+          "en": "They randomize the public input term and the proof element C respectively. If they are equal, an attacker can engineer cancellations that collapse the pairing equation into a tautology.",
+          "ja": "彼らは公開入力項と証明要素Cをランダム化します。これらが等しい場合、攻撃者はペアリング方程式をトートロジーに崩壊させるようなキャンセル操作を設計できます。"
         }
       },
       {
         "level": "intermediate",
         "question": {
           "zh": "在跳过 Phase 2 的情况下，snarkjs 在 zkey 初始化时具体做了什么？",
-          "en": "What exactly does snarkjs do during zkey initialization if Phase 2 is skipped?"
+          "en": "What exactly does snarkjs do during zkey initialization if Phase 2 is skipped?",
+          "ja": "Phase 2がスキップされた場合、snarkjsはzkey初期化中に具体的に何を行いますか？"
         },
         "answer": {
           "zh": "它将 γ₂ 和 δ₂ 都初始化为 BN254 的生成元作为占位符。如果没有后续贡献步骤，这两个值将保持相同。",
-          "en": "It initializes both γ₂ and δ₂ to the BN254 generator as placeholders. Without a contribution step, they remain identical."
+          "en": "It initializes both γ₂ and δ₂ to the BN254 generator as placeholders. Without a contribution step, they remain identical.",
+          "ja": "これらは両方ともプレースホルダーとしてBN254ジェネレータに初期化されます。貢献ステップがないため、それらは同一のままです。"
         }
       },
       {
         "level": "expert",
         "question": {
           "zh": "为什么该漏洞并非电路层 underconstrained bug，而是系统级健壮性崩溃？",
-          "en": "Why is this vulnerability not an underconstrained circuit bug but a systemic soundness collapse?"
+          "en": "Why is this vulnerability not an underconstrained circuit bug but a systemic soundness collapse?",
+          "ja": "なぜこの脆弱性は、制約不足の回路バグではなく、システム的な健全性の崩壊なのか？"
         },
         "answer": {
           "zh": "电路本身可能完全正确，但验证键参数违反了 Groth16 的核心独立性假设。配对方程因此失去知识绑定能力，系统层面的可信设置假设被破坏。",
-          "en": "The circuit may be perfectly correct, but the verification key violates Groth16’s independence assumptions. The pairing equation loses its knowledge-binding property, breaking the trusted setup soundness at the system level."
+          "en": "The circuit may be perfectly correct, but the verification key violates Groth16’s independence assumptions. The pairing equation loses its knowledge-binding property, breaking the trusted setup soundness at the system level.",
+          "ja": "回路自体は完全に正しいかもしれませんが、検証キーがGroth16の独立性仮定に違反しています。ペアリング方程式が知識束縛性（knowledge-binding property）を失い、システムレベルでのトラステッドセットアップの健全性（soundness）が破綻しています。"
         }
       }
     ]
@@ -87,7 +101,8 @@
         ],
         "summary": {
           "zh": "Himanshu Sheoran和Valter Wik在博客中揭示了六个zkVM系统的安全漏洞，这些漏洞源于Fiat-Shamir转录中未绑定声明数据，允许攻击者绕过密码学验证，证明数学上不可能的陈述。",
-          "en": "Himanshu Sheoran and Valter Wik expose security flaws in six zkVM systems due to unbound claim data in Fiat-Shamir transcripts, enabling attackers to bypass cryptographic verification and prove impossible statements."
+          "en": "Himanshu Sheoran and Valter Wik expose security flaws in six zkVM systems due to unbound claim data in Fiat-Shamir transcripts, enabling attackers to bypass cryptographic verification and prove impossible statements.",
+          "ja": "Himanshu SheoranとValter Wikは、Fiat-Shamirトランスクリプトにおけるバウンドされていないクレームデータに起因する6つのzkVMシステムにおけるセキュリティ上の欠陥を公開しました。これにより、攻撃者は暗号学的検証をバイパスし、不可能なステートメントを証明することが可能になります。"
         },
         "notes": {
           "zh": [
@@ -105,6 +120,14 @@
             "In blockchain, this could create assets out of thin air.",
             "Fix requires absorbing all verification-affecting values into transcript before challenge generation.",
             "Jolt fixed via PR #981 on Oct 3, 2025; status of others unclear."
+          ],
+          "ja": [
+            "Fiat-Shamirトランスクリプトにおけるバウンドされていないクレームデータが問題を引き起こし、チャレンジがclaimed_sumのような値から独立してしまう。",
+            "攻撃者は線形方程式を解いて未拘束な値を調整し、無効な実行に対する検証をパスすることができる。",
+            "影響を受けるシステム: Jolt, Nexus, Cairo-M, Ceno, Expander, Binius64。",
+            "ブロックチェーン上では、これによりゼロから資産が創出される可能性がある。",
+            "修正には、チャレンジ生成前に検証に影響を与えるすべての値をトランスクリプトに吸収させる必要がある。",
+            "Joltは2025年10月3日のPR #981で修正済み。他のシステムの状況は不明。"
           ]
         },
         "slogan": {
@@ -118,11 +141,13 @@
         "variant": 2,
         "question": {
           "zh": "为什么 transcript 绑定顺序在 Fiat-Shamir 中至关重要？",
-          "en": "Why is transcript ordering critical in Fiat-Shamir?"
+          "en": "Why is transcript ordering critical in Fiat-Shamir?",
+          "ja": "Fiat-Shamirにおいてトランスクリプトの順序付けがなぜ重要なのか？"
         },
         "answer": {
           "zh": "若某个值影响后续验证方程，却未在相关挑战生成前被哈希进 transcript，攻击者即可先计算挑战，再选择该值以满足方程，从而破坏健壮性。",
-          "en": "If a value influences a later verification equation but is not hashed before the relevant challenge is sampled, the attacker can compute the challenge first and then choose the value to satisfy the equation, breaking soundness."
+          "en": "If a value influences a later verification equation but is not hashed before the relevant challenge is sampled, the attacker can compute the challenge first and then choose the value to satisfy the equation, breaking soundness.",
+          "ja": "ある値が後続の検証方程式に影響を与えるものの、関連するチャレンジがサンプリングされる前にハッシュ化されていない場合、攻撃者はまずチャレンジを計算し、その後でその方程式を満たすように値を選択することで、健全性（soundness）を破ることができます。"
         }
       },
       {
@@ -130,7 +155,8 @@
         "variant": 1,
         "question": {
           "zh": "在基于 sumcheck 的系统如 Jolt 中，未绑定的 input claim 如何转化为可解的线性方程？",
-          "en": "In sumcheck-based systems like Jolt, how does an unbound input claim reduce to a solvable linear equation?"
+          "en": "In sumcheck-based systems like Jolt, how does an unbound input claim reduce to a solvable linear equation?",
+          "ja": "Joltのようなsumcheckベースのシステムにおいて、アンバウンドな入力（unbound input）はどのように解ける線形方程式に還元されるのでしょうか？"
         },
         "answer": {
           "zh": "由于压缩优化使最终验证等式对初始 claim 呈线性形式 a·H+b=expected，且随机系数独立于 H，攻击者可直接解出 H 使等式成立。",
@@ -142,11 +168,13 @@
         "variant": 1,
         "question": {
           "zh": "为何这一类漏洞在多个独立实现中重复出现？",
-          "en": "Why does this bug class recur across independent zkVM implementations?"
+          "en": "Why does this bug class recur across independent zkVM implementations?",
+          "ja": "なぜこのバグクラスは独立したzkVM実装間で再発するのか？"
         },
         "answer": {
           "zh": "论文通常描述交互式协议而非完整的非交互式 Fiat-Shamir 实现细节。模块化架构导致 transcript 责任分散，加之性能优化压力，使实现者易忽略某些语句级绑定。",
-          "en": "Academic descriptions focus on interactive protocols and omit full non-interactive Fiat-Shamir binding details. Modular architectures diffuse transcript responsibility, and optimization pressure encourages omission of seemingly redundant absorptions."
+          "en": "Academic descriptions focus on interactive protocols and omit full non-interactive Fiat-Shamir binding details. Modular architectures diffuse transcript responsibility, and optimization pressure encourages omission of seemingly redundant absorptions.",
+          "ja": "学術的な記述では、インタラクティブなプロトコルに焦点を当て、完全な非対話型Fiat-Shamirのバインディング詳細を省略します。モジュラーアーキテクチャはトランスクリプト（記録）の責任を分散させ、最適化のプレッシャーが明白に冗長に見える吸収（absorptions）の省略を促します。"
         }
       }
     ]
@@ -165,7 +193,8 @@
         ],
         "summary": {
           "zh": "Tshuva等人在{{name}}论文中提出协作增量可验证计算，允许多方在流式计算中联合更新简洁证明，显著降低内存和通信开销。",
-          "en": "Tshuva et al. proposed collaborative incrementally verifiable computation in their {{name}}paper, enabling multiple parties to jointly update succinct proofs during streaming computations with reduced overhead."
+          "en": "Tshuva et al. proposed collaborative incrementally verifiable computation in their {{name}}paper, enabling multiple parties to jointly update succinct proofs during streaming computations with reduced overhead.",
+          "ja": "Tshuvaらは、{{name}}の論文で協調的逐次検証可能計算を提案しており、これにより複数の参加者がストリーミング計算中に簡潔な証明書を共同で更新することができ、オーバーヘッドが削減されます。"
         },
         "notes": {
           "zh": [
@@ -183,6 +212,14 @@
             "Applicable to privacy-preserving healthcare data aggregation, audits, and joint ML models.",
             "Integrates IVC, folding, and MPC techniques to improve efficiency for large-scale datasets.",
             "Breaks scalability barriers of collaborative proofs, enabling practical deployment."
+          ],
+          "ja": [
+            "既存の共同証明（collaborative zkSNARKs）は、高いメモリ/通信オーバーヘッドと更新可能性の欠如を抱えている。",
+            "新しいスキームにより、複数の参加者がストリーミング計算の各ステップで証明を共同で更新できる。",
+            "各ステップあたりの一定の通信オーバーヘッド（ブロードキャストあり）と、単一ステップに対するメモリのスケーリング。",
+            "プライバシー保護付き医療データ集計、監査、および共同MLモデルに応用可能。",
+            "大規模データセットの効率を向上させるため、IVC、フォールディング、MPC技術を統合している。",
+            "共同証明のスケーラビリティ障壁を打ち破り、実用的な展開を可能にする。"
           ]
         },
         "slogan": {
@@ -196,11 +233,13 @@
         "variant": 1,
         "question": {
           "zh": "什么是协作式 zkSNARK，它与传统单证明者 zkSNARK 的核心区别是什么？",
-          "en": "What is a collaborative zkSNARK and how does it differ from a traditional single-prover zkSNARK?"
+          "en": "What is a collaborative zkSNARK and how does it differ from a traditional single-prover zkSNARK?",
+          "ja": "コラボレーティブzkSNARKとは何ですか？また、従来のシングルプロバーzkSNARKとどのように異なりますか？"
         },
         "answer": {
           "zh": "协作式 zkSNARK 允许多个互不信任的参与方共同生成一个证明，用来证明某个计算在所有参与者私有输入上的正确执行，而不泄露各自输入。传统 zkSNARK 通常只有单一证明者持有全部 witness 并生成证明。",
-          "en": "A collaborative zkSNARK allows multiple mutually distrustful parties to jointly produce a proof attesting to the correctness of a computation over their private inputs without revealing them. In contrast, traditional zkSNARKs assume a single prover holding the entire witness."
+          "en": "A collaborative zkSNARK allows multiple mutually distrustful parties to jointly produce a proof attesting to the correctness of a computation over their private inputs without revealing them. In contrast, traditional zkSNARKs assume a single prover holding the entire witness.",
+          "ja": "コラボレーティブなzkSNARKは、複数の相互に不信感を抱く参加者が、それぞれのプライベート入力を開示することなく、計算の正しさを証明するプルーフを共同で生成することを可能にします。対照的に、従来のzkSNARKsは、単一のプロバーがすべてのウィットネスを保持することを前提としています。"
         }
       },
       {
@@ -208,11 +247,13 @@
         "variant": 1,
         "question": {
           "zh": "什么是 Incrementally Verifiable Computation (IVC)，它如何帮助处理长时间运行或流式计算？",
-          "en": "What is Incrementally Verifiable Computation (IVC) and how does it help with long-running or streaming computations?"
+          "en": "What is Incrementally Verifiable Computation (IVC) and how does it help with long-running or streaming computations?",
+          "ja": "Incrementally Verifiable Computation (IVC) とは何か、そしてそれが長時間実行される計算やストリーミング計算にどのように役立つか？"
         },
         "answer": {
           "zh": "IVC 将一个长计算拆分为多个步骤，每一步都会更新一个简洁证明，证明当前步骤正确并继承之前步骤的证明。因此不需要重新证明整个历史计算。",
-          "en": "IVC decomposes a long computation into steps where each step updates a succinct proof that certifies both the current step and all previous steps, avoiding the need to reprove the entire computation history."
+          "en": "IVC decomposes a long computation into steps where each step updates a succinct proof that certifies both the current step and all previous steps, avoiding the need to reprove the entire computation history.",
+          "ja": "IVCは、長い計算をステップに分解し、各ステップで現在のステップとそれ以前のすべてのステップを証明する簡潔なプルーフを更新することで、計算履歴全体を再証明する必要性を回避します。"
         }
       },
       {
@@ -220,11 +261,13 @@
         "variant": 1,
         "question": {
           "zh": "该方案如何在多方环境下保持每个参与方的通信复杂度为常数？",
-          "en": "How does the construction maintain constant communication overhead per party?"
+          "en": "How does the construction maintain constant communication overhead per party?",
+          "ja": "この構成は、各参加者あたりの通信オーバーヘッドを一定に保つのはなぜですか？"
         },
         "answer": {
           "zh": "在广播信道模型下，每个参与方只需要发送与当前步骤相关的少量证明更新信息，这些信息不会随着数据规模或历史计算长度增长，因此通信复杂度保持为常数。",
-          "en": "Under a broadcast channel assumption, each party only sends a small update related to the current computation step. Since this update size does not grow with dataset size or computation history, the per-party communication remains constant."
+          "en": "Under a broadcast channel assumption, each party only sends a small update related to the current computation step. Since this update size does not grow with dataset size or computation history, the per-party communication remains constant.",
+          "ja": "ブロードキャストチャネルの仮定の下では、各パーティは現在の計算ステップに関連する小さな更新のみを送信します。この更新サイズはデータセットサイズや計算履歴に依存しないため、パーティごとの通信量は一定に保たれます。"
         }
       }
     ]
@@ -243,7 +286,8 @@
         ],
         "summary": {
           "zh": "Deegan等人在{{name}}论文中提出了两种后量子HD钱包构造，基于格假设恢复BIP32的公钥派生功能，包括使用ML-DSA和Raccoon-G的方案。",
-          "en": "Deegan et al. proposed two post-quantum HD wallet constructions in their {{name}}paper, recovering BIP32's public key derivation functionality based on lattice assumptions, including schemes using ML-DSA and Raccoon-G."
+          "en": "Deegan et al. proposed two post-quantum HD wallet constructions in their {{name}}paper, recovering BIP32's public key derivation functionality based on lattice assumptions, including schemes using ML-DSA and Raccoon-G.",
+          "ja": "Deeganらは、論文{{name}}において、格子上の仮定に基づきBIP32の公開鍵導出機能を回復させた、ML-DSAおよびRaccoon-Gを使用したスキームを含む2つのポスト量子HDウォレット構築を提案しています。"
         },
         "notes": {
           "zh": [
@@ -261,6 +305,14 @@
             "Modified Raccoon-G to publish full unrounded public keys preserving linearity",
             "Proved unlinkability and unforgeability under standard lattice assumptions",
             "Introduced method for generating rerandomizable Raccoon-G key pairs from fixed randomness"
+          ],
+          "ja": [
+            "格子上の仮定に基づき、BIP32公開鍵導出を回復する2つのポスト量子HDウォレット構築",
+            "ML-DSAをハードened derivationに使用し、unlinkabilityとunforgeabilityの証明を提供する最初の利用例",
+            "Gaussian-distributed secretsを介した非ハードened public key導出を可能にするRaccoon-Gバリアントの利用",
+            "線形性を保持する完全な未丸め込み（unrounded）公開鍵を公開するために修正されたRaccoon-G",
+            "標準的な格子上の仮定の下でのunlinkabilityとunforgeabilityの証明",
+            "固定乱数からrerandomizableなRaccoon-Gキーペアを生成する方法の導入"
           ]
         },
         "slogan": {
@@ -274,11 +326,13 @@
         "variant": 1,
         "question": {
           "zh": "BIP32 分层确定性钱包的核心思想是什么？",
-          "en": "What is the core idea behind BIP32 hierarchical deterministic wallets?"
+          "en": "What is the core idea behind BIP32 hierarchical deterministic wallets?",
+          "ja": "BIP32階層的決定論的ウォレットの核となるアイデアは何ですか？"
         },
         "answer": {
           "zh": "BIP32 允许用户从一个主种子生成一整棵密钥树，从而确定性地产生大量公私钥对，方便备份和管理。",
-          "en": "BIP32 allows a user to derive an entire tree of key pairs deterministically from a single master seed, simplifying key management and backups."
+          "en": "BIP32 allows a user to derive an entire tree of key pairs deterministically from a single master seed, simplifying key management and backups.",
+          "ja": "BIP32は、単一のマスターシードから鍵ペアのツリー全体を決定論的に導出することを可能にし、キー管理とバックアップを簡素化します。"
         }
       },
       {
@@ -286,11 +340,13 @@
         "variant": 1,
         "question": {
           "zh": "为什么在后量子密码体系中实现 BIP32 风格的非 hardened 派生是困难的？",
-          "en": "Why is it difficult to support BIP32-style non-hardened derivation in post-quantum systems?"
+          "en": "Why is it difficult to support BIP32-style non-hardened derivation in post-quantum systems?",
+          "ja": "ポスト量子暗号システムでBIP32スタイルの非ハードン化導出をサポートすることが難しいのはなぜですか？"
         },
         "answer": {
           "zh": "现有 HD 钱包依赖椭圆曲线公钥的线性代数结构，使得子公钥可以通过简单运算从父公钥得到。而大多数后量子签名方案缺乏这种结构。",
-          "en": "Traditional HD wallets rely on the algebraic structure of elliptic curve public keys that allows simple linear operations to derive child keys. Most post-quantum signature schemes do not provide such structure."
+          "en": "Traditional HD wallets rely on the algebraic structure of elliptic curve public keys that allows simple linear operations to derive child keys. Most post-quantum signature schemes do not provide such structure.",
+          "ja": "従来のHDウォレットは、単純な線形演算によって子キーを導出できる楕円曲線公開鍵の代数的構造に依存しています。ほとんどのポスト量子署名スキームは、そのような構造を提供していません。"
         }
       },
       {
@@ -298,11 +354,13 @@
         "variant": 1,
         "question": {
           "zh": "论文如何证明派生密钥之间的不可链接性（unlinkability）？",
-          "en": "How does the paper argue unlinkability between derived keys?"
+          "en": "How does the paper argue unlinkability between derived keys?",
+          "ja": "論文では、派生鍵間のリンク不可能性についてどのように論じているか？"
         },
         "answer": {
           "zh": "作者证明派生密钥的分布与独立生成的密钥在统计上非常接近，因此观察者无法区分两个密钥是否来自同一派生路径。",
-          "en": "The authors show that derived keys are statistically close to independently generated keys, making it infeasible for an observer to determine whether two keys originate from the same derivation path."
+          "en": "The authors show that derived keys are statistically close to independently generated keys, making it infeasible for an observer to determine whether two keys originate from the same derivation path.",
+          "ja": "著者らは、導出されたキーが独立して生成されたキーと統計的に近いことを示しており、観察者が2つのキーが同じ導出パスから来ているかどうかを判断することは非現実的であると述べている。"
         }
       }
     ]
@@ -321,7 +379,8 @@
         ],
         "summary": {
           "zh": "Frolov等人在{{name}}论文中提出了Icefish，首次系统研究zk-SNARK在可验证基因组学中的应用，包括序列比对等基础构建块，并探索了可验证全基因组关联研究和CRISPR资格验证两个端到端应用。",
-          "en": "Frolov et al. proposed Icefish in their {{name}}paper, conducting the first systematic study of zk-SNARKs for verifiable genomics, including building blocks like sequence alignment, and exploring two end-to-end applications: verifiable GWAS and CRISPR eligibility verification."
+          "en": "Frolov et al. proposed Icefish in their {{name}}paper, conducting the first systematic study of zk-SNARKs for verifiable genomics, including building blocks like sequence alignment, and exploring two end-to-end applications: verifiable GWAS and CRISPR eligibility verification.",
+          "ja": "Frolovらは、{{name}}の論文でIcefishを提案し、シーケンスアライメントなどのビルディングブロックを含め、検証可能なゲノミクスに関するzk-SNARKsの最初の体系的な研究を実施しました。また、検証可能なGWASとCRISPR適格性検証という2つのエンドツーエンドのアプリケーションを探求しています。"
         },
         "notes": {
           "zh": [
@@ -339,6 +398,14 @@
             "Proposed new zk-SNARK use case in gene engineering (e.g., CRISPR) for therapy eligibility verification without revealing DNA",
             "Designed storage-efficient indexes for large-scale genomic data, asymptotically reducing costs",
             "Focuses on privacy and verification needs for highly sensitive genomic data"
+          ],
+          "ja": [
+            "検証可能なゲノミクスのためのzk-SNARKsに関する初の体系的な研究であり、この分野のギャップを埋めるもの",
+            "シーケンスアライメントのためのゼロ知識証明を開発し、先行技術比30倍高速化を実現",
+            "データ整合性と計算正確性を保証する検証可能なGWAS（ゲノムワイド関連解析）を実装し、証明時間20分未満を達成",
+            "DNAを開示することなく治療適格性を検証するための遺伝子工学（例：CRISPR）における新しいzk-SNARKユースケースを提案",
+            "大規模なゲノムデータのためのストレージ効率の高いインデックスを設計し、コストの漸近的削減を実現",
+            "機密性の高いゲノムデータに対するプライバシーと検証のニーズに焦点を当てる"
           ]
         },
         "slogan": {
@@ -351,33 +418,39 @@
         "level": "beginner",
         "question": {
           "zh": "为什么仅使用 MPC 或 FHE 还不足以解决基因组研究中的可信问题？",
-          "en": "Why are MPC or FHE alone insufficient for ensuring trust in genomic studies?"
+          "en": "Why are MPC or FHE alone insufficient for ensuring trust in genomic studies?",
+          "ja": "なぜMPCやFHEだけではゲノム研究における信頼性を保証するには不十分なのか？"
         },
         "answer": {
           "zh": "MPC 和 FHE 可以在不泄露数据的情况下进行计算，但它们通常不提供公开可验证的计算证明，因此第三方无法确认研究者是否正确执行了计算。",
-          "en": "MPC and FHE allow private computation but typically do not produce publicly verifiable proofs of correct execution, meaning third parties cannot independently verify that computations were performed honestly."
+          "en": "MPC and FHE allow private computation but typically do not produce publicly verifiable proofs of correct execution, meaning third parties cannot independently verify that computations were performed honestly.",
+          "ja": "MPCやFHEはプライベートな計算を可能にしますが、通常は実行の正しさを公開検証可能な証明書を生成しません。これは、第三者が計算が誠実に実行されたことを独立して検証できないことを意味します。"
         }
       },
       {
         "level": "intermediate",
         "question": {
           "zh": "论文提出的第一个端到端应用是什么？",
-          "en": "What is the first end-to-end application proposed in the paper?"
+          "en": "What is the first end-to-end application proposed in the paper?",
+          "ja": "論文で提案されている最初のエンドツーエンドアプリケーションは何ですか？"
         },
         "answer": {
           "zh": "第一个应用是可验证的 Genome-Wide Association Study（GWAS），允许第三方验证研究是否在未篡改的数据集上正确执行。",
-          "en": "The first application is verifiable Genome-Wide Association Studies (GWAS), enabling third parties to verify that the study was correctly computed over an authenticated dataset."
+          "en": "The first application is verifiable Genome-Wide Association Studies (GWAS), enabling third parties to verify that the study was correctly computed over an authenticated dataset.",
+          "ja": "最初のアプリケーションは、検証可能なゲノムワイド関連解析（GWAS）であり、第三者が認証されたデータセットに対して研究が正しく計算されたことを検証できるようにします。"
         }
       },
       {
         "level": "expert",
         "question": {
           "zh": "Icefish 如何减少大规模基因组数据库在证明系统中的存储成本？",
-          "en": "How does Icefish reduce storage costs for large genomic datasets in proof systems?"
+          "en": "How does Icefish reduce storage costs for large genomic datasets in proof systems?",
+          "ja": "Icefishは、証明システムにおける大規模ゲノムデータセットのストレージコストをどのように削減しますか？"
         },
         "answer": {
           "zh": "论文设计了更高效的 Merkle 树索引结构，使得在验证大规模基因组数据库时所需存储空间在渐近意义上显著减少。",
-          "en": "The system introduces storage-efficient indexing structures for Merkle trees, which asymptotically reduce the storage overhead required to authenticate large genomic datasets."
+          "en": "The system introduces storage-efficient indexing structures for Merkle trees, which asymptotically reduce the storage overhead required to authenticate large genomic datasets.",
+          "ja": "本システムは、Merkleツリーのためのストレージ効率の高いインデックス構造を導入し、大規模なゲノムデータセットの認証に必要なストレージオーバーヘッドを漸近的に削減します。"
         }
       }
     ]
@@ -396,7 +469,8 @@
         ],
         "summary": {
           "zh": "@MatteoMer 发布了Zolt开源项目，这是一个用Zig语言实现的zkVM证明器，生成可被a16z/jolt验证器验证的证明，无需依赖外部库，所有密码学操作均从零实现。",
-          "en": "@MatteoMer released Zolt, a Zig-based zkVM prover generating proofs verifiable by the a16z/jolt verifier, with zero dependencies and all cryptography implemented from scratch."
+          "en": "@MatteoMer released Zolt, a Zig-based zkVM prover generating proofs verifiable by the a16z/jolt verifier, with zero dependencies and all cryptography implemented from scratch.",
+          "ja": "@MatteoMer は、a16z/jolt verifier によって検証可能な証明書を生成する、ZigベースのzkVM prover である Zolt をリリースしました。これはゼロ依存性であり、すべての暗号技術がゼロから実装されています。"
         },
         "notes": {
           "zh": [
@@ -414,6 +488,14 @@
             "CLI includes proof generation, emulator run, and examples (e.g., Fibonacci, prime counting).",
             "Benchmarks show faster than Jolt (Rust) on some programs, slower on complex ones like prime counting.",
             "Clear project structure with modules for field arithmetic, polynomial commitments, Sumcheck, etc., aiding extensibility and audit."
+          ],
+          "ja": [
+            "Zoltは実験的であり、監査されていません。本番環境での使用には適していません。",
+            "RISC-V ELFバイナリのZK証明を生成し、アップストリームのJolt verifierで検証可能です。",
+            "依存関係やFFI（Foreign Function Interface）はありません。すべての暗号技術はZig stdlibを使用してゼロから実装されています。",
+            "CLIには証明生成、エミュレータ実行、およびサンプル（例：フィボナッチ数列、素数カウント）が含まれています。",
+            "ベンチマークでは、一部のプログラムではJolt (Rust) よりも高速ですが、素数カウントのような複雑なプログラムでは遅い結果を示しています。",
+            "フィールド演算、多項式コミットメント、Sumcheckなどのモジュールを備えた明確なプロジェクト構造により、拡張性と監査が容易になっています。"
           ]
         },
         "slogan": {
@@ -426,33 +508,39 @@
         "level": "beginner",
         "question": {
           "zh": "Zolt 为什么强调“零依赖”？",
-          "en": "Why does Zolt emphasize zero dependencies?"
+          "en": "Why does Zolt emphasize zero dependencies?",
+          "ja": "Zoltがゼロ依存性（zero dependencies）を強調するのはなぜか？"
         },
         "answer": {
           "zh": "Zolt 不依赖外部密码学库，所有组件如有限域运算、MSM 和多项式承诺都用 Zig 自己实现。这让代码更简单透明，也方便研究者理解 zkVM 和证明系统的完整实现。",
-          "en": "Zolt avoids external cryptographic libraries and implements components such as field arithmetic, MSM, and polynomial commitments directly in Zig. This makes the system simpler and easier to study, especially for researchers learning how zkVM proving systems work."
+          "en": "Zolt avoids external cryptographic libraries and implements components such as field arithmetic, MSM, and polynomial commitments directly in Zig. This makes the system simpler and easier to study, especially for researchers learning how zkVM proving systems work.",
+          "ja": "Zoltは外部の暗号ライブラリに依存せず、フィールド演算、MSM、および多項コミットメントなどのコンポーネントをZig言語内で直接実装しています。これにより、システムがよりシンプルになり、特にzkVMプロビングシステムの仕組みを学習している研究者にとって理解しやすくなっています。"
         }
       },
       {
         "level": "intermediate",
         "question": {
           "zh": "Zolt 如何把程序执行变成可证明的形式？",
-          "en": "How does Zolt turn program execution into something provable?"
+          "en": "How does Zolt turn program execution into something provable?",
+          "ja": "Zoltはプログラムの実行をどのように証明可能なものに変換するのでしょうか？"
         },
         "answer": {
           "zh": "Zolt 先运行 RISC-V 程序并生成 execution trace，包括寄存器和内存状态。然后把这些信息转成 R1CS 约束系统，再通过 sum-check 和多项式承诺证明这些约束在整个 trace 上成立。",
-          "en": "Zolt runs a RISC-V program and records an execution trace including registers and memory states. The trace is converted into an R1CS constraint system. The prover then uses sum-check and polynomial commitments to prove that the constraints hold for the entire trace."
+          "en": "Zolt runs a RISC-V program and records an execution trace including registers and memory states. The trace is converted into an R1CS constraint system. The prover then uses sum-check and polynomial commitments to prove that the constraints hold for the entire trace.",
+          "ja": "ZoltはRISC-Vプログラムを実行し、レジスタおよびメモリ状態を含む実行トレースを記録します。このトレースはR1CS制約システムに変換されます。その後、プロバーは和チェック（sum-check）と多項式コミットメントを用いて、その制約がトレース全体で成立することを証明します。"
         }
       },
       {
         "level": "expert",
         "question": {
           "zh": "为什么 Zolt 要输出 Jolt 兼容的 preprocessing 数据？",
-          "en": "Why does Zolt export Jolt compatible preprocessing data?"
+          "en": "Why does Zolt export Jolt compatible preprocessing data?",
+          "ja": "ZoltはなぜJolt互換のプリプロセッシングデータをエクスポートするのですか？"
         },
         "answer": {
           "zh": "Jolt 使用 preprocessing SNARK 架构，需要提前生成约束承诺和多项式元数据。Zolt 输出相同格式的数据，这样原版 verifier 就可以直接验证证明，而不需要修改代码。",
-          "en": "Jolt uses a preprocessing SNARK design where constraint commitments and metadata are prepared in advance. Zolt exports preprocessing data in the same format so that the original verifier can validate proofs without any modification."
+          "en": "Jolt uses a preprocessing SNARK design where constraint commitments and metadata are prepared in advance. Zolt exports preprocessing data in the same format so that the original verifier can validate proofs without any modification.",
+          "ja": "Joltは、制約コミットメントとメタデータが事前に準備されるプリプロセッシングSNARK設計を使用しています。Zoltは、元のverifierが修正なしで証明書を検証できるように、同じ形式でプリプロセッシングデータをエクスポートします。"
         }
       }
     ]
@@ -471,7 +559,8 @@
         ],
         "summary": {
           "zh": "Robin Salen宣布Plonky3发布新版本，包含更快的查找、高元折叠、N元Merkle树和Merkle caps、Poseidon2优化及Poseidon1支持等多项改进。",
-          "en": "Robin Salen announced a new Plonky3 release with faster lookups, high-arity folding, N-ary Merkle trees and caps, Poseidon2 optimizations, and Poseidon1 support."
+          "en": "Robin Salen announced a new Plonky3 release with faster lookups, high-arity folding, N-ary Merkle trees and caps, Poseidon2 optimizations, and Poseidon1 support.",
+          "ja": "Robin Salen氏が、より高速なlookup、高アリティのfolding、N-ary Merkle treesおよびcaps、Poseidon2の最適化、そしてPoseidon1サポートを備えた新しいPlonky3のリリースを発表しました。"
         },
         "notes": {
           "zh": [
@@ -489,6 +578,14 @@
             "Supports N-ary Merkle trees and Merkle caps for enhanced data structures",
             "Major optimizations for Poseidon2 and adds Poseidon1 support",
             "Additional improvements included, with details to be broken down"
+          ],
+          "ja": [
+            "これまでのものの中で最も影響力があり野心的なものと評される、Plonky3の新しいリリース",
+            "パフォーマンス向上のための大幅に高速化されたlookup機能を含む",
+            "証明書生成を最適化するための高アリティ折り畳み（high-arity folding）の導入",
+            "データ構造強化のためのN-ary Merkle treeおよびMerkle capsのサポート",
+            "Poseidon2に対する主要な最適化と、Poseidon1サポートの追加",
+            "詳細については後述するが、その他の改善点を含む"
           ]
         },
         "slogan": {
@@ -501,33 +598,39 @@
         "level": "beginner",
         "question": {
           "zh": "Plonky3 是什么？",
-          "en": "What is Plonky3?"
+          "en": "What is Plonky3?",
+          "ja": "Plonky3とは何ですか？"
         },
         "answer": {
           "zh": "Plonky3 是一个用于构建零知识证明系统的框架，常用于 zkVM 和可扩展证明。它专注于高性能证明和递归证明能力，使复杂计算可以被快速验证。",
-          "en": "Plonky3 is a framework for building zero knowledge proof systems. It is often used for zkVMs and scalable proofs, focusing on fast proving and recursion."
+          "en": "Plonky3 is a framework for building zero knowledge proof systems. It is often used for zkVMs and scalable proofs, focusing on fast proving and recursion.",
+          "ja": "Plonky3は、ゼロ知識証明システムを構築するためのフレームワークです。zkVMやスケーラブルな証明書に頻繁に使用され、高速な証明生成と再帰（recursion）に焦点を当てています。"
         }
       },
       {
         "level": "intermediate",
         "question": {
           "zh": "N-ary Merkle 树相比二叉 Merkle 树有什么优势？",
-          "en": "What is the advantage of an N-ary Merkle tree over a binary Merkle tree?"
+          "en": "What is the advantage of an N-ary Merkle tree over a binary Merkle tree?",
+          "ja": "N-ary Merkle treeは、バイナリ（二分）Merkle treeに対してどのような利点がありますか？"
         },
         "answer": {
           "zh": "N-ary Merkle 树允许每个节点有多个子节点，因此树的高度更低。这样 Merkle path 更短，可以减少证明大小和哈希计算。",
-          "en": "An N-ary Merkle tree allows each node to have multiple children, which reduces the tree height. This leads to shorter Merkle paths and smaller proofs."
+          "en": "An N-ary Merkle tree allows each node to have multiple children, which reduces the tree height. This leads to shorter Merkle paths and smaller proofs.",
+          "ja": "N-ary Merkle treeは、各ノードが複数の子を持つことを可能にし、ツリーの高さを削減します。これにより、Merkle pathが短くなり、証明（proof）のサイズが小さくなります。"
         }
       },
       {
         "level": "expert",
         "question": {
           "zh": "Merkle cap 在证明系统中有什么用途？",
-          "en": "What is the purpose of a Merkle cap in proof systems?"
+          "en": "What is the purpose of a Merkle cap in proof systems?",
+          "ja": "証明システムにおけるMerkleキャップの目的は何ですか？"
         },
         "answer": {
           "zh": "Merkle cap 是 Merkle 树顶层的一小组节点。在递归证明或批量验证中，可以只验证到 cap 层，从而减少证明数据和验证成本。",
-          "en": "A Merkle cap is a small set of nodes near the top of a Merkle tree. In recursive proofs or batch verification, verifying up to the cap reduces proof size and verification cost."
+          "en": "A Merkle cap is a small set of nodes near the top of a Merkle tree. In recursive proofs or batch verification, verifying up to the cap reduces proof size and verification cost.",
+          "ja": "Merkle capは、Merkle treeの最上部近くにある少数のノード群です。再帰的証明やバッチ検証において、このcapまでの検証を行うことで、証明サイズと検証コストを削減できます。"
         }
       }
     ]
@@ -545,7 +648,8 @@
         ],
         "summary": {
           "zh": "Bootle等人在{{name}}论文中提出了基于环的查找参数，扩展了Plookup和LogUp协议，并应用于RAM程序的批量验证，解决了后量子方案中的兼容性问题。",
-          "en": "Bootle et al. proposed ring-based lookup arguments in their {{name}}paper, extending Plookup and LogUp protocols for batch verification of RAM programs, addressing compatibility in post-quantum schemes."
+          "en": "Bootle et al. proposed ring-based lookup arguments in their {{name}}paper, extending Plookup and LogUp protocols for batch verification of RAM programs, addressing compatibility in post-quantum schemes.",
+          "ja": "Bootleらは、RAMプログラムのバッチ検証のためのPlookupおよびLogUpプロトコルを拡張し、ポスト量子スキームにおける互換性に対処するリングベースのlookup引数を{{name}}論文で提案しました。"
         },
         "notes": {
           "zh": [
@@ -563,6 +667,14 @@
             "Combine with lattice-based polynomial commitments for succinct lattice-based lookup arguments.",
             "Apply ring lookups for batch verification of RAM updates with arbitrary ring elements.",
             "Provides key components for post-quantum ZK systems, improving efficiency for arithmetization-unfriendly operations."
+          ],
+          "ja": [
+            "既存のlookup引数はフィールドベースであり、リングベースのポスト量子格子スキームとは互換性がありません。",
+            "フィールド技術をリングに変換する際に体系的なセキュリティ問題が生じます。既知のいくつかの引数が脆弱です。",
+            "PlookupとLogUp polynomial IOPsをリング R=Zq[X]/(Xd+1) に拡張します。",
+            "格子ベースのpolynomial commitmentと組み合わせて、簡潔な格子ベースのlookup引数を実現します。",
+            "任意のリング要素を用いたRAM更新のバッチ検証のためにリングルックアップを適用します。",
+            "算術化に適さない操作の効率を向上させるポスト量子ZKシステムのための主要コンポーネントを提供します。"
           ]
         },
         "slogan": {
@@ -575,33 +687,39 @@
         "level": "beginner",
         "question": {
           "zh": "为什么要研究“ring 上的 lookup argument”？",
-          "en": "Why study lookup arguments over rings?"
+          "en": "Why study lookup arguments over rings?",
+          "ja": "リング上のものよりもlookup argumentを学ぶべきなのはなぜか？"
         },
         "answer": {
           "zh": "大多数现有 lookup 方案是在有限域上设计的，而一些后量子密码系统，特别是基于格的方案，是在环上运行的。因此需要新的 lookup 结构，使 SNARK 能与这些基于环的密码系统兼容。",
-          "en": "Most existing lookup arguments are designed over finite fields. However, many post quantum cryptographic systems, especially lattice based ones, operate over rings. Studying lookup arguments over rings allows SNARK systems to work with these post quantum constructions."
+          "en": "Most existing lookup arguments are designed over finite fields. However, many post quantum cryptographic systems, especially lattice based ones, operate over rings. Studying lookup arguments over rings allows SNARK systems to work with these post quantum constructions.",
+          "ja": "既存のほとんどのlookup argumentは有限体上で設計されています。しかし、特に格子ベースのポスト量子暗号システムの多くは環（ring）上で動作します。環上でのlookup argumentを研究することで、SNARKシステムがこれらのポスト量子構成と連携できるようになります。"
         }
       },
       {
         "level": "intermediate",
         "question": {
           "zh": "为什么把 field 上的 lookup 直接搬到 ring 上会出现问题？",
-          "en": "Why can translating lookup arguments from fields to rings cause problems?"
+          "en": "Why can translating lookup arguments from fields to rings cause problems?",
+          "ja": "ルックアップ引数をフィールドからリングに変換すると、なぜ問題が発生するのか？"
         },
         "answer": {
           "zh": "在有限域中，一些代数性质保证了多项式关系的唯一性。但在环中可能存在零因子或不同的代数结构，导致某些证明技术不再安全。论文指出一些已有 lookup 构造在环环境下会受到攻击，因此需要重新设计协议。",
-          "en": "In fields, algebraic properties ensure certain polynomial identities behave predictably. Rings may contain different structures, such as zero divisors, which break assumptions used in field based protocols. The paper shows that some known lookup constructions become insecure when directly applied to rings."
+          "en": "In fields, algebraic properties ensure certain polynomial identities behave predictably. Rings may contain different structures, such as zero divisors, which break assumptions used in field based protocols. The paper shows that some known lookup constructions become insecure when directly applied to rings.",
+          "ja": "体（field）においては、代数的性質が特定の多項恒等式が予測可能に振る舞うことを保証します。環（ring）にはゼロディバイザのような異なる構造が含まれる可能性があり、これは体ベースのプロトコルで使用される仮定を破ります。本論文では、既知のいくつかのlookup構築物が環に直接適用された場合、安全性を失うようになることを示しています。"
         }
       },
       {
         "level": "expert",
         "question": {
           "zh": "环上的 lookup argument 如何与基于格的多项式承诺结合？",
-          "en": "How are ring based lookup arguments combined with lattice polynomial commitments?"
+          "en": "How are ring based lookup arguments combined with lattice polynomial commitments?",
+          "ja": "リングベースのルックアップ引数は、格子多項式コミットメントとどのように組み合わされますか？"
         },
         "answer": {
           "zh": "协议首先在环上构造 PIOP lookup 关系，然后使用基于格假设的多项式承诺对相关多项式进行承诺和验证。这样可以得到简洁证明，同时保持后量子安全性。",
-          "en": "The protocol first constructs lookup relations as a polynomial IOP over the ring. Polynomial commitments based on lattice assumptions are then used to commit to and verify the polynomials. This produces succinct proofs while maintaining post quantum security."
+          "en": "The protocol first constructs lookup relations as a polynomial IOP over the ring. Polynomial commitments based on lattice assumptions are then used to commit to and verify the polynomials. This produces succinct proofs while maintaining post quantum security.",
+          "ja": "このプロトコルはまず、リング上の多項式IOP（Interactive Oracle Proof）としてルックアップリレーションを構築します。次に、格子仮定に基づくPolynomial commitmentsを用いて、これらの多項式に対するコミットメント生成と検証を行います。これにより、ポスト量子セキュリティを維持しつつ、簡潔な証明書が生成されます。"
         }
       }
     ]
@@ -619,7 +737,8 @@
         ],
         "summary": {
           "zh": "Davide Crapis 和 Vitalik Buterin 在博客中讨论了ZK API使用信用协议，旨在解决API计量中的隐私、安全和效率问题，特别适用于LLM推理等场景。",
-          "en": "Davide Crapis and Vitalik Buterin discuss a ZK API usage credit protocol in their blog, addressing privacy, security, and efficiency in API metering, especially for LLM inference."
+          "en": "Davide Crapis and Vitalik Buterin discuss a ZK API usage credit protocol in their blog, addressing privacy, security, and efficiency in API metering, especially for LLM inference.",
+          "ja": "Davide CrapisとVitalik Buterinがブログ記事で、APIメトリクスのプライバシー、セキュリティ、効率性、特にLLM推論における課題に対処するZK API利用クレジットプロトコルについて議論しています。"
         },
         "notes": {
           "zh": [
@@ -635,6 +754,13 @@
             "Enables variable-cost APIs; users prove solvency and privacy via refund tickets and ZK proofs.",
             "Dual staking enforces policy: servers can penalize but not profit, ensuring transparency.",
             "Considers homomorphic encryption to optimize refunds and simplify client/ZK logic."
+          ],
+          "ja": [
+            "API meteringは、プライバシー、セキュリティ、効率性のバランスを取るのに苦慮しており、Web2認証とオンチェーン決済では不十分です。",
+            "RLNを使用して匿名での入金と悪用防止を実現し、スパムや二重支払いを防ぎます。",
+            "可変コストのAPIを可能にし、ユーザーはリファンドチケットとZK証明書を通じて支払い能力（solvency）とプライバシーを証明します。",
+            "デュアルステーキングによりポリシーを強制します。サーバーはペナルティを科すことはできますが利益を得ることはできず、透明性を保証します。",
+            "リファンドの最適化とクライアント/ZKロジックの簡素化のために準同型暗号（homomorphic encryption）を検討しています。"
           ]
         },
         "slogan": {
@@ -647,33 +773,39 @@
         "level": "beginner",
         "question": {
           "zh": "ZK API Usage Credits 想解决什么问题？",
-          "en": "What problem does ZK API Usage Credits try to solve?"
+          "en": "What problem does ZK API Usage Credits try to solve?",
+          "ja": "ZK API Usage Creditsはどのような問題を解決しようとしていますか？"
         },
         "answer": {
           "zh": "它试图解决 API 计费中的隐私问题。当前 API 通常要么需要身份认证，要么需要每次调用都进行链上支付。该方案允许用户一次存入资金，然后匿名地多次调用 API，同时服务器仍能确保每次调用都已经支付。",
-          "en": "It aims to solve privacy issues in API metering. Today APIs usually require identity authentication or a payment for every request. This proposal lets users deposit funds once and make many anonymous API calls while the provider is still guaranteed payment."
+          "en": "It aims to solve privacy issues in API metering. Today APIs usually require identity authentication or a payment for every request. This proposal lets users deposit funds once and make many anonymous API calls while the provider is still guaranteed payment.",
+          "ja": "本提案は、APIメトリクスのプライバシー問題を解決することを目的としています。現在、APIリクエストごとにID認証または支払いが必要ですが、この提案により、ユーザーは一度資金を預け入れるだけで、プロバイダーが支払いを保証している間、多数の匿名APIコールを実行できるようになります。"
         }
       },
       {
         "level": "intermediate",
         "question": {
           "zh": "Rate-Limit Nullifier（RLN）在协议中有什么作用？",
-          "en": "What role does the Rate Limit Nullifier (RLN) play in the protocol?"
+          "en": "What role does the Rate Limit Nullifier (RLN) play in the protocol?",
+          "ja": "Rate Limit Nullifier (RLN) はプロトコルにおいてどのような役割を果たしますか？"
         },
         "answer": {
           "zh": "RLN 用于防止用户重复使用同一个请求额度。如果用户尝试双重使用同一个 ticket，协议可以通过两个不同的信号恢复用户的秘密密钥，并触发惩罚。这保证了匿名用户仍然受到速率限制。",
-          "en": "RLN prevents users from reusing the same request allowance. If a user double spends a ticket, the protocol can recover the user’s secret key from two signals and trigger slashing. This enforces rate limits even for anonymous users."
+          "en": "RLN prevents users from reusing the same request allowance. If a user double spends a ticket, the protocol can recover the user’s secret key from two signals and trigger slashing. This enforces rate limits even for anonymous users.",
+          "ja": "RLNは、ユーザーが同じリクエストアローワンスを再利用することを防ぎます。もしユーザーがチケットの二重支払いを試みた場合、プロトコルは2つのシグナルからユーザーの秘密鍵を回復し、スラッシングをトリガーすることができます。これにより、匿名ユーザーに対してもレート制限を強制します。"
         }
       },
       {
         "level": "expert",
         "question": {
           "zh": "ZK 证明在这个协议中证明了什么？",
-          "en": "What does the ZK proof guarantee in this protocol?"
+          "en": "What does the ZK proof guarantee in this protocol?",
+          "ja": "このプロトコルにおけるZK証明は何を保証しますか？"
         },
         "answer": {
           "zh": "ZK-STARK 证明三件事：用户身份承诺在 Merkle 树中、退款票据签名有效并正确求和、以及当前请求的最大花费不超过存款和退款之和。这保证用户有足够余额，同时保持匿名。",
-          "en": "The ZK-STARK proves three things: the user identity commitment exists in a Merkle tree, refund tickets are valid and correctly summed, and the total potential spending does not exceed the deposit plus refunds. This ensures solvency while keeping the user anonymous."
+          "en": "The ZK-STARK proves three things: the user identity commitment exists in a Merkle tree, refund tickets are valid and correctly summed, and the total potential spending does not exceed the deposit plus refunds. This ensures solvency while keeping the user anonymous.",
+          "ja": "ZK-STARKは以下の3点を証明します。ユーザーのアイデンティティコミットメントがマークルツリー内に存在すること、リファンドチケットが有効であり正しく合計されていること、そして総潜在支出額がデポジットとリファンド額を超えていないことです。これにより、ユーザーを匿名に保ちながら支払い能力（solvency）を保証します。"
         }
       }
     ]
@@ -692,7 +824,8 @@
         ],
         "summary": {
           "zh": "@powdr_labs 团队开源了powdr-wasm，这是一个基于@openvm_org和crush ISA优化的zkVM，早期基准测试显示相比RISC-V（OpenVM）减少1.5倍追踪单元并提升证明速度，同时支持通过WASI运行Go程序。",
-          "en": "@powdr_labs has open-sourced powdr-wasm, an optimized zkVM for WASM built on @openvm_org and the crush ISA, with early benchmarks showing 1.5x fewer trace cells and faster proof times compared to RISC-V (OpenVM), and support for Go guests via WASI."
+          "en": "@powdr_labs has open-sourced powdr-wasm, an optimized zkVM for WASM built on @openvm_org and the crush ISA, with early benchmarks showing 1.5x fewer trace cells and faster proof times compared to RISC-V (OpenVM), and support for Go guests via WASI.",
+          "ja": "@powdr_labs は、@openvm_org および crush ISA に基づいて構築された、WASM向けの最適化された zkVM である powdr-wasm をオープンソース化しました。初期ベンチマークでは、RISC-V (OpenVM) と比較してトレースセル数が1.5倍少なく、証明時間も高速であることが示されており、WASI 経由で Go guest のサポートも提供しています。"
         },
         "notes": {
           "zh": [
@@ -710,6 +843,14 @@
             "Aims to improve performance and efficiency of zkVM in WASM environments",
             "Open-source release facilitates community involvement and further optimization",
             "Combines WASM and ZKP technologies to advance zero-knowledge proofs in WebAssembly ecosystems"
+          ],
+          "ja": [
+            "powdr-wasmは、OpenVMとcrush ISAに基づいて構築された、WASMに最適化されたzkVMです。",
+            "初期ベンチマークでは、RISC-V (OpenVM)と比較してトレースセル数が1.5倍少なく、証明時間も高速であることが示されています。",
+            "WASIを介してGoゲストをサポートし、zkVMのユースケースを拡大します。",
+            "WASM環境におけるzkVMのパフォーマンスと効率の向上を目指しています。",
+            "オープンソースリリースにより、コミュニティの参加とさらなる最適化を促進します。",
+            "WASMとZKP技術を組み合わせることで、WebAssemblyエコシステムにおけるゼロ知識証明を進歩させます。"
           ]
         },
         "slogan": {
@@ -722,33 +863,39 @@
         "level": "beginner",
         "question": {
           "zh": "为什么选择 WASM 而不是 RISC-V？",
-          "en": "Why use WASM instead of RISC-V?"
+          "en": "Why use WASM instead of RISC-V?",
+          "ja": "RISC-Vの代わりにWASMを使用する理由とは何ですか？"
         },
         "answer": {
           "zh": "WASM 是一种更高层的执行格式，广泛用于浏览器和后端。相比 RISC-V，它更接近实际应用代码，因此更容易接入现有语言和工具链，例如 Go 和 WASI。",
-          "en": "WASM is a higher level execution format widely used in browsers and backend systems. Compared to RISC-V, it is closer to real applications and integrates more easily with languages and toolchains such as Go and WASI."
+          "en": "WASM is a higher level execution format widely used in browsers and backend systems. Compared to RISC-V, it is closer to real applications and integrates more easily with languages and toolchains such as Go and WASI.",
+          "ja": "WASMは、ブラウザやバックエンドシステムで広く使用されている高レベルの実行フォーマットです。RISC-Vと比較して、より実際のアプリケーションに近く、GoやWASIのような言語やツールチェーンとの統合が容易です。"
         }
       },
       {
         "level": "intermediate",
         "question": {
           "zh": "crush ISA 如何提升 zkVM 性能？",
-          "en": "How does the crush ISA improve zkVM performance?"
+          "en": "How does the crush ISA improve zkVM performance?",
+          "ja": "crush ISAはzkVMのパフォーマンスをどのように向上させますか？"
         },
         "answer": {
           "zh": "crush ISA 是为可证明性设计的指令集，可以减少复杂操作的约束成本。例如它可以更高效地表达算术和内存操作，从而减少 trace 和 lookup 开销。",
-          "en": "The crush ISA is designed for provability. It reduces the constraint cost of complex operations by expressing arithmetic and memory actions more efficiently, which lowers trace size and lookup overhead."
+          "en": "The crush ISA is designed for provability. It reduces the constraint cost of complex operations by expressing arithmetic and memory actions more efficiently, which lowers trace size and lookup overhead.",
+          "ja": "crush ISAは、証明可能性のために設計されています。算術操作とメモリ操作をより効率的に表現することにより、複雑な操作の制約コストを削減し、トレースサイズとlookupオーバーヘッドを低減します。"
         }
       },
       {
         "level": "expert",
         "question": {
           "zh": "powdr-wasm 相比 RISC-V zkVM 的主要性能来源是什么？",
-          "en": "Where do the main performance gains of powdr-wasm over RISC-V zkVMs come from?"
+          "en": "Where do the main performance gains of powdr-wasm over RISC-V zkVMs come from?",
+          "ja": "powdr-wasmがRISC-V zkVMと比較して主なパフォーマンス上の利点を得ているのはどこからですか？"
         },
         "answer": {
           "zh": "主要来自更紧凑的执行语义和 ISA 设计。crush ISA 减少无关指令开销，同时降低 trace cells 数量。这直接减少多项式约束、sum-check 成本和整体 proving 时间。",
-          "en": "The gains come from a more compact execution model and ISA design. The crush ISA reduces unnecessary instruction overhead and lowers trace cells. This directly reduces polynomial constraints, sum-check cost, and overall proving time."
+          "en": "The gains come from a more compact execution model and ISA design. The crush ISA reduces unnecessary instruction overhead and lowers trace cells. This directly reduces polynomial constraints, sum-check cost, and overall proving time.",
+          "ja": "この利点は、よりコンパクトな実行モデルとISA設計から得られます。crush ISAは、不要な命令オーバーヘッドを削減し、トレースセル数を低減します。これは、多項式制約、和チェックコスト、および全体的な証明時間の短縮に直接つながります。"
         }
       }
     ]
@@ -767,7 +914,8 @@
         ],
         "summary": {
           "zh": "Yin等人在{{name}}论文中提出了一种人类可提取的ZK知识证明（HE-ZKPoK）协议，通过结合CAPTCHA谜题来防御Dark DAO的投票购买攻击，无需依赖专用硬件。",
-          "en": "Yin et al. proposed a human-extractable ZK proof of knowledge (HE-ZKPoK) protocol in their {{name}}paper, using CAPTCHA puzzles to defend against Dark DAO vote-buying attacks without specialized hardware."
+          "en": "Yin et al. proposed a human-extractable ZK proof of knowledge (HE-ZKPoK) protocol in their {{name}}paper, using CAPTCHA puzzles to defend against Dark DAO vote-buying attacks without specialized hardware.",
+          "ja": "Yinらは、{{name}}の論文において、特殊なハードウェアを必要とせず、CAPTCHAパズルを使用してDark DAOによる投票買収攻撃から防御する、人間が抽出可能なZK知識証明（HE-ZKPoK）プロトコルを提案しています。"
         },
         "notes": {
           "zh": [
@@ -785,6 +933,14 @@
             "Any human can extract witness by looking at prover's CAPTCHA queries and puzzles",
             "Assuming humans cannot encumber secrets, vote-selling exposes private key, deterring vote-buying",
             "Provides hardware-free alternative solution to Dark DAO"
+          ],
+          "ja": [
+            "Dark DAOは、リモートe投票における譲渡不可能性な認証を可能にするため、鍵のエンカンプラメントにMPCまたはTEEを使用し、自動的な投票買い（vote-buying）や攻撃を可能にします。",
+            "既存の防御策はTEEまたはASICに依存しており、ブロックチェーンへのデプロイが困難です。",
+            "HE-ZKPoKプロトコルは、proverに対して人間が解けるCAPTCHAパズルを解かせるとともに、標準的なZKPoKを完了させます。",
+            "誰でもproverのCAPTCHAクエリとパズルを見ることでwitnessを抽出できます。",
+            "人間が秘密をエンカンプラメントできないと仮定すると、投票売買は秘密鍵を露呈させ、投票買いを抑止します。",
+            "Dark DAOに対するハードウェアフリーの代替ソリューションを提供します。"
           ]
         },
         "slogan": {
@@ -797,33 +953,39 @@
         "level": "beginner",
         "question": {
           "zh": "什么是 Dark DAO，为什么它是问题？",
-          "en": "What is a Dark DAO and why is it a problem?"
+          "en": "What is a Dark DAO and why is it a problem?",
+          "ja": "ダークDAOとは何か、そしてそれはなぜ問題なのか？"
         },
         "answer": {
           "zh": "Dark DAO 是一种自动化买票系统，允许用户出售投票权而不泄露私钥。它破坏了投票系统中“必须真正持有密钥”的假设，从而威胁 DAO 治理的公平性。",
-          "en": "A Dark DAO is an automated vote buying system that lets users sell voting power without revealing their secret keys. It breaks the assumption that voters truly control their keys, undermining fair DAO governance."
+          "en": "A Dark DAO is an automated vote buying system that lets users sell voting power without revealing their secret keys. It breaks the assumption that voters truly control their keys, undermining fair DAO governance.",
+          "ja": "Dark DAOは、ユーザーが秘密鍵を明かすことなく投票権を売却できる自動化された投票購入システムです。これは、有権者が自身のキーを真に制御しているという前提を崩し、公平なDAOガバナンスを損ないます。"
         }
       },
       {
         "level": "intermediate",
         "question": {
           "zh": "为什么传统 ZK proof 无法防止投票权出售？",
-          "en": "Why can’t standard ZK proofs prevent vote selling?"
+          "en": "Why can’t standard ZK proofs prevent vote selling?",
+          "ja": "標準的なZK証明書はなぜ投票の売買を防げないのか？"
         },
         "answer": {
           "zh": "传统 ZK proof 只证明“存在一个 witness”，但不保证证明者本人真正掌握该 witness。通过 MPC 或 TEE，可以让他人代替完成证明，从而实现投票权出售。",
-          "en": "Standard ZK proofs only show that a witness exists, not that the prover personally knows it. Using MPC or TEEs, others can generate proofs on behalf of the user, enabling vote selling."
+          "en": "Standard ZK proofs only show that a witness exists, not that the prover personally knows it. Using MPC or TEEs, others can generate proofs on behalf of the user, enabling vote selling.",
+          "ja": "標準的なZK証明は、証拠（witness）が存在することを示すだけであり、プロバーがそれを個人的に知っていることを示すものではありません。MPCやTEEを使用すると、第三者がユーザーの代わりに証明を生成することが可能になり、投票の売買が可能になります。"
         }
       },
       {
         "level": "expert",
         "question": {
           "zh": "HE-ZKPoK 如何实现“可提取性”？",
-          "en": "How does HE-ZKPoK achieve extractability?"
+          "en": "How does HE-ZKPoK achieve extractability?",
+          "ja": "HE-ZKPoKはどのように抽出可能性を達成していますか？"
         },
         "answer": {
           "zh": "通过让证明者查询并解答 CAPTCHA，任何观察者可以从这些查询中推导出对应的秘密信息。即 witness 可以被“人类读取”，从而保证知识是未被封装的。",
-          "en": "By requiring CAPTCHA queries and responses, observers can derive the underlying secret from these interactions. The witness becomes human extractable, ensuring the knowledge is not hidden behind delegation."
+          "en": "By requiring CAPTCHA queries and responses, observers can derive the underlying secret from these interactions. The witness becomes human extractable, ensuring the knowledge is not hidden behind delegation.",
+          "ja": "CAPTCHAのクエリとレスポンスを要求することにより、オブザーバーはこれらの相互作用から基礎となる秘密を導き出すことができます。これにより、知識が委任の背後に隠されていないことを保証し、ウィットネス（witness）が人間によって抽出可能になります。"
         }
       }
     ]
@@ -842,7 +1004,8 @@
         ],
         "summary": {
           "zh": "Yang等人在{{name}}论文中对zkVM进行了系统化研究，将其分解为ISA、VM和证明三层，并评估了代表性系统的性能、可扩展性和可用性。",
-          "en": "Yang et al. conducted a systematization of knowledge on zkVMs in their {{name}}paper, decomposing them into ISA, VM, and proving layers, and evaluated representative systems for performance, scalability, and usability."
+          "en": "Yang et al. conducted a systematization of knowledge on zkVMs in their {{name}}paper, decomposing them into ISA, VM, and proving layers, and evaluated representative systems for performance, scalability, and usability.",
+          "ja": "Yangらは、{{name}}の論文においてzkVMに関する知識を体系化し、ISA、VM、およびprovingレイヤーに分解し、代表的なシステムについてパフォーマンス、スケーラビリティ、ユーザビリティを評価した。"
         },
         "notes": {
           "zh": [
@@ -860,6 +1023,14 @@
             "Conducted comprehensive experimental evaluation of representative zkVMs using this framework to analyze design impacts on performance, scalability, and usability.",
             "Summarized key observations and outlined potential directions for zkVM design and implementation.",
             "Bridges the gap between theory and practice, offering insights for standardization and optimization of zkVMs."
+          ],
+          "ja": [
+            "zkVMは、ブロックチェーンロールアップ、プライバシー保護ML、オフチェーン計算において広く利用されている、プログラム実行の正しさを証明するための重要なインフラストラクチャです。",
+            "既存のzkVMは、命令フォーマット、トレースレイアウト、および証明バックエンドにおいて異種な設計を持っており、システム間の関係性を理解することが困難になっています。",
+            "ISA層（命令セマンティクス）、VM層（プログラム実行）、最終的な証明生成のための証明層という3層構造を提案します。",
+            "本フレームワークを用いて代表的なzkVMの包括的な実験的評価を実施し、設計がパフォーマンス、スケーラビリティ、ユーザビリティに与える影響を分析しました。",
+            "主要な知見を要約し、zkVMの設計と実装に関する潜在的な方向性を示しました。",
+            "理論と実践のギャップを埋め、zkVMの標準化と最適化のための洞察を提供します。"
           ]
         },
         "slogan": {
@@ -872,33 +1043,39 @@
         "level": "beginner",
         "question": {
           "zh": "zkVM 的三层架构分别做什么？",
-          "en": "What are the roles of the three zkVM layers?"
+          "en": "What are the roles of the three zkVM layers?",
+          "ja": "3つのzkVMレイヤーの役割は何ですか？"
         },
         "answer": {
           "zh": "ISA 层定义指令与 trace 结构；VM 层执行程序并组织约束；Proving 层将 trace 转为代数约束并用 sum-check 等生成证明。分层设计便于优化。",
-          "en": "ISA defines instructions and trace structure; VM executes and organizes constraints; Proving converts traces into algebraic constraints and uses sum-check to generate proofs. This separation enables optimization."
+          "en": "ISA defines instructions and trace structure; VM executes and organizes constraints; Proving converts traces into algebraic constraints and uses sum-check to generate proofs. This separation enables optimization.",
+          "ja": "ISAは命令とトレース構造を定義し、VMが実行して制約を整理します。Provingはトレースを代数的な制約に変換し、sum-checkを使用して証明を生成します。この分離により最適化が可能になります。"
         }
       },
       {
         "level": "intermediate",
         "question": {
           "zh": "trace 布局如何影响 zkVM 性能？",
-          "en": "How does trace layout impact zkVM performance?"
+          "en": "How does trace layout impact zkVM performance?",
+          "ja": "トレースレイアウトはzkVMのパフォーマンスにどのように影響しますか？"
         },
         "answer": {
           "zh": "trace 布局影响多项式表示与约束数量，从而影响 sum-check 和 batch evaluation 的效率。好的布局可减少开销并提升并行性。",
-          "en": "Trace layout affects polynomial representation and constraint count, impacting sum-check and batch evaluation efficiency. Good layouts reduce cost and improve parallelism."
+          "en": "Trace layout affects polynomial representation and constraint count, impacting sum-check and batch evaluation efficiency. Good layouts reduce cost and improve parallelism.",
+          "ja": "トレースレイアウトは、多項式表現と制約数に影響を与え、サンプリングチェック（sum-check）およびバッチ評価の効率に影響します。良いレイアウトはコストを削減し、並列性を向上させます。"
         }
       },
       {
         "level": "expert",
         "question": {
           "zh": "proving layer 如何形式化执行正确性？",
-          "en": "How does the proving layer formalize execution correctness?"
+          "en": "How does the proving layer formalize execution correctness?",
+          "ja": "証明レイヤーは、実行の正しさをどのように形式化していますか？"
         },
         "answer": {
           "zh": "它将 trace 编码为多项式，并构造状态转移约束（如 AIR/R1CS）。通过 sum-check 和多项式承诺验证，并用 batch evaluation 降低成本。",
-          "en": "It encodes traces as polynomials and enforces state transitions via AIR or R1CS. Sum-check and polynomial commitments verify them, while batch evaluation reduces cost."
+          "en": "It encodes traces as polynomials and enforces state transitions via AIR or R1CS. Sum-check and polynomial commitments verify them, while batch evaluation reduces cost.",
+          "ja": "これはトレースを多項式としてエンコードし、AIRまたはR1CSを介して状態遷移を強制します。サンプリングチェックとpolynomial commitmentがこれらを検証し、バッチ評価によってコストを削減します。"
         }
       }
     ]
@@ -917,7 +1094,8 @@
         ],
         "summary": {
           "zh": "Carmon等人在{{name}}论文中提出了S-two，一种基于梅森素数域的circle STARK，形式化了flat AIR电路模型并深入分析了其邻近证明的安全性，强调了跨域相关协议的重要性。",
-          "en": "Carmon et al. proposed S-two, a circle STARK over the Mersenne prime field, formalizing the flat AIR circuit model and providing in-depth security analysis of proof of proximity, highlighting cross-domain correlated agreement."
+          "en": "Carmon et al. proposed S-two, a circle STARK over the Mersenne prime field, formalizing the flat AIR circuit model and providing in-depth security analysis of proof of proximity, highlighting cross-domain correlated agreement.",
+          "ja": "Carmonらは、メルセンヌ素数体上の円形STARKであるS-twoを提案しました。これは、flat AIR回路モデルを形式化し、近接性の証明（proof of proximity）について詳細なセキュリティ解析を提供し、ドメイン横断的な相関一致（cross-domain correlated agreement）を強調しています。"
         },
         "notes": {
           "zh": [
@@ -935,6 +1113,14 @@
             "Highlights importance of cross-domain correlated agreement for multi-table proofs",
             "Shows multi-table circle FRI satisfies this notion up to Johnson bound",
             "Discusses conjectures on list-decodability and line-decodability of Reed-Solomon codes"
+          ],
+          "ja": [
+            "STARKの円形実装であり、メルセンヌ素数体（法 $p=2^{31}-1$）上で行われる",
+            "最新のZK仮想マシンで使用されるフラットAIR回路モデルを形式化する",
+            "フラットAIRに対する近接性の証明に関する詳細なセキュリティ解析を提供する",
+            "マルチテーブルプルーフにおけるドメイン横断的な相関一致の重要性を強調する",
+            "マルチテーブル円形FRIがJohnson boundまでこの概念を満たすことを示す",
+            "Reed-Solomonコードのリスト復号可能性およびライン復号可能性に関する予想について論じる"
           ]
         },
         "slogan": {
@@ -947,33 +1133,39 @@
         "level": "beginner",
         "question": {
           "zh": "S-two 是什么？它与传统 STARK 有什么区别？",
-          "en": "What is S-two and how does it differ from traditional STARKs?"
+          "en": "What is S-two and how does it differ from traditional STARKs?",
+          "ja": "S-twoとは何ですか？また、従来のSTARKsとどのように異なりますか？"
         },
         "answer": {
           "zh": "S-two 是一种基于 circle STARK 的证明系统，工作在 Mersenne 素数域上。相比传统 STARK，它采用 flat AIR 和多表结构，并优化了 proof of proximity，使 zkVM 中的证明更高效。",
-          "en": "S-two is a circle STARK-based proof system over a Mersenne prime field. Compared to traditional STARKs, it uses flat AIR and multi-table structures, improving proof of proximity efficiency for zkVMs."
+          "en": "S-two is a circle STARK-based proof system over a Mersenne prime field. Compared to traditional STARKs, it uses flat AIR and multi-table structures, improving proof of proximity efficiency for zkVMs.",
+          "ja": "S-twoは、メルセンヌ素数体上の円形STARKベースの証明システムです。従来のSTARKと比較して、flat AIRとマルチテーブル構造を使用することで、zkVMの近接性証明効率を向上させています。"
         }
       },
       {
         "level": "intermediate",
         "question": {
           "zh": "多表（multi-table）设计为什么会带来 soundness 挑战？",
-          "en": "Why do multi-table designs introduce soundness challenges?"
+          "en": "Why do multi-table designs introduce soundness challenges?",
+          "ja": "マルチテーブル設計はなぜ健全性（soundness）の課題を引き起こすのか？"
         },
         "answer": {
           "zh": "多表将约束拆分到多个 trace 中，可能导致跨表不一致，从而增加 soundness error。S-two 引入 cross-domain correlated agreement 来约束这些关系，并结合 batch evaluation 保持正确性。",
-          "en": "Multi-table designs split constraints across traces, risking inconsistency and increasing soundness error. S-two introduces cross-domain correlated agreement to enforce consistency, combined with batch evaluation to maintain correctness."
+          "en": "Multi-table designs split constraints across traces, risking inconsistency and increasing soundness error. S-two introduces cross-domain correlated agreement to enforce consistency, combined with batch evaluation to maintain correctness.",
+          "ja": "マルチテーブル設計では、制約がトレース全体に分散されるため、一貫性の欠如やサウンドネスエラーの増加のリスクリがあります。S-twoは、クロスドメイン相関アグリーメントを導入して一貫性を強制し、バッチ評価と組み合わせることで正しさを維持します。"
         }
       },
       {
         "level": "expert",
         "question": {
           "zh": "cross-domain correlated agreement 如何降低 soundness error？",
-          "en": "How does cross-domain correlated agreement reduce soundness error?"
+          "en": "How does cross-domain correlated agreement reduce soundness error?",
+          "ja": "クロスドメイン相関合意は、サウンダネスエラーをどのように低減しますか？"
         },
         "answer": {
           "zh": "该性质确保不同表或域上的函数在重叠点上保持一致，从而限制伪造解空间。结合 circle FRI，其安全性接近 Reed-Solomon 码的 Johnson bound，有效控制 multi-table proof 的误差。",
-          "en": "It enforces consistency across functions over different domains, restricting adversarial solutions. Combined with circle FRI, it achieves soundness close to the Johnson bound of Reed-Solomon codes, controlling errors in multi-table proofs."
+          "en": "It enforces consistency across functions over different domains, restricting adversarial solutions. Combined with circle FRI, it achieves soundness close to the Johnson bound of Reed-Solomon codes, controlling errors in multi-table proofs.",
+          "ja": "これは、異なるドメインにわたる関数の一貫性を強制し、敵対的な解を制限します。Circle FRIと組み合わせることで、Reed-SolomonコードのJohnson boundに近い健全性（soundness）を達成し、マルチテーブル証明におけるエラーを制御します。"
         }
       }
     ]
@@ -991,7 +1183,8 @@
         ],
         "summary": {
           "zh": "Bacho和Chen在{{name}}论文中提出了Earpick-MS、Earpick-TS和Earpick-muMS三种签名方案，实现了无配对循环群上的紧致安全两轮多重签名和阈值签名，显著提升了签名紧凑性。",
-          "en": "Bacho and Chen proposed Earpick-MS, Earpick-TS, and Earpick-muMS in their {{name}}paper, achieving tightly secure two-round multi- and threshold signatures over pairing-free cyclic groups with improved compactness."
+          "en": "Bacho and Chen proposed Earpick-MS, Earpick-TS, and Earpick-muMS in their {{name}}paper, achieving tightly secure two-round multi- and threshold signatures over pairing-free cyclic groups with improved compactness.",
+          "ja": "BachoとChenは、{{name}}の論文でEarpick-MS、Earpick-TS、およびEarpick-muMSを提案し、ペアリングフリーな巡回群上での緊密にセキュアな2ラウンドのマルチシグネチャおよびスレッショルド署名を実現し、コンパクトさを向上させました。"
         },
         "notes": {
           "zh": [
@@ -1009,6 +1202,14 @@
             "Implemented over pairing-free cyclic groups for improved efficiency and deployability.",
             "Earpick-muMS variant maintains tight security in multi-user setting with compact signatures.",
             "Addresses limitations of existing tightly secure schemes with large signatures or more rounds."
+          ],
+          "ja": [
+            "Earpick-MSは署名サイズを3つのフィールド要素と1ビットに削減し、T-Spoonよりも約3.5倍小さい。",
+            "Earpick-TSは、厳密なセキュリティ証明を持つ初のペアリングフリー2ラウンド閾値署名方式である。",
+            "鍵集約をサポートしており、複数の公開鍵を単一の集約鍵にまとめることを可能にする。",
+            "効率とデプロイ可能性の向上を目指し、ペアリングフリーの巡回群上で実装されている。",
+            "Earpick-muMSバリアントは、コンパクトな署名でマルチユーザー設定における厳密なセキュリティを維持する。",
+            "既存の大きな署名やより多くのラウンド数を必要とする厳密なスキームの限界に対処する。"
           ]
         },
         "slogan": {
@@ -1021,33 +1222,39 @@
         "level": "beginner",
         "question": {
           "zh": "什么是 threshold signature？与 multi-signature 有何不同？",
-          "en": "What is a threshold signature and how is it different from a multi-signature?"
+          "en": "What is a threshold signature and how is it different from a multi-signature?",
+          "ja": "しきい値署名（threshold signature）とは何ですか？また、マルチシグネチャ（multi-signature）とどのように異なりますか？"
         },
         "answer": {
           "zh": "threshold signature 允许任意 t 个参与者（而不是全部）生成签名，而 multi-signature 通常需要所有人参与。它提高了容错性，适合分布式密钥管理。",
-          "en": "A threshold signature allows any t participants to sign, rather than requiring all parties as in multi-signatures. It improves fault tolerance and is useful in distributed key management."
+          "en": "A threshold signature allows any t participants to sign, rather than requiring all parties as in multi-signatures. It improves fault tolerance and is useful in distributed key management.",
+          "ja": "しきい値署名（threshold signature）は、マルチシグネチャのように全参加者が必要である必要はなく、任意のt人の参加者が署名することを可能にします。これは耐障害性を向上させ、分散型キー管理において有用です。"
         }
       },
       {
         "level": "intermediate",
         "question": {
           "zh": "Earpick-MS 的核心改进是什么？",
-          "en": "What is the main improvement of Earpick-MS?"
+          "en": "What is the main improvement of Earpick-MS?",
+          "ja": "Earpick-MSの主な改善点は何ですか？"
         },
         "answer": {
           "zh": "Earpick-MS 在保持两轮交互、pairing-free 和紧安全性的同时，大幅压缩签名大小，仅需 3 个域元素和 1 bit，比之前方案减少约 3.5 倍。",
-          "en": "Earpick-MS achieves tight security, two-round signing, and pairing-free design while drastically reducing signature size to three field elements and one bit, about 3.5× smaller than prior work."
+          "en": "Earpick-MS achieves tight security, two-round signing, and pairing-free design while drastically reducing signature size to three field elements and one bit, about 3.5× smaller than prior work.",
+          "ja": "Earpick-MSは、署名サイズを劇的に削減し、わずか3つのフィールド要素と1ビットに抑えながら、タイトなセキュリティ、2ラウンド署名、ペアリングフリー設計を実現しています。これは先行研究と比較して約3.5倍小さいものです。"
         }
       },
       {
         "level": "expert",
         "question": {
           "zh": "为什么两轮协议在实践中重要？",
-          "en": "Why are two-round protocols important in practice?"
+          "en": "Why are two-round protocols important in practice?",
+          "ja": "実務において2ラウンドプロトコルはなぜ重要なのでしょうか？"
         },
         "answer": {
           "zh": "两轮协议减少交互延迟和通信成本，更适合网络环境。相比三轮或更多轮次，它更高效，特别是在区块链和分布式签名场景中。",
-          "en": "Two-round protocols reduce latency and communication overhead, making them more practical in networks. They are more efficient than three or more rounds, especially in blockchain and distributed signing."
+          "en": "Two-round protocols reduce latency and communication overhead, making them more practical in networks. They are more efficient than three or more rounds, especially in blockchain and distributed signing.",
+          "ja": "2ラウンドプロトコルは、レイテンシと通信オーバーヘッドを削減するため、ネットワーク上での実用性が高まります。特にブロックチェーンや分散署名において、3ラウンド以上のプロトコルよりも効率的です。"
         }
       }
     ]
@@ -1066,7 +1273,8 @@
         ],
         "summary": {
           "zh": "Kampa等人在{{name}}论文中提出了一种非交互式DKG协议NI-DKG，通过ZK证明消除争议阶段，利用区块链作为协调层，简化了密钥生成流程。",
-          "en": "Kampa et al. proposed a non-interactive DKG protocol, NI-DKG, in their {{name}}paper, using ZK proofs to eliminate dispute phases and leveraging blockchain as a coordination layer, simplifying key generation."
+          "en": "Kampa et al. proposed a non-interactive DKG protocol, NI-DKG, in their {{name}}paper, using ZK proofs to eliminate dispute phases and leveraging blockchain as a coordination layer, simplifying key generation.",
+          "ja": "Kampaらは、{{name}}の論文で、ZK証明を用いて論争フェーズを排除し、ブロックチェーンを調整レイヤーとして活用することで鍵生成を簡素化する非対話型DKGプロトコルであるNI-DKGを提案しています。"
         },
         "notes": {
           "zh": [
@@ -1084,6 +1292,14 @@
             "Provides EVM-compatible implementation with circuit specs for key generation and threshold decryption",
             "Discusses EVM verifier constraints on public inputs and solutions",
             "On-chain zk-SNARK verification improves trustworthiness and attack resistance"
+          ],
+          "ja": [
+            "NI-DKGはZK証明書を使用して貢献の正確性を保証し、従来のDKGにおける紛争フェーズを排除する",
+            "Shamir秘密分散法、Feldmanコミットメント、ハッシュ化されたElGamal、およびChaum-Pedersen証明書に依存している",
+            "非対話的な調整のためのタイム付きパブリック掲示板としてスマートコントラクトブロックチェーンを使用する",
+            "鍵生成としきい値復号のためのサーキット仕様を備えたEVM互換の実装を提供する",
+            "公開入力に対するEVM検証者の制約とその解決策について議論する",
+            "オンチェーンのzk-SNARK検証により信頼性と攻撃耐性が向上する"
           ]
         },
         "slogan": {
@@ -1096,33 +1312,39 @@
         "level": "beginner",
         "question": {
           "zh": "为什么 NI-DKG 不需要 commit-reveal 两轮？",
-          "en": "Why does NI-DKG not require commit-reveal?"
+          "en": "Why does NI-DKG not require commit-reveal?",
+          "ja": "NI-DKGはなぜコミット＆リビールを必要としないのか？"
         },
         "answer": {
           "zh": "NI-DKG 用 zk-SNARK 一次性证明多项式、commitment 和加密 shares 的一致性，把 commit、reveal 和验证压缩成一步，避免多轮交互。",
-          "en": "NI-DKG uses a zk-SNARK to prove consistency of polynomial, commitments, and encrypted shares in one step, compressing commit, reveal, and verification into a single interaction."
+          "en": "NI-DKG uses a zk-SNARK to prove consistency of polynomial, commitments, and encrypted shares in one step, compressing commit, reveal, and verification into a single interaction.",
+          "ja": "NI-DKGは、zk-SNARKを使用して多項式、コミットメント、暗号化されたシェアの一貫性を一度に証明し、コミット、リビール（開示）、検証を単一の相互作用に圧縮します。"
         }
       },
       {
         "level": "intermediate",
         "question": {
           "zh": "没有 commit 会导致 adaptive 攻击吗？",
-          "en": "Does removing commit enable adaptive attacks?"
+          "en": "Does removing commit enable adaptive attacks?",
+          "ja": "コミットを削除することは、適応的攻撃を可能にしますか？"
         },
         "answer": {
           "zh": "会。攻击者可以根据他人提交再选择输入，类似 batch evaluation 的自适应输入。但只要存在 honest 随机贡献，最终结果仍不可预测。",
-          "en": "Yes. An adversary can adapt inputs after observing others, similar to batch evaluation. However, as long as one honest contribution is random, the final result remains unpredictable."
+          "en": "Yes. An adversary can adapt inputs after observing others, similar to batch evaluation. However, as long as one honest contribution is random, the final result remains unpredictable.",
+          "ja": "はい、攻撃者は他の入力値を観察した後にそれらに適応させることができ、これはバッチ評価（batch evaluation）に似ています。しかし、一つでも正直な貢献がランダムであれば、最終的な結果は予測不可能のままです。"
         }
       },
       {
         "level": "intermediate",
         "question": {
           "zh": "NI-DKG 在 threat model 上放弃了什么？",
-          "en": "What does NI-DKG give up in its threat model?"
+          "en": "What does NI-DKG give up in its threat model?",
+          "ja": "NI-DKGは脅威モデルにおいて何を犠牲にしていますか？"
         },
         "answer": {
           "zh": "它放弃了对 last-mover bias 的防护，不再限制自适应选择，因此不保证无偏随机性，但仍保证正确性和密钥安全。",
-          "en": "It drops protection against last-mover bias and allows adaptive choice, so it does not ensure unbiased randomness but still guarantees correctness and key security."
+          "en": "It drops protection against last-mover bias and allows adaptive choice, so it does not ensure unbiased randomness but still guarantees correctness and key security.",
+          "ja": "これにより、ラストムーバーバイアスに対する保護が失われ、適応的な選択が可能になるため、偏りのないランダム性を保証するものではありませんが、正しさ（correctness）とキーのセキュリティは保証されます。"
         }
       }
     ]
@@ -1141,7 +1363,8 @@
         ],
         "summary": {
           "zh": "Boneh和Kim在{{name}}论文中提出了一种通用编译器，可将任何签名方案转化为单轮盲签名方案，利用FHE和ZKP确保不可伪造性和盲性，并保持向后兼容性。",
-          "en": "Boneh and Kim propose a universal compiler in their {{name}}paper, converting any signature scheme into a one-round blind signature scheme using FHE and ZKP to ensure unforgeability and blindness while maintaining backward compatibility."
+          "en": "Boneh and Kim propose a universal compiler in their {{name}}paper, converting any signature scheme into a one-round blind signature scheme using FHE and ZKP to ensure unforgeability and blindness while maintaining backward compatibility.",
+          "ja": "BonehとKimは、彼らの{{name}}論文で、FHEとZKPを用いて任意の署名スキームを単一ラウンドのブラインド署名スキームに変換するユニバーサルコンパイラを提案しており、これにより後方互換性を維持しつつ、偽造耐性と盲性（blindness）を保証しています。"
         },
         "notes": {
           "zh": [
@@ -1159,6 +1382,14 @@
             "Offers three compiler variants based on workload distribution between client and signer",
             "Introduces new concept of committed verifiable FHE where verifier doesn't see circuit in clear",
             "Has significant potential in public-key cryptography applications"
+          ],
+          "ja": [
+            "任意の署名スキームをワンラウンドのブラインド署名スキームに変換するユニバーサルコンパイラを提案",
+            "FHEとZKPを使用して、偽造耐性と盲性を保証",
+            "ブラインド署名のフォーマットは、後方互換性のために基盤となるスキームと一致",
+            "クライアントと署名者間のワークロード分散に基づいた3つのコンパイラバリアントを提供",
+            "検証者が回路を平文で見ていないコミットされた検証可能なFHEという新しい概念を導入",
+            "公開鍵暗号のアプリケーションにおいて大きな可能性を秘める"
           ]
         },
         "slogan": {
@@ -1171,33 +1402,39 @@
         "level": "beginner",
         "question": {
           "zh": "这篇论文的核心贡献是什么？",
-          "en": "What is the main contribution of this paper?"
+          "en": "What is the main contribution of this paper?",
+          "ja": "本論文の主な貢献は何ですか？"
         },
         "answer": {
           "zh": "论文提出一种通用编译器，可以把任何签名方案转换为单轮盲签名方案。生成的签名格式与原方案完全相同，实现向后兼容。",
-          "en": "The paper introduces a compiler that converts any signature scheme into a one-round blind signature scheme. The resulting signature has the exact same format as the original, ensuring backward compatibility."
+          "en": "The paper introduces a compiler that converts any signature scheme into a one-round blind signature scheme. The resulting signature has the exact same format as the original, ensuring backward compatibility.",
+          "ja": "本論文では、任意の署名スキームをワンラウンドのブラインド署名スキームに変換するコンパイラを紹介します。結果として得られる署名は元のものと完全に同じ形式であるため、後方互換性が保証されます。"
         }
       },
       {
         "level": "intermediate",
         "question": {
           "zh": "为什么可以实现单轮交互？",
-          "en": "Why can this scheme achieve one-round interaction?"
+          "en": "Why can this scheme achieve one-round interaction?",
+          "ja": "このスキームはなぜ1ラウンドのインタラクションを達成できるのか？"
         },
         "answer": {
           "zh": "传统盲签名需要多轮交互来隐藏和验证数据。这里通过 FHE 和 zk 证明一次性完成计算与正确性验证，从而消除额外轮次。",
-          "en": "Traditional blind signatures require multiple rounds for hiding and verification. Here, FHE and zero-knowledge proofs combine computation and correctness checks in one step, removing extra rounds."
+          "en": "Traditional blind signatures require multiple rounds for hiding and verification. Here, FHE and zero-knowledge proofs combine computation and correctness checks in one step, removing extra rounds.",
+          "ja": "従来のブラインド署名では、秘匿化と検証のために複数ラウンドが必要でした。本件では、FHE（Fully Homomorphic Encryption）とゼロ知識証明を組み合わせることで、計算と正しさのチェックを単一ステップで行い、余分なラウンドを排除しています。"
         }
       },
       {
         "level": "expert",
         "question": {
           "zh": "什么是 committed verifiable FHE？为什么重要？",
-          "en": "What is committed verifiable FHE and why is it important?"
+          "en": "What is committed verifiable FHE and why is it important?",
+          "ja": "コミット可能な検証可能なFHEとは何ですか、そしてそれはなぜ重要なのでしょうか？"
         },
         "answer": {
           "zh": "它是一种可验证 FHE，验证者无需看到电路本身，只验证承诺的一致性。这增强隐私性，同时保证计算正确性，是实现盲性与不可伪造性的关键。",
-          "en": "It is a form of verifiable FHE where the verifier does not see the circuit, only commitments to it. This improves privacy while ensuring correctness, which is crucial for blindness and unforgeability."
+          "en": "It is a form of verifiable FHE where the verifier does not see the circuit, only commitments to it. This improves privacy while ensuring correctness, which is crucial for blindness and unforgeability.",
+          "ja": "これは、検証者が回路そのものではなく、それに対するコミットメントのみを見るという形式の検証可能なFHEです。これにより、盲検性（blindness）と偽造不可能性（unforgeability）にとって極めて重要な正確性を確保しつつプライバシーを向上させています。"
         }
       }
     ]
@@ -1215,7 +1452,8 @@
         ],
         "summary": {
           "zh": "Wu等人在{{name}}论文中提出了一种两轮两方BBS+签名协议，将通信开销降至0.85KB，比现有最优方案减少约73%，同时保持高效计算性能，适用于轻量级匿名凭证系统。",
-          "en": "Wu et al. proposed a two-pass two-party BBS+ signing protocol in their {{name}}paper, reducing communication to 0.85KB (about 27% of prior work) while maintaining efficient computation, making it suitable for lightweight anonymous credential systems."
+          "en": "Wu et al. proposed a two-pass two-party BBS+ signing protocol in their {{name}}paper, reducing communication to 0.85KB (about 27% of prior work) while maintaining efficient computation, making it suitable for lightweight anonymous credential systems.",
+          "ja": "Wuらは、{{name}}の論文で、通信量を0.85KB（先行研究の約27%）に削減しつつ効率的な計算を維持する2パスの2者間BBS+署名プロトコルを提案しており、これは軽量な匿名クレデンシャルシステムに適しています。"
         },
         "notes": {
           "zh": [
@@ -1233,6 +1471,14 @@
             "Competitive signing times (~62ms for one party, ~46ms for the other), efficient even for large message vectors (e.g., ℓ=500).",
             "Full simulation-based security proof in the standard real-ideal paradigm ensures protocol security.",
             "Naturally generalizable to 2-out-of-n threshold settings, enhancing flexibility and practical deployment appeal."
+          ],
+          "ja": [
+            "BBS+/BBS署名は、匿名クレデンシャルとプライバシー保護認証の鍵であり、標準化と導入が進んでいます。",
+            "既存のしきい値設計では、2者間設定において少なくとも3ラウンドとマルチキロバイトの通信が必要でした。",
+            "新しいプロトコルは2パスのみを使用し、署名あたり0.85KBであり、最も帯域効率の良い先行研究（S&P'25）の約27%に相当します。",
+            "競争力のある署名時間（一方のパーティで約62ms、もう一方のパーティで約46ms）を持ち、大きなメッセージベクトル（例：ℓ=500）に対しても効率的です。",
+            "標準的な実理想パラダイムに基づく完全なシミュレーションによるセキュリティ証明により、プロトコルの安全性が保証されます。",
+            "2-out-of-nのしきい値設定に自然に一般化可能であり、柔軟性と実用的な導入の魅力を高めます。"
           ]
         },
         "slogan": {
@@ -1245,33 +1491,39 @@
         "level": "beginner",
         "question": {
           "zh": "什么是 BBS+ 签名？它有什么用途？",
-          "en": "What is a BBS+ signature and what is it used for?"
+          "en": "What is a BBS+ signature and what is it used for?",
+          "ja": "BBS+署名とは何ですか、そしてどのような用途がありますか？"
         },
         "answer": {
           "zh": "BBS+ 是一种支持选择性披露的签名方案，常用于匿名凭证和隐私认证。用户可以证明某些属性而不泄露全部信息。",
-          "en": "BBS+ is a signature scheme supporting selective disclosure. It is widely used in anonymous credentials, allowing users to prove certain attributes without revealing all data."
+          "en": "BBS+ is a signature scheme supporting selective disclosure. It is widely used in anonymous credentials, allowing users to prove certain attributes without revealing all data.",
+          "ja": "BBS+ は、選択的開示をサポートする署名スキームです。これは匿名クレデンシャルで広く利用されており、ユーザーがすべてのデータを開示することなく特定の属性を証明することを可能にします。"
         }
       },
       {
         "level": "intermediate",
         "question": {
           "zh": "为什么需要 two-party BBS+ 签名？",
-          "en": "Why do we need two-party BBS+ signatures?"
+          "en": "Why do we need two-party BBS+ signatures?",
+          "ja": "なぜ2者間BBS+署名が必要なのでしょうか？"
         },
         "answer": {
           "zh": "two-party 方案将私钥分布在两个实体（如服务器和手机）之间，避免单点失效，同时保持系统轻量和实用。",
-          "en": "A two-party scheme splits the secret key between two entities, such as a server and a device, avoiding single points of failure while remaining lightweight."
+          "en": "A two-party scheme splits the secret key between two entities, such as a server and a device, avoiding single points of failure while remaining lightweight.",
+          "ja": "2者間スキームでは、秘密鍵をサーバーやデバイスなどの2つのエンティティに分割することで、軽量性を保ちつつ単一障害点（single point of failure）を回避します。"
         }
       },
       {
         "level": "expert",
         "question": {
           "zh": "该方案如何在降低通信的同时保持安全性？",
-          "en": "How does the scheme reduce communication while preserving security?"
+          "en": "How does the scheme reduce communication while preserving security?",
+          "ja": "このスキームは、セキュリティを維持しつつどのように通信量を削減していますか？"
         },
         "answer": {
           "zh": "通过优化协议结构和消息压缩，减少中间数据交换，同时使用标准模型下的模拟安全证明确保正确性和抗攻击能力。",
-          "en": "It optimizes protocol structure and compresses exchanged data to reduce communication, while using simulation-based security proofs in the standard model to ensure correctness and robustness."
+          "en": "It optimizes protocol structure and compresses exchanged data to reduce communication, while using simulation-based security proofs in the standard model to ensure correctness and robustness.",
+          "ja": "これは、通信量を削減するためにプロトコル構造を最適化しデータを圧縮する一方で、標準モデルにおけるシミュレーションベースのセキュリティ証明を用いて正確性と堅牢性を保証します。"
         }
       }
     ]
@@ -1291,7 +1543,8 @@
         ],
         "summary": {
           "zh": "@realbarnakiss 基于Karpathy的autoresearch循环，在Plonky3 ZK证明器上实现了zk-autoresearch，通过AI代理优化NTT实现，提升性能约3%。",
-          "en": "@realbarnakiss implemented zk-autoresearch on the Plonky3 ZK prover, using AI agents to optimize NTT implementation, achieving ~3% speedup."
+          "en": "@realbarnakiss implemented zk-autoresearch on the Plonky3 ZK prover, using AI agents to optimize NTT implementation, achieving ~3% speedup.",
+          "ja": "@realbarnakiss は、AIエージェントを使用してNTT実装を最適化し、約3%の高速化を達成したzk-autoresearchをPlonky3 ZK proverに実装しました。"
         },
         "notes": {
           "zh": [
@@ -1309,6 +1562,14 @@
             "74 iterations yielded 6 improvements and 57 regressions, all changes verified as mathematically equivalent",
             "Safety ensured via end-to-end ZK proof generation and verification, soundness review pending",
             "Round 2 planned to fix issues, full code and findings to be open-sourced"
+          ],
+          "ja": [
+            "本番環境のZK prover Plonky3へのautoresearchパターンの初適用",
+            "AIエージェントがRustとMontgomery算術を分析し、専門家最適化コード内の冗長性を特定",
+            "NTT内側のループに焦点を当てた最適化：積の事前計算、ブロードキャストのホイスティング、1による乗算のスキップ",
+            "74回のイテレーションで6つの改善と57つのリグレッションを検出。全ての変更は数学的に同等であることが検証済み",
+            "エンドツーエンドのZK証明生成と検証により安全性を確保。健全性（soundness）レビューは保留中",
+            "ラウンド2では問題修正を計画。完全なコードと所見はオープンソース化予定"
           ]
         },
         "slogan": {
@@ -1321,33 +1582,39 @@
         "level": "beginner",
         "question": {
           "zh": "zk-autoresearch 是什么？它在这个实验中做了什么？",
-          "en": "What is zk-autoresearch and what did it do in this experiment?"
+          "en": "What is zk-autoresearch and what did it do in this experiment?",
+          "ja": "zk-autoresearchとは何ですか？この実験でどのような役割を果たしましたか？"
         },
         "answer": {
           "zh": "zk-autoresearch 是一种自动迭代优化方法，类似 autoresearch loop。它让 AI 反复修改代码、测试性能并保留改进。在该实验中，它优化了 Plonky3 中 NTT 的实现，在保证正确性的前提下提升约 3% 性能。",
-          "en": "zk-autoresearch is an automated iterative optimization loop. It lets an AI repeatedly modify code, test performance, and keep improvements. In this experiment, it optimized the NTT in Plonky3 and achieved about a 3% speedup while preserving correctness."
+          "en": "zk-autoresearch is an automated iterative optimization loop. It lets an AI repeatedly modify code, test performance, and keep improvements. In this experiment, it optimized the NTT in Plonky3 and achieved about a 3% speedup while preserving correctness.",
+          "ja": "zk-autoresearchは自動的な反復最適化ループです。これはAIがコードを繰り返し修正し、パフォーマンスをテストし、改善点を保持することを可能にします。この実験では、Plonky3のNTTを最適化し、正しさを保ちながら約3%の高速化を達成しました。"
         }
       },
       {
         "level": "intermediate",
         "question": {
           "zh": "该方法如何避免破坏零知识证明的 soundness？",
-          "en": "How does the approach avoid breaking proof soundness?"
+          "en": "How does the approach avoid breaking proof soundness?",
+          "ja": "このアプローチは、証明の健全性（proof soundness）を損なうことをどのように回避していますか？"
         },
         "answer": {
           "zh": "实验限制 AI 只能修改实现层代码（如 NTT），不能触碰 FRI 等关键证明组件。同时每次迭代都运行 correctness 测试，并通过端到端证明验证，确保等价变换。",
-          "en": "The agent was restricted to implementation-level code like NTT and could not modify soundness-critical parts like FRI. Each iteration ran correctness tests and full end-to-end proof verification to ensure equivalence."
+          "en": "The agent was restricted to implementation-level code like NTT and could not modify soundness-critical parts like FRI. Each iteration ran correctness tests and full end-to-end proof verification to ensure equivalence.",
+          "ja": "エージェントはNTTのような実装レベルのコードに限定されており、FRIのような健全性（soundness）にとって重要な部分を変更することはできませんでした。各イテレーションでは、同等性を保証するために正しさ（correctness）テストと完全なエンドツーエンドの証明検証を実行しました。"
         }
       },
       {
         "level": "expert",
         "question": {
           "zh": "为什么 NTT 的优化会对 zk 证明系统产生全局影响？",
-          "en": "Why do NTT optimizations have system-wide impact in ZK provers?"
+          "en": "Why do NTT optimizations have system-wide impact in ZK provers?",
+          "ja": "ZKプロバーにおいてNTT最適化がシステム全体に影響を与えるのはなぜですか？"
         },
         "answer": {
           "zh": "NTT 是多项式运算的核心，广泛用于约束编码、sum-check 相关计算和 FRI 预处理。其性能直接决定 prover 的瓶颈，因此微小优化会被放大到整体系统。",
-          "en": "NTT underpins polynomial operations used in constraint encoding, sum-check-related computations, and FRI preprocessing. Since it dominates runtime, even small optimizations propagate to system-wide speedups."
+          "en": "NTT underpins polynomial operations used in constraint encoding, sum-check-related computations, and FRI preprocessing. Since it dominates runtime, even small optimizations propagate to system-wide speedups.",
+          "ja": "NTTは、制約エンコーディング、和チェック関連の計算、およびFRIプリプロセッシングで使用される多項式演算を支えています。実行時間に大きな影響を与えるため、小さな最適化であってもシステム全体の高速化につながります。"
         }
       }
     ]
@@ -1367,7 +1634,8 @@
         ],
         "summary": {
           "zh": "Bas Spitters在{{name}}论文中提出CatCrypt库，提供从Rust参考实现到Lean计算模型安全证明的端到端管道，涵盖172个密码协议并利用AI加速开发。",
-          "en": "Bas Spitters proposed the CatCrypt library in their {{name}}paper, offering an end-to-end pipeline from Rust reference implementations to security proofs in Lean's computational model, covering 172 cryptographic protocols with AI-accelerated development."
+          "en": "Bas Spitters proposed the CatCrypt library in their {{name}}paper, offering an end-to-end pipeline from Rust reference implementations to security proofs in Lean's computational model, covering 172 cryptographic protocols with AI-accelerated development.",
+          "ja": "Bas Spittersは、{{name}}の論文でCatCryptライブラリジを提案しました。これは、Rustのリファレンス実装からLeanの計算モデルにおけるセキュリティ証明までを網羅するエンドツーエンドのパイプラインを提供し、AIによる開発支援により172の暗号プロトコルをカバーしています。"
         },
         "notes": {
           "zh": [
@@ -1385,6 +1653,14 @@
             "Some proofs ported from SSProve and EasyCrypt; most are independent formalizations without prior machine-checking.",
             "Developed in two months vs. traditional months of expert effort, accelerated by GenAI assistance.",
             "Addresses AI hacking, AI-generated software, and post-quantum security challenges via formal methods."
+          ],
+          "ja": [
+            "172のプロトコルをカバーし、うち110個は完全なRustからLeanへのパイプラインを持つ機械検証可能なセキュリティ証明書を提供します。",
+            "Haxツールを使用してRustからLeanへの翻訳を行い、実装と証明書の一貫性を保証します。",
+            "すべてのバウンド（境界条件）は、IETF RFC、NIST標準、学術論文などのソースに対して体系的にクロスリファレンスされています。",
+            "一部の証明書はSSProveやEasyCryptから移植されたものですが、ほとんどは事前の機械検証を伴わない独立した形式化です。",
+            "専門家の何ヶ月にもわたる労力に対し、わずか2ヶ月で開発され、GenAIによる支援によって加速されました。",
+            "形式的手法により、AIハッキング、AI生成ソフトウェア、ポスト量子セキュリティの課題に対処します。"
           ]
         },
         "slogan": {
@@ -1397,33 +1673,39 @@
         "level": "beginner",
         "question": {
           "zh": "为什么需要从 Rust 到 Lean 的转换？",
-          "en": "Why is translating from Rust to Lean important?"
+          "en": "Why is translating from Rust to Lean important?",
+          "ja": "RustからLeanへの翻訳はなぜ重要なのか？"
         },
         "answer": {
           "zh": "Rust 用于实际实现，而 Lean 用于形式化证明。通过转换，可以确保实现与证明一致，避免“实现正确但证明无关”的问题。",
-          "en": "Rust is used for implementation, while Lean is used for formal proofs. Translating ensures that the implementation matches the proof, avoiding mismatches between code and security guarantees."
+          "en": "Rust is used for implementation, while Lean is used for formal proofs. Translating ensures that the implementation matches the proof, avoiding mismatches between code and security guarantees.",
+          "ja": "実装にはRustを使用し、形式的証明にはLeanを使用します。この翻訳により、実装が証明と一致することを保証し、コードとセキュリティ保証の不一致を防ぎます。"
         }
       },
       {
         "level": "intermediate",
         "question": {
           "zh": "CatCrypt 如何实现端到端验证？",
-          "en": "How does CatCrypt achieve end-to-end verification?"
+          "en": "How does CatCrypt achieve end-to-end verification?",
+          "ja": "CatCryptはどのようにエンドツーエンドの検証を実現していますか？"
         },
         "answer": {
           "zh": "它使用 Hax 工具将 Rust 代码转换为 Lean 表达，然后在 Lean 中构造计算安全模型下的证明。这样可以直接对实际实现进行验证，而不是抽象模型。",
-          "en": "It uses the Hax tool to translate Rust code into Lean, then proves security in the computational model. This allows verification of real implementations rather than abstract models."
+          "en": "It uses the Hax tool to translate Rust code into Lean, then proves security in the computational model. This allows verification of real implementations rather than abstract models.",
+          "ja": "これはHaxツールを使用してRustコードをLeanに翻訳し、計算モデル内でセキュリティを証明します。これにより、抽象的なモデルではなく、実際の実装の検証が可能になります。"
         }
       },
       {
         "level": "expert",
         "question": {
           "zh": "AI 在 CatCrypt 方法论中的关键作用是什么？",
-          "en": "What is the key role of AI in CatCrypt’s methodology?"
+          "en": "What is the key role of AI in CatCrypt’s methodology?",
+          "ja": "CatCryptのメソッドにおけるAIの重要な役割は何ですか？"
         },
         "answer": {
           "zh": "AI 用于快速生成形式化证明和代码转换，大幅缩短开发时间。但同时引入新的风险，因此需要交叉验证、引用标准文档等方法确保正确性。",
-          "en": "AI accelerates proof generation and translation, drastically reducing development time. However, it introduces risks, so cross-referencing and validation against standards are used to ensure correctness."
+          "en": "AI accelerates proof generation and translation, drastically reducing development time. However, it introduces risks, so cross-referencing and validation against standards are used to ensure correctness.",
+          "ja": "AIは証明の生成と翻訳を加速し、開発時間を劇的に短縮します。しかし、リスクも伴うため、正確性を保証するために標準との相互参照と検証が行われています。"
         }
       }
     ]
@@ -1442,7 +1724,8 @@
         ],
         "summary": {
           "zh": "PSE于2026年3月9日至10日举办了首届Vibecoding黑客松，探索AI辅助开发在密码学工程中的应用，共提交10个项目，涵盖ZK电路工具、后量子密码学等领域。",
-          "en": "PSE held its first Vibecoding hackathon on March 9-10, 2026, exploring AI-assisted development in cryptographic engineering, with 10 projects submitted covering ZK circuit tooling, post-quantum cryptography, and more."
+          "en": "PSE held its first Vibecoding hackathon on March 9-10, 2026, exploring AI-assisted development in cryptographic engineering, with 10 projects submitted covering ZK circuit tooling, post-quantum cryptography, and more.",
+          "ja": "PSEは2026年3月9日～10日に初のVibecodingハッカソンを開催し、暗号工学におけるAI支援開発を探求しました。参加者からはZK回路ツール、ポスト量子暗号などに関する10のプロジェクトが提出されました。"
         },
         "notes": {
           "zh": [
@@ -1460,6 +1743,14 @@
             "Projects ranged from ZK proof generation to post-quantum secure transfers, showing AI potential in complex crypto tasks",
             "PSE is an Ethereum Foundation R&D lab focused on privacy-preserving tech infrastructure",
             "Goal: explore AI-assisted development effectiveness in serious cryptographic engineering beyond web apps"
+          ],
+          "ja": [
+            "暗号工学におけるAI支援開発に焦点を当てたVibecodingハッカソン（2日間、完全リモート非同期形式）",
+            "ZK回路ツール、ポスト量子暗号、匿名ソーシャルネットワークなど10のプロジェクトが提出された",
+            "受賞作：Vibe Circuit (Claude Codeプラグイン)、Seal (コンテンツアドレス指定ウェブアプリ)、Noir Circuit Auditor (Claude Codeプラグイン)",
+            "プロジェクトはZK証明生成からポスト量子セキュア転送まで多岐にわたり、複雑な暗号タスクにおけるAIの可能性を示した",
+            "PSEはプライバシー保護技術インフラストラクチャに注力するEthereum Foundationの研究開発ラボである",
+            "目標：ウェブアプリを超えた本格的な暗号工学におけるAI支援開発の有効性を探求すること"
           ]
         },
         "slogan": {

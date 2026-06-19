@@ -14,7 +14,8 @@
         ],
         "summary": {
           "zh": "Guo等人在{{name}}论文中提出了首个分布友好的基于纠错码的多线性多项式承诺方案LigeSIS，通过同态子集和哈希实现亚线性跨节点通信，证明大小与机器数量无关。",
-          "en": "Guo et al. proposed LigeSIS, the first distribution-friendly code-based multilinear PCS, achieving sublinear cross-node communication with proof size independent of machine count."
+          "en": "Guo et al. proposed LigeSIS, the first distribution-friendly code-based multilinear PCS, achieving sublinear cross-node communication with proof size independent of machine count.",
+          "ja": "Guoらは、マシン数に依存しない証明サイズでサブ線形なクロスノード通信を達成する、初の配布フレンドリーなコードベースのマルチリニアPCSであるLigeSISを提案しました。"
         },
         "notes": {
           "zh": [
@@ -32,6 +33,14 @@
             "Single-node performance comparable to state-of-the-art RS-based PCS WHIR",
             "Near-linear scalability in prover time in distributed settings",
             "Improves prover time over distributed MKZG and reduces cross-node communication vs PIP"
+          ],
+          "ja": [
+            "LigeSISは、初の配布フレンドリーなコードベースのマルチリニアPCSです。",
+            "MerkleツリーハッシュをGoldilocks64上の準同型部分和ハッシュに置き換えます。",
+            "オーバーヘッドを削減するために、プリプロセッシングが高速化された部分和ハッシュを導入しています。",
+            "単一ノードでのパフォーマンスは、最先端のRSベースPCSであるWHIRと同等です。",
+            "分散設定におけるプロバー時間のニアリニアスケーラビリティを実現しています。",
+            "MKZGに対するプロバー時間の改善と、PIPに対するクロスノード通信量の削減を実現しています。"
           ]
         },
         "slogan": {
@@ -44,33 +53,39 @@
         "level": "beginner",
         "question": {
           "zh": "为什么需要分布式PCS？",
-          "en": "Why do we need distributed PCS?"
+          "en": "Why do we need distributed PCS?",
+          "ja": "なぜ分散型PCSが必要なのか？"
         },
         "answer": {
           "zh": "随着计算规模增大，单机难以处理证明生成。分布式PCS可以将计算分散到多个节点，降低时间和内存压力。",
-          "en": "As workloads grow, a single machine struggles with proving. Distributed PCS spreads computation across nodes, reducing time and memory pressure."
+          "en": "As workloads grow, a single machine struggles with proving. Distributed PCS spreads computation across nodes, reducing time and memory pressure.",
+          "ja": "ワークロードが増加するにつれて、単一のマシンでの証明（proving）は困難になります。分散化されたPCS (Prover/Verifier) は計算をノード間で分散させ、時間的・メモリ的な負荷を軽減します。"
         }
       },
       {
         "level": "intermediate",
         "question": {
           "zh": "LigeSIS的核心改进是什么？",
-          "en": "What is the key idea behind LigeSIS?"
+          "en": "What is the key idea behind LigeSIS?",
+          "ja": "LigeSISの核となるアイデアは何ですか？"
         },
         "answer": {
           "zh": "LigeSIS用同态subset-sum哈希替代Merkle树，使不同节点的承诺可以代数聚合，从而减少通信并支持分布式计算。",
-          "en": "LigeSIS replaces Merkle trees with a homomorphic subset-sum hash, enabling algebraic aggregation of commitments from different nodes and reducing communication."
+          "en": "LigeSIS replaces Merkle trees with a homomorphic subset-sum hash, enabling algebraic aggregation of commitments from different nodes and reducing communication.",
+          "ja": "LigeSISは、Merkleツリーを準同型な部分和ハッシュに置き換え、異なるノードからのコミットメントの代数的集約を可能にし、通信量を削減します。"
         }
       },
       {
         "level": "expert",
         "question": {
           "zh": "LigeSIS如何实现低通信开销？",
-          "en": "How does LigeSIS achieve low communication overhead?"
+          "en": "How does LigeSIS achieve low communication overhead?",
+          "ja": "LigeSISはどのようにして低い通信オーバーヘッドを実現していますか？"
         },
         "answer": {
           "zh": "通过同态哈希，各节点只需发送部分结果即可被聚合，避免传输完整Merkle路径，实现亚线性通信复杂度。",
-          "en": "Using homomorphic hashing, nodes send partial results that can be aggregated, avoiding full Merkle paths and achieving sublinear communication."
+          "en": "Using homomorphic hashing, nodes send partial results that can be aggregated, avoiding full Merkle paths and achieving sublinear communication.",
+          "ja": "ホモモルフィックハッシュを使用することで、ノードは部分的な結果を送信でき、これらを集約（aggregate）することで完全なMerkleパスを回避し、準線形（sublinear）の通信を実現します。"
         }
       }
     ]
@@ -90,7 +105,8 @@
         ],
         "summary": {
           "zh": "Jo等人在论文中提出了ZEE200，一个恒定轮次ZK系统，在普通笔记本上实现200 KHz的CPU速度，支持更丰富的指令集，比ZEE快约4000%，并成功证明Linux程序CVE漏洞。",
-          "en": "Jo et al. proposed ZEE200, a constant-round ZK system achieving 200 KHz CPU speed on a commodity laptop, supporting a richer ISA and improving over ZEE by ~4000%, demonstrated by proving CVE vulnerabilities in Linux programs."
+          "en": "Jo et al. proposed ZEE200, a constant-round ZK system achieving 200 KHz CPU speed on a commodity laptop, supporting a richer ISA and improving over ZEE by ~4000%, demonstrated by proving CVE vulnerabilities in Linux programs.",
+          "ja": "JoらはZEE200を提案しました。これは、汎用ノートPC上で200 KHzのCPU速度を達成し、よりリッチなISAをサポートし、LinuxプログラムにおけるCVE脆弱性の証明によって実証された、ZEEに対する約4000%の改善をもたらす定数ラウンドZKシステムです。"
         },
         "notes": {
           "zh": [
@@ -108,6 +124,14 @@
             "Integrates the latest advances such as Tight ZK CPU (CCS'24) and fast ZK RAM (USENIX Security'24).",
             "Benchmark: proving Linux tool CVE vulnerabilities drops from several seconds (ZEE) to sub-second (ZEE200).",
             "ZEE200 provides an efficient and practical zero-knowledge proving toolchain for general-purpose programs."
+          ],
+          "ja": [
+            "ZEE200によりパフォーマンスが約4000%向上し、ZEEの50 KHzから200 KHzに増加しました。",
+            "ZEE200は標準的なノートパソコン（2021年版ThinkPad X1 Carbon Gen 9）およびシミュレートされたLAN環境で動作します。",
+            "算術エンコーディングの最適化と広範な低レベルの改善により、よりリッチな命令セットをサポートしています。",
+            "Tight ZK CPU (CCS'24) や高速ZK RAM (USENIX Security'24) など最新の進歩を取り入れています。",
+            "ベンチマーク：LinuxツールのCVE脆弱性証明にかかる時間が、ZEEでは数秒かかっていたものが、ZEE200ではサブ秒未満に短縮されました。",
+            "ZEE200は汎用プログラムのための効率的で実用的なゼロ知識証明ツールチェーンを提供します。"
           ]
         },
         "slogan": {
@@ -120,33 +144,39 @@
         "level": "beginner",
         "question": {
           "zh": "ZEE200的核心目标是什么？",
-          "en": "What is the main goal of ZEE200?"
+          "en": "What is the main goal of ZEE200?",
+          "ja": "ZEE200の主な目的は何ですか？"
         },
         "answer": {
           "zh": "ZEE200旨在为通用程序提供高效的零知识执行，使任意程序都可以被证明正确执行，同时保持输入隐私。",
-          "en": "ZEE200 aims to enable efficient zero-knowledge execution of general programs, allowing arbitrary computations to be proven correct while preserving input privacy."
+          "en": "ZEE200 aims to enable efficient zero-knowledge execution of general programs, allowing arbitrary computations to be proven correct while preserving input privacy.",
+          "ja": "ZEE200は、任意の計算が正しいことを証明しつつ入力プライバシーを保持することで、一般的なプログラムの効率的なゼロ知識実行を可能にすることを目指しています。"
         }
       },
       {
         "level": "intermediate",
         "question": {
           "zh": "ZEE200依赖哪些关键技术？",
-          "en": "What key techniques does ZEE200 build on?"
+          "en": "What key techniques does ZEE200 build on?",
+          "ja": "ZEE200が基盤としている主要な技術は何ですか？"
         },
         "answer": {
           "zh": "它结合了Tight ZK CPU和高效ZK RAM等技术，用于高效表示指令执行和内存访问，从而支持通用程序证明。",
-          "en": "It builds on techniques like Tight ZK CPU and fast ZK RAM to efficiently represent instruction execution and memory access for general-purpose proofs."
+          "en": "It builds on techniques like Tight ZK CPU and fast ZK RAM to efficiently represent instruction execution and memory access for general-purpose proofs.",
+          "ja": "これは、汎用的な証明のための命令実行とメモリアクセスを効率的に表現するTight ZK CPUやfast ZK RAMなどの技術に基づいています。"
         }
       },
       {
         "level": "expert",
         "question": {
           "zh": "ZEE200为何能实现显著性能提升？",
-          "en": "Why does ZEE200 achieve significant performance gains?"
+          "en": "Why does ZEE200 achieve significant performance gains?",
+          "ja": "ZEE200はなぜ大幅なパフォーマンス向上を達成するのか？"
         },
         "answer": {
           "zh": "通过改进算术编码、优化CPU执行模型以及整合高效ZK组件，减少每一步的证明开销，从而整体提升吞吐量。",
-          "en": "It improves arithmetic encodings, optimizes the CPU execution model, and integrates efficient ZK components, reducing per-step proof cost and increasing throughput."
+          "en": "It improves arithmetic encodings, optimizes the CPU execution model, and integrates efficient ZK components, reducing per-step proof cost and increasing throughput.",
+          "ja": "これは算術エンコーディングを改善し、CPU実行モデルを最適化し、効率的なZKコンポーネントを統合することで、ステップごとの証明コストを削減しスループットを向上させます。"
         }
       }
     ]
@@ -166,7 +196,8 @@
         ],
         "summary": {
           "zh": "Dalton等人在{{name}}论文中首次系统探索了针对zkSTARK证明者的故障注入攻击，旨在破坏其零知识特性，填补了通用ZK证明系统故障注入研究的空白。",
-          "en": "Dalton et al. present the first systematic exploration of fault injection attacks against zkSTARK provers, aiming to violate zero-knowledge properties, filling a gap in fault injection research for general-purpose ZK proving systems."
+          "en": "Dalton et al. present the first systematic exploration of fault injection attacks against zkSTARK provers, aiming to violate zero-knowledge properties, filling a gap in fault injection research for general-purpose ZK proving systems.",
+          "ja": "Daltonらは、汎用ZK証明システムに対するフォールトインジェクション研究のギャップを埋めるため、zkSTARKプロバーに対するフォールトインジェクション攻撃の最初の体系的な調査を発表しました。"
         },
         "notes": {
           "zh": [
@@ -184,6 +215,14 @@
             "Proposed multiple attack methods targeting different algorithmic primitives.",
             "Vulnerabilities could undermine privacy guarantees of ZK proofs.",
             "Developers should incorporate fault injection countermeasures in prover implementations."
+          ],
+          "ja": [
+            "zkSTARKプロバーに対するフォールトインジェクション攻撃は、ゼロ知識プロパティを侵害する可能性がある。",
+            "汎用ZK証明システムにおけるフォールトインジェクションの最初の調査。",
+            "zkSTARKsの実装多様性は攻撃対象領域を広げる。",
+            "異なるアルゴリズムプリミティブを標的とした複数の攻撃手法を提案。",
+            "脆弱性はZK証明のプライバシー保証を損なう可能性がある。",
+            "開発者はプロバー実装にフォールトインジェクション対策を組み込むべきである。"
           ]
         },
         "slogan": {
@@ -196,33 +235,39 @@
         "level": "beginner",
         "question": {
           "zh": "什么是fault injection攻击？",
-          "en": "What is a fault injection attack?"
+          "en": "What is a fault injection attack?",
+          "ja": "フォールトインジェクション攻撃とは何ですか？"
         },
         "answer": {
           "zh": "fault injection攻击通过人为引入计算错误（如电压、时序干扰）来破坏系统正常执行，从而泄露敏感信息或破坏安全性质。",
-          "en": "A fault injection attack introduces errors into computation (e.g., via voltage or timing glitches) to break correct execution and potentially leak sensitive information."
+          "en": "A fault injection attack introduces errors into computation (e.g., via voltage or timing glitches) to break correct execution and potentially leak sensitive information.",
+          "ja": "フォールトインジェクション攻撃は、計算（例えば電圧やタイミングのグリッチを介して）にエラーを導入し、正しい実行を妨害し、機密情報の漏洩を引き起こす可能性があります。"
         }
       },
       {
         "level": "intermediate",
         "question": {
           "zh": "fault injection如何影响zkSTARK的零知识性？",
-          "en": "How can fault injection affect the zero-knowledge property of zkSTARKs?"
+          "en": "How can fault injection affect the zero-knowledge property of zkSTARKs?",
+          "ja": "フォールトインジェクションはzkSTARKのゼロ知識性（zero-knowledge property）にどのように影響しますか？"
         },
         "answer": {
           "zh": "攻击者通过干扰证明生成过程，使某些中间值异常，从而可能泄露本应隐藏的信息，破坏零知识性。",
-          "en": "By disrupting the proving process, attackers can cause abnormal intermediate values that may leak information intended to remain hidden, breaking zero-knowledge."
+          "en": "By disrupting the proving process, attackers can cause abnormal intermediate values that may leak information intended to remain hidden, breaking zero-knowledge.",
+          "ja": "証明プロセスを妨害することにより、攻撃者は意図的に隠しておくべき情報を漏洩させる可能性のある異常な中間値を引き起こし、ゼロ知識を破綻させることができてしまう。"
         }
       },
       {
         "level": "expert",
         "question": {
           "zh": "为什么zkSTARK特别容易受到此类攻击？",
-          "en": "Why are zkSTARKs particularly exposed to such attacks?"
+          "en": "Why are zkSTARKs particularly exposed to such attacks?",
+          "ja": "zkSTARKが特にそのような攻撃に晒されるのはなぜですか？"
         },
         "answer": {
           "zh": "zkSTARK实现复杂，包含多种算法组件（如FFT、承诺、低度测试），攻击者可针对不同环节注入错误，扩大攻击面。",
-          "en": "zkSTARKs are complex, involving components like FFTs, commitments, and low-degree tests. Faults can be injected at different stages, increasing the attack surface."
+          "en": "zkSTARKs are complex, involving components like FFTs, commitments, and low-degree tests. Faults can be injected at different stages, increasing the attack surface.",
+          "ja": "zkSTARKは、FFT（高速フーリエ変換）、コミットメント、低次数テストなどのコンポーネントを伴う複雑なものです。異なる段階でフォールトが注入される可能性があり、攻撃対象領域が増大します。"
         }
       }
     ]
@@ -242,7 +287,8 @@
         ],
         "summary": {
           "zh": "Baweja等人在{{name}}论文中提出了一种新型线性时间可编码的场无关纠错码ERA，并基于此设计了高效的IOPP，实现了哈希基SNARK的小证明尺寸和良好的证明者效率。",
-          "en": "Baweja et al. proposed a new family of linear-time encodable field-agnostic codes, ERA, and an efficient IOPP for them, achieving small proof sizes in hash-based SNARKs."
+          "en": "Baweja et al. proposed a new family of linear-time encodable field-agnostic codes, ERA, and an efficient IOPP for them, achieving small proof sizes in hash-based SNARKs.",
+          "ja": "Bawejaらは、線形時間で符号化可能なフィールド非依存型コードであるERAの新しいファミリーと、それに対する効率的なIOPPを提案し、ハッシュベースSNARKにおいて小さな証明サイズを実現しました。"
         },
         "notes": {
           "zh": [
@@ -258,6 +304,13 @@
             "The IOPP for ERA codes yields concretely small query complexity.",
             "Hash-based SNARKs are transparent and post-quantum secure.",
             "Field-agnosticism enables proofs over arbitrary fields."
+          ],
+          "ja": [
+            "ERAコードは、エンコーディング時間と相対距離の間の強力なトレードオフを実現します。",
+            "ERAコードは効率的にコードスイッチング可能であり、近傍チェックを別のコードに削減します。",
+            "ERAコードに対するIOPPは、具体的に小さいクエリ複雑度をもたらします。",
+            "Hash-based SNARKsは透明性が高く、ポスト量子安全です。",
+            "Field-agnosticismにより、任意のフィールド上での証明が可能になります。"
           ]
         },
         "slogan": {
@@ -270,33 +323,39 @@
         "level": "beginner",
         "question": {
           "zh": "ERA codes是什么？",
-          "en": "What are ERA codes?"
+          "en": "What are ERA codes?",
+          "ja": "ERAコードとは何ですか？"
         },
         "answer": {
           "zh": "ERA（Encode-Repeat-Accumulate）codes是一类新的纠错码，强调快速编码和较强纠错能力，用于提升hash-based SNARK性能。",
-          "en": "ERA (Encode-Repeat-Accumulate) codes are a new family of error-correcting codes designed for fast encoding and strong error-correction properties in hash-based SNARKs."
+          "en": "ERA (Encode-Repeat-Accumulate) codes are a new family of error-correcting codes designed for fast encoding and strong error-correction properties in hash-based SNARKs.",
+          "ja": "ERA（Encode-Repeat-Accumulate）コードは、ハッシュベースのSNARKにおける高速なエンコーディングと強力な誤り訂正特性のために設計された新しい種類の誤り訂正符号です。"
         }
       },
       {
         "level": "intermediate",
         "question": {
           "zh": "为什么纠错码对SNARK很重要？",
-          "en": "Why are error-correcting codes important for SNARKs?"
+          "en": "Why are error-correcting codes important for SNARKs?",
+          "ja": "SNARKにとって誤り訂正符号はなぜ重要なのか？"
         },
         "answer": {
           "zh": "许多transparent SNARK依赖纠错码和IOPP进行低度测试与一致性验证，纠错码质量会直接影响证明大小和证明速度。",
-          "en": "Many transparent SNARKs use error-correcting codes and IOPPs for low-degree testing and consistency checks, so code quality directly affects proof size and proving speed."
+          "en": "Many transparent SNARKs use error-correcting codes and IOPPs for low-degree testing and consistency checks, so code quality directly affects proof size and proving speed.",
+          "ja": "多くのトランスペアレントSNARKは、低次数テストと一貫性チェックのためにエラー訂正符号とIOPPを使用するため、コードの品質が証明サイズと証明速度に直接影響します。"
         }
       },
       {
         "level": "expert",
         "question": {
           "zh": "ERA codes相比传统方案有什么优势？",
-          "en": "What advantages do ERA codes provide over prior approaches?"
+          "en": "What advantages do ERA codes provide over prior approaches?",
+          "ja": "ERAコードは、従来の方式と比較してどのような利点がありますか？"
         },
         "answer": {
           "zh": "ERA codes兼顾线性时间编码和较强距离性质，在减少proof大小的同时保持较高prover效率。",
-          "en": "ERA codes combine linear-time encoding with strong distance properties, reducing proof size while maintaining efficient proving."
+          "en": "ERA codes combine linear-time encoding with strong distance properties, reducing proof size while maintaining efficient proving.",
+          "ja": "ERAコードは、線形時間エンコーディングと強力な距離特性を組み合わせることで、効率的な証明の維持と同時に証明サイズを削減します。"
         }
       }
     ]
@@ -314,7 +373,8 @@
         ],
         "summary": {
           "zh": "Garreta等人在{{name}}论文中提出Universal Constraint Systems (UCS)通用约束系统和Zinc框架，支持同时处理多个多项式环（如Z、Z₂₅₆）的代数约束与理想成员谓词，通过PIOP编译器与新型整数伪Reed-Solomon（IPRS）码实现高效SNARK，证明ECDSA中SHA-256压缩与MSM仅需40.6ms。",
-          "en": "Garreta et al. propose UCS and Zinc in {{name}}, enabling SNARKs for multiple polynomial rings with algebraic constraints and ideal membership, using a PIOP compiler and new IPRS codes, achieving 40.6ms for SHA-256+MSM in ECDSA."
+          "en": "Garreta et al. propose UCS and Zinc in {{name}}, enabling SNARKs for multiple polynomial rings with algebraic constraints and ideal membership, using a PIOP compiler and new IPRS codes, achieving 40.6ms for SHA-256+MSM in ECDSA.",
+          "ja": "GarretaらによるUCSとZincは、PIOPコンパイラと新しいIPRSコードを用いて、代数的制約およびイデアルメンバーシップを持つ複数の多項式リングに対するSNARKを可能にし、ECDSAにおけるSHA-256+MSMで40.6msを達成する。"
         },
         "notes": {
           "zh": [
@@ -332,6 +392,14 @@
             "Benchmarks: 40.6ms prover, 7.0ms verifier, 198KB proof for ECDSA verification core.",
             "Can be integrated as lightweight extension to existing hash-based SNARKs.",
             "Reduces overhead for lattice operations, modular arithmetic, etc."
+          ],
+          "ja": [
+            "UCSは、有限体、整数環、多項環上の制約を同時に表現し、非ネイティブ操作のオーバーヘッドを最小化します。",
+            "Zincは、標準的な有限体PIOPを複数の環に持ち上げるPIOPコンパイラを提供します。",
+            "新しいIPRSコードは、FFTフレンドリーなエンコーディングと有界なノルム成長により、ZおよびZ₂₅₆上で最適なMDS距離を達成します。",
+            "ベンチマーク：ECDSA検証コアでプロバー40.6ms、ベリファイア7.0ms、証明文198KB。",
+            "既存のハッシュベースSNARKsへの軽量な拡張として統合可能です。",
+            "格子演算やモジュラ算術などのオーバーヘッドを削減します。"
           ]
         },
         "slogan": {
@@ -344,33 +412,39 @@
         "level": "beginner",
         "question": {
           "zh": "为什么传统SNARK难以处理多项式环运算？",
-          "en": "Why are traditional SNARKs inefficient for polynomial ring operations?"
+          "en": "Why are traditional SNARKs inefficient for polynomial ring operations?",
+          "ja": "従来のSNARKが多項環演算において非効率的なのはなぜですか？"
         },
         "answer": {
           "zh": "传统SNARK主要基于有限域约束，而位运算、模运算和格密码中的多项式环运算并不天然属于该域，因此需要复杂转换，导致证明规模和见证大幅增加。",
-          "en": "Traditional SNARKs are built over finite fields, while bitwise, modular, and lattice-ring operations are not native to those fields. Converting them into field constraints greatly increases witness and proof complexity."
+          "en": "Traditional SNARKs are built over finite fields, while bitwise, modular, and lattice-ring operations are not native to those fields. Converting them into field constraints greatly increases witness and proof complexity.",
+          "ja": "従来のSNARKは有限体上で構築されていますが、ビット単位、モジュラ演算、格子環（lattice-ring）の操作はそれらの有限体にネイティブではありません。これらをフィールド制約に変換すると、ウィットネスと証明の複雑さが大幅に増大します。"
         }
       },
       {
         "level": "intermediate",
         "question": {
           "zh": "Zinc+的核心目标是什么？",
-          "en": "What is the main goal of Zinc+?"
+          "en": "What is the main goal of Zinc+?",
+          "ja": "Zinc+の主な目的は何ですか？"
         },
         "answer": {
           "zh": "Zinc+旨在让SNARK能够直接高效处理多项式环上的计算，减少传统算术化带来的额外开销。",
-          "en": "Zinc+ aims to make SNARKs efficiently support computations over polynomial rings directly, reducing the overhead caused by traditional arithmetization."
+          "en": "Zinc+ aims to make SNARKs efficiently support computations over polynomial rings directly, reducing the overhead caused by traditional arithmetization.",
+          "ja": "Zinc+ は、従来の算術化によって生じるオーバーヘッドを削減し、多項環上の計算をSNARKが効率的にサポートできるようにすることを目指しています。"
         }
       },
       {
         "level": "expert",
         "question": {
           "zh": "Zinc+如何降低非原生运算的证明成本？",
-          "en": "How does Zinc+ reduce the proving cost of non-native operations?"
+          "en": "How does Zinc+ reduce the proving cost of non-native operations?",
+          "ja": "Zinc+は、ネイティブではない操作の証明コストをどのように削減しますか？"
         },
         "answer": {
           "zh": "它通过Universal Constraint Systems（UCS）直接在多项式环中表达约束，而不是先展开为大量有限域约束，从而减少见证膨胀和电路规模。",
-          "en": "It directly expresses constraints inside polynomial rings through Universal Constraint Systems（UCS） instead of expanding them into many finite-field constraints, reducing witness blowup and circuit size."
+          "en": "It directly expresses constraints inside polynomial rings through Universal Constraint Systems（UCS） instead of expanding them into many finite-field constraints, reducing witness blowup and circuit size.",
+          "ja": "これは、多項環内での制約を直接的に表現するUniversal Constraint Systems (UCS) を介して行うものであり、多数の有限体上の制約に展開するのではなく、ウィットネスの膨張（witness blowup）と回路サイズを削減します。"
         }
       }
     ]
@@ -390,7 +464,8 @@
         ],
         "summary": {
           "zh": "Baecker等人在论文中提出两种适应不安全通信环境且支持可识别中止和主动密钥刷新的分布式密钥生成协议，弥补了现有方案在自适应安全性与密钥结构兼容性方面的空白。",
-          "en": "Baecker et al. propose two DKG protocols with identifiable abort, proactive key refresh, and adaptive security under UC framework, bridging the gap in adaptive security and key structure compatibility."
+          "en": "Baecker et al. propose two DKG protocols with identifiable abort, proactive key refresh, and adaptive security under UC framework, bridging the gap in adaptive security and key structure compatibility.",
+          "ja": "Baeckerらは、UCフレームワーク下で識別可能なアボート（abort）、プロアクティブなキーリフレッシュ（proactive key refresh）、および適応的セキュリティを備えた2つのDKGプロトコルを提案し、適応的セキュリティとキー構造の互換性におけるギャップを埋めている。"
         },
         "notes": {
           "zh": [
@@ -408,6 +483,14 @@
             "Supports proactive key refresh for recovery from transient compromises.",
             "Evaluation shows practical efficiency for modern architectures.",
             "UC-based security without non-falsifiable assumptions."
+          ],
+          "ja": [
+            "既存のDKGプロトコルは、特定の鍵構造との非互換性や適応的セキュリティの欠如を抱えている。",
+            "最初のプロトコルは、敵対的なバイアスがある中で最適なラウンド複雑度（1回のブロードキャストラウンド）を達成する。",
+            "2番目のプロトコルは、2ラウンドでのバイアスの排除を実現する。",
+            "一時的な侵害からの回復のためのプロアクティブな鍵リフレッシュをサポートする。",
+            "評価により、最新のアーキテクチャに対する実用的な効率性が示された。",
+            "反証不可能な仮定なしでのUCベースのセキュリティ。"
           ]
         },
         "slogan": {
@@ -420,33 +503,39 @@
         "level": "beginner",
         "question": {
           "zh": "什么是Distributed Key Generation（DKG）？",
-          "en": "What is Distributed Key Generation (DKG)?"
+          "en": "What is Distributed Key Generation (DKG)?",
+          "ja": "分散鍵生成（DKG）とは何ですか？"
         },
         "answer": {
           "zh": "DKG是一种多方协议，可以让参与者共同生成公钥和私钥份额，而不需要可信第三方。",
-          "en": "DKG is a multiparty protocol that lets participants jointly generate a public key and secret shares without relying on a trusted dealer."
+          "en": "DKG is a multiparty protocol that lets participants jointly generate a public key and secret shares without relying on a trusted dealer.",
+          "ja": "DKGは、信頼できるディーラーに頼ることなく、参加者が共同で公開鍵と秘密シェアを生成するマルチパーティプロトコルです。"
         }
       },
       {
         "level": "intermediate",
         "question": {
           "zh": "论文中的key-share hiding有什么意义？",
-          "en": "Why is key-share hiding important in this work?"
+          "en": "Why is key-share hiding important in this work?",
+          "ja": "この研究においてキーシェアの秘匿性がなぜ重要なのでしょうか？"
         },
         "answer": {
           "zh": "它保证攻击者无法从协议过程推断密钥份额，从而避免依赖非标准假设，实现更强的自适应安全。",
-          "en": "It prevents adversaries from learning key shares during the protocol, enabling stronger adaptive security without relying on non-standard assumptions."
+          "en": "It prevents adversaries from learning key shares during the protocol, enabling stronger adaptive security without relying on non-standard assumptions.",
+          "ja": "これにより、攻撃者がプロトコル中にキーシェアを学習することを防ぎ、非標準的な仮定に頼ることなく、より強力な適応的セキュリティを可能にします。"
         }
       },
       {
         "level": "expert",
         "question": {
           "zh": "论文提出的两个DKG方案有什么区别？",
-          "en": "What is the difference between the two proposed DKG protocols?"
+          "en": "What is the difference between the two proposed DKG protocols?",
+          "ja": "提案されている2つのDKGプロトコルにはどのような違いがありますか？"
         },
         "answer": {
           "zh": "第一个方案只需一轮广播但允许一定偏差，第二个方案使用两轮通信来消除偏差，获得更强安全性。",
-          "en": "The first protocol uses a single broadcast round but allows some adversarial bias, while the second uses two rounds to eliminate the bias."
+          "en": "The first protocol uses a single broadcast round but allows some adversarial bias, while the second uses two rounds to eliminate the bias.",
+          "ja": "最初のプロトコルは単一のブロードキャストラウンドを使用しますが、何らかの敵対的バイアスを許容する一方、2番目のプロトコルは2つのラウンドを使用してこのバイアスを排除します。"
         }
       }
     ]
@@ -466,7 +555,8 @@
         ],
         "summary": {
           "zh": "Gao等人在{{name}}论文中提出了Terrae，一种基于KZG承诺的用于量化GBDT训练和推理的零知识证明系统，通过域提升批处理等新技术高效约束，显著减少证明生成时间。",
-          "en": "Gao et al. proposed Terrae in their {{name}}paper, a ZK proof system for quantized GBDT training and inference based on KZG commitments, leveraging domain-lifting and interleaving batching to reduce prover time."
+          "en": "Gao et al. proposed Terrae in their {{name}}paper, a ZK proof system for quantized GBDT training and inference based on KZG commitments, leveraging domain-lifting and interleaving batching to reduce prover time.",
+          "ja": "Gaoらは、KZGコミットメントに基づき、ドメインリフティングとインターリーブバッチングを活用してプロバー時間を削減する、量子化されたGBDTのトレーニングおよび推論のためのZK証明システムであるTerraeを{{name}}論文で提案しています。"
         },
         "notes": {
           "zh": [
@@ -484,6 +574,14 @@
             "Novel histogram proof for converting sample data to frequency representation.",
             "Significantly reduces proof generation time with small proof size overhead.",
             "Based on KZG polynomial commitments, suitable for quantized models."
+          ],
+          "ja": [
+            "GBDTは、監査可能性とプライバシーが求められる金融やヘルスケア分野で広く利用されています。",
+            "既存の手法では、汎用的なZKコンパイラや多数の独立した制約に依存しており、プロバーコストが高くなっています。",
+            "Terraeは、コミットメントを削減するためにドメインリフティングとインターリーブバッチングを導入します。",
+            "サンプルデータを周波数表現に変換するための新しいヒストグラム証明。",
+            "小さな証明サイズオーバーヘッドで証明生成時間を大幅に短縮します。",
+            "KZG多項式コミットメントに基づいており、量子化モデルに適しています。"
           ]
         },
         "slogan": {
@@ -496,33 +594,39 @@
         "level": "beginner",
         "question": {
           "zh": "什么是GBDT，为什么它需要零知识证明？",
-          "en": "What is GBDT and why do GBDT systems need zero-knowledge proofs?"
+          "en": "What is GBDT and why do GBDT systems need zero-knowledge proofs?",
+          "ja": "GBDTとは何ですか？そして、なぜGBDTシステムにゼロ知識証明（zero-knowledge proofs）が必要なのでしょうか？"
         },
         "answer": {
           "zh": "GBDT（Gradient Boosted Decision Trees）是一种基于多棵决策树逐步提升效果的机器学习模型，广泛应用于金融风控、医疗和推荐系统。由于模型通常由第三方训练和部署，用户希望在不暴露训练数据和模型参数的情况下，验证预测或训练过程的正确性，因此需要零知识证明来保证隐私和可信性。",
-          "en": "GBDT (Gradient Boosted Decision Trees) is a machine learning model that combines many decision trees in a boosting process, widely used in finance, healthcare, and recommendation systems. Since models are often trained and served by external providers, users want to verify predictions or training correctness without revealing private data or model parameters, making zero-knowledge proofs essential for privacy and trust."
+          "en": "GBDT (Gradient Boosted Decision Trees) is a machine learning model that combines many decision trees in a boosting process, widely used in finance, healthcare, and recommendation systems. Since models are often trained and served by external providers, users want to verify predictions or training correctness without revealing private data or model parameters, making zero-knowledge proofs essential for privacy and trust.",
+          "ja": "GBDT（Gradient Boosted Decision Trees）は、多数の決定木をブースティングプロセスで組み合わせた機械学習モデルであり、金融、ヘルスケア、レコメンデーションシステムなどで広く利用されています。モデルが外部プロバイダーによってトレーニングされ提供されることが多いため、ユーザーはプライベートデータやモデルパラメータを開示することなく、予測またはトレーニングの正しさを検証したいと考えており、これがゼロ知識証明（zero-knowledge proofs）をプライバシーと信頼性の観点から不可欠なものにしています。"
         }
       },
       {
         "level": "intermediate",
         "question": {
           "zh": "Terrae的核心优化是什么？",
-          "en": "What is the main optimization introduced by Terrae?"
+          "en": "What is the main optimization introduced by Terrae?",
+          "ja": "Terraeが導入した主な改善点は何ですか？"
         },
         "answer": {
           "zh": "Terrae利用GBDT训练结构进行batching，通过domain-lifting和interleaving batching，将大量约束合并为单个证明声明。",
-          "en": "Terrae leverages the structure of GBDT training and introduces domain-lifting and interleaving batching to combine many constraints into a single proof claim."
+          "en": "Terrae leverages the structure of GBDT training and introduces domain-lifting and interleaving batching to combine many constraints into a single proof claim.",
+          "ja": "Terraeは、GBDTトレーニングの構造を活用し、ドメインリフティングとインターリーブバッチングを導入することで、多数の制約を単一の証明主張にまとめる。"
         }
       },
       {
         "level": "expert",
         "question": {
           "zh": "什么是domain-lifting batching？",
-          "en": "What is domain-lifting batching?"
+          "en": "What is domain-lifting batching?",
+          "ja": "ドメインリフティングバッチ処理とは何ですか？"
         },
         "answer": {
           "zh": "它是一种针对线性约束的batching技术，可以把不同定义域上的约束统一到更大的域中验证，从而减少独立承诺数量。",
-          "en": "It is a batching technique for linear constraints that lifts constraints from different domains into a larger shared domain, reducing separate commitments."
+          "en": "It is a batching technique for linear constraints that lifts constraints from different domains into a larger shared domain, reducing separate commitments.",
+          "ja": "これは、異なるドメインからの制約をより大きな共有ドメインに持ち上げる（lift）ことで、個別のコミットメントを削減する線形制約のバッチング技術です。"
         }
       }
     ]
@@ -541,7 +645,8 @@
         ],
         "summary": {
           "zh": "Kamath等人在{{name}}论文中提出了Titan，一种高效的透明设置多项式承诺方案，结合基于群上IOPP的承诺与Pedersen内部承诺，平衡了证明大小和验证效率，并基于此构建了TitanSnark，相比Spartan协议，证明大小和验证复杂度从O(n)降至O(√n)。",
-          "en": "Kamath et al. propose Titan, an efficient transparent polynomial commitment scheme in their paper {{name}}, combining IOP-based outer commitments with Pedersen inner commitments, achieving sublinear proof size and verification. They build TitanSnark, a SNARK with O(√n) proof size and verification, improving over Spartan's O(n)."
+          "en": "Kamath et al. propose Titan, an efficient transparent polynomial commitment scheme in their paper {{name}}, combining IOP-based outer commitments with Pedersen inner commitments, achieving sublinear proof size and verification. They build TitanSnark, a SNARK with O(√n) proof size and verification, improving over Spartan's O(n).",
+          "ja": "Kamathらは論文{{name}}で、IOPベースのouter commitmentとPedersen inner commitmentを組み合わせた効率的な透明なpolynomial commitment schemeであるTitanを提案しています。これにより、サブ線形（sublinear）の証明サイズと検証を実現しています。彼らは、SpartanのO(n)を改善した、証明サイズと検証がO(√n)であるSNARKであるTitanSnarkを構築しました。"
         },
         "notes": {
           "zh": [
@@ -559,6 +664,14 @@
             "Supports general discrete-log hard curves like Pasta, no pairing needed.",
             "TitanSnark reduces proof size and verification from O(n) to O(√n) compared to Spartan.",
             "The IOPP+Pedersen combination is of independent interest."
+          ],
+          "ja": [
+            "Titanは、信頼できる初期化なしでトランスペアレントなセットアップを実現します。",
+            "証明書のサイズは、ハッシュベースのPCSと比較して桁違いに小さいです。",
+            "DoryやHyraxよりも効率的なproverとverifierを提供します。",
+            "ペアリングを必要とせず、Pastaのような一般的な離散対数困難曲線に対応しています。",
+            "TitanSnarkは、Spartanと比較して証明サイズと検証をO(n)からO(√n)に削減します。",
+            "IOPP+Pedersenの組み合わせは独立した関心事です。"
           ]
         },
         "slogan": {
@@ -571,33 +684,39 @@
         "level": "beginner",
         "question": {
           "zh": "TitanSnark 有什么改进？",
-          "en": "What improvements does TitanSnark bring?"
+          "en": "What improvements does TitanSnark bring?",
+          "ja": "TitanSnarkはどのような改善をもたらしますか？"
         },
         "answer": {
           "zh": "TitanSnark 将 Titan PCS 集成进 Spartan。它保留高效 prover，同时降低 proof size 和 verification complexity，适合大规模 zkVM 电路。",
-          "en": "TitanSnark integrates Titan PCS into Spartan. It keeps the prover efficient while reducing proof size and verification complexity, making it useful for large zkVM circuits."
+          "en": "TitanSnark integrates Titan PCS into Spartan. It keeps the prover efficient while reducing proof size and verification complexity, making it useful for large zkVM circuits.",
+          "ja": "TitanSnarkは、Titan PCSをSpartanに統合しています。これにより、証明のサイズと検証の複雑さを削減しつつ、プロバーの効率性を維持するため、大規模なzkVMサーキットに適しています。"
         }
       },
       {
         "level": "intermediate",
         "question": {
           "zh": "Titan 为什么不需要 pairing？",
-          "en": "Why does Titan avoid pairings?"
+          "en": "Why does Titan avoid pairings?",
+          "ja": "Titanはなぜペアリングを避けるのか？"
         },
         "answer": {
           "zh": "Titan 使用基于群的 IOPP 和 WHIR 来替代 bilinear pairings，因此可以运行在 Pasta Curves 等普通离散对数曲线上。",
-          "en": "Titan replaces bilinear pairings with group-based IOPP techniques such as WHIR, allowing it to work on ordinary discrete-log curves like Pasta Curves."
+          "en": "Titan replaces bilinear pairings with group-based IOPP techniques such as WHIR, allowing it to work on ordinary discrete-log curves like Pasta Curves.",
+          "ja": "Titanは、WHIRのようなグループベースのIOPP（Interactive Oracle Proofs）技術に双線形ペアリングを置き換えることで、Pasta Curvesのような通常の離散対数曲線上で動作することを可能にします。"
         }
       },
       {
         "level": "intermediate",
         "question": {
           "zh": "Titan 的双层承诺有什么作用？",
-          "en": "What is the role of Titan’s two-tier commitment design?"
+          "en": "What is the role of Titan’s two-tier commitment design?",
+          "ja": "Titanの2層コミットメント設計の役割は何ですか？"
         },
         "answer": {
           "zh": "内部使用 Pedersen-style commitments，外部结合 WHIR IOPP。这样同时优化了 prover efficiency、batch evaluation 和 proof size。",
-          "en": "The inner layer uses Pedersen-style commitments, while the outer layer uses WHIR IOPP. This improves prover efficiency, batch evaluation, and proof size together."
+          "en": "The inner layer uses Pedersen-style commitments, while the outer layer uses WHIR IOPP. This improves prover efficiency, batch evaluation, and proof size together.",
+          "ja": "内側のレイヤーではPedersenスタイルのコミットメントを使用し、外側のレイヤーではWHIR IOPPを使用します。これにより、プロバーの効率、バッチ評価、および証明サイズが同時に向上します。"
         }
       }
     ]
@@ -617,7 +736,8 @@
         ],
         "summary": {
           "zh": "Wei等人提出了带可验证密钥聚合的隐私保护聚合签名ASvKA，给出从多重签名到聚合签名的通用转化，并实例化出两种高效方案PP-SpeedyASvKA和PP-BAS，支持签名压缩与隐私保护。",
-          "en": "Wei et al. propose aggregate signatures with verifiable key aggregation (ASvKA) and privacy, a generic transformation from multi-signatures, and two instantiations: PP-SpeedyASvKA and PP-BAS."
+          "en": "Wei et al. propose aggregate signatures with verifiable key aggregation (ASvKA) and privacy, a generic transformation from multi-signatures, and two instantiations: PP-SpeedyASvKA and PP-BAS.",
+          "ja": "Weiらは、検証可能な鍵集約（ASvKA）とプライバシーを備えたアグリゲート署名について提案しており、これはマルチシグネチャからの汎用的な変換であり、PP-SpeedyASvKAとPP-BASの2つのインスタンスを持つ。"
         },
         "notes": {
           "zh": [
@@ -635,6 +755,14 @@
             "PP-BAS from BLS offers trade-offs between unforgeability and privacy",
             "Addresses lack of key aggregation and privacy in current aggregate signatures",
             "Constant-size signatures and efficient verification"
+          ],
+          "ja": [
+            "プライバシーと検証可能な鍵集約を備えたASvKAの最初の形式的定義",
+            "マルチシグネチャからより強力な偽造耐性を持つアグリゲート署名への汎用的な変換",
+            "PP-SpeedyASvKAはSpeedyMuSigからのペアリングフリー、2ラウンドでの実現",
+            "PP-BASはBLSから派生し、偽造耐性とプライバシーのトレードオフを提供する",
+            "既存のアグリゲート署名における鍵集約とプライバシーの欠如に対処",
+            "定数サイズの署名と効率的な検証"
           ]
         },
         "slogan": {
@@ -647,33 +775,39 @@
         "level": "beginner",
         "question": {
           "zh": "什么是 ASvKA？",
-          "en": "What is ASvKA?"
+          "en": "What is ASvKA?",
+          "ja": "ASvKAとは何ですか？"
         },
         "answer": {
           "zh": "ASvKA 是“带可验证密钥聚合的聚合签名”。它不仅聚合 signatures，还能验证聚合公钥正确性，并保护 signer identity。",
-          "en": "ASvKA stands for aggregate signatures with verifiable key aggregation. It aggregates signatures, verifies aggregated public keys, and protects signer identities."
+          "en": "ASvKA stands for aggregate signatures with verifiable key aggregation. It aggregates signatures, verifies aggregated public keys, and protects signer identities.",
+          "ja": "ASvKAは、検証可能な鍵集約（verifiable key aggregation）を伴うアグリゲート署名（aggregate signatures）です。これは署名を集約し、集約された公開鍵を検証し、署名者のアイデンティティを保護します。"
         }
       },
       {
         "level": "intermediate",
         "question": {
           "zh": "PP-SpeedyASvKA 有什么特点？",
-          "en": "What are the features of PP-SpeedyASvKA?"
+          "en": "What are the features of PP-SpeedyASvKA?",
+          "ja": "PP-SpeedyASvKAの機能は何ですか？"
         },
         "answer": {
           "zh": "PP-SpeedyASvKA 基于 pairing-free 的 SpeedyMuSig，支持两轮协议，并实现强 unforgeability 与 signer privacy，同时保持高效 verification。",
-          "en": "PP-SpeedyASvKA is built from the pairing-free SpeedyMuSig scheme. It uses a two-round protocol and achieves strong unforgeability and signer privacy with efficient verification."
+          "en": "PP-SpeedyASvKA is built from the pairing-free SpeedyMuSig scheme. It uses a two-round protocol and achieves strong unforgeability and signer privacy with efficient verification.",
+          "ja": "PP-SpeedyASvKAは、ペアリングフリーのSpeedyMuSigスキームから構築されています。このプロトコルは2ラウンドで動作し、効率的な検証により強力な偽造耐性と署名者プライバシーを実現しています。"
         }
       },
       {
         "level": "expert",
         "question": {
           "zh": "论文中的 generic transformation 有什么意义？",
-          "en": "Why is the generic transformation important?"
+          "en": "Why is the generic transformation important?",
+          "ja": "ジェネリック変換はなぜ重要なのでしょうか？"
         },
         "answer": {
           "zh": "该 transformation 能把任意 multi-signature 转换为支持 privacy 与 verifiable key aggregation 的 aggregate signature，并提升 unforgeability。",
-          "en": "The transformation converts any multi-signature scheme into an aggregate signature system with privacy and verifiable key aggregation while strengthening unforgeability guarantees."
+          "en": "The transformation converts any multi-signature scheme into an aggregate signature system with privacy and verifiable key aggregation while strengthening unforgeability guarantees.",
+          "ja": "この変換は、マルチシグネチャスキームをプライバシーと検証可能なキー集約を備えたアグリゲート署名システムに変換し、偽造耐性の保証を強化します。"
         }
       }
     ]
@@ -692,7 +826,8 @@
         ],
         "summary": {
           "zh": "Succinct团队（Hemo等人）在论文中提出了一种新型的Jagged PCS，允许将整个计算迹作为一个多项式承诺，同时支持对单个列进行求值证明，极大降低了zkVM递归验证开销。该方案仅需5个有限域乘法/元素，无需额外预言机。",
-          "en": "The Succinct team (Hemo et al.) introduced a Jagged PCS that commits the entire computation trace as a single polynomial while enabling per-column evaluation proofs, drastically reducing zkVM recursion overhead. It requires only 5 finite field multiplications per element with no additional oracles."
+          "en": "The Succinct team (Hemo et al.) introduced a Jagged PCS that commits the entire computation trace as a single polynomial while enabling per-column evaluation proofs, drastically reducing zkVM recursion overhead. It requires only 5 finite field multiplications per element with no additional oracles.",
+          "ja": "Succinctチーム（Hemoら）は、計算トレース全体を単一の多項式としてコミットしつつ列ごとの評価証明を可能にするJagged PCSを導入し、zkVMの再帰オーバーヘッドを劇的に削減しました。これは追加のオラクルを必要とせず、要素ごとにわずか5回の有限体乗算で済みます。"
         },
         "notes": {
           "zh": [
@@ -708,6 +843,13 @@
             "Verifier circuit depends only on total trace area, avoiding combinatorial explosion in zkVM recursion.",
             "Commits entire trace as a single polynomial while allowing per-column queries.",
             "Highly performant, especially for hash-based SNARKs."
+          ],
+          "ja": [
+            "Jagged PCSは、zkVMにおける列の高さが異なる多項式コミットメントのために設計されています。",
+            "一般的なスパースPCSと比較して追加のオラクルは不要であり、プロバーコストは要素あたり5回のフィールド乗算です。",
+            "ベリファイア回路はトレース全体の面積のみに依存し、zkVM再帰における組み合わせ爆発を回避します。",
+            "各列クエリを可能にしつつ、トレース全体を単一の多項式としてコミットします。",
+            "特にハッシュベースのSNARKsにおいて非常に高いパフォーマンスを発揮します。"
           ]
         },
         "slogan": {
@@ -720,33 +862,39 @@
         "level": "beginner",
         "question": {
           "zh": "为什么 zkVM 需要 Jagged PCS？",
-          "en": "Why do zkVMs need Jagged PCS?"
+          "en": "Why do zkVMs need Jagged PCS?",
+          "ja": "zkVMはなぜJagged PCSを必要とするのか？"
         },
         "answer": {
           "zh": "传统 zkVM 会为每个 instruction table 或 column 单独 commit，多次 verification 成本很高。Jagged PCS 能统一处理这些 multilinears。",
-          "en": "Traditional zkVMs commit separately to each instruction table or column, causing high verification costs. Jagged PCS combines these multilinears into one structure."
+          "en": "Traditional zkVMs commit separately to each instruction table or column, causing high verification costs. Jagged PCS combines these multilinears into one structure.",
+          "ja": "従来のzkVMは、各命令テーブルや列に対して個別にコミットするため、高い検証コストを引き起こします。Jagged PCSはこれらマルチリニアを一つの構造に統合します。"
         }
       },
       {
         "level": "intermediate",
         "question": {
           "zh": "Jagged PCS 如何降低 prover 成本？",
-          "en": "How does Jagged PCS reduce prover cost?"
+          "en": "How does Jagged PCS reduce prover cost?",
+          "ja": "Jagged PCSはどのようにプロバーのコストを削減しますか？"
         },
         "answer": {
           "zh": "它不需要额外 sparse polynomial oracles，prover 主要只需有限域乘法运算，因此性能比通用 sparse PCS 更高。",
-          "en": "It avoids additional sparse polynomial oracles, so the prover mainly performs finite field multiplications, making it faster than general sparse PCS systems."
+          "en": "It avoids additional sparse polynomial oracles, so the prover mainly performs finite field multiplications, making it faster than general sparse PCS systems.",
+          "ja": "これにより、疎な多項式オラクルが不要となり、プロバーは主に有限体上の乗算を実行するため、一般的な疎なPCSシステムよりも高速になります。"
         }
       },
       {
         "level": "expert",
         "question": {
           "zh": "Jagged PCS 为什么适合 zkVM recursion？",
-          "en": "Why is Jagged PCS suitable for zkVM recursion?"
+          "en": "Why is Jagged PCS suitable for zkVM recursion?",
+          "ja": "Jagged PCSはzkVMの再帰（recursion）になぜ適しているのか？"
         },
         "answer": {
           "zh": "其 verifier circuit 只依赖总 trace area，而不是大量独立 tables，因此能减少 recursion 中的 combinatorial explosion。",
-          "en": "Its verifier circuit depends only on the total trace area instead of many separate tables, reducing combinatorial explosion in recursive zkVM proofs."
+          "en": "Its verifier circuit depends only on the total trace area instead of many separate tables, reducing combinatorial explosion in recursive zkVM proofs.",
+          "ja": "そのverifier circuitは、多数の個別のテーブルに依存するのではなく、トータルなトレースエリアのみに依存するため、再帰的なzkVM証明における組み合わせ爆発を低減します。"
         }
       }
     ]
@@ -765,7 +913,8 @@
         ],
         "summary": {
           "zh": "Lehmann等人在{{name}}论文中提出了三种将匿名凭证绑定到传统手机硬件的方法，通过标准ECDSA签名实现证明，解决了配对友好曲线与P256兼容性问题。",
-          "en": "Lehmann et al. propose three constructions for device binding of anonymous credentials on legacy phones, using standard ECDSA signatures for proof-of-possession, bridging pairing-friendly curves with P256."
+          "en": "Lehmann et al. propose three constructions for device binding of anonymous credentials on legacy phones, using standard ECDSA signatures for proof-of-possession, bridging pairing-friendly curves with P256.",
+          "ja": "Lehmannらは、レガシーフォン上での匿名クレデンシャルデバイスバインディングのための3つの構成を提案しており、証明所有権（proof-of-possession）には標準のECDSA署名を使用し、ペアリングフレンドリーな曲線とP256をブリッジしています。"
         },
         "notes": {
           "zh": [
@@ -783,6 +932,14 @@
             "Fastest: ~1.5KB proof, <500ms, using simple arithmetic circuit.",
             "Circuit-free: ~500ms but ~175KB proof.",
             "Designed with reductions of knowledge framework for modular security analysis."
+          ],
+          "ja": [
+            "匿名クレデンシャルにはデバイスバインディングがなく、クレデンシャルのクローニングのリスクリがあります。",
+            "既存の効率的なバインディングはペアリングフレンドリーな曲線を使用しており、レガシーなP256ハードウェアとは互換性がありません。",
+            "3つの構成がP256とペアリング曲線をつなぎますが、それぞれトレードオフが異なります。",
+            "最速: シンプルな算術回路を使用し、証明サイズ約1.5KB、時間<500ms。",
+            "回路不要: 証明サイズ約175KBですが、時間約500ms。",
+            "モジュラーセキュリティ解析のために知識フレームワークの還元を考慮して設計されています。"
           ]
         },
         "slogan": {
@@ -795,33 +952,39 @@
         "level": "beginner",
         "question": {
           "zh": "什么是 device binding？",
-          "en": "What is device binding?"
+          "en": "What is device binding?",
+          "ja": "デバイスバインディングとは何ですか？"
         },
         "answer": {
           "zh": "Device binding 是把凭证绑定到手机安全硬件，防止 credential cloning 或共享。",
-          "en": "Device binding ties credentials to secure phone hardware to prevent credential cloning or sharing."
+          "en": "Device binding ties credentials to secure phone hardware to prevent credential cloning or sharing.",
+          "ja": "デバイスバインディングは、資格情報（クレデンシャル）をセキュアなスマートフォンハードウェアに結びつけ、資格情報のクローン作成や共有を防ぎます。"
         }
       },
       {
         "level": "intermediate",
         "question": {
           "zh": "为什么 legacy phones 会带来兼容性问题？",
-          "en": "Why do legacy phones create compatibility issues?"
+          "en": "Why do legacy phones create compatibility issues?",
+          "ja": "レガシー（旧世代）の携帯電話はなぜ互換性の問題を引き起こすのか？"
         },
         "answer": {
           "zh": "高效匿名凭证通常依赖 pairing-friendly curves，而传统手机安全硬件只支持 ECDSA 与 P256 curves。",
-          "en": "Efficient anonymous credentials usually rely on pairing-friendly curves, while legacy phone hardware mainly supports ECDSA and P256 curves."
+          "en": "Efficient anonymous credentials usually rely on pairing-friendly curves, while legacy phone hardware mainly supports ECDSA and P256 curves.",
+          "ja": "効率的な匿名クレデンシャルは通常ペアリングフレンドリーな曲線に依存していますが、レガシーな電話ハードウェアは主にECDSAおよびP256カーブをサポートしています。"
         }
       },
       {
         "level": "expert",
         "question": {
           "zh": "论文如何解决曲线不兼容问题？",
-          "en": "How does the paper solve the curve compatibility problem?"
+          "en": "How does the paper solve the curve compatibility problem?",
+          "ja": "この論文は、カーブの互換性問題をどのように解決していますか？"
         },
         "answer": {
           "zh": "论文提出 bridging proofs，让 pairing-based credentials 能通过标准 ECDSA proof-of-possession 完成 device binding。",
-          "en": "The paper introduces bridging proofs that allow pairing-based credentials to use standard ECDSA proof-of-possession for device binding."
+          "en": "The paper introduces bridging proofs that allow pairing-based credentials to use standard ECDSA proof-of-possession for device binding.",
+          "ja": "本論文では、ペアリングベースのクレデンシャルをデバイスバインディングのための標準的なECDSA proof-of-possessionで使用できるようにするブリッジングプルーフについて述べる。"
         }
       }
     ]
@@ -840,7 +1003,8 @@
         ],
         "summary": {
           "zh": "Abdolmaleki等人提出tACT，一种在分布式信任环境下的可公开验证阈值匿名计数代币，并用于构建抗女巫攻击的自主主权身份系统，支持阈值发行、不可链接多显示选择性披露等特性，相比CanDID提升了效率并减少交互轮数。",
-          "en": "Abdolmaleki et al. propose tACT, a publicly verifiable threshold anonymous counting token in a distributed-trust setting, and use it to build a Sybil-resistant SSI system with threshold issuance, unlinkable multi-show selective disclosure, improving over CanDID."
+          "en": "Abdolmaleki et al. propose tACT, a publicly verifiable threshold anonymous counting token in a distributed-trust setting, and use it to build a Sybil-resistant SSI system with threshold issuance, unlinkable multi-show selective disclosure, improving over CanDID.",
+          "ja": "Abdolmalekiらは、分散型トラスト環境における公開検証可能なしきい値匿名カウントトークンであるtACTを提案し、これを用いてCanDIDを改善したシビル耐性のあるSSIシステム（閾値発行、リンク不可能なマルチショー選択的開示機能付き）を構築する。"
         },
         "notes": {
           "zh": [
@@ -856,6 +1020,13 @@
             "Formalizes strong unlinkability security model, ensuring privacy even under issuer-verifier collusion.",
             "Benchmark results show improved efficiency over CanDID while supporting more issuers.",
             "Techniques involve bilinear maps, zero-knowledge proofs, and threshold cryptography."
+          ],
+          "ja": [
+            "tACTは、分散型トラスト環境における最初の公開検証可能なしきい値匿名カウントトークンです。",
+            "提案するSSIシステムは、最小限のユーザーと発行者間のやり取りを伴う、非対話的で譲渡不可能なクレデンシャルを特徴としています。",
+            "発行者と検証者の共謀下でもプライバシーを保証する、強力なリンク不可能性セキュリティモデルを形式化しています。",
+            "ベンチマーク結果は、より多くの発行者をサポートしつつCanDIDよりも効率が向上していることを示しています。",
+            "技術には、双線形写像、ゼロ知識証明、およびしきい値暗号が含まれます。"
           ]
         },
         "slogan": {
@@ -868,33 +1039,39 @@
         "level": "beginner",
         "question": {
           "zh": "什么是 Self-Sovereign Identity（SSI）和 Sybil-resistant SSI？",
-          "en": "What are Self-Sovereign Identity (SSI) and Sybil-resistant SSI systems?"
+          "en": "What are Self-Sovereign Identity (SSI) and Sybil-resistant SSI systems?",
+          "ja": "Self-Sovereign Identity (SSI) と、Sybil耐性のあるSSIシステムとは何ですか？"
         },
         "answer": {
           "zh": "SSI 是用户自主控制身份数据的数字身份系统，强调隐私保护与选择性披露。Sybil-resistant SSI 则在此基础上防止用户创建大量虚假身份，同时保持匿名性与不可链接性。",
-          "en": "SSI is a digital identity system where users control their own identity data, supporting privacy and selective disclosure. A Sybil-resistant SSI system further prevents users from creating many fake identities while preserving anonymity and unlinkability."
+          "en": "SSI is a digital identity system where users control their own identity data, supporting privacy and selective disclosure. A Sybil-resistant SSI system further prevents users from creating many fake identities while preserving anonymity and unlinkability.",
+          "ja": "SSI（Self-Sovereign Identity）は、ユーザーが自身のアイデンティティデータを管理し、プライバシーと選択的開示をサポートするデジタルIDシステムです。Sybil耐性のあるSSIシステムは、匿名性とリンク不可能性を維持しつつ、ユーザーが多数の偽アイデンティティを作成することを防ぎます。"
         }
       },
       {
         "level": "intermediate",
         "question": {
           "zh": "论文相比 CanDID 有哪些改进？",
-          "en": "How does this work improve over CanDID?"
+          "en": "How does this work improve over CanDID?",
+          "ja": "これはCanDIDと比較してどのように改善されていますか？"
         },
         "answer": {
           "zh": "该方案实现 strong unlinkability，并减少用户与 issuer 的频繁交互，同时支持一轮并行 threshold issuance。",
-          "en": "The scheme achieves strong unlinkability, reduces repeated user-issuer interactions, and supports one-round parallel threshold issuance."
+          "en": "The scheme achieves strong unlinkability, reduces repeated user-issuer interactions, and supports one-round parallel threshold issuance.",
+          "ja": "このスキームは、強い非関連性（unlinkability）を実現し、ユーザーと発行者間の反復的なやり取りを削減し、ワンラウンドの並列閾値発行をサポートします。"
         }
       },
       {
         "level": "expert",
         "question": {
           "zh": "什么是 strong unlinkability？",
-          "en": "What is strong unlinkability?"
+          "en": "What is strong unlinkability?",
+          "ja": "強い非関連性（Strong Unlinkability）とは何ですか？"
         },
         "answer": {
           "zh": "Strong unlinkability 指即使 issuer 与 verifier collusion，也无法关联同一用户的多次 credential usage。",
-          "en": "Strong unlinkability means that even if issuers and verifiers collude, they still cannot link multiple credential uses to the same user."
+          "en": "Strong unlinkability means that even if issuers and verifiers collude, they still cannot link multiple credential uses to the same user.",
+          "ja": "強い非関連性（Strong unlinkability）とは、発行者と検証者が共謀していたとしても、複数のクレデンシャル使用を同一ユーザーに結びつけることができないことを意味します。"
         }
       }
     ]
@@ -913,7 +1090,8 @@
         ],
         "summary": {
           "zh": "Cartor等人在{{name}}论文中提出了一类基于MinRank问题的后量子签名方案，结合新型ZK证明系统，实现了更优健壮性的数字签名、环签名及首个基于MinRank的可链接环签名。",
-          "en": "Cartor et al. proposed a MinRank-based post-quantum signature family in {{name}}, introducing a new ZK proof system supporting digital signatures, ring signatures, and the first linkable ring signature based on MinRank."
+          "en": "Cartor et al. proposed a MinRank-based post-quantum signature family in {{name}}, introducing a new ZK proof system supporting digital signatures, ring signatures, and the first linkable ring signature based on MinRank.",
+          "ja": "Cartorらは、MinRankに基づいたポスト量子署名ファミリーを{{name}}で提案し、デジタル署名、リングシグネチャ、そしてMinRankに基づく最初のリンク可能なリングシグネチャをサポートする新しいZK証明システムを紹介した。"
         },
         "slogan": {
           "zh": "【ZK论文】MinRank也能做可链接环签名：Miraidon探索后量子ZK新方向"
@@ -934,6 +1112,14 @@
             "First linkable ring signature construction based on MinRank.",
             "Provides competitive key and signature sizes versus lattice/code-based schemes.",
             "Security relies on the hardness of the MinRank problem for PQ settings."
+          ],
+          "ja": [
+            "MinRankベースの識別および署名フレームワークを紹介する。",
+            "健全性（soundness）が向上した新規ZK証明システムに基づいている。",
+            "デジタル署名、リング署名、リンク可能なリング署名をサポートする。",
+            "MinRankに基づく初のリンク可能なリング署名構成。",
+            "格子ベース/符号ベースのスキームと比較して競争力のある鍵サイズと署名サイズを提供する。",
+            "セキュリティはPQ設定におけるMinRank問題の困難性に基づいている。"
           ]
         }
       }
@@ -943,33 +1129,39 @@
         "level": "beginner",
         "question": {
           "zh": "Miraidon 与传统签名方案有什么不同？",
-          "en": "How is Miraidon different from traditional signature schemes?"
+          "en": "How is Miraidon different from traditional signature schemes?",
+          "ja": "Miraidonは従来の署名スキームとどのように異なりますか？"
         },
         "answer": {
           "zh": "Miraidon 基于 MinRank 而不是 lattice 或 code assumptions，并使用零知识 identification protocol 构造签名。",
-          "en": "Miraidon is based on the MinRank assumption instead of lattice or code assumptions, and derives signatures from a zero-knowledge identification protocol."
+          "en": "Miraidon is based on the MinRank assumption instead of lattice or code assumptions, and derives signatures from a zero-knowledge identification protocol.",
+          "ja": "Miraidonは、格子やコードの仮定ではなくMinRankの仮定に基づいており、ゼロ知識識別プロトコルから署名を導出します。"
         }
       },
       {
         "level": "intermediate",
         "question": {
           "zh": "论文中的 ring signature 有什么作用？",
-          "en": "What is the role of the ring signature in this paper?"
+          "en": "What is the role of the ring signature in this paper?",
+          "ja": "この論文におけるリング署名の役割は何ですか？"
         },
         "answer": {
           "zh": "Ring signature 允许用户匿名代表一个群体签名，而无需暴露真实 signer identity。",
-          "en": "Ring signatures allow a user to sign anonymously on behalf of a group without revealing the real signer identity."
+          "en": "Ring signatures allow a user to sign anonymously on behalf of a group without revealing the real signer identity.",
+          "ja": "リング署名により、ユーザーは実際の署名者の身元を明かすことなく、グループを代表して匿名で署名することができます。"
         }
       },
       {
         "level": "expert",
         "question": {
           "zh": "什么是 linkable ring signature？",
-          "en": "What is a linkable ring signature?"
+          "en": "What is a linkable ring signature?",
+          "ja": "リンク可能なリング署名とは何ですか？"
         },
         "answer": {
           "zh": "Linkable ring signature 能检测同一 signer 是否重复签名，同时保持匿名性。论文提出首个基于 MinRank 的方案。",
-          "en": "A linkable ring signature detects whether the same signer produced multiple signatures while preserving anonymity. This paper presents the first MinRank-based construction."
+          "en": "A linkable ring signature detects whether the same signer produced multiple signatures while preserving anonymity. This paper presents the first MinRank-based construction.",
+          "ja": "リンク可能なリング署名は、匿名性を保ちながら同じ署名者が複数の署名を作成したかどうかを検出します。本論文では、MinRankベースの最初の構成法を提案します。"
         }
       }
     ]
@@ -987,7 +1179,8 @@
         ],
         "summary": {
           "zh": "Avni等人在{{name}}论文中提出Proof-Carrying Output（PCO）框架，通过机器可验证证明、时间戳与追加式账本，为AI输出建立不可抵赖与可审计的合规验证机制。",
-          "en": "Avni et al. introduced the Proof-Carrying Output (PCO) framework in {{name}}, combining formal proofs, timestamps, and append-only ledgers to provide verifiable and auditable AI outputs."
+          "en": "Avni et al. introduced the Proof-Carrying Output (PCO) framework in {{name}}, combining formal proofs, timestamps, and append-only ledgers to provide verifiable and auditable AI outputs.",
+          "ja": "Avniらは{{name}}でProof-Carrying Output (PCO)フレームワークを導入し、形式的証明書、タイムスタンプ、追記専用台帳を組み合わせることで、検証可能で監査可能なAI出力を提供しました。"
         },
         "slogan": {
           "zh": "【ZK论文】不给AI“盲目信任”：PCO让LLM输出自带可验证证明"
@@ -1008,6 +1201,14 @@
             "Builds on Rocq (Coq), LTL, and STL formal verification tools.",
             "Demonstrates tax, autonomous driving, and recommendation case studies.",
             "Input authenticity and specification correctness are out of scope."
+          ],
+          "ja": [
+            "機械検証可能なAI出力をためのPCOを紹介します。",
+            "アカウンタビリティのために暗号学的コミットメントと追記専用台帳を使用します。",
+            "バインディング性、秘匿性、時間的順序付け、監査の正確性を提供します。",
+            "Rocq (Coq)、LTL、およびSTLの形式検証ツールに基づいています。",
+            "税金、自動運転、レコメンデーションのケーススタディを実証します。",
+            "入力の真正性および仕様の正確性はスコープ外です。"
           ]
         }
       }
@@ -1017,18 +1218,21 @@
         "level": "beginner",
         "question": {
           "zh": "什么是 Proof-Carrying Output（PCO）？",
-          "en": "What is Proof-Carrying Output (PCO)?"
+          "en": "What is Proof-Carrying Output (PCO)?",
+          "ja": "Proof-Carrying Output (PCO)とは何ですか？"
         },
         "answer": {
           "zh": "PCO 是一种 AI 输出机制，LLM 在返回答案时同时提供 machine-checkable proof，用于验证结果是否符合规则。",
-          "en": "PCO is an AI output framework where an LLM returns an answer together with a machine-checkable proof verifying compliance with rules."
+          "en": "PCO is an AI output framework where an LLM returns an answer together with a machine-checkable proof verifying compliance with rules.",
+          "ja": "PCOは、LLMがルールへの準拠を検証する機械チェック可能な証明書とともに回答を返すAI出力フレームワークです。"
         }
       },
       {
         "level": "intermediate",
         "question": {
           "zh": "什么是 φ-compliance？",
-          "en": "What is φ-compliance?"
+          "en": "What is φ-compliance?",
+          "ja": "φ準拠性とは何ですか？"
         },
         "answer": {
           "zh": "φ-compliance 表示输入与 AI 输出满足一个 machine-checkable predicate φ，可用于自动验证合规性。",
@@ -1039,11 +1243,13 @@
         "level": "expert",
         "question": {
           "zh": "Rocq（Coq）与 STL 在 PCO 中有什么作用？",
-          "en": "What roles do Rocq (Coq) and STL play in PCO?"
+          "en": "What roles do Rocq (Coq) and STL play in PCO?",
+          "ja": "PCOにおいて、Rocq（Coq）とSTLはどのような役割を果たしますか？"
         },
         "answer": {
           "zh": "Rocq 用于形式化证明，STL/LTL 用于验证时间逻辑与动态行为，例如 autonomous vehicle compliance。",
-          "en": "Rocq is used for formal proofs, while STL/LTL verifies temporal logic and dynamic behavior such as autonomous vehicle compliance."
+          "en": "Rocq is used for formal proofs, while STL/LTL verifies temporal logic and dynamic behavior such as autonomous vehicle compliance.",
+          "ja": "Rocqは形式的証明に使用され、STL/LTLは自律走行車のコンプライアンスなどの時間論理および動的な振る舞いを検証します。"
         }
       }
     ]
@@ -1061,7 +1267,8 @@
         ],
         "summary": {
           "zh": "Konara等人在{{name}}论文中系统综述了量子与后量子区块链，分析了后量子密码集成与量子区块链的研究现状。",
-          "en": "Konara et al. systematically reviewed quantum and post-quantum blockchains, analyzing the integration of post-quantum cryptography and the state of quantum blockchains in their {{name}}paper."
+          "en": "Konara et al. systematically reviewed quantum and post-quantum blockchains, analyzing the integration of post-quantum cryptography and the state of quantum blockchains in their {{name}}paper.",
+          "ja": "Konaraらは、量子およびポスト量子ブロックチェーンを体系的にレビューし、彼らの{{name}}論文において、ポスト量子暗号の統合と量子ブロックチェーンの状態を分析した。"
         },
         "notes": {
           "zh": [
@@ -1077,6 +1284,13 @@
             "Various post-quantum blockchain solutions exist, but standardization and practicality are evolving.",
             "Quantum blockchains leverage quantum technologies for forward compatibility with the quantum internet.",
             "This survey comprehensively reviews both post-quantum and quantum blockchain research."
+          ],
+          "ja": [
+            "量子コンピューティングは、ブロックチェーンの古典的な暗号に対して根本的な脅威をもたらす。",
+            "広範な研究により、ポスト量子暗号システムがブロックチェーンに統合され、耐量子性が確保されている。",
+            "様々なポスト量子ブロックチェーンソリューションが存在するが、標準化と実用性は進化途上である。",
+            "量子ブロックチェーンは、量子インターネットとの将来的な互換性のために量子技術を活用する。",
+            "本調査では、ポスト量子および量子ブロックチェーンの研究を包括的にレビューする。"
           ]
         },
         "slogan": {
@@ -1089,33 +1303,39 @@
         "level": "beginner",
         "question": {
           "zh": "为什么量子计算会威胁区块链？",
-          "en": "Why does quantum computing threaten blockchains?"
+          "en": "Why does quantum computing threaten blockchains?",
+          "ja": "量子コンピューティングはなぜブロックチェーンを脅かすのか？"
         },
         "answer": {
           "zh": "量子算法可能破解当前区块链依赖的 ECC 与 RSA，因此会影响 wallet security 与 transaction signatures。",
-          "en": "Quantum algorithms may break ECC and RSA, threatening wallet security and transaction signatures used in blockchains."
+          "en": "Quantum algorithms may break ECC and RSA, threatening wallet security and transaction signatures used in blockchains.",
+          "ja": "量子アルゴリズムはECCやRSAを破り、ブロックチェーンで使用されるウォレットのセキュリティとトランザクション署名に脅威をもたらす可能性があります。"
         }
       },
       {
         "level": "intermediate",
         "question": {
           "zh": "Quantum Blockchain 与 Post-Quantum Blockchain 有什么区别？",
-          "en": "What is the difference between quantum blockchains and post-quantum blockchains?"
+          "en": "What is the difference between quantum blockchains and post-quantum blockchains?",
+          "ja": "量子ブロックチェーンとポスト量子ブロックチェーンの違いは何ですか？"
         },
         "answer": {
           "zh": "Post-Quantum Blockchain 仍运行在经典计算机上，只是使用抗量子密码；Quantum Blockchain 则直接结合量子网络与量子密码技术。",
-          "en": "Post-quantum blockchains still run on classical computers but use quantum-resistant cryptography, while quantum blockchains directly integrate quantum networks and quantum cryptography."
+          "en": "Post-quantum blockchains still run on classical computers but use quantum-resistant cryptography, while quantum blockchains directly integrate quantum networks and quantum cryptography.",
+          "ja": "ポスト量子ブロックチェーンは古典的なコンピューター上で動作しますが、耐量子暗号を使用するのに対し、量子ブロックチェーンは量子ネットワークと量子暗号を直接統合します。"
         }
       },
       {
         "level": "expert",
         "question": {
           "zh": "为什么 forward compatibility 对未来区块链重要？",
-          "en": "Why is forward compatibility important for future blockchains?"
+          "en": "Why is forward compatibility important for future blockchains?",
+          "ja": "将来のブロックチェーンにとって、フォワード互換性（forward compatibility）はなぜ重要なのでしょうか？"
         },
         "answer": {
           "zh": "未来 quantum internet 可能需要区块链直接支持量子通信与 quantum cryptography，因此需要提前设计兼容架构。",
-          "en": "Future quantum internet infrastructure may require blockchains to support quantum communication and quantum cryptography directly, so compatible architectures are needed early."
+          "en": "Future quantum internet infrastructure may require blockchains to support quantum communication and quantum cryptography directly, so compatible architectures are needed early.",
+          "ja": "将来の量子インターネットインフラストラクチャでは、ブロックチェーンが量子通信および量子暗号を直接サポートする必要があるため、互換性のあるアーキテクチャを早期に確立する必要があります。"
         }
       }
     ]
@@ -1136,7 +1356,8 @@
         ],
         "summary": {
           "zh": "Deressa等人在{{name}}中提出首个实现渐进最优批量幂次证明的ZK系统，创新包括基于轨迹的平方乘编码、惰性sumcheck等。验证恒定时间3.5ms，证明大小160-256B，内存低于1.1MB，适用于zkRollup、匿名凭证等场景。",
-          "en": "Deressa et al. propose the first ZK proof system achieving asymptotically optimal batched exponentiation proofs with innovations including trace-based square-and-multiply encoding, lazy sumcheck, etc. Constant verification (3.5ms), proof size 160-256B, memory <1.1MB, suitable for zkRollups, anonymous credentials."
+          "en": "Deressa et al. propose the first ZK proof system achieving asymptotically optimal batched exponentiation proofs with innovations including trace-based square-and-multiply encoding, lazy sumcheck, etc. Constant verification (3.5ms), proof size 160-256B, memory <1.1MB, suitable for zkRollups, anonymous credentials.",
+          "ja": "Deressaらは、トレースベースのsquare-and-multiplyエンコーディングやlazy sumcheckなどの革新的な要素を取り入れた、漸近的に最適なバッチべき乗証明を提供する最初のZK証明システムを提案しています。検証時間は一定（3.5ms）、証明サイズは160-256B、メモリ使用量は1.1MB未満であり、zkRollupsや匿名クレデンシャルに適しています。"
         },
         "notes": {
           "zh": [
@@ -1154,6 +1375,14 @@
             "Verification time 3.5ms, memory <1.1MB, 500K gas for 1000 exponentiations on Ethereum.",
             "Sound under GDHE assumption, computational ZK in random oracle model.",
             "Applications: zkRollups, anonymous credentials, on-chain threshold cryptography."
+          ],
+          "ja": [
+            "漸近的に最適なバッチ付きべき乗証明を達成した最初のもの：プロバー時間 O(λN/log N)、定数時間の検証。",
+            "4つの革新的な点：トレースベースの平方積、遅延サマリーチェック、ハイブリッドFFT、スライディングウィンドウバッチング。",
+            "パラメータサイズに依存しない160-256Bの定数証明サイズ。",
+            "検証時間3.5ms、メモリ<1.1MB、Ethereum上でのべき乗1000回に対するガス消費量500K。",
+            "GDHE仮定のもとで健全性（Soundness）を保証し、ランダムオラクルモデルにおける計算量的ZK。",
+            "応用分野：zkRollups、匿名クレデンシャル、オンチェーン閾値暗号。"
           ]
         },
         "slogan": {
@@ -1166,33 +1395,39 @@
         "level": "beginner",
         "question": {
           "zh": "zkExp 是什么？",
-          "en": "What is zkExp?"
+          "en": "What is zkExp?",
+          "ja": "zkExpとは何ですか？"
         },
         "answer": {
           "zh": "zkExp 是一种用于指数运算的零知识证明系统，可以证明 g^x = y 而不泄露私有指数 x。它支持常数大小证明和快速验证，适合 zkRollup、匿名凭证等场景。",
-          "en": "zkExp is a zero-knowledge proof system for exponentiation statements like proving g^x = y without revealing the secret exponent x. It provides constant-size proofs and fast verification, making it useful for zkRollups and anonymous credentials."
+          "en": "zkExp is a zero-knowledge proof system for exponentiation statements like proving g^x = y without revealing the secret exponent x. It provides constant-size proofs and fast verification, making it useful for zkRollups and anonymous credentials.",
+          "ja": "zkExpは、秘密の指数xを明かすことなくg^x = yのようなべき乗に関する命題を証明するためのゼロ知識証明システムです。定数サイズの証明と高速な検証を提供するため、zkRollupsや匿名クレデンシャルに有用です。"
         }
       },
       {
         "level": "intermediate",
         "question": {
           "zh": "zkExp 为什么适合区块链？",
-          "en": "Why is zkExp useful for blockchains?"
+          "en": "Why is zkExp useful for blockchains?",
+          "ja": "zkExpはブロックチェーンにとってなぜ有用なのですか？"
         },
         "answer": {
           "zh": "zkExp 的证明只有 160–256B，并且验证时间固定，因此能降低链上 gas 和数据传输成本。即使批量证明很多 exponentiation，验证依然高效。",
-          "en": "zkExp keeps proofs at only 160–256B with constant verification time, reducing on-chain gas and bandwidth costs. Verification remains efficient even for large batches of exponentiations."
+          "en": "zkExp keeps proofs at only 160–256B with constant verification time, reducing on-chain gas and bandwidth costs. Verification remains efficient even for large batches of exponentiations.",
+          "ja": "zkExpは、証明書を160〜256Bに抑え、検証時間を一定に保つことで、オンチェーンのガス代と帯域幅コストを削減します。大量のべき乗に対する場合でも、効率的な検証が維持されます。"
         }
       },
       {
         "level": "expert",
         "question": {
           "zh": "zkExp 如何利用 sum-check？",
-          "en": "How does zkExp use sum-check?"
+          "en": "How does zkExp use sum-check?",
+          "ja": "zkExpはsum-checkをどのように利用していますか？"
         },
         "answer": {
           "zh": "zkExp 使用 lazy sum-check 来验证 exponentiation 约束，只在需要时展开计算，从而减少 prover 的计算和内存开销。",
-          "en": "zkExp uses lazy sum-check to verify exponentiation constraints, expanding computations only when necessary. This reduces prover computation and memory costs."
+          "en": "zkExp uses lazy sum-check to verify exponentiation constraints, expanding computations only when necessary. This reduces prover computation and memory costs.",
+          "ja": "zkExpは、必要な場合のみ計算を拡張する遅延サマリーチェック（lazy sum-check）を使用してべき乗制約を検証します。これにより、プロバーの計算量とメモリコストが削減されます。"
         }
       }
     ]
@@ -1211,7 +1446,8 @@
         ],
         "summary": {
           "zh": "Abdolmaleki等人在{{name}}论文中首次系统研究了NIZK的可重置安全性，形式化了强可重置零知识定义，展示了对Fiat-Shamir编译的PIOP SNARKs等攻击，并提出基于PRF的通用编译器防御方案。",
-          "en": "Abdolmaleki et al. present the first systematic study of resettable security for NIZKs in their {{name}}paper, formalizing strong resettable ZK, demonstrating attacks on Fiat-Shamir PIOP SNARKs, and proposing a PRF-based generic compiler defense."
+          "en": "Abdolmaleki et al. present the first systematic study of resettable security for NIZKs in their {{name}}paper, formalizing strong resettable ZK, demonstrating attacks on Fiat-Shamir PIOP SNARKs, and proposing a PRF-based generic compiler defense.",
+          "ja": "Abdolmalekiらは、{{name}}の論文において、NIZKに対するリセット可能なセキュリティに関する最初の体系的な研究を発表しました。これには、強力なリセット可能ZKの形式化、Fiat-Shamir PIOP SNARKsへの攻撃実証、およびPRFベースの汎用コンパイラ防御の提案が含まれます。"
         },
         "notes": {
           "zh": [
@@ -1241,18 +1477,21 @@
         "level": "beginner",
         "question": {
           "zh": "什么是 strong resettable zero-knowledge（srZK）？",
-          "en": "What is strong resettable zero-knowledge (srZK)?"
+          "en": "What is strong resettable zero-knowledge (srZK)?",
+          "ja": "強リセット可能なゼロ知識証明（srZK）とは何ですか？"
         },
         "answer": {
           "zh": "srZK 是论文提出的新安全定义，允许攻击者只重置 prover 随机性的部分状态，而不是完全重置。这更贴近真实世界中的部分状态损坏和硬件故障场景。",
-          "en": "srZK is a new security definition introduced in the paper. It models attackers who can reset only parts of the prover’s randomness instead of the full state, matching realistic hardware fault and partial corruption scenarios."
+          "en": "srZK is a new security definition introduced in the paper. It models attackers who can reset only parts of the prover’s randomness instead of the full state, matching realistic hardware fault and partial corruption scenarios.",
+          "ja": "srZKは、論文で導入された新しいセキュリティ定義です。これは、プロバーの完全な状態ではなく、プロバーのランダム性の一部のみをリセットできる攻撃者をモデル化するものであり、現実的なハードウェア障害や部分的な破損シナリオに合致しています。"
         }
       },
       {
         "level": "intermediate",
         "question": {
           "zh": "哪些协议容易受到 resetting attacks？",
-          "en": "Which protocols are vulnerable to resetting attacks?"
+          "en": "Which protocols are vulnerable to resetting attacks?",
+          "ja": "どのプロトコルがリセット攻撃に対して脆弱ですか？"
         },
         "answer": {
           "zh": "论文展示了 Fiat-Shamir 编译后的 Σ-protocol、PlonK 等 PIOP-based SNARK，以及 salted Fiat-Shamir 协议都可能遭受 witness-recovery attack。",
@@ -1263,11 +1502,13 @@
         "level": "expert",
         "question": {
           "zh": "论文提出的防御方案如何工作？",
-          "en": "How does the proposed defense work?"
+          "en": "How does the proposed defense work?",
+          "ja": "提案された防御策はどのように機能しますか？"
         },
         "answer": {
           "zh": "论文使用 PRF 来生成 prover 所需随机性。随机数由 public parameters、statement 和 witness 共同导出，而 PRF key 是短 secret seed，因此攻击者无法通过 reset 操纵 randomness。",
-          "en": "The defense derives prover randomness using a PRF over the public parameters, statement, and witness, keyed by a short secret seed. This prevents attackers from manipulating randomness through resets."
+          "en": "The defense derives prover randomness using a PRF over the public parameters, statement, and witness, keyed by a short secret seed. This prevents attackers from manipulating randomness through resets.",
+          "ja": "この防御機構は、短い秘密シードによってキー付けられた、公開パラメータ、ステートメント、およびウィットネスに対するPRF（Pseudo-Random Function）を用いてプロバーのランダム性を導出します。これにより、攻撃者がリセット操作を通じてランダム性を操作することを防ぎます。"
         }
       }
     ]
@@ -1285,7 +1526,8 @@
         ],
         "summary": {
           "zh": "Fuchsbauer等人在{{name}}论文中提出双重聚合签名原语，允许两层签名者高效聚合，并利用SNARKs实现位图谓词验证，应用于共识协议中的激励投票传播。",
-          "en": "Fuchsbauer et al. proposed doubly aggregatable signatures in their {{name}}paper, enabling efficient two-layer aggregation with SNARKs for bitmap predicates, applied to incentivizing vote dissemination in consensus."
+          "en": "Fuchsbauer et al. proposed doubly aggregatable signatures in their {{name}}paper, enabling efficient two-layer aggregation with SNARKs for bitmap predicates, applied to incentivizing vote dissemination in consensus.",
+          "ja": "Fuchsbauerらは、{{name}}の論文で二重集約可能な署名（doubly aggregatable signatures）を提案しており、これによりビットマップ述語に対するSNARKsを用いた効率的な二層集約が可能となり、コンセンサスにおける投票伝播のインセンティブ付けに応用されています。"
         },
         "notes": {
           "zh": [
@@ -1303,6 +1545,14 @@
             "Based on RMSS, enabling algebraic verification and SNARK-friendly predicates on bitmaps.",
             "Key application: incentivizing timely all-to-all vote dissemination in consensus protocols.",
             "Prototype implementation demonstrates concrete efficiency."
+          ],
+          "ja": [
+            "二重集約可能な署名（doubly aggregatable signatures）を導入：レイヤー0の署名をレイヤー1のアテステーションに集約し、さらにそれを簡潔な証明書（succinct certificate）に集約する。",
+            "セキュリティモデルは、偽造耐性（unforgeability）と同一性の否定抵抗性（equivocation resistance）をカバーしている。",
+            "2つの構成：一つは線形サイズの公開鍵と効率的な検証（2回のペアリングを使用）、もう一つは定数サイズの鍵だが線形のペアリングを使用する。",
+            "RMSSに基づいており、ビットマップに対する代数的検証とSNARKフレンドリーな述語を可能にする。",
+            "主な応用例：コンセンサスプロトコルにおけるタイムリーな全参加者間（all-to-all）の投票伝達へのインセンティブ付与。",
+            "プロトタイプ実装により、具体的な効率性が実証されている。"
           ]
         },
         "slogan": {
@@ -1315,33 +1565,39 @@
         "level": "beginner",
         "question": {
           "zh": "什么是 Doubly Aggregatable Signatures？",
-          "en": "What are Doubly Aggregatable Signatures?"
+          "en": "What are Doubly Aggregatable Signatures?",
+          "ja": "倍加集約可能な署名とは何ですか？"
         },
         "answer": {
           "zh": "Doubly Aggregatable Signatures 是一种双层聚合签名方案。第一层 signer 对消息签名，第二层 signer 对“观察到的签名集合”再签名，最终可以聚合成一个简洁 certificate。",
-          "en": "Doubly Aggregatable Signatures are a two-layer signature aggregation scheme. Layer-0 signers sign a message, while layer-1 signers attest to the signatures they observed, producing a compact aggregated certificate."
+          "en": "Doubly Aggregatable Signatures are a two-layer signature aggregation scheme. Layer-0 signers sign a message, while layer-1 signers attest to the signatures they observed, producing a compact aggregated certificate.",
+          "ja": "Doubly Aggregatable Signaturesは、2層の署名集約スキームです。レイヤー0の署名者がメッセージに署名し、レイヤー1の署名者が観測した署名について証明（attest）を行うことで、コンパクトな集約済み証明書を生成します。"
         }
       },
       {
         "level": "intermediate",
         "question": {
           "zh": "论文中的“who observed whom” bitmap 是什么？",
-          "en": "What is the “who observed whom” bitmap in the paper?"
+          "en": "What is the “who observed whom” bitmap in the paper?",
+          "ja": "論文における「誰が誰を観察したか」のビットマップとは何ですか？"
         },
         "answer": {
           "zh": "bitmap 用来记录哪些 layer-1 signer 观察到了哪些 layer-0 signatures。验证者可以检查签名传播和投票关系，避免伪造观察记录。",
-          "en": "The bitmap records which layer-1 signers observed which layer-0 signatures. Verifiers can use it to check vote dissemination and prevent fake observation claims."
+          "en": "The bitmap records which layer-1 signers observed which layer-0 signatures. Verifiers can use it to check vote dissemination and prevent fake observation claims.",
+          "ja": "このビットマップは、どのレイヤー1署名者がどのレイヤー0の署名を観測したかを記録します。検証者はこれを利用して投票の伝播を確認し、偽の観測主張を防ぐことができます。"
         }
       },
       {
         "level": "expert",
         "question": {
           "zh": "论文如何防止 equivocation attacks？",
-          "en": "How does the scheme prevent equivocation attacks?"
+          "en": "How does the scheme prevent equivocation attacks?",
+          "ja": "このスキームは、どのようにしてEquivocation攻撃を防いでいるのですか？"
         },
         "answer": {
           "zh": "安全模型要求 layer-1 signer 只能为真正观察到的 layer-0 signatures 生成 attestation，否则会被视为 forgery。协议通过密码学绑定和聚合验证来保证这一点。",
-          "en": "The security model ensures that a layer-1 signer can only attest to layer-0 signatures it actually observed. Otherwise, the attestation is treated as a forgery. Cryptographic binding and aggregation checks enforce this property."
+          "en": "The security model ensures that a layer-1 signer can only attest to layer-0 signatures it actually observed. Otherwise, the attestation is treated as a forgery. Cryptographic binding and aggregation checks enforce this property.",
+          "ja": "セキュリティモデルにより、レイヤー1の署名者は、実際に観測したレイヤー0の署名にのみアテストできることが保証されます。そうでなければ、そのアテストは偽造と見なされます。このプロパティは、暗号学的バインディングと集約チェックによって強制されます。"
         }
       }
     ]

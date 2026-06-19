@@ -15,7 +15,8 @@
         ],
         "summary": {
           "zh": "ZKProof社区于2025年3月23日至25日在保加利亚索菲亚举办了ZKProof7会议，聚焦ZK技术的最新进展，已发布所有会议录屏和演讲材料。",
-          "en": "The ZKProof community held the ZKProof7 conference in Sofia from March 23-25, focusing on the latest progress in ZK technology, with all recordings and slides now available."
+          "en": "The ZKProof community held the ZKProof7 conference in Sofia from March 23-25, focusing on the latest progress in ZK technology, with all recordings and slides now available.",
+          "ja": "ZKProofコミュニティは、ソフィアにて3月23日から25日までZKProof7カンファレンスを開催し、ZK技術の最新進捗に焦点を当てました。すべての録画とスライドが現在公開されています。"
         }
       },
       {
@@ -29,7 +30,8 @@
         ],
         "summary": {
           "zh": "@class_lambda 在博客{{name}}中详细解释了GKR协议的工作原理，通过一个具体的例子展示了如何利用交互式证明和sum-check协议来高效验证算术电路的正确性。",
-          "en": "@class_lambda explained the GKR protocol in a blog post{{name}}, demonstrating how to efficiently verify the correctness of arithmetic circuits using interactive proofs and sum-check protocols."
+          "en": "@class_lambda explained the GKR protocol in a blog post{{name}}, demonstrating how to efficiently verify the correctness of arithmetic circuits using interactive proofs and sum-check protocols.",
+          "ja": "@class_lambda は、インタラクティブプルーフとサムチェックプロトコルを使用して算術回路の正しさを効率的に検証する方法を示すブログ記事でGKRプロトコルを解説しています。"
         }
       }
     ],
@@ -49,7 +51,8 @@
         ],
         "summary": {
           "zh": "Zhu等人在{{name}}论文中提出了Plonkify工具，能够将R1CS算术化电路转换为Plonk电路，支持普通门和自定义门，显著减少了约束数量。",
-          "en": "Zhu et al. proposed Plonkify in paper{{name}}, a tool that converts R1CS arithmetic circuits to Plonk circuits, supporting standard gates and custom gates, significantly reducing the number of constraints."
+          "en": "Zhu et al. proposed Plonkify in paper{{name}}, a tool that converts R1CS arithmetic circuits to Plonk circuits, supporting standard gates and custom gates, significantly reducing the number of constraints.",
+          "ja": "Zhuらは論文{{name}}でPlonkifyを提案しました。これはR1CS算術回路をPlonk回路に変換するツールであり、標準ゲートとカスタムゲートの両方をサポートし、制約の数を大幅に削減します。"
         }
       },
       {
@@ -62,7 +65,8 @@
         ],
         "summary": {
           "zh": "Zhou等人在{{name}}论文中提出了VeRange，一种验证高效的零知识范围论证方案，无需可信设置，显著降低了验证的计算开销和gas成本。",
-          "en": "Zhou et al. proposed VeRange in paper{{name}}, a verification-efficient zero-knowledge range argument scheme without trusted setup, significantly reducing the computational overhead and gas costs of verification."
+          "en": "Zhou et al. proposed VeRange in paper{{name}}, a verification-efficient zero-knowledge range argument scheme without trusted setup, significantly reducing the computational overhead and gas costs of verification.",
+          "ja": "Zhouらは論文{{name}}でVeRangeを提案しました。これはトラステッドセットアップを必要としない、検証効率の高いゼロ知識レンジアギュメントスキームであり、検証の計算オーバーヘッドとガスコストを大幅に削減します。"
         }
       }
     ],
@@ -81,7 +85,8 @@
         ],
         "summary": {
           "zh": "@0xbowio 宣布Privacy Pools主网上线，以太坊用户现可实现链上隐私，同时与非法资金分离，旨在推动隐私正常化。与Tornado Cash的最主要区别是具有资金审核机制，避免非法资金进入匿名池，增强合规性。",
-          "en": "@0xbowio announced the launch of Privacy Pools mainnet, allowing Ethereum users to achieve on-chain privacy while separating illegal funds, aiming to normalize privacy. The main difference from Tornado Cash is the presence of a fund audit mechanism, preventing illegal funds from entering the anonymous pool, enhancing compliance."
+          "en": "@0xbowio announced the launch of Privacy Pools mainnet, allowing Ethereum users to achieve on-chain privacy while separating illegal funds, aiming to normalize privacy. The main difference from Tornado Cash is the presence of a fund audit mechanism, preventing illegal funds from entering the anonymous pool, enhancing compliance.",
+          "ja": "@0xbowioはPrivacy Poolsのメインネットローンチを発表しました。これにより、Ethereumユーザーはプライバシーを確保しつつ、違法資金を分離することができ、プライバシーの標準化を目指します。Tornado Cashとの主な違いは、ファンド監査メカニズムが存在することであり、これにより違法資金が匿名プールに入るのを防ぎ、コンプライアンスを強化しています。"
         }
       },
       {
@@ -94,7 +99,8 @@
         ],
         "summary": {
           "zh": "Jeong等人在{{name}}论文中提出了Tangram，一个加密友好的SNARK框架，支持使用Pedersen-like密文构建系统，显著提高了加密证明的效率。",
-          "en": "Jeong et al. proposed Tangram in paper{{name}}, an encryption-friendly SNARK framework that supports Pedersen-like ciphertext construction, significantly improving the efficiency of encryption proofs."
+          "en": "Jeong et al. proposed Tangram in paper{{name}}, an encryption-friendly SNARK framework that supports Pedersen-like ciphertext construction, significantly improving the efficiency of encryption proofs.",
+          "ja": "Jeongらによる論文{{name}}では、Pedersenライクなciphertext構築をサポートし、暗号証明の効率を大幅に向上させる暗号フレンドリーなSNARKフレームワークであるTangramが提案されています。"
         }
       }
     ],
@@ -114,7 +120,8 @@
         ],
         "summary": {
           "zh": "@primus_labs 、 @SuccinctLabs 和 @PhalaNetwork 共同撰写的博客{{name}}探讨了zkTLS、TEE和zkVM如何结合，为链上应用提供可验证的Web2数据，同时保护用户隐私和安全性。",
-          "en": "@primus_labs, @SuccinctLabs, and @PhalaNetwork co-authored the blog{{name}} discussing how zkTLS, TEE, and zkVM can be combined to provide verifiable Web2 data for blockchain applications while protecting user privacy and security."
+          "en": "@primus_labs, @SuccinctLabs, and @PhalaNetwork co-authored the blog{{name}} discussing how zkTLS, TEE, and zkVM can be combined to provide verifiable Web2 data for blockchain applications while protecting user privacy and security.",
+          "ja": "@primus_labs、@SuccinctLabs、および@PhalaNetworkは、zkTLS、TEE、zkVMを組み合わせて、ユーザーのプライバシーとセキュリティを保護しつつブロックチェーンアプリケーション向けに検証可能なWeb2データをどのように提供できるかについて論じたブログ{{name}}を共同執筆しました。"
         }
       },
       {
@@ -131,7 +138,8 @@
         ],
         "summary": {
           "zh": "Li等人在{{name}}论文中提出了Soloist，一种针对R1CS的优化分布式SNARK。Soloist实现了恒定的证明大小、恒定的摊销通信复杂度和恒定的验证复杂度，显著提升了zkRollups的效率。",
-          "en": "Li et al. proposed Soloist in the paper{{name}}, an optimized distributed SNARK for R1CS that achieves constant proof size, constant amortized communication complexity, and constant verification complexity, significantly improving the efficiency of zkRollups."
+          "en": "Li et al. proposed Soloist in the paper{{name}}, an optimized distributed SNARK for R1CS that achieves constant proof size, constant amortized communication complexity, and constant verification complexity, significantly improving the efficiency of zkRollups.",
+          "ja": "Liらは論文{{name}}で、R1CSのための最適化された分散型SNARKであるSoloistを提案しました。これは、定数サイズの証明、定常的な償却通信複雑度、および定数検証複雑度を達成し、zkRollupsの効率を大幅に向上させます。"
         }
       }
     ],
@@ -154,7 +162,8 @@
         ],
         "summary": {
           "zh": "Xue等人在{{name}}论文中提出了Zinnia，一个面向张量的高效ZK编程框架，通过高级编程语言和符号执行方法简化ZKP程序编写，显著提升开发效率和证明速度。",
-          "en": "Xue et al. proposed Zinnia in the paper{{name}}, an efficient ZK programming framework for tensor-oriented applications, simplifying ZKP program development and significantly improving proof efficiency."
+          "en": "Xue et al. proposed Zinnia in the paper{{name}}, an efficient ZK programming framework for tensor-oriented applications, simplifying ZKP program development and significantly improving proof efficiency.",
+          "ja": "Xueらによる論文{{name}}では、テンソル指向アプリケーションのための効率的なZKプログラミングフレームワークであるZinniaが提案されており、これによりZKPプログラムの開発が簡素化され、証明の効率が大幅に向上しています。"
         }
       },
       {
@@ -168,7 +177,8 @@
         ],
         "summary": {
           "zh": "@SuccinctLabs 宣布推出SP1-2FA，为Succinct Prover Network增加通过可信执行环境(TEEs)的第二层保护，进一步强化zkVM的安全性。",
-          "en": "@SuccinctLabs announced the release of SP1-2FA, adding a second layer of protection to the Succinct Prover Network through TEEs, further enhancing the security of zkVMs."
+          "en": "@SuccinctLabs announced the release of SP1-2FA, adding a second layer of protection to the Succinct Prover Network through TEEs, further enhancing the security of zkVMs.",
+          "ja": "@SuccinctLabsは、TEE（Trusted Execution Environments）を介してSuccinct Prover Networkに二重の保護を追加し、zkVMのセキュリティをさらに強化するSP1-2FAのリリースを発表しました。"
         }
       }
     ],
@@ -188,7 +198,8 @@
         ],
         "summary": {
           "zh": "@VeridiseInc 获得以太坊基金会资助，开发LLZK，一种针对ZK语言的中介表示（IR），旨在统一和简化电路编译，提高ZK领域的可维护性和安全性。该框架可以将Circom、Zirgen和Gnark转换为LLZK，并作进一步分析优化。",
-          "en": "@VeridiseInc received an Ethereum Foundation grant to develop LLZK, an intermediate representation (IR) for ZK languages, aiming to unify and simplify circuit compilation, improve the maintainability and security of the ZK domain. The framework converts Circom, Zirgen, and Gnark to LLZK and further analyzes and optimizes it."
+          "en": "@VeridiseInc received an Ethereum Foundation grant to develop LLZK, an intermediate representation (IR) for ZK languages, aiming to unify and simplify circuit compilation, improve the maintainability and security of the ZK domain. The framework converts Circom, Zirgen, and Gnark to LLZK and further analyzes and optimizes it.",
+          "ja": "@VeridiseInc は、ZK言語のための中間表現（IR）であるLLZKを開発するためのEthereum Foundationからの助成金を受け取りました。これは、サーキットコンパイルの統一と簡素化、およびZKドメインの保守性・セキュリティ向上を目指すものです。このフレームワークは、Circom、Zirgen、GnarkをLLZKに変換し、さらに分析と最適化を行います。"
         }
       },
       {
@@ -206,7 +217,8 @@
         ],
         "summary": {
           "zh": "Liu等人在{{name}}论文中提出了一种针对布尔电路的高效SNARKs，通过新颖的塔式sumcheck协议和塔式零检查协议显著提高了证明者效率。",
-          "en": "Liu et al. proposed an efficient SNARK for Boolean circuits in the paper{{name}}, using novel tower sumcheck and tower zero-check protocols, significantly improving prover efficiency."
+          "en": "Liu et al. proposed an efficient SNARK for Boolean circuits in the paper{{name}}, using novel tower sumcheck and tower zero-check protocols, significantly improving prover efficiency.",
+          "ja": "Liuらは論文{{name}}で、新しいtower sumcheckおよびtower zero-checkプロトコルを用いてブーリアン回路のための効率的なSNARKを提案し、proverの効率を大幅に向上させた。"
         }
       }
     ],
@@ -225,7 +237,8 @@
         ],
         "summary": {
           "zh": "NoirHack是一个为期4周的完全在线项目，开发者可以掌握Noir这一通用零知识语言，并构建跨多个区块链部署的隐私保护应用。项目包括两周的学习和两周的构建，最终在5月12日进行Demo Day展示。",
-          "en": "NoirHack is a 4-week online project where developers can learn and build privacy-protecting applications across multiple blockchains using the Noir. The project includes two weeks of learning and two weeks of building, culminating in a Demo Day on May 12th."
+          "en": "NoirHack is a 4-week online project where developers can learn and build privacy-protecting applications across multiple blockchains using the Noir. The project includes two weeks of learning and two weeks of building, culminating in a Demo Day on May 12th.",
+          "ja": "NoirHackは、開発者がNoirを使用して複数のブロックチェーンを横断するプライバシー保護アプリケーションを学習し構築できる4週間のオンラインプロジェクトです。このプロジェクトには2週間の学習期間と2週間の構築期間が含まれ、5月12日のデモデーで締めくくられます。"
         }
       },
       {
@@ -241,7 +254,8 @@
         ],
         "summary": {
           "zh": "@PrivacyScaling 研究员Miha Stopar在博客{{name}}中探讨了后量子密码学中的代码优化，重点比较了基于格和基于同源的密码学在向量化方面的潜力。",
-          "en": "Miha Stopar, a researcher at @PrivacyScaling, discussed code optimizations in the landscape of post-quantum cryptography in the blog{{name}}, focusing on comparing the potential of lattice-based and isogeny-based cryptography in vectorization."
+          "en": "Miha Stopar, a researcher at @PrivacyScaling, discussed code optimizations in the landscape of post-quantum cryptography in the blog{{name}}, focusing on comparing the potential of lattice-based and isogeny-based cryptography in vectorization.",
+          "ja": "@PrivacyScalingの研究者であるMiha Stopar氏は、ブログ{{name}}にて、ポスト量子暗号の分野におけるコード最適化について論じ、特にベクトル化における格子ベース暗号とアイソジェニーベース暗号の可能性を比較しました。"
         }
       }
     ],
@@ -264,7 +278,8 @@
         ],
         "summary": {
           "zh": "Kolobov等人在{{name}}论文中提出了ColliderVM，一种在比特币上执行状态计算的新方法，通过基于哈希碰撞的承诺替代传统签名存储组件，显著缩短了STARK证明验证的脚本长度。",
-          "en": "Kolobov et al. proposed ColliderVM in the paper{{name}}, a new method for executing stateful computations on Bitcoin, replacing traditional signature storage components with hash collision commitments, significantly reducing the length of STARK proof verification scripts."
+          "en": "Kolobov et al. proposed ColliderVM in the paper{{name}}, a new method for executing stateful computations on Bitcoin, replacing traditional signature storage components with hash collision commitments, significantly reducing the length of STARK proof verification scripts.",
+          "ja": "Kolobovらは論文{{name}}でColliderVMを提案しました。これは、従来の署名ストレージコンポーネントをハッシュ衝突コミットメントに置き換えることで、Bitcoin上でのステートフルな計算を実行する新しい手法であり、STARK証明の検証スクリプト長を大幅に削減します。"
         }
       },
       {
@@ -278,7 +293,8 @@
         ],
         "summary": {
           "zh": "Xie等人在{{name}}论文中提出了zkPyTorch，一个将ML框架如PyTorch与ZKP引擎如Expander无缝集成的编译器，简化了ZKML的开发。通过三个关键组件自动化ML操作到优化ZKP电路的转换。",
-          "en": "Xie et al. proposed zkPyTorch in the paper{{name}}, a compiler that seamlessly integrates ML frameworks like PyTorch with ZKP engines like Expander, simplifying ZKML development. It automates ML operations to optimize ZKP circuits through three key components."
+          "en": "Xie et al. proposed zkPyTorch in the paper{{name}}, a compiler that seamlessly integrates ML frameworks like PyTorch with ZKP engines like Expander, simplifying ZKML development. It automates ML operations to optimize ZKP circuits through three key components.",
+          "ja": "Xieらによる論文{{name}}では、zkPyTorchが提案されています。これは、PyTorchのようなMLフレームワークとExpanderのようなZKPエンジンをシームレスに統合し、ZKML開発を簡素化するコンパイラです。本ツールは、3つの主要なコンポーネントを通じてML操作を自動化し、ZKPサーキットの最適化を実現します。"
         }
       }
     ],
@@ -297,7 +313,8 @@
         ],
         "summary": {
           "zh": "Kelvin Bonilla在{{name}}博客中探讨了Solana生态系统中的Confidential Balances，这是一种通过同态加密和零知识证明技术增强令牌隐私和合规性的扩展功能。",
-          "en": "Kelvin Bonilla discussed Confidential Balances in the Solana ecosystem in the blog{{name}}, a privacy and compliance extension function that enhances token privacy and compliance through homomorphic encryption and zero-knowledge proofs."
+          "en": "Kelvin Bonilla discussed Confidential Balances in the Solana ecosystem in the blog{{name}}, a privacy and compliance extension function that enhances token privacy and compliance through homomorphic encryption and zero-knowledge proofs.",
+          "ja": "Kelvin Bonillaは、ブログ{{name}}で、準同型暗号とゼロ知識証明を通じてトークンのプライバシーとコンプライアンスを強化するプライバシーおよびコンプライアンス拡張機能であるConfidential Balancesについて論じました。"
         }
       },
       {
@@ -311,7 +328,8 @@
         ],
         "summary": {
           "zh": "Arnon等人开源了WHIR库，基于arkworks生态系统开发，支持PCS或LDT协议运行，提供多种安全级别和配置选项，该仓库与其论文内容对应。",
-          "en": "Arnon et al. open-sourced the WHIR library, which is built on the arkworks ecosystem and supports running PCS or LDT protocols, providing multiple security levels and configuration options, and is implemented according to the corresponding paper."
+          "en": "Arnon et al. open-sourced the WHIR library, which is built on the arkworks ecosystem and supports running PCS or LDT protocols, providing multiple security levels and configuration options, and is implemented according to the corresponding paper.",
+          "ja": "Arnonらは、arkworksエコシステム上に構築され、PCSまたはLDTプロトコルを実行することをサポートし、複数のセキュリティレベルと設定オプションを提供するWHIRライブラリをオープンソース化しました。このライブラリは、対応する論文に従って実装されています。"
         }
       }
     ],
@@ -332,7 +350,8 @@
         ],
         "summary": {
           "zh": "@VitalikButerin 在{{name}}博客中分享了关于如何实际改善以太坊用户隐私状态的当前思考，提出了一个轻量级的以太坊共识变更路线图，包括支付隐私、应用内活动匿名化、链上读取隐私和网络级匿名化等关键隐私形式。",
-          "en": "@VitalikButerin shared his current thoughts on how to actually improve the privacy of Ethereum users in the{{name}} blog, proposing a lightweight Ethereum consensus change roadmap, including payment privacy, anonymous activities within applications, privacy on-chain, and network-level anonymity."
+          "en": "@VitalikButerin shared his current thoughts on how to actually improve the privacy of Ethereum users in the{{name}} blog, proposing a lightweight Ethereum consensus change roadmap, including payment privacy, anonymous activities within applications, privacy on-chain, and network-level anonymity.",
+          "ja": "@VitalikButerin が {{name}} のブログで、Ethereum ユーザーのプライバシーを実際に向上させる方法についての現在の考えを共有し、支払いプライバシー、アプリケーション内での匿名活動、オンチェーンプライバシー、ネットワークレベルの匿名性を含む軽量なEthereumコンセンサス変更ロードマップを提案しました。"
         }
       },
       {
@@ -349,7 +368,8 @@
         ],
         "summary": {
           "zh": "@RiscZero 在{{name}}博客中介绍了R0VM 2.0，这是专为现代区块链应用设计的最快、最安全的zkVM，标志着零知识计算进入实时时代。",
-          "en": "@RiscZero introduced R0VM 2.0 in the{{name}} blog, which is the fastest and most secure zkVM designed for modern blockchain applications, marking the arrival of real-time zero-knowledge computing."
+          "en": "@RiscZero introduced R0VM 2.0 in the{{name}} blog, which is the fastest and most secure zkVM designed for modern blockchain applications, marking the arrival of real-time zero-knowledge computing.",
+          "ja": "@RiscZero は {{name}} のブログで R0VM 2.0 を紹介しました。これは、リアルタイムのゼロ知識計算の到来を示すものであり、最新のブロックチェーンアプリケーション向けに設計された最も高速で安全な zkVM です。"
         }
       }
     ],
@@ -369,7 +389,8 @@
         ],
         "summary": {
           "zh": "Nair等人在{{name}}论文中提出了一种减少内存占用的Jolt zkVM实现，不依赖SNARK递归，且运行时开销较低，相比现有递归技术具有优势。",
-          "en": "Nair et al. proposed a Jolt zkVM implementation in the{{name}} paper, which reduces memory usage and has lower runtime overhead compared to existing recursive techniques."
+          "en": "Nair et al. proposed a Jolt zkVM implementation in the{{name}} paper, which reduces memory usage and has lower runtime overhead compared to existing recursive techniques.",
+          "ja": "Nairらは、{{name}}の論文でJolt zkVMの実装を提案しており、既存の再帰的な手法と比較してメモリ使用量を削減し、ランタイムオーバーヘッドを低減しています。"
         }
       },
       {
@@ -383,7 +404,8 @@
         ],
         "summary": {
           "zh": "Daftardar等人在{{name}}论文中提出了zkSpeed，一个用于加速HyperPlonk的硬件加速器，支持一次性通用设置和小证明尺寸，实现了801倍的几何平均加速比。",
-          "en": "Daftardar et al. proposed zkSpeed in the{{name}} paper, a hardware accelerator for HyperPlonk that supports one-time universal setup and small proof sizes, achieving a geometric mean acceleration ratio of 801."
+          "en": "Daftardar et al. proposed zkSpeed in the{{name}} paper, a hardware accelerator for HyperPlonk that supports one-time universal setup and small proof sizes, achieving a geometric mean acceleration ratio of 801.",
+          "ja": "Daftardarらは、HyperPlonkのためのハードウェアアクセラレータであるzkSpeedを{{name}}の論文で提案しました。これはワンタイムユニバーサルセットアップと小さな証明サイズをサポートし、幾何平均加速比801を達成しています。"
         }
       }
     ]
@@ -401,7 +423,8 @@
         ],
         "summary": {
           "zh": "@srinathtv 在{{name}}博客中总结了sum-check的zkSNARK协议Spartan，具有高效的证明者性能，目前为Jolt zkVM提供了底层支持。",
-          "en": "@srinathtv summarized the sum-check-based zkSNARK protocol Spartan in the{{name}} blog, which has efficient prover performance and currently provides a foundation for Jolt zkVM."
+          "en": "@srinathtv summarized the sum-check-based zkSNARK protocol Spartan in the{{name}} blog, which has efficient prover performance and currently provides a foundation for Jolt zkVM.",
+          "ja": "@srinathtv が {{name}} ブログで、効率的なプロバー性能を持ち、現在Jolt zkVMの基盤を提供するsum-checkベースのzkSNARKプロトコル Spartanについて要約しました。"
         }
       },
       {
@@ -418,7 +441,8 @@
         ],
         "summary": {
           "zh": "@VitalikButerin 在博客{{name}}中讨论了隐私在以太坊生态系统中的重要性，强调了ZK-SNARKs和FHE等技术在保护隐私方面的作用，以及隐私对于自由、秩序和进步的关键价值。",
-          "en": "@VitalikButerin discussed the importance of privacy in the Ethereum ecosystem in the{{name}} blog, highlighting the role of ZK-SNARKs and FHE in protecting privacy and emphasizing the key value of privacy for freedom, order, and progress."
+          "en": "@VitalikButerin discussed the importance of privacy in the Ethereum ecosystem in the{{name}} blog, highlighting the role of ZK-SNARKs and FHE in protecting privacy and emphasizing the key value of privacy for freedom, order, and progress.",
+          "ja": "Vitalik Buterinは、{{name}}のブログでEthereumエコシステムにおけるプライバシーの重要性について議論し、ZK-SNARKsとFHEがプライバシーを保護する役割を強調するとともに、自由、秩序、進歩にとってのプライバシーという重要な価値点を強調しました。"
         }
       }
     ],
@@ -464,7 +488,8 @@
         ],
         "summary": {
           "zh": "@0xteddav 在GitHub上开源了Halo2 soundness bugs项目，展示了Halo2编写电路时的潜在漏洞，包括未约束变量和范围检查问题。",
-          "en": "@0xteddav opened source for the Halo2 soundness bugs project, showcasing potential vulnerabilities in Halo2 circuit writing, including unconstrained variables and range checks."
+          "en": "@0xteddav opened source for the Halo2 soundness bugs project, showcasing potential vulnerabilities in Halo2 circuit writing, including unconstrained variables and range checks.",
+          "ja": "@0xteddav は、Halo2 の健全性バグに関するオープンソースプロジェクトを開示しました。これには、制約のない変数やレンジチェックなど、Halo2の回路記述における潜在的な脆弱性が含まれています。"
         }
       },
       {
@@ -478,7 +503,8 @@
         ],
         "summary": {
           "zh": "@NovaNet_zkp 组织了zkp.fun活动，邀请用户通过MetaMask登录，参与ZK挑战，同时有机会获得NovaNet的奖励。",
-          "en": "@NovaNet_zkp organized the zkp.fun event, inviting users to log in through MetaMask, participate in ZK challenges, and potentially win rewards from NovaNet."
+          "en": "@NovaNet_zkp organized the zkp.fun event, inviting users to log in through MetaMask, participate in ZK challenges, and potentially win rewards from NovaNet.",
+          "ja": "@NovaNet_zkp は zkp.fun イベントを主催し、ユーザーに対し MetaMask 経由でのログイン、ZK チャレンジへの参加、そして NovaNet からの報酬獲得の可能性を提供しました。"
         }
       }
     ],
@@ -500,7 +526,8 @@
         ],
         "summary": {
           "zh": "@zkMarek 发布了第一季视频，目的是以直观的方式解释椭圆曲线、ECDSA、可信设置、KZG和向量承诺、Blob、Merkle和Verkle树等主题。",
-          "en": "@zkMarek released the first season video, explaining elliptic curves, ECDSA, trusted setup, KZG and vector commitments, Blob, Merkle, and Verkle trees in a visual way."
+          "en": "@zkMarek released the first season video, explaining elliptic curves, ECDSA, trusted setup, KZG and vector commitments, Blob, Merkle, and Verkle trees in a visual way.",
+          "ja": "@zkMarek が、楕円曲線、ECDSA、トラステッドセットアップ、KZG、ベクトルコミットメント、Blob、Merkle、Verkleツリーなどを視覚的に解説したシーズン1の動画を公開しました。"
         }
       },
       {
@@ -517,7 +544,8 @@
         ],
         "summary": {
           "zh": "@OrochiNetwork 在博客{{name}}中讨论了ONPROVER的概念，并且表明testnet已经上线，并提供了如何在测试网上通过在浏览器中进行证明获得奖励的方法。",
-          "en": "@OrochiNetwork discussed the concept of ONPROVER in the{{name}} blog, indicating that the testnet has been launched and provided a method for earning rewards on the testnet through proofs generated in the browser."
+          "en": "@OrochiNetwork discussed the concept of ONPROVER in the{{name}} blog, indicating that the testnet has been launched and provided a method for earning rewards on the testnet through proofs generated in the browser.",
+          "ja": "OrochiNetworkは{{name}}ブログでONPROVERの概念について議論し、テストネットがローンチされたこと、そしてブラウザで生成されたプルーフを通じてテストネット上で報酬を獲得する方法を提供したことを示しました。"
         }
       }
     ],
@@ -536,7 +564,8 @@
         ],
         "summary": {
           "zh": "ZK Learning Group 发布了Daniel Szego关于Interactive Oracle Proofs (IOPs)的讲解学习视频，并以Plonk为例介绍了IOPs的实现原理。",
-          "en": "ZK Learning Group published a lecture on Interactive Oracle Proofs (IOPs) by Daniel Szego, introducing the implementation principles of IOPs with Plonk as an example."
+          "en": "ZK Learning Group published a lecture on Interactive Oracle Proofs (IOPs) by Daniel Szego, introducing the implementation principles of IOPs with Plonk as an example.",
+          "ja": "ZK Learning Group は、Daniel Szego によるインタラクティブ・オラクル証明（IOPs）に関する講義を公開しました。この講義では、Plonk を例として取り上げ、IOPs の実装原理を紹介しています。"
         }
       },
       {
@@ -550,7 +579,8 @@
         ],
         "summary": {
           "zh": "@ligero_inc 发布的ZK App Development Platform支持在Ligetron平台上构建和部署ZK Web应用，包括使用C/C++、CIRCOM或Rust编写NP语句，编译为WASM，生成和验证证明的流程。并提供了浏览器中的证明速度测试。",
-          "en": "@ligero_inc published the ZK App Development Platform, which supports building and deploying ZK Web applications on Ligetron, including using C/C++, CIRCOM, or Rust to write NP statements, compiling to WASM, and generating and verifying proofs. It also provides a proof speed test in the browser."
+          "en": "@ligero_inc published the ZK App Development Platform, which supports building and deploying ZK Web applications on Ligetron, including using C/C++, CIRCOM, or Rust to write NP statements, compiling to WASM, and generating and verifying proofs. It also provides a proof speed test in the browser.",
+          "ja": "@ligero_inc は、ZK Web アプリケーションの構築と Ligetron 上でのデプロイをサポートする ZK App Development Platform を公開しました。これには、C/C++、CIRCOM、または Rust を使用して NP statement を記述し、WASM にコンパイルし、証明書を生成および検証することが含まれます。また、ブラウザ上での証明速度テストも提供しています。"
         }
       }
     ],
@@ -569,7 +599,8 @@
         ],
         "summary": {
           "zh": "@thezkcloud 宣布加入ETHProof的证明器队列，对每个区块进行证明。其使用 @SuccinctLabs 的RSP证明器进行证明，硬件使用ZkCloud上的云主机。",
-          "en": "@thezkcloud announced its participation in ETHProof's prover, proving each block. It uses @SuccinctLabs ' RSP prover and cloud hosts from ZkCloud."
+          "en": "@thezkcloud announced its participation in ETHProof's prover, proving each block. It uses @SuccinctLabs ' RSP prover and cloud hosts from ZkCloud.",
+          "ja": "@thezkcloud は、ETHProof のプロバーとして参加し、各ブロックを証明します。これは @SuccinctLabs の RSP prover と ZkCloud のクラウドホストを利用しています。"
         }
       },
       {
@@ -585,7 +616,8 @@
         ],
         "summary": {
           "zh": "@FairGateLabs 、@RootstockLabs 和 @InputOutputHK 联合组建BitVMX FORCE战略联盟，旨在通过BitVMX框架提升比特币的可扩展性和创新性，支持复杂的可争议计算操作。",
-          "en": "@FairGateLabs 、@RootstockLabs and @InputOutputHK jointly founded the BitVMX FORCE strategic alliance, aiming to enhance Bitcoin's scalability and innovation through the BitVMX framework, supporting complex disputeable computations."
+          "en": "@FairGateLabs 、@RootstockLabs and @InputOutputHK jointly founded the BitVMX FORCE strategic alliance, aiming to enhance Bitcoin's scalability and innovation through the BitVMX framework, supporting complex disputeable computations.",
+          "ja": "@FairGateLabs、@RootstockLabs、および@InputOutputHKは共同でBitVMX FORCE戦略的アライアンスを設立し、複雑な紛争計算をサポートするBitVMXフレームワークを通じてBitcoinのスケーラビリティとイノベーションの向上を目指します。"
         }
       }
     ],
@@ -607,7 +639,8 @@
         ],
         "summary": {
           "zh": "Komargodski等人在{{name}}论文中提出了一种基于任意矩阵乘法的有用工作量证明（PoUW）协议，旨在让比特币挖矿的能源浪费变为支持AI训练和推理的能源来源。该项目也准备发一条新的区块链。",
-          "en": "Komargodski et al. proposed a proof of useful work (PoUW) protocol based on arbitrary matrix multiplication in the{{name}} paper, aiming to convert the energy waste of Bitcoin mining into energy sources for AI training and inference. This project also plans to launch a new blockchain."
+          "en": "Komargodski et al. proposed a proof of useful work (PoUW) protocol based on arbitrary matrix multiplication in the{{name}} paper, aiming to convert the energy waste of Bitcoin mining into energy sources for AI training and inference. This project also plans to launch a new blockchain.",
+          "ja": "Komargodskiらは、任意の行列積に基づいたProof of Useful Work (PoUW)プロトコルを{{name}}の論文で提案しました。これは、Bitcoinマイニングによるエネルギー浪費をAIトレーニングおよび推論のためのエネルギー源に転換することを目的としています。本プロジェクトでは、新しいブロックチェーンのローンチも計画しています。"
         }
       },
       {
@@ -624,7 +657,8 @@
         ],
         "summary": {
           "zh": "Ambrona等人在{{name}}论文中提出了一种在PLONK中高效实现外域算术的方法，显著减少了约束数量，并验证了其在椭圆曲线模拟中的适用性。",
-          "en": "Ambrona et al. proposed a method for efficient foreign-field arithmetic in PLONK in the{{name}} paper, significantly reducing the number of constraints and evaluating its applicability in elliptic curve simulations."
+          "en": "Ambrona et al. proposed a method for efficient foreign-field arithmetic in PLONK in the{{name}} paper, significantly reducing the number of constraints and evaluating its applicability in elliptic curve simulations.",
+          "ja": "Ambronaらは、{{name}} の論文でPLONKにおける効率的な外部フィールド算術の方法を提案し、制約の数を大幅に削減し、楕円曲線シミュレーションでのその適用可能性を評価しました。"
         }
       }
     ],
@@ -646,7 +680,8 @@
         ],
         "summary": {
           "zh": "Pathak等人在{{name}}论文中系统化地分析了向量承诺（VCs）的设计、特性、属性及应用，比较了不同构造的证明/更新信息大小及复杂度，并探讨了其在去中心化和隐私保护技术中的有效性。",
-          "en": "Pathak et al. analyzed the design, properties, and applications of vector commitments (VCs) in the{{name}} paper, comparing the proof/commitment update information size and complexity of different constructions, and discussing their validity in decentralized and privacy protection technologies."
+          "en": "Pathak et al. analyzed the design, properties, and applications of vector commitments (VCs) in the{{name}} paper, comparing the proof/commitment update information size and complexity of different constructions, and discussing their validity in decentralized and privacy protection technologies.",
+          "ja": "Pathakらは、{{name}}の論文において、ベクトルコミットメント（VCs）の設計、特性、応用を分析し、異なる構成における証明/コミットメント更新情報のサイズと複雑さを比較し、分散型およびプライバシー保護技術におけるその妥当性について論じた。"
         }
       },
       {
@@ -663,7 +698,8 @@
         ],
         "summary": {
           "zh": "Gilchrist等人在{{name}}论文中提出了一种攻击ECDSA的方法，通过两个具有仿射关系的nonce恢复私钥，无需格规约或暴力搜索。",
-          "en": "Gilchrist et al. proposed an attack on ECDSA in the{{name}} paper, recovering the private key using two affinely related nonces, without requiring lattice reduction or brute force search."
+          "en": "Gilchrist et al. proposed an attack on ECDSA in the{{name}} paper, recovering the private key using two affinely related nonces, without requiring lattice reduction or brute force search.",
+          "ja": "Gilchristらは、{{name}}の論文でECDSAに対する攻撃を提案し、格子削減や総当たり捜索を必要とせずに、2つのアフィン的に関連付けられたノンスを用いて秘密鍵を復元しました。"
         }
       }
     ],
@@ -685,7 +721,8 @@
         ],
         "summary": {
           "zh": "Foteinos Mergoupis-Anagnou在{{name}}论文中提出了OSST，一种基于Schnorr的阈值零知识识别协议，无需交互且不依赖公开份额，支持在无需认证过程或基础设施支持的无许可和动态环境中廉价采用。",
-          "en": "Foteinos Mergoupis-Anagnou proposed OSST in the{{name}} paper, a Schnorr-based threshold zk-identification protocol, which is non-interactive and does not depend on public shares, supporting cheap adoption in untrusted and dynamic environments."
+          "en": "Foteinos Mergoupis-Anagnou proposed OSST in the{{name}} paper, a Schnorr-based threshold zk-identification protocol, which is non-interactive and does not depend on public shares, supporting cheap adoption in untrusted and dynamic environments.",
+          "ja": "Foteinos Mergoupis-Anagnou は、Schnorrベースの閾値zk-identificationプロトコルであるOSSTを{{name}} の論文で提案しました。これは非対話的であり、公開シェアに依存しないため、信頼できない動的な環境での安価な導入をサポートします。"
         },
         "notes": {
           "zh": [
@@ -701,6 +738,13 @@
             "The actual proof content, for example, can be _'we are proving we know the private key x'_",
             "Applications include anonymous group authentication, decentralized identity systems, on-chain multi-signature control, IoT collaboration, cross-organization verification, etc.",
             "OSST protocol is non-interactive and does not depend on public shares, supporting asynchronous communication and dynamic member joining"
+          ],
+          "ja": [
+            "Threshold zk identification protocolは、t人のメンバーが秘密を知っていることを共同で証明することを可能にする。",
+            "このプロトコルは、各メンバーの公開鍵の登録や認証を不要とするため、動的または信頼できない環境に適している。",
+            "実際の証明内容としては、「我々は秘密鍵xを知っていることを証明している」などが挙げられる。",
+            "応用例には、匿名グループ認証、分散型IDシステム、オンチェーンマルチシグネチャ制御、IoTコラボレーション、組織間検証などがある。",
+            "OSSTプロトコルは非対話的であり、公開シェアに依存しないため、非同期通信や動的なメンバー参加をサポートする。"
           ]
         }
       }
@@ -720,7 +764,8 @@
         ],
         "summary": {
           "zh": "@zksecurityXYZ 在博客{{name}}中讨论了利用WebGPU提升ZK证明性能的方法，介绍了WebGPU本身和在实现ZKP中的挑战，并通过实验验证其与Stwo集成后的提速效果。",
-          "en": "@zksecurityXYZ discussed in the{{name}} blog how to accelerate ZK proving with WebGPU, introducing the challenges of WebGPU itself and in implementing ZKP, and verified its speedup with Stwo integration."
+          "en": "@zksecurityXYZ discussed in the{{name}} blog how to accelerate ZK proving with WebGPU, introducing the challenges of WebGPU itself and in implementing ZKP, and verified its speedup with Stwo integration.",
+          "ja": "@zkSNARK は {{name}} のブログで、WebGPU を用いたZK証明の高速化方法について議論しました。これには、WebGPU 自体の課題とZKPの実装における課題が含まれており、Stwo との統合による速度向上を検証しています。"
         }
       },
       {
@@ -733,7 +778,8 @@
         ],
         "summary": {
           "zh": "在 @eth_proofs 的第一次电话会议中，揭晓了三款新的zkVM：@argumentxyz 的Ix（基于Lean 4）、@StarkWareLtd 的StarkV（基于RISC-V）和 @IrreducibleHW 的 zCray（受RISC-V启发）。",
-          "en": "@eth_proofs unveiled three new zkVMs in the first phone call: @argumentxyz's Ix (Lean 4), @StarkWareLtd's StarkV (RISC-V), and @IrreducibleHW's zCray (inspired by RISC-V)."
+          "en": "@eth_proofs unveiled three new zkVMs in the first phone call: @argumentxyz's Ix (Lean 4), @StarkWareLtd's StarkV (RISC-V), and @IrreducibleHW's zCray (inspired by RISC-V).",
+          "ja": "@eth_proofs は最初の電話会議で、3つの新しい zkVM を発表しました。それは @argumentxyz の Ix (Lean 4)、@StarkWareLtd の StarkV (RISC-V)、そして @IrreducibleHW の zCray (RISC-V にインスパイアされたもの) です。"
         }
       }
     ],
@@ -755,7 +801,8 @@
         ],
         "summary": {
           "zh": "@zkv_xyz 发布了2025年第一季度的ZKV报告，分析了当前的ZKV生态系统状态，包括主要项目、技术进展和融资情况等。",
-          "en": "@zkv_xyz published the Q1 2025 ZKV report, analyzing the current ZKV ecosystem status, including major projects, technical progress, and funding."
+          "en": "@zkv_xyz published the Q1 2025 ZKV report, analyzing the current ZKV ecosystem status, including major projects, technical progress, and funding.",
+          "ja": "@zkv_xyz が、主要プロジェクト、技術的進捗、資金調達を含む現在のZKVエコシステムの状態を分析したQ1 2025年ZKVレポートを公開しました。"
         }
       },
       {
@@ -769,7 +816,8 @@
         ],
         "summary": {
           "zh": "@Cysic 团队在{{name}}博客中提出了HyperCube IR，一种专为ZKP和FHE设计的中间表示，旨在解决ZKP系统开发中的高性能代码可移植性问题。",
-          "en": "@Cysic team proposed HyperCube IR in the{{name}} blog, an intermediate representation for ZKP and FHE, aiming to solve the problem of high-performance code portability in ZKP system development."
+          "en": "@Cysic team proposed HyperCube IR in the{{name}} blog, an intermediate representation for ZKP and FHE, aiming to solve the problem of high-performance code portability in ZKP system development.",
+          "ja": "Cysicチームは、ZKPシステム開発における高性能コードの移植性の問題を解決することを目的とした、ZKPおよびFHEのための中間表現であるHyperCube IRを{{name}}ブログで提案しました。"
         }
       }
     ],
@@ -792,7 +840,8 @@
         ],
         "summary": {
           "zh": "Bünz等人在{{name}}论文中提出了WARP，首个具有线性证明者时间和对数验证者时间的累加方案。该方案基于哈希，支持无限制的累加深度，并具有后量子安全性。",
-          "en": "Bünz et al. proposed WARP in the{{name}} paper, the first linear-time accumulator with logarithmic verifier time. The scheme is based on hash, supports unlimited accumulation depth, and has post-quantum security."
+          "en": "Bünz et al. proposed WARP in the{{name}} paper, the first linear-time accumulator with logarithmic verifier time. The scheme is based on hash, supports unlimited accumulation depth, and has post-quantum security.",
+          "ja": "Bünzらは、{{name}}の論文でWARPを提案しました。これは、検証時間に対数時間を持つ最初の線形時間アキュムレータです。このスキームはハッシュに基づき、無制限の蓄積深度をサポートし、ポスト量子セキュリティを備えています。"
         }
       },
       {
@@ -805,7 +854,8 @@
         ],
         "summary": {
           "zh": "ProofLab正在开发，将提供全面、及时更新的zkVM报告和基准测试，目前已经有RISC0和SP1的基准测试数据。",
-          "en": "ProofLab is currently developing, will provide comprehensive, up-to-date reports and benchmarks for zkVM, currently with RISC0 and SP1 benchmarks."
+          "en": "ProofLab is currently developing, will provide comprehensive, up-to-date reports and benchmarks for zkVM, currently with RISC0 and SP1 benchmarks.",
+          "ja": "ProofLabでは現在、zkVMに関する包括的で最新のレポートとベンチマークを開発中です。現時点ではRISC0およびSP1のベンチマークを提供しています。"
         }
       }
     ]
@@ -823,7 +873,8 @@
         ],
         "summary": {
           "zh": "Andreessen Horowitz领投2500万美元投资于Miden (zkVM)，这是一个由前Meta工程师Bobbin Threadbare共同创立的隐私区块链项目。",
-          "en": "Andreessen Horowitz led a $25 million investment in Miden (zkVM), a privacy blockchain project co-founded by former Meta engineer Bobbin Threadbare."
+          "en": "Andreessen Horowitz led a $25 million investment in Miden (zkVM), a privacy blockchain project co-founded by former Meta engineer Bobbin Threadbare.",
+          "ja": "Andreessen Horowitzは、元MetaエンジニアのBobbin Threadbareが共同設立したプライバシーブロックチェーンプロジェクトであるMiden（zkVM）に2500万ドルの投資を行いました。"
         }
       },
       {
@@ -846,7 +897,8 @@
         ],
         "summary": {
           "zh": "@machina_io 团队在{{name}}博客中介绍了Diamond iO，这是一个格基iO实现，通过简化矩阵操作克服了传统iO方案的复杂性，支持有限的电路功能范围，并给出了基准测试数据。",
-          "en": "@machina_io team introduced Diamond iO in the{{name}} blog, a lattice-based iO implementation, overcoming the complexity of traditional iO schemes by simplifying matrix operations, supporting a limited range of circuit functions, and providing benchmark result."
+          "en": "@machina_io team introduced Diamond iO in the{{name}} blog, a lattice-based iO implementation, overcoming the complexity of traditional iO schemes by simplifying matrix operations, supporting a limited range of circuit functions, and providing benchmark result.",
+          "ja": "@machina_io チームは、格子ベースのiO実装であるDiamond iOを{{name}} ブログで紹介しました。これは、行列演算の簡素化、限定的な回路機能のサポート、ベンチマーク結果の提供を通じて、従来のiOスキームの複雑さを克服するものです。"
         }
       }
     ]

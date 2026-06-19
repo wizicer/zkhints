@@ -13,7 +13,8 @@
         ],
         "summary": {
           "zh": "@hexensio 团队在{{name}}博客中比较了Halo2、Zirgen和Plonky3三种zkVM DSL，分析了它们在电路架构、数据模型和约束表达方面的差异。",
-          "en": "@hexensio team compared Halo2, Zirgen, and Plonky3 three zkVM DSLs in their blog{{name}}, analyzing their differences in circuit architecture, data model, and constraint expression."
+          "en": "@hexensio team compared Halo2, Zirgen, and Plonky3 three zkVM DSLs in their blog{{name}}, analyzing their differences in circuit architecture, data model, and constraint expression.",
+          "ja": "@hexensioチームは、ブログ記事{{name}}でHalo2、Zirgen、Plonky3という3つのzkVM DSLを比較し、回路アーキテクチャ、データモデル、制約表現における違いを分析しました。"
         },
         "notes": {
           "zh": [
@@ -31,6 +32,14 @@
             "Public interface: Instance columns vs keyword vs explicit binding",
             "Constraint method: Rotation gates vs cross-cycle references vs guard mechanisms",
             "Core trade-off: Abstraction vs control vs development efficiency"
+          ],
+          "ja": [
+            "3つのDSL: Halo2 (PLONKish matrix)、Zirgen (STARK trace)、Plonky3 (AIR direct constraints)",
+            "アーキテクチャ: Matrix vs state transitions vs polynomial identities",
+            "データモデル: Typed columns vs register composition vs typeless columns",
+            "パブリックインターフェース: Instance columns vs keyword vs explicit binding",
+            "制約方法: Rotation gates vs cross-cycle references vs guard mechanisms",
+            "コアなトレードオフ: Abstraction vs control vs development efficiency"
           ]
         }
       }
@@ -52,7 +61,8 @@
         ],
         "summary": {
           "zh": "@risczero 团队在GitHub安全公告中披露了zkVM平台中的高危漏洞，涉及sys_read函数内存安全问题，可能导致任意代码执行，已发布修复版本。",
-          "en": "@risczero team disclosed a high-risk vulnerability in the zkVM platform, involving a memory safety issue in the sys_read function, which could lead to arbitrary code execution. The vulnerability has been fixed."
+          "en": "@risczero team disclosed a high-risk vulnerability in the zkVM platform, involving a memory safety issue in the sys_read function, which could lead to arbitrary code execution. The vulnerability has been fixed.",
+          "ja": "@risczero チームは、sys_read 関数におけるメモリ安全性に関する問題を含む、zkVM プラットフォームのハイリスクな脆弱性を公開しました。この脆弱性は任意のコード実行につながる可能性がありましたが、現在は修正されています。"
         },
         "notes": {
           "zh": [
@@ -70,6 +80,14 @@
             "Developers need to update Cargo.toml with related crate versions and rebuild application",
             "RISC Zero proof system and circuits are not affected, no prover action needed",
             "Projects using risc0-aggregation or RiscZeroSetVerifier need to upgrade to >=0.9 version"
+          ],
+          "ja": [
+            "Vulnerability allows host to write arbitrary code to guest memory via sys_read。",
+            "Affected versionsを使用しているすべてのゲストプログラムがリスクにあり、zk保証が破られます。",
+            "risc0-zkvm バージョン 2.3.2 および 3.0.3 に修正が適用され、unsafe pointer operations が除去されました。",
+            "開発者は Cargo.toml を関連するクレートバージョンで更新し、アプリケーションを再ビルドする必要があります。",
+            "RISC Zero proof system および circuits は影響を受けておらず、prover のアクションは不要です。",
+            "risc0-aggregation または RiscZeroSetVerifier を使用しているプロジェクトは、>=0.9 バージョンへのアップグレードが必要です。"
           ]
         }
       }
@@ -89,7 +107,8 @@
         ],
         "summary": {
           "zh": "研究人员独立发布两篇论文，披露针对Intel SGX和AMD SEV-SNP的物理攻击Battering RAM和Wiretap，利用确定性加密漏洞，允许攻击者查看和操纵受保护数据。",
-          "en": "Researchers independently published two papers disclosing physical attacks Battering RAM and Wiretap against Intel SGX and AMD SEV-SNP, exploiting deterministic encryption vulnerabilities, allowing attackers to view and manipulate protected data."
+          "en": "Researchers independently published two papers disclosing physical attacks Battering RAM and Wiretap against Intel SGX and AMD SEV-SNP, exploiting deterministic encryption vulnerabilities, allowing attackers to view and manipulate protected data.",
+          "ja": "研究者たちは、決定論的暗号化の脆弱性を悪用した物理攻撃であるBattering RAMとWiretapについて、Intel SGXおよびAMD SEV-SNPに対する2つの論文を独立して発表しました。これにより、攻撃者は保護されたデータの内容を閲覧し、操作することが可能になります。"
         },
         "notes": {
           "zh": [
@@ -107,6 +126,14 @@
             "Attacks through physical interceptors, supply chain or physical access can lead to vulnerability exploitation",
             "Chip manufacturers claim TEE design does not defend against physical attacks, but cloud services still widely rely on it",
             "Blockchain services like Phala use TEE to protect smart contracts, facing potential security risks"
+          ],
+          "ja": [
+            "TEEは決定論的暗号に依存しており、リプレイ攻撃に対して脆弱であり、セキュリティ強化にはハードウェア変更が必要である。",
+            "Battering RAMアタックのコストは50ドル未満であり、アクティブなデータ読み取りと書き込みをサポートする。",
+            "Wiretapアタックのコストは500〜1000ドルであり、パッシブなデータ読み取りのみをサポートする。",
+            "物理的な傍受、サプライチェーン、または物理的アクセスを経由した攻撃により、脆弱性の悪用につながる可能性がある。",
+            "チップメーカーはTEE設計が物理的攻撃を防げないと主張しているが、クラウドサービスは依然として広くこれに依存している。",
+            "Phalaのようなブロックチェーンサービスはスマートコントラクトを保護するためにTEEを使用しているが、潜在的なセキュリティリスクに直面している。"
           ]
         }
       }
@@ -125,7 +152,8 @@
         ],
         "summary": {
           "zh": "@PrivacyEthereum 团队发布了九月通讯，涵盖ZK-Kit进展和PSE路线图，聚焦零知识技术在去中心化和隐私保护方面的应用。",
-          "en": "@PrivacyEthereum team released September 2025 newsletter, covering ZK-Kit progress and PSE roadmap, focusing on the application of zero-knowledge technology in decentralization and privacy protection."
+          "en": "@PrivacyEthereum team released September 2025 newsletter, covering ZK-Kit progress and PSE roadmap, focusing on the application of zero-knowledge technology in decentralization and privacy protection.",
+          "ja": "@PrivacyEthereumチームは、ゼロ知識技術の分散化とプライバシー保護への応用に焦点を当てた、ZK-Kitの進捗とPSEロードマップを網羅した2025年9月号のニュースレターをリリースしました。"
         },
         "notes": {
           "zh": [
@@ -143,6 +171,14 @@
             "Newsletter content covers open-source project updates and community dynamics",
             "Zero-knowledge proof technology is driving blockchain privacy and scalability development",
             "The team continues to optimize tools to support developers in building ZK applications"
+          ],
+          "ja": [
+            "ZK-Kitチームは、ゼロ知識ツールを開発し、暗号プログラミングの能力を強化することに注力しています。",
+            "PSEロードマップは、ゼロ知識ドメインにおける2025年以降の戦略的方向性を示しています。",
+            "ゼロ知識技術における分散化とプライバシー保護を重視しています。",
+            "ニュースレターの内容には、オープンソースプロジェクトの更新情報やコミュニティの動向が含まれます。",
+            "ゼロ知識証明技術は、ブロックチェーンのプライバシーとスケーラビリティ開発を推進しています。",
+            "チームは、開発者がZKアプリケーションを構築するのを支援するためのツールの最適化を継続しています。"
           ]
         }
       }
@@ -162,7 +198,8 @@
         ],
         "summary": {
           "zh": "@0xLita 团队发布了Valida zkVM 1.0，包括并行证明和编译器优化等特性，提升了性能和开发者体验，但强调其尚未达到生产就绪状态。",
-          "en": "@0xLita team released Valida zkVM 1.0, including parallel proving and compiler optimizations, improving performance and developer experience, but emphasizing that it is not yet production-ready."
+          "en": "@0xLita team released Valida zkVM 1.0, including parallel proving and compiler optimizations, improving performance and developer experience, but emphasizing that it is not yet production-ready.",
+          "ja": "@0xLitaチームは、並列証明（parallel proving）とコンパイラ最適化を組み込んだValida zkVM 1.0をリリースしましたが、これはまだ本番環境での利用には適していない点に留意が必要です。"
         },
         "notes": {
           "zh": [
@@ -180,6 +217,14 @@
             "Security issue: Soundness auditing is still in progress, not recommended for production environment",
             "Thanks to Hideaki Takahashi for fixing critical soundness errors, promoting collaborative development",
             "Future plans include expanding performance, language support, and application scale"
+          ],
+          "ja": [
+            "Valida zkVM 1.0は並列証明を導入し、マルチスレッドワークロードの高速化を大幅に実現します",
+            "コンパイラツールチェーンの最適化には、スマートブランチングとオペレーションフォールディングが含まれ、コード効率が向上しています",
+            "新しいブーリアン制約とプログラムの一貫性チェックにより、証明の正確性が強化されました",
+            "セキュリティ上の問題: サウンドネス監査は進行中であり、本番環境での利用は推奨されません",
+            "重要なサウンドネスエラーを修正してくださった高橋 秀明さんに感謝します。これは共同開発を促進するものです",
+            "今後の計画には、パフォーマンス、言語サポート、アプリケーションスケールの拡大が含まれます"
           ]
         }
       }
@@ -198,7 +243,8 @@
         ],
         "summary": {
           "zh": "Hafezi等人在{{name}}论文中系统化分析了查找表论证的设计，提出统一框架覆盖多种查找类型，并评估现有协议在证明成本、可组合性等方面的表现。",
-          "en": "Hafezi et al. in {{name}} paper systematize the design of lookup table arguments, propose a unified framework covering various lookup types, and evaluate existing protocols in terms of proof cost, composability, etc."
+          "en": "Hafezi et al. in {{name}} paper systematize the design of lookup table arguments, propose a unified framework covering various lookup types, and evaluate existing protocols in terms of proof cost, composability, etc.",
+          "ja": "{{name}} の論文における Hafeziらは、lookup table argumentの設計を体系化し、様々なlookupタイプを網羅する統一的なフレームワークを提案し、既存のプロトコルを証明コストやコンポーザビリティなどの観点から評価しています。"
         },
         "notes": {
           "zh": [
@@ -216,6 +262,14 @@
             "Classify protocols based on proof technology and composition style",
             "Evaluation metrics include prover cost, table size dependence, and recursive proof composability",
             "Provide practical guidance on selection and highlight the advantages and limitations of preprocessing and decomposability"
+          ],
+          "ja": [
+            "ルックアップテーブル引数は、非対話型操作、zk-VM、セットメンバーシップ証明書などで広く利用されています。",
+            "既存の構成は、前提条件、効率性、および合成可能性において異なっています。",
+            "標準、射影、インデックス、ベクトル、分解可能なルックアップを網羅する統一フレームワークを導入します。",
+            "プロトコルを証明技術と合成スタイルに基づいて分類します。",
+            "評価指標には、proverコスト、テーブルサイズへの依存性、および再帰的証明の合成可能性が含まれます。",
+            "選択に関する実践的なガイダンスを提供し、プリプロセス処理と分解可能性の利点と限界を強調します。"
           ]
         }
       }
@@ -235,7 +289,8 @@
         ],
         "summary": {
           "zh": "Zhang等人在{{name}}论文中提出了一种动态zkSNARK方案DYNARK，可在见证小变化时以次线性时间更新证明，基于Groth16协议优化效率。",
-          "en": "Zhang et al. in {{name}} paper proposed a dynamic zkSNARK scheme DYNARK, which can update proofs in sublinear time when witnessing small changes, based on Groth16 protocol to optimize efficiency."
+          "en": "Zhang et al. in {{name}} paper proposed a dynamic zkSNARK scheme DYNARK, which can update proofs in sublinear time when witnessing small changes, based on Groth16 protocol to optimize efficiency.",
+          "ja": "Zhangらは{{name}}の論文で、Groth16プロトコルに基づき効率を最適化し、小さな変更が発生した場合にサブ線形時間で証明を更新できる動的なzkSNARK方式であるDYNARKを提案した。"
         },
         "notes": {
           "zh": [
@@ -253,6 +308,14 @@
             "Experiments show that with n=2^20, preprocessing takes 74.3 seconds and updates take 3-60 milliseconds",
             "Does not depend on pairing product parameters or other zkSNARKs, simplifying system design",
             "Fully compatible with existing Groth16 infrastructure, making deployment easier"
+          ],
+          "ja": [
+            "DYNARKは、小さな変更を証明（witnessing）する際の高速な証明更新をサポートし、計算オーバーヘッドを削減します。",
+            "更新時間は、セミダイナミック設定ではO(d)の群演算、フルダイナミック設定ではO(d√n log n)です。",
+            "証明サイズは192バイトで維持され、検証時間は4.4ミリ秒であり、Groth16と一貫しています。",
+            "実験によると、n=2^20の場合、プリプロセッシングに74.3秒、更新に3〜60ミリ秒かかります。",
+            "ペアリング積パラメータや他のzkSNARKsには依存せず、システム設計を簡素化します。",
+            "既存のGroth16インフラストラクチャと完全に互換性があるため、デプロイが容易になります。"
           ]
         }
       }
@@ -272,7 +335,8 @@
         ],
         "summary": {
           "zh": "Nick等人在{{name}}论文中提出Shielded CSV协议，结合PCD抽象实现高效隐私交易，仅需64字节数据写入区块链，提升比特币隐私至每秒100笔交易。",
-          "en": "Nick et al. in {{name}} paper proposed Shielded CSV protocol, combining PCD abstraction to achieve efficient privacy transactions, requiring only 64 bytes of data written to the blockchain, improving Bitcoin privacy to 100 transactions per second."
+          "en": "Nick et al. in {{name}} paper proposed Shielded CSV protocol, combining PCD abstraction to achieve efficient privacy transactions, requiring only 64 bytes of data written to the blockchain, improving Bitcoin privacy to 100 transactions per second.",
+          "ja": "Nickらによる{{name}}論文では、PCD抽象化を組み合わせたShielded CSVプロトコルが提案されており、ブロックチェーンへの書き込みデータ量をわずか64バイトに抑え、Bitcoinのプライバシー性を1秒あたり100トランザクションに向上させています。"
         },
         "notes": {
           "zh": [
@@ -290,6 +354,14 @@
             "Based on PCD abstraction, supports folding schemes and recursive STARKs etc. implementation strategies",
             "Extremely scalable, future can further improve the framework and protocol",
             "High security, protected by ZK proofs, reducing data leakage risk"
+          ],
+          "ja": [
+            "Shielded CSVは、ブロックチェーンに書き込む必要があるnullifierが64バイトのみである、真にプライベートなトランザクション構築を初めて提供します。",
+            "検証コストは低く、ユーザーは単一のSchnorr署名検証のみを必要とし、非ユーザーはデータを無視できます。",
+            "証明書のサイズはトランザクション履歴に依存せず、効率とプライバシーを向上させます。",
+            "PCD抽象化に基づいており、folding schemesやrecursive STARKsなどの実装戦略をサポートします。",
+            "極めてスケーラブルであり、フレームワークとプロトコルはさらなる改善の余地があります。",
+            "ZK proofによって保護されており、データ漏洩のリスクリを低減する高いセキュリティを提供します。"
           ]
         }
       }
@@ -309,7 +381,8 @@
         ],
         "summary": {
           "zh": "Grassi等人在{{name}}论文中提出了Poseidon2b，这是一种专为二进制扩展字段设计的哈希函数，旨在继承Poseidon2的电路友好特性，并与Binius等证明系统兼容，同时分析了代数密码分析和子空间轨迹等攻击向量。",
-          "en": "Grassi et al. in {{name}} paper proposed Poseidon2b, a hash function designed for binary extension fields, inheriting the circuit-friendly characteristics of Poseidon2, and compatible with Binius et al. proof systems, analyzing algebraic cryptanalysis and subspace trajectory attacks."
+          "en": "Grassi et al. in {{name}} paper proposed Poseidon2b, a hash function designed for binary extension fields, inheriting the circuit-friendly characteristics of Poseidon2, and compatible with Binius et al. proof systems, analyzing algebraic cryptanalysis and subspace trajectory attacks.",
+          "ja": "Grassiらによる{{name}}論文では、バイナリ拡張体向けに設計されたハッシュ関数であるPoseidon2bが提案されています。これはPoseidon2の回路フレンドリーな特性を受け継ぎ、Biniusらの証明システムと互換性があり、代数的暗号解析および部分空間軌道攻撃を分析しています。"
         },
         "notes": {
           "zh": [
@@ -327,6 +400,14 @@
             "Focusing on algebraic cryptanalysis and subspace trajectory attacks",
             "Benchmarking shows advantages in proof size, time, and verification",
             "Security analysis highlights the unique attack risks of binary extension fields"
+          ],
+          "ja": [
+            "Poseidon2bはバイナリ拡張フィールド向けに設計されており、回路フレンドリーな特性を継承しています。",
+            "Biniusらの証明システムと互換性があり、証明および検証時間を最適化します。",
+            "バイナリ拡張フィールドにおけるPoseidonおよびPoseidon2の攻撃再評価",
+            "代数的暗号解析および部分空間軌道攻撃に焦点を当てる",
+            "ベンチマークにより、証明サイズ、時間、検証における利点を示しています",
+            "セキュリティ分析は、バイナリ拡張フィールド特有の攻撃リスクを強調しています"
           ]
         }
       }
@@ -345,7 +426,8 @@
         ],
         "summary": {
           "zh": "@brevis_zk 推出Pico Prism (zkVM)，性能大幅提升：10秒内交易覆盖率升至98.9%，硬件成本降50%至12.8万美元，证明时间缩短至约6秒。该方案旨在突破以太坊验证瓶颈，所有测试已开源。",
-          "en": "@brevis_zk announced Pico Prism (zkVM), which achieved significant performance improvements: 98.9% transaction coverage within 10 seconds, hardware cost reduced by 50% to $128,000, proof time shortened to about 6 seconds. The scheme aims to break through Ethereum verification bottlenecks, with all benchmark open-sourced."
+          "en": "@brevis_zk announced Pico Prism (zkVM), which achieved significant performance improvements: 98.9% transaction coverage within 10 seconds, hardware cost reduced by 50% to $128,000, proof time shortened to about 6 seconds. The scheme aims to break through Ethereum verification bottlenecks, with all benchmark open-sourced.",
+          "ja": "@brevis_zk が Pico Prism (zkVM) を発表しました。これには大幅なパフォーマンス向上が見られます。具体的には、10秒以内に98.9%のトランザクションカバレッジを達成し、ハードウェアコストを50%削減して$128,000に抑え、証明時間（proof time）を約6秒に短縮しました。このスキームはEthereumの検証ボトルネックを打破することを目指しており、すべてのベンチマークはオープンソースで公開されています。"
         },
         "images": [
           "./images/2025/10/17_pico_vs_sp1.png"
@@ -367,7 +449,8 @@
         ],
         "summary": {
           "zh": "@VitalikButerin 在{{name}}博客中详细讲解了GKR协议，包括其在ZK证明系统中的应用、Sumcheck协议原理以及Poseidon哈希的证明优化等内容。",
-          "en": "@VitalikButerin in {{name}} blog post detailedly explained the GKR protocol, including its application in ZK proof systems, the principle of Sumcheck protocol, and the proof optimization of Poseidon hash function."
+          "en": "@VitalikButerin in {{name}} blog post detailedly explained the GKR protocol, including its application in ZK proof systems, the principle of Sumcheck protocol, and the proof optimization of Poseidon hash function.",
+          "ja": "@VitalikButerin 氏の {{name}} ブログ記事では、GKRプロトコルについて詳細に解説されており、ZK証明システムへの応用、Sumcheckプロトコルの原理、Poseidonハッシュ関数の証明最適化などが含まれています。"
         },
         "notes": {
           "zh": [
@@ -385,6 +468,14 @@
             "Optimized overhead <15x theoretically, single-digit practically",
             "Requires ZK-SNARK/STARK for privacy",
             "Extensions enable near-zero overhead at scale"
+          ],
+          "ja": [
+            "バッチ処理されたレイヤード計算のためのGKR、中間コミットメント不要",
+            "検証を再帰的に変換するためにsumcheckを使用",
+            "ハッシュおよびニューラルネットワークに特化",
+            "理論上オーバーヘッドは15倍未満、実用上は一桁台",
+            "プライバシーのためにZK-SNARK/STARKが必要",
+            "拡張機能によりスケールアップ時のオーバーヘッドをほぼゼロに"
           ]
         }
       }
@@ -404,7 +495,8 @@
         ],
         "summary": {
           "zh": "Zyskind等人在{{name}}论文中提出了一种高效阈值FHE解密协议，避免噪声泛滥，通过安全MPC舍入实现UC框架下的模拟安全，在线阶段吞吐量提升约20,000倍。",
-          "en": "Zyskind et al. in {{name}} paper proposed an efficient threshold FHE decryption protocol, avoiding noise proliferation, through secure MPC rounding to achieve simulation security in the UC framework, with online throughput improvement of approximately 20,000 times."
+          "en": "Zyskind et al. in {{name}} paper proposed an efficient threshold FHE decryption protocol, avoiding noise proliferation, through secure MPC rounding to achieve simulation security in the UC framework, with online throughput improvement of approximately 20,000 times.",
+          "ja": "Zyskindらによる{{name}}論文では、ノイズの増殖を回避し、UCフレームワークにおけるシミュレーションセキュリティを達成するためにセキュアなMPCラウンディングを用いた効率的な閾値FHE復号プロトコルが提案されており、オンラインスループットは約20,000倍の改善が見られます。"
         },
         "notes": {
           "zh": [
@@ -422,6 +514,14 @@
             "Online throughput improvement of approximately 20,000 times, with a latency optimization of up to 37 times",
             "Technique can be applied to other MPC protocols, such as secure machine learning",
             "Proven secure in the UC framework, enhancing composability and practicality"
+          ],
+          "ja": [
+            "本プロトコルはノイズの増殖を防ぎ、オーバーヘッドとパラメータサイズを削減する。",
+            "オフライン/オンライン設計により、プリプロセスによってオンライン通信および計算コストが削減される。",
+            "不正な多数派（dishonest majority）や正直な多数派（honest majority）などの複数の敵対的モデルをサポートする。",
+            "約20,000倍のオンラインスループット向上と最大37倍までのレイテンシ最適化を実現する。",
+            "この技術は、セキュア機械学習のような他のMPCプロトコルに応用可能である。",
+            "UCフレームワークで安全性が証明されており、コンポーザビリティと実用性を高めている。"
           ]
         }
       }
@@ -440,7 +540,8 @@
         ],
         "summary": {
           "zh": "@barrywhitehat 在帖子{{name}}中讨论了如何通过添加pstore和pload操作码实现私有EVM，支持私有用户状态，同时分析了隐私与全局状态的权衡。",
-          "en": "@barrywhitehat in {{name}} post discussed how to implement private EVM by adding pstore and pload opcodes, supporting private user states, analyzing the trade-off between privacy and global state."
+          "en": "@barrywhitehat in {{name}} post discussed how to implement private EVM by adding pstore and pload opcodes, supporting private user states, analyzing the trade-off between privacy and global state.",
+          "ja": "@barrywhitehat の {{name}} 投稿では、pstore および pload オペコードを追加することでプライベートEVMを実装する方法、プライベートユーザー状態のサポート、プライバシーとグローバルステート間のトレードオフ分析について議論されています。"
         },
         "notes": {
           "zh": [
@@ -458,6 +559,14 @@
             "Need to handle metadata leaks, such as message.sender and tx.origin",
             "Can achieve private rollup, with users or servers generating proofs",
             "Future needs to consider EOA privacy and dynamic value storage race conditions"
+          ],
+          "ja": [
+            "グローバルなプライベートステートは非現実的である。なぜなら、プロバーが証明を生成するためにはそのステートを知っている必要があるからだ。",
+            "pstoreおよびploadオペコードの追加により、プライベートユーザーステートをサポートする。",
+            "プライベートストレージツリーと無効なツリー（invalid trees）はプライベートデータを管理する。",
+            "message.senderやtx.originなどのメタデータ漏洩への対応が必要である。",
+            "ユーザーまたはサーバーが証明を生成することで、プライベートロールアップを実現できる。",
+            "今後はEOAのプライバシーと動的な値のストレージにおける競合状態（race conditions）を考慮する必要がある。"
           ]
         }
       }
@@ -477,7 +586,8 @@
         ],
         "summary": {
           "zh": "Binyi Chen等人在{{name}}论文中提出了Symphony，一种基于格的高阶折叠SNARK，避免在电路中嵌入哈希函数，具有内存高效、并行化和后量子安全等特性。",
-          "en": "Binyi Chen et al. in {{name}} paper proposed Symphony, a lattice-based high-arity folding SNARK, avoiding hash embedding in SNARK circuits, with memory efficiency, parallelization, and post-quantum security."
+          "en": "Binyi Chen et al. in {{name}} paper proposed Symphony, a lattice-based high-arity folding SNARK, avoiding hash embedding in SNARK circuits, with memory efficiency, parallelization, and post-quantum security.",
+          "ja": "Binyi Chenらの{{name}}論文で提案されたSymphonyは、ハッシュ埋め込みをSNARK回路から排除し、メモリ効率性、並列化、ポスト量子セキュリティを備えた格子ベースの高アリティ折りたたみSNARKです。"
         },
         "notes": {
           "zh": [
@@ -495,6 +605,14 @@
             "Proof size and verification time are multi-polynomial, enhancing scalability",
             "Universal compiler can convert folding scheme to SNARK, enhancing flexibility",
             "Having potential advantages in zkVM and proof learning applications"
+          ],
+          "ja": [
+            "Symphonyは、ハッシュ埋め込みをSNARK回路から排除することで、セキュリティリスクと証明オーバーヘッドを低減します。",
+            "格子ベースの折り畳み付けスキームを採用し、ポスト量子セキュリティ保証を提供します。",
+            "メモリ効率、並列化、ストリーミング処理をサポートし、パフォーマンスを最適化します。",
+            "証明サイズと検証時間は多項式であり、スケーラビリティを向上させます。",
+            "ユニバーサルコンパイラにより、折り畳み付けスキームをSNARKに変換でき、柔軟性を高めます。",
+            "zkVMおよびプルーフラーニングアプリケーションにおいて潜在的な利点があります。"
           ]
         }
       }
@@ -513,7 +631,8 @@
         ],
         "summary": {
           "zh": "Pratyush Mishra组织了CIS 7000课程，时间为2025年秋季的周一和周三，从8月底开始到12月中旬结束，专注于zkSNARKs的数学基础、实现和应用。",
-          "en": "Pratyush Mishra organized CIS 7000 course, running on Mondays and Wednesdays in Fall 2025, focusing on the mathematical foundations, implementation, and applications of zkSNARKs."
+          "en": "Pratyush Mishra organized CIS 7000 course, running on Mondays and Wednesdays in Fall 2025, focusing on the mathematical foundations, implementation, and applications of zkSNARKs.",
+          "ja": "Pratyush Mishraが主催するCIS 7000コースは、2025年秋に月曜日と水曜日に開催され、zkSNARKの数学的基礎、実装、および応用について焦点を当てます。"
         },
         "notes": {
           "zh": [
@@ -532,6 +651,15 @@
             "Students deepen understanding of ZKP systems through paper presentations and projects",
             "Course structure combines lectures, discussions, and experiments to enhance comprehensive abilities",
             "Final project can involve research or literature review, driving academic progress"
+          ],
+          "ja": [
+            "本コースには公開録画はありませんが、スライドは提供されます。",
+            "zkSNARKsの数学的基礎、実装、および応用を網羅します。",
+            "multi-variate IOPs、KZG commitments、Spartan PIOPなどの主要技術を含みます。",
+            "ブロックチェーンとプライバシー保護におけるzkSNARKsの実践的な応用を重視します。",
+            "学生は論文発表やプロジェクトを通じてZKPシステムへの理解を深めます。",
+            "コース構成は、講義、ディスカッション、実験を組み合わせ、総合的な能力の向上を図ります。",
+            "最終プロジェクトでは、研究または文献レビューを取り入れ、学術的進歩を促します。"
           ]
         }
       }
@@ -550,7 +678,8 @@
         ],
         "summary": {
           "zh": "Stanford Blockchain Club在博客{{name}}中分享了与Dan Boneh的对话，讨论了LatticeFold架构家族及其在ZK证明系统中的应用，包括后量子安全、硬件友好算术和折叠技术等内容。",
-          "en": "Stanford Blockchain Club shared a blog post{{name}} with Dan Boneh, discussing LatticeFold's post-quantum security, hardware friendliness, and folding techniques, as well as its applications in ZK proof systems."
+          "en": "Stanford Blockchain Club shared a blog post{{name}} with Dan Boneh, discussing LatticeFold's post-quantum security, hardware friendliness, and folding techniques, as well as its applications in ZK proof systems.",
+          "ja": "スタンフォード・ブロックチェーン・クラブは、Dan Boneh氏と共に、LatticeFoldのポスト量子セキュリティ、ハードウェアフレンドリー性、フォールディング技術、およびZK証明システムへの応用について論じたブログ記事{{name}}を共有しました。"
         },
         "notes": {
           "zh": [
@@ -568,6 +697,14 @@
             "Can be applied to aggregated post-quantum signatures, enhancing blockchain system scalability",
             "Compared to existing schemes like HyperNova, LatticeFold has advantages in hardware implementation and security",
             "Emphasizes the complementary nature of folding and ZK, folding handles scalability, ZK handles privacy"
+          ],
+          "ja": [
+            "LatticeFoldはAjtai commitmentsとMSIS assumptionを使用し、従来の離散対数コミットメントに代わるポスト量子セキュリティを提供します。",
+            "Folding技術は、拡張（extension）、分解（decomposition）、foldingステップを通じてノルムの成長を制御し、バインディングセキュリティを保証します。",
+            "64ビット算術をサポートしており、CPU/GPUハードウェアとの親和性が高く、証明効率を向上させます。",
+            "集約されたポスト量子署名に応用でき、ブロックチェーンシステムのスケーラビリティを高めます。",
+            "HyperNovaなどの既存のスキームと比較して、LatticeFoldはハードウェア実装とセキュリティにおいて利点があります。",
+            "foldingとZKの相補的な性質を強調しており、foldingがスケーラビリティを、ZKがプライバシーを処理します。"
           ]
         }
       }
@@ -587,7 +724,8 @@
         ],
         "summary": {
           "zh": "Phantom VM 团队在博客{{name}}中分享了FHE-RAM的实现，基于Poulpy库，支持加密RAM的私有读写，服务器仅知RAM大小和操作类型，确保数据隐私。",
-          "en": "Phantom VM team shared a blog post{{name}} about FHE-RAM implementation, based on Poulpy library, supporting private read and write of encrypted RAM, with server knowing only RAM size and operation type, ensuring data privacy."
+          "en": "Phantom VM team shared a blog post{{name}} about FHE-RAM implementation, based on Poulpy library, supporting private read and write of encrypted RAM, with server knowing only RAM size and operation type, ensuring data privacy.",
+          "ja": "Phantom VMチームは、Poulpyライブラリに基づいたFHE-RAMの実装に関するブログ記事{{name}}を共有しました。これは暗号化されたRAMのプライベートな読み取りと書き込みをサポートし、サーバーが知る情報はRAMのサイズと操作タイプのみに限定されるため、データのプライバシーを保証します。"
         },
         "notes": {
           "zh": [
@@ -605,6 +743,14 @@
             "Design includes key generation, data encryption, and read-write protocol, ensuring end-to-end privacy",
             "Open-source implementation provides detailed parameters and examples, facilitating integration and extension",
             "Suitable for distributed computing scenarios requiring high privacy protection"
+          ],
+          "ja": [
+            "FRAMによる暗号化されたRAMストレージは、ユーザーによるプライベートな読み書きを可能にし、サーバーには操作タイプとRAMサイズのみを知る状態とする",
+            "GLWEおよびGGSWの暗号技術は、アドレス分解と準同型演算をサポートする",
+            "1MB RAMの読み取り遅延は302ms、書き込み遅延は871msであり、並列化による最適化の可能性を秘めている",
+            "設計には鍵生成、データ暗号化、および読み書きプロトコルが含まれており、エンドツーエンドのプライバシーを保証する",
+            "オープンソース実装は詳細なパラメータと例を提供し、統合と拡張を容易にする",
+            "高いプライバシー保護が必要な分散コンピューティングシナリオに適している"
           ]
         }
       }
@@ -623,7 +769,8 @@
         ],
         "summary": {
           "zh": "@ziskvm 团队宣布ZisK实现重大证明里程碑，所有以太坊区块现可实时证明，平均证明时间约7.5秒，提升了ZK证明效率。",
-          "en": "@ziskvm team announced a major proving milestone for ZisK, with all Ethereum blocks now provable in real-time, with an average proving time of about 7.5 seconds, improving ZK proof efficiency."
+          "en": "@ziskvm team announced a major proving milestone for ZisK, with all Ethereum blocks now provable in real-time, with an average proving time of about 7.5 seconds, improving ZK proof efficiency.",
+          "ja": "@ziskvmチームは、ZisKにおける重要な証明の節目を発表しました。これにより、すべてのEthereumブロックがリアルタイムで証明可能となり、平均証明時間は約7.5秒に短縮され、ZK proofの効率が向上しました。"
         },
         "images": [
           "./images/2025/10/29_ziskvm.png"
@@ -644,7 +791,8 @@
         ],
         "summary": {
           "zh": "Jiang等人在{{name}}论文中提出了一种SNARK编译器CoBBl，结合直接翻译和CPU仿真的优势，实现动态约束生成，显著提升编译和证明效率。",
-          "en": "Jiang et al. proposed CoBBl, a SNARK compiler that combines direct translation and CPU simulation for dynamic constraint generation, significantly improving compilation and proving efficiency."
+          "en": "Jiang et al. proposed CoBBl, a SNARK compiler that combines direct translation and CPU simulation for dynamic constraint generation, significantly improving compilation and proving efficiency.",
+          "ja": "Jiangらは、動的な制約生成のために直接翻訳とCPUシミュレーションを組み合わせたSNARKコンパイラであるCoBBlを提案し、コンパイルおよび証明の効率を大幅に向上させた。"
         },
         "notes": {
           "zh": [
@@ -659,6 +807,12 @@
             "Significantly improves compilation and proving efficiency",
             "Avoids the cost of unexecuted calculations, improving efficiency",
             "Supports program-specific optimization, reducing constraint count"
+          ],
+          "ja": [
+            "CoBBlは、動的制約生成において直接翻訳とCPUシミュレーションの利点を組み合わせます。",
+            "コンパイルおよび証明効率を大幅に向上させます。",
+            "実行されない計算のコストを回避し、効率を改善します。",
+            "プログラム固有の最適化をサポートし、制約数を削減します。"
           ]
         }
       }
@@ -677,7 +831,8 @@
         ],
         "summary": {
           "zh": "Lehmann等人在{{name}}论文中提出了一种匿名凭证系统的模块化框架，使用核心组件和可插拔模块支持伪名、范围证明和设备绑定等功能，以提升标准化和安全性。",
-          "en": "Lehmann et al. proposed a modular framework for anonymous credential systems, using core components and pluggable modules to support pseudonyms, range proofs, and device binding, improving standardization and security."
+          "en": "Lehmann et al. proposed a modular framework for anonymous credential systems, using core components and pluggable modules to support pseudonyms, range proofs, and device binding, improving standardization and security.",
+          "ja": "Lehmannらは、匿名クレデンシャルシステムのためのモジュラーフレームワークを提案しました。このフレームワークは、コアコンポーネントとプラグイン可能なモジュールを利用して、擬名（pseudonyms）、レンジ証明（range proofs）、デバイスバインディングをサポートし、標準化とセキュリティの向上を実現しています。"
         },
         "notes": {
           "zh": [
@@ -695,6 +850,14 @@
             "Implementation using BBS signatures and ECDH, solving legacy hardware binding issues",
             "Framework suitable for digital identity and privacy pass applications",
             "Emphasizing security, modular design reduces protocol modification risks"
+          ],
+          "ja": [
+            "モジュラーフレームワークにより冗長な作業が削減され、匿名クレデンシャルシステムの標準化が向上する",
+            "コアコンポーネントにはコミットメント、署名、NIZKスキームが含まれ、プラグイン可能な拡張をサポートする",
+            "擬似名（pseudonyms）、レンジプルーフ、デバイスバインディングなどのモジュールは入力に依存せず、柔軟性を高める",
+            "BBS署名とECDHを使用した実装により、レガシーなハードウェアバインディングの問題を解決する",
+            "デジタルアイデンティティおよびプライバシーパスアプリケーションに適したフレームワークである",
+            "セキュリティを重視したモジュラー設計により、プロトコル変更のリスクリプトが低減される"
           ]
         }
       }

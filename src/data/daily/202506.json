@@ -13,7 +13,8 @@
         ],
         "summary": {
           "zh": "Nicolas 在{{name}}博客中分享了libZK证明系统的亮点，包括其快速证明者设计、双电路算术化及实现技巧，旨在为ZK社区提供学习资源。",
-          "en": "Nicolas shared highlights of libZK, the Google Wallet ZKP system, in blog{{name}}, including its fast prover design, dual-circuit arithmeticization, and implementation techniques, aimed at providing learning resources for the ZK community."
+          "en": "Nicolas shared highlights of libZK, the Google Wallet ZKP system, in blog{{name}}, including its fast prover design, dual-circuit arithmeticization, and implementation techniques, aimed at providing learning resources for the ZK community.",
+          "ja": "Nicolasは、ZKコミュニティ向けの学習リソースとして、libZK（Google WalletのZKPシステム）のハイライトをブログ{{name}}で共有しました。これには、高速なprover設計、デュアルサーキット算術化、および実装技術が含まれます。"
         },
         "notes": {
           "zh": [
@@ -31,6 +32,14 @@
             "Dual-circuit design: handles ECDSA and SHA-256/CBOR separately",
             "Non-standard domain FFT optimizes calculation efficiency",
             "Hardware technology optimization reduces circuit depth"
+          ],
+          "ja": [
+            "Google Walletは、ZKPによる年齢認証を実装するためにlibZKを使用しています。",
+            "GKRとLigeroの組み合わせにより、証明速度が20倍向上しました。",
+            "インタラクティブな証明の組み合わせにより、セキュリティ証明が簡素化されました。",
+            "デュアルサーキット設計：ECDSAとSHA-256/CBORを個別に処理します。",
+            "非標準ドメインFFTにより計算効率が最適化されています。",
+            "ハードウェア技術の最適化により回路深度が削減されました。"
           ]
         }
       }
@@ -60,7 +69,8 @@
         ],
         "summary": {
           "zh": "Plonky3项目披露了一个高严重性安全漏洞，影响ad4fd24之前的版本，FRI验证器缺少最终多项式度检查，可能被恶意证明者利用。",
-          "en": "Plonky3 project disclosed a high severity security vulnerability, affecting versions before ad4fd24, where the FRI verifier lacked a final polynomial degree check, potentially exploitable by malicious provers."
+          "en": "Plonky3 project disclosed a high severity security vulnerability, affecting versions before ad4fd24, where the FRI verifier lacked a final polynomial degree check, potentially exploitable by malicious provers.",
+          "ja": "Plonky3プロジェクトにおいて、ad4fd24より前のバージョンに影響する高深刻度のセキュリティ脆弱性が公開されました。この脆弱性は、FRI verifierが最終的な多項式次数チェックを欠いていることに起因し、悪意のあるproverによって悪用される可能性があります。"
         }
       },
       {
@@ -83,7 +93,8 @@
         ],
         "summary": {
           "zh": "Simons Institute发布了关于密码学十年后发展的系列视频，涵盖了混淆、证明系统和安全计算等前沿话题，深入探讨了这些技术的进展和未来方向。",
-          "en": "Simons Institute released a series of videos on the future of cryptography, covering topics such as obfuscation, proof systems, and secure computation, delving into the progress and future directions of these technologies."
+          "en": "Simons Institute released a series of videos on the future of cryptography, covering topics such as obfuscation, proof systems, and secure computation, delving into the progress and future directions of these technologies.",
+          "ja": "シモンズ研究所は、難読化（obfuscation）、証明システム、セキュアな計算などのトピックを扱った一連のビデオを公開しました。これらの動画では、関連技術の進捗状況と将来の方向性について深く掘り下げています。"
         }
       }
     ]
@@ -105,7 +116,8 @@
         ],
         "summary": {
           "zh": "@reclaimprotocol 的 Madhavan Malolan 在博客{{name}}中为零知识证明的初学者提供了入门介绍，解释了ZKP如何在不泄露数据的情况下验证计算的正确性，并探讨了其在隐私保护中的应用。",
-          "en": "@reclaimprotocol 's Madhavan Malolan provided an introduction for beginners to zero-knowledge proofs in blog{{name}}, explaining how ZKP verifies the correctness of calculations without disclosing data and exploring its applications in privacy protection."
+          "en": "@reclaimprotocol 's Madhavan Malolan provided an introduction for beginners to zero-knowledge proofs in blog{{name}}, explaining how ZKP verifies the correctness of calculations without disclosing data and exploring its applications in privacy protection.",
+          "ja": "@reclaimprotocol の Madhavan Malolan さんが、ブログ記事 {{name}} でゼロ知識証明（ZKP）の初心者向け入門を提供し、データを開示することなく計算の正しさをZKPがいかに検証するかを説明し、プライバシー保護におけるその応用を探求しています。"
         }
       },
       {
@@ -122,7 +134,8 @@
         ],
         "summary": {
           "zh": "@zksync 团队推出了ZKsync Prividium，这是一个专为机构设计的私有区块链基础设施，提供企业级隐私、内置合规性以及与以太坊的无缝连接。",
-          "en": "@zksync team launched ZKsync Prividium, a private blockchain infrastructure built for institutions, providing enterprise-level privacy, built-in compliance, and seamless integration with Ethereum."
+          "en": "@zksync team launched ZKsync Prividium, a private blockchain infrastructure built for institutions, providing enterprise-level privacy, built-in compliance, and seamless integration with Ethereum.",
+          "ja": "@zksync チームは、エンタープライズレベルのプライバシー、組み込みのコンプライアンス、Ethereum とのシームレスな統合を提供する、機関向けに構築されたプライベートブロックチェーンインフラストラクチャである ZKsync Prividium をローンチしました。"
         }
       }
     ]
@@ -141,7 +154,8 @@
         ],
         "summary": {
           "zh": "Yuriko在博客{{name}}中探讨了隐私保护和去中心化机器学习训练的潜在用例，包括如何利用ZK证明在不暴露私人数据集的情况下协作训练模型。",
-          "en": "Yuriko in blog{{name}} explored potential use cases for private and decentralized machine learning training, including how to use ZK proofs to collaboratively train models without exposing private datasets."
+          "en": "Yuriko in blog{{name}} explored potential use cases for private and decentralized machine learning training, including how to use ZK proofs to collaboratively train models without exposing private datasets.",
+          "ja": "ブログ{{name}}で、Yurikoはプライベートかつ分散化された機械学習トレーニングの潜在的なユースケースを探求しました。これには、ZK proofを使用して機密データを公開することなくモデルを共同でトレーニングする方法が含まれます。"
         },
         "notes": {
           "zh": [
@@ -159,6 +173,14 @@
             "Model merging technology can analyze cross-identity features",
             "Technical advantages: Verifiable training, optimized edge computing efficiency",
             "Social value: Discovering overlooked social patterns through collaboration"
+          ],
+          "ja": [
+            "分散型MLトレーニング：マルチパーティコラボレーションとデータプライバシー保護",
+            "従来のデータサイエンスには構造的なバイアスがあり、脆弱なグループのデータを無視している",
+            "応用分野：ヘルスケア分析、エッジグループモデリング、プライバシーレコメンデーション、生体認証",
+            "モデルマージング技術によるクロスアイデンティティ特徴量の分析",
+            "技術的利点：検証可能なトレーニング、最適化されたエッジコンピューティング効率",
+            "社会的価値：コラボレーションを通じた見過ごされてきた社会パターンの発見"
           ]
         }
       }
@@ -178,7 +200,8 @@
         ],
         "summary": {
           "zh": "Garg等人在{{name}}论文中分析了协作zk-SNARKs中的恶意安全问题，揭示了现有设计模板中的两个陷阱，可能导致输入隐私泄露，并提出了缓解策略。",
-          "en": "Garg et al. analyzed malicious security in collaborative zk-SNARKs in paper{{name}}, revealing two traps in existing design templates that could lead to input privacy leaks and proposed countermeasures."
+          "en": "Garg et al. analyzed malicious security in collaborative zk-SNARKs in paper{{name}}, revealing two traps in existing design templates that could lead to input privacy leaks and proposed countermeasures.",
+          "ja": "Gargらは論文{{name}}において、共同zk-SNARKにおける悪意のあるセキュリティについて分析し、入力プライバシーの漏洩につながる可能性のある既存のデザインテンプレートにおける2つのトラップを明らかにし、それに対する対策を提案した。"
         },
         "notes": {
           "zh": [
@@ -196,6 +219,14 @@
             "First implementation of semi-honest MPC protocol to achieve malicious security in non-trivial cases",
             "Optimization scheme reduces proof generation overhead, applicable to various zk-SNARK schemes",
             "Positive results are general and may have applications beyond collaborative zkSNARKs"
+          ],
+          "ja": [
+            "Collaborative zk-SNARK (coSNARKs) の設計には、不正なwitnessが正直なパーティの入力を漏洩させるなどのプライバシーリークのリスクリがあります。",
+            "悪意のあるセキュリティコンパイラ（MPC）を直接適用することは、システム全体を危険にさらす可能性があります。",
+            "正直な多数派という仮定の下では、効率を向上させるために従来のコンパイラのセキュリティチェックを省略できます。",
+            "非自明なケースにおいて悪意のあるセキュリティを実現するための半正直MPCプロトコルの最初の実装です。",
+            "最適化スキームは証明生成のオーバーヘッドを削減し、様々なzk-SNARKスキームに適用可能です。",
+            "得られた肯定的な結果は一般的であり、コラボレーティブzkSNARKsを超えた応用がある可能性があります。"
           ]
         }
       }
@@ -214,7 +245,8 @@
         ],
         "summary": {
           "zh": "Crites等人在{{name}}论文中探讨了阈值签名自适应安全性的安全假设，提出了两种不可能性结果，强调了实现密钥唯一阈值签名自适应安全的挑战。",
-          "en": "Crites et al. explored the security assumptions of adaptive security in threshold signatures in paper{{name}}, presenting two impossibility results and emphasizing the challenges of achieving adaptive security for unique-key threshold signatures."
+          "en": "Crites et al. explored the security assumptions of adaptive security in threshold signatures in paper{{name}}, presenting two impossibility results and emphasizing the challenges of achieving adaptive security for unique-key threshold signatures.",
+          "ja": "Critesらによる論文{{name}}では、しきい値署名における適応的セキュリティのセキュリティ仮定について探求し、2つの不可能性結果を提示するとともに、ユニークキーしきい値署名において適応的セキュリティを達成することの困難さを強調している。"
         }
       },
       {
@@ -228,7 +260,8 @@
         ],
         "summary": {
           "zh": "Ha等人在{{name}}论文中提出了一种基于Power Residues的ZK友好哈希函数Polocolo，通过减少Plonk门数量，比现有最先进的ZK友好哈希函数更高效。",
-          "en": "Ha et al. proposed a ZK-friendly hash function Polocolo based on Power Residues in paper{{name}}, reducing the number of Plonk gates and outperforming the most advanced ZK-friendly hash functions."
+          "en": "Ha et al. proposed a ZK-friendly hash function Polocolo based on Power Residues in paper{{name}}, reducing the number of Plonk gates and outperforming the most advanced ZK-friendly hash functions.",
+          "ja": "Haらは、論文{{name}}で、Power Residuesに基づいたZKフレンドリーなハッシュ関数Polocoloを提案し、Plonkゲートの数を削減し、最も高度なZKフレンドリーなハッシュ関数を上回る性能を示しました。"
         }
       }
     ]
@@ -249,7 +282,8 @@
         ],
         "summary": {
           "zh": "@zksecurityXYZ 在{{name}}博客中讨论了Greyhound，一种基于格的证明系统，旨在抵抗量子计算机威胁，并详细解释了其工作原理和优势。",
-          "en": "@zksecurityXYZ discussed Greyhound, a lattice-based proof system, in blog{{name}}, explaining its working principles and advantages."
+          "en": "@zksecurityXYZ discussed Greyhound, a lattice-based proof system, in blog{{name}}, explaining its working principles and advantages.",
+          "ja": "@zkSNARK は、ブログ記事 {{name}} で格子ベースの証明システムである Greyhound について議論し、その動作原理と利点について説明しています。"
         },
         "notes": {
           "zh": [
@@ -267,6 +301,14 @@
             "Combined with LaBRADOR compression, achieving logarithmic proof size and sublinear verification",
             "Designed for the post-quantum era",
             "Already has Rust implementation (LattiRust) and hardware library ICICLE support"
+          ],
+          "ja": [
+            "Greyhoundは、証明サイズが約50KBの効率的な格子ベースのPCS（可説得性ゼロ知識証明）です。",
+            "Ajtai commitmentとM-SIS問題に基づき、線形なproverと準線形なverifierを実現しています。",
+            "行列分割と基底分解により最適化されており、既存のPCSとの互換性を持ちます。",
+            "LaBRADOR圧縮と組み合わせることで、対数的な証明サイズと準線形検証を達成します。",
+            "ポスト量子時代のために設計されています。",
+            "すでにRust実装（LattiRust）およびハードウェアライブラリICICLEのサポートがあります。"
           ]
         }
       }
@@ -288,7 +330,8 @@
         ],
         "summary": {
           "zh": "Koh Wei Jie在{{name}}论文中提出了Logjumps技术，这是一种针对大素数域上模约减的新方法，相比Montgomery约减提供了更高效的解决方案。",
-          "en": "Koh Wei Jie proposed Logjumps in paper{{name}}, a new method for modular reduction in large prime fields, which is more efficient than Montgomery reduction."
+          "en": "Koh Wei Jie proposed Logjumps in paper{{name}}, a new method for modular reduction in large prime fields, which is more efficient than Montgomery reduction.",
+          "ja": "Koh Wei Jieは論文{{name}}で、大きな素数体におけるモジュラ減算のための新しい手法であるLogjumpsを提案しました。これはMontgomery reductionよりも効率的です。"
         }
       },
       {
@@ -304,7 +347,8 @@
         ],
         "summary": {
           "zh": "PSE发布了2025年5月的通讯，涵盖了后量子密码学、私有证明委托、客户端证明等多个领域的最新动态和项目进展。",
-          "en": "PSE released the May 2025 newsletter, covering the latest developments and project progress in post-quantum cryptography, private proof delegation, client-side proving, and other fields."
+          "en": "PSE released the May 2025 newsletter, covering the latest developments and project progress in post-quantum cryptography, private proof delegation, client-side proving, and other fields.",
+          "ja": "PSEは、ポスト量子暗号、プライベート証明委任、クライアントサイドプロビングなどの分野における最新の進展とプロジェクトの進捗をまとめた2025年5月号のニュースレターをリリースしました。"
         }
       }
     ]
@@ -322,7 +366,8 @@
         ],
         "summary": {
           "zh": "rutefig团队开源了Proof of Residency项目，利用加密技术生成可验证的居住证明，同时保护用户隐私，仅公开验证居住国家(葡萄牙)而隐藏具体地址。",
-          "en": "rutefig team open-sourced the Proof of Residency project, using encryption technology to generate verifiable residency proofs while protecting user privacy, only disclosing the validated country of residence (Portugal) while hiding specific addresses."
+          "en": "rutefig team open-sourced the Proof of Residency project, using encryption technology to generate verifiable residency proofs while protecting user privacy, only disclosing the validated country of residence (Portugal) while hiding specific addresses.",
+          "ja": "rutefigチームは、暗号化技術を用いて検証可能な居住証明書を生成しつつユーザーのプライバシーを保護するProof of Residencyプロジェクトをオープンソース化しました。これにより、特定の住所を隠蔽したまま、検証済みの居住国（ポルトガル）のみを開示しています。"
         }
       },
       {
@@ -336,7 +381,8 @@
         ],
         "summary": {
           "zh": "@the_matter_labs 开源了ZKsync Airbender，包含RISC-V编译和证明工具，支持电路实现、模拟器及证明生成与验证功能。",
-          "en": "@the_matter_labs open-sourced ZKsync Airbender, containing RISC-V compilation and proof tools, supporting circuit implementation, simulator, and proof generation and verification."
+          "en": "@the_matter_labs open-sourced ZKsync Airbender, containing RISC-V compilation and proof tools, supporting circuit implementation, simulator, and proof generation and verification.",
+          "ja": "@the_matter_labs のオープンソースである ZKsync Airbender は、RISC-V コンパイルと証明ツールを含み、サーキットの実装、シミュレーター、および証明の生成と検証をサポートします。"
         }
       }
     ]
@@ -355,7 +401,8 @@
         ],
         "summary": {
           "zh": "@class_lambda 在博客{{name}}中探讨了Binius证明系统的数学基础，重点介绍了布尔超立方体和二进制塔的概念，以及如何在电路级别操作中利用这些概念进行字段元素的加法和乘法。",
-          "en": "@class_lambda discussed the mathematical foundations of the Binius proof system in blog{{name}}, focusing on Boolean hypercubes and binary towers, and how to utilize these concepts at the circuit level for field element addition and multiplication."
+          "en": "@class_lambda discussed the mathematical foundations of the Binius proof system in blog{{name}}, focusing on Boolean hypercubes and binary towers, and how to utilize these concepts at the circuit level for field element addition and multiplication.",
+          "ja": "@class_lambda は、blog{{name}} において、Boolean hypercube と binary tower に焦点を当て、Binius 証明システムの数学的基礎について論じ、それらの概念をどのように回路レベルでフィールド要素の加算および乗算に応用するかを解説しました。"
         }
       },
       {
@@ -369,7 +416,8 @@
         ],
         "summary": {
           "zh": "@vlayer_xyz 团队在{{name}}论文中探讨了使用GKR协议在零知识证明中验证Keccak哈希的方法，为处理以太坊原生操作提供了高效、可扩展的解决方案。",
-          "en": "@vlayer_xyz team explored using GKR protocol in zero-knowledge proofs to verify Keccak hashes in paper{{name}}, providing an efficient and scalable solution for processing Ethereum native operations."
+          "en": "@vlayer_xyz team explored using GKR protocol in zero-knowledge proofs to verify Keccak hashes in paper{{name}}, providing an efficient and scalable solution for processing Ethereum native operations.",
+          "ja": "@vlayer_xyz チームは、論文{{name}}において、Keccakハッシュを検証するためにGKRプロトコルをゼロ知識証明（zero-knowledge proofs）で利用することを検討し、Ethereumネイティブ操作の処理に対する効率的かつスケーラブルなソリューションを提供しました。"
         }
       }
     ]
@@ -388,7 +436,8 @@
         ],
         "summary": {
           "zh": "Kattis等人在{{name}}论文中提出了一种将自定义语言编译为高效IOP的框架，特别针对zkVM设计。他们定义了可遍历语言子类，并展示了如何高效编译为电路，以Nock编程语言为例验证了框架的有效性。",
-          "en": "Kattis et al. proposed a framework for compiling custom languages as efficiently verifiable virtual machines in paper{{name}}, targeting zkVM design. They defined traversable language subclasses and demonstrated how to efficiently compile to circuits, verifying the framework's effectiveness with the Nock programming language."
+          "en": "Kattis et al. proposed a framework for compiling custom languages as efficiently verifiable virtual machines in paper{{name}}, targeting zkVM design. They defined traversable language subclasses and demonstrated how to efficiently compile to circuits, verifying the framework's effectiveness with the Nock programming language.",
+          "ja": "Kattisらは論文{{name}}で、zkVM設計を対象としたカスタム言語を効率的に検証可能な仮想マシンとしてコンパイルするためのフレームワークを提案しました。彼らはトラバーサブル（traversable）な言語サブクラスを定義し、Nockプログラミング言語を用いて回路への効率的なコンパイル方法を示し、そのフレームワークの有効性を実証しました。"
         }
       },
       {
@@ -401,7 +450,8 @@
         ],
         "summary": {
           "zh": "@Ingo_zk 发布了ML-KEM的C++ API实现，支持Kyber512、Kyber768和Kyber1024参数集，提供密钥生成、封装和解封装功能，优化了后量子密码学的应用。",
-          "en": "@Ingo_zk released the C++ API implementation of ML-KEM, supporting Kyber512, Kyber768, and Kyber1024, providing key generation, encapsulation, and decapsulation functions, optimizing the application of post-quantum cryptography."
+          "en": "@Ingo_zk released the C++ API implementation of ML-KEM, supporting Kyber512, Kyber768, and Kyber1024, providing key generation, encapsulation, and decapsulation functions, optimizing the application of post-quantum cryptography.",
+          "ja": "@Ingo_zk が、Kyber512、Kyber768、およびKyber1024をサポートするML-KEMのC++ API実装をリリースしました。これにより、鍵生成、カプセル化、デカプセル化関数が提供され、ポスト量子暗号の適用を最適化します。"
         }
       }
     ]
@@ -420,7 +470,8 @@
         ],
         "summary": {
           "zh": "alinush在{{name}}博客中介绍了Spartan框架，用于构建基于sumcheck协议和稀疏多线性多项式承诺方案的zkSNARK方案，直接处理R1CS矩阵，优化证明时间。",
-          "en": "alinush introduced the Spartan framework in blog{{name}}, a framework for building zkSNARK schemes based on sumcheck protocol and sparse multilinear PCS, directly processing R1CS matrix, optimizing proving time."
+          "en": "alinush introduced the Spartan framework in blog{{name}}, a framework for building zkSNARK schemes based on sumcheck protocol and sparse multilinear PCS, directly processing R1CS matrix, optimizing proving time.",
+          "ja": "alinushはブログ記事{{name}}でSpartanフレームワークを紹介しました。これは、sumcheckプロトコルとスパース多項式コミットメント（sparse multilinear PCS）に基づいたzkSNARKスキームを構築するためのものであり、R1CS行列を直接処理することで証明時間を最適化します。"
         },
         "notes": {
           "zh": [
@@ -438,6 +489,14 @@
             "Efficient sparse matrix processing through compiler, reducing storage and computational overhead",
             "Verification process depends on two sumcheck and sparse MLE random point evaluations",
             "Suitable for sparse/structured circuits, some calculations can be transferred to verifier"
+          ],
+          "ja": [
+            "sumcheckとsparse MLE PCSに基づいたR1CS行列の直接処理",
+            "証明時間がゼロでない行列要素に線形的に関連付けられ、従来のQAPスキームよりも優れている点",
+            "主な利点には、計算の公開委任（public delegation）と線形時間での証明生成が含まれること",
+            "コンパイラによる効率的なスパース行列処理により、ストレージおよび計算オーバーヘッドを削減",
+            "検証プロセスは2つのsumcheckとsparse MLEランダムポイント評価に依存する",
+            "疎な（sparse）/構造化された回路に適しており、一部の計算をverifierに移譲ることが可能"
           ]
         }
       }
@@ -458,7 +517,8 @@
         ],
         "summary": {
           "zh": "@hyli_org 团队宣布其测试网上线，分为学习和构建两个阶段，旨在通过游戏化体验展示ZK证明的可能性，并邀请开发者参与构建应用。",
-          "en": "@hyli_org team announced the launch of its testnet, divided into learning and building stages, aiming to demonstrate the possibilities of ZK proofs through gamified experiences and inviting developers to participate in building applications."
+          "en": "@hyli_org team announced the launch of its testnet, divided into learning and building stages, aiming to demonstrate the possibilities of ZK proofs through gamified experiences and inviting developers to participate in building applications.",
+          "ja": "@hyli_org チームは、学習フェーズとビルディングフェーズに分かれたテストネットのローンチを発表しました。これは、ゲーミフィケーションされた体験を通じてZK proofの可能性を示すこと、そして開発者にアプリケーション構築への参加を呼びかけることを目的としています。"
         }
       },
       {
@@ -473,7 +533,8 @@
         ],
         "summary": {
           "zh": "Bagad等人在{{name}}论文中提出了两种优化方法，显著加速了sum-check证明过程，特别是在Jolt zkVM等应用中，实现了2-3倍的性能提升。",
-          "en": "Bagad et al. proposed two optimization methods in paper{{name}}, significantly accelerating the sum-check proving process, particularly in applications such as Jolt zkVM, achieving a 2-3x performance boost."
+          "en": "Bagad et al. proposed two optimization methods in paper{{name}}, significantly accelerating the sum-check proving process, particularly in applications such as Jolt zkVM, achieving a 2-3x performance boost.",
+          "ja": "Bagadらは論文{{name}}で2つの最適化手法を提案し、特にJolt zkVMのようなアプリケーションにおいて和チェックの証明プロセスを大幅に高速化し、2〜3倍のパフォーマンス向上を実現しました。"
         }
       }
     ]
@@ -495,7 +556,8 @@
         ],
         "summary": {
           "zh": "@fenbushi Capital在{{name}}博客中讨论了zkVM的当前状态和前景，包括对八种zkVM实现的标准化测试和性能评估。",
-          "en": "@fenbushi Capital discussed the current state and prospects of zkVM in blog{{name}}, including standardized testing and performance evaluation of eight zkVM implementations."
+          "en": "@fenbushi Capital discussed the current state and prospects of zkVM in blog{{name}}, including standardized testing and performance evaluation of eight zkVM implementations.",
+          "ja": "@fenbushi Capital は、ブログ記事{{name}}にてzkVMの現状と展望について議論しました。これには、8つのzkVM実装に対する標準化されたテストとパフォーマンス評価が含まれます。"
         }
       },
       {
@@ -509,7 +571,8 @@
         ],
         "summary": {
           "zh": "@jbaylina 宣布与7名核心开发者从Polygon分拆，独立推进ZisK项目，同时仍担任Polygon联合创始人及顾问，主要精力转向 @ziskvm。",
-          "en": "@jbaylina announced the spin-off from Polygon with a core team of 7 developers to continue the ZisK project independently, remaining co-founder and advisor at Polygon, and shifting main focus to @ziskvm."
+          "en": "@jbaylina announced the spin-off from Polygon with a core team of 7 developers to continue the ZisK project independently, remaining co-founder and advisor at Polygon, and shifting main focus to @ziskvm.",
+          "ja": "@jbaylina は、Polygonからのスピンオフを発表しました。コアチームの7名の開発者がZisKプロジェクトを独立して継続し、@jbaylina は引き続き Polygon の共同創設者兼アドバイザーを務めつつ、主な焦点を @ziskvm に移します。"
         }
       }
     ]
@@ -527,7 +590,8 @@
         ],
         "summary": {
           "zh": "@PrivacyScaling 团队在{{name}}博客中介绍了zkPDF，这是一套允许从数字签名PDF中证明事实而不泄露整个文档的零知识电路和工具。",
-          "en": "@PrivacyScaling team introduced zkPDF in blog{{name}}, a circuit and toolset that allows proving facts about a PDF without disclosing the entire document."
+          "en": "@PrivacyScaling team introduced zkPDF in blog{{name}}, a circuit and toolset that allows proving facts about a PDF without disclosing the entire document.",
+          "ja": "@PrivacyScaling チームは、ブログ記事{{name}}でzkPDFを紹介しました。これは、文書全体を開示することなくPDFに関する事実を証明できる回路とツールセットです。"
         },
         "notes": {
           "zh": [
@@ -545,6 +609,14 @@
             "Performance: 30-50s verification for 100KB+ PDFs, production-ready",
             "Use cases: ID docs, e-contracts, bank statements - privacy-preserving verification",
             "Future: Client-side proving, TEE acceleration, extended features"
+          ],
+          "ja": [
+            "zkPDF: 完全な開示なしでZK証明書を用いてPDFコンテンツを検証",
+            "ブレークスルー: 大容量PDFのZK検証課題を解決",
+            "ソリューション: SP1 ZKVM + 多言語対応のカスタムRustパーサー",
+            "パフォーマンス: 100KB超のPDFに対する30-50秒の検証時間、本番環境対応",
+            "ユースケース: ID書類、電子契約書、銀行取引明細書 - プライバシーを保護した検証",
+            "今後の展望: クライアントサイドでの証明生成、TEEによる高速化、機能拡張"
           ]
         }
       }
@@ -564,7 +636,8 @@
         ],
         "summary": {
           "zh": "ElectiSec在{{name}}博客中讨论了GKR协议及其设计思路，作者提供了实践代码，帮助读者更好地理解GKR协议的工作原理。",
-          "en": "ElectiSec discussed the GKR protocol and its design principles in blog{{name}}, providing practical code to help readers better understand how the GKR protocol works."
+          "en": "ElectiSec discussed the GKR protocol and its design principles in blog{{name}}, providing practical code to help readers better understand how the GKR protocol works.",
+          "ja": "ElectiSecはブログ記事{{name}}でGKRプロトコルとその設計原則について解説し、読者がGKRプロトコルの仕組みをより深く理解するための実践的なコードを提供しました。"
         }
       },
       {
@@ -577,7 +650,8 @@
         ],
         "summary": {
           "zh": "@alinush407 介绍了 @Aptos 的机密转账功能，允许用户加密余额和转账金额，仅发送方、接收方和指定审计员可见，利用加法同态加密技术更新加密余额。",
-          "en": "@alinush407 introduced @Aptos' confidential transfers, allowing users to encrypt balances and transfer amounts, making them visible only to the sender, receiver, and specified auditors, using additive homomorphic encryption to update encrypted balances."
+          "en": "@alinush407 introduced @Aptos' confidential transfers, allowing users to encrypt balances and transfer amounts, making them visible only to the sender, receiver, and specified auditors, using additive homomorphic encryption to update encrypted balances.",
+          "ja": "@alinush407 は、加法準同型暗号を使用して暗号化された残高を更新することにより、ユーザーが残高と送金額を暗号化し、送信者、受信者および指定された監査人にのみ表示できるようにするAptosの機密移送機能を紹介しました。"
         }
       }
     ]
@@ -596,7 +670,8 @@
         ],
         "summary": {
           "zh": "Fomenko等人在{{name}}论文中提供了对Lasso查找参数协议的深入和易于理解的概述，该协议是Jolt ZK-VM的基础组件，涵盖了sum-check协议、多线性多项式及其扩展、Spark承诺等核心原理。",
-          "en": "Fomenko et al. provided a deep and easy-to-understand overview of the Lasso protocol in paper{{name}}, which is the foundation component of Jolt ZK-VM, covering sum-check protocols, multilinear polynomials and their extensions, Spark commitments, etc."
+          "en": "Fomenko et al. provided a deep and easy-to-understand overview of the Lasso protocol in paper{{name}}, which is the foundation component of Jolt ZK-VM, covering sum-check protocols, multilinear polynomials and their extensions, Spark commitments, etc.",
+          "ja": "Fomenkoらによる論文{{name}}では、Jolt ZK-VMの基盤となる要素であるLassoプロトコルについて、和集合チェックプロトコル、多項式およびその拡張、Spark commitmentなどについて深くかつ分かりやすく概説しています。"
         }
       },
       {
@@ -610,7 +685,8 @@
         ],
         "summary": {
           "zh": "@ziskvm 团队实现了RISC-V zkVM的重大突破，通过AOT编译技术将trace生成速度提升至1.5GHz，比现有技术快10倍，且项目完全开源。",
-          "en": "@ziskvm team achieved a major breakthrough in RISC-V zkVM, significantly improving trace generation speed to 1.5GHz, 10x faster than existing technology, and the project is fully open source."
+          "en": "@ziskvm team achieved a major breakthrough in RISC-V zkVM, significantly improving trace generation speed to 1.5GHz, 10x faster than existing technology, and the project is fully open source.",
+          "ja": "@ziskvmチームはRISC-V zkVMにおいて大きなブレークスルーを達成し、トレース生成速度を1.5GHzに大幅に向上させました。これは既存技術の10倍の高速化であり、プロジェクトは完全にオープンソースです。"
         }
       }
     ]
@@ -629,7 +705,8 @@
         ],
         "summary": {
           "zh": "@zksecurityXYZ 在{{name}}博客中讨论了Circom编程中的常见反模式，重点介绍了断言(assert)不添加约束、提示(<--)不受约束以及有限域算术导致的别名攻击等问题。",
-          "en": "@zksecurityXYZ discussed common anti-patterns in Circom programming in blog{{name}}, focusing on non-constraint operator assert and <--, and alias attacks caused by finite field arithmetic."
+          "en": "@zksecurityXYZ discussed common anti-patterns in Circom programming in blog{{name}}, focusing on non-constraint operator assert and <--, and alias attacks caused by finite field arithmetic.",
+          "ja": "@zkSNARK は、ブログ記事 {{name}} で、非制約オペレータ `assert` および `<--`、有限体算術によって引き起こされるエイリアス攻撃など、Circomプログラミングにおける一般的なアンチパターンについて論じました。"
         },
         "notes": {
           "zh": [
@@ -647,6 +724,14 @@
             "Bits2Num_strict and Num2Bits_strict can be used to prevent alias attacks.",
             "Developers should avoid using assert for signals and should only use it for template parameters.",
             "Separating computation and constraints can improve performance, but all calculations must be appropriately constrained."
+          ],
+          "ja": [
+            "assertは制約を生成せず、テンプレートパラメータのセキュリティチェックのみに使用されます。",
+            "セキュリティ脆弱性を防ぐため、<<-演算子を使用する場合は手動で制約を追加する必要があります。",
+            "有限体算術はエイリアス攻撃を引き起こす可能性があり、特に数値をエンコードする際に注意が必要です。",
+            "Bits2Num_strictおよびNum2Bits_strictを使用することで、エイリアス攻撃を防止できます。",
+            "開発者はassertをシグナルに使用することを避け、テンプレートパラメータでのみ使用すべきです。",
+            "計算と制約を分離することはパフォーマンス向上に役立ちますが、すべての計算は適切に制約される必要があります。"
           ]
         }
       }
@@ -666,7 +751,8 @@
         ],
         "summary": {
           "zh": "@zksecurityXYZ 团队在博客{{name}}中详细分析了Solana的ZK ElGamal Proof Program中的一个关键安全性漏洞，该漏洞允许恶意证明者伪造sigma OR证明，绕过费用验证。",
-          "en": "@zksecurityXYZ team analyzed a critical security vulnerability in Solana's ZK ElGamal Proof Program in blog{{name}}, allowing malicious provers to forge sigma OR proofs, bypassing fee verification."
+          "en": "@zksecurityXYZ team analyzed a critical security vulnerability in Solana's ZK ElGamal Proof Program in blog{{name}}, allowing malicious provers to forge sigma OR proofs, bypassing fee verification.",
+          "ja": "@zkSNARKチームは、ブログ{{name}}でSolanaのZK ElGamal Proof Programにおける重大なセキュリティ脆弱性を分析しました。これにより、悪意のあるproverがシグマOR証明書を偽造し、手数料検証をバイパスすることが可能でした。"
         }
       },
       {
@@ -680,7 +766,8 @@
         ],
         "summary": {
           "zh": "ICME在{{name}}博客中探讨了基于格的折叠方案LatticeFold和Neo，比较了它们在处理Ajtai承诺和避免NTTs方面的不同策略，以及Neo如何实现按位付费的承诺方案。",
-          "en": "ICME discussed folding schemes in the lattice setting in blog{{name}}, comparing LatticeFold and Neo, and how Neo implements a pay-per-bit commitment scheme."
+          "en": "ICME discussed folding schemes in the lattice setting in blog{{name}}, comparing LatticeFold and Neo, and how Neo implements a pay-per-bit commitment scheme.",
+          "ja": "ICMEはブログ{{name}}で格子設定における折りたたみスキームについて議論し、LatticeFoldとNeoを比較するとともに、Neoがどのようにpay-per-bit commitment schemeを実装しているかを解説しました。"
         }
       }
     ]
@@ -705,7 +792,8 @@
         ],
         "summary": {
           "zh": "Weber等人在{{name}}论文中提出了Parasol编译器，旨在使非专家开发者也能高效利用FHE技术，通过自定义ISA和低级库实现，显著提升运行时间和程序大小。",
-          "en": "Weber et al. proposed the Parasol compiler in paper{{name}}, aiming to enable non-expert developers to efficiently utilize FHE technology, through custom ISA and low-level libraries, significantly improving runtime and program size."
+          "en": "Weber et al. proposed the Parasol compiler in paper{{name}}, aiming to enable non-expert developers to efficiently utilize FHE technology, through custom ISA and low-level libraries, significantly improving runtime and program size.",
+          "ja": "Weberらによる論文{{name}}では、カスタムISAと低レベルライブラリーを通じてFHE技術を非専門家開発者が効率的に利用できるようにすることを目的としたParasolコンパイラが提案されており、実行時間とプログラムサイズの大幅な改善をもたらしています。"
         }
       },
       {
@@ -721,7 +809,8 @@
         ],
         "summary": {
           "zh": "Gouert等人在{{name}}论文中提出了HELM框架，用于通过同态加密保护数据处理隐私。HELM能够将硬件描述语言（如Verilog）编写的程序自动转换为等效的同态电路，支持三种加密评估模式，显著提升了性能。",
-          "en": "Gouert et al. proposed the HELM framework in paper{{name}}, used to protect data processing privacy through homomorphic encryption. HELM automatically converts programs written in hardware description languages (such as Verilog) into equivalent homomorphic circuits, supporting three encryption evaluation modes, significantly improving performance."
+          "en": "Gouert et al. proposed the HELM framework in paper{{name}}, used to protect data processing privacy through homomorphic encryption. HELM automatically converts programs written in hardware description languages (such as Verilog) into equivalent homomorphic circuits, supporting three encryption evaluation modes, significantly improving performance.",
+          "ja": "Gouertらによる論文{{name}}で提案されたHELMフレームワークは、準同型暗号（homomorphic encryption）を介してデータ処理のプライバシーを保護するために使用されます。HELMは、ハードウェア記述言語（Verilogなど）で書かれたプログラムを対応する準同型回路に自動的に変換し、3つの暗号評価モードをサポートすることで、パフォーマンスの大幅な向上を実現しています。"
         }
       }
     ]
@@ -740,7 +829,8 @@
         ],
         "summary": {
           "zh": "@VitalikButerin 在{{name}}博文中探讨了ZK包装的数字ID系统存在的风险，包括隐私泄露、胁迫脆弱性和错误等问题，同时提出了多元化身份的解决方案。",
-          "en": "@VitalikButerin discussed the risks of ZK-wrapped digital IDs in blog{{name}}, including privacy leaks, coercion vulnerabilities, and errors, and proposed a multi-identity solution."
+          "en": "@VitalikButerin discussed the risks of ZK-wrapped digital IDs in blog{{name}}, including privacy leaks, coercion vulnerabilities, and errors, and proposed a multi-identity solution.",
+          "ja": "Vitalik Buterinはブログ記事{{name}}で、ZK-wrappedデジタルIDのリスク（プライバシー漏洩、強制の脆弱性、エラーなど）について議論し、マルチアイデンティティソリューションを提案した。"
         },
         "notes": {
           "zh": [
@@ -758,6 +848,14 @@
             "Coercion and errors are the main non-privacy risks of ZK-wrapped digital IDs.",
             "Proof of wealth as an anti-sybil mechanism is insufficient in some cases.",
             "UBI-like and governance-like situations need identity solutions to avoid exclusivity."
+          ],
+          "ja": [
+            "ZK-wrappedデジタルIDはプライバシー上の利点を持つ一方で、リスクも伴う。",
+            "マルチアイデンティティソリューションは、そのようなシステムの持つリスクに対処するための現実的なアプローチとなり得る。",
+            "ZK-wrappedデジタルIDはユーザーの匿名性を制限する可能性がある。",
+            "強制やエラーは、ZK-wrappedデジタルIDにおけるプライバシー以外の主なリスクである。",
+            "富の証明（Proof of wealth）をシビル対策として用いることは、場合によっては不十分である。",
+            "排他性を避けるためには、UBI（ユニバーサルベーシックインカム）的およびガバナンス的な状況においてIDソリューションが必要である。"
           ]
         }
       }

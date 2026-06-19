@@ -13,7 +13,8 @@
         ],
         "summary": {
           "zh": "Abhinav Vishnu在{{name}}论文中提出了PTX协议，利用zkSNARK实现异步、非交互式域控制验证，无需活动服务器，通过DNS TXT记录锚定证明。",
-          "en": "Abhinav Vishnu proposed the PTX protocol in {{name}}paper, using zkSNARK for asynchronous, non-interactive domain control validation without active servers, anchored via DNS TXT records."
+          "en": "Abhinav Vishnu proposed the PTX protocol in {{name}}paper, using zkSNARK for asynchronous, non-interactive domain control validation without active servers, anchored via DNS TXT records.",
+          "ja": "Abhinav Vishnuは、DNS TXTレコードを介してアンカーリングし、アクティブなサーバーを必要としない非同期的なノンインタラクティブドメインコントロール検証のためにzkSNARKを使用したPTXプロトコルを{{name}}論文で提案しました。"
         },
         "notes": {
           "zh": [
@@ -31,6 +32,14 @@
             "Implemented with Groth16 and Poseidon, only 1,756 constraints, verification under 15ms",
             "Mitigates replay attacks, suitable for serverless, static, and air-gapped deployments",
             "Provides privacy-preserving alternative for identity assertions in decentralized environments"
+          ],
+          "ja": [
+            "PTXプロトコルは、従来のACMEに代わり、非同期かつ非対話的なドメイン制御検証のためにzkSNARKを使用します。",
+            "DNS TXTレコードを介して証明書をアンカーし、アクティブなWebサーバーやオープンポートの必要性を排除します。",
+            "回路設計により、一時的な秘密情報をスコープ付きメタデータにバインドし、クライアントサイドでの検証とプライバシーを可能にします。",
+            "Groth16とPoseidonで実装され、わずか1,756の制約で、検証時間は15ms未満です。",
+            "リプレイ攻撃を緩和し、サーバーレス、静的、エアギャップ環境へのデプロイに適しています。",
+            "分散型環境におけるアイデンティティアサーションのためのプライバシー保護付き代替手段を提供します。"
           ]
         },
         "slogan": {
@@ -52,7 +61,8 @@
         ],
         "summary": {
           "zh": "Debrup Chatterjee在{{name}}论文中提出了SumSig，一种基于编码的数字签名方案，利用Sum-Check协议减少对重复的依赖，通过单次扩展域验证实现可忽略的误差，签名约5-8KB。",
-          "en": "Debrup Chatterjee proposed SumSig, a code-based digital signature scheme leveraging sum-check protocols to reduce repetition reliance, achieving negligible error via single extension field verification, with signatures ~5-8KB."
+          "en": "Debrup Chatterjee proposed SumSig, a code-based digital signature scheme leveraging sum-check protocols to reduce repetition reliance, achieving negligible error via single extension field verification, with signatures ~5-8KB.",
+          "ja": "Debrup Chatterjeeは、sum-checkプロトコルを活用して繰り返しへの依存を低減し、単一の拡張フィールド検証によりごくわずかなエラーを実現し、署名サイズが約5〜8KBであるコードベースのデジタル署名方式SumSigを提案しました。"
         },
         "notes": {
           "zh": [
@@ -70,6 +80,14 @@
             "Based on Syndrome Decoding problem with quasi-tight reduction in random oracle model.",
             "Provides new choice in signature/public key size compared to Wave and LESS.",
             "First public version; feedback welcome, focusing on post-quantum cryptography."
+          ],
+          "ja": [
+            "SumSigは、反復的なΣプロトコルを置き換えるためにsum-check protocolsを使用し、署名生成への依存度を低減します。",
+            "繰り返しなしで単一のextension field検証により、ごくわずかなエラーを実現します。",
+            "署名サイズは約5〜8KB、公開鍵は50〜100KBであり、異なるトレードオフを提供します。",
+            "準タイトな（quasi-tight）ランダムオラクルモデルにおけるSyndrome Decoding問題に基づいています。",
+            "WaveやLESSと比較して、署名/公開鍵サイズに関して新たな選択肢を提供します。",
+            "最初のパブリック版です。フィードバックを歓迎します。ポスト量子暗号に焦点を当てています。"
           ]
         },
         "slogan": {
@@ -92,7 +110,8 @@
         ],
         "summary": {
           "zh": "Nethermind联合L2BEAT和Etherealize发布报告，分析以太坊Layer 2网络如何成为机构金融核心基础设施，涵盖可扩展性、安全性、合规性及ZK证明应用。",
-          "en": "Nethermind, L2BEAT, and Etherealize jointly published a report analyzing how Ethereum Layer 2 networks are evolving into core infrastructure for institutional finance, covering scalability, security, compliance, and ZK proof applications."
+          "en": "Nethermind, L2BEAT, and Etherealize jointly published a report analyzing how Ethereum Layer 2 networks are evolving into core infrastructure for institutional finance, covering scalability, security, compliance, and ZK proof applications.",
+          "ja": "Nethermind、L2BEAT、Etherealizeは共同でレポートを公開しました。本レポートでは、Ethereumのレイヤー2ネットワークが、スケーラビリティ、セキュリティ、コンプライアンス、ZK proofアプリケーションを網羅し、機関投資家向けのコアインフラストラクチャへとどのように進化しているかを分析しています。"
         },
         "notes": {
           "zh": [
@@ -110,6 +129,14 @@
             "Both public and private L2s settle on Ethereum, ensuring interoperability.",
             "Compliance benefits from onchain identity and ZK proofs.",
             "Examples: JPMorgan testing deposit tokens on Base; Visa piloting ZK proof payments."
+          ],
+          "ja": [
+            "JPMorganやBlackRockのような機関は、支払いおよびトークン化されたアセットのためにEthereum Layer 2を利用しています。",
+            "L2はプライバシー、スケーラビリティ、コンプライアンスのためにZK proofを活用しています。",
+            "RollupはEthereumのセキュリティとデータ可用性を継承しています。",
+            "パブリックなL2とプライベートなL2の両方がEthereum上で決済を行うことで相互運用性が保証されます。",
+            "コンプライアンスはオンチェーンIDとZK proofから恩恵を受けます。",
+            "例：JPMorganがBase上でデポジットトークンをテストすること、VisaがZK proof支払いに関するパイロットを実施していること。"
           ]
         },
         "slogan": {
@@ -131,7 +158,8 @@
         ],
         "summary": {
           "zh": "Fiore等人在{{name}}论文中提出了一种用于（非）子序列关系的SNARK方案，通过预处理和缓存商技术，将证明时间优化至文本次线性级别。",
-          "en": "Fiore et al. proposed a SNARK scheme for (non-)subsequence relations in their {{name}}paper, achieving text-sub-linear proving time via preprocessing and cached quotients."
+          "en": "Fiore et al. proposed a SNARK scheme for (non-)subsequence relations in their {{name}}paper, achieving text-sub-linear proving time via preprocessing and cached quotients.",
+          "ja": "Fioreらによる{{name}}論文では、前処理とキャッシュされた商（quotients）を利用することにより、(非)部分列関係に対するSNARK方式が提案されており、テキストの準線形時間での証明を実現しています。"
         },
         "notes": {
           "zh": [
@@ -149,6 +177,14 @@
             "Employs cached quotients for quasilinear preprocessing.",
             "Proof time is logarithmic in subsequence length.",
             "Useful for genomics, blockchains, NLP, etc."
+          ],
+          "ja": [
+            "文字列間の（非）部分列を検証するためのSNARK。",
+            "プリプロセッシングと証明フェーズを持ち、短い部分列を前提とする。",
+            "プリプロセッシングにはテキストとアルファベットのみを使用し、部分列は不要。",
+            "準線形時間でのプリプロセッシングのためにキャッシュされた商（quotients）を利用する。",
+            "証明時間は部分列長の対数に比例する。",
+            "ゲノミクス、ブロックチェーン、NLPなどに応用可能。"
           ]
         },
         "slogan": {
@@ -171,7 +207,8 @@
         ],
         "summary": {
           "zh": "@0xMiden分享了四位隐私领域专家对2026年隐私发展的预测，包括私有稳定币、隐私工业化、实用性隐私和威胁抵抗隐私等趋势。",
-          "en": "@0xMiden shared predictions from four privacy experts for 2026, covering trends like private stablecoins, privacy industrialization, practical privacy, and threat-resistant privacy."
+          "en": "@0xMiden shared predictions from four privacy experts for 2026, covering trends like private stablecoins, privacy industrialization, practical privacy, and threat-resistant privacy.",
+          "ja": "@0xMiden が、プライベートステーブルコイン、プライバシーの産業化、実用的なプライバシー、脅威耐性のあるプライバシーといったトレンドを網羅した、4名のプライバシー専門家による2026年の予測を共有します。"
         },
         "notes": {
           "zh": [
@@ -189,6 +226,14 @@
             "**Threat-resistant privacy** will become standard, with throttled and responsible options.",
             "Enterprises need confidentiality; retail users oppose fully transparent payments.",
             "Privacy systems will add policy controls for compliance while preserving core privacy."
+          ],
+          "ja": [
+            "プライベートステーブルコインは、**設定可能なプライバシー**を提供することで、グローバル決済において中心的な役割を果たすでしょう。",
+            "プライバシー技術が本番環境に移行していますが、ウォレットサポートとコンプライアンスが課題として残っています。",
+            "プライバシーにはトレードオフが伴います。**条件付きプライバシー**は脅威耐性を向上させます。",
+            "スロットリング（制限）や責任あるオプションとともに、**脅威耐性のあるプライバシー**が標準となるでしょう。",
+            "エンタープライズは機密性を必要としており、リテールユーザーは完全な透明性を持つ決済に反対しています。",
+            "プライバシーシステムは、コアのプライバシーを維持しつつ、コンプライアンスのためのポリシー制御を追加するでしょう。"
           ]
         },
         "slogan": {
@@ -210,7 +255,8 @@
         ],
         "summary": {
           "zh": "Gurkan等人在{{name}}论文中提出了一种基于配对椭圆曲线多项式的一次性遗忘多项式签名方案OOPS，支持最多n个消息的安全签名，并展示了其在可委托签名、1-out-of-n遗忘传输和部分遗忘PRF等协议中的应用。",
-          "en": "Gurkan et al. propose OOPS, a one-time oblivious polynomial signature scheme based on pairing-based elliptic curves, supporting secure signatures for up to n messages, with applications in delegatable signatures, 1-out-of-n oblivious transfer, and partially oblivious PRFs."
+          "en": "Gurkan et al. propose OOPS, a one-time oblivious polynomial signature scheme based on pairing-based elliptic curves, supporting secure signatures for up to n messages, with applications in delegatable signatures, 1-out-of-n oblivious transfer, and partially oblivious PRFs.",
+          "ja": "Gurkanらは、ペアリングベースの楕円曲線に基づいた、最大n個のメッセージに対するセキュアな署名をサポートする、一度限りのオブリビウス多項式署名方式であるOOPSを提案しています。これは、委任可能な署名、1-out-of-nオブリビウス転送、部分的にオブリビウスなPRF（Pseudo-Random Function）への応用が可能です。"
         },
         "notes": {
           "zh": [
@@ -228,6 +274,14 @@
             "Enables 1-out-of-n oblivious transfer, improving privacy protection.",
             "Supports partially oblivious PRFs, balancing computational efficiency and privacy needs.",
             "Demonstrates OOPS's potential in various efficient cryptographic protocols."
+          ],
+          "ja": [
+            "OOPSは、ペアリングベースの楕円曲線上の多項式に基づいて構築されており、最大n個の異なるメッセージに安全に署名できます。",
+            "n個以上のメッセージに署名することは、与えられたパラメータの下で偽造を可能にするため、時折りの再パラメータ化が必要になります。",
+            "委任可能な署名をサポートし、署名の機能的な柔軟性を高めます。",
+            "1-out-of-nのOblivious Transfer（オブリビウス転送）を可能にし、プライバシー保護を向上させます。",
+            "部分的にObliviousなPRF（Pseudo-Random Function）をサポートし、計算効率とプライバシー要件のバランスを取ります。",
+            "様々な効率的な暗号プロトコルにおけるOOPSの可能性を示しています。"
           ]
         },
         "slogan": {
@@ -249,7 +303,8 @@
         ],
         "summary": {
           "zh": "Baghery在{{name}}论文中重新审视了离散对数场景下的完全安全鲁棒DKG协议，提出了三种更高效的替代方案，均实现O(n)计算复杂度，并在安全性、效率和轮数上提供不同权衡。",
-          "en": "Baghery revisits fully secure robust DKG protocols for discrete logarithm in their {{name}}paper, proposing three more efficient alternatives with O(n) computational complexity and different trade-offs in security, efficiency, and round complexity."
+          "en": "Baghery revisits fully secure robust DKG protocols for discrete logarithm in their {{name}}paper, proposing three more efficient alternatives with O(n) computational complexity and different trade-offs in security, efficiency, and round complexity.",
+          "ja": "Bagheryは、{{name}}の論文で離散対数に関する完全に安全で堅牢なDKGプロトコルを再検討し、セキュリティ、効率性、ラウンド数のトレードオフが異なる3つのより効率的な代替案を提案しています。これらはO(n)の計算量を持っています。"
         },
         "notes": {
           "zh": [
@@ -267,6 +322,14 @@
             "Protocol 3: 3 rounds, secure variant of Atapoor et al.",
             "New 3-round protocol needs only O(n) exponentiations.",
             "Enables flexible security-efficiency trade-offs for DKG."
+          ],
+          "ja": [
+            "従来のGJKRプロトコルはO(n²)のコストであり、スケーラビリティを制限している。",
+            "プロトコル1：完全なセキュリティと均一にランダムな公開鍵。",
+            "プロトコル2：より高い効率性、識別不可能な公開鍵。",
+            "プロトコル3：Atapoorらのセキュアバリアントの3ラウンド版。",
+            "新しい3ラウンドプロトコルはO(n)回のべき乗算のみを必要とする。",
+            "DKGのための柔軟なセキュリティと効率性のトレードオフを可能にする。"
           ]
         },
         "slogan": {
@@ -289,7 +352,8 @@
         ],
         "summary": {
           "zh": "Devadas等人在{{name}}论文中重新探讨了基于非信号PCP构建NP的SNARGs，提出候选方案并证明其在LWE假设和多项式理想成员证明的数学猜想下的安全性，突破了Gentry-Wichs黑盒障碍。",
-          "en": "Devadas et al. revisit building SNARGs for NP using non-signaling PCPs, propose a candidate scheme with security under LWE and a mathematical conjecture, circumventing the Gentry-Wichs black-box barrier."
+          "en": "Devadas et al. revisit building SNARGs for NP using non-signaling PCPs, propose a candidate scheme with security under LWE and a mathematical conjecture, circumventing the Gentry-Wichs black-box barrier.",
+          "ja": "Devadasらは、非シグナリングPCPを用いてNPのためのSNARGの構築を再検討し、LWEおよび数学的仮説の下でセキュリティを持つ候補スキームを提案することで、Gentry-Wichsのブラックボックス障壁を回避する。"
         },
         "notes": {
           "zh": [
@@ -307,6 +371,14 @@
             "Non-black-box adversary use breaks Gentry-Wichs black-box barrier",
             "Blueprint for NP SNARGs not subject to Gentry-Wichs barrier",
             "Re-evaluate potential of non-signaling PCPs in SNARG construction"
+          ],
+          "ja": [
+            "指数長のPCPがNP SNARGの既存の障壁を克服する",
+            "LWE下のセキュリティを持つ非適応型SNARG候補を提案する",
+            "多項式イデアルに関する数学的仮説（非暗号学的）を導入する",
+            "非ブラックボックス攻撃者がGentry-Wichsのブラックボックス障壁を破る",
+            "Gentry-Wichsの障壁を受けないNP SNARGの設計図",
+            "SNARG構築における非シグナリングPCPの可能性を再評価する"
           ]
         },
         "slogan": {
@@ -329,7 +401,8 @@
         ],
         "summary": {
           "zh": "Eagen和Lai在{{name}}论文中提出了一种新的混淆原语Argo MAC，可将曲线点的比特分解编码高效转换为同态MAC，使混淆SNARK验证器效率提升超过1000倍。",
-          "en": "Eagen and Lai proposed a new garbling primitive, Argo MAC, in their {{name}}paper, efficiently translating bit decomposition of curve points to homomorphic MACs, enabling over 1000× more efficient garbled SNARK verifiers."
+          "en": "Eagen and Lai proposed a new garbling primitive, Argo MAC, in their {{name}}paper, efficiently translating bit decomposition of curve points to homomorphic MACs, enabling over 1000× more efficient garbled SNARK verifiers.",
+          "ja": "EagenとLaiは、彼らの{{name}}論文で新しいgarbling primitiveであるArgo MACを提案しました。これは、曲線点のビット分解を準同型MACに効率的に変換し、1000倍以上の効率的なgarbled SNARK verifierを可能にします。"
         },
         "notes": {
           "zh": [
@@ -347,6 +420,14 @@
             "Integrates with recent work like BitVM to enhance Bitcoin smart contracts.",
             "Subsequent work will detail garbled SNARK verifier construction.",
             "Facilitates scalable off-chain computation and verification for Bitcoin."
+          ],
+          "ja": [
+            "Argo MACは、Bitcoinのようなオフチェーン暗号のための新しいgarbling primitiveです。",
+            "曲線点のビット分解を準同型MACに効率的に変換します。",
+            "ペアリングベースのSNARKsのためのgarbled SNARK verifierの構築を可能にします。",
+            "BitVMなどの最近の研究と統合し、Bitcoinスマートコントラクトを強化します。",
+            "今後の研究でgarbled SNARK verifierの構築について詳述します。",
+            "Bitcoinのためのスケーラブルなオフチェーン計算と検証を促進します。"
           ]
         },
         "slogan": {
@@ -368,7 +449,8 @@
         ],
         "summary": {
           "zh": "Ethereum Foundation在博客中讨论了zkEVM升级的安全问题，重点关注zkVM安全、客户端多样性和形式验证，提出了多证明策略等缓解措施。",
-          "en": "Ethereum Foundation discusses zkEVM upgrade security in a blog, focusing on zkVM security, client diversity, and formal verification, with mitigations like multiproofs strategy."
+          "en": "Ethereum Foundation discusses zkEVM upgrade security in a blog, focusing on zkVM security, client diversity, and formal verification, with mitigations like multiproofs strategy.",
+          "ja": "Ethereum Foundationがブログ記事でzkEVMアップグレードのセキュリティについて議論し、zkVMのセキュリティ、クライアントの多様性、形式的検証に焦点を当てています。マルチプルーフ戦略などの緩和策についても言及されています。"
         },
         "notes": {
           "zh": [
@@ -386,6 +468,14 @@
             "Formal verification project aims to verify zkSNARK protocols and VM implementations, but not mandatory.",
             "zkVMs support limited ISA and syscalls, compiling guest programs may introduce new bugs.",
             "Teams should avoid unnecessary code changes, enhance testing, and analyze shared failure points."
+          ],
+          "ja": [
+            "zkEVMのアップグレードにより、EVMを実行し証明書を生成するプロバーが導入され、検証者のハードウェアおよびネットワーク要件が削減されます。",
+            "セキュリティ上の懸念事項には、ネットワーク構成の変更、クライアントとzkVMの多様性、ゲストプログラムのリスクリクが含まれます。",
+            "Multiproofs戦略では、セキュリティ強化のために複数のzkVM+STF組み合わせの証明書検証が必要です。",
+            "形式的検証プロジェクトはzkSNARKプロトコルとVMの実装を検証することを目的としていますが、必須ではありません。",
+            "zkVMは限定的なISAとsyscallsをサポートしており、ゲストプログラムのコンパイルによって新たなバグが発生する可能性があります。",
+            "チームは不要なコード変更を避け、テストを強化し、共通の失敗ポイントを分析すべきです。"
           ]
         },
         "slogan": {
@@ -408,7 +498,8 @@
         ],
         "summary": {
           "zh": "Garg等人在{{name}}论文中提出BABE协议，通过结合见证加密和高效混淆电路，将比特币上的证明验证链下成本降低三个数量级，同时保持链上低成本。",
-          "en": "Garg et al. proposed the BABE protocol in their {{name}}paper, combining witness encryption and efficient garbled circuits to reduce off-chain proof verification costs on Bitcoin by three orders of magnitude while maintaining low on-chain costs."
+          "en": "Garg et al. proposed the BABE protocol in their {{name}}paper, combining witness encryption and efficient garbled circuits to reduce off-chain proof verification costs on Bitcoin by three orders of magnitude while maintaining low on-chain costs.",
+          "ja": "Gargらは、{{name}}の論文でBABEプロトコルを提案しました。これは、witness encryptionと効率的なgarbled circuitsを組み合わせることであり、オンチェーンコストを低く保ちながら、Bitcoin上でのオフチェーン証明検証コストを3桁削減します。"
         },
         "notes": {
           "zh": [
@@ -426,6 +517,14 @@
             "Design builds on Argo MAC for efficient garbling of homomorphic MACs on elliptic curves",
             "Protocol reduces off-chain costs by three orders of magnitude while maintaining BitVM3's on-chain savings",
             "Applications include scaling Bitcoin and enabling trustless use of Bitcoin assets in other blockchains"
+          ],
+          "ja": [
+            "Bitcoinの限定的なスクリプティング言語と限られたブロックサイズが、証明検証を困難にしている。",
+            "BitVM2は高いオンチェーン手数料（不満なパスで$14k超）を有し、BitVM3はオンチェーンコストを削減するものの、オフラインストレージ/セットアップが非常に大きい（42GBのgarbled circuits）。",
+            "BABEはGroth16証明書を検証するために線形ペアリングのためのwitness encryptionを使用し、効率的なgarbled circuitsと組み合わせてセキュアな二者間計算を実現している。",
+            "この設計は、楕円曲線上の準同型MACの効率的なgarblingのためにArgo MACに基づいている。",
+            "本プロトコルは、BitVM3のオンチェーン節約を維持しつつ、オフラインコストを3桁削減する。",
+            "応用例には、Bitcoinのスケーリングや他のブロックチェーンにおけるBitcoinアセットのトラストレスな利用を可能にすることが含まれる。"
           ]
         },
         "slogan": {
@@ -447,7 +546,8 @@
         ],
         "summary": {
           "zh": "Chen和Meers在{{name}}论文中提出了基于同源的非交互定时承诺和定时加密通用构造，使用可验证随机函数等高效组件，实现后量子安全。",
-          "en": "Chen and Meers proposed generic constructions for non-interactive timed commitments and timed encryption from isogenies in their {{name}}paper, using efficient building blocks like verifiable random functions for post-quantum security."
+          "en": "Chen and Meers proposed generic constructions for non-interactive timed commitments and timed encryption from isogenies in their {{name}}paper, using efficient building blocks like verifiable random functions for post-quantum security.",
+          "ja": "ChenとMeersは、ポスト量子セキュリティのための検証可能な乱数関数のような効率的なビルディングブロックを用いて、isogenyから非対話型タイムコミットメントおよびタイム暗号化に関する汎用的な構成を{{name}}の論文で提案しています。"
         },
         "notes": {
           "zh": [
@@ -465,6 +565,14 @@
             "Avoids reliance on fully homomorphic encryption and other costly components.",
             "Enables practical post-quantum timed cryptography.",
             "Showcases new applications for isogeny cryptography in timed commitments and encryption."
+          ],
+          "ja": [
+            "Timed commitmentsは電子投票やコントラクトにとって極めて重要ですが、ほとんどのスキームにはポスト量子セキュリティがないか、非効率的です。",
+            "LEIBNITCとNYTPKEは、verifiable random functionsやtrapdoor delay functionsのような効率的なプリミティブを使用しています。",
+            "Isogenyベースのデザインは、ポスト量子セキュリティと小さなコミットメント（2328ビット）を提供します。",
+            "完全準同型暗号やその他のコストのかかるコンポーネントへの依存を回避します。",
+            "実用的なポスト量子timed cryptographyを可能にします。",
+            "Timed commitmentsおよび暗号におけるisogeny cryptographyの新しい応用例を示しています。"
           ]
         },
         "slogan": {
@@ -486,7 +594,8 @@
         ],
         "summary": {
           "zh": "Cormode等人在{{name}}论文中提出了流式零知识证明的概念，并构建了适用于数据流的零知识SIP协议，包括sumcheck和多项式评估等核心工具。",
-          "en": "Cormode et al. proposed the concept of streaming zero-knowledge proofs in their {{name}}paper, constructing zero-knowledge SIP protocols for data streams, including core tools like sumcheck and polynomial evaluation."
+          "en": "Cormode et al. proposed the concept of streaming zero-knowledge proofs in their {{name}}paper, constructing zero-knowledge SIP protocols for data streams, including core tools like sumcheck and polynomial evaluation.",
+          "ja": "Cormodeらによる{{name}}論文では、ストリーミングゼロ知識証明の概念が提案されており、sumcheckやpolynomial evaluationなどのコアツールを含めてデータストリームのためのゼロ知識SIPプロトコルを構築しています。"
         },
         "notes": {
           "zh": [
@@ -504,6 +613,14 @@
             "Verifier uses polylog(n) space and efficient communication, ideal for large streams",
             "Introduced algebraic and temporal streaming commitments",
             "Security via reductions from average-case communication and algebraic arguments"
+          ],
+          "ja": [
+            "ストリーミングゼロ知識証明を最初に定義し、研究ギャップに対処したこと",
+            "sumcheckとpolynomial evaluationをコアツールとして使用してSIPプロトコルを構築したこと",
+            "インデックス、点/範囲、中央値、頻度モーメント、内積などのストリーミングクエリを処理すること",
+            "Verifierがpolylog(n)のスペースと効率的な通信を使用し、大規模なストリームに理想的であること",
+            "代数的および時間的ストリーミングコミットメントを導入したこと",
+            "平均ケース通信と代数的議論からの還元によるセキュリティ確保"
           ]
         },
         "slogan": {
@@ -526,7 +643,8 @@
         ],
         "summary": {
           "zh": "Kate等人在{{name}}论文中提出了首个基于离散对数的区块链专用DKG协议，利用链上共识机制提升性能，支持异步网络和高达1/2的拜占庭容错。",
-          "en": "Kate et al. proposed the first discrete-log-based DKG protocol tailored for blockchains in their {{name}}paper, leveraging on-chain consensus for improved performance, supporting asynchronous networks and up to 1/2 Byzantine faults."
+          "en": "Kate et al. proposed the first discrete-log-based DKG protocol tailored for blockchains in their {{name}}paper, leveraging on-chain consensus for improved performance, supporting asynchronous networks and up to 1/2 Byzantine faults.",
+          "ja": "Kateらは、{{name}}の論文で、オンチェーンコンセンサスを活用し、非同期ネットワークと最大1/2のByzantineフォールトをサポートする、ブロックチェーン向けに特化した初の離散対数ベースのDKGプロトコルを提案しました。"
         },
         "notes": {
           "zh": [
@@ -544,6 +662,14 @@
             "Uses random beacon for small committees, reducing communication and computation complexity.",
             "Experiments show faster termination than state-of-the-art protocols with high CPU utilization.",
             "Completes in ~6.5 seconds in optimistic case for 256-node systems, suitable for large-scale use."
+          ],
+          "ja": [
+            "既存のDKGプロトコルはブロックチェーンを十分に活用しておらず、パフォーマンス向上の余地がある。",
+            "組み込みのコンセンサスを活用し、効率的なDKGを実現するために設計された新しいプロトコル。",
+            "最大1/2のByzantine耐性を持つ非同期ネットワークをサポートする。",
+            "ランダムビーコンを使用して小規模なコミッティ（委員会）に対応し、通信および計算の複雑さを低減する。",
+            "実験により、高いCPU利用率で最先端プロトコルよりも高速に終了することが示されている。",
+            "256ノードシステムにおいて楽観的なケースで約6.5秒で完了し、大規模利用に適している。"
           ]
         },
         "slogan": {
@@ -566,7 +692,8 @@
         ],
         "summary": {
           "zh": "Zarinjouei等人在{{name}}论文中提出zkRNN系统，基于GKR协议和递归sum-check框架，为RNN推理提供ZK证明，实现序列长度无关的验证。",
-          "en": "Zarinjouei et al. proposed zkRNN in their {{name}}paper, a ZKP system for RNN inference based on GKR protocol and recursive sum-check, enabling sequence-length-independent verification."
+          "en": "Zarinjouei et al. proposed zkRNN in their {{name}}paper, a ZKP system for RNN inference based on GKR protocol and recursive sum-check, enabling sequence-length-independent verification.",
+          "ja": "Zarinjoueiらは、GKRプロトコルと再帰的sum-checkに基づいたRNN推論のためのZKPシステムである{{name}}論文でzkRNNを提案しました。これにより、シーケンス長に依存しない検証が可能になります。"
         },
         "notes": {
           "zh": [
@@ -584,6 +711,14 @@
             "Polylogarithmic verifier time and proof size in final iteration circuit, independent of sequence length",
             "Evaluation shows second-scale proving and millisecond-scale verification",
             "Enables verifiable inference while preserving model parameter privacy"
+          ],
+          "ja": [
+            "zkRNNは、時間的依存性と重み共有により、RNNに対するZKPの課題に対処する。",
+            "GKRプロトコルと再帰的なsum-checkフレームワークに基づいて構築され、RNN構造に合わせて適応されている。",
+            "回路表現は隠れ状態の遷移を符号化し、計算をタイムステップにわたってアンロール（展開）する。",
+            "最終反復回路における多対数時間での検証時間と証明サイズであり、シーケンス長に依存しない。",
+            "評価では、秒スケールの証明生成とミリ秒スケールの検証が示されている。",
+            "モデルパラメータのプライバシーを保持しつつ、検証可能な推論を可能にする。"
           ]
         },
         "slogan": {
@@ -606,7 +741,8 @@
         ],
         "summary": {
           "zh": "Wang等人在{{name}}论文中提出了首个基于后量子格假设的实用账户式私有区块链支付协议Lether，通过可验证刷新机制和优化ZK证明系统实现高效交易。",
-          "en": "Wang et al. proposed Lether, the first practical account-based private blockchain payment protocol based on post-quantum lattice assumptions, achieving efficient transactions via verifiable refresh mechanisms and optimized ZK proof systems."
+          "en": "Wang et al. proposed Lether, the first practical account-based private blockchain payment protocol based on post-quantum lattice assumptions, achieving efficient transactions via verifiable refresh mechanisms and optimized ZK proof systems.",
+          "ja": "Wangらは、ポスト量子格子仮定に基づいた初の実用的なアカウントベースのプライベートブロックチェーン決済プロトコルであるLetherを提案しました。これは、検証可能なリフレッシュ機構と最適化されたZK証明システムを通じて効率的なトランザクションを実現しています。"
         },
         "notes": {
           "zh": [
@@ -624,6 +760,14 @@
             "Batch-optimized LNP22 ZK proofs; ~68KB per transaction.",
             "Introduces definitions for real-world blockchain privacy.",
             "Proofs generate and verify in under a second on standard PCs."
+          ],
+          "ja": [
+            "格子（lattices）を用いた実用的なポスト量子プライベート決済を可能にする。",
+            "格子ベースの準同型暗号（homomorphic encryption）およびリンク可能なリング署名（linkable ring signatures）における主要な課題を解決する。",
+            "コストのかかるFHEブートストラップ（bootstrapping）を回避するための軽量なリフレッシュ機構を使用する。",
+            "バッチ最適化されたLNP22 ZK証明；トランザクションあたり約68KB。",
+            "実世界のブロックチェーンプライバシーのための定義を導入する。",
+            "標準的なPC上で1秒未満で証明の生成と検証を行う。"
           ]
         },
         "slogan": {
@@ -645,7 +789,8 @@
         ],
         "summary": {
           "zh": "Coratger等人在{{name}}论文中首次对Plonky3 Merkle树进行了严格的安全分析，证明了其位置绑定和可提取性，尽管其压缩函数存在安全缺陷，但通过预哈希等对策仍能保障约40亿美元资产的安全。",
-          "en": "Coratger et al. conducted the first rigorous security analysis of the Plonky3 Merkle tree in their {{name}}paper, proving its position-binding and extractability, ensuring security for ~$4B in assets despite compression function flaws."
+          "en": "Coratger et al. conducted the first rigorous security analysis of the Plonky3 Merkle tree in their {{name}}paper, proving its position-binding and extractability, ensuring security for ~$4B in assets despite compression function flaws.",
+          "ja": "Coratgerらは、{{name}}の論文においてPlonky3マークルツリーの最初の厳密なセキュリティ解析を実施し、圧縮関数の欠陥にもかかわらず、その位置拘束性（position-binding）と抽出可能性（extractability）を証明することで、約40億ドル相当の資産に対するセキュリティを保証しました。"
         },
         "notes": {
           "zh": [
@@ -663,6 +808,14 @@
             "First rigorous security analysis of this Merkle tree design, showing Plonky3 approach is sound",
             "Demonstrates (strong) position-binding and extractability",
             "Enhances confidence in Plonky3 for SNARKs and vector commitments applications"
+          ],
+          "ja": [
+            "広く使用されているPlonky3 Merkle treeが約40億ドルの資産を保護",
+            "その基盤となる2対1圧縮関数は衝突耐性および一方向性を欠いており、セキュリティを損なう可能性あり",
+            "一般的な対策として、葉（leaf）として使用する前のデータに対する事前ハッシュ化がある",
+            "このMerkle tree設計に関する最初の厳密なセキュリティ解析であり、Plonky3アプローチが妥当であることを示す",
+            "(強い)位置バインディングと抽出可能性を実証",
+            "SNARKおよびベクトルコミットメントアプリケーションにおけるPlonky3への信頼性を向上させる"
           ]
         },
         "slogan": {
@@ -685,7 +838,8 @@
         ],
         "summary": {
           "zh": "MicrochainLabs开源了Microchain ZK Signers，这是一个基于ZK证明的隐私保护多签智能合约钱包协议，支持可配置的M-of-N签名要求，并通过状态根隐藏签名者信息。",
-          "en": "MicrochainLabs open-sourced Microchain ZK Signers, a privacy-preserving multi-signature smart contract wallet protocol using ZK proofs, supporting configurable M-of-N requirements and hiding signer details via state roots."
+          "en": "MicrochainLabs open-sourced Microchain ZK Signers, a privacy-preserving multi-signature smart contract wallet protocol using ZK proofs, supporting configurable M-of-N requirements and hiding signer details via state roots.",
+          "ja": "MicrochainLabsは、ZK証明書を利用したプライバシー保護型のマルチシグネチャスマートコントラクトウォレットプロトコルであるMicrochain ZK Signersをオープンソース化しました。これは、設定可能なM-of-N要件をサポートし、ステートルートを通じて署名者の詳細を秘匿します。"
         },
         "notes": {
           "zh": [
@@ -703,6 +857,14 @@
             "Includes two Noir circuits: state validation and transaction validation, based on UltraHonk",
             "Uses salt to prevent brute-force attacks and ensure configuration privacy",
             "Suitable for privacy DAOs, corporate wallets, reducing attack surface"
+          ],
+          "ja": [
+            "署名者セットをプライベートに保ち、ステートルートのみを公開することで、プライバシー保護マルチシグネチャにZK proofを使用します。",
+            "設定可能なM-of-Nしきい値署名をサポートします（例：2-of-3または3-of-5）。",
+            "proof-system agnosticなサポートのためにERC-8039を実装しており、HONK, Groth16, PLONKと互換性があります。",
+            "UltraHonkに基づいたステート検証とトランザクション検証の2つのNoir circuitを含みます。",
+            "ブルートフォースアタックを防ぎ、設定のプライバシーを確保するためにsaltを使用します。",
+            "攻撃対象領域を削減し、プライバシーDAOや企業ウォレットに適しています。"
           ]
         },
         "slogan": {
@@ -724,7 +886,8 @@
         ],
         "summary": {
           "zh": "Jens Groth在博客中讨论了现代ZKP如何重新审视20年前的置换证明思想，包括交换网络、大乘积多项式恒等式和置换矩阵在zkVM中的应用。",
-          "en": "Jens Groth discusses in a blog how modern ZKPs revisit 20-year-old permutation proof ideas, including switching networks, grand product polynomial identity, and permutation matrices in zkVMs."
+          "en": "Jens Groth discusses in a blog how modern ZKPs revisit 20-year-old permutation proof ideas, including switching networks, grand product polynomial identity, and permutation matrices in zkVMs.",
+          "ja": "Jens Groth氏はブログ記事で、zkVMにおけるスイッチングネットワーク、グランドプロダクト多項式恒等式、置換行列など、20年前のパーミュテーション証明に関するアイデアが現代のZKPsによってどのように再検討されているかを論じています。"
         },
         "notes": {
           "zh": [
@@ -742,6 +905,14 @@
             "Memory consistency in zkVMs solved via permutation arguments, similar to shuffle proof techniques.",
             "Switching networks for memory consistency may incur logarithmic overhead.",
             "Grand product and permutation matrix methods offer linear or better efficiency improvements."
+          ],
+          "ja": [
+            "Permutationおよびlookup引数は、zkVMsにおけるプロバー計算の最大半分を消費し、最もコストのかかるコンポーネントの一つです。",
+            "2025年の研究（ST25, BCD25, CTHK25）により、プロバー効率が大幅に向上しました。",
+            "コアアイデア：ネットワークスイッチング、グランドプロダクト多項式恒等式、20年前のシャッフルプルーフからの置換行列。",
+            "zkVMsにおけるメモリの一貫性は、シャッフルプルーフ技術と同様のpermutation argumentsによって解決されます。",
+            "メモリの一貫性をためのネットワークスイッチングは、対数的なオーバーヘッドを伴う可能性があります。",
+            "グランドプロダクトおよびpermutation matrixの手法は、線形以上の効率改善をもたらします。"
           ]
         },
         "slogan": {
@@ -764,7 +935,8 @@
         ],
         "summary": {
           "zh": "Xie等人在{{name}}论文中提出了Re2creds匿名凭证系统，通过可重用演示和证明组合机制，显著降低计算成本并兼容传统签名，提升了实用性和效率。",
-          "en": "Xie et al. proposed Re2creds, an anonymous credential system in their {{name}}paper, reducing computational costs via reusable presentations and supporting legacy signatures for improved practicality."
+          "en": "Xie et al. proposed Re2creds, an anonymous credential system in their {{name}}paper, reducing computational costs via reusable presentations and supporting legacy signatures for improved practicality.",
+          "ja": "Xieらは{{name}}の論文で、再利用可能なプレゼンテーションによる計算コストの削減とレガシー署名のサポートにより実用性を向上させた匿名クレデンシャルシステムRe2credsを提案しました。"
         },
         "notes": {
           "zh": [
@@ -782,6 +954,14 @@
             "Experimental results show >50% reduction in credential generation time vs. existing schemes.",
             "BLS signature presentation on BN254 takes <1s, demonstrating high efficiency.",
             "Security proven via refined UC ideal functionality with rigorous proofs."
+          ],
+          "ja": [
+            "Re2credsは再利用可能なクレデンシャルプレゼンテーションを導入し、セッション間の計算コストを削減します。",
+            "Proof combinationにより、集中的な暗号操作をサーキットの外に出すことが可能になり、レガシー署名のサポートを実現しました。",
+            "NIST推奨曲線と互換性があり、採用の障壁を取り除きます。",
+            "実験結果では、既存のスキームと比較してクレデンシャル生成時間が50%以上削減されました。",
+            "BN254上でのBLS署名プレゼンテーションは1秒未満であり、高い効率性を実証しています。",
+            "厳密な証明による洗練されたUC ideal functionalityを通じてセキュリティが証明されています。"
           ]
         },
         "slogan": {
@@ -804,7 +984,8 @@
         ],
         "summary": {
           "zh": "Sotiraki等人在{{name}}论文中提出了首个针对环算术的分布式SNARK系统Dinocchio，实现常数级证明大小和验证时间，显著提升证明效率。",
-          "en": "Sotiraki et al. proposed Dinocchio, the first distributed SNARK for ring arithmetic, achieving constant proof size and verification time with significant prover speedup."
+          "en": "Sotiraki et al. proposed Dinocchio, the first distributed SNARK for ring arithmetic, achieving constant proof size and verification time with significant prover speedup.",
+          "ja": "Sotirakiらは、リング算術のための最初の分散型SNARKであるDinocchioを提案しました。これは、証明サイズと検証時間を一定に保ちつつ、プロバーの大幅な高速化を実現しています。"
         },
         "notes": {
           "zh": [
@@ -822,6 +1003,14 @@
             "Demonstrated via matrix multiplication, handling ~2^32 constraints beyond prior works.",
             "Microbenchmarks: 128 sub-provers generate proof in ~9.23 hours, verified in <16 seconds.",
             "Addresses verifiability gap in FHE, reducing reliance on honest-but-curious assumptions."
+          ],
+          "ja": [
+            "既存のSNARKは有限体向けに最適化されており、リング演算（例：格子ベース暗号やFHE）に対して高いオーバーヘッドを伴う。",
+            "Dinocchioは、証明サイズと検証時間に一定値を持つリングのための初の分散型SNARKである。",
+            "m個のサブプロバーを用いた場合、Rinocchioと比較して約m倍のプロバー時間高速化を達成する。",
+            "行列乗算によって実証されており、先行研究を超える約2^32の制約を処理可能とする。",
+            "マイクロベンチマーク：128個のサブプロバーで証明を約9.23時間で生成し、16秒未満で検証された。",
+            "FHEにおける検証可能性のギャップに対処し、正直だが好奇心旺盛な（honest-but-curious）仮定への依存度を低減する。"
           ]
         },
         "slogan": {
@@ -834,33 +1023,39 @@
         "level": "beginner",
         "question": {
           "zh": "Dinocchio 解决了什么核心问题？",
-          "en": "What core problem does Dinocchio address?"
+          "en": "What core problem does Dinocchio address?",
+          "ja": "Dinocchioが解決する中核的な問題は何ですか？"
         },
         "answer": {
           "zh": "Dinocchio 针对环算术上的零知识证明效率问题。现有 SNARK 多为有限域优化，用于环算术时会产生巨大开销，而环算术是格密码与 FHE 的基础。Dinocchio 提供常数大小证明与常数验证时间，使大规模 FHE 计算首次具备实用级可验证性。",
-          "en": "Dinocchio addresses the inefficiency of zero knowledge proofs for ring arithmetic. Most SNARKs are optimized for finite fields, causing large overhead when used for rings that underlie lattice cryptography and FHE. Dinocchio achieves constant proof size and constant verification time, making verifiable large scale FHE computations practical."
+          "en": "Dinocchio addresses the inefficiency of zero knowledge proofs for ring arithmetic. Most SNARKs are optimized for finite fields, causing large overhead when used for rings that underlie lattice cryptography and FHE. Dinocchio achieves constant proof size and constant verification time, making verifiable large scale FHE computations practical.",
+          "ja": "Dinocchioは、リング演算におけるゼロ知識証明の非効率性に対処します。ほとんどのSNARKsは有限体向けに最適化されているため、格子暗号やFHE（Fully Homomorphic Encryption）の基盤となるリングに使用すると大きなオーバーヘッドが発生します。Dinocchioは定数サイズの証明と定数時間の検証を実現し、検証可能な大規模なFHE計算を実用的にします。"
         }
       },
       {
         "level": "intermediate",
         "question": {
           "zh": "Dinocchio 如何支持大规模矩阵乘法证明？",
-          "en": "How does Dinocchio support proofs for large scale matrix multiplication?"
+          "en": "How does Dinocchio support proofs for large scale matrix multiplication?",
+          "ja": "Dinocchioは、大規模な行列積の証明をどのようにサポートしていますか？"
         },
         "answer": {
           "zh": "Dinocchio 将矩阵乘法表示为环算术电路，并通过分布式 sum-check 与批量评估技术降低单个证明者负担。实验中，2^12 × 2^12 矩阵对应约 2^32 个约束，仍可在数小时内完成证明生成。",
-          "en": "Dinocchio encodes matrix multiplication as a ring arithmetic circuit and reduces prover load using distributed sum check and batch evaluation techniques. In experiments, a 2^12 by 2^12 matrix with about 2^32 constraints can still be proven within several hours."
+          "en": "Dinocchio encodes matrix multiplication as a ring arithmetic circuit and reduces prover load using distributed sum check and batch evaluation techniques. In experiments, a 2^12 by 2^12 matrix with about 2^32 constraints can still be proven within several hours.",
+          "ja": "Dinocchioは行列積を環論理回路としてエンコードし、分散和チェックとバッチ評価技術を用いてプロバーの負荷を軽減します。実験では、$2^{12} \times 2^{12}$ の行列で約 $2^{32}$ 個の制約があっても、数時間以内に証明が完了しました。"
         }
       },
       {
         "level": "expert",
         "question": {
           "zh": "Dinocchio 对 zkVM 或可验证 FHE 系统意味着什么？",
-          "en": "What are the implications of Dinocchio for zkVMs or verifiable FHE systems?"
+          "en": "What are the implications of Dinocchio for zkVMs or verifiable FHE systems?",
+          "ja": "DinocchioはzkVMや検証可能なFHEシステムにどのような影響を与えますか？"
         },
         "answer": {
           "zh": "Dinocchio 表明环算术不再是可验证计算的瓶颈。这为基于格的 zkVM 与可验证 FHE 打开了可扩展路径，使其不必退回诚实但好奇模型，并可处理真实规模的线性代数与批处理任务。",
-          "en": "Dinocchio shows that ring arithmetic is no longer the bottleneck for verifiable computation. This enables scalable lattice based zkVMs and verifiable FHE systems that avoid the honest but curious model and support real world linear algebra and batch workloads."
+          "en": "Dinocchio shows that ring arithmetic is no longer the bottleneck for verifiable computation. This enables scalable lattice based zkVMs and verifiable FHE systems that avoid the honest but curious model and support real world linear algebra and batch workloads.",
+          "ja": "Dinocchioは、検証可能な計算におけるリング演算がボトルネックではなくなったことを示しています。これにより、スケーラブルな格子ベースのzkVMや、正直だが好奇心旺盛（honest but curious）モデルを回避し、実世界の線形代数およびバッチワークロードをサポートする検証可能なFHEシステムが可能になります。"
         }
       }
     ]
