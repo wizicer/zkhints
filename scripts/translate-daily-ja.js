@@ -378,20 +378,31 @@ function parseJsonResponse(text) {
     throw new Error("Ollama returned an empty response");
   }
 
-  const trimmed = text.trim();
+  const trimmed = stripJsonFence(text.trim());
   try {
-    return JSON.parse(trimmed);
+    return JSON.parse(sanitizeJsonBackslashes(trimmed));
   } catch (parseError) {
     const match = trimmed.match(/\{[\s\S]*\}/);
     if (!match) throw new Error(`Could not find JSON object in response: ${trimmed}`);
     try {
-      return JSON.parse(match[0]);
+      return JSON.parse(sanitizeJsonBackslashes(match[0]));
     } catch (objectParseError) {
       throw new Error(
         `Could not parse JSON object: ${objectParseError.message}; full response starts with: ${trimmed.slice(0, 1000)}`
       );
     }
   }
+}
+
+function stripJsonFence(text) {
+  return text
+    .replace(/^```(?:json)?\s*/i, "")
+    .replace(/\s*```$/i, "")
+    .trim();
+}
+
+function sanitizeJsonBackslashes(text) {
+  return text.replace(/\\(?!["\\/bfnrtu])/g, "\\\\");
 }
 
 function countMissingTranslations(days) {
