@@ -11,6 +11,7 @@ const model = args.model || DEFAULT_MODEL;
 const ollamaUrl = (args.ollamaUrl || DEFAULT_OLLAMA_URL).replace(/\/$/, "");
 const dryRun = Boolean(args.dryRun);
 const reportOnly = Boolean(args.report);
+const thinking = Boolean(args.thinking);
 const targetFile = args.file;
 const limit = args.limit ? Number(args.limit) : Number.POSITIVE_INFINITY;
 
@@ -38,6 +39,10 @@ try {
 }
 
 async function main() {
+  if (!reportOnly) {
+    console.log(`Ollama thinking: ${thinking ? "enabled" : "disabled"}`);
+  }
+
   const dailyFiles = (await fs.readdir(DAILY_DIR))
     .filter((file) => file.endsWith(".json"))
     .filter((file) => !targetFile || file === targetFile || file === `${targetFile}.json`)
@@ -253,6 +258,7 @@ async function callOllamaJson({ system, prompt }, label) {
           prompt,
           stream: false,
           format: "json",
+          think: thinking,
           options: {
             temperature: 0.1,
             top_p: 0.9,
@@ -396,6 +402,8 @@ function parseArgs(argv) {
     if (arg === "--help" || arg === "-h") parsed.help = true;
     else if (arg === "--dry-run") parsed.dryRun = true;
     else if (arg === "--report") parsed.report = true;
+    else if (arg === "--think" || arg === "--thinking") parsed.thinking = true;
+    else if (arg === "--no-think" || arg === "--no-thinking") parsed.thinking = false;
     else if (arg === "--file") parsed.file = argv[++index];
     else if (arg.startsWith("--file=")) parsed.file = arg.slice("--file=".length);
     else if (arg === "--model") parsed.model = argv[++index];
@@ -418,6 +426,8 @@ Usage:
 Options:
   --report                  Only print files with missing en/ja translation fields.
   --dry-run                 Translate but do not write files.
+  --think, --thinking       Enable Ollama thinking. Default: disabled.
+  --no-think                Disable Ollama thinking explicitly.
   --file <YYYYMM.json>      Translate one daily JSON file.
   --limit <number>          Stop after translating this many fields.
   --model <name>            Ollama model. Default: ${DEFAULT_MODEL}
