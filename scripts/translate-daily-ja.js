@@ -14,6 +14,7 @@ const reportOnly = Boolean(args.report);
 const thinking = Boolean(args.thinking);
 const targetFile = args.file;
 const limit = args.limit ? Number(args.limit) : Number.POSITIVE_INFINITY;
+const failureLog = args.failureLog ? path.resolve(args.failureLog) : null;
 
 if (args.help) {
   printHelp();
@@ -25,6 +26,7 @@ const stats = {
   fields: 0,
   translated: 0,
   skipped: 0,
+  failed: 0,
 };
 
 let ollamaWasUsed = false;
@@ -43,6 +45,7 @@ try {
 async function main() {
   if (!reportOnly) {
     console.log(`Ollama thinking: ${thinking ? "enabled" : "disabled"}`);
+    if (failureLog) console.log(`Failure log: ${failureLog}`);
   }
 
   const dailyFiles = (await fs.readdir(DAILY_DIR))
@@ -110,28 +113,32 @@ async function main() {
 async function translateDailyFile(days, file, saveFile) {
   for (const day of days) {
     for (const project of day.projects || []) {
-      if (await translateAndSave(days, file, saveFile, () =>
-        translateProjectField(project, "summary", `${file} ${day.date} ${project.name} summary`)
+      const summaryLabel = `${file} ${day.date} ${project.name} summary`;
+      if (await translateAndSave(days, file, saveFile, summaryLabel, () =>
+        translateProjectField(project, "summary", summaryLabel)
       )) {
         if (isLimitReached()) return true;
       }
 
-      if (await translateAndSave(days, file, saveFile, () =>
-        translateProjectField(project, "notes", `${file} ${day.date} ${project.name} notes`)
+      const notesLabel = `${file} ${day.date} ${project.name} notes`;
+      if (await translateAndSave(days, file, saveFile, notesLabel, () =>
+        translateProjectField(project, "notes", notesLabel)
       )) {
         if (isLimitReached()) return true;
       }
     }
 
     for (const qa of day.qas || []) {
-      if (await translateAndSave(days, file, saveFile, () =>
-        translateLocalizedField(qa, "question", `${file} ${day.date} QA question`)
+      const questionLabel = `${file} ${day.date} QA question`;
+      if (await translateAndSave(days, file, saveFile, questionLabel, () =>
+        translateLocalizedField(qa, "question", questionLabel)
       )) {
         if (isLimitReached()) return true;
       }
 
-      if (await translateAndSave(days, file, saveFile, () =>
-        translateLocalizedField(qa, "answer", `${file} ${day.date} QA answer`)
+      const answerLabel = `${file} ${day.date} QA answer`;
+      if (await translateAndSave(days, file, saveFile, answerLabel, () =>
+        translateLocalizedField(qa, "answer", answerLabel)
       )) {
         if (isLimitReached()) return true;
       }
@@ -141,9 +148,18 @@ async function translateDailyFile(days, file, saveFile) {
   return false;
 }
 
-async function translateAndSave(days, file, saveFile, translateFn) {
+async function translateAndSave(days, file, saveFile, label, translateFn) {
   const missingBefore = countMissingTranslations(days);
-  const translated = await translateFn();
+  let translated;
+
+  try {
+    translated = await translateFn();
+  } catch (error) {
+    stats.failed += 1;
+    console.warn(`    failed; skipped ${label}: ${error.message}`);
+    await recordFailure({ file, label, error });
+    return false;
+  }
 
   if (!translated) {
     return false;
@@ -204,10 +220,11 @@ async function translateLocalizedField(owner, key, label) {
   stats.fields += 1;
 
   let didTranslate = false;
+  const updates = {};
 
   if (!hasLocalizedValue(value, "en") && hasLocalizedValue(value, "zh")) {
     console.log(`  - ${label} -> en`);
-    value.en = Array.isArray(value.zh)
+    updates.en = Array.isArray(value.zh)
       ? await translateArray(value.zh, label, "en")
       : await translateText(value.zh, label, "en");
     didTranslate = true;
@@ -215,8 +232,8 @@ async function translateLocalizedField(owner, key, label) {
 
   if (!hasLocalizedValue(value, "ja")) {
     console.log(`  - ${label}`);
-    const source = hasLocalizedValue(value, "en") ? value.en : value.zh;
-    value.ja = Array.isArray(source)
+    const source = updates.en || (hasLocalizedValue(value, "en") ? value.en : value.zh);
+    updates.ja = Array.isArray(source)
       ? await translateArray(source, label, "ja")
       : await translateText(source, label, "ja");
     didTranslate = true;
@@ -227,6 +244,7 @@ async function translateLocalizedField(owner, key, label) {
     return false;
   }
 
+  Object.assign(value, updates);
   stats.translated += 1;
   return true;
 }
@@ -363,10 +381,16 @@ function parseJsonResponse(text) {
   const trimmed = text.trim();
   try {
     return JSON.parse(trimmed);
-  } catch {
+  } catch (parseError) {
     const match = trimmed.match(/\{[\s\S]*\}/);
     if (!match) throw new Error(`Could not find JSON object in response: ${trimmed}`);
-    return JSON.parse(match[0]);
+    try {
+      return JSON.parse(match[0]);
+    } catch (objectParseError) {
+      throw new Error(
+        `Could not parse JSON object: ${objectParseError.message}; full response starts with: ${trimmed.slice(0, 1000)}`
+      );
+    }
   }
 }
 
@@ -432,6 +456,25 @@ function reportProgress(file, completedFields) {
   console.log(`    progress ${progressDone}/${progressTotal} (${percent}%) ${file}`);
 }
 
+async function recordFailure({ file, label, error }) {
+  if (!failureLog || dryRun) return;
+
+  const entry = {
+    at: new Date().toISOString(),
+    file,
+    label,
+    message: error.message,
+    stack: error.stack,
+  };
+
+  try {
+    await fs.appendFile(failureLog, `${JSON.stringify(entry)}\n`);
+    console.warn(`    recorded failure in ${failureLog}`);
+  } catch (logError) {
+    console.warn(`    could not write failure log ${failureLog}: ${logError.message}`);
+  }
+}
+
 function parseArgs(argv) {
   const parsed = {};
 
@@ -443,6 +486,8 @@ function parseArgs(argv) {
     else if (arg === "--report") parsed.report = true;
     else if (arg === "--think" || arg === "--thinking") parsed.thinking = true;
     else if (arg === "--no-think" || arg === "--no-thinking") parsed.thinking = false;
+    else if (arg === "--failure-log") parsed.failureLog = argv[++index];
+    else if (arg.startsWith("--failure-log=")) parsed.failureLog = arg.slice("--failure-log=".length);
     else if (arg === "--file") parsed.file = argv[++index];
     else if (arg.startsWith("--file=")) parsed.file = arg.slice("--file=".length);
     else if (arg === "--model") parsed.model = argv[++index];
@@ -467,6 +512,7 @@ Options:
   --dry-run                 Translate but do not write files.
   --think, --thinking       Enable Ollama thinking. Default: disabled.
   --no-think                Disable Ollama thinking explicitly.
+  --failure-log <path>      Append skipped translation failures. Default: disabled.
   --file <YYYYMM.json>      Translate one daily JSON file.
   --limit <number>          Stop after translating this many fields.
   --model <name>            Ollama model. Default: ${DEFAULT_MODEL}
