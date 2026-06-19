@@ -1,0 +1,19 @@
+<div class="prose prose-sm max-w-none p-4">
+  <h4 class="font-semibold">TL;DR</h4>
+  <p>
+    この ERC は ERC-721 を拡張し、verifiable AI-Generated Content (AIGC) NFTs を作るための標準です。
+    特定の AI model と prompt によって digital content が生成されたことを、Zero-Knowledge Machine Learning
+    (zkML) や Optimistic Machine Learning (opML) などで証明する方法を提供します。
+  </p>
+
+  <h4 class="font-semibold">仕様</h4>
+  <p>標準は ERC-721 と併用される core interface <code>IERC7007</code> を導入します。主な要素は次の通りです。</p>
+  <ul class="list-disc pl-5 space-y-2">
+    <li><strong><code>addAigcData(...)</code>:</strong> AI-generated data と proof を token に関連付ける function。</li>
+    <li><strong><code>verify(...)</code>:</strong> prompt と proof に対して AI-generated data が有効か確認する view function。zkML / opML verification logic がここに入ります。</li>
+    <li><strong>任意拡張:</strong> prompts/tokens を発見する <code>Enumerable</code> と、data 変更を扱う <code>Updatable</code> を含みます。</li>
+  </ul>
+  <p class="mt-2">
+    重要な設計として、<code>tokenId</code> は prompt の hash から導出されます。これにより各 unique prompt が単一の unique NFT に対応します。
+  </p>
+</div>

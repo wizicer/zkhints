@@ -5,20 +5,20 @@ import { Image } from "astro:assets";
 import externalLinkIcon from "../../assets/icons/external-link.svg";
 import githubIcon from "../../assets/icons/github.svg";
 import type { EIP } from "../../data/model";
-import Eip196 from "../../components/eip/Eip196.astro";
-import Eip197 from "../../components/eip/Eip197.astro";
-import Eip1108 from "../../components/eip/Eip1108.astro";
-import Eip2537 from "../../components/eip/Eip2537.astro";
-import Eip2565 from "../../components/eip/Eip2565.astro";
-import Eip7951 from "../../components/eip/Eip7951.astro";
-import Eip1271 from "../../components/eip/Eip1271.astro";
-import Eip2098 from "../../components/eip/Eip2098.astro";
-import Eip5732 from "../../components/eip/Eip5732.astro";
-import Eip6492 from "../../components/eip/Eip6492.astro";
-import Eip7007 from "../../components/eip/Eip7007.astro";
-import Eip7734 from "../../components/eip/Eip7734.astro";
-import Eip7913 from "../../components/eip/Eip7913.astro";
-import Eip7812 from "../../components/eip/Eip7812.astro";
+import Eip196 from "../../components/eip/ja/Eip196.astro";
+import Eip197 from "../../components/eip/ja/Eip197.astro";
+import Eip1108 from "../../components/eip/ja/Eip1108.astro";
+import Eip2537 from "../../components/eip/ja/Eip2537.astro";
+import Eip2565 from "../../components/eip/ja/Eip2565.astro";
+import Eip7951 from "../../components/eip/ja/Eip7951.astro";
+import Eip1271 from "../../components/eip/ja/Eip1271.astro";
+import Eip2098 from "../../components/eip/ja/Eip2098.astro";
+import Eip5732 from "../../components/eip/ja/Eip5732.astro";
+import Eip6492 from "../../components/eip/ja/Eip6492.astro";
+import Eip7007 from "../../components/eip/ja/Eip7007.astro";
+import Eip7734 from "../../components/eip/ja/Eip7734.astro";
+import Eip7913 from "../../components/eip/ja/Eip7913.astro";
+import Eip7812 from "../../components/eip/ja/Eip7812.astro";
 
 // Group EIPs by status
 const statusOrder = ["Final", "Last Call", "Review", "Draft", "Stagnant", "Withdrawn"];
@@ -48,6 +48,18 @@ const statusColors: Record<string, string> = {
   Stagnant: "bg-gray-50 border-gray-500 text-gray-800",
   Withdrawn: "bg-red-50 border-red-500 text-red-800",
 };
+
+const statusLabels: Record<string, string> = {
+  Final: "Final（確定）",
+  "Last Call": "Last Call（最終確認）",
+  Review: "Review（レビュー中）",
+  Draft: "Draft（草案）",
+  Stagnant: "Stagnant（停滞）",
+  Withdrawn: "Withdrawn（取り下げ）",
+};
+
+const hasJapaneseDetails = (id: number) =>
+  [196, 197, 1108, 2537, 2565, 7951, 1271, 2098, 5732, 6492, 7007, 7734, 7913, 7812].includes(id);
 ---
 
 <Layout id="eip">
@@ -59,7 +71,7 @@ const statusColors: Record<string, string> = {
         return (
           <section class={`mb-12 p-4 rounded-lg ${statusColors[status]}`}>
             <h2 class="text-2xl font-semibold mb-4 pb-2 border-b border-current">
-              {status} <span class="text-sm font-normal">({eipsByStatus[status].length})</span>
+              {statusLabels[status] || status} <span class="text-sm font-normal">({eipsByStatus[status].length})</span>
             </h2>
 
             <div class="space-y-2">
@@ -73,12 +85,12 @@ const statusColors: Record<string, string> = {
                       {eip.erc ? `ERC-${eip.id}` : `EIP-${eip.id}`}: {eip.title}
                       {eip.flag === "new" && (
                         <span class="ml-2 px-2 py-0.5 text-xs font-semibold text-green-800 bg-green-100 rounded-full">
-                          New
+                          新規
                         </span>
                       )}
                       {eip.flag === "update" && (
                         <span class="ml-2 px-2 py-0.5 text-xs font-semibold text-blue-800 bg-blue-100 rounded-full">
-                          Updated
+                          更新
                         </span>
                       )}
                     </span>
@@ -87,7 +99,7 @@ const statusColors: Record<string, string> = {
                       target="_blank"
                       rel="noopener noreferrer"
                       class="ml-2 text-gray-500 hover:text-blue-600"
-                      title="View on ethereum.org"
+                      title="ethereum.org で見る"
                       onclick="event.stopPropagation()"
                     >
                       <Image src={externalLinkIcon} alt="外部リンク" class="h-4 w-4 inline" />
@@ -98,7 +110,7 @@ const statusColors: Record<string, string> = {
                     <div class="p-3 pt-0 border-t border-gray-100">
                       <div class="flex flex-wrap gap-2 mt-1">
                         <div class="inline-block">
-                          <span class="text-sm font-medium text-gray-700">Authors:</span>
+                          <span class="text-sm font-medium text-gray-700">著者:</span>
                         </div>
                         {eip.authors.map((author) => (
                           <div class="inline-block">
@@ -125,7 +137,7 @@ const statusColors: Record<string, string> = {
                           </div>
                         ))}
                         <div class="inline-block">
-                          <span class="text-sm font-medium text-gray-700">Links:</span>
+                          <span class="text-sm font-medium text-gray-700">リンク:</span>
                         </div>
                         <div class="inline-block">
                           <a
@@ -137,7 +149,7 @@ const statusColors: Record<string, string> = {
                             target="_blank"
                             rel="noopener noreferrer"
                             class="inline-block px-2 py-1 text-xs font-medium text-gray-700 hover:text-blue-600 bg-gray-100 rounded-full hover:bg-blue-50 transition-colors"
-                            title="View on ethereum.org"
+                            title="GitHub で見る"
                             onclick="event.stopPropagation()"
                           >
                             <Image src={githubIcon} alt="Github" class="h-4 w-4 inline" />
@@ -147,27 +159,13 @@ const statusColors: Record<string, string> = {
 
                       {eip.star && (
                         <div class="mt-3 text-sm text-yellow-700 bg-yellow-50 p-2 rounded">
-                          <span class="font-medium">⭐</span> This EIP is particularly important for
-                          understanding ZK cryptography in Ethereum.
+                          <span class="font-medium">⭐</span> この EIP は Ethereum における ZK cryptography を理解するうえで特に重要です。
                         </div>
                       )}
                     </div>
                   )}
 
-                  {(eip.id === 196 ||
-                    eip.id === 197 ||
-                    eip.id === 1108 ||
-                    eip.id === 2537 ||
-                    eip.id === 2565 ||
-                    eip.id === 7951 ||
-                    eip.id === 1271 ||
-                    eip.id === 2098 ||
-                    eip.id === 5732 ||
-                    eip.id === 6492 ||
-                    eip.id === 7007 ||
-                    eip.id === 7734 ||
-                    eip.id === 7913 ||
-                    eip.id === 7812) && (
+                  {hasJapaneseDetails(eip.id) && (
                     <div class="p-3 border-t border-gray-100">
                       {eip.id === 196 && <Eip196 />}
                       {eip.id === 197 && <Eip197 />}
@@ -208,7 +206,7 @@ const statusColors: Record<string, string> = {
             stroke-width="2"
             d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
         </svg>
-        Back to Cheatsheets
+        チートシート一覧に戻る
       </a>
     </div>
   </div>

@@ -1,0 +1,32 @@
+<div class="prose prose-sm max-w-none p-4">
+  <h4 class="font-semibold">TL;DR</h4>
+  <p>
+    この EIP は <code>alt_bn128</code> curve operations (<code>ECADD</code>, <code>ECMUL</code>,
+    pairing checks) の gas cost を大幅に引き下げます。Geth や Parity など Ethereum clients の性能改善を反映するためです。
+  </p>
+
+  <h4 class="font-semibold">Gas cost の削減</h4>
+  <p>EIP-196 と EIP-197 で導入された precompiles の gas cost は次のように更新されました。</p>
+  <div class="overflow-x-auto">
+    <table class="min-w-full divide-y divide-gray-200">
+      <thead class="bg-gray-50">
+        <tr>
+          <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">コントラクト</th>
+          <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">以前の cost</th>
+          <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">新しい cost</th>
+        </tr>
+      </thead>
+      <tbody class="bg-white divide-y divide-gray-200">
+        <tr><td class="px-4 py-2 whitespace-nowrap"><code>ECADD</code></td><td class="px-4 py-2 whitespace-nowrap">500</td><td class="px-4 py-2 whitespace-nowrap">150</td></tr>
+        <tr><td class="px-4 py-2 whitespace-nowrap"><code>ECMUL</code></td><td class="px-4 py-2 whitespace-nowrap">40,000</td><td class="px-4 py-2 whitespace-nowrap">6,000</td></tr>
+        <tr><td class="px-4 py-2 whitespace-nowrap">Pairing check</td><td class="px-4 py-2 whitespace-nowrap"><code>80,000 * k + 100,000</code></td><td class="px-4 py-2 whitespace-nowrap"><code>34,000 * k + 45,000</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4 class="font-semibold">設計意図</h4>
+  <p>
+    この cost reduction により、これらの elliptic curve operations に依存する AZTEC、Matter Labs、Zether
+    のような privacy / scaling solutions が Ethereum mainnet 上でより実用的かつ安価になります。
+  </p>
+</div>

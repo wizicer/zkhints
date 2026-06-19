@@ -1,0 +1,23 @@
+<div class="prose prose-sm max-w-none p-4">
+  <h4 class="font-semibold">TL;DR</h4>
+  <p>
+    この ERC は decentralized identity (DID) verification のための minimal standard です。users は
+    smart contract を通じて identity を作成、検証、取り消しできます。cryptographic hashes を使って sensitive
+    data を off-chain に保ち、simple、private、user-controlled な identity layer を dApps に提供します。
+  </p>
+
+  <h4 class="font-semibold">仕様</h4>
+  <p>標準は <code>IDecentralizedIdentity</code> interface を定義し、主な構成要素は次の通りです。</p>
+  <ul class="list-disc pl-5 space-y-2">
+    <li><strong><code>Identity</code> struct:</strong> user address、identity hash、verification hashes、<code>isVerified</code> status を保存します。</li>
+    <li>
+      <strong>主要 functions:</strong>
+      <ul class="list-disc pl-5">
+        <li><code>createIdentity(bytes32 identityHash)</code>: caller の新しい identity を作成します。</li>
+        <li><code>verifyIdentity(bytes32[2] calldata verificationHashes)</code>: off-chain proofs 由来の hashes を提出して identity を検証します。</li>
+        <li><code>revokeIdentity()</code>: identity の verification status を取り消します。</li>
+      </ul>
+    </li>
+    <li><strong>イベント:</strong> transparency と traceability のために <code>IdentityCreated</code>, <code>IdentityVerified</code>, <code>IdentityRevoked</code> を emit します。</li>
+  </ul>
+</div>

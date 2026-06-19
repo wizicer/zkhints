@@ -1,0 +1,27 @@
+<div class="prose prose-sm max-w-none p-4">
+  <h4 class="font-semibold">TL;DR</h4>
+  <p>
+    この ERC は native Ethereum address を持たない keys からの signatures を検証する標準方式を提供します。
+    mobile secure enclaves (<code>secp256r1</code>)、RSA hardware、ZK-based systems などに対応します。
+    ERC-1271 を拡張し、shared "verifier" contracts を導入することで、account abstraction に多様な cryptographic
+    keys を安く統合しやすくします。
+  </p>
+
+  <h4 class="font-semibold">仕様</h4>
+  <p>signer を単一 address ではなく、<code>(verifier, key)</code> pair として識別します。</p>
+  <ul class="list-disc pl-5 space-y-2">
+    <li><strong>検証コントラクト:</strong> 特定 key type の signatures を検証する smart contract。</li>
+    <li><strong>鍵:</strong> public key material。<code>bytes</code> として表現されます。</li>
+  </ul>
+  <p class="mt-2">
+    verifier contract は単一 function を持つ <code>IERC7913SignatureVerifier</code> interface を実装します。
+  </p>
+  <pre class="language-solidity"><code>{`interface IERC7913SignatureVerifier {
+  function verify(
+    bytes calldata key,
+    bytes32 hash,
+    bytes calldata signature
+  ) external view returns (bytes4);
+}`}</code></pre>
+  <p class="mt-2">verification 成功時、この function は自身の selector (<code>0x024ad318</code>) を返します。</p>
+</div>

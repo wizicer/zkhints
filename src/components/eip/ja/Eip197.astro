@@ -1,0 +1,42 @@
+<div class="prose prose-sm max-w-none p-4">
+  <h4 class="font-semibold">TL;DR</h4>
+  <p>
+    この EIP は <code>alt_bn128</code> elliptic curve 上の pairing checks 用 precompiled contract
+    を導入します。EIP-196 を補完し、on-chain で zkSNARKs を効率よく検証するための重要な部品です。
+  </p>
+
+  <h4 class="font-semibold">仕様</h4>
+  <p>
+    zkSNARKs に不可欠な multiplicatively homomorphic operation である pairing check を実行する
+    precompiled contract が追加されました。
+  </p>
+  <ul class="list-disc pl-5 space-y-2">
+    <li>
+      <strong>Pairing Check (BNPAIR)</strong>
+      <ul class="list-disc pl-5">
+        <li>アドレス: <code>0x8</code></li>
+        <li>Gas cost: <code>80,000 * k + 100,000</code> (<code>k</code> は pair の数)</li>
+        <li>入力: point pairs <code>(a1, b1, a2, b2, ..., ak, bk)</code>。</li>
+        <li>
+          出力: pairing equation <code>e(a1, b1) * ... * e(ak, bk) = 1</code> が成立すれば
+          <code>1</code>、そうでなければ <code>0</code>。
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <h4 class="font-semibold">重要ポイント</h4>
+  <ul class="list-disc pl-5 space-y-1">
+    <li>
+      <strong>グループ:</strong> 操作は <code>G1</code> (<code>F_p</code> 上) と <code>G2</code>
+      (<code>F_p^2</code> 上) の 2 groups を使います。どちらも <code>alt_bn128</code> curve 由来です。
+    </li>
+    <li>
+      <strong>入力エンコード:</strong> 入力は encoded points の連結です。総長は 192 bytes の倍数である必要があります。
+    </li>
+    <li>
+      <strong>設計意図:</strong> full pairing ではなく pairing check を定義します。zkSNARK verification
+      にはこれで十分で、pairing output field (<code>F_p^12</code>) を扱う複雑さを避けられます。
+    </li>
+  </ul>
+</div>

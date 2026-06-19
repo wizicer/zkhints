@@ -1,0 +1,21 @@
+<div class="prose prose-sm max-w-none p-4">
+  <h4 class="font-semibold">TL;DR</h4>
+  <p>
+    この ERC は <code>secp256k1</code> signatures を標準の 65 bytes から compact な 64-byte
+    representation にする提案です。通常使われない <code>s</code> value の最上位 bit に <code>yParity</code>
+    bit (recovery ID) を格納し、meta-transactions などで space と gas を節約します。
+  </p>
+
+  <h4 class="font-semibold">仕様</h4>
+  <p>
+    標準 signature は <code>r</code>, <code>s</code>, <code>yParity</code> から成ります。canonical
+    signatures では <code>s</code> の top bit が常に 0 なので、この未使用 bit に <code>yParity</code>
+    を格納します。結果の 64-byte signature は 2 つの 32-byte values の連結です。
+  </p>
+  <ul class="list-disc pl-5 space-y-2">
+    <li><strong><code>r</code>:</strong> 最初の 32 bytes。signature point の x-coordinate。</li>
+    <li><strong><code>yParityAndS</code>:</strong> 2 番目の 32 bytes。<code>yParity</code> と <code>s</code> を組み合わせた値。</li>
+  </ul>
+  <p class="mt-2">構造は次のようになります。</p>
+  <pre class="p-2 rounded text-center"><code>[256-bit r value][1-bit yParity value][255-bit s value]</code></pre>
+</div>

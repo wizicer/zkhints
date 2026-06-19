@@ -1,0 +1,32 @@
+<div class="prose prose-sm max-w-none p-4">
+  <h4 class="font-semibold">TL;DR</h4>
+  <p>
+    この ERC は commit-reveal schemes の標準 interface を定義します。任意の contract に generic な
+    <code>commit</code> function を追加でき、users は action をすぐに明かさずに commit できます。front-running
+    attacks を防ぎ、voting systems などに privacy layer を追加します。
+  </p>
+
+  <h4 class="font-semibold">仕様</h4>
+  <p>
+    commit-reveal schemes を実装するための 2 つの interfaces を定義します。core interface は backward
+    compatibility のため最小限で、general interface はより多くの機能を提供します。
+  </p>
+  <pre class="language-solidity"><code>{`interface IERC_COMMIT_CORE {
+    function commit(bytes32 _commitment) payable external;
+}
+
+interface IERC_COMMIT_GENERAL {
+    event Commit(
+        uint256 indexed _timePoint,
+        address indexed _from,
+        bytes32 indexed _commitment,
+        bytes _extraData);
+
+    function commitFrom(
+        address _from,
+        bytes32 _commitment,
+        bytes calldata _extraData)
+    payable external returns(uint256 timePoint);
+}`}
+</code></pre>
+</div>

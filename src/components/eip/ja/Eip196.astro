@@ -1,0 +1,49 @@
+<div class="prose prose-sm max-w-none p-4">
+  <h4 class="font-semibold">TL;DR</h4>
+  <p>
+    この EIP は elliptic curve operations 用の precompiled contracts を導入し、block gas limit
+    の範囲内で zkSNARK verification を可能にします。Ethereum 上の privacy と scalability を高めるための基礎です。
+  </p>
+
+  <h4 class="font-semibold">仕様</h4>
+  <p>
+    <code>alt_bn128</code> curve (<code>Y^2 = X^3 + 3</code>) 上に、2 つの precompiled
+    contracts が追加されました。
+  </p>
+  <ul class="list-disc pl-5 space-y-2">
+    <li>
+      <strong>Point Addition (ECADD)</strong>
+      <ul class="list-disc pl-5">
+        <li>アドレス: <code>0x6</code></li>
+        <li>Gas cost: <code>500</code></li>
+        <li>入力: 2 つの curve points <code>(x, y)</code>。</li>
+        <li>出力: 加算結果の curve point。</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Scalar Multiplication (ECMUL)</strong>
+      <ul class="list-disc pl-5">
+        <li>アドレス: <code>0x7</code></li>
+        <li>Gas cost: <code>40,000</code></li>
+        <li>入力: curve point <code>(x, y)</code> と scalar <code>s</code>。</li>
+        <li>出力: scalar multiplication の結果となる curve point。</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h4 class="font-semibold">重要ポイント</h4>
+  <ul class="list-disc pl-5 space-y-1">
+    <li>
+      <strong>エンコード:</strong> Field elements と scalars は 32-byte big-endian numbers です。
+      Curve points は <code>(x, y)</code> で、infinity は <code>(0, 0)</code> として扱います。
+    </li>
+    <li>
+      <strong>エラー処理:</strong> 入力点が curve 上にない場合、または coordinates が field
+      modulus を超える場合、contract は失敗します。
+    </li>
+    <li>
+      <strong>設計意図:</strong> <code>alt_bn128</code> curve は pairing-based cryptography で効率的で、
+      ZCash components と互換性があるため選ばれました。
+    </li>
+  </ul>
+</div>

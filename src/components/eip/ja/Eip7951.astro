@@ -1,0 +1,27 @@
+<div class="prose prose-sm max-w-none p-4">
+  <h4 class="font-semibold">TL;DR</h4>
+  <p>
+    この EIP は <code>secp256r1</code> ECDSA signature verification 用 precompile を追加します。
+    Apple's Secure Enclave や Android Keystore など modern hardware 由来の signatures を native に扱えるようにし、
+    account abstraction と device-native authentication の UX を改善します。
+  </p>
+
+  <h4 class="font-semibold">仕様</h4>
+  <p>新しい precompile <code>P256VERIFY</code> が address <code>0x100</code> に導入されます。</p>
+  <ul class="list-disc pl-5 space-y-2">
+    <li><strong>操作:</strong> <code>secp256r1</code> curve 上の ECDSA signature verification を実行します。</li>
+    <li><strong>ガスコスト:</strong> <code>6900</code></li>
+    <li>
+      <strong>入力:</strong> 160 bytes。message hash (32 bytes)、signature components <code>r</code> と
+      <code>s</code>、public key coordinates <code>qx</code> と <code>qy</code> から成ります。
+    </li>
+    <li><strong>出力:</strong> 成功時は <code>1</code>、失敗時は empty response。strict input validation を行い、error で revert しません。</li>
+  </ul>
+
+  <h4 class="font-semibold">設計意図</h4>
+  <p>
+    この EIP は RIP-7212 の安全な replacement として設計され、point-at-infinity や modular comparison
+    checks に関する重大な bug を修正します。<code>ecrecover</code> のような key recovery ではなく signature
+    verification を使うのは、hardware standards と整合し、この curve ではより効率的だからです。
+  </p>
+</div>

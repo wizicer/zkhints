@@ -1,0 +1,20 @@
+<div class="prose prose-sm max-w-none p-4">
+  <h4 class="font-semibold">TL;DR</h4>
+  <p>
+    この ERC は private かつ provable な statements を保存する singleton on-chain registry を導入します。
+    users と protocols は commitments (blinded data) を shared database に anchor し、その後 Zero-Knowledge
+    proofs を使って data を明かさずに claims を検証できます。
+  </p>
+
+  <h4 class="font-semibold">仕様</h4>
+  <p>
+    system は <code>EvidenceRegistry</code> contract を中心に構築されます。これは <code>EvidenceDB</code>
+    と呼ばれる provable key-value store を管理し、Sparse Merkle Tree (SMT) として実装されます。
+  </p>
+  <ul class="list-disc pl-5 space-y-2">
+    <li><strong><code>EvidenceRegistry</code>:</strong> main entry point となる singleton contract。<code>addStatement</code>, <code>removeStatement</code>, <code>updateStatement</code> などを提供します。</li>
+    <li><strong>Namespace 分離:</strong> statement は sender address と key を hash して生成される isolated key の下に保存され、他 registrar の data 上書きを防ぎます。</li>
+    <li><strong>登録コントラクト:</strong> developers は identity や proof-of-attendance など特定用途向けの custom Registrar contracts を構築できます。</li>
+    <li><strong>ZK-friendly 設計:</strong> stored data の inclusion / exclusion proofs を効率よく生成するため、Poseidon のような ZK-friendly hash functions を推奨します。</li>
+  </ul>
+</div>

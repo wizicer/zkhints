@@ -1,0 +1,23 @@
+<div class="prose prose-sm max-w-none p-4">
+  <h4 class="font-semibold">TL;DR</h4>
+  <p>
+    この ERC は EIP-1271 を拡張し、まだ deploy されていない smart contracts (counterfactual accounts)
+    の signature verification を可能にします。contract deployment に必要な data を含む wrapper signature
+    format を導入し、users が初回 on-chain transaction を行う前でも dApps が signatures を検証できます。
+  </p>
+
+  <h4 class="font-semibold">仕様</h4>
+  <p>
+    contract が未 deploy の場合、standard EIP-1271 signature を deployment data と一緒に wrap します。
+    wrapper format は特定の <code>magicBytes</code> suffix によって検出されます。
+  </p>
+  <ul class="list-disc pl-5 space-y-2">
+    <li><strong>Wrapper 形式:</strong> <code>concat(abi.encode((create2Factory, factoryCalldata, originalSignature)), magicBytes)</code></li>
+    <li><strong>Magic suffix 目印:</strong> signature は <code>0x64926492...6492</code> で終わります。</li>
+    <li>
+      <strong>検証フロー:</strong> verifier は magic suffix を確認し、存在する場合は
+      <code>create2Factory</code> と <code>factoryCalldata</code> で contract を deploy します。その後、
+      deploy 済み contract の <code>isValidSignature</code> を original signature で呼び出します。
+    </li>
+  </ul>
+</div>

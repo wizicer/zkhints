@@ -1,0 +1,26 @@
+<div class="prose prose-sm max-w-none p-4">
+  <h4 class="font-semibold">TL;DR</h4>
+  <p>
+    この EIP は <code>ModExp</code> (modular exponentiation) precompile の gas price を見直し、
+    実際の computational cost により近づけます。VDFs、SNARKs、accumulators など、これに依存する cryptographic
+    functions を Ethereum 上でより安価かつ実用的にします。
+  </p>
+
+  <h4 class="font-semibold">新しい gas cost formula</h4>
+  <p>
+    EIP-198 の algorithm を置き換える新しい gas cost calculation が導入されました。 underlying "bigint"
+    library operations の複雑さをよりよく近似するための formula です。
+  </p>
+  <pre class="p-2 rounded"><code>max(200, floor(multiplication_complexity * iteration_count / 3))</code></pre>
+  <ul class="list-disc pl-5 space-y-1">
+    <li><strong>乗算複雑度:</strong> multiplication cost の近似で、<code>(ceil(max(base_length, modulus_length) / 8))^2</code> として計算されます。</li>
+    <li><strong>反復回数:</strong> exponent の bit length に基づき、必要な multiplications の数を近似します。</li>
+  </ul>
+
+  <h4 class="font-semibold">設計意図</h4>
+  <p>
+    EIP-198 の以前の formula は不正確な近似だと分かりました。新 formula は modern exponentiation algorithms
+    の性能をよりよく model 化し、network security と DoS resistance のために <code>ECRecover</code> など他の precompiles
+    と比較して calibrated されています。
+  </p>
+</div>

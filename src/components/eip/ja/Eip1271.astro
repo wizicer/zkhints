@@ -1,0 +1,20 @@
+<div class="prose prose-sm max-w-none p-4">
+  <h4 class="font-semibold">TL;DR</h4>
+  <p>
+    この EIP は smart contracts が signatures を検証する標準方式を定義します。これにより contracts は認証において
+    externally owned accounts (EOAs) のように振る舞えます。contracts は <code>isValidSignature</code>
+    function を実装し、他の contracts がその contract の behalf で signature の有効性を確認できます。
+  </p>
+
+  <h4 class="font-semibold">仕様</h4>
+  <p>message に署名できる contract は、次の単一 function を含む <code>ERC1271</code> interface を実装します。</p>
+  <pre class="p-2 rounded"><code>function isValidSignature(
+  bytes32 _hash,
+  bytes memory _signature
+) public view returns (bytes4 magicValue);</code></pre>
+  <ul class="list-disc pl-5 space-y-2">
+    <li><strong>機能:</strong> signature が指定 hash に対して有効なら magic value (<code>0x1626ba7e</code>) を返します。</li>
+    <li><strong>状態:</strong> この function は state を変更してはいけません (<code>view</code> function)。</li>
+    <li><strong>柔軟性:</strong> authorized signers、multi-sig logic、別の signature schemes など、任意の検証ロジックを使えます。</li>
+  </ul>
+</div>
