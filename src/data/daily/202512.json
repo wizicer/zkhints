@@ -179,6 +179,13 @@
             "Eq-Poly optimization based on Gruen method, splitting and reducing 𝔩𝔩 multiplications for eq polynomials",
             "Two-stage strategy: first 3 rounds use SVO, subsequent rounds apply Algorithm 5",
             "Optimization is targeted at base field such as Baby Bear, with significant higher extension field operation cost"
+          ],
+          "ja": [
+            "BDDTは、高コストな𝔩𝔩（extension field）操作をよりベースフィールド（base field）の𝔰𝔰（scalar multiplication）操作に変換することで最適化遅延を解消し、パフォーマンスを向上させる",
+            "SVOはラグランジュ補間を用いて多項式展開を代替し、事前計算コストを指数関数から多項式へと削減する",
+            "Eq-Polyの最適化はGruen法に基づいており、eq polynomialにおける𝔩𝔩（extension field）乗算の分割と削減を行う",
+            "二段階戦略：最初の3ラウンドでSVOを使用し、以降のラウンドでAlgorithm 5を適用する",
+            "この最適化は、Baby Bearのようなベースフィールドに焦点を当てており、拡張フィールド操作の高いコストに対処している"
           ]
         }
       }

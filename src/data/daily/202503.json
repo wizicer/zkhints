@@ -46,7 +46,11 @@
           "NPSS",
           "MPC"
         ],
-        "summary": "Benny Applebaum和Eliran Kachlon在{{name}}论文中提出了信息论安全的NPSS定义和构造，支持任意t≤n的t-out-of-n秘密共享，并展示了其在零知识证明组合中的应用。"
+        "summary": {
+          "zh": "Benny Applebaum和Eliran Kachlon在{{name}}论文中提出了信息论安全的NPSS定义和构造，支持任意t≤n的t-out-of-n秘密共享，并展示了其在零知识证明组合中的应用。",
+          "en": "Benny Applebaum and Eliran Kachlon introduced the definition and construction of information-theoretically secure NPSS in the paper {{name}}, which supports t-out-of-n secret sharing for any t ≤ n, and demonstrated its application in zero-knowledge proof constructions.",
+          "ja": "Benny ApplebaumとEliran Kachlonは、{{name}}の論文において、情報論的セキュリティを持つNPSS（Non-interactive Proof of Secret Sharing）の定義と構成を提案し、任意のt≤nに対するt-out-of-n秘密共有をサポートすることを示し、さらにそれがゼロ知識証明の組み合わせにおける応用例として提示されています。"
+        }
       },
       {
         "name": "Bulletproofs for R1CS: Bridging the Completeness-Soundness Gap and a ZK Extension",

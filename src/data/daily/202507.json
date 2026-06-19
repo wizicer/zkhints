@@ -318,7 +318,8 @@
         ],
         "summary": {
           "zh": "Athamnah等人在{{name}}论文中提出了一种针对布尔电路的高效线性证明者IOP，仅需$O(\\log^*(S))$轮，显著降低了证明者的计算瓶颈。",
-          "en": "Athamnah et al. proposed a linear prover IOP for Boolean circuits in their paper {{name}}, achieving $O(\\log^*(S))$ rounds, significantly reducing the prover's computational bottleneck."
+          "en": "Athamnah et al. proposed a linear prover IOP for Boolean circuits in their paper {{name}}, achieving $O(\\log^*(S))$ rounds, significantly reducing the prover's computational bottleneck.",
+          "ja": "Athamnahらによる論文{{name}}では、ブーリアン回路のための線形プロバーIOPが提案されており、$O(\\log^*(S))$ラウンドを達成することで、プロバーの計算ボトルネックを大幅に軽減しています。"
         }
       }
     ]

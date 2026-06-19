@@ -330,7 +330,8 @@
         ],
         "summary": {
           "zh": "Fang等人在{{name}}论文中提出了一种新的协作式zkSNARK方案，具有$O(\\frac{C}{n}\\log\\frac{C}{n})$证明者时间和$O(1)$证明大小，显著提高了效率。",
-          "en": "Fang et al. proposed a new collaborative zkSNARK scheme in paper{{name}}, with $O(\\frac{C}{n}\\log\\frac{C}{n})$ prover time and $O(1)$ proof size, significantly improving efficiency."
+          "en": "Fang et al. proposed a new collaborative zkSNARK scheme in paper{{name}}, with $O(\\frac{C}{n}\\log\\frac{C}{n})$ prover time and $O(1)$ proof size, significantly improving efficiency.",
+          "ja": "Fangらは論文{{name}}において、新しい協調的なzkSNARKスキームを提案しており、そのプロバー時間 $O(\\frac{C}{n}\\log\\frac{C}{n})$ および証明サイズ $O(1)$ は効率を大幅に向上させている。"
         }
       }
     ]

@@ -301,6 +301,14 @@
             "Novel integration of Greyhound with ring-switching eliminates R_q multiplications for verifier",
             "Generic reduction converts extension field proofs to cyclotomic ring statements",
             "Technique applicable to lattice-based SNARKs for faster verification"
+          ],
+          "ja": [
+            "Module-SISを用いたℓ変数多項式に対する、poly(ℓ,λ)の証明サイズとÕ(√2^ℓλ)の検証時間を提供するHachi",
+            "Greyhoundに対するÕ(λ)のアシンプトティックな改善を達成し、実用上12.5倍の高速化を実現",
+            "sumcheckプロトコルを使用しているが、格子ベースの構築におけるボトルネックに対処している",
+            "Ring-switchingとGreyhoundの新規統合により、検証者側のR_q乗算を排除",
+            "Generic reductionにより、拡張体（extension field）の証明を円分体環（cyclotomic ring）のステートメントに変換する手法",
+            "より高速な検証を実現するための格子ベースSNARKsへの適用可能な技術"
           ]
         },
         "slogan": {

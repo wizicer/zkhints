@@ -160,7 +160,8 @@
         },
         "answer": {
           "zh": "由于压缩优化使最终验证等式对初始 claim 呈线性形式 a·H+b=expected，且随机系数独立于 H，攻击者可直接解出 H 使等式成立。",
-          "en": "Because compression makes the final verification equation linear in the initial claim, of the form a·H + b = expected, and the coefficients are independent of H, the attacker can directly solve for H."
+          "en": "Because compression makes the final verification equation linear in the initial claim, of the form a·H + b = expected, and the coefficients are independent of H, the attacker can directly solve for H.",
+          "ja": "圧縮により、最終的な検証方程式が初期の主張（claim）に対する線形形式、すなわち a·H + b = expected の形となり、かつ係数がHに依存しないため、攻撃者はHを直接解くことができる。"
         }
       },
       {

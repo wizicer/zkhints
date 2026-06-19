@@ -1236,7 +1236,8 @@
         },
         "answer": {
           "zh": "φ-compliance 表示输入与 AI 输出满足一个 machine-checkable predicate φ，可用于自动验证合规性。",
-          "en": "φ-compliance means the input and AI output satisfy a machine-checkable predicate φ for automated compliance verification."
+          "en": "φ-compliance means the input and AI output satisfy a machine-checkable predicate φ for automated compliance verification.",
+          "ja": "φ-complianceとは、入力値とAIの出力が、自動的なコンプライアンス検証のために機械的に検証可能な述語 φ を満たしていることを意味します。"
         }
       },
       {
@@ -1465,6 +1466,14 @@
             "Proposed generic compiler: derive all randomness via PRF from pp, statement, witness, and secret seed",
             "Defense has negligible overhead and proof size unchanged",
             "Practical relevance: prevents randomness manipulation via side-channel/fault injection"
+          ],
+          "ja": [
+            "NIZKにおけるリセット可能なセキュリティに関する最初の体系的な研究",
+            "部分ランダム性リセット攻撃を網羅する、形式化された強力なリセット可能ZK (srZK)",
+            "Fiat-ShamirをコンパイルしたΣプロトコルやPlonKのようなPIOP SNARKsに対する攻撃の実証",
+            "汎用的なコンパイラの提案：pp、ステートメント、ウィットネス、シークレットシードからのPRFによる全ランダム性の導出",
+            "防御策は無視できるオーバーヘッドであり、証明サイズに影響を与えない",
+            "実用的な意義：サイドチャネル攻撃やフォールトインジェクションを介したランダム性操作の防止"
           ]
         },
         "slogan": {

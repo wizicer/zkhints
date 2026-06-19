@@ -112,7 +112,11 @@
           "Sublinear",
           "UC"
         ],
-        "summary": "Campanelli等人在{{name}}论文中研究了具有次线性证明时间的密码学证明系统。作者提出了一种基于向量承诺和快速多项式评估预处理技术的简单多项式承诺构造。主要应用包括构建“索引高效”的SNARKs，使证明者在预处理后对索引大小具有次线性复杂度，并首次实现了对非结构化表的次线性证明者查找论证。"
+        "summary": {
+          "zh": "Campanelli等人在{{name}}论文中研究了具有次线性证明时间的密码学证明系统。作者提出了一种基于向量承诺和快速多项式评估预处理技术的简单多项式承诺构造。主要应用包括构建“索引高效”的SNARKs，使证明者在预处理后对索引大小具有次线性复杂度，并首次实现了对非结构化表的次线性证明者查找论证。",
+          "en": "Campanelli et al., in their paper {{name}}, studied cryptographic proof systems with sublinear proving time. The authors propose a simple polynomial commitment scheme based on vector commitments and fast polynomial evaluation preprocessing techniques. Key applications include constructing \"index-efficient\" SNARKs, where the prover achieves sublinear complexity relative to the index size after preprocessing, and they first realized sublinear prover lookup proofs for unstructured tables.",
+          "ja": "Campanelliらは{{name}}の論文において、準線形時間（sublinear time）での証明を可能にする暗号学的証明システムについて研究を行いました。著者らは、ベクトルコミットメントと高速多項式評価プリプロセシング技術に基づいたシンプルな多項式コミットメント構成を提案しています。主な応用例としては、「インデックス効率的」なSNARKsの構築があり、これにより証明者はプリプロセス後にインデックスサイズに対して準線形時間で処理を行うことができ、非構造化テーブルに対する準線形時間の検索証明を初めて実現しました。"
+        }
       },
       {
         "name": "Introducing bugs.zksecurity.xyz",
@@ -151,7 +155,11 @@
           "NexusLabs",
           "Testnet"
         ],
-        "summary": "@NexusLabs 推出Nexus Layer 1，已经可以在浏览器上“挖矿”了，这个帖子让大家填自己的地址，已经收集到26k个回复。"
+        "summary": {
+          "zh": "@NexusLabs 推出Nexus Layer 1，已经可以在浏览器上“挖矿”了，这个帖子让大家填自己的地址，已经收集到26k个回复。",
+          "en": "@NexusLabs has launched Nexus Layer 1, which can now be 'mined' directly in the browser. This post asks everyone to submit their addresses, and we have already collected 26k responses.",
+          "ja": "@NexusLabs が Nexus Layer 1 をリリースしました。ブラウザ上で「マイニング」が可能です。この投稿では、皆様にアドレスの記入をお願いしており、現在までに26k件の返信が集まっています。"
+        }
       },
       {
         "name": "THE MODULAR BLOCKCHAIN FOR ZK PROOF VERIFICATION",
@@ -258,7 +266,11 @@
           "基于编码",
           "多线性PC"
         ],
-        "summary": "Hadas Zeilberger在{{name}}论文中提出了一种降低基于编码的SNARKs通信复杂性的方法，利用线性码的“相关一致性”性质，证明当向量𝜋𝐿 + 𝑟𝜋𝑅接近某个码字时，𝜋𝐿、𝜋𝑅和𝜋𝐿 + 𝑟𝜋𝑅在特定位置上也与码字一致。这一性质能显著降低了通信复杂性。"
+        "summary": {
+          "zh": "Hadas Zeilberger在{{name}}论文中提出了一种降低基于编码的SNARKs通信复杂性的方法，利用线性码的“相关一致性”性质，证明当向量𝜋𝐿 + 𝑟𝜋𝑅接近某个码字时，𝜋𝐿、𝜋𝑅和𝜋𝐿 + 𝑟𝜋𝑅在特定位置上也与码字一致。这一性质能显著降低了通信复杂性。",
+          "en": "Hadas Zeilberger proposed in the paper {{name}} a method to reduce the communication complexity of code-based SNARKs by utilizing the \"related consistency\" property of linear codes. This work demonstrates that when the vector $\\pi_L + r\\pi_R$ is close to a codeword, then $\\pi_L$, $\\pi_R$, and $\\pi_L + r\\pi_R$ are also consistent with the codeword at specific positions. This property significantly reduces communication complexity.",
+          "ja": "Hadas Zeilbergerは{{name}}の論文において、符号化ベースのSNARKs（zkSNARKs）の通信複雑性を低減する方法を提案しています。これは、線形コードの「相関の一貫性 (correlation consistency)」という性質を利用したものです。この性質により、ベクトル $\\pi_L + r\\pi_R$ がある符号語に近接している場合、$\\pi_L$、$\\pi_R$、および$\\pi_L + r\\pi_R$が特定の位置においてその符号語と一致することが証明されます。これにより、通信複雑性を大幅に低減することができます。"
+        }
       },
       {
         "name": "Neo: Lattice-based folding scheme for CCS over small fields and pay-per-bit commitments",
