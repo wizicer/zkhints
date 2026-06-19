@@ -28,9 +28,9 @@ const levelAvatars = {
 const answerAvatar = glossaryImg;
 
 const levelLabels = {
-  beginner: { zh: "入门", en: "Beginner" },
-  intermediate: { zh: "进阶", en: "Intermediate" },
-  expert: { zh: "专家", en: "Expert" },
+  beginner: { zh: "入门", en: "Beginner", ja: "入門" },
+  intermediate: { zh: "进阶", en: "Intermediate", ja: "中級" },
+  expert: { zh: "专家", en: "Expert", ja: "上級" },
 };
 ---
 
@@ -39,17 +39,20 @@ const levelLabels = {
     <div class="github-title">
       <div class="title-icon">
         <span class="title-text" data-lang-zh>零知识证明</span>
+        <span class="title-text hidden" data-lang-ja>零知識証明</span>
         <span class="highlight">zkDaily</span>
       </div>
       <div class="subtitle-text">
         <span data-lang-en>Q&A Deep Dive 💬</span>
         <span data-lang-zh class="hidden">今日要点 深入解析 💬</span>
+        <span data-lang-ja class="hidden">今日の要点 深掘り 💬</span>
       </div>
     </div>
     <div class="date">
       <span class="date-weekday">
         <span data-lang-en>{weekday.en.slice(0, 3)}</span>
         <span data-lang-zh class="hidden">{weekday.zh}</span>
+        <span data-lang-ja class="hidden">{weekday.ja || weekday.zh}</span>
       </span>
       <div class="date-details">
         <div class="date-number">{month}.{day}</div>
@@ -78,6 +81,9 @@ const levelLabels = {
               <span data-lang-zh class="hidden">
                 {qa.question.zh}
               </span>
+              <span data-lang-ja class="hidden">
+                {qa.question.ja || qa.question.zh || qa.question.en}
+              </span>
             </div>
           </div>
           <div class="chat-message answer">
@@ -85,6 +91,9 @@ const levelLabels = {
               <span data-lang-en>{qa.answer.en}</span>
               <span data-lang-zh class="hidden">
                 {qa.answer.zh}
+              </span>
+              <span data-lang-ja class="hidden">
+                {qa.answer.ja || qa.answer.zh || qa.answer.en}
               </span>
             </div>
             <div class="avatar-wrapper">
@@ -99,8 +108,10 @@ const levelLabels = {
   <div class="card-footer">
     <span data-lang-en>Prompted by </span>
     <span data-lang-zh class="hidden">由 </span>
+    <span data-lang-ja class="hidden"></span>
     <a href="https://x.com/icerdesign" target="_blank">@icerdesign</a>
     <span data-lang-zh class="hidden"> 提示生成</span>
+    <span data-lang-ja class="hidden"> が生成</span>
   </div>
 </div>
 

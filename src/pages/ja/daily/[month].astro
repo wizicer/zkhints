@@ -4,6 +4,8 @@ import { newsData, type ProcessedDailyNewsItem, type BilingualNotes, categoryAva
 import { typeLabels } from "./textGenerator";
 import { Image } from "astro:assets";
 
+type DailyLang = 'en' | 'zh' | 'ja';
+
 interface PathItem {
   params: { month: string };
   props: {
@@ -60,10 +62,11 @@ const getAvatarForType = (type: string) => {
 
 const monthNames = {
   en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-  zh: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
+  zh: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+  ja: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
 };
 
-const getMonthName = (monthNum: string, lang: 'en' | 'zh') => {
+const getMonthName = (monthNum: string, lang: DailyLang) => {
   return monthNames[lang][parseInt(monthNum) - 1];
 };
 
@@ -83,15 +86,13 @@ const typeColors: Record<string, string> = {
 
 
 // Helper function to get text content with language fallback
-const getText = (content: any, lang: 'en' | 'zh'): string => {
+const getText = (content: any, lang: DailyLang): string => {
   if (!content) return '';
   if (typeof content === 'string') {
-    // Old format is Chinese only, return empty for EN
-    return lang === 'zh' ? content : '';
+    return lang === 'en' ? '' : content;
   }
   if (typeof content === 'object') {
-    // Return the requested language, or empty if not available
-    return content[lang] || '';
+    return content[lang] || (lang === 'ja' ? content.zh || content.en : content.en || content.zh) || '';
   }
   return '';
 };
@@ -121,6 +122,7 @@ const getWeekdayColor = (weekdayNum: number): string => {
           <h1 class="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 mb-2">
             <span data-lang-en>Daily Digest</span>
             <span data-lang-zh class="hidden">每日摘要</span>
+            <span data-lang-ja class="hidden">デイリーダイジェスト</span>
           
           <!-- View All Archive Button -->
           <a
@@ -129,6 +131,7 @@ const getWeekdayColor = (weekdayNum: number): string => {
           >
             <span data-lang-en>View All</span>
             <span data-lang-zh class="hidden">查看全部</span>
+            <span data-lang-ja class="hidden">すべて表示</span>
           </a>
           </h1>
           <!-- Month Date with Navigation -->
@@ -162,6 +165,7 @@ const getWeekdayColor = (weekdayNum: number): string => {
             <p class="text-xl md:text-2xl text-gray-700">
               <span data-lang-en>{getMonthName(month, 'en')} {year}</span>
               <span data-lang-zh class="hidden">{year} 年 {getMonthName(month, 'zh')}</span>
+              <span data-lang-ja class="hidden">{year}年 {getMonthName(month, 'ja')}</span>
             </p>
             
             <!-- Next Month Icon -->
@@ -209,6 +213,13 @@ const getWeekdayColor = (weekdayNum: number): string => {
             >
               中文
             </button>
+            <button
+              id="lang-ja"
+              class="lang-toggle px-4 py-2 rounded-md font-medium transition-all duration-200 text-gray-600 hover:bg-gray-100"
+              data-lang="ja"
+            >
+              日本語
+            </button>
           </div>
         </div>
       </div>
@@ -232,6 +243,7 @@ const getWeekdayColor = (weekdayNum: number): string => {
                 <div class="text-white text-xs opacity-90">
                   <span data-lang-en>{dayItem.weekday.en.slice(0, 3)}</span>
                   <span data-lang-zh class="hidden">{dayItem.weekday.zh.slice(2)}</span>
+                  <span data-lang-ja class="hidden">{(dayItem.weekday.ja || dayItem.weekday.zh).slice(0, 1)}</span>
                 </div>
               </div>
             </div>
@@ -271,6 +283,7 @@ const getWeekdayColor = (weekdayNum: number): string => {
                           <span class={`flex-shrink-0 px-3 py-1 text-xs font-semibold rounded-full border ${typeColors[project.type] || 'bg-gray-100 text-gray-800 border-gray-300'}`}>
                             <span data-lang-en>{typeLabels.en[project.type] || project.type}</span>
                             <span data-lang-zh class="hidden">{typeLabels.zh[project.type] || project.type}</span>
+                            <span data-lang-ja class="hidden">{typeLabels.ja[project.type] || project.type}</span>
                           </span>
                         </div>
                         
@@ -282,6 +295,7 @@ const getWeekdayColor = (weekdayNum: number): string => {
                                 <>
                                   <span data-lang-en>{tag.en}</span>
                                   <span data-lang-zh class="hidden">{tag.zh}</span>
+                                  <span data-lang-ja class="hidden">{tag.ja || tag.zh || tag.en}</span>
                                 </>
                               )}
                             </span>
@@ -295,6 +309,7 @@ const getWeekdayColor = (weekdayNum: number): string => {
                       <p class="text-gray-800 leading-relaxed twitter-content">
                         <span data-lang-en>{getText(project.summary, 'en').replace(/{{name}}/g, '')}</span>
                         <span data-lang-zh class="hidden">{getText(project.summary, 'zh').replace(/{{name}}/g, '')}</span>
+                        <span data-lang-ja class="hidden">{getText(project.summary, 'ja').replace(/{{name}}/g, '')}</span>
                       </p>
                     </div>
 
@@ -302,26 +317,27 @@ const getWeekdayColor = (weekdayNum: number): string => {
                     {project.notes && (
                       <div class="space-y-2">
                         <h4 class="text-sm font-semibold text-gray-700 mb-2">
-                          <span data-lang-en>Key Points:</span>
-                          <span data-lang-zh class="hidden">要点：</span>
+                          <span data-lang-en>Notes:</span>
+                          <span data-lang-zh class="hidden">Notes：</span>
+                          <span data-lang-ja class="hidden">要点：</span>
                         </h4>
                         <ul class="space-y-1.5">
                           {(() => {
                             // Type-safe notes handling
                             let notesEn: string[] = [];
                             let notesZh: string[] = [];
+                            let notesJa: string[] = [];
                             
                             if (Array.isArray(project.notes)) {
-                              // Old format: string array (Chinese only)
                               notesZh = project.notes;
-                              notesEn = [];
+                              notesJa = project.notes;
                             } else if (project.notes && typeof project.notes === 'object' && 'en' in project.notes && 'zh' in project.notes) {
-                              // New format: BilingualNotes
                               notesEn = project.notes.en;
                               notesZh = project.notes.zh;
+                              notesJa = project.notes.ja || project.notes.zh || project.notes.en || [];
                             }
                             
-                            const maxLength = Math.max(notesEn.length, notesZh.length);
+                            const maxLength = Math.max(notesEn.length, notesZh.length, notesJa.length);
                             
                             return Array.from({ length: maxLength }).map((_, noteIndex) => (
                               <li class="flex items-start gap-2 text-sm text-gray-600">
@@ -329,6 +345,7 @@ const getWeekdayColor = (weekdayNum: number): string => {
                                 <span class="twitter-content">
                                   <span data-lang-en>{notesEn[noteIndex] || ''}</span>
                                   <span data-lang-zh class="hidden">{notesZh[noteIndex] || ''}</span>
+                                  <span data-lang-ja class="hidden">{notesJa[noteIndex] || ''}</span>
                                 </span>
                               </li>
                             ));
@@ -363,7 +380,7 @@ const getWeekdayColor = (weekdayNum: number): string => {
   // Language toggle functionality
   const initLanguageToggle = () => {
     const urlParams = new URLSearchParams(window.location.search);
-    const savedLang = urlParams.get('lang') || 'en';
+    const savedLang = urlParams.get('lang') || 'ja';
     
     const setLanguage = (lang: string) => {
       // Update URL
@@ -377,6 +394,9 @@ const getWeekdayColor = (weekdayNum: number): string => {
       });
       document.querySelectorAll('[data-lang-zh]').forEach(el => {
         (el as HTMLElement).classList.toggle('hidden', lang !== 'zh');
+      });
+      document.querySelectorAll('[data-lang-ja]').forEach(el => {
+        (el as HTMLElement).classList.toggle('hidden', lang !== 'ja');
       });
       
       // Update button styles
@@ -393,7 +413,7 @@ const getWeekdayColor = (weekdayNum: number): string => {
       });
       
       // Update navigation links to include language parameter
-      document.querySelectorAll('a[href^="/daily/"]').forEach(link => {
+      document.querySelectorAll('a[href^="/daily/"], a[href^="/ja/daily/"]').forEach(link => {
         const anchor = link as HTMLAnchorElement;
         const url = new URL(anchor.href);
         url.searchParams.set('lang', lang);
