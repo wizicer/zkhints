@@ -1141,7 +1141,8 @@
         },
         "answer": {
           "zh": "论文主要攻击外部轮的线性层结构 Mε = P ⊗ M4，通过构造子空间实现 round-skipping，降低代数复杂度。但在官方推荐参数下，128-bit 的 preimage 和 collision 安全仍未被破坏。",
-          "en": "The paper targets the external linear layer Mε = P ⊗ M4, using subspaces to enable round-skipping and reduce algebraic complexity. Under recommended parameters, 128-bit preimage and collision security remain intact."
+          "en": "The paper targets the external linear layer Mε = P ⊗ M4, using subspaces to enable round-skipping and reduce algebraic complexity. Under recommended parameters, 128-bit preimage and collision security remain intact.",
+          "ja": "この論文は外部ラウンドの線形層構造 Mε = P ⊗ M4 を主な対象とし、部分空間を構成して round-skipping を可能にすることで代数的複雑性を下げます。ただし、公式の推奨パラメータでは 128-bit の preimage security と collision security はまだ破られていません。"
         }
       },
       {

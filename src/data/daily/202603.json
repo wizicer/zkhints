@@ -52,7 +52,8 @@
         "level": "beginner",
         "question": {
           "zh": "为什么 γ 和 δ 必须是相互独立的随机群元素？",
-          "en": "Why must γ and δ be independent random group elements?"
+          "en": "Why must γ and δ be independent random group elements?",
+          "ja": "なぜ $\\gamma$ と $\\delta$ は独立なランダムグループ要素でなければならないのか？"
         },
         "answer": {
           "zh": "它们分别随机化公共输入项和证明项 C。如果二者相同，攻击者可以构造抵消关系，使配对验证方程退化为恒成立。",

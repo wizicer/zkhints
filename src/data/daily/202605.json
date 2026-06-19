@@ -1504,7 +1504,8 @@
         },
         "answer": {
           "zh": "论文展示了 Fiat-Shamir 编译后的 Σ-protocol、PlonK 等 PIOP-based SNARK，以及 salted Fiat-Shamir 协议都可能遭受 witness-recovery attack。",
-          "en": "The paper shows that Fiat-Shamir compiled Σ-protocols, PIOP-based SNARKs such as PlonK, and salted Fiat-Shamir protocols can all suffer from witness-recovery attacks under resetting conditions."
+          "en": "The paper shows that Fiat-Shamir compiled Σ-protocols, PIOP-based SNARKs such as PlonK, and salted Fiat-Shamir protocols can all suffer from witness-recovery attacks under resetting conditions.",
+          "ja": "本論文では、Fiat-ShamirをコンパイルしたΣプロトコル、PlonKのようなPIOPベースのSNARKs、およびソルト付きFiat-Shamirプロトコルが、リセット条件下でウィットネスリカバリー攻撃を受ける可能性があることを示しています。"
         }
       },
       {

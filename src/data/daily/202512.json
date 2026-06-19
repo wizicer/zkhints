@@ -614,6 +614,14 @@
             "Provides concrete performance: verification time 41 ms, proof size 979KB (for 2²⁸-element witness)",
             "Modular Rust implementation demonstrates real-world feasibility, suitable for large-scale deployment",
             "Expands the scope of lattice-based arguments, offering new tools for post-quantum secure ZK systems"
+          ],
+          "ja": [
+            "SALSAAは、sumcheckの統合により格子ベースの証明の効率を大幅に向上させ、RPS/RnRと比較して証明サイズを2〜3倍削減します。",
+            "このフレームワークは線形時間プロバーをサポートし、準線形ノルムチェックという以前のボトルネックを克服します。",
+            "格子折り畳みスキームにおいてℓ₂-norm制約をネイティブにサポートする最初のものであり、非常に効率的な検証を提供します。",
+            "具体的なパフォーマンスを示します：検証時間41ms、証明サイズ979KB（2^28要素のwitnessの場合）。",
+            "モジュール化されたRust実装は実世界での実現可能性を示しており、大規模なデプロイメントに適しています。",
+            "格子ベースの議論の範囲を拡大し、ポスト量子セキュアなZKシステムのための新しいツールを提供します。"
           ]
         },
         "slogan": {

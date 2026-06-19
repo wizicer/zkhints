@@ -783,7 +783,8 @@
         },
         "answer": {
           "zh": "当 n 方协议中腐败方数量满足 t ≥ n/2 时，不存在统计安全的 game-theoretic coin tossing 协议（除极少数特殊 corner cases）。这补全了 statistical feasibility 的边界。",
-          "en": "When the number of corrupt parties satisfies t ≥ n/2, there is no statistically secure game-theoretic coin-tossing protocol, except for rare corner cases. This completes the statistical feasibility landscape."
+          "en": "When the number of corrupt parties satisfies t ≥ n/2, there is no statistically secure game-theoretic coin-tossing protocol, except for rare corner cases. This completes the statistical feasibility landscape.",
+          "ja": "腐敗した参加者の数が t ≥ n/2 を満たす場合、まれな corner cases を除き、統計的に安全な game-theoretic coin tossing protocol は存在しません。これにより statistical feasibility の境界が補完されます。"
         }
       },
       {
@@ -873,7 +874,8 @@
         },
         "answer": {
           "zh": "第一种是实现通用布尔门 NAND；第二种是直接实现 𝔽₂ 的基本运算 XOR 和 AND。两者都只依赖群内在运算。",
-          "en": "The first approach realizes the universal Boolean gate NAND. The second directly realizes the field operations XOR and AND over 𝔽₂. Both rely only on intrinsic group operations."
+          "en": "The first approach realizes the universal Boolean gate NAND. The second directly realizes the field operations XOR and AND over 𝔽₂. Both rely only on intrinsic group operations.",
+          "ja": "1つ目のアプローチは、汎用的な Boolean gate である NAND を実現します。2つ目は、𝔽₂ 上の field operations である XOR と AND を直接実現します。どちらも群に内在する操作だけに依存しています。"
         }
       },
       {
