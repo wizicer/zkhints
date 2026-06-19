@@ -29,6 +29,8 @@ const stats = {
 
 let ollamaWasUsed = false;
 let unloadingModel = false;
+let progressTotal = 0;
+let progressDone = 0;
 
 installSignalHandlers();
 
@@ -52,10 +54,22 @@ async function main() {
     throw new Error(targetFile ? `No daily JSON matched ${targetFile}` : "No daily JSON files found");
   }
 
+  const missingByFile = new Map();
+  for (const file of dailyFiles) {
+    const json = JSON.parse(await fs.readFile(path.join(DAILY_DIR, file), "utf8"));
+    const missing = countMissingTranslations(json);
+    missingByFile.set(file, missing);
+    progressTotal += missing;
+  }
+
+  if (!reportOnly) {
+    console.log(`Translation progress: 0/${progressTotal} missing fields`);
+  }
+
   for (const file of dailyFiles) {
     const filePath = path.join(DAILY_DIR, file);
     const json = JSON.parse(await fs.readFile(filePath, "utf8"));
-    const missingBefore = countMissingTranslations(json);
+    const missingBefore = missingByFile.get(file) || 0;
 
     if (missingBefore === 0) {
       continue;
@@ -96,31 +110,49 @@ async function main() {
 async function translateDailyFile(days, file, saveFile) {
   for (const day of days) {
     for (const project of day.projects || []) {
-      if (await translateProjectField(project, "summary", `${file} ${day.date} ${project.name} summary`)) {
-        await saveFile();
+      if (await translateAndSave(days, file, saveFile, () =>
+        translateProjectField(project, "summary", `${file} ${day.date} ${project.name} summary`)
+      )) {
         if (isLimitReached()) return true;
       }
 
-      if (await translateProjectField(project, "notes", `${file} ${day.date} ${project.name} notes`)) {
-        await saveFile();
+      if (await translateAndSave(days, file, saveFile, () =>
+        translateProjectField(project, "notes", `${file} ${day.date} ${project.name} notes`)
+      )) {
         if (isLimitReached()) return true;
       }
     }
 
     for (const qa of day.qas || []) {
-      if (await translateLocalizedField(qa, "question", `${file} ${day.date} QA question`)) {
-        await saveFile();
+      if (await translateAndSave(days, file, saveFile, () =>
+        translateLocalizedField(qa, "question", `${file} ${day.date} QA question`)
+      )) {
         if (isLimitReached()) return true;
       }
 
-      if (await translateLocalizedField(qa, "answer", `${file} ${day.date} QA answer`)) {
-        await saveFile();
+      if (await translateAndSave(days, file, saveFile, () =>
+        translateLocalizedField(qa, "answer", `${file} ${day.date} QA answer`)
+      )) {
         if (isLimitReached()) return true;
       }
     }
   }
 
   return false;
+}
+
+async function translateAndSave(days, file, saveFile, translateFn) {
+  const missingBefore = countMissingTranslations(days);
+  const translated = await translateFn();
+
+  if (!translated) {
+    return false;
+  }
+
+  const completedFields = Math.max(0, missingBefore - countMissingTranslations(days));
+  await saveFile();
+  reportProgress(file, completedFields);
+  return true;
 }
 
 async function translateProjectField(owner, key, label) {
@@ -391,6 +423,13 @@ function hasLocalizedValue(value, lang) {
 
 function isLimitReached() {
   return stats.translated >= limit;
+}
+
+function reportProgress(file, completedFields) {
+  progressDone += completedFields;
+
+  const percent = progressTotal > 0 ? Math.min(100, Math.floor((progressDone / progressTotal) * 100)) : 100;
+  console.log(`    progress ${progressDone}/${progressTotal} (${percent}%) ${file}`);
 }
 
 function parseArgs(argv) {
