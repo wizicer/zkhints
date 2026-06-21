@@ -369,7 +369,7 @@
         "summary": {
           "zh": "Microsoft Research发布Vega，一种面向政府凭证的低延迟ZKP系统，可在设备端证明年龄、真人或职业状态，并通过折叠与复用实现快速隐私验证。",
           "en": "Microsoft Research introduced Vega, a low-latency ZKP system for proving facts from government credentials with fold-and-reuse proving and device-side privacy.",
-          "ja": "Microsoft Research は、政府発行 credential から年齢や personhood などを端末上で証明する低遅延 ZKP システム Vega を発表している。fold-and-reuse proving により高速な privacy-preserving verification を実現する。"
+          "ja": "Microsoft Research は、政府発行の身分証明書から年齢や本人性、職業資格などを端末上で証明できる低遅延 ZKP システム Vega を発表した。証明処理の折りたたみと再利用により、高速なプライバシー保護型の検証を実現する。"
         },
         "notes": {
           "zh": [
@@ -389,12 +389,12 @@
             "Device binding signs a fresh session nonce with a secure-element key to reduce misuse of leaked credentials."
           ],
           "ja": [
-            "Vega は credential をアップロードせず、年齢、personhood、professional status などの属性を証明できる。",
-            "trusted setup は不要で、mobile driver's license では約 92 ms の proving、108 KB proof、23 ms verification を報告している。",
-            "NeutronNova が SHA-256 step instances を folding し、Spartan が folded step と core circuits を証明する。",
-            "NovaBlindFold により、小さな verifier-check constraint system 上で低オーバーヘッドに zero-knowledge を追加する。",
-            "fold-and-reuse proving は credential 関連の作業を cache し、commitments を rerandomize して複数回提示を unlinkable にする。",
-            "device binding は secure element の device private key で session nonce に署名し、漏えい credential の悪用リスクを下げる。"
+            "Vega は身分証明書そのものをアップロードせず、年齢、本人性、職業資格などの属性だけを証明できる。",
+            "信頼できるセットアップは不要で、モバイル運転免許証では約 92 ms で 108 KB の証明を生成し、約 23 ms で検証できると報告している。",
+            "NeutronNova で SHA-256 の各ステップを折りたたみ、Spartan で折りたたまれたステップ回路とコア回路を証明する。",
+            "NovaBlindFold により、小規模な検証用制約系の上で低い追加コストのゼロ知識性を実現する。",
+            "証明処理の折りたたみと再利用により、証明書関連の計算をキャッシュし、コミットメントを再ランダム化して複数回の提示を関連付け不能にする。",
+            "デバイスバインディングでは、安全領域内のデバイス秘密鍵でセッション nonce に署名し、漏えいした身分証明書の悪用リスクを下げる。"
           ]
         },
         "slogan": {
@@ -408,12 +408,12 @@
         "question": {
           "zh": "Vega解决什么问题？",
           "en": "What problem does Vega solve?",
-          "ja": "Vega は何を解決しますか？"
+          "ja": "Vega は何を解決するのか？"
         },
         "answer": {
           "zh": "Vega让用户能证明年龄、真人或职业状态等事实，而不把政府凭证上传给服务方。服务方只看到ZKP，不看到完整证件。",
           "en": "Vega lets users prove facts such as age, personhood, or professional status without uploading a government credential. The service sees a ZKP, not the full ID.",
-          "ja": "Vega は、政府発行 credential をアップロードせずに年齢や personhood などを証明できるようにする。サービス側が見るのは ZKP であり、完全な ID ではない。"
+          "ja": "Vega は、政府発行の身分証明書をアップロードせずに、年齢や本人性、職業資格などを証明できるようにする。サービス側が受け取るのは ZKP だけで、証明書全体を見ることはない。"
         }
       },
       {
@@ -421,12 +421,12 @@
         "question": {
           "zh": "Vega为何这么快？",
           "en": "Why is Vega fast?",
-          "ja": "なぜ Vega は高速ですか？"
+          "ja": "なぜ Vega は高速なのか？"
         },
         "answer": {
           "zh": "Vega把SHA-256哈希拆成重复的step circuits，用NeutronNova折叠，再由Spartan证明折叠后的实例。这样避免为完整凭证长度构造巨大电路。",
           "en": "Vega splits SHA-256 hashing into repeated step circuits, folds them with NeutronNova, and proves the folded instance with Spartan. This avoids one large circuit tied to credential length.",
-          "ja": "Vega は SHA-256 hashing を反復的な step circuits に分け、NeutronNova で folding し、Spartan で folded instance を証明する。credential 長に比例する巨大 circuit を避けられる。"
+          "ja": "Vega は SHA-256 のハッシュ処理を反復的なステップ回路に分け、NeutronNova で折りたたみ、Spartan で折りたたまれたインスタンスを証明する。これにより、身分証明書の長さに比例する巨大な回路を避けられる。"
         }
       },
       {
@@ -434,12 +434,12 @@
         "question": {
           "zh": "NovaBlindFold贡献是什么？",
           "en": "What does NovaBlindFold add?",
-          "ja": "NovaBlindFold の役割は？"
+          "ja": "NovaBlindFold の役割は何か？"
         },
         "answer": {
           "zh": "NovaBlindFold把真实实例与随机实例折叠，在小型验证检查约束系统上实现零知识。其开销不随完整秘密数据线性增长。",
           "en": "NovaBlindFold folds a real instance with a random instance to hide the witness through a small verifier-check constraint system. Its overhead does not scale linearly with all secret data.",
-          "ja": "NovaBlindFold は real instance と random instance を folding し、小さな verifier-check constraint system 上で witness を隠す。オーバーヘッドは秘密データ全体に線形には増えない。"
+          "ja": "NovaBlindFold は実際のインスタンスとランダムなインスタンスを折りたたみ、小規模な検証用制約系の上で証人情報を隠す。追加コストは秘密データ全体に比例して増えるわけではない。"
         }
       }
     ]
