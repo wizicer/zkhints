@@ -10,6 +10,8 @@ import { Image } from "astro:assets";
 import { marked } from "marked";
 import QACard from "../../components/QACard.astro";
 
+type DailyLang = "en" | "zh" | "ja";
+
 // Configure marked for inline parsing (no <p> wrapper)
 marked.use({
   renderer: {
@@ -57,13 +59,13 @@ const getAvatarForType = (type: string) => {
   return categoryAvatars[type] || defaultAvatar;
 };
 
-const getText = (content: any, lang: "en" | "zh"): string => {
+const getText = (content: any, lang: DailyLang): string => {
   if (!content) return "";
   if (typeof content === "string") {
-    return lang === "zh" ? content : "";
+    return lang === "en" ? "" : content;
   }
   if (typeof content === "object") {
-    return content[lang] || "";
+    return content[lang] || (lang === "ja" ? content.zh || content.en : content.en || content.zh) || "";
   }
   return "";
 };
@@ -639,12 +641,18 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
                   <span class="title-text" data-lang-zh>
                     零知识证明
                   </span>
+                  <span class="title-text hidden" data-lang-ja>
+                    零知識証明
+                  </span>
                   <span class="highlight">zkDaily</span>
                 </div>
                 <div class="subtitle-text">
                   <span data-lang-en>ZKP Frontier Tracker 🎯</span>
                   <span data-lang-zh class="hidden">
                     零知识证明 前沿热点追踪 🎯
+                  </span>
+                  <span data-lang-ja class="hidden">
+                    ZKP フロンティアトラッカー 🎯
                   </span>
                 </div>
               </div>
@@ -653,6 +661,9 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
                   <span data-lang-en>{dayData.weekday.en.slice(0, 3)}</span>
                   <span data-lang-zh class="hidden">
                     {dayData.weekday.zh}
+                  </span>
+                  <span data-lang-ja class="hidden">
+                    {dayData.weekday.ja || dayData.weekday.zh}
                   </span>
                 </span>
                 <div class="date-details">
@@ -671,9 +682,11 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
                 // Process notes
                 let notesEn: string[] = [];
                 let notesZh: string[] = [];
+                let notesJa: string[] = [];
                 if (project.notes) {
                   if (Array.isArray(project.notes)) {
                     notesZh = project.notes;
+                    notesJa = project.notes;
                   } else if (
                     typeof project.notes === "object" &&
                     "en" in project.notes &&
@@ -681,9 +694,10 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
                   ) {
                     notesEn = project.notes.en;
                     notesZh = project.notes.zh;
+                    notesJa = project.notes.ja || project.notes.zh || project.notes.en || [];
                   }
                 }
-                const maxNotesLength = Math.max(notesEn.length, notesZh.length);
+                const maxNotesLength = Math.max(notesEn.length, notesZh.length, notesJa.length);
 
                 return (
                   <>
@@ -708,6 +722,9 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
                             <span data-lang-zh class="hidden">
                               {typeLabels.zh[project.type] || project.type}
                             </span>
+                            <span data-lang-ja class="hidden">
+                              {typeLabels.ja[project.type] || project.type}
+                            </span>
                           </span>
                           <div class="project-qr" data-url={project.url} />
                         </div>
@@ -731,6 +748,9 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
                                     <span data-lang-zh class="hidden">
                                       {tag.zh}
                                     </span>
+                                    <span data-lang-ja class="hidden">
+                                      {tag.ja || tag.zh || tag.en}
+                                    </span>
                                   </>
                                 )}
                               </span>
@@ -743,13 +763,20 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
                             <span data-lang-zh class="hidden">
                               {getText(project.summary, "zh").replace(/\{\{name\}\}/g, "")}
                             </span>
+                            <span data-lang-ja class="hidden">
+                              {getText(project.summary, "ja").replace(/\{\{name\}\}/g, "")}
+                            </span>
                           </div>
                         </div>
                       </div>
                     </div>
                     {project.notes && maxNotesLength > 0 && (
                       <div class="project-notes">
-                        <h4 class="notes-title">Notes</h4>
+                        <h4 class="notes-title">
+                          <span data-lang-en>Notes</span>
+                          <span data-lang-zh class="hidden">Notes</span>
+                          <span data-lang-ja class="hidden">要点</span>
+                        </h4>
                         <ul class="notes-list" data-lang-en>
                           {notesEn.map((note) => (
                             <li class="note-item twitter-content" set:html={parseMarkdown(note)} />
@@ -757,6 +784,11 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
                         </ul>
                         <ul class="notes-list hidden" data-lang-zh>
                           {notesZh.map((note) => (
+                            <li class="note-item twitter-content" set:html={parseMarkdown(note)} />
+                          ))}
+                        </ul>
+                        <ul class="notes-list hidden" data-lang-ja>
+                          {notesJa.map((note) => (
                             <li class="note-item twitter-content" set:html={parseMarkdown(note)} />
                           ))}
                         </ul>
@@ -771,12 +803,25 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
               <span data-lang-zh class="hidden">
                 由
               </span>
-              <a href="https://x.com/icerdesign" target="_blank">
+              <span data-lang-ja class="hidden">
+                {" "}
+              </span>
+              <a data-lang-en href="https://x.com/icerdesign" target="_blank">
                 @icerdesign
+              </a>
+              <a data-lang-zh class="hidden" href="https://x.com/icerdesign" target="_blank">
+                @icerdesign
+              </a>
+              <a data-lang-ja class="hidden" href="https://x.com/trainbit_jp" target="_blank">
+                @trainbit_jp
               </a>
               <span data-lang-zh class="hidden">
                 {" "}
                 收集
+              </span>
+              <span data-lang-ja class="hidden">
+                {" "}
+                が収集
               </span>
             </div>
             {projectGroups.length > 1 && (
@@ -850,11 +895,25 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
   // Language toggle functionality
   const initLanguageToggle = () => {
     const urlParams = new URLSearchParams(window.location.search);
+    const supportedLangs = ["zh", "ja", "en"];
     let currentLang = urlParams.get("lang") || "zh";
+    if (!supportedLangs.includes(currentLang)) currentLang = "zh";
     const langBtn = document.getElementById("lang-btn");
+    const copyBtn = document.getElementById("copy-btn");
     const container = document.getElementById("news-container");
+    const nextLanguageLabel: Record<string, string> = {
+      zh: "日本語",
+      ja: "English",
+      en: "中文",
+    };
+    const copyLabel: Record<string, string> = {
+      zh: "复制文本",
+      ja: "テキストをコピー",
+      en: "Copy Text",
+    };
 
     const setLanguage = (lang: string) => {
+      if (!supportedLangs.includes(lang)) lang = "zh";
       currentLang = lang;
 
       // Update URL
@@ -866,6 +925,7 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
       if (container) {
         container.classList.toggle("en", lang === "en");
         container.classList.toggle("zh", lang === "zh");
+        container.classList.toggle("ja", lang === "ja");
       }
 
       // Toggle visibility
@@ -875,10 +935,16 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
       document.querySelectorAll("[data-lang-zh]").forEach((el) => {
         (el as HTMLElement).classList.toggle("hidden", lang !== "zh");
       });
+      document.querySelectorAll("[data-lang-ja]").forEach((el) => {
+        (el as HTMLElement).classList.toggle("hidden", lang !== "ja");
+      });
 
       // Update button text
       if (langBtn) {
-        langBtn.textContent = lang === "zh" ? "English" : "中文";
+        langBtn.textContent = nextLanguageLabel[lang];
+      }
+      if (copyBtn) {
+        copyBtn.textContent = copyLabel[lang];
       }
     };
 
@@ -888,7 +954,8 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
     // Add click handler
     if (langBtn) {
       langBtn.addEventListener("click", () => {
-        setLanguage(currentLang === "zh" ? "en" : "zh");
+        const nextLang = supportedLangs[(supportedLangs.indexOf(currentLang) + 1) % supportedLangs.length];
+        setLanguage(nextLang);
       });
     }
   };
