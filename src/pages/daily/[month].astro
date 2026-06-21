@@ -1,7 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { newsData, type ProcessedDailyNewsItem, type BilingualNotes, categoryAvatars, defaultAvatar } from "../../data/daily/index";
-import { typeLabels } from "./textGenerator";
+import { typeLabels } from "../../utils/dailyTextGenerator";
 import { Image } from "astro:assets";
 
 interface PathItem {
@@ -67,7 +67,7 @@ const getMonthName = (monthNum: string, lang: 'en' | 'zh') => {
   return monthNames[lang][parseInt(monthNum) - 1];
 };
 
-// Category colors and labels from textGenerator.js
+// Category colors and labels from dailyTextGenerator
 const typeColors: Record<string, string> = {
   '论文': 'bg-blue-100 text-blue-800 border-blue-300',
   '新闻': 'bg-gray-100 text-gray-800 border-gray-300',

@@ -72,7 +72,7 @@ export const generateTextContent = (
   show_qas: boolean = false
 ): string => {
   const lang = (["zh", "en", "ja"].includes(language) ? language : "zh") as DailyLang;
-  const translations: Record<string, { heading: string; viewWeb: string; collectedBy: string }> = {
+  const translations: Record<DailyLang, { heading: string; viewWeb: string; collectedBy: string }> = {
     zh: {
       heading: "🚀zkDaily 前沿热点追踪",
       viewWeb: "📄 网页查看：",
@@ -86,7 +86,7 @@ export const generateTextContent = (
     ja: {
       heading: "🚀zkDaily フロンティアトラッカー",
       viewWeb: "📄 Webで見る：",
-      collectedBy: "🪶 @icerdesign が収集",
+      collectedBy: "🪶 @trainbit_jp が収集",
     },
   };
 
@@ -116,29 +116,24 @@ export const generateTextContent = (
       return;
     }
 
-    // Get language-specific weekday
     const weekday =
       card.weekday && typeof card.weekday === "object"
         ? card.weekday[lang] || card.weekday.zh || card.weekday.en
         : card.weekday;
 
-    // Use the correct translation for the heading
     text += `${translations[lang].heading} ${card.date} ${weekday}\n\n`;
 
     if (card.projects) {
       card.projects.forEach((project: any) => {
-        // Get project icon
         const icon = project.icon || getTypeIcon(project.type);
         text += `${icon} ${project.name}\n`;
         text += `- ${project.url}\n`;
 
         if (show_details) {
-          // Get language-specific summary
           const summary = getLocalizedText(project.summary);
 
           text += `- ${summary.replace(/{{name}}/g, "")}\n`;
 
-          // Add notes if they exist
           if (project.notes) {
             const notesToDisplay = getLocalizedList(project.notes);
 
@@ -150,10 +145,7 @@ export const generateTextContent = (
             }
           }
         } else if (dig_twitter_handle) {
-          // Extract Twitter handle from summary when show_details is false and dig_twitter_handle is true
           const summary = getLocalizedText(project.summary);
-
-          // Use regex to find Twitter handles
           const twitterHandleRegex = /@([A-Za-z0-9_]+)/g;
           const matches = summary.match(twitterHandleRegex);
 
@@ -166,7 +158,6 @@ export const generateTextContent = (
       });
     }
 
-    // Add Q&A section if exists
     if (show_qas && card.qas && card.qas.length > 0) {
       const qaHeading =
         lang === "zh" ? "💬 今日要点 深入解析" : lang === "ja" ? "💬 今日の要点 深掘り" : "💬 Q&A Deep Dive";
@@ -181,7 +172,7 @@ export const generateTextContent = (
 
     text += `---\n${
       translations[lang].viewWeb
-    } https://hints.plonk.pro${lang === "ja" ? "/ja" : ""}/daily/${card.date.substring(
+    } https://hints.plonk.pro/daily/${card.date.substring(
       0,
       card.date.indexOf("-", 5)
     )}?lang=${lang}\n`;

@@ -5,7 +5,7 @@ import {
   categoryAvatars,
   defaultAvatar,
 } from "../../data/daily/index";
-import { typeLabels } from "./textGenerator";
+import { typeLabels } from "../../utils/dailyTextGenerator";
 import { Image } from "astro:assets";
 import { marked } from "marked";
 import QACard from "../../components/QACard.astro";
@@ -857,7 +857,7 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
 </script>
 
 <script>
-  import { generateTextContent } from "./textGenerator";
+  import { generateTextContent } from "../../utils/dailyTextGenerator";
   import QRCode from "qrcode";
 
   // Generate QR codes for all project URLs
