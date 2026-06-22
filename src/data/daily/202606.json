@@ -443,5 +443,97 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-06-22",
+    "projects": [
+      {
+        "name": "Zero-Knowledge Proofs of Generalized Regular Expression Matching for Anonymized Email Verification",
+        "url": "https://eprint.iacr.org/2026/1284",
+        "type": "论文",
+        "authors": "Shreyas Londhe, Aayush Gupta, Sora Suegami, Yogesh Shahi, Rute Figueiredo, Parisa Hassanizadeh, Shahriar Ebrahimi",
+        "tags": [
+          "Shreyas Londhe",
+          "zkEmail",
+          "Regex",
+          "DKIM"
+        ],
+        "summary": {
+          "zh": "Londhe等人在{{name}}论文中提出面向ZK Email的广义正则匹配ZKP系统，通过ε-free NFA路径验证降低复杂邮件验证开销，并集成DKIM、SHA-256与正则约束电路。",
+          "en": "Londhe et al. proposed a generalized regex-matching ZKP system for ZK Email in their {{name}}paper, using ε-free NFA path verification with DKIM, SHA-256, and structural regex circuits.",
+          "ja": "Londhe らは {{name}} 論文で、ZK Email 向けの汎用正規表現照合 ZKP システムを提案した。ε-free NFA の経路検証により、DKIM、SHA-256、構造制約を扱う正規表現回路を実用的に統合する。"
+        },
+        "notes": {
+          "zh": [
+            "论文聚焦匿名邮件验证，允许证明DKIM签名邮件中的结构化属性而不公开完整邮件",
+            "新方案基于ε-free NFA的路径验证，证明者复杂度与捕获路径线性相关，并独立于原始邮件大小",
+            "系统将DKIM签名验证、RFC 6376下任意长度SHA-256电路和通用正则原语整合进端到端ZK Email电路",
+            "相较先前DFA方案，实验显示证明时间有显著效率提升，并支持更丰富的正则语言",
+            "实现已集成到ZK Email并以MIT许可证发布，覆盖客户端和zkVM（SP1）部署场景",
+            "安全分析覆盖现实对手模型下的零知识关系和邮件来源证明需求"
+          ],
+          "en": [
+            "Focuses on anonymized email verification, proving structured properties of DKIM-signed emails without revealing the full message.",
+            "Uses path verification over ε-free NFAs, with prover complexity linear in the captured path and independent of original email size.",
+            "Integrates DKIM verification, arbitrary-length SHA-256 under RFC 6376, and a general regex primitive into end-to-end ZK Email circuits.",
+            "Shows substantial proving-time improvements over DFA-based approaches while supporting richer regex languages.",
+            "The implementation is integrated with ZK Email, MIT licensed, and evaluated for client-side and zkVM (SP1) deployments.",
+            "Security analysis formalizes zero-knowledge relations under realistic adversary models for email provenance."
+          ],
+          "ja": [
+            "匿名化されたメール検証を対象とし、DKIM 署名付きメールの構造化された属性を、メール全文を公開せずに証明できる。",
+            "ε-free NFA 上の経路検証を用い、証明者の計算量を取得された経路に対して線形にし、元のメールサイズに依存しない形にする。",
+            "DKIM 署名検証、RFC 6376 に対応した任意長の SHA-256 回路、汎用的な正規表現プリミティブを、エンドツーエンドの ZK Email 回路に統合する。",
+            "従来の DFA ベース手法に比べて証明時間を大きく改善し、より表現力の高い正規表現言語を扱えることを示す。",
+            "実装は ZK Email に統合され、MIT ライセンスで公開されており、クライアント側と zkVM（SP1）での展開を評価している。",
+            "メール由来情報の証明に向け、現実的な攻撃者モデルの下でゼロ知識関係を形式化し安全性を分析する。"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】不用公开邮件全文，也能证明邮件来自哪里？"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "为什么邮件验证需要ZK？",
+          "en": "Why use ZK for email verification?",
+          "ja": "なぜメール検証に ZK を使うのか？"
+        },
+        "answer": {
+          "zh": "邮件常包含隐私信息。ZK Email允许公开验证邮件真实性和特定字段，同时隐藏正文、地址或其他敏感内容。",
+          "en": "Emails often contain private data. ZK Email enables public verification of authenticity and selected fields while hiding the body, addresses, or other sensitive content.",
+          "ja": "メールには個人情報が多く含まれる。ZK Email を使うと、本文や宛先などの機微情報を隠したまま、真正性や特定フィールドを公開検証できる。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "ε-free NFA有什么作用？",
+          "en": "Why use ε-free NFAs?",
+          "ja": "ε-free NFA は何に効くのか？"
+        },
+        "answer": {
+          "zh": "论文用ε-free NFA的路径验证替代更重的DFA式正则验证，使证明者复杂度与捕获路径线性相关，而不随原始邮件长度直接增长。",
+          "en": "The paper replaces heavier DFA-style regex checks with path verification over ε-free NFAs, making prover complexity linear in the captured path rather than the original email length.",
+          "ja": "重い DFA 型の正規表現検証の代わりに、ε-free NFA 上の経路検証を用いる。これにより、証明者の計算量は元のメール長ではなく取得された経路に対して線形になる。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "相对DFA方案优势在哪？",
+          "en": "How does it improve on DFA approaches?",
+          "ja": "DFA 手法より何が優れるのか？"
+        },
+        "answer": {
+          "zh": "DFA方案在复杂结构和丰富字符集下会带来高昂正则验证开销。该论文用NFA路径验证支持更丰富的正则语言，并在实验中显著降低证明时间。",
+          "en": "DFA approaches are costly for complex structures and rich alphabets. NFA path verification supports richer regex languages and substantially reduces proving time in the evaluation.",
+          "ja": "DFA 手法は複雑な構造や豊富な文字集合で検証コストが大きくなる。NFA の経路検証により、より表現力の高い正規表現を扱い、評価では証明時間を大きく削減している。"
+        }
+      }
+    ]
   }
 ]
