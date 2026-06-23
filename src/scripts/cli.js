@@ -40,7 +40,7 @@ async function loadNewsData() {
 
 // Load text generator
 async function loadTextGenerator() {
-  const { generateTextContent } = await import("../pages/daily/textGenerator.ts");
+  const { generateTextContent } = await import("../utils/dailyTextGenerator.ts");
   return generateTextContent;
 }
 
