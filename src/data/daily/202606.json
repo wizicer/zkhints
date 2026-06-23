@@ -550,9 +550,9 @@
           "TEE"
         ],
         "summary": {
-        "zh": "Charles Guillemet指出Taiko约170万美元被盗源于Raiko仓库中暴露的SGX enclave签名key，攻击者可借MrSigner信任路径注册恶意证明者，并凸显有效性证明替代TEE信任的重要性。",
-        "en": "Charles Guillemet said Taiko lost about $1.7M after a Raiko SGX signing key was exposed, showing the risk of TEE-based trust.",
-        "ja": "Charles Guillemet は、Raiko の SGX 署名鍵公開により Taiko から約 170 万ドルが流出したと指摘した。TEE 依存のリスクを示す事例だ。"
+          "zh": "Charles Guillemet指出Taiko约170万美元被盗源于Raiko仓库中暴露的SGX enclave签名key，攻击者可借MrSigner信任路径注册恶意证明者，并凸显有效性证明替代TEE信任的重要性。",
+          "en": "Charles Guillemet said Taiko lost about $1.7M after a Raiko SGX signing key was exposed, showing the risk of TEE-based trust.",
+          "ja": "Charles Guillemet は、Raiko の SGX 署名鍵公開により Taiko から約 170 万ドルが流出したと指摘した。TEE 依存のリスクを示す事例だ。"
         },
         "notes": {
           "zh": [
