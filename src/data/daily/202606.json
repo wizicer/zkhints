@@ -535,5 +535,96 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-06-23",
+    "projects": [
+      {
+        "name": "Taiko drained for ~$1.7M after SGX enclave signing key was exposed",
+        "url": "https://x.com/P3b7_/status/2069045986236695020",
+        "type": "漏洞",
+        "authors": "Charles Guillemet",
+        "tags": [
+          "Charles Guillemet",
+          "SGX Enclave",
+          "TEE"
+        ],
+        "summary": {
+        "zh": "Charles Guillemet指出Taiko约170万美元被盗源于Raiko仓库中暴露的SGX enclave签名key，攻击者可借MrSigner信任路径注册恶意证明者，并凸显有效性证明替代TEE信任的重要性。",
+        "en": "Charles Guillemet said Taiko lost about $1.7M after a Raiko SGX signing key was exposed, showing the risk of TEE-based trust.",
+        "ja": "Charles Guillemet は、Raiko の SGX 署名鍵公開により Taiko から約 170 万ドルが流出したと指摘した。TEE 依存のリスクを示す事例だ。"
+        },
+        "notes": {
+          "zh": [
+            "来源称Raiko公共GitHub仓库中出现enclave-key.pem，即用于签署Taiko SGX enclaves的RSA key",
+            "攻击思路是从公开key派生MrSigner，签署恶意enclave，并作为受信任证明者注册",
+            "L1合约信任MrSigner匹配的enclave，伪造SGX attestations后可影响假L2区块相关消息流程",
+            "帖子称processMessage()将消息置为RETRIABLE，而retryMessage()没有执行证明验证，最终导致资金流出",
+            "回复中补充争议点：仅泄露MrSigner可能不足以利用，问题还涉及接受debug enclaves的组合条件",
+            "事件强调单一密钥和TEE运营纪律是脆弱信任根，链上简洁有效性证明可避免此类伪造路径"
+          ],
+          "en": [
+            "enclave-key.pem reportedly appeared in the public Raiko repo.",
+            "The attacker could derive MrSigner and sign a malicious enclave.",
+            "Matching MrSigner let fake SGX attestations pass the trust path.",
+            "processMessage() made messages retriable; retryMessage() skipped proof checks.",
+            "Replies note that accepting debug enclaves was also key.",
+            "The case favors validity proofs over single-key TEE trust."
+          ],
+          "ja": [
+            "enclave-key.pem が公開 Raiko リポジトリにあったとされる。",
+            "攻撃者は MrSigner を導出し、悪意あるエンクレーブに署名できた。",
+            "MrSigner の一致により、偽の SGX 証明が信頼経路を通った。",
+            "processMessage() 後、retryMessage() で証明検証がなかったとされる。",
+            "返信では debug enclaves の受け入れも重要点とされた。",
+            "単一鍵の TEE 信頼より、有効性証明の重要性を示す。"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK漏洞】一把SGX签名key，如何撬动170万美元？"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "私钥泄露已经是致命失误，为什么系统内部的其他安全验证也没能拦住黑客？",
+          "en": "Why didn't other checks stop it?",
+          "ja": "他の検証はなぜ止められなかったのか？"
+        },
+        "answer": {
+          "zh": "私钥泄露等于直接交出了大门钥匙。按理说，系统还会验证运行代码的指纹(mrenclave)作为最后一道防线。但偏偏系统当时开启了接受调试飞地(debug enclaves)的权限。这等于不仅弄丢了大门钥匙，还主动关掉了内部的指纹识别，让黑客彻底畅通无阻。",
+          "en": "The leaked key broke the signer check. The remaining guard, MREnclave pinning, was weakened because debug enclaves were accepted.",
+          "ja": "漏れた鍵で署名者確認が破られた。さらに debug enclaves を受け入れていたため、MREnclave 固定による防御も弱まった。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "黑客是如何利用公开的私钥获得系统信任的？",
+          "en": "How was trust forged?",
+          "ja": "信頼はどう偽造されたのか？"
+        },
+        "answer": {
+          "zh": "L1智能合约通过核对MrSigner(签名者身份)来信任SGX飞地。黑客利用公开的私钥推导出了正确的MrSigner，并用它签署了自己编写的恶意代码。配合调试模式的漏洞，黑客成功伪装成了受信任的证明者。",
+          "en": "The L1 contract trusted enclaves by MrSigner. With the exposed key, the attacker could sign malicious code and appear as a trusted prover.",
+          "ja": "L1 コントラクトは MrSigner でエンクレーブを信頼していた。攻撃者は漏れた鍵で悪意あるコードに署名し、信頼済み証明者に見せかけた。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "成功潜入系统后，这170万美元是如何被转走的？",
+          "en": "How were funds drained?",
+          "ja": "資金はどう流出したのか？"
+        },
+        "answer": {
+          "zh": "黑客在虚假的L2区块上伪造了SGX证明。随后他们利用合约代码逻辑，通过processMessage()函数将消息状态标记为可重试，接着调用了毫无证明验证环节的retryMessage()函数，轻松抽干了资金。",
+          "en": "The attacker forged SGX attestations for fake L2 blocks, marked messages as retriable with processMessage(), then used retryMessage(), which lacked proof verification.",
+          "ja": "攻撃者は偽の L2 ブロックに SGX 証明を作り、processMessage() で再試行可能にした後、証明検証のない retryMessage() を使った。"
+        }
+      }
+    ]
   }
 ]
