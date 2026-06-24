@@ -626,5 +626,95 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-06-24",
+    "projects": [
+      {
+        "name": "Authenticated Data Structures for Dynamic Workloads",
+        "url": "https://eprint.iacr.org/2026/1235",
+        "type": "论文",
+        "authors": "Ziheng (Tom) Shangguan, Aviv Yaish, Dahlia Malkhi",
+        "tags": [
+          "Ziheng (Tom) Shangguan",
+          "Merkle Tree"
+        ],
+        "summary": {
+          "zh": "Shangguan等人在{{name}}论文中提出Huffman-Merkle Tree，通过冷热分层、访问频率跟踪与批量迁移优化动态工作负载下的认证数据结构证明与更新成本。",
+          "en": "Shangguan et al. propose HMT, an ADS that shortens hot-item proofs and lowers update costs for dynamic workloads.",
+          "ja": "Shangguan らは HMT を提案した。動的な負荷で、よく使う項目の証明を短くし、更新コストを下げる認証データ構造だ。"
+        },
+        "notes": {
+          "zh": [
+            "HMT面向访问频率不断变化的大规模可变状态",
+            "热门项采用Huffman式布局，更靠近根以缩短成员证明",
+            "冷门和新增元素放入二叉Merkle Tree，降低更新开销",
+            "系统用count-min sketch跟踪频率，并批量应用布局变化",
+            "评估对比Ethereum MPT与UBT，关注哈希次数和访问加权证明大小",
+            "最佳策略相对MPT减少约2.4x哈希操作，证明也更短"
+          ],
+          "en": [
+            "Targets mutable state with shifting access frequencies.",
+            "Hot items use a Huffman-style layout near the root.",
+            "Cold and new items stay in a binary Merkle Tree.",
+            "Uses count-min sketch and batched layout changes.",
+            "Compares against Ethereum MPT and UBT.",
+            "Best policy reports fewer hashes and shorter weighted proofs."
+          ],
+          "ja": [
+            "アクセス頻度が変わる可変状態を対象にする。",
+            "よく使う項目を根に近い Huffman 風配置に置く。",
+            "新規項目や低頻度項目は二分 Merkle Tree に置く。",
+            "count-min sketch と一括配置変更を使う。",
+            "Ethereum MPT と UBT と比較している。",
+            "最良方針ではハッシュ回数と重み付き証明長を減らした。"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】状态证明也能按访问热度自动调座位？"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "HMT解决什么？",
+          "en": "What does HMT solve?",
+          "ja": "HMT は何を解く？"
+        },
+        "answer": {
+          "zh": "HMT优化访问频率不均且会变化的状态。它让热门项证明更短，同时避免所有项重新布局带来的高更新成本。",
+          "en": "HMT targets skewed, changing access patterns. It gives hot items shorter proofs without making every update expensive.",
+          "ja": "HMT は偏りがあり変化するアクセスを扱う。よく使う項目の証明を短くしつつ、更新コストを抑える。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "为什么用Huffman？",
+          "en": "Why use Huffman layout?",
+          "ja": "なぜ Huffman 配置か？"
+        },
+        "answer": {
+          "zh": "Huffman布局会把高频项放得更靠近根。这样热门项的Merkle路径更短，访问加权后的平均证明大小也会下降。",
+          "en": "A Huffman-style layout puts frequent items closer to the root. Their Merkle paths become shorter, reducing access-weighted proof size.",
+          "ja": "Huffman 風配置では高頻度項目が根に近くなる。Merkle 経路が短くなり、頻度で重み付けした証明長が下がる。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "相比MPT优势在哪？",
+          "en": "How does it beat MPT?",
+          "ja": "MPT より何が良い？"
+        },
+        "answer": {
+          "zh": "实验比较了Ethereum的MPT和拟议替代UBT。最佳HMT策略相对MPT使用约2.4x更少平均哈希操作，并降低访问加权成员证明大小。",
+          "en": "Against Ethereum MPT, the best HMT policy reports about 2.4x fewer average hash operations and shorter access-weighted membership proofs.",
+          "ja": "Ethereum MPT と比べ、最良の HMT 方針は平均ハッシュ回数を約 2.4x 減らし、頻度重み付きの存在証明も短くした。"
+        }
+      }
+    ]
   }
 ]
