@@ -716,5 +716,95 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-06-25",
+    "projects": [
+      {
+        "name": "LeanIMT+: Efficient Merkle Tree for Membership and Non-Membership Proofs",
+        "url": "https://pse.dev/blog/lean-imt-plus-efficient-merkle-tree-for-membership-and-non-membership-proofs",
+        "type": "博客",
+        "authors": "Vivian Plasencia",
+        "tags": [
+          "Vivian Plasencia",
+          "Merkle Tree"
+        ],
+        "summary": {
+          "zh": "Vivian Plasencia在{{name}}博客中介绍LeanIMT+，结合LeanIMT动态深度与Indexed Merkle Tree低叶技巧，高效支持成员与非成员证明，适用于凭证撤销等场景。",
+          "en": "Vivian Plasencia introduces LeanIMT+, a dynamic Merkle tree for efficient membership and non-membership proofs.",
+          "ja": "Vivian Plasencia は LeanIMT+ を紹介した。動的な深さで、存在証明と非存在証明を効率化する Merkle tree だ。"
+        },
+        "notes": {
+          "zh": [
+            "LeanIMT+面向可验证凭证撤销，需要证明凭证未被撤销",
+            "结构结合LeanIMT动态深度和Indexed Merkle Tree的low leaf非成员证明",
+            "奇数节点直接提升，不使用zero hashes，减少不必要哈希",
+            "叶子存储value与nextValue，按值形成有序链表",
+            "叶子哈希使用3输入和TAG_LEAF，与内部节点哈希做域分离",
+            "2048叶场景下，LeanIMT+避免SMT常见128层固定深度带来的电路成本"
+          ],
+          "en": [
+            "Built for credential revocation proofs.",
+            "Combines LeanIMT depth with low-leaf proofs.",
+            "Avoids zero hashes by promoting odd nodes.",
+            "Leaves store value and nextValue.",
+            "Leaf hashing is domain-separated.",
+            "Dynamic depth cuts ZK costs versus deep SMTs."
+          ],
+          "ja": [
+            "認証情報の失効証明を主な用途にする。",
+            "LeanIMT の深さと low leaf 証明を組み合わせる。",
+            "奇数ノードを上げ、zero hash を避ける。",
+            "葉は value と nextValue を持つ。",
+            "葉ハッシュは領域分離される。",
+            "動的な深さで深い SMT より ZK コストを下げる。"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK博客】不用扫全表，也能证明凭证没被撤销？"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "LeanIMT+是什么？",
+          "en": "What is LeanIMT+?",
+          "ja": "LeanIMT+ とは？"
+        },
+        "answer": {
+          "zh": "LeanIMT+是一种增量Merkle tree，支持成员证明和非成员证明。它适合需要证明某个值存在或不存在的应用，比如凭证是否被撤销。",
+          "en": "LeanIMT+ is an incremental Merkle tree for membership and non-membership proofs. It helps prove that a value is present or absent.",
+          "ja": "LeanIMT+ は、存在証明と非存在証明に使う増分 Merkle tree だ。値があるかないかを示せる。"
+        }
+      },
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "为什么要非成员证明？",
+          "en": "Why non-membership proofs?",
+          "ja": "なぜ非存在証明が必要？"
+        },
+        "answer": {
+          "zh": "凭证撤销场景中，用户要证明自己的凭证不在撤销列表里。非成员证明可以证明“不存在”，而不需要公开或扫描整个集合。",
+          "en": "For revocation, a user must show their credential is not in the revoked set. A non-membership proof proves absence without scanning the whole set.",
+          "ja": "失効確認では、認証情報が失効リストにないことを示す必要がある。非存在証明なら集合全体を調べずに示せる。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "它如何证明不存在？",
+          "en": "How is absence proven?",
+          "ja": "非存在をどう示す？"
+        },
+        "answer": {
+          "zh": "LeanIMT+用有序链表找到目标值的前驱low leaf。如果low leaf的value小于目标值，且nextValue大于目标值或为0，就能证明目标值不在树中。",
+          "en": "LeanIMT+ proves the predecessor low leaf. If its value is below the target and nextValue is above it or zero, the target is absent.",
+          "ja": "LeanIMT+ は直前の low leaf を証明する。その value が対象より小さく、nextValue が対象より大きいか 0 なら、対象は存在しない。"
+        }
+      }
+    ]
   }
 ]
