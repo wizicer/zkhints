@@ -806,5 +806,96 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-06-26",
+    "projects": [
+      {
+        "name": "Flock: Fast Proving for Batch Boolean Computations",
+        "url": "https://github.com/succinctlabs/flock/blob/main/paper/flock-paper.pdf",
+        "type": "论文",
+        "authors": "Benedikt Bünz, Ron D. Rothblum, William Wang",
+        "tags": [
+          "Benedikt Bünz",
+          "Lincheck",
+          "Zerocheck"
+        ],
+        "summary": {
+          "zh": "Bünz等人在{{name}}论文中提出Flock，一种面向批量Boolean计算的hash-based SNARK，通过优化lincheck与zerocheck协议，大幅提升SHA-256、Keccak和BLAKE3等哈希证明速度。",
+          "en": "Bünz et al. introduce Flock, a hash-based SNARK for very fast batched Boolean proving.",
+          "ja": "Bünz らは {{name}} 論文で Flock を提案した。lincheck と zerocheck を最適化し、SHA-256、Keccak、BLAKE3 など大量の Boolean 型ハッシュ計算を高速に証明する hash-based SNARK だ。"
+        },
+        "notes": {
+          "zh": [
+            "Flock聚焦SNARK中大量标准哈希计算的证明瓶颈",
+            "支持同一R1CS电路的大批量证明，并可表达输入输出关系",
+            "可证明hash chains和Merkle path openings",
+            "核心改进包括lincheck和zerocheck协议优化",
+            "单核M4 Max上可证明每秒82k次BLAKE3压缩、42k次SHA-256压缩和30k次Keccak置换",
+            "十核下BLAKE3吞吐超过660k次每秒，SHA-256证明快于Binius64超过9倍"
+          ],
+          "en": [
+            "Targets batched hash proving bottlenecks.",
+            "Proves batches of the same R1CS circuit.",
+            "Supports hash chains and Merkle openings.",
+            "Optimizes lincheck and zerocheck.",
+            "Single-core results include 82k BLAKE3 and 42k SHA-256 per second.",
+            "SHA-256 proving is over 9x faster than Binius64."
+          ],
+          "ja": [
+            "SNARK における大量の標準ハッシュ計算の証明ボトルネックを対象にする。",
+            "同じ R1CS 回路の大規模バッチを証明し、インスタンス間の入出力関係も扱える。",
+            "ハッシュチェーンと Merkle 経路の開示を証明できる。",
+            "中核となる改善は lincheck と zerocheck の最適化。",
+            "M4 Max の単一コアで BLAKE3 圧縮 82k/s、SHA-256 圧縮 42k/s、Keccak 置換 30k/s を報告。",
+            "10 コアでは BLAKE3 が 660k/s 超となり、SHA-256 証明は Binius64 より 9 倍超高速。"
+          ]
+        },
+        "slogan": {
+          "zh": "【ZK论文】哈希证明也能跑到每秒几十万次？"
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "Flock解决什么？",
+          "en": "What does Flock solve?",
+          "ja": "Flock は何を解く？"
+        },
+        "answer": {
+          "zh": "Flock解决SNARK里批量哈希计算证明很慢的问题。许多应用需要证明大量SHA-256、Keccak或BLAKE3计算，Flock专门优化这类Boolean批处理。",
+          "en": "Flock speeds up SNARK proving for large batches of hash computations such as SHA-256, Keccak, and BLAKE3.",
+          "ja": "Flock は、SNARK で大量のハッシュ計算を証明する際の遅さを解決する。SHA-256、Keccak、BLAKE3 などの Boolean 型バッチ処理を特に高速化する。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "它支持哪些计算？",
+          "en": "What can it prove?",
+          "ja": "何を証明できる？"
+        },
+        "answer": {
+          "zh": "Flock证明同一个R1CS电路的大批量实例，还支持实例之间的输入输出关系。论文提到可用于hash chains、Merkle path openings，并原则上扩展到hash-based签名验证。",
+          "en": "Flock proves batches of the same R1CS circuit, plus input/output relations. It supports hash chains and Merkle path openings.",
+          "ja": "Flock は同じ R1CS 回路の大規模バッチを証明し、各インスタンス間の入出力関係も扱える。論文ではハッシュチェーン、Merkle 経路の開示、原理的には hash-based 署名検証への拡張も挙げている。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "协议改进在哪？",
+          "en": "What is optimized?",
+          "ja": "何を最適化した？"
+        },
+        "answer": {
+          "zh": "Flock核心是对lincheck和zerocheck协议做新优化，并配合高度优化的概念验证实现。目标是把同构Boolean批处理的证明开销压到接近原生执行。",
+          "en": "Its core optimizes lincheck and zerocheck, paired with an aggressive proof-of-concept implementation for homogeneous Boolean batches.",
+          "ja": "中核は lincheck と zerocheck に対する新しい最適化だ。さらに coding agents と共同設計した高度に最適化された概念実証実装により、同種の Boolean バッチ証明のオーバーヘッドをネイティブ実行に近づけることを狙う。"
+        }
+      }
+    ]
   }
 ]
