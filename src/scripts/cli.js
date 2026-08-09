@@ -18,9 +18,22 @@ const program = new Command();
 // WeChat Work webhook URL - this should be configured via environment variable
 const WECOM_WEBHOOK_URL_ZH = process.env.WECOM_WEBHOOK_URL_ZH || process.env.WECOM_WEBHOOK_URL;
 const WECOM_WEBHOOK_URL_EN = process.env.WECOM_WEBHOOK_URL_EN || process.env.WECOM_WEBHOOK_URL;
+const WECOM_WEBHOOK_URL_JA = process.env.WECOM_WEBHOOK_URL_JA || process.env.WECOM_WEBHOOK_URL;
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const TELEGRAM_CHAT_ID_ZH = process.env.TELEGRAM_CHAT_ID_ZH || process.env.TELEGRAM_CHAT_ID;
 const TELEGRAM_CHAT_ID_EN = process.env.TELEGRAM_CHAT_ID_EN || process.env.TELEGRAM_CHAT_ID;
+const TELEGRAM_CHAT_ID_JA = process.env.TELEGRAM_CHAT_ID_JA || process.env.TELEGRAM_CHAT_ID;
+
+const WECOM_WEBHOOK_URLS = {
+  zh: WECOM_WEBHOOK_URL_ZH,
+  en: WECOM_WEBHOOK_URL_EN,
+  ja: WECOM_WEBHOOK_URL_JA,
+};
+const TELEGRAM_CHAT_IDS = {
+  zh: TELEGRAM_CHAT_ID_ZH,
+  en: TELEGRAM_CHAT_ID_EN,
+  ja: TELEGRAM_CHAT_ID_JA,
+};
 
 // Date utility function
 function getDateParts(dateStr = null) {
@@ -175,10 +188,10 @@ async function generateText(language = "zh", dateStr = null) {
 }
 
 async function sendWecomNotification(imagePath, textContent, language = "zh") {
-  const webhookUrl = language === "zh" ? WECOM_WEBHOOK_URL_ZH : WECOM_WEBHOOK_URL_EN;
+  const webhookUrl = WECOM_WEBHOOK_URLS[language];
 
   if (!webhookUrl) {
-    throw new Error(`WECOM_WEBHOOK_URL${language.toUpperCase()} environment variable is not set`);
+    throw new Error(`WECOM_WEBHOOK_URL_${language.toUpperCase()} environment variable is not set`);
   }
 
   try {
@@ -218,7 +231,7 @@ async function sendWecomNotification(imagePath, textContent, language = "zh") {
 }
 
 async function sendTelegramNotification(imagePath, textContent, language = "zh") {
-  const chatIdConfig = language === "zh" ? TELEGRAM_CHAT_ID_ZH : TELEGRAM_CHAT_ID_EN;
+  const chatIdConfig = TELEGRAM_CHAT_IDS[language];
 
   if (!TELEGRAM_BOT_TOKEN || !chatIdConfig) {
     console.error(
@@ -313,11 +326,11 @@ program.name("zkpnewscards-cli").description("CLI for ZKP News Cards operations"
 program
   .command("screenshot")
   .description("Take a screenshot of the news card")
-  .option("-l, --language <language>", "Language to use (zh, en, or all)", "all")
+  .option("-l, --language <language>", "Language to use (zh, en, ja, or all)", "all")
   .option("-d, --date <date>", "Date to screenshot (YYYY-MM-DD format)", null)
   .action(async (options) => {
     try {
-      const languages = options.language === "all" ? ["zh", "en"] : [options.language];
+      const languages = options.language === "all" ? ["zh", "en", "ja"] : [options.language];
       await takeScreenshots(languages, options.date);
     } catch (error) {
       console.error("Failed to take screenshot:", error);
@@ -328,7 +341,7 @@ program
 program
   .command("notify")
   .description("Send notification with screenshot and text content")
-  .option("-l, --language <language>", "Language to use (zh, en, or all)", "all")
+  .option("-l, --language <language>", "Language to use (zh, en, ja, or all)", "all")
   .option("-d, --date <date>", "Date to notify (YYYY-MM-DD format)", null)
   .action(async (options) => {
     try {
@@ -344,7 +357,7 @@ program
         process.exit(1);
       }
 
-      const languages = options.language === "all" ? ["zh", "en"] : [options.language];
+      const languages = options.language === "all" ? ["zh", "en", "ja"] : [options.language];
 
       // Take screenshots for all languages at once (reuses server)
       const screenshotResults = await takeScreenshots(languages, options.date);
@@ -364,13 +377,13 @@ program
           continue;
         }
 
-        if (WECOM_WEBHOOK_URL_ZH || WECOM_WEBHOOK_URL_EN) {
+        if (WECOM_WEBHOOK_URLS[lang]) {
           await sendWecomNotification(null, textContent, lang);
           for (const imagePath of imagePaths) {
             await sendWecomNotification(imagePath, null, lang);
           }
         }
-        if (TELEGRAM_BOT_TOKEN && (TELEGRAM_CHAT_ID_ZH || TELEGRAM_CHAT_ID_EN)) {
+        if (TELEGRAM_BOT_TOKEN && TELEGRAM_CHAT_IDS[lang]) {
           await sendTelegramNotification(null, textContent, lang);
           for (const imagePath of imagePaths) {
             await sendTelegramNotification(imagePath, null, lang);
