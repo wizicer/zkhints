@@ -1,0 +1,92 @@
+[
+  {
+    "date": "2026-08-09",
+    "projects": [
+      {
+        "url": "https://blog.openvm.dev/2.1",
+        "name": "Announcing the OpenVM 2.1 Preview Release",
+        "type": "新闻",
+        "author": "@openvm_org",
+        "tags": [
+          "zkVM",
+          "RISC-V"
+        ],
+        "summary": {
+          "zh": "@openvm_org 发布OpenVM 2.1预览版，引入64位RISC-V与原生重编译，使用4张RTX 5090即可实时证明以太坊主网区块；该版本尚未完成审计和形式化验证，不建议用于生产环境。",
+          "en": "@openvm_org released OpenVM 2.1 Preview with 64-bit RISC-V and native recompilation, enabling real-time Ethereum block proving on four RTX 5090 GPUs. It is unaudited and not recommended for production.",
+          "ja": "@openvm_orgは64ビットRISC-Vとネイティブ再コンパイルを導入したOpenVM 2.1 Previewを公開し、RTX 5090を4基用いたEthereumブロックのリアルタイム証明を実現した。監査・形式検証前のため本番利用は非推奨である。"
+        },
+        "slogan": {
+          "zh": "【zkVM新进展】OpenVM 2.1：4张GPU实时证明以太坊区块"
+        },
+        "notes": {
+          "zh": [
+            "4张RTX 5090处理7,200个主网区块，证明时间p99为9.7秒、平均5.0秒",
+            "16张GPU的p99为3.7秒、平均2.4秒，并在EthProofs实时提交证明",
+            "支持以太坊基金会zkVM目标RV64IM_Zicclsm，兼容Rust、C++与Go",
+            "64位字长可降低以太坊工作负载的证明成本，并支持非对齐内存访问",
+            "原生重编译将guest程序转换为可移植C，执行速度比快速解释器提升34倍",
+            "端到端STARK证明具备100位可证明安全性，证明大小低于300kB"
+          ],
+          "en": [
+            "Four RTX 5090 GPUs proved 7,200 mainnet blocks with 9.7s p99 and 5.0s average latency.",
+            "Sixteen GPUs reached 3.7s p99 and 2.4s average, with live proofs submitted to EthProofs.",
+            "RV64IM_Zicclsm support aligns with the Ethereum Foundation zkVM target and supports Rust, C++, and Go.",
+            "The 64-bit word size can lower Ethereum proving cost and supports misaligned memory accesses.",
+            "Native recompilation emits portable C and runs 34x faster than the fast interpreter.",
+            "End-to-end STARK proofs target 100-bit provable security and remain below 300kB."
+          ],
+          "ja": [
+            "RTX 5090を4基用い、7,200件のメインネットブロックをp99 9.7秒、平均5.0秒で証明した",
+            "16基構成ではp99 3.7秒、平均2.4秒を達成し、EthProofsへ証明をリアルタイム送信している",
+            "Ethereum FoundationのzkVMターゲットRV64IM_Zicclsmに準拠し、Rust、C++、Goに対応する",
+            "64ビット語長はEthereum処理の証明コストを下げ、非整列メモリアクセスにも対応する",
+            "ネイティブ再コンパイルはゲストを可搬なCへ変換し、高速インタープリタ比で34倍高速に動作する",
+            "エンドツーエンドのSTARK証明は100ビットの証明可能安全性を持ち、300kB未満である"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "2.1版主要新增什么？",
+          "en": "What is new in 2.1?",
+          "ja": "2.1の主な新機能は何か？"
+        },
+        "answer": {
+          "zh": "新增64位RISC-V、RV64IM_Zicclsm兼容性和基于可移植C的原生重编译。",
+          "en": "It adds 64-bit RISC-V, RV64IM_Zicclsm compatibility, and portable-C native recompilation.",
+          "ja": "64ビットRISC-V、RV64IM_Zicclsm互換性、可搬なCによるネイティブ再コンパイルを追加した。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "为何采用64位RISC-V？",
+          "en": "Why adopt 64-bit RISC-V?",
+          "ja": "なぜ64ビットRISC-Vを採用したか？"
+        },
+        "answer": {
+          "zh": "它符合以太坊基金会zkVM目标，扩展语言兼容性，并可能更高效处理EVM的256位字长。",
+          "en": "It matches the EF zkVM target, broadens language support, and may handle 256-bit EVM words more efficiently.",
+          "ja": "EFのzkVMターゲットに準拠し、言語対応を広げ、256ビットEVMワードを効率化できる可能性がある。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "原生重编译如何工作？",
+          "en": "How does native recompilation work?",
+          "ja": "ネイティブ再コンパイルの仕組みは？"
+        },
+        "answer": {
+          "zh": "证明器将guest可执行文件提升为可移植C中间表示，再编译为直接运行于主机CPU的原生库。",
+          "en": "The prover lifts the guest executable into portable C, then compiles it into a native host CPU library.",
+          "ja": "証明器がゲスト実行形式を可搬なCの中間表現へ変換し、ホストCPU上で動くネイティブライブラリにコンパイルする。"
+        }
+      }
+    ]
+  }
+]
