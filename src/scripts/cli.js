@@ -71,7 +71,7 @@ async function takeScreenshots(languages = ["zh"], dateStr = null) {
   const configContent = fs.readFileSync(configPath, "utf-8");
   const modifiedConfig = configContent.replace(
     /devToolbar:\s*\{\s*enabled:\s*true\s*,?\s*\}/,
-    "devToolbar: { enabled: false }"
+    "devToolbar: { enabled: false }",
   );
   fs.writeFileSync(configPath, modifiedConfig, "utf-8");
 
@@ -112,7 +112,7 @@ async function takeScreenshots(languages = ["zh"], dateStr = null) {
     // Check if this language is supported
     if (dayData.languages && !dayData.languages.includes(language)) {
       console.log(
-        `Skipping screenshot for ${language} as it's not listed in languages array for ${dateString}`
+        `Skipping screenshot for ${language} as it's not listed in languages array for ${dateString}`,
       );
       results[language] = [];
       continue;
@@ -211,7 +211,7 @@ async function sendWecomNotification(imagePath, textContent, language = "zh") {
   } catch (error) {
     console.error(
       `Failed to send notification (${language}):`,
-      error.response?.data || error.message
+      error.response?.data || error.message,
     );
     throw error;
   }
@@ -222,7 +222,7 @@ async function sendTelegramNotification(imagePath, textContent, language = "zh")
 
   if (!TELEGRAM_BOT_TOKEN || !chatIdConfig) {
     console.error(
-      `Telegram configuration missing for ${language}. Please set TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID_${language.toUpperCase()} in .env file`
+      `Telegram configuration missing for ${language}. Please set TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID_${language.toUpperCase()} in .env file`,
     );
     return;
   }
@@ -253,14 +253,14 @@ async function sendTelegramNotification(imagePath, textContent, language = "zh")
           console.log(
             `Image sent successfully to Telegram chat ${chatId}${
               threadId ? " thread " + threadId : ""
-            } (${language})`
+            } (${language})`,
           );
         }).catch((telegramError) => {
           console.error(
             `Error sending image to Telegram chat ${chatId}${
               threadId ? " thread " + threadId : ""
             } (${language}):`,
-            telegramError
+            telegramError,
           );
         });
       }
@@ -274,14 +274,14 @@ async function sendTelegramNotification(imagePath, textContent, language = "zh")
           console.log(
             `Text content sent successfully to Telegram chat ${chatId}${
               threadId ? " thread " + threadId : ""
-            } (${language})`
+            } (${language})`,
           );
         }).catch((telegramError) => {
           console.error(
             `Error sending text to Telegram chat ${chatId}${
               threadId ? " thread " + threadId : ""
             } (${language}):`,
-            telegramError
+            telegramError,
           );
         });
       }
@@ -425,7 +425,7 @@ function convertProjectToMultiLang(project) {
 program
   .command("today")
   .description(
-    "Add today's entry to the corresponding JSON file and convert projects to multi-language format"
+    "Add today's entry to the corresponding JSON file and convert projects to multi-language format",
   )
   .action(async () => {
     try {
@@ -474,7 +474,7 @@ program
             fs.writeFileSync(dataFilePath, JSON.stringify(data, null, 2) + "\n", "utf-8");
             if (convertedCount > 0) {
               console.log(
-                `Converted ${convertedCount} project(s) to multi-language format for ${dateString}`
+                `Converted ${convertedCount} project(s) to multi-language format for ${dateString}`,
               );
             }
             if (qasInitialized) {
