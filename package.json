@@ -12,7 +12,8 @@
     "today": "tsx src/scripts/cli.js today",
     "screenshot": "tsx src/scripts/cli.js screenshot",
     "notify": "tsx src/scripts/cli.js notify",
-    "translate:daily:ja": "node scripts/translate-daily-ja.js"
+    "translate:daily:ja": "node scripts/translate-daily-ja.js",
+    "telegram:updates": "node scripts/get-telegram-updates.js"
   },
   "dependencies": {
     "@astrojs/react": "^5.0.6",
