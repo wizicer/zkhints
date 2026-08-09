@@ -17,7 +17,7 @@
           "ja": "@openvm_orgは64ビットRISC-Vとネイティブ再コンパイルを導入したOpenVM 2.1 Previewを公開し、RTX 5090を4基用いたEthereumブロックのリアルタイム証明を実現した。監査・形式検証前のため本番利用は非推奨である。"
         },
         "slogan": {
-          "zh": "【zkVM新进展】OpenVM 2.1：4张GPU实时证明以太坊区块"
+          "zh": "【zk新闻】OpenVM 2.1：4张GPU实时证明以太坊区块"
         },
         "notes": {
           "zh": [
