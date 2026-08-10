@@ -88,5 +88,92 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-08-10",
+    "projects": [
+      {
+        "url": "https://fightfake.ai/",
+        "name": "fightfake.ai",
+        "type": "开源",
+        "author": "fightfake.ai",
+        "tags": [
+          "C2PA",
+          "Deepfake Detection"
+        ],
+        "summary": {
+          "zh": "fightfake.ai 发布开放媒体真实性工具，结合相机安全硬件签名、逐次编辑证明与C2PA清单，让浏览器验证影像是否源自真实采集，以及后续改动是否与声明一致。",
+          "en": "fightfake.ai released open media-authenticity tooling that combines hardware-rooted capture signatures, edit proofs, and C2PA manifests so browsers can verify genuine capture and claimed modifications.",
+          "ja": "fightfake.aiは、カメラの安全なハードウェア署名、編集証明、C2PAマニフェストを組み合わせ、実写由来であることと申告どおりの変更をブラウザで検証できるオープンなメディア真正性ツールを公開した。"
+        },
+        "slogan": {
+          "zh": "【zk项目】fightfake.ai 不猜真假，让每次拍摄与编辑都可验证"
+        },
+        "notes": {
+          "zh": [
+            "采集指纹与签名嵌入影像，成为后续编辑证明所锚定的原始记录",
+            "fightfake-toolkit可编辑影像、生成对应证明，并打包为兼容C2PA的清单",
+            "浏览器扩展读取凭证与证明，验证媒体在采集时已签名且后续编辑符合声明",
+            "C2PA保留签名溯源记录，额外的编辑证明用于验证像素级改动是否正确",
+            "发布方需托管媒体、清单与证明文件；标准C2PA查看器仍保持兼容"
+          ],
+          "en": [
+            "The embedded capture record anchors all subsequent edit proofs to the original media.",
+            "fightfake-toolkit edits media, generates proofs, and packages outputs in C2PA-compatible manifests.",
+            "A browser extension verifies capture signatures and checks that later edits match their claims.",
+            "C2PA preserves signed provenance, while added proofs verify pixel-level edit correctness.",
+            "Publishers host the media, manifest, and proof file without breaking standard C2PA viewers."
+          ],
+          "ja": [
+            "埋め込まれた撮影記録が、後続するすべての編集証明の原本アンカーとなる",
+            "fightfake-toolkitは画像・動画の編集、証明生成、C2PA互換マニフェストへの梱包を行う",
+            "ブラウザ拡張が撮影時署名と証明を読み取り、後続編集が申告どおりか検証する",
+            "C2PAが署名付き来歴を保持し、追加の証明が画素単位の編集の正当性を検証する",
+            "公開者はメディア、マニフェスト、証明ファイルを配信し、標準C2PAビューアとの互換性も維持する"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "fightfake.ai解决什么问题？",
+          "en": "What does fightfake.ai solve?",
+          "ja": "fightfake.aiは何を解決するか？"
+        },
+        "answer": {
+          "zh": "它让照片和视频用采集签名及编辑证明自证来源与改动，而非仅凭画面判断深伪。",
+          "en": "It lets media prove its origin and edits through capture signatures and proofs instead of visual guessing.",
+          "ja": "映像だけで真偽を推測せず、撮影署名と編集証明により出所と変更内容を検証可能にする。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "读者如何检查影像？",
+          "en": "How do readers check media?",
+          "ja": "読者はどう検証するか？"
+        },
+        "answer": {
+          "zh": "读者打开网页后，浏览器扩展读取嵌入凭证并获取证明，在本地显示真实性结果。",
+          "en": "A browser extension reads embedded credentials, fetches proofs, and displays the authenticity result locally.",
+          "ja": "ブラウザ拡張が埋め込み資格情報を読み、証明を取得して、真正性の結果をローカル表示する。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "编辑证明如何生成？",
+          "en": "How are edit proofs generated?",
+          "ja": "編集証明はどう生成するか？"
+        },
+        "answer": {
+          "zh": "编辑者使用fightfake-toolkit处理影像、生成对应证明，并将结果封装进兼容C2PA的发布清单。",
+          "en": "Editors use fightfake-toolkit to modify media, generate matching proofs, and package C2PA-compatible manifests.",
+          "ja": "編集者がfightfake-toolkitでメディアを処理し、対応する証明を生成してC2PA互換マニフェストへ梱包する。"
+        }
+      }
+    ]
   }
 ]
