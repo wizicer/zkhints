@@ -175,5 +175,96 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-08-11",
+    "projects": [
+      {
+        "url": "https://blog.blockstream.com/searching-for-shrincs-parameters/",
+        "name": "Searching for SHRINCS Parameters",
+        "type": "博客",
+        "author": "Blockstream Research",
+        "tags": [
+          "SHRINCS",
+          "Hash-based",
+          "SLH-DSA"
+        ],
+        "summary": {
+          "zh": "Blockstream Research在博客中分享了为SHRINCS后量子签名方案搜索参数的过程，通过筛选25,935个候选，找到了比SLH-DSA小约25%且验证成本更低的备选方案，并发布了开源参数探索器。",
+          "en": "Blockstream Research shared their parameter search for the SHRINCS post-quantum signature scheme, screening 25,935 candidates to find options ~25% smaller than SLH-DSA with lower verification cost, and open-sourced an explorer.",
+          "ja": "Blockstream ResearchはブログでSHRINCS後量子署名方式のパラメータ探索を共有し、25,935件の候補を調べてSLH-DSAより約25%小さく検証コストも低い候補を見つけ、オープンソースの探索ツールを公開した。"
+        },
+        "slogan": {
+          "zh": "【ZK研究】SHRINCS参数大扫描，签名缩小25%！Blockstream 开源探索器等你来调参"
+        },
+        "notes": {
+          "zh": [
+            "SHRINCS是Blockstream Research提出的基于哈希的后量子签名方案",
+            "搜索覆盖25,935个参数组合，筛选出更实用的候选",
+            "最优候选将无状态回退签名从SLH-DSA的7,856字节降至约5.7KB",
+            "签名生成和验证成本均比SLH-DSA更低",
+            "开源探索器允许用户自定义约束和权重来搜索最优参数",
+            "状态部分（如UXMSS）按用例提供灵活性，未指定固定参数"
+          ],
+          "en": [
+            "SHRINCS is a hash-based post-quantum signature scheme from Blockstream Research.",
+            "The search covered 25,935 parameter tuples to find practical candidates.",
+            "The best fallback signature is ~5.7KB vs 7,856 bytes for SLH-DSA.",
+            "Lower signing and verification costs compared to SLH-DSA.",
+            "Open-source explorer lets users set bounds and weights.",
+            "Stateful options like UXMSS remain use-case dependent."
+          ],
+          "ja": [
+            "SHRINCSはBlockstream Researchによるハッシュベースの耐量子署名方式である",
+            "25,935件のパラメータ組から実用的な候補を探索した",
+            "最良のフォールバック署名はSLH-DSAの7,856バイトから約5.7KBに削減される",
+            "署名生成・検証コストもSLH-DSAより低い",
+            "オープンソースのエクスプローラで制約と重みを設定可能",
+            "UXMSS等のステートフルな選択肢はユースケース次第である"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "SHRINCS的参数搜索目标是什么？",
+          "en": "What is the parameter search goal?",
+          "ja": "パラメータ探索の目標は？"
+        },
+        "answer": {
+          "zh": "找到比SLH-DSA签名更小且保持实际可用成本的参数。",
+          "en": "Find parameters giving smaller signatures than SLH-DSA while keeping costs practical.",
+          "ja": "SLH-DSAより署名を小さくしつつ、実用的なコストを保つパラメータを見つけること。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "搜索使用了哪些约束？",
+          "en": "What constraints were used?",
+          "ja": "どのような制約を使ったか？"
+        },
+        "answer": {
+          "zh": "安全性不低于128位、结构不变、签名预算不低于2^40、签名小于7,856字节。",
+          "en": "Security ≥128 bits, same structure, budget ≥2^40, signature <7,856 bytes.",
+          "ja": "安全性128ビット以上、構造は同一、予算2^40以上、署名サイズ7,856バイト未満。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "探索器的意义何在？",
+          "en": "What is the explorer for?",
+          "ja": "エクスプローラの意義は？"
+        },
+        "answer": {
+          "zh": "它允许社区自定义参数约束和权重，透明地复现和扩展研究。",
+          "en": "It lets the community customize constraints and weights to reproduce and extend the research.",
+          "ja": "コミュニティが制約と重みを自由に設定し、研究を再現・拡張できるようにする。"
+        }
+      }
+    ]
   }
 ]
