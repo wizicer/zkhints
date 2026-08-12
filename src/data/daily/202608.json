@@ -266,5 +266,95 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-08-12",
+    "projects": [
+      {
+        "url": "https://arxiv.org/abs/2608.07063v1",
+        "name": "Soft Redaction of Image Provenance via Zero-Knowledge Proofs",
+        "type": "论文",
+        "author": "John Collomosse",
+        "tags": [
+          "C2PA",
+          "Perceptual Hashing"
+        ],
+        "summary": {
+          "zh": "Collomosse在论文中提出基于零知识证明的图像来源软删除机制，可在C2PA框架下用ZKP证明隐藏属性的距离性质，兼顾隐私与信任，支持位置、生物特征和感知哈希等场景。",
+          "en": "Collomosse proposes soft redaction of image provenance via ZKPs, enabling privacy-preserving distance proofs over hidden data, such as location proximity, biometric likeness, and perceptual hash, compatible with C2PA.",
+          "ja": "Collomosse氏は、C2PA互換の画像来歴情報に対してゼロ知識証明を用いたソフト編集を提案し、位置近接性、生体特徴類似性、知覚ハッシュなどの距離証明をプライバシー保護しながら実現する。"
+        },
+        "slogan": {
+          "zh": "【ZK论文】图像来源也能“打码”？ZK软编辑保护隐私不毁信任"
+        },
+        "notes": {
+          "zh": [
+            "提出基于ZKP的图像来源软删除机制",
+            "使用距离证明支持位置邻近性验证",
+            "扩展到生物特征嵌入的L2距离证明",
+            "应用于感知哈希防伪场景",
+            "与C2PA标准兼容",
+            "证明生成秒级、验证毫秒级"
+          ],
+          "en": [
+            "Proposes ZKP-based soft redaction for image provenance.",
+            "Uses distance proofs for location proximity.",
+            "Extends to L2 distance proofs over biometric embeddings.",
+            "Applies to perceptual hash anti-spoofing.",
+            "Compatible with C2PA standard.",
+            "Proof generation in seconds, verification in milliseconds."
+          ],
+          "ja": [
+            "ZKPに基づく画像来歴のソフト編集を提案",
+            "距離証明を用いて位置近接性を検証",
+            "生体特徴埋め込みのL2距離証明に拡張",
+            "知覚ハッシュの偽造防止に応用",
+            "C2PA標準と互換性を持つ",
+            "証明生成は秒単位、検証はミリ秒単位"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "什么是软编辑？",
+          "en": "What is soft redaction?",
+          "ja": "ソフト編集とは何か？"
+        },
+        "answer": {
+          "zh": "用ZKP替换敏感来源声明，只揭示属性证明而不泄露原始数据。",
+          "en": "It replaces sensitive provenance assertions with ZKPs, revealing only proofs of properties without leaking data.",
+          "ja": "機密性の高い来歴情報をZKPに置き換え、データを漏らさず属性の証明のみを開示する。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "如何证明位置邻近？",
+          "en": "How is location proximity proven?",
+          "ja": "位置近接性はどう証明するか？"
+        },
+        "answer": {
+          "zh": "使用切比雪夫多项式在ZKP电路内近似距离，证明真实位置在公开参考点附近。",
+          "en": "Chebyshev polynomial approximations are used inside the ZKP circuit to prove proximity to a public reference point.",
+          "ja": "ZKP回路内でチェビシェフ多項式近似を用いて距離を近似し、公開参照点への近接性を証明する。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "如何与C2PA兼容？",
+          "en": "How is C2PA compatibility achieved?",
+          "ja": "C2PAとの互換性はどう実現するか？"
+        },
+        "answer": {
+          "zh": "在C2PA断言上运行距离证明协议，不改变标准的数据结构。",
+          "en": "The distance proof protocol operates on C2PA assertions without altering the standard data structures.",
+          "ja": "距離証明プロトコルをC2PAアサーション上で動作させ、標準のデータ構造を変えない。"
+        }
+      }
+    ]
   }
 ]
