@@ -356,5 +356,96 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-08-13",
+    "projects": [
+      {
+        "url": "https://eprint.iacr.org/2026/1598",
+        "name": "zk-Cinema: Proving Video Provenance in Zero Knowledge",
+        "type": "论文",
+        "author": "Alexander Frolov, Jianfeng Guo, Xinyi Zhao, Trisha Datta, Dan Boneh, Ian Miers",
+        "tags": [
+          "Video Provenance",
+          "C2PA",
+          "Nova"
+        ],
+        "summary": {
+          "zh": "Frolov等人在论文中提出zk-Cinema，用于零知识证明视频来源。该系统将视频编辑表示为矩阵乘法，设计了SNARK友好的视频表示sfvr，并优化NeutronNova折叠方案，实现高效的大规模视频溯源证明。",
+          "en": "Frolov et al. propose zk-Cinema, proving video provenance in zero knowledge. They model video edits as matrix multiplications, design a SNARK-friendly video representation (sfvr), and optimize NeutronNova folding for scalable, efficient proofs.",
+          "ja": "Frolovらは論文で、ゼロ知識でビデオの来歴を証明するzk-Cinemaを提案した。ビデオ編集を行列乗算で表現し、SNARKに適した表現sfvrを設計、NeutronNovaフォールディングを最適化して大規模な証明を効率的に行えるようにした。"
+        },
+        "slogan": {
+          "zh": "【ZK论文】视频来源也能零知识证明？zk-Cinema 让视频溯源更高效"
+        },
+        "notes": {
+          "zh": [
+            "zk-Cinema针对C2PA签名视频的编辑溯源问题",
+            "将视频编辑操作转化为矩阵乘法，优化ZK证明",
+            "提出SNARK友好的视频表示sfvr，降低证明者工作量",
+            "设计了将签名数据嵌入SNARK证明的新方法",
+            "优化NeutronNova折叠方案，支持高元折叠",
+            "实现读写流式NeutronNova，利用高性能存储和并行计算扩展规模"
+          ],
+          "en": [
+            "zk-Cinema addresses provenance for C2PA-signed edited videos.",
+            "Video edits are represented as matrix multiplications for ZK-friendly proving.",
+            "sfvr (SNARK-friendly video representation) reduces prover work.",
+            "New methods incorporate signed data into SNARK proofs.",
+            "NeutronNova is optimized for high-arity folding.",
+            "Read-Write Streaming NeutronNova scales via high-performance storage and parallel computing."
+          ],
+          "ja": [
+            "zk-CinemaはC2PA署名された編集済みビデオの来歴検証を対象とする",
+            "ビデオ編集を行列乗算として表現し、ZK証明を効率化する",
+            "SNARK向けのビデオ表現sfvrにより証明者の計算量を削減",
+            "署名データをSNARK証明に組み込む新しい手法を設計",
+            "NeutronNovaを高アリティフォールディング向けに最適化",
+            "Read-Write Streaming版NeutronNovaで大規模化を実現"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "如何让编辑操作对ZK友好？",
+          "en": "How does zk-Cinema make edits ZK-friendly?",
+          "ja": "編集をZKに適した形にするには？"
+        },
+        "answer": {
+          "zh": "它将常见视频编辑表示为矩阵乘法，从而支持ZK证明优化和新的视频表示。",
+          "en": "It represents common video edits as matrix multiplications, enabling ZK-prover optimizations and a new video representation.",
+          "ja": "一般的なビデオ編集を行列乗算として表現し、ZK証明の最適化と新たなビデオ表現を可能にする。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "什么是sfvr？",
+          "en": "What is sfvr?",
+          "ja": "sfvrとは何か？"
+        },
+        "answer": {
+          "zh": "sfvr是一种SNARK友好的视频表示，可减少证明者工作。",
+          "en": "sfvr is a SNARK-friendly video representation that reduces prover work.",
+          "ja": "sfvrは証明者の作業を減らすSNARK向けビデオ表現である。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "zk-Cinema如何优化NeutronNova？",
+          "en": "How is NeutronNova optimized in zk-Cinema?",
+          "ja": "zk-CinemaはNeutronNovaをどう最適化したか？"
+        },
+        "answer": {
+          "zh": "它针对高元折叠进行优化，并通过读写流式版本利用高性能存储和并行计算扩展证明规模。",
+          "en": "It is optimized for high-arity folding, and a Read-Write Streaming version scales proofs using high-performance storage and parallelism.",
+          "ja": "高アリティのフォールディング向けに最適化し、Read-Write Streaming版で高性能ストレージと並列計算を利用して証明をスケールさせる。"
+        }
+      }
+    ]
   }
 ]
