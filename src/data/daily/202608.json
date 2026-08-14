@@ -447,5 +447,95 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-08-14",
+    "projects": [
+      {
+        "url": "https://eprint.iacr.org/2026/1635",
+        "name": "Limber: Low Overhead SNARKs for Integers from Any PCS",
+        "type": "论文",
+        "author": "Lucas Xia, Wilson Nguyen, Benedikt Bünz",
+        "tags": [
+          "Non-native arithmetic",
+          "Integer PCS"
+        ],
+        "summary": {
+          "zh": "Xia等人在论文中提出了一种低开销整数SNARK方案Limber，通过构造整数模PCS实现任意PCS的非原生算术处理，可证明RSA算术比现有电路方案快67倍以上。",
+          "en": "Xia et al. proposed Limber, a low-overhead integer SNARK with an integer mod-PCS, enabling generic non-native arithmetic over any PCS, achieving 67x faster RSA proofs.",
+          "ja": "Xia氏らは、整数計算のための低オーバーヘッドSNARK「Limber」を提案し、任意のPCS上で非ネイティブ演算を汎用的に処理できる整数mod-PCSを構築した。RSA演算を従来比67倍以上高速化。"
+        },
+        "slogan": {
+          "zh": "【ZK论文】整数证明也能飞？Limber让非原生算术提速67倍！"
+        },
+        "notes": {
+          "zh": [
+            "非原生算术是SNARK设计的核心瓶颈，常带来高开销和实现错误。",
+            "论文提出Limber，首个实用的整数模PCS构造。",
+            "Limber渐近上仅需o(1)乘法承诺开销。",
+            "可与任何标准域多项式承诺方案实例化，包括小域。",
+            "结合随机素域上的整数R1CS PIOP构建完整SNARK。",
+            "实验表明RSA算术比现有电路方法快67倍以上。"
+          ],
+          "en": [
+            "Non-native arithmetic is a key SNARK bottleneck, causing high overhead and bugs.",
+            "Limber is the first practical integer mod-PCS construction.",
+            "It achieves asymptotically o(1) multiplicative commitment overhead.",
+            "It can be instantiated with any standard field PCS, including small fields.",
+            "A PIOP for integer R1CS over a random prime yields the full SNARK.",
+            "RSA arithmetic is proven more than 67x faster than prior circuit-based methods."
+          ],
+          "ja": [
+            "非ネイティブ演算はSNARK設計の主要なボトルネックであり、高オーバーヘッドとバグの原因となる。",
+            "Limberは初の実用的な整数mod-PCS構成である。",
+            "漸近的にo(1)の乗法的コミットメントオーバーヘッドを達成する。",
+            "小体を含む任意の標準体PCSでインスタンス化できる。",
+            "ランダム素体上の整数R1CS用PIOPと組み合わせて完全なSNARKを構築する。",
+            "RSA演算を従来の回路ベース手法よりも67倍以上高速化できることを実証した。"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "Limber解决什么问题？",
+          "en": "What problem does Limber solve?",
+          "ja": "Limberは何を解決するか？"
+        },
+        "answer": {
+          "zh": "它解决了SNARK中非原生算术开销大、易出错的问题，提供低开销的整数证明。",
+          "en": "It addresses the high overhead and error-proneness of non-native arithmetic in SNARKs, enabling efficient integer proofs.",
+          "ja": "SNARKにおける非ネイティブ演算の高オーバーヘッドとエラー発生の問題を解決し、効率的な整数証明を可能にする。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "Limber如何实现低开销？",
+          "en": "How does Limber achieve low overhead?",
+          "ja": "Limberはどう低オーバーヘッドを実現するか？"
+        },
+        "answer": {
+          "zh": "它通过整数模PCS将整数关系通过指纹识别归约到随机素域，避免了昂贵的非原生运算。",
+          "en": "It uses an integer mod-PCS to fingerprint integer relations into a random prime field, avoiding costly non-native operations.",
+          "ja": "整数mod-PCSを使い、整数関係をランダム素体上の関係に指紋化することで、高価な非ネイティブ演算を回避する。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "整数mod-PCS的构造难点是什么？",
+          "en": "What is hard about constructing an integer mod-PCS?",
+          "ja": "整数mod-PCSの構築の難しさは何か？"
+        },
+        "answer": {
+          "zh": "难点在于承诺整数多项式并在随机素域上打开，且需在PCS的setup和commit阶段之后选择该素数，同时保持低开销。",
+          "en": "The challenge is committing to integer polynomials and opening modulo a random prime chosen after setup/commit, while maintaining low overhead.",
+          "ja": "整数多項式へのコミットと、セットアップ/コミット後に選ばれるランダム素体上でのオープンを、低オーバーヘッドで実現することにある。"
+        }
+      }
+    ]
   }
 ]
