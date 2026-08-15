@@ -537,5 +537,96 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-08-15",
+    "projects": [
+      {
+        "url": "https://x.com/drakefjustin/status/2087905684180418733",
+        "name": "Goodbye, Poseidon!",
+        "type": "新闻",
+        "author": "@drakefjustin",
+        "tags": [
+          "Binary Fields",
+          "Poseidon",
+          "BLAKE"
+        ],
+        "summary": {
+          "zh": "@drakefjustin 宣布以太坊基金会放弃Poseidon，转向SHA或BLAKE。基于二进制域的SNARK设计（如Binius、Flock）使传统哈希在SNARK中高效可用，计划2027年推出leanVM，2028年部署。",
+          "en": "@drakefjustin announced EF is dropping Poseidon for SHA/BLAKE, as binary-field SNARKs like Binius and Flock make traditional hashes efficient. Targets leanVM in 2027 and deployments in 2028.",
+          "ja": "@drakefjustin 氏は、イーサリアム財団がPoseidonを放棄しSHA/BLAKEへ移行すると発表。BiniusやFlockなどのバイナリ体SNARKにより従来ハッシュが効率的に。2027年にleanVM、2028年に展開を目指す。"
+        },
+        "slogan": {
+          "zh": "【ZK新闻】告别Poseidon！EF转向SHA/BLAKE，二进制域开启哈希密码学黄金时代"
+        },
+        "notes": {
+          "zh": [
+            "以太坊基金会放弃Poseidon，转向SHA或BLAKE",
+            "Binius和Flock等突破性SNARK设计使传统哈希在SNARK中高效",
+            "二进制域原生处理比特，减少传统哈希的证明开销",
+            "每秒钟可在笔记本上证明100万次传统哈希调用",
+            "leanVM预计2027年生产就绪，2028年部署CL/DL/EL",
+            "哈希基密码学优于格和同源方案，增强后量子安全性"
+          ],
+          "en": [
+            "Ethereum Foundation drops Poseidon for SHA/BLAKE.",
+            "Binius and Flock make traditional hashes SNARK-efficient via binary fields.",
+            "Binary fields natively handle bits, reducing overhead for traditional hashes.",
+            "1M traditional hash proofs per second on a laptop.",
+            "leanVM targets production in 2027, deployments in 2028.",
+            "Hash-based cryptography preferred over lattices/isogenies for post-quantum."
+          ],
+          "ja": [
+            "イーサリアム財団がPoseidonを放棄しSHA/BLAKEへ移行",
+            "BiniusやFlockのブレークスルーにより従来ハッシュがSNARKで効率的に",
+            "バイナリ体はビットをネイティブに扱い、従来ハッシュのオーバーヘッドを削減",
+            "ノートPCで毎秒100万回の伝統的ハッシュ証明が可能",
+            "leanVMは2027年の本番対応、2028年の展開を目指す",
+            "耐量子セキュリティでは格子・同種写像よりハッシュ基盤が優先"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "为什么传统哈希现在可行？",
+          "en": "Why are traditional hashes now viable?",
+          "ja": "なぜ従来ハッシュが有効になったのか？"
+        },
+        "answer": {
+          "zh": "二进制域使传统哈希在SNARK中高效，不需要专用的SNARK友好哈希。",
+          "en": "Binary fields make traditional hashes efficient in SNARKs, eliminating the need for SNARK-friendly hashes.",
+          "ja": "バイナリ体により従来ハッシュがSNARKで効率的になり、SNARKフレンドリーハッシュが不要になった。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "Binius和Flock是什么？",
+          "en": "What are Binius and Flock?",
+          "ja": "BiniusとFlockとは何か？"
+        },
+        "answer": {
+          "zh": "它们是2023和2024年提出的SNARK设计，利用二进制域实现传统哈希的高效证明。",
+          "en": "They are SNARK designs from 2023 and 2024 that leverage binary fields for efficient proofs of traditional hashes.",
+          "ja": "2023年と2024年に提案されたSNARK設計で、バイナリ体を利用して従来ハッシュの効率的な証明を実現する。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "转向哈希基密码学对后量子安全有何影响？",
+          "en": "What are the post-quantum implications?",
+          "ja": "ハッシュ基盤への移行は耐量子安全性にどう影響する？"
+        },
+        "answer": {
+          "zh": "哈希签名避免格和同源方案的风险，SNARK可压缩多重签名，提供更强的后量子保障。",
+          "en": "Hash-based signatures avoid lattice/isogeny risks, and SNARKs compress many signatures, offering robust post-quantum security.",
+          "ja": "ハッシュ署名は格子や同種写像のリスクを回避し、SNARKが多数の署名を圧縮することで、堅牢な耐量子安全性を提供する。"
+        }
+      }
+    ]
   }
 ]
