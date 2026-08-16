@@ -628,5 +628,96 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-08-16",
+    "projects": [
+      {
+        "url": "https://eprint.iacr.org/2026/1656",
+        "name": "BinarySpartan: Spartan over binary fields",
+        "type": "论文",
+        "author": "Srinath Setty",
+        "tags": [
+          "R1CS",
+          "sum-check",
+          "Ligerito"
+        ],
+        "summary": {
+          "zh": "Setty在论文中提出了BinarySpartan，将Spartan SNARK实例化于二元域上，利用Ligerito承诺方案与环切换技术，实现透明、无需可信设置且后量子安全的证明系统，并端到端验证了其高性能。",
+          "en": "Setty proposes BinarySpartan, instantiating Spartan over binary fields with Ligerito and ring-switching. It is transparent, post-quantum, and shows high performance for BLAKE3 and SHA-256 proofs.",
+          "ja": "Setty氏は論文で、Spartanを二元体上にインスタンス化したBinarySpartanを提案。Ligeritoコミットメントとリングスイッチングを利用し、透明・後量子安全なSNARKを実現、高性能を実証した。"
+        },
+        "slogan": {
+          "zh": "【ZK研究】后量子迁移新标杆！BinarySpartan让SHA-256证明只需6.2毫秒"
+        },
+        "notes": {
+          "zh": [
+            "BinarySpartan是Spartan在二元域上的自然实例化，并非全新证明系统",
+            "利用Ligerito承诺与Diamond-Posen环切换，实现透明且后量子安全",
+            "证明大小呈多项式对数级，无需可信设置",
+            "结合SIMD R1CS、SuperSpartan扩展及多种sum-check优化",
+            "实测证明BLAKE3每秒41万次，SHA-256每秒21.9万次",
+            "在以太坊客户端基准中，2KiB SHA-256证明仅6.2ms，为最快"
+          ],
+          "en": [
+            "BinarySpartan is a natural instantiation of Spartan over binary fields.",
+            "It uses Ligerito and ring-switching for transparency and post-quantum security.",
+            "Proofs are polylogarithmic and no trusted setup is needed.",
+            "It applies SIMD R1CS, SuperSpartan, and sum-check optimizations.",
+            "Achieves 410k BLAKE3/s and 219k SHA-256/s on M4 Max.",
+            "Fastest in EF benchmark: 6.2ms for 2KiB SHA-256."
+          ],
+          "ja": [
+            "BinarySpartanはSpartanを二元体上に自然にインスタンス化したもの",
+            "Ligeritoとリングスイッチングにより透明性と後量子安全性を実現",
+            "証明サイズは多対数、信頼できるセットアップ不要",
+            "SIMD R1CS、SuperSpartan、sum-check最適化を適用",
+            "M4 MaxでBLAKE3を毎秒41万回、SHA-256を毎秒21.9万回証明",
+            "EFベンチマークで2KiB SHA-256の証明が6.2ms、最速"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "BinarySpartan如何实现透明性？",
+          "en": "How does BinarySpartan achieve transparency?",
+          "ja": "BinarySpartanはどう透明性を実現するか？"
+        },
+        "answer": {
+          "zh": "通过使用Ligerito承诺方案，无需可信设置即可生成和验证证明。",
+          "en": "By using the Ligerito commitment scheme, it requires no trusted setup.",
+          "ja": "Ligeritoコミットメントを使用し、信頼できる設定を不要にする。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "BinarySpartan的性能表现如何？",
+          "en": "What is BinarySpartan's performance?",
+          "ja": "BinarySpartanの性能は？"
+        },
+        "answer": {
+          "zh": "在M4 Max上，BLAKE3每秒41万次，SHA-256每秒21.9万次，满足后量子区块链迁移需求。",
+          "en": "On M4 Max, it proves BLAKE3 at 410k/s and SHA-256 at 219k/s, meeting migration needs.",
+          "ja": "M4 MaxでBLAKE3毎秒41万回、SHA-256毎秒21.9万回を証明し、移行要件を満たす。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "BinarySpartan采用了哪些关键技术？",
+          "en": "What key techniques does BinarySpartan use?",
+          "ja": "BinarySpartanはどのような技術を用いているか？"
+        },
+        "answer": {
+          "zh": "采用Ligerito承诺、Diamond-Posen环切换、SIMD R1CS、SuperSpartan扩展及多种sum-check优化。",
+          "en": "It uses Ligerito, ring-switching, SIMD R1CS, SuperSpartan, and sum-check optimizations.",
+          "ja": "Ligerito、リングスイッチング、SIMD R1CS、SuperSpartan、sum-check最適化を利用。"
+        }
+      }
+    ]
   }
 ]
