@@ -12,6 +12,7 @@
     "today": "tsx src/scripts/cli.js today",
     "screenshot": "tsx src/scripts/cli.js screenshot",
     "notify": "tsx src/scripts/cli.js notify",
+    "remote:notify": "ssh icer@la-209 'export NVM_DIR=\"$HOME/.nvm\"; [ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\"; cd ~/zkhints && git pull && npm run notify'",
     "translate:daily:ja": "node scripts/translate-daily-ja.js",
     "telegram:updates": "node scripts/get-telegram-updates.js"
   },
