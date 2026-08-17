@@ -719,5 +719,96 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-08-17",
+    "projects": [
+      {
+        "url": "https://strk20.starknet.io/hackathon",
+        "name": "Private Sprint - Build privacy apps on Starknet",
+        "type": "活动",
+        "author": "STRK20",
+        "tags": [
+          "Starknet",
+          "Privacy",
+          "Hackathon"
+        ],
+        "summary": {
+          "zh": "STRK20组织了Private Sprint黑客松，于8月14日至31日举行，聚焦在Starknet主网上构建隐私应用，提供5000美元STRK奖金，参赛者需公开构建并提交主网部署。",
+          "en": "STRK20 organized the Private Sprint hackathon, running from Aug 14 to 31, focused on building privacy apps on Starknet mainnet, with a $5,000 STRK prize pool, requiring public building and mainnet deployments.",
+          "ja": "STRK20は8月14日から31日まで、Starknetメインネット上でプライバシーアプリを構築することに特化したPrivate Sprintハッカソンを開催し、賞金総額5,000ドルのSTRKを提供する。参加者は公開で構築し、メインネットにデプロイする必要がある。"
+        },
+        "slogan": {
+          "zh": "【ZK活动】Starknet隐私黑客松：18天冲刺$5000奖金，公开构建赢大奖！"
+        },
+        "notes": {
+          "zh": [
+            "活动时间：8月14日至31日，共18天",
+            "奖金池：$5,000 STRK，前三名分别为$2,500/$1,500/$1,000",
+            "参赛方式：通过pull request登记GitHub仓库和Telegram用户名",
+            "提交截止：8月31日23:59 UTC，9月4日公布结果",
+            "评判标准：集成深度30%，主网可用产品30%，创新25%，文档质量15%",
+            "参赛者需在Starknet主网上部署真实应用，并公开构建"
+          ],
+          "en": [
+            "Duration: Aug 14-31, 18 days in total",
+            "Prize: $5,000 STRK, top three get $2,500/$1,500/$1,000",
+            "Entry: via pull request adding GitHub repo and Telegram username",
+            "Deadline: Aug 31 23:59 UTC, winners announced Sep 4",
+            "Criteria: integration depth 30%, working mainnet product 30%, innovation 25%, documentation 15%",
+            "Participants must deploy a real app on Starknet mainnet and build in public"
+          ],
+          "ja": [
+            "期間：8月14日～31日の18日間",
+            "賞金：$5,000 STRK、上位3名は$2,500/$1,500/$1,000",
+            "参加方法：pull requestでGitHubリポジトリとTelegramユーザー名を登録",
+            "締切：8月31日23:59 UTC、勝者は9月4日に発表",
+            "評価基準：統合度30%、メインネットでの実用性30%、革新性25%、ドキュメント品質15%",
+            "参加者はStarknetメインネットに実アプリをデプロイし、公開で構築する必要がある"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "共有多少个参赛项目？",
+          "en": "How many projects entered?",
+          "ja": "参加プロジェクト数は？"
+        },
+        "answer": {
+          "zh": "目前总共参赛有57个项目，覆盖隐私支付、DeFi、基础设施、安全、社交、游戏、身份和治理八类。",
+          "en": "There are currently 57 projects participating, covering eight categories: privacy payments, DeFi, infrastructure, security, social, gaming, identity, and governance.",
+          "ja": "今は57件を集計し、決済、DeFi、基盤、セキュリティ、ソーシャル、ゲーム、ID、ガバナンスの8分野に分類している。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "最大的项目类别是什么？",
+          "en": "What is the largest category?",
+          "ja": "最大のカテゴリーは？"
+        },
+        "answer": {
+          "zh": "隐私支付与薪资最多，共18个，占57个项目的31.6%，涵盖薪资、发票、红包、订阅和企业付款。",
+          "en": "Private payments and payroll lead with 18 projects, 31.6%, spanning salaries, invoices, gifts, subscriptions, and payouts.",
+          "ja": "プライバシー決済・給与が18件、31.6%で最多となり、給与、請求、ギフト、購読、企業支払いを含む。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "哪些项目评估隐私泄露？",
+          "en": "Which projects assess privacy leakage?",
+          "ja": "漏えいを評価する案件は？"
+        },
+        "answer": {
+          "zh": "lens、VeilCheck和Morrow在签名前评估时序关联、金额指纹或注资路径，说明隐私强度取决于具体操作方式。",
+          "en": "lens, VeilCheck, and Morrow assess timing links, amount fingerprints, or funding routes before signing, treating privacy as contextual.",
+          "ja": "lens、VeilCheck、Morrowは署名前に時間相関、金額指紋、資金経路を評価し、操作ごとのプライバシー差を示す。"
+        }
+      }
+    ]
   }
 ]
