@@ -13,6 +13,33 @@ dotenv.config({ quiet: true });
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
+// State file used to ensure notify runs at most once per day.
+// To force another run on the same day, delete or edit this file.
+const NOTIFY_STATE_FILE = path.join(process.cwd(), ".notify-last-run.json");
+
+function getTodayDateString() {
+  const { year, month, day } = getDateParts();
+  return `${year}-${month}-${day}`;
+}
+
+function hasNotifyRunToday() {
+  if (!fs.existsSync(NOTIFY_STATE_FILE)) return false;
+  try {
+    const data = JSON.parse(fs.readFileSync(NOTIFY_STATE_FILE, "utf-8"));
+    return data.date === getTodayDateString();
+  } catch {
+    return false;
+  }
+}
+
+function markNotifyRunToday() {
+  fs.writeFileSync(
+    NOTIFY_STATE_FILE,
+    JSON.stringify({ date: getTodayDateString() }, null, 2) + "\n",
+    "utf-8",
+  );
+}
+
 const program = new Command();
 
 // WeChat Work webhook URL - this should be configured via environment variable
@@ -348,6 +375,16 @@ program
       const { year, month, day } = getDateParts(options.date);
       const dateString = `${year}-${month}-${day}`;
 
+      // Once-per-day guard: only allow notify to run once per day.
+      // To bypass, delete or edit .notify-last-run.json.
+      if (!options.date && hasNotifyRunToday()) {
+        console.log(
+          `Notify already ran today (${getTodayDateString()}). Skipping. ` +
+            `To run again, delete or edit ${NOTIFY_STATE_FILE}.`,
+        );
+        return;
+      }
+
       // Check if data exists for the specified date
       const newsData = await loadNewsData();
       const todayData = newsData.find((entry) => entry.date === dateString);
@@ -389,6 +426,11 @@ program
             await sendTelegramNotification(imagePath, null, lang);
           }
         }
+      }
+
+      // Record successful run for once-per-day guard.
+      if (!options.date) {
+        markNotifyRunToday();
       }
     } catch (error) {
       console.error("Error in notify command:", error);
