@@ -11,6 +11,12 @@
         "color": "grey",
         "singleInstance": true,
         "command": "npm run dev:today"
+      },
+      {
+        "name": "$(rocket) Remote Notify",
+        "color": "grey",
+        "singleInstance": true,
+        "command": "npm run remote:notify"
       }
     ]
   }
