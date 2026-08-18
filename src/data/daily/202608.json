@@ -810,5 +810,96 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-08-18",
+    "projects": [
+      {
+        "url": "https://www.frontiersin.org/journals/digital-health/articles/10.3389/fdgth.2026.1821129/full",
+        "name": "TeleZK-FL: enabling trustless and verifiable remote patient monitoring via quantized zero-knowledge federated learning",
+        "type": "论文",
+        "author": "Jayaraman P, Delhibabu R",
+        "tags": [
+          "Federated Learning",
+          "Halo2",
+          "LUT"
+        ],
+        "summary": {
+          "zh": "Jayaraman等人在论文中提出了TeleZK-FL，结合INT8后训练量化与LUT参数，使边缘设备能够直接生成零知识证明，实现无需信任的联邦学习，证明速度提升约25倍。",
+          "en": "Jayaraman et al. proposed TeleZK-FL, combining INT8 post-training quantization with LUT arguments to enable on-device zero-knowledge proving for verifiable federated learning, achieving ~25x faster proofs.",
+          "ja": "JayaramanらはTeleZK-FLを提案した。INT8後訓練量子化とLUT引数を組み合わせ、エッジデバイス上でゼロ知識証明を生成可能にし、約25倍の高速化を実現した。"
+        },
+        "slogan": {
+          "zh": "【ZK论文】边缘设备也能零知识证明！TeleZK-FL让联邦学习可验证且提速25倍"
+        },
+        "notes": {
+          "zh": [
+            "TeleZK-FL 将梯度量化为INT8，减少通信负载75%",
+            "使用Halo2 LUT参数将约束成本与位宽解耦",
+            "在树莓派4上生成全模型证明仅需84ms",
+            "在CheXpert和PTB-XL上AUC仅下降0.1%和0.3%",
+            "安全基于KZG承诺，经典安全但非抗量子",
+            "可抵御大规模梯度中毒攻击，但对低范数后门不设防"
+          ],
+          "en": [
+            "TeleZK-FL quantizes gradients to INT8, cutting communication payload by 75%.",
+            "Halo2 LUT arguments decouple constraint cost from arithmetic bit-width.",
+            "Full-model proof generation takes only 84 ms on Raspberry Pi 4.",
+            "AUC drops only 0.1% on CheXpert and 0.3% on PTB-XL.",
+            "Security relies on KZG commitments, classically secure but not post-quantum.",
+            "Defends against large-norm gradient poisoning but not low-norm backdoors."
+          ],
+          "ja": [
+            "TeleZK-FLは勾配をINT8に量子化し、通信量を75%削減する",
+            "Halo2 LUT引数により制約コストをビット幅から切り離す",
+            "Raspberry Pi 4で全モデル証明を84msで生成可能",
+            "CheXpertではAUCが0.1%、PTB-XLでは0.3%の低下のみ",
+            "セキュリティはKZGコミットメントに依存し、古典的に安全だが耐量子ではない",
+            "大規模勾配ポイズニングには防衛できるが、低ノルムバックドアには対応しない"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "TeleZK-FL解决什么问题？",
+          "en": "What problem does TeleZK-FL solve?",
+          "ja": "TeleZK-FLは何を解決するか？"
+        },
+        "answer": {
+          "zh": "它让资源受限的医疗边缘设备无需可信服务器即可生成零知识证明，实现可验证的联邦学习。",
+          "en": "It enables resource-constrained medical edge devices to generate zero-knowledge proofs without trusted servers, achieving verifiable federated learning.",
+          "ja": "リソース制約のある医療エッジデバイスが信頼できるサーバーなしでゼロ知識証明を生成し、検証可能な連合学習を実現する。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "如何加速证明生成？",
+          "en": "How does it speed up proof generation?",
+          "ja": "どうやって証明生成を高速化するか？"
+        },
+        "answer": {
+          "zh": "通过查找表参数替代算术约束，使证明成本与位宽解耦，比标准zk-SNARK快约25倍。",
+          "en": "By replacing arithmetic constraints with LUT arguments, cost is decoupled from bit-width, achieving ~25x speedup over standard zk-SNARKs.",
+          "ja": "算術制約をLUT引数に置き換え、コストをビット幅から切り離すことで、標準zk-SNARK比で約25倍高速化する。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "防中毒攻击的保证是什么？",
+          "en": "What poisoning defense is guaranteed?",
+          "ja": "ポイズニング防御の保証は？"
+        },
+        "answer": {
+          "zh": "电路强制L2范数范围检查，拒绝大范数恶意更新，但无法阻止低范数后门攻击，需与鲁棒聚合结合。",
+          "en": "The circuit enforces an L2 norm range check, rejecting large-norm updates, but it does not stop low-norm backdoors; robust aggregation is complementary.",
+          "ja": "回路はL2ノルム範囲チェックを強制し、大規模な更新を拒否するが、低ノルムバックドアは防げないため、ロバスト集約と組み合わせる必要がある。"
+        }
+      }
+    ]
   }
 ]
