@@ -901,5 +901,95 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-08-19",
+    "projects": [
+      {
+        "url": "https://eprint.iacr.org/2026/1653",
+        "name": "Lumora: A Family of Permutation-Based Wide-Block Ciphers for Post-Quantum zkSNARK Applications",
+        "type": "论文",
+        "author": "Susanta Samanta, Martin Grenouilloux, Guang Gong, Chunlei Li",
+        "tags": [
+          "Even-Mansour",
+          "R1CS"
+        ],
+        "summary": {
+          "zh": "Samanta等人在论文中提出了一族面向算术化的置换型宽分组密码Lumora，用于优化zkSNARK电路中的验证效率，并支持后量子数字签名应用。",
+          "en": "Samanta et al. proposed Lumora, an arithmetization-oriented family of permutation-based wide-block ciphers optimized for zkSNARK verification and post-quantum signatures.",
+          "ja": "Samantaらは論文で、zkSNARK回路での検証効率を最適化する算術化指向の置換型広ブロック暗号Lumoraを提案し、耐量子デジタル署名への応用も示した。"
+        },
+        "slogan": {
+          "zh": "【ZK论文】Lumora：面向后量子zkSNARK的宽分组密码新家族"
+        },
+        "notes": {
+          "zh": [
+            "Lumora采用AES-like SPN结构，定义在F_{2^n}上，n可取16、32、64。",
+            "通过Even-Mansour范式消除独立密钥调度，减少R1CS约束数量。",
+            "设计目标是在zkSNARK电路内实现快速验证，提升证明者性能。",
+            "论文提供了详细的安全分析，涵盖差分和线性密码分析等。",
+            "实现结果通过与FAEST-EM-256框架的对比展示其效率优势。",
+            "该密码族同时面向后量子签名应用，拓宽了ZK友好密码的使用场景。"
+          ],
+          "en": [
+            "Lumora adopts an AES-like SPN structure over F_{2^n} with n = 16, 32, or 64.",
+            "The Even-Mansour paradigm removes a separate key schedule, cutting R1CS constraints.",
+            "It targets fast inside-circuit verification for zkSNARK provers.",
+            "The paper includes a detailed security analysis of the family.",
+            "Implementations are compared within the FAEST-EM-256 framework.",
+            "The ciphers also target post-quantum signature applications."
+          ],
+          "ja": [
+            "LumoraはAES類似のSPN構造を採用し、F_{2^n}（n=16, 32, 64）上で定義される。",
+            "Even-Mansourパラダイムにより独立した鍵スケジュールを排除し、R1CS制約を削減する。",
+            "zkSNARK回路内での高速検証を目的とし、証明者の性能を向上させる。",
+            "論文は暗号族の詳細な安全性解析を含む。",
+            "実装はFAEST-EM-256フレームワークと比較され、効率性が示された。",
+            "この暗号族は耐量子署名への応用も視野に入れている。"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "为什么ZK证明需要专门的对称密码？",
+          "en": "Why do ZK proofs need specialized symmetric ciphers?",
+          "ja": "ZK証明に専門の対称暗号が必要なのはなぜか？"
+        },
+        "answer": {
+          "zh": "传统密码在R1CS中约束数量大，导致证明生成开销高。算术友好密码通过减少非线性乘法约束来提升性能。",
+          "en": "Traditional ciphers incur many R1CS constraints, raising prover cost. Arithmetization-oriented ciphers reduce these constraints.",
+          "ja": "従来の暗号はR1CSの制約が多く、証明生成コストが高い。算術化指向暗号はその制約を削減する。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "Lumora如何节省证明开销？",
+          "en": "How does Lumora reduce proving overhead?",
+          "ja": "Lumoraはどう証明コストを削減するか？"
+        },
+        "answer": {
+          "zh": "它采用Even-Mansour范式，省去密钥调度电路，并针对R1CS优化非线性乘法约束的数量。",
+          "en": "It uses Even-Mansour to avoid key schedule circuits and optimizes the number of nonlinear multiplication constraints.",
+          "ja": "Even-Mansour方式で鍵スケジュール回路を省き、非線形乗算制約を最適化する。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "多个实例如何影响应用选择？",
+          "en": "How do multiple instances affect application choices?",
+          "ja": "複数のインスタンスは応用選択にどう影響するか？"
+        },
+        "answer": {
+          "zh": "不同n值提供不同的安全强度和效率，允许用户根据需要选择合适参数，例如n=64用于高安全性场景。",
+          "en": "Different n values offer trade-offs between security and efficiency, letting users pick parameters like n=64 for high-security cases.",
+          "ja": "nの値に応じて安全性と効率のトレードオフがあり、高安全性が必要ならn=64などを選択できる。"
+        }
+      }
+    ]
   }
 ]
