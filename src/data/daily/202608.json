@@ -991,5 +991,95 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-08-20",
+    "projects": [
+      {
+        "url": "https://arxiv.org/abs/2608.17070",
+        "name": "Certified but Private: Scalable Zero-Knowledge Proofs for Neural Network Guarantees",
+        "type": "论文",
+        "author": "Youwei Zhong",
+        "tags": [
+          "zkML",
+          "CROWN"
+        ],
+        "summary": {
+          "zh": "Zhong等人在论文中提出了PANDA系统，利用零知识证明在不泄露模型参数的前提下证明神经网络的鲁棒性与公平性，核心贡献是面向非线性激活层的新型线性松弛界证明算法，显著提升了ZKP的可扩展性。",
+          "en": "Zhong et al. proposed PANDA, a scalable system using ZKPs to prove robustness and fairness of neural networks without revealing private parameters. Its core contribution is a novel algorithm for proving linear relaxation bounds for non-linear activations, enabling lightweight proofs and polynomial scaling.",
+          "ja": "Zhongらは論文で、モデルの秘密パラメータを開示せずにニューラルネットワークの頑健性と公平性を証明できるスケーラブルなシステムPANDAを提案した。中核となる貢献は、非線形活性化層の線形緩和境界を証明する新しいアルゴリズムであり、軽量な証明と多項式スケーリングを実現する。"
+        },
+        "slogan": {
+          "zh": "【ZK研究】AI模型参数是商业机密？PANDA用ZK证明安全属性，不泄密！"
+        },
+        "notes": {
+          "zh": [
+            "PANDA利用ZKP在隐藏模型参数时证明模型鲁棒性和公平性。",
+            "系统基于CROWN鲁棒性认证框架构建。",
+            "新算法为非线性激活层证明线性松弛界限，生成轻量级证明。",
+            "支持超过290万参数的神经网络，5分钟内生成证明，10秒验证。",
+            "相比先前依赖指数时间算法的系统，PANDA多项式扩展，支持网络大4个数量级。",
+            "为安全关键和合规场景中的模型审计提供新解决方案。"
+          ],
+          "en": [
+            "PANDA verifies model robustness and fairness with hidden parameters via ZKPs.",
+            "Built on CROWN, a robustness certification framework.",
+            "A new algorithm certifies linear relaxation bounds for non-linear layers, yielding lightweight proofs.",
+            "Handles networks with 2.9M+ parameters: ~5 min to prove, ~10 s to verify.",
+            "Polynomially scalable, supporting networks 4 orders of magnitude larger than prior ZKP systems.",
+            "Offers a new path for privacy-preserving model audits."
+          ],
+          "ja": [
+            "PANDAは、モデルパラメータを秘匿したまま、ニューラルネットワークの頑健性と公平性をZKPで検証する。",
+            "CROWN頑健性認証フレームワーク上に構築されている。",
+            "非線形活性化層の線形緩和境界を証明する新アルゴリズムにより、軽量な証明を実現。",
+            "290万以上のパラメータを持つネットワークを約5分で証明生成、10秒で検証可能。",
+            "指数時間アルゴリズムを前提とする従来方式と比べ、多項式スケーリングで4桁大きなネットワークに対応。",
+            "安全性重視やコンプライアンス領域におけるモデル監査の新たな手法を提供する。"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "PANDA验证哪些模型性质？",
+          "en": "Which model properties does PANDA verify?",
+          "ja": "PANDAはどのモデル特性を検証するのか？"
+        },
+        "answer": {
+          "zh": "它验证神经网络的鲁棒性和公平性，且不泄露模型参数。",
+          "en": "It verifies robustness and fairness of neural networks without revealing model parameters.",
+          "ja": "ニューラルネットワークの頑健性と公平性を、モデルパラメータを公開せずに検証する。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "PANDA依赖哪个现有验证框架？",
+          "en": "Which existing verification framework does PANDA build on?",
+          "ja": "PANDAは既存のどの検証フレームワークに基づくのか？"
+        },
+        "answer": {
+          "zh": "它基于CROWN框架，这是一个广泛用于神经网络形式验证的鲁棒性认证工具。",
+          "en": "It builds on CROWN, a robustness certification framework widely used for formal verification of neural networks.",
+          "ja": "ニューラルネットワークの形式検証に広く使われる頑健性認証フレームワークCROWNを基盤としている。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "PANDA与先前zk鲁棒性系统相比有哪些提升？",
+          "en": "What improvements does PANDA offer over prior zk robustness systems?",
+          "ja": "PANDAは従来のzkロバスト性システムと比べてどのような改善があるのか？"
+        },
+        "answer": {
+          "zh": "支持290万参数的网络，5分钟生成证明、10秒验证，网络规模大4个数量级。",
+          "en": "It supports networks with 2.9M parameters, proving in 5 minutes and verifying in 10 seconds, scaling to networks 4 orders of magnitude larger.",
+          "ja": "290万パラメータのネットワークをサポートし、証明生成約5分・検証約10秒で、従来比4桁大きいネットワークに対応する。"
+        }
+      }
+    ]
   }
 ]
