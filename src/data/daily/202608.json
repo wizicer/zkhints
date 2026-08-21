@@ -1081,5 +1081,97 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-08-21",
+    "projects": [
+      {
+        "url": "https://eprint.iacr.org/2026/1717",
+        "name": "Verifiable Compression of Images",
+        "type": "论文",
+        "author": "Yue Zhang, Mingxun Zhou, Benedikt Bünz",
+        "tags": [
+          "JPEG",
+          "C2PA",
+          "KZH",
+          "Poseidon"
+        ],
+        "summary": {
+          "zh": "张等人提出了SPEG，首个支持个人设备上完整图像传输管道的实用证明系统，支持JPEG压缩并保持C2PA签名有效性，优化了非代数JPEG编码和浮点运算。FHD图像证明耗时47秒（Poseidon模式）或2秒（快速模式），并修复了VIMz的安全漏洞。",
+          "en": "Zhang et al. proposed SPEG, the first practical proof system supporting the full image transmission pipeline on personal devices. It supports JPEG compression while preserving C2PA signatures, with optimizations for non-algebraic encoding and floating-point arithmetic. Proving FHD images takes 47s (Poseidon) or 2s (fast mode). Also fixes a security gap in VIMz.",
+          "ja": "張氏らは、個人デバイス上での完全な画像伝送パイプラインをサポートする初の実用的な証明システムSPEGを提案した。JPEG圧縮をC2PA署名と両立させ、非代数エンコーディングと浮動小数点演算を最適化。FHD画像の証明はPoseidonモードで47秒、高速モードで2秒。VIMzのセキュリティギャップも修正。"
+        },
+        "slogan": {
+          "zh": "【ZK论文】SPEG：让JPEG压缩也能零知识验证！47秒证明一张高清图"
+        },
+        "notes": {
+          "zh": [
+            "SPEG是首个支持完整图像传输管道的实用证明系统",
+            "支持JPEG压缩同时验证C2PA签名有效性",
+            "提供Poseidon兼容模式和基于KZH的快速模式两种方案",
+            "关键优化包括将非代数JPEG编码移出电路及避免浮点范围检查",
+            "FHD图像证明时间47秒（Poseidon模式）和2秒（快速模式）",
+            "发现并修复了VIMz中允许伪造证明的安全漏洞"
+          ],
+          "en": [
+            "SPEG is the first practical proof system supporting the full image transmission pipeline.",
+            "It supports JPEG compression while verifying C2PA signatures.",
+            "Offers a Poseidon-compatible mode and a fast KZH-based mode.",
+            "Key optimizations: moving non-algebraic JPEG encoding out of the circuit and avoiding range checks in floating-point arithmetic.",
+            "FHD proving takes 47s (Poseidon) and 2s (fast mode).",
+            "Identifies and fixes a VIMz security gap that allows forging proofs for unauthorized images."
+          ],
+          "ja": [
+            "SPEGは完全な画像伝送パイプラインをサポートする初の実用的な証明システム",
+            "JPEG圧縮をC2PA署名検証と両立",
+            "Poseidon互換モードとKZHベースの高速モードを提供",
+            "非代数JPEGエンコーディングを回路外へ移動し、浮動小数点の範囲チェックを回避",
+            "FHD画像の証明はPoseidonモードで47秒、高速モードで2秒",
+            "未認証画像の証明偽造を可能にするVIMzのセキュリティギャップを発見し修正"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "为什么JPEG压缩难以用ZK证明？",
+          "en": "Why is JPEG compression hard to prove in ZK?",
+          "ja": "JPEG圧縮はなぜZKで証明が難しいか？"
+        },
+        "answer": {
+          "zh": "JPEG涉及非代数运算和浮点运算，难以高效地放入电路。",
+          "en": "JPEG involves non-algebraic operations and floating-point arithmetic, which are inefficient to express in circuits.",
+          "ja": "JPEGは非代数演算や浮動小数点演算を含み、回路に効率的に表現するのが難しい。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "SPEG如何避免在电路中处理JPEG编码？",
+          "en": "How does SPEG avoid handling JPEG encoding in-circuit?",
+          "ja": "SPEGはどのようにJPEGエンコーディングを回路内で扱わないか？"
+        },
+        "answer": {
+          "zh": "将非代数JPEG编码移出证明电路，只验证必要属性。",
+          "en": "It moves non-algebraic JPEG encoding outside the proving circuit and verifies only the necessary properties.",
+          "ja": "非代数JPEGエンコーディングを証明回路の外に置き、必要な特性のみを検証する。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "论文如何实现安全的浮点运算？",
+          "en": "How does the paper handle secure floating-point arithmetic?",
+          "ja": "論文は浮動小数点演算をどう安全に扱うか？"
+        },
+        "answer": {
+          "zh": "通过避免范围检查来优化浮点运算，在电路外处理非代数部分。",
+          "en": "It avoids range checks in floating-point arithmetic, moving non-algebraic parts outside the circuit.",
+          "ja": "浮動小数点演算における範囲チェックを回避し、非代数部分を回路外で処理する。"
+        }
+      }
+    ]
   }
 ]
