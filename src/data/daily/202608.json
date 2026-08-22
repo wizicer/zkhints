@@ -1173,5 +1173,95 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-08-22",
+    "projects": [
+      {
+        "url": "https://eprint.iacr.org/2026/1729",
+        "name": "A Unified Framework for Contract-Validated Benchmarking of Zero-Knowledge Proving Systems",
+        "type": "论文",
+        "author": "Matej Hulek, Martin Peresini, Ivan Homoliak",
+        "tags": [
+          "Benchmarking",
+          "zkVM"
+        ],
+        "summary": {
+          "zh": "Hulek等人在论文中提出了统一的主机-代理框架，用于在共同执行方法下对异构ZK证明系统进行基准测试，通过语义合约与验证标志确保各后端在相同声明下可比，并评估了Groth16、Plonky3及zkVM等系统。",
+          "en": "Hulek et al. proposed a unified host-agent framework for benchmarking heterogeneous ZK proving systems under a common execution method, ensuring comparability via semantic contracts and validation flags, and evaluated Groth16, Plonky3, and zkVM systems.",
+          "ja": "Hulekらは論文で、共通の実行手法下で異種ZK証明システムをベンチマークする統合ホスト・エージェントフレームワークを提案し、セマンティック契約と検証フラグでバックエンドの比較可能性を確保、Groth16やPlonky3、zkVMなどを評価した。"
+        },
+        "slogan": {
+          "zh": "【ZK论文】告别ZK测评乱象：统一框架让Groth16与zkVM真正可比"
+        },
+        "notes": {
+          "zh": [
+            "该框架采用容器化代理隔离运行各证明系统",
+            "scheme-adapter层负责适配异构证明后端",
+            "通过语义合约与JSON产物规范基准测试结果",
+            "评估涵盖Groth16、Halo2、Plonky3、Winterfell、Nova、RISC Zero、SP1、ICICLE",
+            "8核CPU下Plonky3与Winterfell在证明时间和内存上表现最优",
+            "核心方法论贡献：验证被证陈述、披露安全配置文件、报告资源限制"
+          ],
+          "en": [
+            "The framework uses containerized agents to isolate each proving system.",
+            "A scheme-adapter layer interfaces with heterogeneous backends.",
+            "Semantic contracts and JSON artifacts standardize benchmark reporting.",
+            "Evaluated Groth16, Halo2, Plonky3, Winterfell, Nova, RISC Zero, SP1, and ICICLE.",
+            "On 8 CPU cores, Plonky3 and Winterfell had the best proving time and RAM.",
+            "Key methodological contribution: validate statements, disclose security profiles, and report resource limits."
+          ],
+          "ja": [
+            "フレームワークはコンテナ化されたエージェントで各証明システムを分離実行する",
+            "scheme-adapter層が異種バックエンドを適配する",
+            "セマンティック契約とJSON産物でベンチマーク結果を標準化する",
+            "Groth16、Halo2、Plonky3、Winterfell、Nova、RISC Zero、SP1、ICICLEを評価",
+            "8 CPUコアではPlonky3とWinterfellが証明時間とRAMで最優秀だった",
+            "主要な方法論的貢献：証明対象の検証、セキュリティプロファイルの開示、リソース制限の報告"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "为什么现有ZK基准测试结果难以比较？",
+          "en": "Why are existing ZKP benchmarks hard to compare?",
+          "ja": "なぜ既存のZKベンチマーク比較は困難か？"
+        },
+        "answer": {
+          "zh": "因为不同基准常比较不同工作负载、证明模式和硬件路径，缺乏统一标准。",
+          "en": "They often compare different workloads, proof modes, and hardware paths without unified standards.",
+          "ja": "ワークロードや証明モード、ハードウェアが異なるため、統一基準がない。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "语义合约如何防止后端比较偏差？",
+          "en": "How do semantic contracts prevent comparison bias?",
+          "ja": "セマンティック契約はどう偏りを防ぐか？"
+        },
+        "answer": {
+          "zh": "合约定义工作负载语义与公共字段，主机据此核查，避免不同电路差异导致误判。",
+          "en": "They define workload semantics and public fields for the host to verify, avoiding circuit-specific skew.",
+          "ja": "ワークロードの意味と公共フィールドを定義し、ホストが検証して回路差異を排除する。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "为何说核心贡献是方法论？",
+          "en": "Why is the contribution primarily methodological?",
+          "ja": "なぜ貢献は方法論的と言えるか？"
+        },
+        "answer": {
+          "zh": "因它强调验证陈述本身、披露安全配置文件及资源限制，而非仅比较证明时间。",
+          "en": "It focuses on validating statements, disclosing security profiles, and reporting resource limits beyond proving time.",
+          "ja": "証明時間だけでなく、証明対象の検証やセキュリティプロファイル・リソース制限の報告を重視するため。"
+        }
+      }
+    ]
   }
 ]
