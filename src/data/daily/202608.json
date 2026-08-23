@@ -1263,5 +1263,96 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-08-23",
+    "projects": [
+      {
+        "url": "https://eprint.iacr.org/2026/1758",
+        "name": "Sluice: Prove-Phase Bounded-Memory Groth16 via Read-Write Streaming",
+        "type": "论文",
+        "author": "Kyeongtae Lee, Jihye Kim, Hyunok Oh",
+        "tags": [
+          "Streaming",
+          "Memory-Bounded",
+          "BN-254"
+        ],
+        "summary": {
+          "zh": "Lee等人在论文中提出Sluice，一种读写流式Groth16证明器，通过SBM算法将证明内存从O(N)降至O(log N)，在保持标准接口下以顺序存储I/O换取RAM，实验于8GB内存限制下完成N=2^23证明。",
+          "en": "Lee et al. proposed Sluice, a read-write streaming Groth16 prover that cuts prove-phase memory from O(N) to O(log N) via the SBM algorithm. It preserves the standard interface, trading RAM for sequential storage I/O, and succeeds under an 8GB cap at N=2^23.",
+          "ja": "Leeらは、SBMアルゴリズムで証明メモリをO(N)からO(log N)に削減する読み書きストリーミングGroth16証明器Sluiceを提案。標準インターフェースを維持し、8GBメモリ制限でN=2^23の証明生成に成功した。"
+        },
+        "slogan": {
+          "zh": "【ZK论文】内存从 O(N) 压到 O(log N)！Sluice 让 Groth16 在 8GB 内存里跑起来"
+        },
+        "notes": {
+          "zh": [
+            "Sluice将Groth16证明阶段随机访问工作内存降至O(log N)",
+            "核心技术创新为Split-Butterfly-Merge (SBM)流式NTT算法",
+            "SBM仅需O(log N)内存、O(N log N)总I/O和O(log N)次顺序外存遍历",
+            "结合流式稀疏R1CS求值与分块Pippenger MSM完成证明路径",
+            "完全兼容标准Groth16：128字节证明、3-pairing验证，无需修改验证合约",
+            "在8GB内存限制下成功生成N=2^23证明，而标准证明器需16GB"
+          ],
+          "en": [
+            "Sluice reduces Groth16 prove-phase random-access memory to O(log N).",
+            "Core innovation is the Split-Butterfly-Merge (SBM) streaming NTT algorithm.",
+            "SBM uses O(log N) memory, O(N log N) total I/O, and O(log N) sequential passes.",
+            "Combines streaming sparse R1CS evaluation with chunked Pippenger MSM.",
+            "Fully compatible with standard Groth16: 128-byte proofs and 3-pairing verification.",
+            "Generates N=2^23 proofs under an 8GB cap, while standard provers require 16GB."
+          ],
+          "ja": [
+            "SluiceはGroth16証明フェーズのランダムアクセスメモリをO(log N)に削減する",
+            "核心技術はSplit-Butterfly-Merge (SBM) ストリーミングNTTアルゴリズムである",
+            "SBMはO(log N)のメモリ、O(N log N)の総I/O、O(log N)回の順次外部ストレージ走査を要する",
+            "ストリーミング疎R1CS評価とチャンク化Pippenger MSMを組み合わせる",
+            "標準Groth16と完全互換：128バイト証明、3ペアリング検証、検証コントラクト変更不要",
+            "8GBメモリ制限でN=2^23の証明生成に成功、標準証明器は16GBが必要"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "Sluice主要降低了什么资源消耗？",
+          "en": "What resource does Sluice mainly reduce?",
+          "ja": "Sluiceは主にどのリソースを削減するか？"
+        },
+        "answer": {
+          "zh": "它将Groth16证明阶段的随机访问工作内存从O(N)降至O(log N)，以顺序存储I/O和时间为代价。",
+          "en": "It cuts Groth16 prove-phase random-access memory from O(N) to O(log N), trading sequential storage I/O and time.",
+          "ja": "Groth16証明フェーズのランダムアクセス作業メモリをO(N)からO(log N)に抑え、順次ストレージI/Oと時間を代償とする。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "SBM算法如何平衡内存与I/O开销？",
+          "en": "How does SBM balance memory and I/O overhead?",
+          "ja": "SBMアルゴリズムはメモリとI/Oをどう釣り合わせるか？"
+        },
+        "answer": {
+          "zh": "SBM在读写真流模型中以O(log N)内存、O(N log N)总I/O和O(log N)次外存顺序遍历完成NTT。",
+          "en": "SBM achieves O(log N) memory, O(N log N) total I/O, and O(log N) sequential external storage passes in the streaming model.",
+          "ja": "読み書きストリーミングモデルでO(log N)メモリ、O(N log N)総I/O、O(log N)回の順次外部ストレージ走査を実現する。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "SBM设计如何适应读写真流模型的限制？",
+          "en": "How does SBM adapt to the read-write streaming model constraints?",
+          "ja": "SBMの設計はどう読み書きストリーミングモデルの制約に適応するか？"
+        },
+        "answer": {
+          "zh": "SBM通过Split-Butterfly-Merge结构避免随机访问，仅依赖顺序读写和O(log N)轮外存遍历完成NTT计算。",
+          "en": "SBM avoids random access via the Split-Butterfly-Merge structure, completing NTT using only sequential reads/writes and O(log N) passes.",
+          "ja": "Split-Butterfly-Merge構造によりランダムアクセスを回避し、順次読み書きとO(log N)回の外部ストレージ走査のみでNTTを完了する。"
+        }
+      }
+    ]
   }
 ]
