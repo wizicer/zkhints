@@ -1354,5 +1354,97 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-08-24",
+    "projects": [
+      {
+        "url": "https://www.sui.io/blog/suis-post-quantum-signature-schemes",
+        "name": "From the cryptographer's desk: how we chose Sui's post-quantum signature schemes",
+        "type": "博客",
+        "author": "Kostas Chalkias, Mahdi Sedaghat",
+        "tags": [
+          "ML-DSA",
+          "SLH-DSA",
+          "Falcon",
+          "Sui"
+        ],
+        "summary": {
+          "zh": "@MystenLabs 团队在博客中分享了Sui后量子签名方案的选型，选择ML-DSA-65与SLH-DSA保障高价值资产，并讨论了Falcon的取舍、性能基准和零知识迁移方案。",
+          "en": "@MystenLabs shared how Sui chose its post-quantum signatures: ML-DSA-65 plus SLH-DSA vaults, with Falcon trade-offs, benchmarks, and a deferred zk migration.",
+          "ja": "@MystenLabs はブログで、Suiの後量子署名選定を共有。ML-DSA-65とSLH-DSAを採用し、Falconの比較、性能指標、ゼロ知識マイグレーションを説明した。"
+        },
+        "slogan": {
+          "zh": "【密码学博客】Sui后量子签名选型公开：ML-DSA-65为什么赢了Falcon？"
+        },
+        "notes": {
+          "zh": [
+            "采用ML-DSA-65（NIST Level 3）作为Sui原生签名，为格密码预留安全余量。",
+            "SLH-DSA通过Move智能合约提供，不依赖格问题，且无需协议升级即可适配外部标准。",
+            "Falcon被否决：无Level 3、尚未标准化、浮点高斯采样实现与侧信道防护难度高。",
+            "基准显示验证性能与Ed25519持平，但签名体积约增50倍，交易上限128KB可容纳。",
+            "私钥保持32字节种子，钱包备份不变；地址别名支持现有账户无感切换后量子密钥。",
+            "团队自研Rust包装器基于Linux基金会mldsa-native，强调小型审计面与跨实现验证。"
+          ],
+          "en": [
+            "Sui adopts ML-DSA-65 (NIST Level 3) for native signatures, adding margin against lattice attacks.",
+            "SLH-DSA is shipped via Move contracts, avoiding protocol upgrades and isolating lattice breaks.",
+            "Falcon was rejected for missing Level 3, unstandardized status, and hard floating-point Gaussian sampling.",
+            "Benchmarks show verification on par with Ed25519, while signature size grows ~50x; 128KB tx limit helps.",
+            "Private keys remain 32-byte seeds, keeping wallet backups unchanged; address aliases ease migration.",
+            "The team built a thin Rust wrapper over mldsa-native, favoring small auditable surface and cross-checking."
+          ],
+          "ja": [
+            "Suiはネイティブ署名にML-DSA-65（NIST Level 3）を採用し、耐量子余裕を持たせた。",
+            "SLH-DSAはMoveスマートコントラクトで提供され、格子攻撃と分離し、プロトコル更新なしで標準対応可能。",
+            "FalconはLevel 3欠如、未標準化、浮動小数点ガウスサンプリングの実装難度から不採用。",
+            "検証性能はEd25519並みだが署名サイズは約50倍増、128KB上限で許容する。",
+            "秘密鍵は32バイトのシードのまま、ウォレットのバックアップは不変。アドレスエイリアスで移行容易。",
+            "自己開発のRustラッパーはmldsa-nativeを基盤とし、監査しやすい小さい表面と相互検証を重視した。"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "为什么Sui不选更便宜的ML-DSA-44？",
+          "en": "Why not pick cheaper ML-DSA-44?",
+          "ja": "なぜSuiはより安価なML-DSA-44を選ばないのか？"
+        },
+        "answer": {
+          "zh": "AI辅助密码分析正突破多年人工审校的格方案，Level 3提供更多安全余量，且验证性能与Ed25519持平，成本几乎可忽略。",
+          "en": "AI-assisted cryptanalysis is breaking lattice schemes, so Level 3 gives more margin; verification is at parity with Ed25519, making the higher category nearly free.",
+          "ja": "AI支援の暗号解析が格子方式を破る中、Level 3はより大きな安全余裕を与え、検証性能はEd25519と同等で、追加コストはほぼかからない。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "Sui放弃Falcon的主要原因有哪些？",
+          "en": "Why did Sui reject Falcon?",
+          "ja": "SuiがFalconを採用しなかった主な理由は？"
+        },
+        "answer": {
+          "zh": "Falcon没有Level 3参数、尚未标准化、需要浮点FFT高斯采样且侧信道防护更难，验证速度也较慢，硬件生态不如ML-DSA成熟。",
+          "en": "Falcon lacks Level 3, was not yet standardized, relies on floating-point Gaussian sampling that is harder to secure, verifies slower, and has less hardware ecosystem support.",
+          "ja": "FalconにはLevel 3がなく、標準化も未完了。浮動小数点ガウスサンプリングの実装と側チャネル対策が難しく、検証も遅く、ハードウェア対応もML-DSAより進んでいない。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "AI辅助密码分析如何影响本次参数选型？",
+          "en": "How did AI cryptanalysis shape parameter choice?",
+          "ja": "AIによる暗号解析はパラメータ選定にどう影響したか？"
+        },
+        "answer": {
+          "zh": "HAWK被AI找到漏洞，说明人工多年审计的格方案也可能被突破；这促使团队选择更高安全级别ML-DSA-65，同时将基于哈希的SLH-DSA作为隔离风险的备份。",
+          "en": "The HAWK break showed AI can find flaws humans missed, pushing Sui to choose ML-DSA-65 for margin and keep hash-based SLH-DSA as an independent fallback.",
+          "ja": "HAWKの突破により、人間の監査が逃した欠陥をAIが見つけ得ると判明。SuiはML-DSA-65の余裕と、SLH-DSAの独立性を選択した。"
+        }
+      }
+    ]
   }
 ]
