@@ -267,8 +267,9 @@ async function sendTelegramNotification(imagePath, textContent, language = "zh")
     return;
   }
 
-  const TelegramBot = (await import("node-telegram-bot-api")).default;
-  const bot = new TelegramBot(TELEGRAM_BOT_TOKEN);
+  const { Bot } = await import("node-telegram-bot-api");
+  const { fromPath } = await import("node-telegram-bot-api/node");
+  const bot = new Bot(TELEGRAM_BOT_TOKEN);
 
   try {
     // Split the chat IDs by comma
@@ -289,7 +290,11 @@ async function sendTelegramNotification(imagePath, textContent, language = "zh")
       for (const { chatId, threadId } of chatConfigs) {
         await retrySend(async () => {
           const options = threadId ? { message_thread_id: threadId } : {};
-          await bot.sendPhoto(chatId, imagePath, options);
+          await bot.api.sendPhoto({
+            chat_id: chatId,
+            photo: await fromPath(imagePath),
+            ...options,
+          });
           console.log(
             `Image sent successfully to Telegram chat ${chatId}${
               threadId ? " thread " + threadId : ""
@@ -310,7 +315,7 @@ async function sendTelegramNotification(imagePath, textContent, language = "zh")
       for (const { chatId, threadId } of chatConfigs) {
         await retrySend(async () => {
           const options = threadId ? { message_thread_id: threadId } : {};
-          await bot.sendMessage(chatId, textContent, options);
+          await bot.api.sendMessage({ chat_id: chatId, text: textContent, ...options });
           console.log(
             `Text content sent successfully to Telegram chat ${chatId}${
               threadId ? " thread " + threadId : ""
