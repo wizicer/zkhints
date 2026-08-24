@@ -39,7 +39,7 @@
     "dotenv": "^17.2.3",
     "marked": "^15.0.9",
     "node-telegram-bot-api": "^0.67.0",
-    "puppeteer": "^24.31.0",
+    "puppeteer": "^25.8.0",
     "qrcode": "^1.5.4",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
