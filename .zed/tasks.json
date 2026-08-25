@@ -1,0 +1,18 @@
+[
+  {
+    "label": "Today",
+    "command": "npm run dev:today",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "reveal": "always",
+    "hide": "never"
+  },
+  {
+    "label": "Remote Notify",
+    "command": "npm run remote:notify",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "reveal": "always",
+    "hide": "never"
+  }
+]
