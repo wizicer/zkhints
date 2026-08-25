@@ -1446,5 +1446,96 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-08-25",
+    "projects": [
+      {
+        "url": "https://eprint.iacr.org/2026/1656",
+        "name": "BinarySpartan: Spartan over binary fields",
+        "type": "论文",
+        "author": "Srinath Setty",
+        "tags": [
+          "Binary Field",
+          "Ligerito",
+          "Ring-Switching"
+        ],
+        "summary": {
+          "zh": "Setty等人在论文中提出将Spartan实例化至二进制域，采用Ligerito承诺与ring-switching技术，实现无需可信设置的透明后量子SNARK，并在消费级硬件上达成每秒41万次BLAKE3证明。",
+          "en": "Setty instantiated Spartan over binary fields using Ligerito commitments and ring-switching, yielding a transparent, plausibly post-quantum SNARK that proves BLAKE3 at 410,000 hashes/sec on consumer hardware.",
+          "ja": "Settyは論文で、Ligeritoコミットメントとring-switching技術を用いてSpartanをバイナリ体上に実例化し、コンシューマーハードウェアでBLAKE3を毎秒41万回証明できる透明で後量子安全なSNARKを実現した。"
+        },
+        "slogan": {
+          "zh": "【ZK论文】BinarySpartan：二进制域Spartan刷新后量子证明速度纪录"
+        },
+        "notes": {
+          "zh": [
+            "将Spartan实例化至二进制域，使用Ligerito承诺方案",
+            "采用Diamond和Posen的ring-switching技术",
+            "透明无需可信设置，安全性基于哈希函数，具备后量子潜力",
+            "整合SIMD R1CS、SuperSpartan扩展及sum-check等已知优化",
+            "在M4 Max上实现410K BLAKE3与219K SHA-256每秒证明",
+            "以太坊基金会基准中单次SHA-256(2KiB)证明仅需6.2ms，速度最快"
+          ],
+          "en": [
+            "Instantiates Spartan over binary fields using the Ligerito commitment scheme",
+            "Employs Diamond and Posen's ring-switching technique",
+            "Transparent with no trusted setup; security rests solely on hash functions",
+            "Integrates SIMD R1CS, SuperSpartan MLE, and sum-check optimizations",
+            "Proves BLAKE3 at 410K/sec and SHA-256 at 219K/sec on an M4 Max",
+            "Achieves 6.2ms for single SHA-256 (2KiB) in the Ethereum Foundation benchmark, the fastest in the suite"
+          ],
+          "ja": [
+            "SpartanをLigeritoコミットメントを用いてバイナリ体上に実例化",
+            "DiamondとPosenのring-switching技術を採用",
+            "信頼できるセットアップ不要で、安全性はハッシュ関数のみに依存",
+            "SIMD R1CSやSuperSpartanのMLE、sum-check最適化を統合",
+            "M4 MaxでBLAKE3を毎秒41万回、SHA-256を毎秒21.9万回証明",
+            "Ethereum Foundationベンチマークで2KiBのSHA-256を6.2msで証明し、最速を記録"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "为何将Spartan移至二进制域？",
+          "en": "Why instantiate Spartan over binary fields?",
+          "ja": "なぜSpartanをバイナリ体上に実例化するのか？"
+        },
+        "answer": {
+          "zh": "二进制域更适配位运算与哈希电路，可提升证明效率并适配Ligerito承诺结构。",
+          "en": "Binary fields better suit bit-oriented hash circuits and improve prover efficiency with Ligerito commitments.",
+          "ja": "ビット演算やハッシュ回路に適しており、Ligeritoコミットメントで証明効率を向上できる。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "ring-switching如何帮助BinarySpartan？",
+          "en": "How does ring-switching help BinarySpartan?",
+          "ja": "ring-switchingはBinarySpartanにどう寄与するか？"
+        },
+        "answer": {
+          "zh": "该技术实现不同域间电路表示转换，使二进制域承诺能服务于Spartan证明系统。",
+          "en": "It converts circuit representations across domains, enabling binary-field commitments to serve Spartan.",
+          "ja": "異なる体間で回路表現を変換し、バイナリ体のコミットメントをSpartanに利用可能にする。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "BinarySpartan集成了哪些关键优化？",
+          "en": "Which key optimizations does BinarySpartan integrate?",
+          "ja": "BinarySpartanはどの最適化を統合しているか？"
+        },
+        "answer": {
+          "zh": "整合了SIMD R1CS、SuperSpartan多线性扩展、Gruen与Dao-Thaler等人的sum-check优化及字节查找表。",
+          "en": "SIMD R1CS, SuperSpartan MLE, Gruen/Dao-Thaler sum-check optimizations, and Binius64 byte lookup tables.",
+          "ja": "SIMD R1CS、SuperSpartanのMLE、GruenやDao-Thalerらのsum-check最適化、Binius64のバイトルックアップテーブルなど。"
+        }
+      }
+    ]
   }
 ]
