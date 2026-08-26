@@ -40,6 +40,32 @@ function markNotifyRunToday() {
   );
 }
 
+// Find projects in today's data that were already published on a different
+// date (matched by identical url or identical name), to avoid notifying
+// about the same news item twice. Older duplicates that don't involve
+// today's date are ignored on purpose.
+function findDuplicateProjects(newsData, todayData, dateString) {
+  const seen = new Map();
+  for (const entry of newsData) {
+    if (entry.date === dateString) continue;
+    for (const project of entry.projects || []) {
+      if (project.url) seen.set(`url:${project.url}`, entry.date);
+      if (project.name) seen.set(`name:${project.name}`, entry.date);
+    }
+  }
+
+  const duplicates = [];
+  for (const project of todayData.projects || []) {
+    const matchedDate =
+      (project.url && seen.get(`url:${project.url}`)) ||
+      (project.name && seen.get(`name:${project.name}`));
+    if (matchedDate) {
+      duplicates.push({ project, matchedDate });
+    }
+  }
+  return duplicates;
+}
+
 const program = new Command();
 
 // WeChat Work webhook URL - this should be configured via environment variable
@@ -396,6 +422,22 @@ program
 
       if (!todayData) {
         console.error(`No data found for ${dateString}. Aborting notification.`);
+        process.exit(1);
+      }
+
+      // Duplicate guard: refuse to notify if any project for this date was
+      // already published (same url or same name) under a different date.
+      const duplicates = findDuplicateProjects(newsData, todayData, dateString);
+      if (duplicates.length > 0) {
+        console.error(
+          `Aborting notification: ${duplicates.length} project(s) for ${dateString} were already sent on a previous date:`,
+        );
+        for (const { project, matchedDate } of duplicates) {
+          console.error(
+            `  - "${project.name}" (${project.url}) already appeared on ${matchedDate}`,
+          );
+        }
+        console.error("Fix the duplicate entry in the daily data before running notify again.");
         process.exit(1);
       }
 
