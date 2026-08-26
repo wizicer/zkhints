@@ -1446,5 +1446,96 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-08-26",
+    "projects": [
+      {
+        "url": "https://eprint.iacr.org/2026/1698",
+        "name": "MamaBearZKP: A Holistic Co-design of Prime Fields and Proving Stacks for High-Throughput ZKP on Modern CPUs",
+        "type": "论文",
+        "author": "Jipeng Zhang, Yanpei Guo, Tao Lu, Hao Cheng, Jiaheng Zhang",
+        "tags": [
+          "Sum-check",
+          "HyperPlonk",
+          "DeepFold"
+        ],
+        "summary": {
+          "zh": "Zhang等人在论文中提出了MamaBearZKP框架，通过49位素数域与证明栈协同设计，利用AVX-512IFMA指令集大幅提升现代CPU上的ZKP证明吞吐量。",
+          "en": "Zhang et al. proposed MamaBearZKP, a co-design framework using 49-bit prime fields and AVX-512IFMA to boost ZKP proving throughput on modern CPUs.",
+          "ja": "Zhangらは論文で、49ビット素数体とAVX-512IFMA命令セットを活用し、最新CPU上でZKP証明スループットを大幅に向上させるMamaBearZKPフレームワークを提案した。"
+        },
+        "slogan": {
+          "zh": "【ZK论文】MamaBearZKP：49位素数域协同设计，CPU性能飙升"
+        },
+        "notes": {
+          "zh": [
+            "提出MamaBearZKP，协同设计素数域与证明栈，利用49位素数域MamaBear（p = 2^49 - 2^34 + 1）",
+            "针对AVX-512IFMA执行模型设计系统化向量化框架，统一优化域算术、协议与硬件原语",
+            "在HyperPlonk-DeepFold证明器中，单线程零检查、乘积检查、承诺、打开和端到端生成分别加速42倍、33倍、15倍、21倍和21倍",
+            "8线程执行时，对应加速最高可达64倍、47倍、81倍、45倍和45倍",
+            "端到端评估中，相比已用AVX-512 BabyBear后端的Plonky3，MamaBearZKP单线程加速最高达18倍",
+            "性能提升源于49位域余量使能高效惰性归约，进而实现高性能融合折叠求值内核，促成统一stay-packed数据流"
+          ],
+          "en": [
+            "Presents MamaBearZKP, co-designing prime fields and proving stacks using 49-bit prime MamaBear (p = 2^49 - 2^34 + 1)",
+            "Introduces systematic vectorization for AVX-512IFMA, unifying optimization of field arithmetic, protocol, and hardware",
+            "In HyperPlonk-DeepFold prover, single-thread speedups: 42x ZeroCheck, 33x ProductCheck, 15x Commit, 21x Open, 21x end-to-end",
+            "With 8 threads, speedups reach 64x, 47x, 81x, 45x, and 45x respectively",
+            "Compared to Plonky3 with AVX-512 BabyBear backend, MamaBearZKP achieves up to 18x single-thread speedup end-to-end",
+            "Gains stem from 49-bit field headroom enabling lazy reduction, leading to fused fold-and-evaluate kernels and stay-packed dataflow"
+          ],
+          "ja": [
+            "49ビット素数体MamaBear（p = 2^49 - 2^34 + 1）を用いた素数体と証明スタックの協調設計MamaBearZKPを提案",
+            "AVX-512IFMA向けの体系的なベクトル化フレームワークを導入し、体演算・プロトコル・ハードウェアを統合最適化",
+            "HyperPlonk-DeepFold証明器で、単一スレッド時にZeroCheck 42倍、ProductCheck 33倍、Commit 15倍、Open 21倍、全体21倍の高速化",
+            "8スレッド時はそれぞれ64倍、47倍、81倍、45倍、45倍に達する",
+            "AVX-512 BabyBearバックエンド使用済みのPlonky3比で、単一スレッドで最大18倍の高速化を達成",
+            "49ビット体の余裕が遅延リダクションを可能にし、融合fold-and-evaluateカーネルとstay-packedデータフローを実現したことが性能向上の鍵"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "为什么选择49位素数域？",
+          "en": "Why choose a 49-bit prime field?",
+          "ja": "なぜ49ビット素数体を選ぶのか？"
+        },
+        "answer": {
+          "zh": "49位素数域在AVX-512IFMA中提供足够余量实现高效惰性归约，同时保持较小域尺寸以降低计算开销。",
+          "en": "A 49-bit prime field offers sufficient headroom in AVX-512IFMA for efficient lazy reduction while keeping field size small to reduce overhead.",
+          "ja": "49ビット素数体はAVX-512IFMA内で遅延リダクションのための十分な余裕を提供しつつ、体サイズを小さく保ちオーバーヘッドを抑える。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "AVX-512IFMA如何加速域运算？",
+          "en": "How does AVX-512IFMA accelerate field arithmetic?",
+          "ja": "AVX-512IFMAはどう体演算を加速するか？"
+        },
+        "answer": {
+          "zh": "AVX-512IFMA支持52位整数乘加指令，允许在49位域中执行未归约乘法并延迟模约简，提高吞吐量。",
+          "en": "AVX-512IFMA provides 52-bit integer multiply-add instructions, enabling unreduced multiplication in a 49-bit field with delayed modular reduction, increasing throughput.",
+          "ja": "AVX-512IFMAは52ビット整数積和演算命令を提供し、49ビット体で未リダクション乗算と遅延モジュラーリダクションを可能にし、スループットを向上させる。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "与Plonky3相比优势有哪些？",
+          "en": "What advantages over Plonky3?",
+          "ja": "Plonky3と比べてどのような利点があるか？"
+        },
+        "answer": {
+          "zh": "MamaBearZKP通过协同设计和更优向量化，在端到端证明生成上相比使用AVX-512 BabyBear后端的Plonky3实现最高18倍单线程加速。",
+          "en": "Through holistic co-design and better vectorization, MamaBearZKP achieves up to 18x single-thread speedup over Plonky3 with AVX-512 BabyBear backend in end-to-end proving.",
+          "ja": "協調設計とより優れたベクトル化により、MamaBearZKPはAVX-512 BabyBearバックエンド使用のPlonky3比で全体証明生成を単一スレッドで最大18倍高速化する。"
+        }
+      }
+    ]
   }
 ]
