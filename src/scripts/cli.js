@@ -40,30 +40,10 @@ function markNotifyRunToday() {
   );
 }
 
-// Find projects in today's data that were already published on a different
-// date (matched by identical url or identical name), to avoid notifying
-// about the same news item twice. Older duplicates that don't involve
-// today's date are ignored on purpose.
-function findDuplicateProjects(newsData, todayData, dateString) {
-  const seen = new Map();
-  for (const entry of newsData) {
-    if (entry.date === dateString) continue;
-    for (const project of entry.projects || []) {
-      if (project.url) seen.set(`url:${project.url}`, entry.date);
-      if (project.name) seen.set(`name:${project.name}`, entry.date);
-    }
-  }
-
-  const duplicates = [];
-  for (const project of todayData.projects || []) {
-    const matchedDate =
-      (project.url && seen.get(`url:${project.url}`)) ||
-      (project.name && seen.get(`name:${project.name}`));
-    if (matchedDate) {
-      duplicates.push({ project, matchedDate });
-    }
-  }
-  return duplicates;
+// Load the shared duplicate-project checker (also used by the daily page).
+async function loadDuplicateChecker() {
+  const { findDuplicateProjects } = await import("../utils/newsDuplicates.ts");
+  return findDuplicateProjects;
 }
 
 const program = new Command();
@@ -427,6 +407,7 @@ program
 
       // Duplicate guard: refuse to notify if any project for this date was
       // already published (same url or same name) under a different date.
+      const findDuplicateProjects = await loadDuplicateChecker();
       const duplicates = findDuplicateProjects(newsData, todayData, dateString);
       if (duplicates.length > 0) {
         console.error(
