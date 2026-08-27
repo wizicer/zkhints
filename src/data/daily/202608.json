@@ -1537,5 +1537,95 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-08-27",
+    "projects": [
+      {
+        "url": "https://vitalik.eth.limo/general/2026/08/21/obfuscation_part_iii_local_mixing.html",
+        "name": "Obfuscation (Part III): Local Mixing",
+        "type": "博客",
+        "author": "Vitalik Buterin",
+        "tags": [
+          "obfuscation",
+          "local mixing"
+        ],
+        "summary": {
+          "zh": "Vitalik Buterin在博客中介绍了局部混合混淆技术，通过可逆化、硬化、混合和 gadgetization 等步骤消除电路内部结构，以实现安全混淆。",
+          "en": "Vitalik Buterin introduces local mixing obfuscation, which removes circuit structure through reversibility, hardening, mixing, and gadgetization.",
+          "ja": "Vitalik Buterin氏がローカルミキシング難読化を紹介。可逆化、硬化、ミキシング、ガジェット化により回路構造を除去する。"
+        },
+        "slogan": {
+          "zh": "【ZK博客】Vitalik 深度解析局部混合混淆：电路结构的粉碎机"
+        },
+        "notes": {
+          "zh": [
+            "局部混合混淆通过可逆化、硬化、混合和 gadgetization 等步骤破坏电路内部逻辑",
+            "混合步骤包括代际混合、拆分和交叉行走，旨在打乱门与线路的关系",
+            "gadgetization 使用非线性编码消除线路与原始电路的相关性",
+            "方案可抵御线性代数攻击、相关攻击和随机比特翻转攻击",
+            "随机电路的混淆可直接构造公钥加密，并有望扩展为一般电路混淆",
+            "作者承认方案仍处于早期阶段，依赖启发式安全，但引入了全新的密码学范式"
+          ],
+          "en": [
+            "Local mixing obfuscation breaks circuit logic via reversibility, hardening, mixing, and gadgetization.",
+            "Mixing includes generation mixing, splitting, and crossing walks to scramble gate/wire relations.",
+            "Gadgetization uses nonlinear encodings to remove correlations with original circuit wires.",
+            "The construction resists linear algebra, correlation, and random bit flip attacks.",
+            "Obfuscating random circuits yields public-key encryption, extendable to general circuits.",
+            "The approach is early-stage and heuristic, but introduces a novel cryptographic paradigm."
+          ],
+          "ja": [
+            "ローカルミキシング難読化は可逆化、硬化、ミキシング、ガジェット化で回路ロジックを破壊する",
+            "ミキシングは世代混交、分割、交差ウォークを含みゲートと配線の関係を撹拌する",
+            "ガジェット化は非線形符号化で元回路配線との相関を除去する",
+            "線形代数攻撃、相関攻撃、ランダムビット反転攻撃に耐える",
+            "ランダム回路の難読化から公開鍵暗号が得られ、一般回路へ拡張可能",
+            "初期段階でヒューリスティックに依存するが、新しい暗号パラダイムを提示する"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "为什么需要可逆化？",
+          "en": "Why is reversibility needed?",
+          "ja": "なぜ可逆化が必要か？"
+        },
+        "answer": {
+          "zh": "可逆电路更容易混合，且避免不可逆门导致的信息熵坍缩。",
+          "en": "Reversible circuits mix better and avoid entropy collapse from irreversible gates.",
+          "ja": "可逆回路はミキシングしやすく、不可逆ゲートによるエントロピー崩壊を避ける。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "gadgetization 如何隐藏线路值？",
+          "en": "How does gadgetization hide wire values?",
+          "ja": "ガジェット化は配線値をどう隠すか？"
+        },
+        "answer": {
+          "zh": "用多个掩码表示线路，非线性编码使得原始值不出现在任何单一线路。",
+          "en": "It represents each wire with multiple masks, using nonlinear encoding so the original value never appears on a single wire.",
+          "ja": "各配線を複数のマスクで表現し、非線形符号化により元の値が単一配線に現れないようにする。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "从随机电路混淆到一般 iO 的转换依赖什么假设？",
+          "en": "What assumptions enable the transformation from random circuit obfuscation to general iO?",
+          "ja": "ランダム回路難読化から一般 iO への変換は何に依存するか？"
+        },
+        "answer": {
+          "zh": "依赖 RIO 和 Split Circuit Pseudorandomness 假设。",
+          "en": "It relies on RIO and Split Circuit Pseudorandomness.",
+          "ja": "RIOとSplit Circuit Pseudorandomnessの仮定に依存する。"
+        }
+      }
+    ]
   }
 ]
