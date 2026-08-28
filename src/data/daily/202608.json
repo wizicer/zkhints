@@ -1627,5 +1627,96 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-08-28",
+    "projects": [
+      {
+        "url": "https://eprint.iacr.org/2026/1802",
+        "name": "VERIF: An Efficient Zero-Knowledge Proof System for Verifying IVF-Flat Retrieval in RAG Services",
+        "type": "论文",
+        "author": "Zhiwen Zhang, Yuao Zhou, Ge Chang, Cong Li, Yuejian Fang, Qingni Shen",
+        "tags": [
+          "IVF-Flat",
+          "RAG",
+          "PIOP"
+        ],
+        "summary": {
+          "zh": "Zhang等人提出了VERIF，首个针对IVF-Flat检索的专用ZK PIOP，用于验证RAG服务中检索的完整性。",
+          "en": "Zhang et al. proposed VERIF, the first dedicated ZK PIOP for IVF-Flat retrieval, verifying the integrity of RAG service retrievals.",
+          "ja": "ZhangらはVERIFを提案した。RAGサービスの検索整合性を検証する、IVF-Flat検索に特化した初のZK PIOPである。"
+        },
+        "slogan": {
+          "zh": "【ZK论文】VERIF：为RAG服务中的IVF-Flat检索提供高效ZK验证"
+        },
+        "notes": {
+          "zh": [
+            "VERIF是首个针对IVF-Flat检索的专用ZK PIOP",
+            "证明top-m质心选择、认证路由、完整向量评分、top-k选择及上下文绑定",
+            "通过承诺省略归约保持查询相关分数虚拟化",
+            "将选择声明直接归约为认证数据上的内积",
+            "统一的无置换top-t关系与limb分解范围论证处理两个选择阶段",
+            "原型较通用电路zkSNARK（Plonky2）实现加速86.5倍，峰值内存降低99.1%"
+          ],
+          "en": [
+            "VERIF is the first dedicated ZK PIOP for IVF-Flat retrieval",
+            "Proves top-m centroid selection, authenticated routing, exact scoring, top-k selection, and context binding",
+            "Commitment-eliding reduction keeps query-dependent scores virtual",
+            "Reduces selection claims directly to inner products over authenticated data",
+            "Unified permutation-free top-t relation with limb-decomposed range arguments handles both selection stages",
+            "Prototype achieves 86.5x prover speedup and 99.1% peak memory reduction vs Plonky2"
+          ],
+          "ja": [
+            "VERIFはIVF-Flat検索向け初の専用ZK PIOPである",
+            "top-m重心選択、認証ルーティング、正確なスコアリング、top-k選択、文脈結合を証明する",
+            "コミットメント省略による簡約でクエリ依存スコアを仮想化する",
+            "選択クレームを認証データ上の内積に直接帰着させる",
+            "統一された順列不要のtop-t関係とlimb分解レンジ論証が両選択段階を処理する",
+            "プロトタイプはPlonky2比で証明者86.5倍高速化、ピークメモリ99.1%削減"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "VERIF能证明什么？",
+          "en": "What does VERIF prove?",
+          "ja": "VERIFは何を証明するか？"
+        },
+        "answer": {
+          "zh": "VERIF证明RAG服务中的IVF-Flat检索按照承诺的索引、参数和快照正确执行。",
+          "en": "VERIF proves that IVF-Flat retrieval is executed correctly according to committed index, parameters, and snapshot.",
+          "ja": "VERIFは、コミットされたインデックス、パラメータ、スナップショットに従ってIVF-Flat検索が正しく実行されたことを証明する。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "VERIF如何避免排序操作？",
+          "en": "How does VERIF avoid sorting?",
+          "ja": "VERIFはどのようにソートを回避するか？"
+        },
+        "answer": {
+          "zh": "通过统一的无置换top-t关系，将选择问题归约为内积和范围证明，无需排序或分数承诺。",
+          "en": "It uses a unified permutation-free top-t relation, reducing selection to inner products and range proofs without sorting or score commitments.",
+          "ja": "順列不要の統一top-t関係を用い、選択を内積とレンジ証明に帰着させることで、ソートやスコアのコミットメントを不要にする。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "limb分解范围论证为何重要？",
+          "en": "Why are limb-decomposed range arguments crucial?",
+          "ja": "limb分解レンジ論証が重要な理由は？"
+        },
+        "answer": {
+          "zh": "它允许在非原生域上高效验证数值范围，避免代价高昂的域转换，提升整体性能。",
+          "en": "They enable efficient range verification over non-native fields, avoiding costly field conversions and improving performance.",
+          "ja": "非ネイティブ体上での数値範囲検証を効率化し、高コストな体変換を避けて性能を向上させる。"
+        }
+      }
+    ]
   }
 ]
