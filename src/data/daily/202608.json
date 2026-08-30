@@ -1718,5 +1718,95 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-08-30",
+    "projects": [
+      {
+        "url": "https://ethresear.ch/t/same-instruction-count-23x-the-wall-clock-working-set-effects-in-a-deterministic-risc-v-interpreter/25856",
+        "name": "Same instruction count, 23x the wall clock: working-set effects in a deterministic RISC-V interpreter",
+        "type": "博客",
+        "author": "cristiandkzk",
+        "tags": [
+          "RISC-V",
+          "performance"
+        ],
+        "summary": {
+          "zh": "作者在 deterministic RISC-V 解释器中测量执行成本，发现相同步数下不同指令混合和内存访问模式可导致高达23倍的墙钟时间差异。文章强调，仅靠步数无法紧致约束物理执行成本，且跨机器性能排序会反转，对协议级执行预算提出挑战。",
+          "en": "The author measures execution cost in a deterministic RISC-V interpreter and finds up to 23x wall-clock time differences for the same step count across instruction mixes and memory access patterns. Step counting alone cannot tightly bound physical cost, and performance ordering can reverse across machines, challenging protocol-level execution budgets.",
+          "ja": "決定論的RISC-Vインタプリタで実行コストを測定し、同一ステップ数でも命令ミックスやメモリアクセスパターンにより最大23倍の実行時間差が生じることを示した。ステップ数だけでは物理コストを厳密に拘束できず、マシン間で性能順位が逆転する可能性があり、プロトコルレベルの実行予算に課題を投げかける。"
+        },
+        "slogan": {
+          "zh": "【ZK博客】同指令数，运行时间差23倍：RISC-V 解释器工作集效应"
+        },
+        "notes": {
+          "zh": [
+            "相同步数下，指针追逐负载的运行时间是参考负载的23倍",
+            "仅靠指令身份无法区分顺序加载和指针追逐，因为它们指令流相同",
+            "工作集大小影响执行时间，且拐点取决于宿主缓存层级而非程序本身",
+            "桌面机在大工作集下可能比手机更慢，最坏情况硬件不一定是低端设备",
+            "作者邀请社区运行基准测试以收集跨CPU数据，验证性能排序反转",
+            "研究范围限于解释器执行成本，不涉及ZK证明成本"
+          ],
+          "en": [
+            "Pointer-chasing load is 23x slower than reference load at the same step count.",
+            "Opcode identity alone cannot distinguish sequential load from pointer-chasing, as their instruction streams are identical.",
+            "Working set size affects execution time, with a cliff determined by host cache hierarchy, not intrinsic to the program.",
+            "Desktop can be slower than phone at large working sets, so worst-case hardware is not necessarily low-end.",
+            "The author invites community to run benchmarks and collect cross-CPU data to verify performance ordering reversals.",
+            "Scope is limited to native interpreter execution cost, not ZK proving cost."
+          ],
+          "ja": [
+            "同一ステップ数で、ポインタチェイス負荷は参照負荷より23倍遅い",
+            "命令列が同一のため、命令アイデンティティのみでは順次ロードとポインタチェイスを区別できない",
+            "ワーキングセットサイズが実行時間に影響し、その崖はプログラム固有ではなくホストのキャッシュ階層に依存する",
+            "大きなワーキングセットではデスクトップがスマートフォンより遅くなり得るため、最悪ハードウェアは低性能機とは限らない",
+            "著者はコミュニティにベンチマーク実行とCPU横断データ収集を呼びかけ、性能順位の逆転を検証したいとしている",
+            "対象はネイティブインタプリタ実行コストに限定され、ZK証明コストは扱わない"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "为什么相同的步数会产生不同的墙钟时间？",
+          "en": "Why do equal step counts yield different wall-clock times?",
+          "ja": "同じステップ数でなぜ異なる実時間になるのか？"
+        },
+        "answer": {
+          "zh": "因为指令混合和内存访问模式不同，例如指针追逐导致缓存未命中，即使指令数相同，实际执行时间也会大幅变化。",
+          "en": "Because instruction mix and memory access patterns differ; pointer chasing causes cache misses, drastically changing actual execution time despite identical instruction counts.",
+          "ja": "命令ミックスとメモリアクセスパターンが異なるためであり、ポインタチェイスはキャッシュミスを引き起こし、命令数が同じでも実時間が大きく変わる。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "为什么仅靠指令身份计量不够准确？",
+          "en": "Why is opcode-identity metering insufficient?",
+          "ja": "命令アイデンティティのみの計量が不十分なのはなぜか？"
+        },
+        "answer": {
+          "zh": "因为相同的指令流可能因数据依赖和内存访问模式而产生截然不同的执行时间，例如顺序加载和指针追逐的指令均为lw，但性能差异巨大。",
+          "en": "Identical instruction streams can have vastly different execution times due to data dependencies and memory access patterns; e.g., sequential load and pointer chasing both consist of lw, yet perform very differently.",
+          "ja": "同一の命令列でもデータ依存性とメモリアクセスパターンにより実行時間が大きく異なる。例えば順次ロードとポインタチェイスはどちらもlwだが、性能差が大きい。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "该结果对最坏情况硬件假设有何影响？",
+          "en": "How does this result affect worst-case hardware assumptions?",
+          "ja": "この結果は最悪ハードウェア仮定にどう影響するか？"
+        },
+        "answer": {
+          "zh": "实验显示大工作集下桌面机可能比手机更慢，表明最坏情况不一定是低端设备，且桌面机运行间方差大，单次校准不可靠。",
+          "en": "Experiments show desktop can be slower than phone at large working sets, so worst-case is not necessarily low-end; also desktop run-to-run variance is high, making single calibration unreliable.",
+          "ja": "実験では大きなワーキングセットでデスクトップがスマートフォンより遅くなり得るため、最悪ケースは必ずしも低性能機とは限らない。またデスクトップの実行間分散が大きく、単一校正は信頼できない。"
+        }
+      }
+    ]
   }
 ]
