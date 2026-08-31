@@ -1808,5 +1808,95 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-08-31",
+    "projects": [
+      {
+        "url": "https://eprint.iacr.org/2026/1794",
+        "name": "Ideal Secret Sharing Schemes over Small Domains",
+        "type": "论文",
+        "author": "Amos Beimel, Aner Ben-Efraim, Oriol Farràs, Adriana Moya",
+        "tags": [
+          "secret sharing",
+          "matroid theory"
+        ],
+        "summary": {
+          "zh": "Beimel等人在论文中解决了理想秘密共享方案在小域上的特征化问题，证明4理想结构等价于F4线性方案，6理想结构要求所有域大小均理想。",
+          "en": "Beimel et al. characterized ideal secret sharing over small domains, proving 4-ideal structures equal F4-linear schemes and 6-ideal schemes require ideality for all domain sizes.",
+          "ja": "Beimelらは小さいドメイン上の理想的秘密分散を特徴付け、4理想構造がF4線形方式と同値であり、6理想方式がすべてのドメインサイズで理想的であることを示した。"
+        },
+        "slogan": {
+          "zh": "【ZK研究】理想秘密共享小域之谜终破解：4与6的完整刻画"
+        },
+        "notes": {
+          "zh": [
+            "解决了k=4和k=6时理想访问结构的长期开放问题",
+            "4理想结构当且仅当存在F4线性理想方案",
+            "6理想结构当且仅当对所有k≥2均理想",
+            "利用拟阵与拉丁方的新技术建立连接",
+            "证明了6是最限制性的域大小",
+            "为构造理想秘密共享方案提供了新工具"
+          ],
+          "en": [
+            "Solves the long-open characterization for k=4 and k=6 ideal access structures.",
+            "4-ideal structures are exactly those admitting F4-linear ideal schemes.",
+            "6-ideal structures are exactly those ideal for all k≥2.",
+            "Uses new techniques linking matroids and Latin squares.",
+            "Shows k=6 is the most restrictive domain size.",
+            "Provides new tools for constructing ideal schemes."
+          ],
+          "ja": [
+            "k=4とk=6の理想アクセス構造の長年の未解決問題を解決",
+            "4理想構造はF4線形理想方式を持つものと正確に一致",
+            "6理想構造はすべてのk≥2で理想的であるものと一致",
+            "マトロイドとラテン方格を結ぶ新技術を活用",
+            "k=6が最も制限的なドメインサイズであることを示した",
+            "理想方式の構築に新たな道具を提供"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "k=4的理想结构有何特征？",
+          "en": "What characterizes 4-ideal structures?",
+          "ja": "4理想構造の特徴は？"
+        },
+        "answer": {
+          "zh": "4理想结构当且仅当存在F4线性理想方案。",
+          "en": "They are exactly those admitting F4-linear ideal schemes.",
+          "ja": "F4線形理想方式を持つものと正確に一致する。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "6理想方案如何构造？",
+          "en": "How are 6-ideal schemes built?",
+          "ja": "6理想方式の構築方法は？"
+        },
+        "answer": {
+          "zh": "可通过中国剩余定理组合F2和F3线性理想方案。",
+          "en": "By combining F2- and F3-linear ideal schemes via the Chinese Remainder Theorem.",
+          "ja": "中国剰余定理を用いてF2線形理想方式とF3線形理想方式を組み合わせる。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "k-理想与k-熵有何关系？",
+          "en": "How do k-ideal and k-entropic relate?",
+          "ja": "k理想とkエントロピーの関係は？"
+        },
+        "answer": {
+          "zh": "论文对相关拟阵的k-熵值进行了分类，深化了二者联系。",
+          "en": "They classified k-entropic values for relevant matroids, deepening the connection.",
+          "ja": "関連するマトロイドのkエントロピー値を分類し、関係を深めた。"
+        }
+      }
+    ]
   }
 ]
