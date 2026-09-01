@@ -1,0 +1,92 @@
+[
+  {
+    "date": "2026-09-01",
+    "projects": [
+      {
+        "url": "https://arxiv.org/abs/2608.28529v1",
+        "name": "Relaxed Sender Anonymity for CBDC Interbank Settlement: A Zero-Knowledge Approach on Permissioned EVM",
+        "type": "论文",
+        "author": "Pietro Tiberi et al.",
+        "tags": [
+          "CBDC",
+          "Hyperledger Besu"
+        ],
+        "summary": {
+          "zh": "研究者提出一种面向CBDC银行间结算的隐私协议，采用放松的发送方匿名模型，在许可EVM上结合Groth16零知识证明和Poseidon承诺实现交易内容保密，同时保持发送方可审计性。",
+          "en": "The authors propose a privacy protocol for CBDC interbank settlement that uses a relaxed sender anonymity model on a permissioned EVM, combining Groth16 ZK proofs and Poseidon commitments to keep transaction content confidential while keeping the sender auditable.",
+          "ja": "研究者らは、CBDC銀行間決済向けに、許可型EVM上でGroth16ゼロ知識証明とPoseidonコミットメントを組み合わせ、送信者の監査可能性を保ちつつ取引内容を秘匿する、緩和された送信者匿名性モデルを提案した。"
+        },
+        "slogan": {
+          "zh": "【ZK论文】CBDC银行间结算的隐私新解：ZK证明实现放松发送方匿名"
+        },
+        "notes": {
+          "zh": [
+            "提出放松的发送方匿名模型，发送方身份公开以满足AML/CFT合规，接收方和金额保密。",
+            "在Hyperledger Besu许可链上实现，使用QBFT共识和Groth16（BN254）证明。",
+            "采用Poseidon哈希的增量Merkle树和ECIES多接收方加密存储笔记。",
+            "链上NoteRegistry合约作为仅追加账本，无需可信离线托管服务器。",
+            "五节点实验显示端到端结算8-16秒，链上验证约220k gas。",
+            "原型中NoteRegistry使用所有者索引事件，存在隐私泄露，生产可改为统一事件广播。"
+          ],
+          "en": [
+            "Proposes a relaxed sender anonymity model: sender identity public for compliance, receiver and amount hidden.",
+            "Implemented on permissioned Hyperledger Besu with QBFT consensus and Groth16 (BN254) proofs.",
+            "Uses Poseidon hash in an incremental Merkle tree and ECIES multi-recipient encryption for note storage.",
+            "On-chain NoteRegistry contract acts as append-only ledger, removing need for trusted off-chain custody.",
+            "Five-node experiment: end-to-end settlement 8-16 s, on-chain verification ~220k gas.",
+            "Prototype's NoteRegistry uses owner-indexed events, leaking privacy; production can use uniform broadcasting."
+          ],
+          "ja": [
+            "送信者匿名性を緩和：送信者は規制遵守のため公開、受信者と金額は秘匿。",
+            "許可型Hyperledger Besu上でQBFTコンセンサスとGroth16（BN254）証明を実装。",
+            "Poseidonハッシュの増分MerkleツリーとECIESマルチ受信者暗号化でノートを保存。",
+            "オンチェーンNoteRegistryコントラクトが追記専用台帳として機能し、信頼できるオフチェーン保管が不要。",
+            "5ノードの実験でエンドツーエンド決済は8〜16秒、オンチェーン検証は約220kガス。",
+            "プロトタイプのNoteRegistryは所有者インデックス付きイベントを使用しプライバシーが漏れるため、本番では均一ブロードキャストに変更可能。"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "该协议如何平衡隐私与合规？",
+          "en": "How does the protocol balance privacy and compliance?",
+          "ja": "このプロトコルはプライバシーとコンプライアンスをどう両立するか？"
+        },
+        "answer": {
+          "zh": "采用放松发送方匿名，发送方身份公开以满足AML/CFT，接收方和金额保密。",
+          "en": "It uses relaxed sender anonymity: sender public for AML/CFT, receiver and amount hidden.",
+          "ja": "緩和された送信者匿名性を用い、送信者はAML/CFTのため公開し、受信者と金額は秘匿する。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "为什么选择许可链？",
+          "en": "Why use a permissioned blockchain?",
+          "ja": "なぜ許可型ブロックチェーンを使うのか？"
+        },
+        "answer": {
+          "zh": "许可链适合受监管的银行间结算，且能与央行和商业银行的治理模型结合。",
+          "en": "Permissioned chains fit regulated interbank settlement and align with central and commercial bank governance.",
+          "ja": "許可型チェーンは規制された銀行間決済に適し、中央銀行や商業銀行のガバナンスモデルと整合する。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "NoteRegistry如何实现隐私存储？",
+          "en": "How does NoteRegistry achieve private storage?",
+          "ja": "NoteRegistryはどうやってプライベートストレージを実現するか？"
+        },
+        "answer": {
+          "zh": "NoteRegistry是链上仅追加合约，存储加密笔记（ECIES加密），并使用Poseidon Merkle树承诺，避免链下托管。",
+          "en": "NoteRegistry is an on-chain append-only contract storing encrypted notes (ECIES) with Poseidon Merkle tree commitments, avoiding off-chain custody.",
+          "ja": "NoteRegistryはオンチェーンの追記専用コントラクトで、暗号化ノート（ECIES）を保存し、Poseidon Merkleツリーのコミットメントを使うことでオフチェーン保管を回避する。"
+        }
+      }
+    ]
+  }
+]
