@@ -88,5 +88,96 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-09-02",
+    "projects": [
+      {
+        "url": "https://arxiv.org/abs/2608.30648v1",
+        "name": "Lie to Me: Finding Bugs in ZK DSL Toolchains with Adversarial Witness Injection",
+        "type": "论文",
+        "author": "Valentin Wüstholz",
+        "tags": [
+          "ZK DSL",
+          "soundness",
+          "testing"
+        ],
+        "summary": {
+          "zh": "作者提出Liezz框架，通过对抗性见证注入在Circom、Corset、Gnark和Noir工具链中发现13个漏洞，其中7个影响健壮性。",
+          "en": "The authors propose Liezz, which found 13 bugs (7 soundness-critical) in Circom, Corset, Gnark, and Noir toolchains via adversarial witness injection.",
+          "ja": "著者らはLiezzを提案し、Circom、Corset、Gnark、Noirのツールチェーンで敵対的ウィットネス注入により13件のバグを発見、うち7件が健全性に影響。"
+        },
+        "slogan": {
+          "zh": "【ZK论文】对抗性见证注入：Liezz专治ZK工具链健壮性漏洞"
+        },
+        "notes": {
+          "zh": [
+            "Liezz通过拼接不同执行的见证构造无效见证，测试工具链是否能拒绝。",
+            "支持Circom、Corset、Gnark和Noir四种ZK DSL工具链。",
+            "发现13个漏洞，其中7个影响健壮性。",
+            "部分漏洞仅通过生成的库调用才能触发。",
+            "在相同测试预算下，有效执行测试未发现任何健壮性缺陷。",
+            "方法能有效暴露约束缺失或错误等健壮性问题。"
+          ],
+          "en": [
+            "Liezz splices witnesses from different executions to create invalid witnesses and checks rejection.",
+            "Supports Circom, Corset, Gnark, and Noir toolchains.",
+            "Finds 13 bugs, 7 with soundness impact.",
+            "Several bugs only reachable via generated library calls.",
+            "Valid-execution testing under the same budget finds no soundness failures.",
+            "Effectively exposes missing or incorrect constraints."
+          ],
+          "ja": [
+            "Liezzは異なる実行のウィットネスを結合して不正なウィットネスを生成し、拒否されるか確認する。",
+            "Circom、Corset、Gnark、Noirのツールチェーンをサポート。",
+            "13件のバグを発見、うち7件が健全性に影響。",
+            "生成されたライブラリ呼び出しでのみ到達可能なバグもある。",
+            "同じテスト予算での有効実行テストでは健全性の失敗は発見されなかった。",
+            "制約欠落や誤りなどの健全性問題を効果的に顕在化する。"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "Liezz如何构造无效见证？",
+          "en": "How does Liezz create invalid witnesses?",
+          "ja": "Liezzはどう無効なウィットネスを作るか？"
+        },
+        "answer": {
+          "zh": "Liezz执行两个不同输出的输入，拼接它们的见证，生成必然无效的见证。",
+          "en": "Liezz runs two inputs with different outputs and splices their witnesses to create invalid ones.",
+          "ja": "Liezzは出力の異なる2つの入力を実行し、ウィットネスを結合して無効なものを生成する。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "对抗性见证注入如何发现健壮性漏洞？",
+          "en": "How does injection find soundness bugs?",
+          "ja": "敵対的注入はどう健全性バグを見つけるか？"
+        },
+        "answer": {
+          "zh": "若工具链接受构造的无效见证，则表明约束不足或缺失，存在健壮性漏洞。",
+          "en": "If the toolchain accepts the invalid witness, constraints are missing or too weak, indicating soundness bugs.",
+          "ja": "ツールチェーンが無効なウィットネスを受け入れる場合、制約が不足または弱く、健全性バグの存在を示す。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "为何有效执行测试未能发现这些问题？",
+          "en": "Why did valid-execution testing miss these?",
+          "ja": "有効実行テストはなぜ見逃したか？"
+        },
+        "answer": {
+          "zh": "有效执行测试只验证正确行为，无法暴露仅针对无效输入的约束漏洞。",
+          "en": "Valid-execution testing checks correct behavior but cannot expose constraints that fail only for invalid inputs.",
+          "ja": "有効実行テストは正しい動作しか検証しないため、不正入力でのみ失敗する制約を見逃す。"
+        }
+      }
+    ]
   }
 ]
