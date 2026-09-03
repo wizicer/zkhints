@@ -179,5 +179,96 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-09-03",
+    "projects": [
+      {
+        "url": "https://x.com/smilewithkhushi/status/2094822471925129712",
+        "name": "Horizen Season 2 Builder Ecosystem Fund",
+        "type": "新闻",
+        "author": "Khushí (@smilewithkhushi)",
+        "tags": [
+          "Privacy",
+          "DeFi",
+          "TEE"
+        ],
+        "summary": {
+          "zh": "Horizen宣布第二季Builder Ecosystem Fund，聚焦私密链上金融，提供超过100K ZEN资金，单个重大RFP项目最高可达150,000美元，支持构建隐私交易、借贷等应用。",
+          "en": "Horizen announced Season 2 of its Builder Ecosystem Fund, focusing on private on-chain finance, with over 100K ZEN in funding and up to $150,000 per major RFP project.",
+          "ja": "Horizenは第2期Builder Ecosystem Fundを発表し、プライベートなオンチェーン金融に焦点を当て、100K ZEN以上の資金と主要RFPプロジェクトには最大150,000ドルを提供する。"
+        },
+        "slogan": {
+          "zh": "【ZK新闻】Horizen第二季Builder基金来袭，最高15万美元资助隐私DeFi创新"
+        },
+        "notes": {
+          "zh": [
+            "基金重点支持私密链上金融应用，包括交易、借贷、跨链等",
+            "提供超过100K ZEN，重大RFP项目最高资助150,000美元",
+            "支持TEE（Vela）和ZK（zkVerify）两条隐私技术路线",
+            "鼓励现有EVM项目迁移并增加隐私功能",
+            "提供技术集成、审计和上线支持，不只提供资金",
+            "两个主要RFP：私人代理交易金库和私人借贷"
+          ],
+          "en": [
+            "Fund focuses on private on-chain finance: trading, lending, cross-chain",
+            "Over 100K ZEN; up to $150K per major RFP",
+            "Supports TEE (Vela) and ZK (zkVerify)",
+            "Encourages migration of EVM projects adding privacy",
+            "Offers technical integration, audit, launch support",
+            "Two RFPs: private agentic trading vaults and private borrow-lend"
+          ],
+          "ja": [
+            "プライベートなオンチェーン金融（取引、貸付、クロスチェーン）に重点",
+            "100K ZEN以上、主要RFPには最大$150K",
+            "TEE（Vela）とZK（zkVerify）の両方をサポート",
+            "既存EVMプロジェクトの移行とプライバシー追加を奨励",
+            "技術統合、監査、ローンチ支援を提供",
+            "2つのRFP：プライベートエージェント取引ボールトとプライベート貸借"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "Horizen第二季资助的隐私技术有哪些？",
+          "en": "What privacy technologies does Season 2 fund?",
+          "ja": "第2期が資金提供するプライバシー技術は何か？"
+        },
+        "answer": {
+          "zh": "包括Vela（TEE机密执行）和zkVerify（ZK证明验证）两种。",
+          "en": "Vela (TEE) and zkVerify (ZK).",
+          "ja": "Vela（TEE）とzkVerify（ZK）の2つである。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "第二季的资助重点是什么？",
+          "en": "What is the funding focus in Season 2?",
+          "ja": "第2期の資金提供の重点は何か？"
+        },
+        "answer": {
+          "zh": "聚焦私密链上金融，如私人交易金库和私人借贷。",
+          "en": "Private on-chain finance, e.g., trading vaults and lending.",
+          "ja": "プライベートなオンチェーン金融、例えば取引ボールトや貸付。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "Horizen的隐私架构如何与EVM兼容？",
+          "en": "How does Horizen's privacy architecture work with EVM?",
+          "ja": "HorizenのプライバシーアーキテクチャはEVMとどう互換するか？"
+        },
+        "answer": {
+          "zh": "Horizen是Base上的EVM原生Layer 3，保持Solidity工具链。",
+          "en": "It's an EVM-native Layer 3 on Base, preserving Solidity tooling.",
+          "ja": "Base上のEVMネイティブLayer 3で、Solidityツールを維持。"
+        }
+      }
+    ]
   }
 ]
