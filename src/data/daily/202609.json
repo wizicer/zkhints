@@ -270,5 +270,95 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-09-04",
+    "projects": [
+      {
+        "url": "https://world.org/blog/engineering/provekit-privacy-for-the-real-world",
+        "name": "ProveKit: Privacy for the real world",
+        "type": "博客",
+        "author": "Remco Bloemen, World Foundation",
+        "tags": [
+          "mobile proving",
+          "World ID"
+        ],
+        "summary": {
+          "zh": "World Foundation宣布推出ProveKit，一个生产级ZK证明工具包，可在用户设备上生成证明，具备后量子安全、无需可信设置、支持Noir语言，并已集成至World ID。",
+          "en": "World Foundation announced ProveKit, a production-ready ZK proving toolkit that generates proofs on user devices, offering post-quantum security, no trusted setup, Noir support, and integration with World ID.",
+          "ja": "World Foundationは、ユーザーデバイス上で証明を生成する実用段階のZK証明ツールキットProveKitを発表した。耐量子安全性、信頼セットアップ不要、Noir対応、World IDとの統合が特徴。"
+        },
+        "slogan": {
+          "zh": "【ZK博客】ProveKit：手机端也能跑的后量子ZK证明，隐私更上一层楼"
+        },
+        "notes": {
+          "zh": [
+            "ProveKit可在手机和浏览器上生成ZK证明，私密数据不离开设备。",
+            "基于WHIR哈希承诺方案，无可信设置且达到128位后量子安全。",
+            "开发者可使用Noir语言编写可证明声明，易于上手。",
+            "与Circom和Barretenberg相比，证明时间显著更快且内存占用更低。",
+            "证明体积小于1MB，但验证非简洁，适合服务器验证场景。",
+            "V2将迁移至Goldilocks域并引入Groth16后端以提升链上验证效率。"
+          ],
+          "en": [
+            "ProveKit generates ZK proofs on phones and browsers, keeping private data local.",
+            "Based on WHIR hash-based commitments, no trusted setup and 128-bit post-quantum security.",
+            "Developers can write provable claims in the Noir language.",
+            "Outperforms Circom and Barretenberg in proving time and memory usage.",
+            "Proof size under 1MB, but verification is non-succinct, suitable for server-side verification.",
+            "Version 2 will migrate to Goldilocks field and add Groth16 backend for efficient on-chain verification."
+          ],
+          "ja": [
+            "ProveKitは携帯電話やブラウザ上でZK証明を生成し、プライベートデータをデバイス外に出さない。",
+            "WHIRハッシュベースコミットメントを採用し、信頼セットアップ不要で128ビット耐量子安全性を実現。",
+            "開発者はNoir言語で証明可能なクレームを記述できる。",
+            "CircomやBarretenbergと比較して証明時間とメモリ使用量が大幅に優れる。",
+            "証明サイズは1MB未満だが、検証は非簡潔でサーバー側での検証に適する。",
+            "バージョン2ではGoldilocks体への移行とGroth16バックエンド導入による効率的なオンチェーン検証を予定。"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "ProveKit如何实现无可信设置？",
+          "en": "How does ProveKit avoid trusted setup?",
+          "ja": "ProveKitはどのように信頼セットアップを回避しますか？"
+        },
+        "answer": {
+          "zh": "ProveKit采用基于哈希的WHIR承诺方案，不需要可信设置。",
+          "en": "ProveKit uses the hash-based WHIR commitment scheme, which does not require a trusted setup.",
+          "ja": "ProveKitはハッシュベースのWHIRコミットメントを採用し、信頼セットアップが不要です。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "ProveKit为何选择非简洁验证？",
+          "en": "Why does ProveKit opt for non-succinct verification?",
+          "ja": "ProveKitが非簡潔な検証を選ぶ理由は何ですか？"
+        },
+        "answer": {
+          "zh": "为了减少客户端证明负担，验证在服务器上进行，电路规模线性验证可接受。",
+          "en": "To reduce client-side proving burden, verification runs on servers where linear-time verification is acceptable.",
+          "ja": "クライアント側の証明負荷を減らすため、検証はサーバーで行われ、回路サイズに線形な検証が許容されます。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "ProveKit V2将带来哪些关键改进？",
+          "en": "What key improvements will ProveKit V2 bring?",
+          "ja": "ProveKit V2の主な改善点は何ですか？"
+        },
+        "answer": {
+          "zh": "V2将迁移至Goldilocks域、优化编译器，并引入Groth16后端以提升链上验证效率。",
+          "en": "V2 will migrate to Goldilocks field, optimize the compiler, and add a Groth16 backend for efficient on-chain verification.",
+          "ja": "V2はGoldilocks体への移行、コンパイラ最適化、Groth16バックエンド導入により効率的なオンチェーン検証を実現します。"
+        }
+      }
+    ]
   }
 ]
