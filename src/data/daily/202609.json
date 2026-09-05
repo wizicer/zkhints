@@ -360,5 +360,96 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-09-05",
+    "projects": [
+      {
+        "url": "https://eprint.iacr.org/2026/1855",
+        "name": "Delegatable Anonymous Credentials from Legacy Credentials using Recursive zk-SNARKs",
+        "type": "论文",
+        "author": "Leandro Rometsch, Philipp-Florens Lehwalder, Sebastian Faust, Stefan Schulte",
+        "tags": [
+          "DAC",
+          "Plonky2",
+          "JWT"
+        ],
+        "summary": {
+          "zh": "Rometsch等人在论文中提出了首个基于现有凭证的可委托匿名凭证方案，利用递归zk-SNARKs实现无需修改签发基础设施，支持恒定大小凭证、完全不可链接性和选择性属性披露。",
+          "en": "Rometsch et al. proposed the first delegatable anonymous credential scheme built on legacy credentials using recursive zk-SNARKs, requiring no issuer changes and offering constant-size credentials with full unlinkability.",
+          "ja": "Rometschらは、既存の資格情報を基盤とした初の委任可能匿名資格情報スキームを提案し、再帰的zk-SNARKsを用いて発行基盤の変更不要、定数サイズの資格情報、完全な非リンク性を実現した。"
+        },
+        "slogan": {
+          "zh": "【ZK论文】递归zk-SNARKs赋能传统凭证，首个可委托匿名凭证方案诞生"
+        },
+        "notes": {
+          "zh": [
+            "首个直接在传统凭证上构建的DAC方案，无需修改现有签发基础设施",
+            "凭证大小恒定，不随委托深度增长，且具备完全不可链接性",
+            "支持选择性属性披露，委托链上每层均可控制披露范围",
+            "针对JWT+ECDSA实例化，使用Plonky2实现递归证明",
+            "贡献了安全的链上JWT解析器和支持循环递归的Plonky2扩展",
+            "64个属性下委托耗时1.2秒，验证仅3.3毫秒"
+          ],
+          "en": [
+            "First DAC scheme built directly on legacy credentials, with no issuer-side modifications",
+            "Credentials remain constant-size regardless of delegation depth, with full unlinkability",
+            "Supports selective attribute disclosure at every level of the delegation chain",
+            "Instantiated for JWT+ECDSA using Plonky2 as recursive proving backend",
+            "Contributes a secure in-circuit JWT parser and a Plonky2 extension for cyclic recursion",
+            "Delegation takes 1.2s and verification 3.3ms with 64 attributes"
+          ],
+          "ja": [
+            "既存の資格情報上に直接構築された初のDACスキームで、発行側の変更が不要",
+            "資格情報のサイズは委任深度に依存せず一定で、完全な非リンク性を有する",
+            "委任チェーンの各レベルで選択的属性開示をサポート",
+            "JWT+ECDSA向けにPlonky2を再帰的証明バックエンドとして実装",
+            "安全な回路内JWTパーサーと循環再帰を可能にするPlonky2拡張を提供",
+            "64属性時の委任時間1.2秒、検証時間3.3ミリ秒"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "传统凭证为何难以实现匿名凭证特性？",
+          "en": "Why are legacy credentials incompatible with anonymous credentials?",
+          "ja": "既存の資格情報が匿名資格情報と互換性がないのはなぜか？"
+        },
+        "answer": {
+          "zh": "传统凭证基于ECDSA等签名方案和标准化曲线，与大多数匿名凭证构造依赖的配对基原语不兼容。",
+          "en": "Legacy credentials use ECDSA and standardized curves, while most anonymous credential schemes rely on pairing-based primitives.",
+          "ja": "既存の資格情報はECDSAや標準化された曲線を使用しており、多くの匿名資格情報スキームが依存するペアリングベースのプリミティブと互換性がない。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "如何实现恒定大小的委托凭证？",
+          "en": "How are constant-size credentials achieved?",
+          "ja": "定数サイズの資格情報をどう実現するか？"
+        },
+        "answer": {
+          "zh": "通过递归zk-SNARKs将委托链中所有证明聚合为单一恒定大小证明，避免凭证随委托深度增长。",
+          "en": "Recursive zk-SNARKs aggregate all proofs in the delegation chain into a single constant-size proof.",
+          "ja": "再帰的zk-SNARKsにより、委任チェーン内のすべての証明を単一の定数サイズ証明に集約する。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "链上JWT解析器解决了什么漏洞？",
+          "en": "What vulnerabilities does the in-circuit JWT parser fix?",
+          "ja": "回路内JWTパーサーはどのような脆弱性を修正するか？"
+        },
+        "answer": {
+          "zh": "解析过程在zk电路内完成，修复了先前工作中因外部解析而可能存在的安全漏洞。",
+          "en": "Parsing occurs inside the zk circuit, fixing vulnerabilities from external parsing in prior work.",
+          "ja": "解析をzk回路内で行うことで、先行研究における外部解析に起因する脆弱性を修正する。"
+        }
+      }
+    ]
   }
 ]
