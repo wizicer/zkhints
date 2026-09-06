@@ -451,5 +451,96 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-09-06",
+    "projects": [
+      {
+        "url": "https://eprint.iacr.org/2026/1852",
+        "name": "Jacobian Diagnostics for Under-Constrained Zero-Knowledge Circuits",
+        "type": "论文",
+        "author": "Vijay Singh",
+        "tags": [
+          "Soundness",
+          "Jacobian",
+          "R1CS"
+        ],
+        "summary": {
+          "zh": "Singh在论文中提出基于精确Jacobian线性代数的诊断方法，用于检测ZK电路中欠约束问题，区分局部刚性、代数依赖和域上唯一性。",
+          "en": "Singh proposes a Jacobian-based algebraic diagnostic to detect under-constrained ZK circuits, separating local rigidity, algebraic dependence, and field uniqueness.",
+          "ja": "Singhは論文で、ZK回路の過少拘束を検出するためにJacobian線形代数に基づく診断手法を提案し、局所剛性、代数的依存、体上での一意性を区別する。"
+        },
+        "slogan": {
+          "zh": "【ZK论文】精确Jacobian诊断：让欠约束电路无处遁形"
+        },
+        "notes": {
+          "zh": [
+            "提出基于Jacobian核的欠约束检测方法，分离三种不同概念",
+            "在满足赋值处，扩展约束Jacobian的核即对应纤维scheme的Zariski切空间",
+            "在可分离性假设下，可恢复分量级代数依赖，并提供重数界限",
+            "精确稀疏实现可处理6k-60k约束的gnark R1CS实例",
+            "局限性：诚实见证处看似刚性，但在退化分支可能欠约束",
+            "建议作为可扩展候选检测工具，与对抗见证生成和求解器确认结合"
+          ],
+          "en": [
+            "Jacobian kernel method detects under-constraints and separates three notions",
+            "At satisfying assignment, augmented Jacobian kernel is the Zariski tangent space of the fibre scheme",
+            "Under separability, recovers component-wise algebraic dependence and multiplicity bounds",
+            "Sparse exact implementation handles 6k-60k constraint gnark R1CS instances",
+            "Limitation: witness locality may miss under-constraints on degenerate branches",
+            "Positioned as a scalable detector to combine with adversarial witness generation and solver confirmation"
+          ],
+          "ja": [
+            "Jacobian核による過少拘束検出手法を提案し、3つの概念を分離する",
+            "充足代入において、拡張Jacobianの核は対応するファイバースキームのZariski接空間となる",
+            "分離性仮定の下で成分ごとの代数的依存を回復し、重複度の上界を与える",
+            "正確な疎行列実装で6k～60k制約のgnark R1CSインスタンスを処理可能",
+            "限界：誠実な証人では剛性でも、退化分岐では過少拘束となる可能性がある",
+            "スケーラブルな検出器として位置づけ、敵対的証人生成やソルバ確認と組み合わせる"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "什么是欠约束电路？",
+          "en": "What is an under-constrained circuit?",
+          "ja": "過少拘束回路とは何か？"
+        },
+        "answer": {
+          "zh": "固定公开陈述后，恶意证明者仍能以多种方式赋值安全关键导线且满足约束的电路。",
+          "en": "A circuit where a malicious prover can assign security-critical wires in multiple ways after fixing the public statement.",
+          "ja": "公開ステートメントを固定しても、悪意ある証明者が安全上重要なワイヤに複数の値を割り当てて制約を満たせる回路。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "论文用什么方法检测欠约束？",
+          "en": "What method does the paper use?",
+          "ja": "論文ではどの手法を用いるか？"
+        },
+        "answer": {
+          "zh": "使用精确Jacobian线性代数，分析约束Jacobian核来检测欠约束。",
+          "en": "It uses exact Jacobian linear algebra, analyzing the kernel of the constraint Jacobian.",
+          "ja": "正確なJacobian線形代数を用い、制約Jacobianの核を解析して過少拘束を検出する。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "Jacobian核如何证明非刚性？",
+          "en": "How does the Jacobian kernel prove non-rigidity?",
+          "ja": "Jacobian核はどのように非剛性を示すか？"
+        },
+        "answer": {
+          "zh": "若目标坐标在该核中可运动，则表明该见证处存在无穷小自由度",
+          "en": "If a target coordinate moves within the kernel, it certifies infinitesimal freedom at that witness.",
+          "ja": "対象座標が核内で動くなら、その証人において無限小の自由度があることを示す。"
+        }
+      }
+    ]
   }
 ]
