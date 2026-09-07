@@ -542,5 +542,95 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-09-07",
+    "projects": [
+      {
+        "url": "https://eprint.iacr.org/2026/1864",
+        "name": "Subring VOLE over Galois Rings with Applications to ZK over $\\mathbb{Z}_{p^k}$",
+        "type": "论文",
+        "author": "Ignacio Cascudo, Xiang Liu",
+        "tags": [
+          "subring VOLE",
+          "Galois rings"
+        ],
+        "summary": {
+          "zh": "Cascudo和Liu提出子环VOLE（srVOLE）概念，构造了恶意安全协议，并在环上实现了公开可验证的ZK证明，显著降低通信量。",
+          "en": "Cascudo and Liu proposed subring VOLE (srVOLE) over Galois rings, constructed maliciously secure protocols, and built publicly verifiable ZK proofs over rings with reduced communication.",
+          "ja": "CascudoとLiuはガロア環上の部分環VOLE（srVOLE）を提案し、悪意ある攻撃者に対しても安全なプロトコルを構築し、リング上の公開検証可能なZK証明を実現した。"
+        },
+        "slogan": {
+          "zh": "【ZK论文】子环VOLE：让环上的ZK证明更简洁、公开可验证"
+        },
+        "notes": {
+          "zh": [
+            "提出子环VOLE（srVOLE），将子域VOLE推广到伽罗瓦环",
+            "构造两个恶意安全srVOLE协议：一个基于PCG，通信量极低；一个基于SoftSpokenOT，兼容VOLEitH",
+            "可用于构造公开可验证的VOLE-based ZK",
+            "证明Moz$\\mathbb{Z}_{2^k}$arella的VOLE关联是srVOLE的特例",
+            "将QuickSilver协议适配到任意伽罗瓦环",
+            "电路可满足性：每个乘法门通信量降至1个子环元素"
+          ],
+          "en": [
+            "Proposed subring VOLE (srVOLE), generalizing subfield VOLE to Galois rings",
+            "Constructed two maliciously secure srVOLE protocols: one PCG-like with low amortized communication, one SoftSpoken-like compatible with VOLEitH",
+            "Can be used to build publicly verifiable VOLE-based ZK",
+            "Shown that Moz$\\mathbb{Z}_{2^k}$arella's VOLE correlation is a special case of srVOLE",
+            "Adapted QuickSilver protocol to any Galois ring",
+            "Circuit satisfiability: communication reduced to one subring element per multiplication gate"
+          ],
+          "ja": [
+            "部分環VOLE（srVOLE）を提案し、部分体VOLEをガロア環へ一般化した",
+            "悪意ある攻撃者に対し安全なsrVOLEプロトコルを2つ構築：1つはPCG風で償却通信量が極めて低く、もう1つはSoftSpokenOT風でVOLEitHと互換",
+            "公開検証可能なVOLEベースZKの構築に利用できる",
+            "Moz$\\mathbb{Z}_{2^k}$arellaのVOLE相関がsrVOLEの特殊ケースであることを示した",
+            "QuickSilverプロトコルを任意のガロア環に適応させた",
+            "回路充足可能性：乗算ゲートあたりの通信量を部分環の1要素に削減"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "srVOLE能改进现有ZK的什么方面？",
+          "en": "What aspects of existing ZK are improved?",
+          "ja": "既存のZKのどの側面が改善されますか？"
+        },
+        "answer": {
+          "zh": "降低通信量，并实现公开可验证性，尤其针对整数环上的ZK。",
+          "en": "It reduces communication and achieves public verifiability, especially for ZK over integer rings.",
+          "ja": "通信量を削減し、特に整数環上のZKにおいて公開検証可能性を実現します。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "电路可满足性协议通信量为何能减半？",
+          "en": "Why can communication be halved for circuit satisfiability?",
+          "ja": "回路充足可能性で通信量を半減できる理由は何ですか？"
+        },
+        "answer": {
+          "zh": "借助srVOLE，每个乘法门仅需通信1个子环元素，而非更昂贵的域元素。",
+          "en": "Using srVOLE, each multiplication gate requires communicating just one subring element rather than a more expensive field element.",
+          "ja": "srVOLEを用いることで、各乗算ゲートは高コストな体要素ではなく部分環の1要素の通信で済みます。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "多项式可满足性方面克服了什么限制？",
+          "en": "What restriction is overcome for polynomial satisfiability?",
+          "ja": "多項式充足可能性においてどのような制限が克服されましたか？"
+        },
+        "answer": {
+          "zh": "现有方案多限制为二次关系，本文协议支持任意低阶多项式。",
+          "en": "Prior schemes were mostly limited to degree-2 relations; this protocol supports arbitrary low-degree polynomials.",
+          "ja": "既存方式は主に2次関係に制限されていましたが、本プロトコルは任意の低次多項式をサポートします。"
+        }
+      }
+    ]
   }
 ]
