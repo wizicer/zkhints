@@ -71,9 +71,7 @@ const getText = (content: any, lang: DailyLang): string => {
   }
   if (typeof content === "object") {
     return (
-      content[lang] ||
-      (lang === "ja" ? content.zh || content.en : content.en || content.zh) ||
-      ""
+      content[lang] || (lang === "ja" ? content.zh || content.en : content.en || content.zh) || ""
     );
   }
   return "";
@@ -131,8 +129,7 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
         padding: 0;
         width: 480px;
         font-family:
-          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          "Helvetica Neue", Arial, sans-serif;
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         background-color: #e3f2fd;
         box-sizing: border-box;
         position: relative;
@@ -488,11 +485,7 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
         position: absolute;
         top: -36px;
         right: 24px;
-        background: linear-gradient(
-          to bottom,
-          white 50%,
-          rgba(245, 245, 250, 0.7) 50%
-        );
+        background: linear-gradient(to bottom, white 50%, rgba(245, 245, 250, 0.7) 50%);
         padding: 2px 12px;
         text-shadow:
           2px 2px 4px rgba(179, 147, 211, 0.1),
@@ -670,9 +663,7 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
     {
       duplicateProjects.length > 0 && (
         <div class="duplicate-warning">
-          <div class="duplicate-warning-title">
-            ⚠️ Duplicate content detected for {dayKey}
-          </div>
+          <div class="duplicate-warning-title">⚠️ Duplicate content detected for {dayKey}</div>
           <ul class="duplicate-warning-list">
             {duplicateProjects.map((d) => (
               <li>
@@ -753,18 +744,10 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
                   ) {
                     notesEn = project.notes.en;
                     notesZh = project.notes.zh;
-                    notesJa =
-                      project.notes.ja ||
-                      project.notes.zh ||
-                      project.notes.en ||
-                      [];
+                    notesJa = project.notes.ja || project.notes.zh || project.notes.en || [];
                   }
                 }
-                const maxNotesLength = Math.max(
-                  notesEn.length,
-                  notesZh.length,
-                  notesJa.length,
-                );
+                const maxNotesLength = Math.max(notesEn.length, notesZh.length, notesJa.length);
 
                 return (
                   <>
@@ -785,9 +768,7 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
                             <Image src={avatar} alt="Project avatar" />
                           </div>
                           <span class="project-type">
-                            <span data-lang-en>
-                              {typeLabels.en[project.type] || project.type}
-                            </span>
+                            <span data-lang-en>{typeLabels.en[project.type] || project.type}</span>
                             <span data-lang-zh class="hidden">
                               {typeLabels.zh[project.type] || project.type}
                             </span>
@@ -827,22 +808,13 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
                           </div>
                           <div class="project-summary twitter-content">
                             <span data-lang-en>
-                              {getText(project.summary, "en").replace(
-                                /\{\{name\}\}/g,
-                                "",
-                              )}
+                              {getText(project.summary, "en").replace(/\{\{name\}\}/g, "")}
                             </span>
                             <span data-lang-zh class="hidden">
-                              {getText(project.summary, "zh").replace(
-                                /\{\{name\}\}/g,
-                                "",
-                              )}
+                              {getText(project.summary, "zh").replace(/\{\{name\}\}/g, "")}
                             </span>
                             <span data-lang-ja class="hidden">
-                              {getText(project.summary, "ja").replace(
-                                /\{\{name\}\}/g,
-                                "",
-                              )}
+                              {getText(project.summary, "ja").replace(/\{\{name\}\}/g, "")}
                             </span>
                           </div>
                         </div>
@@ -861,26 +833,17 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
                         </h4>
                         <ul class="notes-list" data-lang-en>
                           {notesEn.map((note) => (
-                            <li
-                              class="note-item twitter-content"
-                              set:html={parseMarkdown(note)}
-                            />
+                            <li class="note-item twitter-content" set:html={parseMarkdown(note)} />
                           ))}
                         </ul>
                         <ul class="notes-list hidden" data-lang-zh>
                           {notesZh.map((note) => (
-                            <li
-                              class="note-item twitter-content"
-                              set:html={parseMarkdown(note)}
-                            />
+                            <li class="note-item twitter-content" set:html={parseMarkdown(note)} />
                           ))}
                         </ul>
                         <ul class="notes-list hidden" data-lang-ja>
                           {notesJa.map((note) => (
-                            <li
-                              class="note-item twitter-content"
-                              set:html={parseMarkdown(note)}
-                            />
+                            <li class="note-item twitter-content" set:html={parseMarkdown(note)} />
                           ))}
                         </ul>
                       </div>
@@ -900,20 +863,10 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
               <a data-lang-en href="https://x.com/icerdesign" target="_blank">
                 @icerdesign
               </a>
-              <a
-                data-lang-zh
-                class="hidden"
-                href="https://x.com/icerdesign"
-                target="_blank"
-              >
+              <a data-lang-zh class="hidden" href="https://x.com/icerdesign" target="_blank">
                 @icerdesign
               </a>
-              <a
-                data-lang-ja
-                class="hidden"
-                href="https://x.com/trainbit_jp"
-                target="_blank"
-              >
+              <a data-lang-ja class="hidden" href="https://x.com/trainbit_jp" target="_blank">
                 @trainbit_jp
               </a>
               <span data-lang-zh class="hidden">
@@ -928,9 +881,7 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
             {projectGroups.length > 1 && (
               <div class="page-indicator">
                 {projectGroups.map((_, i) => (
-                  <div
-                    class={`indicator-dot ${i === cardIndex ? "active" : ""}`}
-                  />
+                  <div class={`indicator-dot ${i === cardIndex ? "active" : ""}`} />
                 ))}
               </div>
             )}
@@ -1058,9 +1009,7 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
     if (langBtn) {
       langBtn.addEventListener("click", () => {
         const nextLang =
-          supportedLangs[
-            (supportedLangs.indexOf(currentLang) + 1) % supportedLangs.length
-          ];
+          supportedLangs[(supportedLangs.indexOf(currentLang) + 1) % supportedLangs.length];
         setLanguage(nextLang);
       });
     }
