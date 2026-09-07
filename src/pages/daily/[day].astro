@@ -9,6 +9,8 @@ import { typeLabels } from "../../utils/dailyTextGenerator";
 import { findDuplicateProjects } from "../../utils/newsDuplicates";
 import { Image } from "astro:assets";
 import { marked } from "marked";
+import katex from "katex";
+import "katex/dist/katex.min.css";
 import QACard from "../../components/QACard.astro";
 
 type DailyLang = "en" | "zh" | "ja";
@@ -25,7 +27,25 @@ marked.use({
 
 const parseMarkdown = (text: string): string => {
   if (!text) return "";
-  const result = marked.parse(text, { async: false }) as string;
+
+  const formulas: string[] = [];
+  const textWithPlaceholders = text.replace(
+    /(?<!\\)\$\$([\s\S]+?)(?<!\\)\$\$|(?<!\\)\$([^\n$]+?)(?<!\\)\$/g,
+    (_match, displayFormula: string | undefined, inlineFormula: string | undefined) => {
+      const placeholder = `KATEXPLACEHOLDER${formulas.length}END`;
+      formulas.push(
+        katex.renderToString(displayFormula ?? inlineFormula ?? "", {
+          displayMode: displayFormula !== undefined,
+          throwOnError: false,
+        }),
+      );
+      return placeholder;
+    },
+  );
+  let result = marked.parse(textWithPlaceholders, { async: false }) as string;
+  formulas.forEach((formula, index) => {
+    result = result.replace(`KATEXPLACEHOLDER${index}END`, formula);
+  });
   return result;
 };
 
@@ -758,9 +778,8 @@ for (let i = 0; i < dayData.projects.length; i += 2) {
                           target="_blank"
                           rel="noopener noreferrer"
                           class="project-name"
-                        >
-                          {project.name}
-                        </a>
+                          set:html={parseMarkdown(project.name)}
+                        />
                       </div>
                       <div class="project-body">
                         <div class="project-meta">
