@@ -632,5 +632,95 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-09-08",
+    "projects": [
+      {
+        "url": "https://coin24.news/posts/ethereum-prioritizes-quantum-security",
+        "name": "Ethereum prioritizes quantum security: The Cost of Delayed zkEVM",
+        "type": "新闻",
+        "author": "Adrian Pierce",
+        "tags": [
+          "Ethereum",
+          "zkEVM"
+        ],
+        "summary": {
+          "zh": "以太坊核心开发团队将量子安全置于zkEVM执行证明之上，计划在2029年12月前全面实现后量子就绪，这导致zkEVM强制执行被推迟到2028年后，使Layer-2网络成为扩展主战场。",
+          "en": "Ethereum core developers are prioritizing quantum security over mandatory zkEVM execution proofs, aiming for full post-quantum readiness by December 2029. This delays base-layer execution scaling, cementing Layer-2 networks as the primary scaling venue.",
+          "ja": "イーサリアムのコア開発チームはzkEVM実行証明よりも量子耐性を優先し、2029年12月までに完全な耐量子コンピュータ対応を目指している。これによりベースレイヤーの実行スケーリングが遅れ、Layer-2が主要なスケーリング手段となる。"
+        },
+        "slogan": {
+          "zh": "【ZK新闻】以太坊为量子安全推迟zkEVM，L2成最大赢家？"
+        },
+        "notes": {
+          "zh": [
+            "以太坊设定2029年12月为全面后量子就绪截止日期，与谷歌、微软等企业迁移目标对齐。",
+            "Hegotá升级中，FOCIL和Frame Transactions获得高优先级，而Quick Slots和Hash-Chain RANDAO被降为B级。",
+            "为保持分叉节奏，核心开发者考虑将后量子认证提前到K*，将强制zkEVM执行证明推迟到L*。",
+            "作为后备方案，J*升级可能包含最小可行后量子（MV-PQ）里程碑，但缺乏完整经济最终性。",
+            "文章将当前行动与Y2K工程类比，强调基础安全优先于性能迭代。",
+            "强制zkEVM执行证明的延迟将巩固Layer-2网络的依赖地位，直至2028年甚至更久。"
+          ],
+          "en": [
+            "Ethereum targets full post-quantum readiness by December 2029, aligning with corporate migration timelines.",
+            "In the Hegotá upgrade, FOCIL and Frame Transactions get high priority, while Quick Slots and Hash-Chain RANDAO are demoted to B-tier.",
+            "To maintain fork cadence, devs may move post-quantum attestations earlier to K* and delay mandatory zkEVM proofs to L*.",
+            "The J* upgrade may include a Minimum Viable Post-Quantum milestone as fallback, but lacks full economic finality.",
+            "The article draws a parallel to Y2K efforts, emphasizing base security over feature velocity.",
+            "Delaying mandatory execution proofs cements Layer-2 dependency until at least 2028."
+          ],
+          "ja": [
+            "イーサリアムは2029年12月までに完全な耐量子コンピュータ対応を目指し、企業の移行時期と足並みを揃える。",
+            "HegotáアップグレードではFOCILとFrame Transactionsが優先され、Quick SlotsとHash-Chain RANDAOはBティアに後退。",
+            "フォーク間隔を維持するため、耐量子認証をK*に前倒し、強制的なzkEVM実行証明をL*に延期する案が検討されている。",
+            "J*アップグレードには最小限の耐量子（MV-PQ）マイルストーンが含まれる可能性があるが、完全な経済的ファイナリティは欠ける。",
+            "記事はY2K対応との類似性を指摘し、基盤セキュリティが機能追加より優先されると論じる。",
+            "強制的な実行証明の延期により、少なくとも2028年までLayer-2への依存が固定化される。"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "Hegotá升级优先哪些EIP？",
+          "en": "Which EIPs are prioritized in Hegotá?",
+          "ja": "HegotáアップグレードではどのEIPが優先されるか？"
+        },
+        "answer": {
+          "zh": "FOCIL、Frame Transactions、Keyed Nonces和Recent Roots获高优先级，以支持后量子路线图。",
+          "en": "FOCIL, Frame Transactions, Keyed Nonces, and Recent Roots receive high priority to support the post-quantum roadmap.",
+          "ja": "耐量子ロードマップを支援するため、FOCIL、Frame Transactions、Keyed Nonces、Recent Rootsが高い優先度を得る。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "zkEVM证明延期的安全影响？",
+          "en": "Security impact of delayed zkEVM proofs?",
+          "ja": "zkEVM証明延期のセキュリティへの影響は？"
+        },
+        "answer": {
+          "zh": "主网将更久依赖Layer-2执行，若Layer-2不可靠，可能引入信任假设，但量子安全优先确保长期基础安全。",
+          "en": "Mainnet will rely on Layer-2 execution longer, potentially introducing trust assumptions if L2s are unreliable, but quantum security priority ensures long-term base-layer safety.",
+          "ja": "メインネットはLayer-2実行への依存が長引き、L2が信頼できない場合の仮定が生じるが、量子耐性優先は長期的な基盤安全性を確保する。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "Frame Transactions如何实现加密敏捷性？",
+          "en": "How do Frame Transactions enable crypto agility?",
+          "ja": "Frame Transactionsはどう暗号アジリティを実現するか？"
+        },
+        "answer": {
+          "zh": "它引入可编程账户模型，允许账户在不触发全网硬分叉的情况下切换签名方案，适应新标准。",
+          "en": "It introduces a programmable account model that allows accounts to swap signature schemes without network-wide hard forks, adapting to new standards.",
+          "ja": "ネットワーク全体のハードフォークなしに署名スキームを切り替えられるプログラマブルなアカウントモデルを導入し、新しい標準に適応できる。"
+        }
+      }
+    ]
   }
 ]
