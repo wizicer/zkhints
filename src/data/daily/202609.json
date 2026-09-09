@@ -722,5 +722,95 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-09-09",
+    "projects": [
+      {
+        "url": "https://arxiv.org/abs/2609.07654v1",
+        "name": "ZK-eSIM: A Privacy-Centric Zero-Knowledge Approach for eSIM Provisioning",
+        "type": "论文",
+        "author": "Joshua Haworth",
+        "tags": [
+          "eSIM",
+          "unlinkability"
+        ],
+        "summary": {
+          "zh": "作者在论文中提出ZK-eSIM，通过零知识证明隐藏设备标识符，并利用一次性假名凭证实现eSIM配置会话的不可关联性，同时保留可追责的例外追踪。",
+          "en": "The authors propose ZK-eSIM, a privacy-preserving eSIM provisioning scheme using zero-knowledge proofs to hide device identifiers and one-time pseudonymous credentials for unlinkable sessions, while retaining accountable traceability by exception.",
+          "ja": "著者らは、ゼロ知識証明でデバイス識別子を秘匿し、使い捨て仮名証明書による非連結セッションを実現しつつ、例外的な説明責任追跡を保持するプライバシー保護型eSIMプロビジョニング方式ZK-eSIMを提案した。"
+        },
+        "slogan": {
+          "zh": "【ZK论文】ZK-eSIM：隐私保护的eSIM配置新方案"
+        },
+        "notes": {
+          "zh": [
+            "用ZK证明设备有效性，避免直接暴露EID等长期标识符",
+            "采用一次性假名凭证和会话ID，防止跨会话追踪",
+            "通过联合托管机制实现可追责的例外追踪",
+            "形式化诚实但好奇威胁模型并证明匿名性与不可关联性",
+            "在测试eUICC上实现并评估，增加实用水平的开销",
+            "保持现有GSMA角色与接口，便于部署"
+          ],
+          "en": [
+            "Uses ZK proofs for device validity instead of long-term identifiers like EID.",
+            "Adopts one-time pseudonymous credentials and session IDs to prevent tracking.",
+            "Achieves accountable traceability via jointly authorised escrow.",
+            "Formalises honest-but-curious model with anonymity and unlinkability proofs.",
+            "Implemented and evaluated on test eUICC; overhead is practical.",
+            "Preserves GSMA roles and interfaces for deployability."
+          ],
+          "ja": [
+            "EID等の長期識別子を直接開示せず、ZK証明でデバイス有効性を確認",
+            "使い捨て仮名証明書とセッションIDで追跡を防止",
+            "共同承認エスクローにより説明責任のある追跡を実現",
+            "正直だが好奇心のあるモデルで匿名性と非連結性を証明",
+            "テストeUICCで実装評価し、実用的なオーバーヘッドを確認",
+            "既存GSMAの役割とインターフェースを維持し展開可能"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "当前eSIM配置有什么隐私问题？",
+          "en": "What privacy issues in current eSIM?",
+          "ja": "現在のeSIMのプライバシー問題は？"
+        },
+        "answer": {
+          "zh": "配置过程中会暴露EID等长期标识符，使运营商能关联会话并追踪用户。",
+          "en": "Long-term identifiers like EID are exposed, allowing operators to link sessions and track users.",
+          "ja": "EID等の長期識別子が露出し、事業者がセッションを関連付けユーザーを追跡できる。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "会话不可关联性如何实现？",
+          "en": "How is session unlinkability achieved?",
+          "ja": "セッション非連結性はどう実現するか？"
+        },
+        "answer": {
+          "zh": "通过短时效一次性假名凭证和每次会话不同的标识符，防止跨会话关联。",
+          "en": "Using short-lived, one-time pseudonymous credentials and per-session identifiers to prevent cross-session linking.",
+          "ja": "短命の使い捨て仮名証明書とセッション毎の識別子で、セッション間の関連付けを防ぐ。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "可追责性如何保留？",
+          "en": "How is accountability preserved?",
+          "ja": "説明責任はどう保持されるか？"
+        },
+        "answer": {
+          "zh": "通过联合授权托管机制，需要多方协作才能去匿名化，防止单方面追踪。",
+          "en": "Via a jointly authorised escrow mechanism where deanonymisation requires cooperation of multiple entities.",
+          "ja": "共同承認エスクロー機構により、匿名化解除には複数主体の協力が必要で、単独での追跡を防ぐ。"
+        }
+      }
+    ]
   }
 ]
