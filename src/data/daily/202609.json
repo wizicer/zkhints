@@ -812,5 +812,95 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-09-10",
+    "projects": [
+      {
+        "url": "https://arxiv.org/abs/2609.08763v1",
+        "name": "ZK-Trace: Certified Collusion Tracing with Zero-Knowledge Credentials for Federated GNSS Interference Monitoring",
+        "type": "论文",
+        "author": "Felix Ott",
+        "tags": [
+          "Federated Learning",
+          "GNSS"
+        ],
+        "summary": {
+          "zh": "Ott等人在论文中提出ZK-Trace框架，结合公开身份标记、接收者特定Tardos指纹与ZK凭证验证，实现联邦GNSS监测中无需配合的离线泄露溯源，并建立可验证的统计与密码学界限。",
+          "en": "Ott et al. proposed ZK-Trace, combining public identity marks, recipient-specific Tardos fingerprints, and ZK credential verification to enable offline collusion tracing in federated GNSS monitoring without leaker cooperation, establishing verifiable statistical and cryptographic bounds.",
+          "ja": "Ottらは論文で、公開マーク・受信者固有Tardosフィンガープリント・ZK証明検証を組み合わせたZK-Traceを提案し、漏洩者の協力不要なオフライン追跡と検証可能な統計的・暗号学的限界を確立した。"
+        },
+        "slogan": {
+          "zh": "【ZK论文】模型泄露怎么办？ZK-Trace用零知识凭证实现联邦GNSS溯源追踪"
+        },
+        "notes": {
+          "zh": [
+            "ZK-Trace针对联邦GNSS监测中专有分类器泄露问题",
+            "结合公开身份标记、Tardos指纹与ZK凭证验证实现溯源",
+            "支持无需泄露者配合的离线追踪机制",
+            "建立条件误指控界限、完备性界限与追踪分数界限",
+            "采用区间算术检查器执行条件界限并分配共同预算",
+            "实验验证可隔离160个单所有者副本并追踪712/720个双所有者混合"
+          ],
+          "en": [
+            "ZK-Trace targets proprietary classifier leaks in federated GNSS monitoring.",
+            "It combines public identity marks, Tardos fingerprints, and ZK credential verification.",
+            "Offline tracing is supported without requiring the leaker's cooperation.",
+            "Conditional false-accusation, completeness, and tracing-score bounds are established.",
+            "An interval-arithmetic checker makes bounds executable and allocates a common budget.",
+            "Experiments isolated 160 single-owner copies and traced 712 of 720 two-owner mixtures."
+          ],
+          "ja": [
+            "ZK-Traceは連合GNSS監視における独自分類器の漏洩を対象とする",
+            "公開マーク・Tardosフィンガープリント・ZK証明を組み合わせて溯源を実現",
+            "漏洩者の協力なしにオフライン追跡が可能",
+            "条件付き誤告発限界・完全性限界・追跡スコア限界を確立",
+            "区間算術チェッカーで限界を実行可能にし共通予算を配分",
+            "実験で160個の単一所有者コピーを分離し、720個中712個の二重所有者混合物を追跡"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "联邦监测站点为何需要泄露溯源？",
+          "en": "Why do federated monitoring stations need leak tracing?",
+          "ja": "連合監視ステーションに漏洩溯源がなぜ必要か？"
+        },
+        "answer": {
+          "zh": "因为分发给半可信站点的专有分类器可能被非法复制或泄露，需追溯责任方。",
+          "en": "Because proprietary classifiers distributed to partly trusted stations may be illegally copied or leaked, requiring accountability.",
+          "ja": "半信頼ステーションに配布された独自分類器が不正に複製・漏洩される可能性があり、責任追跡が必要となる。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "Tardos指纹如何实现接收者特定标记？",
+          "en": "How do Tardos fingerprints enable recipient-specific marking?",
+          "ja": "Tardosフィンガープリントはどう受信者固有のマーキングを実現するか？"
+        },
+        "answer": {
+          "zh": "通过为每个接收者生成独特的指纹模式并嵌入模型，使每份副本具有可区分标识。",
+          "en": "By generating unique fingerprint patterns for each recipient and embedding them into the model, making each copy distinguishable.",
+          "ja": "各受信者に固有のフィンガープリントパターンを生成しモデルに埋め込むことで、各コピーを識別可能にする。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "特征蒸馏错误与追踪分数界限有何关联？",
+          "en": "How do feature-distillation errors relate to tracing-score bounds?",
+          "ja": "特徴蒸留エラーは追跡スコア限界とどう関連するか？"
+        },
+        "answer": {
+          "zh": "论文为相关特征蒸馏错误建立了确定性追踪分数界限，以量化此类错误对溯源的影响。",
+          "en": "The paper establishes a deterministic tracing-score bound for correlated feature-distillation errors to quantify their impact on tracing.",
+          "ja": "論文は相関する特徴蒸留エラーに対し、溯源への影響を定量化するための決定論的追跡スコア限界を確立している。"
+        }
+      }
+    ]
   }
 ]
