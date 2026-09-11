@@ -902,5 +902,95 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-09-11",
+    "projects": [
+      {
+        "url": "https://arxiv.org/abs/2609.07963v1",
+        "name": "Guppy: Efficient Light Clients via Recursive Zero-Knowledge Proofs",
+        "type": "论文",
+        "author": "Alberto Sonnino",
+        "tags": [
+          "Light Clients",
+          "Recursive ZKPs"
+        ],
+        "summary": {
+          "zh": "Sonnino等人在论文中提出了一个名为Guppy的协议，通过递归ZKP实现高效轻客户端，让验证者只承诺状态更新，由链下服务维护可验证Merkle树。",
+          "en": "Sonnino et al. proposed Guppy, a protocol that enables efficient light clients via recursive ZKPs, allowing validators to commit only to state updates while an off-chain service maintains a verifiable Merkle tree.",
+          "ja": "Sonninoらは、再帰的ZKPを用いて効率的なライトクライアントを実現するプロトコルGuppyを提案した。検証者は状態更新のみにコミットし、オフチェーンサービスが検証可能なMerkleツリーを維持する。"
+        },
+        "slogan": {
+          "zh": "【ZK论文】Guppy：用递归ZK让轻客户端告别全状态承诺"
+        },
+        "notes": {
+          "zh": [
+            "Guppy避免了验证者维护完整状态Merkle树的开销",
+            "链下服务通过递归ZKP维护可验证Merkle树",
+            "哈希链承诺将签名验证移出ZK电路以降低证明成本",
+            "并行递归证明管线确保延迟随吞吐量对数增长",
+            "基于Plonky2实现，支持2^30大小的树和每秒数千更新",
+            "验证者开销可忽略，不增加区块构建复杂度"
+          ],
+          "en": [
+            "Guppy removes the need for validators to maintain full state Merkle trees.",
+            "An off-chain service maintains the verifiable Merkle tree using recursive ZKPs.",
+            "A hash-chain commitment moves signature verification out of the ZK circuit.",
+            "A parallel recursive proving pipeline keeps latency logarithmic in throughput.",
+            "Plonky2 implementation supports a 2^30 tree and thousands of updates per second.",
+            "Validator overhead is negligible and block construction complexity is not increased."
+          ],
+          "ja": [
+            "Guppyは検証者が完全な状態Merkleツリーを維持する必要をなくす。",
+            "オフチェーンサービスが再帰的ZKPを用いて検証可能なMerkleツリーを維持する。",
+            "ハッシュチェーンコミットメントにより署名検証をZK回路外に移す。",
+            "並列再帰証明パイプラインにより遅延はスループットに対して対数的に増加する。",
+            "Plonky2実装では2^30のツリーと毎秒数千の更新をサポートする。",
+            "検証者のオーバーヘッドは無視でき、ブロック構築の複雑性は増加しない。"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "Guppy如何减轻验证者负担？",
+          "en": "How does Guppy reduce validator burden?",
+          "ja": "Guppyは検証者の負担をどう軽減するか？"
+        },
+        "answer": {
+          "zh": "验证者只承诺状态更新，不维护完整状态Merkle树。",
+          "en": "Validators commit only to state updates, not the full state Merkle tree.",
+          "ja": "検証者は状態更新のみにコミットし、完全な状態Merkleツリーを維持しない。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "什么是哈希链承诺？",
+          "en": "What is the hash-chain commitment?",
+          "ja": "ハッシュチェーンコミットメントとは何か？"
+        },
+        "answer": {
+          "zh": "将验证者签名验证移出ZK电路，保持证明电路高效。",
+          "en": "It moves validator signature verification out of the ZK circuit, keeping the proving circuit efficient.",
+          "ja": "検証者の署名検証をZK回路外に移し、証明回路を効率的に保つ。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "Guppy如何实现扩展性？",
+          "en": "How does Guppy achieve scalability?",
+          "ja": "Guppyはどうスケーラビリティを実現するか？"
+        },
+        "answer": {
+          "zh": "验证者不维护大状态树，链下服务并行递归证明，验证者开销小。",
+          "en": "Validators avoid large state trees, while the off-chain service parallelizes recursive proving, keeping validator overhead negligible.",
+          "ja": "検証者は大きな状態ツリーを維持せず、オフチェーンサービスが並列再帰証明を行い、検証者オーバーヘッドを最小にする。"
+        }
+      }
+    ]
   }
 ]
