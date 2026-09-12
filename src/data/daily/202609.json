@@ -992,5 +992,95 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-09-12",
+    "projects": [
+      {
+        "url": "https://a16zcrypto.com/posts/article/lattice-snarks-jolt-post-quantum-faster/",
+        "name": "Entering the era of lattice SNARKs – with a faster, post-quantum Jolt",
+        "type": "博客",
+        "author": "Markos Georghiades, Justin Thaler, Andrew Tretyakov, Michael Zhu",
+        "tags": [
+          "zkVM",
+          "RISC-V"
+        ],
+        "summary": {
+          "zh": "a16z crypto团队在博客中发布Lattice Jolt，开源zkVM新版本，以格基承诺Akita替代椭圆曲线Dory，实现后量子安全，证明速度提升2至3倍，证明尺寸低于100KB。",
+          "en": "a16z crypto introduced Lattice Jolt, a lattice-based zkVM replacing Dory with Akita. It achieves post-quantum security, 2-3x speedups, and sub-100KB proofs.",
+          "ja": "a16z cryptoチームがブログで、楕円曲線から格子暗号に移行したオープンソースzkVM「Lattice Jolt」を発表。耐量子性を実現し、証明速度を2～3倍に向上、証明サイズは100KB未満に抑えた。"
+        },
+        "slogan": {
+          "zh": "【ZK博客】后量子zkVM新标杆：Lattice Jolt速度翻倍、证明破100KB"
+        },
+        "notes": {
+          "zh": [
+            "以基于Module-SIS的Akita承诺替代椭圆曲线Dory，实现透明后量子安全",
+            "证明者速度提升至200万+周期/秒，MacBook GPU加速超1000万周期/秒",
+            "证明尺寸低于100KB，为现有后量子zkVM中最小",
+            "证明开销从数百万倍降至约1万倍，内存占用降至200 bytes/cycle",
+            "指出哈希基SNARKs中代数哈希（如Poseidon）及未证proximity-gap界限的安全隐患",
+            "128位域上保持近128位安全性，优于哈希方案因n/|F|导致的安全损耗"
+          ],
+          "en": [
+            "Replaces elliptic-curve Dory with Module-SIS-based Akita for transparent post-quantum security",
+            "Prover reaches 2M+ cycles/sec on CPU, 10M+ on MacBook GPU via Metal",
+            "Proof size under 100KB, smallest among current post-quantum zkVMs",
+            "Proving overhead dropped from millions to ~10,000x, memory to 200 bytes/cycle",
+            "Highlights security risks of algebraic hashes and unproven proximity-gap bounds in hash-based SNARKs",
+            "Maintains nearly 128-bit security over 128-bit fields, unlike hash-based soundness loss n/|F|"
+          ],
+          "ja": [
+            "楕円曲線DoryをModule-SISベースのAkitaに置き換え、透明な耐量子安全性を実現",
+            "CPUで200万サイクル/秒以上、MacBook GPUでは1000万サイクル/秒以上を達成",
+            "証明サイズが100KB未満で、現行の耐量子zkVM中最小",
+            "証明オーバーヘッドを数百万倍から約1万倍に低下、メモリは200バイト/サイクル",
+            "ハッシュベースSNARKにおける代数的ハッシュや未証明のproximity-gap境界のリスクを指摘",
+            "128ビットの体でほぼ128ビットの安全性を維持し、ハッシュ方式のn/|F|による損失を回避"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "格密码为何让Jolt更快？",
+          "en": "Why does lattice crypto make Jolt faster?",
+          "ja": "格子暗号はなぜJoltを高速化するか？"
+        },
+        "answer": {
+          "zh": "格密码在128位域即达128位安全，而椭圆曲线需256位域。域大小减半使乘法运算大幅提速。",
+          "en": "Lattice crypto achieves 128-bit security over 128-bit fields, while elliptic curves need 256-bit fields. Halving field size significantly speeds up multiplications.",
+          "ja": "格子暗号は128ビットの体で128ビットの安全性を達成できる一方、楕円曲線は256ビットの体が必要である。体のサイズを半分にすることで乗算が大幅に高速化される。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "Akita如何替代Dory？",
+          "en": "How does Akita replace Dory?",
+          "ja": "AkitaはどうDoryを置き換えるか？"
+        },
+        "answer": {
+          "zh": "Akita基于Module-SIS格假设，取代椭圆曲线Dory，在透明设置下实现后量子安全与更快证明。",
+          "en": "Akita uses the lattice assumption Module-SIS instead of elliptic curves, enabling post-quantum security and faster proving under transparent setup.",
+          "ja": "Akitaは楕円曲線に代わり、格子暗号の仮定Module-SISに基づき、透明なセットアップのまま耐量子性と高速証明を実現する。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "为何Lattice Jolt证明更小？",
+          "en": "Why are Lattice Jolt proofs smaller?",
+          "ja": "なぜLattice Joltの証明サイズは小さいか？"
+        },
+        "answer": {
+          "zh": "格基承诺结构紧凑，配合128位域高效运算，证明尺寸显著低于其他后量子zkVM的200至600KB。",
+          "en": "Lattice commitments are compact and pair efficiently with 128-bit fields, yielding proofs far smaller than other post-quantum zkVMs.",
+          "ja": "格子ベースのコミットメントはコンパクトで128ビットの体と効率的に組み合わさり、他の耐量子zkVMより大幅に小さい証明サイズを実現する。"
+        }
+      }
+    ]
   }
 ]
