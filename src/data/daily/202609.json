@@ -1082,5 +1082,95 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-09-13",
+    "projects": [
+      {
+        "url": "https://eprint.iacr.org/2026/1931",
+        "name": "SoK: Zero-Knowledge Friendly Hash Functions over Prime Fields",
+        "type": "论文",
+        "author": "Clémence Bouvier, Lorenzo Grassi, Katharina Koschatko, Christian Rechberger, Fabian Schmid, Matthias Johann Steiner, Zhuo Wu, Hailun Yan",
+        "tags": [
+          "ZK-friendly hash",
+          "cryptanalysis"
+        ],
+        "summary": {
+          "zh": "Bouvier等人对素数域上的ZK友好哈希函数进行了系统综述，涵盖设计范式、代数密码分析，并在R1CS、AIR、PLONK下对比了约束数与性能。",
+          "en": "Bouvier et al. systematically surveyed ZK-friendly hash functions over prime fields, covering design paradigms, algebraic cryptanalysis, and comparing constraint counts and performance under R1CS, AIR, and PLONK.",
+          "ja": "Bouvierらは素体上のZKフレンドリーなハッシュ関数を体系的に調査し、設計パラダイム、代数的暗号解析、R1CS・AIR・PLONKにおける制約数と性能を比較した。"
+        },
+        "slogan": {
+          "zh": "【ZK论文】ZK 友好哈希函数全解析：设计与性能基准"
+        },
+        "notes": {
+          "zh": [
+            "系统梳理了现有ZK友好哈希函数的设计范式和运行模式。",
+            "综述了针对这些设计的代数密码分析技术及第三方分析结果。",
+            "对被攻破的参数集估算了抵抗已知攻击所需的最小轮数。",
+            "在R1CS、AIR、PLONK三种算术化方式下对比了约束数和性能。",
+            "提供了开源实现套件，包括参考框架、Rust实现和电路实现。",
+            "为实践者在ZK协议中选择哈希函数提供了指导和基准。"
+          ],
+          "en": [
+            "Systematically organizes design paradigms and modes of existing ZK-friendly hash functions.",
+            "Reviews algebraic cryptanalysis techniques and third-party analyses for these designs.",
+            "Estimates minimum round counts to resist known attacks for broken parameter sets.",
+            "Compares constraint counts and performance across R1CS, AIR, and PLONK arithmetizations.",
+            "Provides an open-source suite with reference framework, Rust implementations, and in-circuit implementations.",
+            "Guides practitioners in hash selection for ZK protocols with benchmarks."
+          ],
+          "ja": [
+            "既存のZKフレンドリーなハッシュ関数の設計パラダイムと運用モードを体系的に整理した。",
+            "これらの設計に対する代数的暗号解析技術と第三者による解析結果をまとめた。",
+            "破られたパラメータ集合に対し、既知の攻撃に耐えるための最小ラウンド数を推定した。",
+            "R1CS、AIR、PLONKの3つの算術化方式で制約数と性能を比較した。",
+            "参照フレームワーク、Rust実装、回路実装を含む完全なオープンソーススイートを提供する。",
+            "実務者がZKプロトコルでハッシュ関数を選ぶための指針とベンチマークを示す。"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "论文如何评估不同算术化方式下的效率？",
+          "en": "How does the paper evaluate efficiency across different arithmetizations?",
+          "ja": "論文は異なる算術化方式での効率をどのように評価しているか？"
+        },
+        "answer": {
+          "zh": "通过理论推导约束数，并进行大量基准测试对比R1CS、AIR、PLONK。",
+          "en": "By theoretically deriving constraint counts and running extensive benchmarks for R1CS, AIR, and PLONK.",
+          "ja": "制約数を理論的に導出し、R1CS、AIR、PLONKについて大規模なベンチマークを実施している。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "论文对已破解参数集做了什么处理？",
+          "en": "What does the paper do with broken parameter sets?",
+          "ja": "論文は破られたパラメータ集合に対して何をしたか？"
+        },
+        "answer": {
+          "zh": "估算抵抗已知攻击所需的最小轮数，使所有构造达到可比安全水平。",
+          "en": "It estimates the minimum rounds needed to resist known attacks, bringing all constructions to a comparable security level.",
+          "ja": "既知の攻撃に耐えるために必要な最小ラウンド数を推定し、すべての構造を同等のセキュリティレベルに引き上げる。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "综述涉及的代数密码分析技术主要针对哪些结构？",
+          "en": "Which structures do the algebraic cryptanalysis techniques mainly target?",
+          "ja": "代数的暗号解析技術が主に対象とする構造は何か？"
+        },
+        "answer": {
+          "zh": "主要针对具有低代数次数的置换，如MiMC、Rescue、Poseidon等。",
+          "en": "They mainly target permutations with low algebraic degree, such as MiMC, Rescue, and Poseidon.",
+          "ja": "主にMiMC、Rescue、Poseidonなどの低い代数次数を持つ置換を対象としている。"
+        }
+      }
+    ]
   }
 ]
