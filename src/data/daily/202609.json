@@ -1172,5 +1172,96 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-09-14",
+    "projects": [
+      {
+        "url": "https://eprint.iacr.org/2026/2005",
+        "name": "SoK: Private Transformer Inference Across Systems, Models, and Cryptography",
+        "type": "论文",
+        "author": "Andes Y. L. Kei, Sherman S. M. Chow",
+        "tags": [
+          "Transformer",
+          "MPC",
+          "FHE"
+        ],
+        "summary": {
+          "zh": "Kei与Chow在论文中系统分析了58个密码学私有Transformer推理框架，从系统、模型与密码学三维度揭示跨层设计约束与安全边界，归纳出12个开放问题。",
+          "en": "Kei and Chow systematize 58 cryptographic private Transformer inference frameworks, revealing cross-level design constraints and security boundaries across systems, models, and cryptography, and distill 12 open problems.",
+          "ja": "Keiらは論文で、2022年から2026年の58個の暗号学的プライベートTransformer推論フレームワークを体系化し、システム・モデル・暗号学の3側面から設計制約と安全境界を明らかにし、12の未解決問題を整理した。"
+        },
+        "slogan": {
+          "zh": "【ZK论文】私有Transformer推理全盘点：58个框架、12个开放问题与跨层安全边界"
+        },
+        "notes": {
+          "zh": [
+            "系统化了2022至2026年间的58个密码学私有Transformer推理框架",
+            "从系统执行、模型适配和密码学实现三个交互层面进行分析",
+            "揭示优化无法直接跨执行阶段迁移的适用性约束",
+            "发现数据依赖的剪枝、缓存与路由需隐藏或约束执行结构",
+            "识别出影响5个框架的四类安全问题与恶意安全组合边界",
+            "提出12个开放问题与16个展望，涵盖效率、安全与可扩展性"
+          ],
+          "en": [
+            "The work systematizes 58 cryptographic private transformer frameworks from 2022 to 2026.",
+            "It analyzes three interacting levels: systems, models, and cryptography.",
+            "Optimizations cannot transfer unchanged across phases due to unavailable values.",
+            "Data-dependent pruning, caching, and routing require private execution structure handling.",
+            "Four security concern classes affecting five frameworks are identified in maliciously secure designs.",
+            "Twelve open problems and sixteen outlooks span efficiency, security, and scalability."
+          ],
+          "ja": [
+            "2022年から2026年の58個の暗号学的プライベートTransformer推論フレームワークを体系化した",
+            "システム、モデル、暗号学の3つの相互作用する層から分析している",
+            "未生成の値を必要とするため、フェーズ間で最適化がそのまま移行できない",
+            "データ依存の剪定やキャッシュ、ルーティングには実行構造の秘匿が必要",
+            "5つのフレームワークに影響する4種類のセキュリティ懸念を特定した",
+            "効率性、安全性、拡張性を含む12の未解決問題と16の展望を提示している"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "私有推理主要保护什么？",
+          "en": "What does private inference protect?",
+          "ja": "保護対象は何か？"
+        },
+        "answer": {
+          "zh": "它保护用户查询、模型权重及中间计算，无需可信硬件或统计隐私放松。",
+          "en": "It protects user queries, model weights, and intermediate computations without trusted hardware or statistical relaxations.",
+          "ja": "信頼できるハードウェアや統計的緩和なく、ユーザーの問い合わせとモデル重みを保護する。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "优化为何难以跨阶段迁移？",
+          "en": "Why can't optimizations transfer across phases?",
+          "ja": "最適化の移行制約とは？"
+        },
+        "answer": {
+          "zh": "部分优化依赖尚未生成的中间值，且数据依赖操作要求隐藏执行结构。",
+          "en": "Some optimizations require values not yet available, and data-dependent operations require hiding execution structure.",
+          "ja": "未生成の値を必要とする最適化があり、データ依存の操作は実行構造の秘匿を要する。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "经验校准机制有何局限？",
+          "en": "What limits empirically calibrated mechanisms?",
+          "ja": "キャリブレーションの限界は？"
+        },
+        "answer": {
+          "zh": "16个框架依赖经验校准或特定分布机制，限制了跨框架泛化与可比性。",
+          "en": "Sixteen frameworks rely on empirical calibration or distribution-specific mechanisms, limiting generalization and cross-framework comparability.",
+          "ja": "16のフレームワークが経験的キャリブレーションや特定分布の機構に依存しており、汎化と相互比較可能性を制限している。"
+        }
+      }
+    ]
   }
 ]
