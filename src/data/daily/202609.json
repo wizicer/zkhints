@@ -1263,5 +1263,95 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-09-15",
+    "projects": [
+      {
+        "url": "https://eprint.iacr.org/2026/1901",
+        "name": "Nothing Up My Matrix: Kleptographic Backdoors in ZK-friendly Hash Functions",
+        "type": "论文",
+        "author": "Hyunsik Jeong, Malte Sander Leip, Mincheol Son",
+        "tags": [
+          "backdoor",
+          "MDS matrix"
+        ],
+        "summary": {
+          "zh": "Jeong等人在论文中揭示了ZK友好哈希函数矩阵可能被恶意利用植入kleptographic后门，并在Plonky3、Neptune Cash与Plonky2中展示了伪造证明、摘要碰撞与假币铸造等严重安全后果。",
+          "en": "Jeong et al. revealed kleptographic backdoor risks in ZK-friendly hash function matrices, demonstrating severe consequences including forged proofs, digest collisions, and counterfeit currency in Plonky3, Neptune Cash, and Plonky2.",
+          "ja": "Jeongらは論文で、ZK友好ハッシュ関数の行列に悪用可能なクレプトグラフィックバックドアのリスクを明らかにし、Plonky3・Neptune Cash・Plonky2において偽造証明や摘要衝突・偽造通貨などの重大な安全上の影響を示した。"
+        },
+        "slogan": {
+          "zh": "【ZK研究】ZK哈希函数暗藏后门：MDS矩阵也可能成为攻击者的“万能钥匙”"
+        },
+        "notes": {
+          "zh": [
+            "论文揭示ZK友好哈希函数线性层矩阵选择缺乏统一标准，存在恶意后门植入空间。",
+            "恶意设计者可选定满足MDS条件及安全检测的矩阵，实现特定输入到输出的可控映射。",
+            "Plonky3案例中，攻击者可控制Fiat-Shamir挑战，使验证者接受无效声明。",
+            "Neptune Cash案例中，可通过构造程序摘要碰撞绕过交易验证，实现伪造货币。",
+            "Plonky2案例中，可伪造Merkle树成员证明，破坏系统完整性。",
+            "研究强调仅满足MDS等代数条件不足以保证矩阵可信，生成过程须透明可验证。"
+          ],
+          "en": [
+            "The paper reveals that inconsistent standards for linear-layer matrix selection in ZK-friendly hash functions create room for malicious backdoors.",
+            "A malicious designer can choose matrices satisfying MDS conditions and security checks while enabling controlled input-to-output mapping.",
+            "In Plonky3, an attacker could control Fiat-Shamir challenges to make verifiers accept invalid claims.",
+            "In Neptune Cash, program digest collisions could bypass transaction validation and enable counterfeit currency.",
+            "In Plonky2, forged Merkle-tree membership proofs could compromise system integrity.",
+            "The study emphasizes that algebraic properties like MDS are insufficient; matrix generation must be transparent and verifiable."
+          ],
+          "ja": [
+            "論文は、ZK友好ハッシュ関数の線形層行列選択に統一基準がなく、悪意あるバックドアの温床となりうることを示した。",
+            "悪意ある設計者はMDS条件と安全性検査を満たしつつ、特定の入出力対応を可能にする行列を選べる。",
+            "Plonky3では、攻撃者がFiat-Shamirチャレンジを制御し、検証者に無効な主張を受け入れさせられる。",
+            "Neptune Cashでは、プログラム摘要の衝突により取引検証を迂回し、偽造通貨が作成可能となる。",
+            "Plonky2では、Merkle木のメンバーシップ証明を偽造し、システムの完全性を破壊できる。",
+            "MDSなどの代数的条件だけでは不十分で、行列生成プロセスは透明かつ検証可能でなければならない。"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "MDS矩阵怎样被恶意利用？",
+          "en": "How can MDS matrices be exploited?",
+          "ja": "MDS行列はどのように悪用されるか？"
+        },
+        "answer": {
+          "zh": "攻击者可构造通过安全检测的MDS矩阵，使特定输入经轮函数后映射到预定输出。",
+          "en": "Attackers may craft MDS matrices that map chosen inputs to outputs after several rounds, bypassing checks.",
+          "ja": "攻撃者は検査を迂回するMDS行列を構築し、特定の入力を所定の出力に多轮後に対応させられる。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "Neptune Cash攻击有何后果？",
+          "en": "What is the impact on Neptune Cash?",
+          "ja": "Neptune Cashへの影響は何か？"
+        },
+        "answer": {
+          "zh": "攻击者可制造程序摘要碰撞，绕过交易验证检查，从而创建伪造货币。",
+          "en": "It enables digest collisions to bypass transaction checks, allowing counterfeit currency creation.",
+          "ja": "プログラム摘要の衝突を起こし、取引検証を迂回して偽造通貨を作成できる。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "如何防御这种矩阵后门攻击？",
+          "en": "How to prevent such matrix backdoors?",
+          "ja": "行列バックドアをどう防ぐか？"
+        },
+        "answer": {
+          "zh": "必须要求矩阵生成过程透明可验证，采用nothing-up-my-sleeve流程避免任意替换。",
+          "en": "Require fully transparent and verifiable generation using nothing-up-my-sleeve procedures, avoiding arbitrary substitutions.",
+          "ja": "行列生成を透明かつ検証可能にし、nothing-up-my-sleeve手順を採用して恣意的な置換を防ぐ必要がある。"
+        }
+      }
+    ]
   }
 ]
