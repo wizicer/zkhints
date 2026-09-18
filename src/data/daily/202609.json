@@ -1353,5 +1353,92 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-09-18",
+    "projects": [
+      {
+        "url": "https://security.apple.com/blog/apple-reference-image/",
+        "name": "Apple Reference Image: A New Approach for Verified Photography - Apple Security Research",
+        "type": "博客",
+        "author": "Apple Security Engineering and Architecture (SEAR) and Camera & Photos",
+        "tags": [
+          "Apple",
+          "Image Provenance"
+        ],
+        "summary": {
+          "zh": "Apple SEAR与相机团队发布Apple Reference Image，在iPhone 18 Pro上通过安全硬件与PCC实现可验证摄影，支持时间戳、后量子签名和隐私保护。",
+          "en": "Apple SEAR and Camera & Photos introduced Apple Reference Image, a verifiable photography mode on iPhone 18 Pro using secure hardware and PCC for timestamps, post-quantum signatures, and privacy.",
+          "ja": "Apple SEARとカメラ部門は、iPhone 18 Proで安全ハードウェアとPCCを用い、タイムスタンプ、耐量子署名、プライバシー保護を備えた検証可能な撮影機能Apple Reference Imageを発表した。"
+        },
+        "slogan": {
+          "zh": "【安全新闻】Apple Reference Image：让iPhone照片自带防伪身份证，还想抗量子攻击"
+        },
+        "notes": {
+          "zh": [
+            "Apple Reference Image在iPhone 18 Pro主摄上提供可选模式，生成经安全时间戳的参考图像。",
+            "系统分为安全数字负片与PCC显影两阶段，分别用传感器硬件和可验证透明日志保护。",
+            "拍摄时传感器立即签名像素与元数据，并用Apple时间戳服务给出拍摄时间上下界。",
+            "最终图像使用RSA-3072与ML-DSA-87复合后量子签名，并支持按照片或传感器撤销。",
+            "隐私设计避免暴露摄影师身份与设备关联，时间戳请求经Oblivious HTTP传输。"
+          ],
+          "en": [
+            "Apple Reference Image is an opt-in mode on iPhone 18 Pro main camera that creates securely timestamped reference images.",
+            "It splits the flow into a secure digital negative and PCC development, protected by sensor hardware and transparency logs.",
+            "The sensor signs pixels and metadata at capture, while Apple's timestamp service provides lower and upper time bounds.",
+            "The final image is signed with a composite RSA-3072 and ML-DSA-87 post-quantum signature and can be revoked per photo or sensor.",
+            "Privacy design avoids photographer identity and device linkage; timestamp requests use Oblivious HTTP."
+          ],
+          "ja": [
+            "Apple Reference ImageはiPhone 18 Proのメインカメラで使える任意モードで、安全にタイムスタンプされた参照画像を生成する。",
+            "安全なデジタルネガ作成とPCCでの現像の二段階で構成され、センサー保護と透明性ログで支える。",
+            "撮影時にセンサーが画素とメタデータへ署名し、Appleのタイムスタンプサービスが撮影時刻の上下限を与える。",
+            "最終画像はRSA-3072とML-DSA-87の複合耐量子署名で署名され、写真単位・センサー単位で失効できる。",
+            "撮影者身元と端末の関連を露出せず、タイムスタンプ要求はOblivious HTTP経由で送られる。"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "该功能与C2PA思路有何不同？",
+          "en": "How does it differ from C2PA?",
+          "ja": "この機能はC2PAとどう違うか？"
+        },
+        "answer": {
+          "zh": "C2PA在拍摄后附加来源数据，而Apple从传感器捕获起就建立硬件信任链。",
+          "en": "C2PA attaches provenance after capture, while Apple builds hardware trust from sensor capture.",
+          "ja": "C2PAは撮影後に来歴情報を付すが、Appleはセンサー捕捉時からハードウェア信頼を構築する。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "PCC如何确认传感器与设备配对？",
+          "en": "How does PCC verify sensor-device pairing?",
+          "ja": "PCCはセンサーと端末の対応をどう検証するか？"
+        },
+        "answer": {
+          "zh": "PCC验证传感器、SEP和设备清单签名链，确认它们属于同一iPhone。",
+          "en": "PCC verifies sensor, SEP, and device manifest certificate chains to confirm they belong to the same iPhone.",
+          "ja": "PCCはセンサー、SEP、端末マニフェストの証明書チェーンを検証し、同一iPhone归属を確認する。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "最终图像采用哪种后量子签名？",
+          "en": "Which post-quantum signature is used?",
+          "ja": "最終画像にはどの耐量子署名が使われるか？"
+        },
+        "answer": {
+          "zh": "最终JPEG签名组合RSA-3072-PSS-SHA512与ML-DSA-87，形成复合后量子签名。",
+          "en": "The final JPEG is signed with a composite of RSA-3072-PSS-SHA512 and ML-DSA-87 for post-quantum security.",
+          "ja": "最終JPEGはRSA-3072-PSS-SHA512とML-DSA-87の複合署名で保護される。"
+        }
+      }
+    ]
   }
 ]
