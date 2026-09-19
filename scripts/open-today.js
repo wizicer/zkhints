@@ -2,7 +2,7 @@ import { exec } from "child_process";
 import os from "os";
 
 const date = new Date().toISOString().split("T")[0];
-const url = `http://localhost:4321/daily/${date}?lang=en`;
+const url = `http://localhost:34098/daily/${date}?lang=en`;
 const target = process.argv[2] || url;
 
 let command;

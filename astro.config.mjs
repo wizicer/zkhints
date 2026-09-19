@@ -9,6 +9,9 @@ import rehypeKatex from "rehype-katex";
 // https://astro.build/config
 export default defineConfig({
   integrations: [react()],
+  server: {
+    port: 34098,
+  },
 
   vite: {
     plugins: [tailwindcss()],
