@@ -1440,5 +1440,95 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-09-20",
+    "projects": [
+      {
+        "url": "https://eprint.iacr.org/2026/1987",
+        "name": "Bonsai: Scalable Private Payments",
+        "type": "论文",
+        "author": "Patrick O'Grady, Lúcás Críostóir Meier, Guru-Vamsi Policharla",
+        "tags": [
+          "Private Payments",
+          "Pari"
+        ],
+        "summary": {
+          "zh": "O'Grady等人提出基于账户的隐私支付方案Bonsai，验证者仅存储单个承诺而非nullifier，用户自行维护并可剪枝旧nullifier，结合ZK与批量验证，在消费级硬件上实现每秒百万级操作验证。",
+          "en": "O'Grady et al. proposed Bonsai, an account-based private payment scheme where validators store one commitment per account without keeping nullifiers. Users maintain and prune received nullifiers privately. Combined with ZKP and batch verification, it achieves over one million verifications per second on commodity hardware.",
+          "ja": "O'Gradyらはアカウント型プライベート決済Bonsaiを提案。検証者は1アカウント1コミットメントのみ保持しnullifierを保存せず、ユーザーが受領nullifierを自律管理・剪定。ZKとバッチ検証により、消費者向けハードウェアで毎秒100万件以上の検証を達成した。"
+        },
+        "slogan": {
+          "zh": "【ZK论文】Bonsai：扔掉PB级Nullifier，让隐私支付跑在MacBook上"
+        },
+        "notes": {
+          "zh": [
+            "Bonsai采用基于账户的设计，验证者无需存储任何nullifier集合",
+            "用户私下维护接收到的nullifier，并可将旧nullifier剪枝归档至冷存储",
+            "外部观察者仅知账户发生动作，无法获知金额与交易对手",
+            "将零知识集成至Pari证明系统，未增加证明大小且证明者开销可忽略",
+            "采用批量验证策略，支撑高吞吐量验证需求",
+            "原型在M5 MacBook Pro上验证速度超过每秒100万笔操作"
+          ],
+          "en": [
+            "Bonsai uses an account-based design; validators do not store any nullifier set.",
+            "Users privately maintain received nullifiers and can prune older ones to cold storage.",
+            "External observers only learn that an account performed an action, not the amount or counterparty.",
+            "Zero-knowledge is integrated into Pari with no increase in proof size and negligible prover overhead.",
+            "A batch verification strategy supports high-throughput verification requirements.",
+            "The prototype verifies over one million operations per second on an M5 MacBook Pro."
+          ],
+          "ja": [
+            "Bonsaiはアカウントベース設計で、検証者はnullifierセットを一切保持しない",
+            "ユーザーは受領したnullifierを非公開で管理し、古いものを冷蔵ストレージに剪定可能",
+            "外部観測者はアカウントの動作のみを知り、金額や相手方は秘匿される",
+            "Pariへのゼロ知識統合により、証明サイズ増加なし、証明者オーバーヘッドも無視できる",
+            "バッチ検証戦略により高スループットな検証を実現",
+            "M5 MacBook Pro上で毎秒100万件以上の検証を達成"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "Bonsai用户如何管理nullifier？",
+          "en": "How do Bonsai users manage nullifiers?",
+          "ja": "Bonsaiユーザーはnullifierをどう管理するのか？"
+        },
+        "answer": {
+          "zh": "用户私下维护收到的nullifier，并可将较旧的剪枝至冷存储。",
+          "en": "Users privately maintain received nullifiers and prune older ones to cold storage.",
+          "ja": "受領したnullifierを非公開で保持し、古いものを冷蔵ストレージへ剪定できる。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "Bonsai如何实现验证者端的可扩展性？",
+          "en": "How does Bonsai achieve validator scalability?",
+          "ja": "Bonsaiは検証者のスケーラビリティをどう実現するか？"
+        },
+        "answer": {
+          "zh": "验证者仅存储每个账户的一个承诺，无需保存任何nullifier。",
+          "en": "Validators store only one commitment per account and never keep any nullifiers.",
+          "ja": "検証者はアカウントごとに1つのコミットメントのみ保持し、nullifierを一切保存しない。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "Bonsai的零知识集成有何特点？",
+          "en": "What characterizes Bonsai's ZK integration?",
+          "ja": "BonsaiのZK統合の特徴は何か？"
+        },
+        "answer": {
+          "zh": "它在Pari基础上添加零知识，不增加证明大小且证明者开销可忽略。",
+          "en": "It adds zero-knowledge to Pari without increasing proof size or prover overhead.",
+          "ja": "Pariにゼロ知識を追加し、証明サイズ増加なし、証明者オーバーヘッドも無視できる。"
+        }
+      }
+    ]
   }
 ]
