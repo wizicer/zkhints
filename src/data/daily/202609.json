@@ -1530,5 +1530,95 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-09-21",
+    "projects": [
+      {
+        "url": "https://eprint.iacr.org/2026/2039",
+        "name": "ZK-JPEG: Zero-knowledge Image Editing and Compression",
+        "type": "论文",
+        "author": "Samuel Dittmer et al.",
+        "tags": [
+          "JPEG",
+          "PicoZK"
+        ],
+        "summary": {
+          "zh": "Dittmer等人在论文中提出ZK-JPEG，一种针对JPEG有损压缩的零知识工具，可证明图像从秘密输入正确压缩，并低成本验证模糊、编辑等变换历史。",
+          "en": "Dittmer et al. proposed ZK-JPEG, a ZK tool for JPEG compression proving correct compression from secret inputs and verifying image transformations with minimal overhead.",
+          "ja": "Dittmerらは論文で、秘密入力からの正しいJPEG圧縮を証明し、ぼかしや編集などの変換履歴を低コストで検証できるゼロ知識ツールZK-JPEGを提案した。"
+        },
+        "slogan": {
+          "zh": "【ZK论文】P图压缩也不怕！ZK-JPEG让你在JPEG修图后仍能零知识自证“原图”清白"
+        },
+        "notes": {
+          "zh": [
+            "ZK-JPEG支持JPEG有损压缩的零知识证明",
+            "可将模糊、编辑等图像变换集成进压缩流程并验证",
+            "使用PicoZK将Python图像处理代码转换为ZK电路",
+            "基于LPZK证明系统实现高效证明",
+            "旨在帮助验证图像真实来源，对抗深度伪造",
+            "系统灵活快速，可由现成ZK工具实例化"
+          ],
+          "en": [
+            "ZK-JPEG supports zero-knowledge proving for lossy JPEG compression.",
+            "It integrates and verifies image transformations like blurring and editing within compression.",
+            "Python image processing code is converted into ZK circuits using PicoZK.",
+            "The system is built on the LPZK proof system for efficient proving.",
+            "It aims to verify image provenance and combat deep fakes.",
+            "The system is fast, flexible, and instantiable from off-the-shelf ZK tools."
+          ],
+          "ja": [
+            "ZK-JPEGはJPEG非可逆圧縮のゼロ知識証明に対応する",
+            "ぼかしや編集などの画像変換を圧縮処理に統合して検証できる",
+            "PicoZKを用いてPython画像処理コードをZK回路に変換する",
+            "LPZK証明システムに基づいて構築されている",
+            "画像の真正性を検証し、ディープフェイクと戦うことを目的とする",
+            "システムは高速かつ柔軟で、既存のZKツールから実装可能である"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "为什么JPEG压缩会让图像签名失效？",
+          "en": "Why does JPEG compression invalidate image signatures?",
+          "ja": "なぜJPEG圧縮は画像署名を無効にするのか？"
+        },
+        "answer": {
+          "zh": "因为有损压缩会改变图像数据，使原始数字签名无法匹配。",
+          "en": "Lossy compression alters image data, causing the original digital signature to no longer match.",
+          "ja": "非可逆圧縮が画像データを変更し、元の署名が一致しなくなるため。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "ZK-JPEG如何处理图像编辑操作？",
+          "en": "How does ZK-JPEG handle image editing operations?",
+          "ja": "ZK-JPEGは画像編集操作をどう扱うか？"
+        },
+        "answer": {
+          "zh": "它将模糊、裁剪等变换集成到JPEG压缩流程中，以最小额外成本一并证明。",
+          "en": "It integrates transformations like blurring or cropping into JPEG compression and proves them together with minimal overhead.",
+          "ja": "ぼかしや切り抜きなどをJPEG圧縮プロセスに統合し、最小のオーバーヘッドで一括証明する。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "ZK-JPEG与先前工作的关键区别是什么？",
+          "en": "What is the key difference from prior work?",
+          "ja": "従来手法との決定的な違いは何か？"
+        },
+        "answer": {
+          "zh": "先前工作无法在有损JPEG压缩后维持可验证性，而ZK-JPEG原生支持JPEG并集成变换。",
+          "en": "Prior work could not survive lossy JPEG compression; ZK-JPEG natively supports JPEG and integrates transformations.",
+          "ja": "従来はJPEG非可逆圧縮後の検証が困難だったが、ZK-JPEGはJPEGをネイティブにサポートし変換を統合する。"
+        }
+      }
+    ]
   }
 ]
