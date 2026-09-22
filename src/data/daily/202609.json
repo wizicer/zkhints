@@ -1620,5 +1620,96 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-09-22",
+    "projects": [
+      {
+        "url": "https://blog.trailofbits.com/2026/09/18/auditing-in-the-age-of-good-enough-ai/",
+        "name": "Auditing in the age of (good enough) AI",
+        "type": "博客",
+        "author": "Fredrik Dahlgren",
+        "tags": [
+          "Miden",
+          "zkVM",
+          "Lean"
+        ],
+        "summary": {
+          "zh": "Trail of Bits分享了借助AI审计Miden zkVM的经验，构建LSP、反编译器、静态分析与Lean模型，发现可伪造Falcon签名的高危漏洞与多处验证缺陷。",
+          "en": "Trail of Bits shared how AI agents audited the Miden zkVM by building an LSP, decompiler, static analysis engine, and Lean models, uncovering a critical Falcon signature forgery bug and validation flaws.",
+          "ja": "Trail of BitsがAIエージェントによるMiden zkVM監査を紹介。LSP、逆コンパイラ、静的解析エンジン、Leanモデルを構築し、Falcon署名偽造の重大な脆弱性と複数の検証欠陥を発見した。"
+        },
+        "slogan": {
+          "zh": "【ZK博客】AI审计实战：Miden zkVM高危漏洞与95个Lean形式化证明"
+        },
+        "notes": {
+          "zh": [
+            "为MASM语言从零构建了LSP服务器、反编译器与静态分析引擎",
+            "发现高危漏洞：未验证advice值使恶意证明者可伪造Falcon签名盗币",
+            "静态分析识别出400余处可从公共API触发的类型验证改进点",
+            "使用Lean完成95个机器检验正确性证明，覆盖核心库二进制算术组件",
+            "AI辅助发现两个单元测试遗漏的细微bug：rotr大输入边缘情况与wrapping_mul栈错误",
+            "项目展示了AI代理在构建高保证安全审计工具方面的经济性与可行性"
+          ],
+          "en": [
+            "Built an LSP server, decompiler, and static analysis engine for MASM from scratch",
+            "Critical bug: unvalidated prover-supplied advice values enabled Falcon signature forgery and fund theft",
+            "Static analysis identified 400+ type validation improvements reachable from the public API",
+            "Produced 95 machine-checked Lean correctness proofs covering core library binary arithmetic",
+            "AI-assisted discovery of two subtle bugs in rotr and wrapping_mul missed by unit tests",
+            "Demonstrates the economic viability of AI agents for high-assurance security audit tooling"
+          ],
+          "ja": [
+            "MASM言語用にLSPサーバー、逆コンパイラ、静的解析エンジンをゼロから構築",
+            "重大な脆弱性：検証されていないadvice値により、悪意ある証明者がFalcon署名を偽造し資金を盗む可能性",
+            "静的解析により、公開APIから到達可能な400カ所以上の型検証改善点を特定",
+            "Leanで95の機械検証済み正しさ証明を生成し、コアライブラリの二進算術を網羅",
+            "AI支援により、単体テストで見逃されたrotrとwrapping_mulの2つの繊細なバグを発見",
+            "AIエージェントによる高保証セキュリティ監査ツール構築の経済性と実現可能性を示した"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "AI如何帮助审计Miden？",
+          "en": "How did AI assist the Miden audit?",
+          "ja": "AIはMidenの監査をどう支援したか？"
+        },
+        "answer": {
+          "zh": "AI代理构建了LSP、反编译器、静态分析引擎和Lean模型，帮助发现高危漏洞与形式化验证代码正确性。",
+          "en": "AI agents built an LSP, decompiler, static analysis engine, and Lean models to uncover critical bugs and verify correctness.",
+          "ja": "AIエージェントがLSP、逆コンパイラ、静的解析エンジン、Leanモデルを構築し、重大な脆弱性を発見し正しさを検証した。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "Lean证明覆盖了哪些组件？",
+          "en": "What components did Lean proofs cover?",
+          "ja": "Leanの証明はどの部分をカバーしたか？"
+        },
+        "answer": {
+          "zh": "覆盖核心库全部二进制算术组件的95个正确性证明，确保过程执行后栈状态符合预期数学语义。",
+          "en": "They covered 95 correctness proofs for all binary arithmetic components in the core library, ensuring expected stack semantics.",
+          "ja": "コアライブラリの二進算術コンポーネント全てを対象とした95の正しさ証明で、期待されるスタック挙動を保証する。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "为何MASM反编译难以保证正确？",
+          "en": "Why is MASM decompilation hard to guarantee?",
+          "ja": "なぜMASMの逆コンパイルは困難か？"
+        },
+        "answer": {
+          "zh": "因MASM过程无声明签名与统一调用约定，且循环与条件分支栈效应不固定，静态推断极易失败。",
+          "en": "MASM lacks declared signatures and a calling convention, while loops and branches have variable stack effects, causing static inference to fail.",
+          "ja": "宣言されたシグネチャや呼び出し規約がなく、ループと条件分岐のスタック効果が可変なため、静的推論が失敗しやすい。"
+        }
+      }
+    ]
   }
 ]
