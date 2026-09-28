@@ -1711,5 +1711,95 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-09-28",
+    "projects": [
+      {
+        "url": "https://profwoodward.substack.com/p/quantum-computers-will-never-break",
+        "name": "Quantum Computers Will Never Break RSA, Says Oxford Physicist. But I Say Migrate Anyway",
+        "type": "博客",
+        "author": "Alan Woodward",
+        "tags": [
+          "Post-Quantum",
+          "RSA"
+        ],
+        "summary": {
+          "zh": "Alan Woodward在博客中讨论了牛津物理学家Tim Palmer提出的Rational Quantum Mechanics理论，该理论认为量子计算机存在约1000量子比特的物理上限，无法破解RSA，但作者强调后量子密码迁移仍具必要性。",
+          "en": "Alan Woodward discussed Oxford physicist Tim Palmer's RaQM theory, which argues quantum computers face a fundamental ceiling of ~1,000 qubits and cannot break RSA, yet urges post-quantum migration regardless.",
+          "ja": "Alan Woodwardはブログで、Tim Palmer氏のRaQM理論を紹介した。同理論は量子コンピュータの有効量子ビットに約1000の物理上限を設けRSAを破れないとするが、著者は後量子暗号移行が依然必要だと主張している。"
+        },
+        "slogan": {
+          "zh": "【ZK博客】量子计算机永远破不了RSA？牛津新理论掀起密码学安全之争"
+        },
+        "notes": {
+          "zh": [
+            "Tim Palmer提出Rational Quantum Mechanics (RaQM)，认为量子态承载的信息量存在根本性的有限上限",
+            "该理论预测量子计算机有效纠缠量子比特的上限约为1000个",
+            "该上限低于Shor算法破解2048位RSA所需的约2049个逻辑量子比特",
+            "目前既无实验证据支持也无实验证据反驳这一离散化希尔伯特空间理论",
+            "作者认为即使RaQM正确，后量子迁移成本也远低于赌注失败可能带来的灾难性损失",
+            "大规模密码迁移周期长达近十年，无法等到该物理理论被证实或证伪后再行动"
+          ],
+          "en": [
+            "Tim Palmer proposes RaQM, arguing quantum states carry fundamentally finite information",
+            "The theory predicts a hard ceiling of roughly 1,000 effective entangled qubits",
+            "This falls below the ~2,049 logical qubits needed for Shor's algorithm to break 2048-bit RSA",
+            "No experimental evidence currently supports or refutes the discretized Hilbert space theory",
+            "The author argues migration costs remain far lower than the catastrophic cost of betting wrong",
+            "Large-scale cryptographic migration takes nearly a decade, too long to wait for physical validation"
+          ],
+          "ja": [
+            "Tim PalmerはRaQMを提唱し、量子状態の情報量に根本的な有限上限があると主張している",
+            "有効な絡み合った量子ビット数の上限は約1000と予測されている",
+            "2048ビットRSAを破るShorアルゴリズムに必要な約2049論理量子ビットを下回る",
+            "現時点で離散化Hilbert空間理論を実験的に支持または反証する証拠はない",
+            "著者は仮説が正しくても、移行コストは賭けに負ける代償よりはるかに小さいと指摘",
+            "大規模な暗号移行には約10年かかり、物理的検証を待つ余裕はない"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "RaQM的核心预测是什么？",
+          "en": "What is RaQM's core prediction?",
+          "ja": "RaQMの核心的予測は何か？"
+        },
+        "answer": {
+          "zh": "该理论预测有效纠缠量子比特存在约一千的物理上限，不足以运行Shor算法破解RSA。",
+          "en": "It predicts a hard physical ceiling of roughly 1,000 effective entangled qubits, insufficient for Shor's algorithm to break RSA.",
+          "ja": "有効な絡み合った量子ビット数に約1000という物理的上限があり、ShorアルゴリズムによるRSA破解に不十分だということ。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "超导系统为何不受千量子比特上限约束？",
+          "en": "Why don't superconductors hit the qubit ceiling?",
+          "ja": "超導体はなぜ上限に達しないか？"
+        },
+        "answer": {
+          "zh": "Palmer认为上限针对使用全部状态空间的系统，而超导电子仅协同占据空间一角，未利用全部可能性。",
+          "en": "Palmer argues the ceiling applies to systems using the full state space, while superconducting electrons act in unison, occupying only a corner.",
+          "ja": "上限は状態空間全体を使用する系に適用され、超導体の電子は協調して片隅のみを占めているため。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "如何实验证伪RaQM？",
+          "en": "How could RaQM be falsified?",
+          "ja": "RaQMはどう実験的に反証されるか？"
+        },
+        "answer": {
+          "zh": "在超过一千个有效完美量子比特上运行全强度纠缠算法并得到正确答案，即可证伪该理论。",
+          "en": "Running a full-strength entangling algorithm on over 1,000 effectively perfect qubits and obtaining the correct result would refute it.",
+          "ja": "1000を超える実質的に完全な量子ビットで全強度の絡み合いアルゴリズムを実行し、正解を得られれば反証される。"
+        }
+      }
+    ]
   }
 ]
