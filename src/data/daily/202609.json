@@ -1801,5 +1801,95 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-09-29",
+    "projects": [
+      {
+        "url": "https://eprint.iacr.org/2026/2100",
+        "name": "Garbling Groth16 with Native Group Operations",
+        "type": "论文",
+        "author": "Nakul Khambhati et al.",
+        "tags": [
+          "Groth16",
+          "Garbling"
+        ],
+        "summary": {
+          "zh": "Khambhati等人提出用原生群运算混淆Groth16验证，构建射影部分混淆方案以条件披露无效证明；BN254实现仅2.4 MiB，较48 GB布尔混淆缩小超四个数量级，隐私归约至DDH。",
+          "en": "Khambhati et al. propose garbling Groth16 verification with native elliptic-curve group operations. Their projective partial garbling scheme conditionally discloses invalid proofs, uses a rekeying gadget for pairing, and achieves a 2.4 MiB BN254 garbled program vs 48 GB Boolean garbling, with privacy under DDH in the ROM.",
+          "ja": "Khambhatiらは、Groth16検証をネイティブ楕円曲線群演算でガーブリングする手法を提案した。無効証明の条件付き開示に向けた射影的部分ガーブリングを構成し、BN254実装で2.4 MiBを達成、48 GBのブール型ガーブリングから4桁以上改善、DDH仮定の下でプライバシーを証明した。"
+        },
+        "slogan": {
+          "zh": "【ZK论文】Groth16混淆从48GB到2.4MiB：原生群运算立大功"
+        },
+        "notes": {
+          "zh": [
+            "Groth16验证方程可用原生椭圆曲线群运算进行混淆，避免布尔电路实现",
+            "方案为射影部分混淆，用于对无效Groth16证明进行条件披露",
+            "当证明无效时求值会揭示混淆方持有的秘密；证明有效时秘密保持隐藏，证明本身仍公开",
+            "针对求值方提供配对两个参数的挑战，引入rekeying gadget，仅需一次私有标量乘法",
+            "组合定理将群编码转换为逐位射影编码，并把Duty-Free Bits的射影化扩展到二次扩域",
+            "BN254实现生成2.4 MiB混淆程序，远优于48 GB布尔混淆，隐私在随机预言模型下归约至DDH"
+          ],
+          "en": [
+            "Groth16 verification can be garbled with native EC group operations instead of Boolean circuits.",
+            "The scheme is a projective partial garbling for conditional disclosure of invalid Groth16 proofs.",
+            "Invalid proofs reveal a garbler-held secret; valid proofs hide it while the proof remains public.",
+            "A rekeying gadget handles pairing when both arguments come from the evaluator, using one private scalar multiplication.",
+            "A composition theorem transforms group encodings into bitwise projective encodings and extends projectivization to quadratic extension fields.",
+            "The BN254 implementation yields a 2.4 MiB garbled program versus 48 GB Boolean garbling; privacy holds under DDH in the ROM."
+          ],
+          "ja": [
+            "Groth16検証はブール回路ではなくネイティブ楕円曲線群演算でガーブリングできる。",
+            "本方式は無効なGroth16証明の条件付き開示に向けた射影的部分ガーブリングである。",
+            "無効証明ではガーブラー保有の秘密が開示され、有効証明では隠蔽され、証明自体は公開のままである。",
+            "評価者が与えるペアリングの両引数に対処するため、1回の秘密スカラー乗算で済むrekeying gadgetを導入する。",
+            "合成定理により群エンコーディングをビット単位の射影エンコーディングへ変換し、Duty-Free Bitsの射影化を二次拡大体へ拡張する。",
+            "BN254実装のガーブルプログラムは2.4 MiBで、48 GBのブール型ガーブリングより大幅に小さく、DDH仮定とROMでプライバシーを証明する。"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "为何采用原生群运算？",
+          "en": "Why use native group operations?",
+          "ja": "なぜネイティブ群演算を使うのか？"
+        },
+        "answer": {
+          "zh": "它能避免庞大的布尔电路，将BN254上的Groth16混淆程序从48 GB降至2.4 MiB。",
+          "en": "They avoid huge Boolean circuits, shrinking BN254 Groth16 garbling from 48 GB to 2.4 MiB.",
+          "ja": "巨大なブール回路を避け、BN254上のGroth16ガーブリングを48 GBから2.4 MiBへ削減する。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "组合定理起什么作用？",
+          "en": "What does the composition theorem do?",
+          "ja": "合成定理の役割は何か？"
+        },
+        "answer": {
+          "zh": "它支持跨输入表示的部分混淆组合，将群编码转换为逐位射影编码，并扩展到二次扩域。",
+          "en": "It composes partial garbling across input representations, transforms group encodings into bitwise projective encodings, and extends to quadratic extension fields.",
+          "ja": "異なる入力表現間で部分ガーブリングを合成し、群エンコーディングをビット単位の射影エンコーディングへ変換し、二次拡大体にも拡張する。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "混淆程序渐近大小如何？",
+          "en": "What is the asymptotic garbled size?",
+          "ja": "ガーブルプログラムの漸近サイズは？"
+        },
+        "answer": {
+          "zh": "混淆程序大小为O(λ²)比特，其中λ是计算安全参数。",
+          "en": "The garbled program size is O(λ²) bits, where λ is the computational security parameter.",
+          "ja": "ガーブルプログラムのサイズはO(λ²)ビットで、λは計算セキュリティパラメータである。"
+        }
+      }
+    ]
   }
 ]
