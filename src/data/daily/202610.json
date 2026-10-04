@@ -1,0 +1,92 @@
+[
+  {
+    "date": "2026-10-04",
+    "projects": [
+      {
+        "url": "https://eprint.iacr.org/2026/2274",
+        "name": "zk-BAN: An efficient anonymous blocklisting system with signature-based revocation",
+        "type": "论文",
+        "author": "Kosei Akama, Yoshimichi Nakatsuka, Koichi Moriyama, Keisuke Uehara",
+        "tags": [
+          "Anonymous Blocklisting",
+          "PRF"
+        ],
+        "summary": {
+          "zh": "Akama等人提出匿名黑名单系统zk-BAN，通过过滤撤销列表和部分统一PRF标签减少重复ZK计算。系统支持基于签名的撤销，并证明满足可黑名单性与不可链接性。在大规模负载下，证明生成约600 ms、验证约2 ms，较先前工作证明快136倍、验证快32倍。",
+          "en": "Akama et al. proposed zk-BAN, an anonymous blocklisting system with signature-based revocation. It filters revocation lists and partially unifies PRF tags to reduce repeated ZK computations. It proves blocklistability and unlinkability, achieving ~600 ms proving and ~2 ms verification under large-scale workloads.",
+          "ja": "Akamaらは、署名ベースの失効を備えた匿名ブロックリストシステムzk-BANを提案した。失効リストのフィルタリングとPRFタグの部分統合により、繰り返しのZK計算を削減する。可ブロックリスト性と非リンク性を証明し、大規模負荷で証明生成約600ms、検証約2msを達成した。"
+        },
+        "slogan": {
+          "zh": "【ZK论文】匿名黑名单提速136倍，zk-BAN如何兼顾撤销与隐私？"
+        },
+        "notes": {
+          "zh": [
+            "匿名黑名单允许服务撤销恶意用户，同时保护诚实用户匿名性。",
+            "基于签名的撤销支持根据过去认证记录撤销用户。",
+            "现有方案在大规模和长期离线用户场景开销较高。",
+            "zk-BAN通过过滤撤销列表、部分统一PRF标签减少重复ZK计算。",
+            "论文形式化证明zk-BAN满足可黑名单性与不可链接性。",
+            "大规模负载下证明约600 ms、验证约2 ms，较先前工作证明快136倍、验证快32倍。"
+          ],
+          "en": [
+            "Anonymous blocklisting revokes malicious users while preserving honest-user anonymity.",
+            "Signature-based revocation supports revocation from past authentications.",
+            "Prior systems incur high overhead at scale and for long-offline users.",
+            "zk-BAN filters revocation lists and partially unifies PRF tags to cut repeated ZK work.",
+            "The paper formally proves blocklistability and unlinkability.",
+            "It reports ~600 ms proving and ~2 ms verification, with 136x proving and 32x verification gains over prior work."
+          ],
+          "ja": [
+            "匿名ブロックリストは悪意あるユーザーを失効させつつ、誠実なユーザーの匿名性を保護する。",
+            "署名ベースの失効は過去の認証に基づく失効を可能にする。",
+            "既存方式は大規模環境や長期オフライン復帰ユーザーで大きなオーバーヘッドを生む。",
+            "zk-BANは失効リストのフィルタリングとPRFタグの部分統合で繰り返しのZK計算を削減する。",
+            "論文は可ブロックリスト性と非リンク性を形式的に証明する。",
+            "大規模負荷で証明約600ms、検証約2ms、先行研究比で証明136倍・検証32倍高速と報告する。"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "匿名黑名单为服务提供什么？",
+          "en": "What does anonymous blocklisting provide?",
+          "ja": "匿名ブロックリストは何を提供するか？"
+        },
+        "answer": {
+          "zh": "它允许服务撤销恶意用户，同时保持诚实用户的匿名性。",
+          "en": "It lets services revoke malicious users while preserving honest users' anonymity.",
+          "ja": "サービスが悪意あるユーザーを失効させつつ、誠実なユーザーの匿名性を保てる。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "为何需要基于签名的撤销？",
+          "en": "Why is signature-based revocation needed?",
+          "ja": "なぜ署名ベースの失効が必要か？"
+        },
+        "answer": {
+          "zh": "它支持根据过去的认证记录撤销用户，而不局限于当前时间窗口。",
+          "en": "It supports revocation based on past authentications, not just the current time window.",
+          "ja": "現在の時間窓だけでなく、過去の認証に基づく失効を可能にする。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "部分统一PRF标签有何作用？",
+          "en": "What does partially unifying PRF tags achieve?",
+          "ja": "PRFタグの部分統合は何を実現するか？"
+        },
+        "answer": {
+          "zh": "它减少证明生成中的重复零知识计算，从而降低证明和验证开销，同时维持安全目标。",
+          "en": "It reduces repeated zero-knowledge computations in proving, lowering proving and verification costs while preserving security goals.",
+          "ja": "証明生成における繰り返しのゼロ知識計算を減らし、安全性目標を保ちながら証明・検証コストを下げる。"
+        }
+      }
+    ]
+  }
+]
