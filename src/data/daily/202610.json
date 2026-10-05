@@ -88,5 +88,96 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-10-05",
+    "projects": [
+      {
+        "url": "https://eprint.iacr.org/2026/2165",
+        "name": "Argo: Leaking a Secret from an Invalid Groth16 Proof",
+        "type": "论文",
+        "author": "Liam Eagen, Ying Tong Lai (Glass Coins)",
+        "tags": [
+          "Groth16",
+          "BitVM",
+          "Bitcoin"
+        ],
+        "summary": {
+          "zh": "Eagen与Lai提出Argo，针对Groth16等配对SNARK的无效性随机编码。无效证明可让解码者公开秘密证明其无效，结合BitVM可在比特币上构建无需许可的乐观Groth16验证器，BN254编码约21 kB。",
+          "en": "Eagen and Lai present Argo, a randomized encoding for invalidity of pairing-based SNARKs such as Groth16. An invalid proof lets a decoder reveal a secret and prove invalidity; combined with BitVM it enables a permissionless optimistic Groth16 verifier on Bitcoin. With BN254, encoding is about 21 kB.",
+          "ja": "Eagen氏とLai氏は、Groth16などペアリングベースSNARKの無効性を扱うランダム化符号化Argoを提案した。無効な証明では復号者が秘密を公開して無効性を証明でき、BitVMと組み合わせることでBitcoin上の許可不要な楽観的Groth16検証器を実現する。BN254では符号化サイズは約21kB。"
+        },
+        "slogan": {
+          "zh": "【ZK论文】无效证明也能泄密：Argo 让比特币上的 Groth16 验证无需许可"
+        },
+        "notes": {
+          "zh": [
+            "Argo将无效Groth16证明编码，使解码者可导出并公开秘密",
+            "安全性基于双线性配对单源群中的DDH假设",
+            "无效性Argo满足选择性安全，有效性Argo满足自适应安全",
+            "可用Argo MAC或Duty-Free Bits构造Groth16无效性乱码电路",
+            "结合BitVM可实现比特币上无需许可的乐观Groth16验证器",
+            "BN254下编码约21 kB，端到端规模比Yao方案小三个数量级"
+          ],
+          "en": [
+            "Argo encodes invalid Groth16 proofs so a decoder can derive and reveal a secret.",
+            "Security relies on DDH in one source group of a bilinear pairing.",
+            "Invalidity Argo is selectively secure; validity Argo is adaptively secure.",
+            "Argo MAC or Duty-Free Bits can build a Groth16 invalidity garbled circuit.",
+            "With BitVM, it enables a permissionless optimistic Groth16 verifier on Bitcoin.",
+            "For BN254, encoding is about 21 kB, over 1000x smaller end-to-end than Yao-based approaches."
+          ],
+          "ja": [
+            "Argoは無効なGroth16証明を符号化し、復号者が秘密を導出・公開できるようにする。",
+            "安全性は双線形ペアリングの単一ソース群におけるDDH仮定に基づく。",
+            "無効性Argoは選択的安全、有効性Argoは適応的安全を満たす。",
+            "Argo MACやDuty-Free BitsでGroth16無効性のガーブルド回路を構成できる。",
+            "BitVMと組み合わせ、Bitcoin上の許可不要な楽観的Groth16検証器を実現する。",
+            "BN254では符号化約21kBで、Yaoベースより端到端で3桁以上小さい。"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "Argo如何暴露无效Groth16证明？",
+          "en": "How does Argo expose invalid Groth16 proofs?",
+          "ja": "Argoは無効なGroth16証明をどう暴露するか？"
+        },
+        "answer": {
+          "zh": "Argo把证明编码，使解码者一旦判定无效即可导出并公开秘密，从而证明该证明无效。",
+          "en": "Argo encodes a proof so a decoder can derive and publish a secret once it finds the proof invalid.",
+          "ja": "Argoは証明を符号化し、無効と判定した復号者が秘密を導出・公開して無効性を証明できる。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "为何比特币需要无需许可验证？",
+          "en": "Why is permissionless verification useful on Bitcoin?",
+          "ja": "なぜBitcoinで許可不要検証が有用か？"
+        },
+        "answer": {
+          "zh": "任何人都可成为解码者，通过公开秘密挑战无效证明，无需预先指定验证方。",
+          "en": "Anyone can become a decoder and challenge an invalid proof by publishing a secret, without a pre-known verifier.",
+          "ja": "誰でも復号者となり秘密を公開して無効証明に挑戦でき、事前指定の検証者は不要である。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "Argo如何缩小验证电路规模？",
+          "en": "How does Argo shrink verifier circuits?",
+          "ja": "Argoは検証回路をどう縮小するか？"
+        },
+        "answer": {
+          "zh": "BN254下离线编码约21 kB，比投影乱码方案小约千倍，端到端规模也远小于Yao方案。",
+          "en": "For BN254, offline encoding is about 21 kB, roughly 1000x smaller than projective garbling and far smaller end-to-end than Yao-based approaches.",
+          "ja": "BN254ではオフライン符号化が約21kBで、投影ガーブリングより約1000倍小さく、端到端でもYao方式より大幅に小さい。"
+        }
+      }
+    ]
   }
 ]
