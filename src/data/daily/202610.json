@@ -179,5 +179,95 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-10-06",
+    "projects": [
+      {
+        "url": "https://eprint.iacr.org/2026/2187",
+        "name": "Rethinking Zero-Knowledge TLS: Proof of Protocol Execution and the Reclaim Protocol",
+        "type": "论文",
+        "author": "Andrey Bozhko, Kirill Kutsenok",
+        "tags": [
+          "zkTLS",
+          "UC"
+        ],
+        "summary": {
+          "zh": "Bozhko与 @reclaimprotocol 的Kutsenok在论文中提出应用层zkTLS安全模型zkPoPE，并给出UC实现Reclaim Protocol，可证明真实协议执行，支持1200kB响应证明。",
+          "en": "Bozhko and Kutsenok (@reclaimprotocol) propose zkPoPE, a transport-agnostic zkTLS security model, and Reclaim Protocol, which UC-realizes it and attests 1200kB in 7.28s.",
+          "ja": "Bozhko氏と @reclaimprotocol のKutsenok氏は論文で、応用層向けzkTLS安全モデルzkPoPEを提案し、これをUC実現するReclaim Protocolを提示した。実プロトコル実行を証明し、1200kB応答の証明も可能とする。"
+        },
+        "slogan": {
+          "zh": "【ZK论文】重新思考 zkTLS：zkPoPE 证明真实协议执行，Reclaim 7.28 秒证 1200kB"
+        },
+        "notes": {
+          "zh": [
+            "首个传输无关的zkTLS安全模型，定义在应用层而非TLS层。",
+            "zkPoPE要求证明方证明其私有输入与真实收到的回复满足属性，且回复来自真实双方协议执行，而非伪造。",
+            "将zkPoPE形式化为UC理想功能F_zkpope。",
+            "Reclaim Protocol在部署对齐信任模型下UC实现F_zkpope，并已支撑生产系统。",
+            "引入Distributed-AEAD三方认证加密原语，作为协议构建基础。",
+            "中低端手机7.28秒证明1200kB响应，规模比此前zkTLS基准高两个数量级。"
+          ],
+          "en": [
+            "First transport-agnostic security model for zkTLS, defined at the application layer.",
+            "zkPoPE requires proof that private input and received reply satisfy a property, and that the reply came from a real execution, not fabrication.",
+            "zkPoPE is formalized as UC ideal functionality F_zkpope.",
+            "Reclaim Protocol UC-realizes F_zkpope under a deployment-aligned trust model and underlies a production system.",
+            "It introduces Distributed-AEAD, a new three-party authenticated-encryption primitive.",
+            "On a lower-mid-range phone, it attests 1200kB in 7.28s, two orders beyond prior zkTLS benchmarks."
+          ],
+          "ja": [
+            "zkTLS向け初の輸送非依存セキュリティモデルで、TLS層ではなく応用層で定義される。",
+            "zkPoPEは、秘密入力と受信返答が性質を満たし、返答が実プロトコル実行に由来することを示す。",
+            "zkPoPEはUC理想機能F_zkpopeとして形式化される。",
+            "Reclaim Protocolは展開整合型信頼モデルの下でF_zkpopeをUC実現し、本番システムを支える。",
+            "三者認証暗号プリミティブDistributed-AEADを導入する。",
+            "中低端スマホで1200kB応答を7.28秒で証明し、従来zkTLSベンチを2桁上回る。"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "zkPoPE比NIZK强在哪？",
+          "en": "How does zkPoPE go beyond NIZK?",
+          "ja": "zkPoPEはNIZKをどう超えるか？"
+        },
+        "answer": {
+          "zh": "它额外要求回复来自真实协议执行，而非仅存在满足属性的一对输入与回复。",
+          "en": "It also requires the reply to come from a real execution, not merely a satisfying input-reply pair.",
+          "ja": "返答が実際のプロトコル実行に由来することを要求し、単なる入力・返答の充足ペアとは異なる。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "Reclaim提供怎样的UC保证？",
+          "en": "What UC guarantee does Reclaim provide?",
+          "ja": "ReclaimはどのUC保証を提供するか？"
+        },
+        "answer": {
+          "zh": "在部署对齐信任模型下，Reclaim在UC框架中实现F_zkpope，提供可组合安全保证。",
+          "en": "Under a deployment-aligned trust model, Reclaim UC-realizes F_zkpope, providing composable security guarantees.",
+          "ja": "展開整合型信頼モデルの下で、ReclaimはF_zkpopeをUC実現し、合成可能な安全保証を与える。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "Reclaim的规模测试结果如何？",
+          "en": "What scalability does Reclaim demonstrate?",
+          "ja": "Reclaimの拡張性は？"
+        },
+        "answer": {
+          "zh": "中低端手机7.28秒证明1200kB响应，比此前zkTLS基准高两个数量级。",
+          "en": "On a lower-mid-range phone, it attests a 1200kB response in 7.28s, two orders beyond previous zkTLS benchmarks.",
+          "ja": "中低端スマホで1200kB応答を7.28秒で証明し、従来zkTLSベンチの2桁上を行く。"
+        }
+      }
+    ]
   }
 ]
