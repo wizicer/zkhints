@@ -269,5 +269,93 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-10-07",
+    "projects": [
+      {
+        "url": "https://openai.com/index/sharing-ai-progress-in-mathematics/",
+        "name": "Sharing AI progress in mathematics",
+        "type": "新闻",
+        "author": "@OpenAI",
+        "tags": [
+          "AI",
+          "Mathematics",
+          "Lean"
+        ],
+        "summary": {
+          "zh": "@OpenAI 发布内部前沿模型生成的多项数学结果，托管于 GitHub 并提供 Lean 形式化证明，披露推理摘要与约三小时 ChatGPT Pro 算力统计。",
+          "en": "@OpenAI released diverse mathematical results from an internal frontier model, hosted on GitHub with Lean formalizations, reasoning summaries, and compute statistics.",
+          "ja": "@OpenAIは内部フロンティアモデルが生成した多様な数学的成果を公開し、GitHubでLean形式化や推論要約、計算量統計を共有した。"
+        },
+        "slogan": {
+          "zh": "【AI新闻】@OpenAI 前沿模型数学成果大公开：Lean 证明、推理摘要和算力账单一起上"
+        },
+        "notes": {
+          "zh": [
+            "@OpenAI 发布由内部前沿模型生成的多项数学新结果。",
+            "结果托管在 GitHub，包含论文修订和引用协议。",
+            "许多证明提供 Lean 形式化，可由计算机检查。",
+            "披露 10 份推理摘要、ChatGPT Pro 算力估算和问题尝试统计，平均约三小时 Pro 思考算力。",
+            "@OpenAI 将资助工作坊、会议和特别项目，并继续评估内部前沿模型。"
+          ],
+          "en": [
+            "@OpenAI released many new mathematical results from an internal frontier model.",
+            "Results are hosted on GitHub with revision and citation protocols.",
+            "Many proofs include Lean formalizations checkable by computer.",
+            "It shares reasoning summaries, ChatGPT Pro compute estimates, and attempted-problem statistics.",
+            "@OpenAI will fund workshops, conferences, and special programs, and continue evaluating frontier models."
+          ],
+          "ja": [
+            "@OpenAIは内部フロンティアモデルが生成した多数の新しい数学成果を公開した。",
+            "成果はGitHubで公開され、改訂と引用のプロトコルを含む。",
+            "多くの証明にはコンピュータで検証可能なLean形式化が付属する。",
+            "推論要約、ChatGPT Proの計算量推定、試行問題の統計を開示し、平均は約3時間分のPro推論相当。",
+            "@OpenAIはワークショップ、会議、特別プログラムを支援し、内部フロンティアモデルの評価を続ける。"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "为什么这次纯数学领域的进展会引发如此强烈的行业震荡？",
+          "en": "Why does this pure math breakthrough cause such a strong shockwave across our field?",
+          "ja": "なぜ純粋数学における今回の進展が、これほど強い衝撃を与えているのか？"
+        },
+        "answer": {
+          "zh": "底层密码原语与约束系统的基石正是代数与多项式数学，未解难题的突破标志着机器已具备介入理论核心推导的能力。",
+          "en": "Foundational cryptographic primitives and constraint systems rest on algebra and polynomials; solving open problems proves machines can now intervene in core theoretical derivations.",
+          "ja": "暗号プリミティブや制約システムの根底には代数や多項式数学があり、未解決問題の突破は理論の核心的推論に機械が到達したことを示している。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "推理算力的跃升为底层安全性分析带来了怎样的双刃剑效应？",
+          "en": "How does the surge in test-time compute act as a double-edged sword for underlying security?",
+          "ja": "推論計算量の飛躍的向上は、セキュリティ解析にどのような両刃の剣をもたらすか？"
+        },
+        "answer": {
+          "zh": "它能通过符号推演自动挖掘电路与约束漏洞，但同样具备快速推翻未知假设、寻找数论底层攻击向量的能力。",
+          "en": "It can auto-audit constraint bugs via symbolic deduction, but also possesses the power to invalidate theoretical hardness assumptions and uncover attack vectors.",
+          "ja": "記号推論によって制約のバグを自動検出できる一方、困難性仮定を突き崩し未知の攻撃ベクトルを発見する能力も併せ持つため。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "算力巨头对未解难题的快速介入，给前沿密码理论的开源交流带来了什么隐忧？",
+          "en": "What concerns does tech giants' compute capability raise for open collaboration in cryptographic research?",
+          "ja": "巨大計算力による未解決問題の先取りは、暗号理論のオープンな共同研究にどのような懸念をもたらすか？"
+        },
+        "answer": {
+          "zh": "公开分享的初步构想极易被商业集群快速推导完成闭源化，从而严重打击学界与开发者自由交流的互信基础。",
+          "en": "Preliminary ideas shared publicly risk being rapidly proven and privatized by compute clusters, chilling the trust and freedom of open research exchange.",
+          "ja": "公開された初期の着想が計算クラスタによって即座に先取り・私有化される恐れがあり、自由な情報共有の基盤が損なわれる懸念がある。"
+        }
+      }
+    ]
   }
 ]
