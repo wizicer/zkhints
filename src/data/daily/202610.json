@@ -357,5 +357,96 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-10-17",
+    "projects": [
+      {
+        "url": "https://www.anthropic.com/research/ecdsa-curve-origins",
+        "name": "Claude reveals ECDSA curve origins",
+        "type": "博客",
+        "author": "Anthropic",
+        "tags": [
+          "ECDSA",
+          "NIST",
+          "PRNG"
+        ],
+        "summary": {
+          "zh": "Anthropic团队利用Claude AI揭示了NIST ECDSA曲线种子的来源，发现其由Unix时间戳和`lrand48`伪随机数生成器生成，消除了长期以来对潜在后门的疑虑。",
+          "en": "Anthropic's team used Claude AI to reveal the origins of NIST ECDSA curve seeds, generated via Unix timestamps and the `lrand48` PRNG, dispelling long-standing backdoor concerns.",
+          "ja": "AnthropicのチームはClaude AIを使用してNIST ECDSA曲線のシードの起源を解明し、Unixタイムスタンプと`lrand48`疑似乱数生成器から生成されたことを明らかにし、長年のバックドア懸念を払拭した。"
+        },
+        "slogan": {
+          "zh": "【密码学趣闻】Claude AI揭秘：ECDSA曲线种子竟然是这么来的！"
+        },
+        "notes": {
+          "zh": [
+            "NIST ECDSA曲线种子由Unix时间戳和`lrand48`生成，非哈希短语",
+            "Claude AI通过识别PRNG输出模式破解了25年谜团",
+            "种子生成过程简单透明，排除了后门可能性",
+            "部分基点由FreeLIP库的随机数生成器生成",
+            "B-163种子及部分基点生成方式仍未解明",
+            "研究结果增强了对ECDSA曲线安全性的信心"
+          ],
+          "en": [
+            "NIST ECDSA seeds generated via Unix timestamps and `lrand48`, not hashed phrases",
+            "Claude AI cracked the 25-year mystery by recognizing PRNG output patterns",
+            "Simple seed generation process rules out backdoors",
+            "Some base points generated via FreeLIP library's RNG",
+            "B-163 seed and some base points remain unexplained",
+            "Findings bolster confidence in ECDSA curve security"
+          ],
+          "ja": [
+            "NIST ECDSA曲線のシードはUnixタイムスタンプと`lrand48`で生成され、ハッシュフレーズではない",
+            "Claude AIがPRNG出力パターンを認識し、25年の謎を解明",
+            "シード生成プロセスは単純で、バックドアの可能性を排除",
+            "一部の基点はFreeLIPライブラリの乱数生成器で生成",
+            "B-163シードと一部の基点の生成方法は未解明",
+            "研究結果によりECDSA曲線の安全性への信頼が強化"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "ECDSA曲线种子的谜团为何重要？",
+          "en": "Why was the ECDSA seed mystery significant?",
+          "ja": "ECDSA曲線のシードの謎はなぜ重要だったのか？"
+        },
+        "answer": {
+          "zh": "种子来源不明引发对NIST曲线潜在后门的担忧，影响广泛使用的ECDSA安全性。",
+          "en": "Unknown seed origins raised concerns about potential backdoors in widely used ECDSA curves.",
+          "ja": "シードの起源が不明だったため、広く使用されているECDSA曲線にバックドアが存在する可能性が懸念された。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "Claude如何破解种子来源？",
+          "en": "How did Claude crack the seed origins?",
+          "ja": "Claudeはどうやってシードの起源を解明したのか？"
+        },
+        "answer": {
+          "zh": "通过识别`lrand48` PRNG输出模式，并逆向推导Unix时间戳初始化状态。",
+          "en": "By recognizing `lrand48` PRNG output patterns and reverse-engineering Unix timestamp initialization.",
+          "ja": "`lrand48` PRNGの出力パターンを認識し、Unixタイムスタンプの初期化状態を逆算した。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "哪些曲线基点仍未解明？",
+          "en": "Which curve base points remain unexplained?",
+          "ja": "どの曲線の基点が未解明のままなのか？"
+        },
+        "answer": {
+          "zh": "P-224、P-256、P-384、P-521及NIST二进制曲线的基点生成方式仍未知。",
+          "en": "Base points for P-224, P-256, P-384, P-521, and NIST binary curves remain unexplained.",
+          "ja": "P-224、P-256、P-384、P-521およびNISTのバイナリ曲線の基点の生成方法は未解明。"
+        }
+      }
+    ]
   }
 ]
