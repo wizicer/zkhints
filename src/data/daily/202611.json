@@ -1,0 +1,93 @@
+[
+  {
+    "date": "2026-11-01",
+    "projects": [
+      {
+        "url": "https://v12.sh/blog/x86-formal-verification-intro",
+        "name": "Announcing Zellic's and V12's Work on x86 Binary Formal Verification",
+        "type": "博客",
+        "author": "V12 & Zellic",
+        "tags": [
+          "x86",
+          "Lean",
+          "glibc"
+        ],
+        "summary": {
+          "zh": "V12与Zellic合作发布首个Linux x86 glibc二进制端到端机器验证证明，通过形式化验证减少信任基础，提升软件安全性。",
+          "en": "V12 and Zellic announced the first machine-checked proof for end-to-end Linux x86 glibc binary execution, reducing trusted base via formal verification.",
+          "ja": "V12とZellicはLinux x86 glibcバイナリのエンドツーエンド機械検証証明を発表し、信頼ベースを縮小しソフトウェアセキュリティを向上させた。"
+        },
+        "slogan": {
+          "zh": "【安全研究】形式化验证新突破：x86二进制安全性的AI加持证明"
+        },
+        "notes": {
+          "zh": [
+            "首次实现Linux x86 glibc二进制端到端机器验证证明",
+            "通过形式化验证减少信任基础，覆盖编译器和语言多样性",
+            "使用Lean语言构建x86执行模型及证明框架",
+            "AI辅助证明生成，人类专家指导确保可重用性",
+            "验证过程发现glibc边界情况bug并报告",
+            "模块化设计使不同二进制证明成本显著降低"
+          ],
+          "en": [
+            "First machine-checked proof for Linux x86 glibc binary end-to-end execution.",
+            "Formal verification reduces trusted base, covering compiler/language diversity.",
+            "Lean-based x86 execution model and proof framework developed.",
+            "AI-assisted proofs with human expert guidance for reusability.",
+            "Edge-case glibc bugs discovered and reported during verification.",
+            "Modular design significantly lowers proof costs for new binaries."
+          ],
+          "ja": [
+            "Linux x86 glibcバイナリのエンドツーエンド機械検証証明を初めて実現",
+            "形式化検証により信頼ベースを縮小し、コンパイラや言語の多様性をカバー",
+            "Lean言語を用いてx86実行モデルと証明フレームワークを構築",
+            "AI支援による証明生成、人間の専門家が再利用性を確保",
+            "検証過程でglibcのエッジケースバグを発見し報告",
+            "モジュール設計により、新規バイナリの証明コストを大幅に削減"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "AI在证明中扮演什么角色？",
+          "en": "What role does AI play in the proofs?",
+          "ja": "AIは証明においてどのような役割を果たすか？"
+        },
+        "answer": {
+          "zh": "AI生成证明代码，但人类专家确保框架的可重用性和正确性。",
+          "en": "AI generates proof code, while humans ensure framework reusability.",
+          "ja": "AIが証明コードを生成するが、人間の専門家がフレームワークの再利用性と正確性を確保。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "执行模型的局限性有哪些？",
+          "en": "What are the limitations of the execution model?",
+          "ja": "実行モデルの限界は何か？"
+        },
+        "answer": {
+          "zh": "未审计、不支持多线程/动态加载，且存在未知错误风险。",
+          "en": "Unaudited, lacks multithreading/dynamic loading support, and may have unknown flaws.",
+          "ja": "未監査で、マルチスレッドや動的ロードをサポートせず、未知のエラーのリスクがある。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "如何处理不同编译器生成的差异？",
+          "en": "How are compiler-generated differences handled?",
+          "ja": "異なるコンパイラが生成する差異はどのように処理されるか？"
+        },
+        "answer": {
+          "zh": "通过自动化元编程统一处理，使同一证明适用于不同机器码。",
+          "en": "Automated metaprogramming unifies differences, enabling shared proofs.",
+          "ja": "自動化メタプログラミングにより差異を統一し、同じ証明を異なる機械語に適用。"
+        }
+      }
+    ]
+  }
+]
