@@ -89,5 +89,95 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-11-04",
+    "projects": [
+      {
+        "url": "https://www.anthropic.com/research/provable-inference",
+        "name": "Progress on provable inference for large language models",
+        "type": "博客",
+        "author": "Anthropic",
+        "tags": [
+          "Provable Inference",
+          "LLM"
+        ],
+        "summary": {
+          "zh": "Anthropic团队分享了FlashProve系统，利用zkSNARK实现大型语言模型（LLM）的可证明推理。该系统支持单个H100 GPU生成证明，速度达110 tokens/秒，证明大小约19MB/1024-token请求。",
+          "en": "Anthropic introduces FlashProve, a zkSNARK-based system for provable inference in LLMs. It achieves 110 tokens/sec proof generation on a single H100 GPU, with 19MB proofs per 1,024-token request.",
+          "ja": "Anthropicチームは、zkSNARKを用いた大規模言語モデル（LLM）の証明可能推論システムFlashProveを発表。単一のH100 GPUで110トークン/秒の証明生成を実現し、証明サイズは1,024トークンあたり約19MB。"
+        },
+        "slogan": {
+          "zh": "【ZK博客】Anthropic发布FlashProve：zkSNARK让LLM推理可证明、更安全！"
+        },
+        "notes": {
+          "zh": [
+            "FlashProve利用zkSNARK实现LLM推理的可证明性，确保响应来自特定模型",
+            "单个H100 GPU可生成110 tokens/秒的证明，证明大小约19MB/1024-token请求",
+            "系统支持400B参数的MoE模型，如Llama 4 Maverick，采用4-bit量化权重",
+            "通过Lean语言进行形式化验证，确保安全性和正确性",
+            "证明过程隐藏模型权重，但不隐藏模型架构",
+            "适用于AI监管、模型审批和防篡改等场景"
+          ],
+          "en": [
+            "FlashProve uses zkSNARKs for provable LLM inference, ensuring responses are from a specific model.",
+            "Single H100 GPU generates 110 tokens/sec proofs, with 19MB proofs per 1,024-token request.",
+            "Supports 400B-parameter MoE models like Llama 4 Maverick with 4-bit quantized weights.",
+            "Formal verification via Lean ensures security and correctness.",
+            "Proofs hide model weights but not architecture.",
+            "Applicable to AI regulation, model approval, and tamper detection."
+          ],
+          "ja": [
+            "FlashProveはzkSNARKを用いてLLM推論の証明可能性を実現し、特定のモデルからの応答を保証する",
+            "単一のH100 GPUで110トークン/秒の証明を生成し、証明サイズは1,024トークンあたり約19MB",
+            "400BパラメータのMoEモデル（Llama 4 Maverickなど）を4-bit量子化重みでサポート",
+            "Lean言語による形式検証でセキュリティと正確性を確保",
+            "証明プロセスはモデルの重みを隠すが、アーキテクチャは隠さない",
+            "AI規制、モデル承認、改ざん検出などの用途に適用可能"
+          ]
+        }
+      }
+    ],
+    "qas": [
+      {
+        "level": "beginner",
+        "question": {
+          "zh": "为什么需要可证明推理？",
+          "en": "Why is provable inference needed?",
+          "ja": "なぜ証明可能推論が必要か？"
+        },
+        "answer": {
+          "zh": "确保用户收到的响应来自声明的模型，防止篡改或替换。",
+          "en": "To ensure responses are from the claimed model, preventing tampering or substitution.",
+          "ja": "ユーザーが受け取る応答が宣言されたモデルからのものであり、改ざんや置き換えを防ぐため。"
+        }
+      },
+      {
+        "level": "intermediate",
+        "question": {
+          "zh": "系统依赖哪些安全假设？",
+          "en": "What security assumptions does the system rely on?",
+          "ja": "システムはどのようなセキュリティ仮定に依存しているか？"
+        },
+        "answer": {
+          "zh": "依赖zkSNARK的健壮性和零知识特性，以及形式化验证的正确性。",
+          "en": "Relies on zkSNARK soundness, zero-knowledge, and correctness of formal verification.",
+          "ja": "zkSNARKの健全性とゼロ知識特性、および形式検証の正確性に依存する。"
+        }
+      },
+      {
+        "level": "expert",
+        "question": {
+          "zh": "如何评估FlashProve的性能开销？",
+          "en": "How is FlashProve's performance overhead evaluated?",
+          "ja": "FlashProveの性能オーバーヘッドはどう評価されるか？"
+        },
+        "answer": {
+          "zh": "比较证明生成时间、验证成本及与原生推理的速度差异（约70-95倍开销）。",
+          "en": "Compare proof generation time, verification cost, and overhead vs. native inference (~70-95x).",
+          "ja": "証明生成時間、検証コスト、およびネイティブ推論とのオーバーヘッド（約70-95倍）を比較。"
+        }
+      }
+    ]
   }
 ]
